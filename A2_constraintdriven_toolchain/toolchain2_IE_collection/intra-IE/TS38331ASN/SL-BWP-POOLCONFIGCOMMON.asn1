@@ -1,0 +1,5 @@
+SL-BWP-PoolConfigCommon-r16 ::=      SEQUENCE {
+    sl-RxPool-r16                        SEQUENCE (SIZE (1..maxNrofRXPool-r16)) OF SL-ResourcePool-r16         OPTIONAL,    -- Need R
+    sl-TxPoolSelectedNormal-r16          SEQUENCE (SIZE (1..maxNrofTXPool-r16)) OF SL-ResourcePoolConfig-r16   OPTIONAL,    -- Need R
+    sl-TxPoolExceptional-r16             SL-ResourcePoolConfig-r16                                             OPTIONAL     -- Need R
+}

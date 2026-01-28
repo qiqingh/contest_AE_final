@@ -1,0 +1,13 @@
+PUCCH-ConfigCommon ::=              SEQUENCE {
+    pucch-ResourceCommon                INTEGER (0..15)                                      OPTIONAL,   -- Cond InitialBWP-Only
+    pucch-GroupHopping                  ENUMERATED { neither, enable, disable },
+    hoppingId                           INTEGER (0..1023)                                    OPTIONAL,   -- Need R
+    p0-nominal                          INTEGER (-202..24)                                   OPTIONAL,   -- Need R
+    ...,
+    [[
+    nrofPRBs                            INTEGER (1..16)                                      OPTIONAL,   -- Need R
+    intra-SlotFH-r17                    ENUMERATED {fromLowerEdge, fromUpperEdge}            OPTIONAL,   -- Need R
+    pucch-ResourceCommonRedCap-r17     INTEGER (0..15)                                      OPTIONAL,   -- Cond InitialBWP-RedCap
+    additionalPRBOffset-r17                 ENUMERATED {n2, n3, n4, n6, n8, n9, n10, n12}        OPTIONAL    -- Need S
+    ]]
+}

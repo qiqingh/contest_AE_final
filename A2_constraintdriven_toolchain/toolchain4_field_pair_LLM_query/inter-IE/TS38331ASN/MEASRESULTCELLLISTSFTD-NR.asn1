@@ -1,0 +1,8 @@
+MeasResultCellListSFTD-NR ::=          SEQUENCE (SIZE (1..maxCellSFTD)) OF MeasResultCellSFTD-NR
+
+MeasResultCellSFTD-NR ::=              SEQUENCE {
+    physCellId                            PhysCellId,
+    sfn-OffsetResult                      INTEGER (0..1023),
+    frameBoundaryOffsetResult             INTEGER (-30720..30719),
+    rsrp-Result                           RSRP-Range                      OPTIONAL
+}

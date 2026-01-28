@@ -1,0 +1,87 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      84,
+      85,
+      149,
+      150
+    ],
+    "field2_all": [
+      84,
+      85,
+      149,
+      150,
+      214,
+      215
+    ],
+    "actual_pairs": [
+      [
+        [
+          84,
+          85,
+          149,
+          150
+        ],
+        [
+          84,
+          85,
+          149,
+          150,
+          214,
+          215
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior and does not relate the fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pdcch-configcommon",
+    "field1": "cce-reg-mappingtype",
+    "ie2_name": "bwp-common_pdcch-configcommon",
+    "field2": "cce-reg-mappingtype",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1",
+      "10.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol,",
+    "generated_at": "2026-01-09T12:47:35.323939",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between cce-reg-mappingtype fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior and does not relate the fields across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

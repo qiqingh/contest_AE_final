@@ -1,0 +1,84 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks any explicit inter-IE relationship between 'dl-datatoul-ack' and 'schedulingrequestid'. The provided evidence only describes behavior within the context of HARQ-ACK and PUCCH resource determination, without linking the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "dl-datatoul-ack",
+    "ie2_name": "mac-cellgroupconfig",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If a UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports [6, TS 38.214] to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, if present, or a value of dl-DataToUL-ACK, or dl-DataToUL-ACK-r16, or dl-DataToUL-ACK-DCI-1-2, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace }, 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, or a value provided by \\( d l \\) -DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-toHARQ_feedback timing indicator field is not present in a DCI format, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE has HARQ-ACK, SR and sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or by a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace, } 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats that have a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and",
+    "generated_at": "2026-01-09T12:51:35.988127",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks any explicit inter-IE relationship between 'dl-datatoul-ack' and 'schedulingrequestid'. The provided evidence only describes behavior within the context of HARQ-ACK and PUCCH resource determination, without linking the two fields across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

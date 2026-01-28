@@ -1,0 +1,93 @@
+DL-PPW-PreConfig-r17 ::= SEQUENCE {
+    dl-PPW-ID-r17            DL-PPW-ID-r17,
+    dl-PPW-PeriodicityAndStartSlot-r17     DL-PPW-PeriodicityAndStartSlot-r17,
+    length-r17                               INTEGER (1..160),
+    type-r17                                 ENUMERATED {type1A, type1B, type2}                            OPTIONAL, -- Cond MultiType
+    priority-r17                             ENUMERATED {st1, st2, st3}                                    OPTIONAL  -- Cond MultiState
+}
+
+DL-PPW-ID-r17 ::= INTEGER  (0..maxNrofPPW-ID-1-r17)
+
+DL-PPW-PeriodicityAndStartSlot-r17 ::= CHOICE {
+    scs15                                    CHOICE {
+                      n4                         INTEGER (0..3),
+                      n5                         INTEGER (0..4),
+                      n8                         INTEGER (0..7),
+                      n10                        INTEGER (0..9),
+                      n16                        INTEGER (0..15),
+                      n20                        INTEGER (0..19),
+                      n32                        INTEGER (0..31),
+                      n40                        INTEGER (0..39),
+                      n64                        INTEGER (0..63),
+                      n80                        INTEGER (0..79),
+                      n160                       INTEGER (0..159),
+                      n320                       INTEGER (0..319),
+                      n640                       INTEGER (0..639),
+                      n1280                      INTEGER (0..1279),
+                      n2560                      INTEGER (0..2559),
+                      n5120                      INTEGER (0..5119),
+                      n10240                     INTEGER (0..10239),
+                     ...
+    },
+    scs30                                    CHOICE {
+                      n8                         INTEGER (0..7),
+                      n10                        INTEGER (0..9),
+                      n16                        INTEGER (0..15),
+                      n20                        INTEGER (0..19),
+                      n32                        INTEGER (0..31),
+                      n40                        INTEGER (0..39),
+                      n64                        INTEGER (0..63),
+                      n80                        INTEGER (0..79),
+                      n128                       INTEGER (0..127),
+                      n160                       INTEGER (0..159),
+                      n320                       INTEGER (0..319),
+                      n640                       INTEGER (0..639),
+                      n1280                      INTEGER (0..1279),
+                      n2560                      INTEGER (0..2559),
+                      n5120                      INTEGER (0..5119),
+                      n10240                     INTEGER (0..10239),
+                      n20480                     INTEGER (0..20479),
+                      ...
+    },
+    scs60                                    CHOICE {
+                      n16                        INTEGER (0..15),
+                      n20                        INTEGER (0..19),
+                      n32                        INTEGER (0..31),
+                      n40                        INTEGER (0..39),
+                      n64                        INTEGER (0..63),
+                      n80                        INTEGER (0..79),
+                      n128                       INTEGER (0..127),
+                      n160                       INTEGER (0..159),
+                      n256                       INTEGER (0..255),
+                      n320                       INTEGER (0..319),
+                      n640                       INTEGER (0..639),
+                      n1280                      INTEGER (0..1279),
+                      n2560                      INTEGER (0..2559),
+                      n5120                      INTEGER (0..5119),
+                      n10240                     INTEGER (0..10239),
+                      n20480                     INTEGER (0..20479),
+                      n40960                     INTEGER (0..40959),
+                      ...
+    },
+    scs120                                   CHOICE {
+                      n32                        INTEGER (0..31),
+                      n40                        INTEGER (0..39),
+                      n64                        INTEGER (0..63),
+                      n80                        INTEGER (0..79),
+                      n128                       INTEGER (0..127),
+                      n160                       INTEGER (0..159),
+                      n256                       INTEGER (0..255),
+                      n320                       INTEGER (0..319),
+                      n512                       INTEGER (0..511),
+                      n640                       INTEGER (0..639),
+                      n1280                      INTEGER (0..1279),
+                      n2560                      INTEGER (0..2559),
+                      n5120                      INTEGER (0..5119),
+                      n10240                     INTEGER (0..10239),
+                      n20480                     INTEGER (0..20479),
+                      n40960                     INTEGER (0..40959),
+                      n81920                     INTEGER (0..81919),
+                     ...
+    },
+    ...
+}

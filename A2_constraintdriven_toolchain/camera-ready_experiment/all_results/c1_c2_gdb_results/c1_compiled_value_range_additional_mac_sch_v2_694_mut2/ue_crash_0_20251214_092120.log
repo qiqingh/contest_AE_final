@@ -1,0 +1,101 @@
+Attaching to process 1573712
+[New LWP 1573745]
+[New LWP 1573746]
+[New LWP 1573747]
+[New LWP 1573748]
+[New LWP 1573749]
+[New LWP 1573750]
+[New LWP 1573751]
+[New LWP 1573752]
+[New LWP 1573776]
+[New LWP 1573777]
+[New LWP 1573778]
+[New LWP 1573779]
+[New LWP 1573780]
+[New LWP 1573781]
+[New LWP 1573782]
+[New LWP 1573783]
+[New LWP 1573784]
+[New LWP 1573785]
+[New LWP 1573786]
+[New LWP 1573787]
+[New LWP 1573788]
+[New LWP 1573789]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007cd821f117f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffc1a0bd7f0, rem=rem@entry=0x7ffc1a0bd7f0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+
+Thread 15 "DL__actor" received signal SIGABRT, Aborted.
+[Switching to Thread 0x7cd7fdc75640 (LWP 1573781)]
+__pthread_kill_implementation (no_tid=0, signo=6, threadid=137267117512256) at ./nptl/pthread_kill.c:44
+(gdb) 44	./nptl/pthread_kill.c: No such file or directory.
+#0  __pthread_kill_implementation (no_tid=0, signo=6, threadid=137267117512256) at ./nptl/pthread_kill.c:44
+        tid = <optimized out>
+        ret = 0
+        pd = 0x7cd7fdc75640
+        old_mask = {__val = {0, 0, 4294902273, 0, 0, 0, 0, 0, 515, 0, 0, 0, 0, 0, 4294771201, 0}}
+        ret = <optimized out>
+        pd = <optimized out>
+        old_mask = <optimized out>
+        ret = <optimized out>
+        tid = <optimized out>
+        ret = <optimized out>
+        resultvar = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        __private = <optimized out>
+        __oldval = <optimized out>
+        result = <optimized out>
+#1  __pthread_kill_internal (signo=6, threadid=137267117512256) at ./nptl/pthread_kill.c:78
+No locals.
+#2  __GI___pthread_kill (threadid=137267117512256, signo=signo@entry=6) at ./nptl/pthread_kill.c:89
+No locals.
+#3  0x00007cd821e6e476 in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+        ret = <optimized out>
+#4  0x00007cd821e547f3 in __GI_abort () at ./stdlib/abort.c:79
+        save_stage = 1
+        act = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {0, 4294902278, 0, 0, 0, 0, 0, 131585, 0, 0, 0, 0, 0, 131587, 0, 0}}, sa_flags = 0, sa_restorer = 0x0}
+        sigs = {__val = {32, 0, 0, 0, 0, 0, 66051, 0, 0, 0, 0, 0, 4294836739, 0, 0, 0}}
+#5  0x00007cd821eb5677 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7cd82200792e "*** %s ***: terminated\n") at ../sysdeps/posix/libc_fatal.c:156
+        ap = {{gp_offset = 24, fp_offset = 0, overflow_arg_area = 0x7cd7fdc5f490, reg_save_area = 0x7cd7fdc5f420}}
+        fd = <optimized out>
+        list = <optimized out>
+        nlist = <optimized out>
+        cp = <optimized out>
+#6  0x00007cd821f6259a in __GI___fortify_fail (msg=msg@entry=0x7cd822007916 "stack smashing detected") at ./debug/fortify_fail.c:26
+No locals.
+#7  0x00007cd821f62566 in __stack_chk_fail () at ./debug/stack_chk_fail.c:24
+No locals.
+#8  0x00005807794fcd33 in pdsch_processing (ue=<optimized out>, proc=<optimized out>, phy_data=<optimized out>) at /home/openairinterface5g/openair1/SCHED_NR_UE/phy_procedures_nr_ue.c:1158
+        frame_rx = <optimized out>
+        nr_slot_rx = <optimized out>
+        gNB_id = <optimized out>
+        dlsch = <optimized out>
+        slot_fep_map = {false <repeats 14 times>}
+        rxdataF_sz = <optimized out>
+        rxdataF = <optimized out>
+        __FUNCTION__ = "pdsch_processing"
+Backtrace stopped: previous frame inner to this frame (corrupt stack?)
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 1573712] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 1573712
+[Inferior 1 (process 1573712) detached]

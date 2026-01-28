@@ -1,0 +1,32 @@
+CSI-MeasConfig ::=                  SEQUENCE {
+    nzp-CSI-RS-ResourceToAddModList     SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-Resources)) OF NZP-CSI-RS-Resource   OPTIONAL, -- Need N
+    nzp-CSI-RS-ResourceToReleaseList    SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-Resources)) OF NZP-CSI-RS-ResourceId OPTIONAL, -- Need N
+    nzp-CSI-RS-ResourceSetToAddModList  SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-ResourceSets)) OF NZP-CSI-RS-ResourceSet
+                                                                                                                  OPTIONAL, -- Need N
+    nzp-CSI-RS-ResourceSetToReleaseList SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-ResourceSets)) OF NZP-CSI-RS-ResourceSetId
+                                                                                                                  OPTIONAL, -- Need N
+    csi-IM-ResourceToAddModList         SEQUENCE (SIZE (1..maxNrofCSI-IM-Resources)) OF CSI-IM-Resource           OPTIONAL, -- Need N
+    csi-IM-ResourceToReleaseList        SEQUENCE (SIZE (1..maxNrofCSI-IM-Resources)) OF CSI-IM-ResourceId         OPTIONAL, -- Need N
+    csi-IM-ResourceSetToAddModList      SEQUENCE (SIZE (1..maxNrofCSI-IM-ResourceSets)) OF CSI-IM-ResourceSet     OPTIONAL, -- Need N
+    csi-IM-ResourceSetToReleaseList     SEQUENCE (SIZE (1..maxNrofCSI-IM-ResourceSets)) OF CSI-IM-ResourceSetId   OPTIONAL, -- Need N
+    csi-SSB-ResourceSetToAddModList     SEQUENCE (SIZE (1..maxNrofCSI-SSB-ResourceSets)) OF CSI-SSB-ResourceSet   OPTIONAL, -- Need N
+    csi-SSB-ResourceSetToReleaseList    SEQUENCE (SIZE (1..maxNrofCSI-SSB-ResourceSets)) OF CSI-SSB-ResourceSetId OPTIONAL, -- Need N
+    csi-ResourceConfigToAddModList      SEQUENCE (SIZE (1..maxNrofCSI-ResourceConfigurations)) OF CSI-ResourceConfig
+                                                                                                                  OPTIONAL, -- Need N
+    csi-ResourceConfigToReleaseList     SEQUENCE (SIZE (1..maxNrofCSI-ResourceConfigurations)) OF CSI-ResourceConfigId
+                                                                                                                  OPTIONAL, -- Need N
+    csi-ReportConfigToAddModList        SEQUENCE (SIZE (1..maxNrofCSI-ReportConfigurations)) OF CSI-ReportConfig  OPTIONAL, -- Need N
+    csi-ReportConfigToReleaseList       SEQUENCE (SIZE (1..maxNrofCSI-ReportConfigurations)) OF CSI-ReportConfigId
+                                                                                                                  OPTIONAL, -- Need N
+    reportTriggerSize                   INTEGER (0..6)                                                            OPTIONAL, -- Need M
+    aperiodicTriggerStateList           SetupRelease { CSI-AperiodicTriggerStateList }                            OPTIONAL, -- Need M
+    semiPersistentOnPUSCH-TriggerStateList    SetupRelease { CSI-SemiPersistentOnPUSCH-TriggerStateList }         OPTIONAL, -- Need M
+    ...,
+    [[
+    reportTriggerSizeDCI-0-2-r16        INTEGER (0..6)                                                            OPTIONAL -- Need R
+    ]],
+    [[
+    sCellActivationRS-ConfigToAddModList-r17  SEQUENCE (SIZE (1..maxNrofSCellActRS-r17)) OF SCellActivationRS-Config-r17   OPTIONAL, -- Need N
+    sCellActivationRS-ConfigToReleaseList-r17 SEQUENCE (SIZE (1..maxNrofSCellActRS-r17)) OF SCellActivationRS-ConfigId-r17 OPTIONAL  -- Need N
+    ]]
+}

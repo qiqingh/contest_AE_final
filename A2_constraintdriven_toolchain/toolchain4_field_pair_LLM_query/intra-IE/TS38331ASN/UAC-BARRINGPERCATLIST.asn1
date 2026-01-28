@@ -1,0 +1,6 @@
+UAC-BarringPerCatList ::=           SEQUENCE (SIZE (1..maxAccessCat-1)) OF UAC-BarringPerCat
+
+UAC-BarringPerCat ::=               SEQUENCE {
+   accessCategory                       INTEGER (1..maxAccessCat-1),
+   uac-barringInfoSetIndex              UAC-BarringInfoSetIndex
+}

@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "IMPLIES(field1 present, EQ(field2, field1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      311
+    ],
+    "field2_all": [
+      310
+    ],
+    "actual_pairs": [
+      [
+        [
+          311
+        ],
+        [
+          310
+        ]
+      ]
+    ]
+  },
+  "predicate": "If field1 is present, field2 must equal field1",
+  "preconditions": [
+    "field1 present"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=5, field2=5"
+    ],
+    "invalid": [
+      "field1=5, field2=6"
+    ]
+  },
+  "notes": "The evidence suggests a mapping between p0-PUCCH-Id and closedLoopIndex when PUCCH-SpatialRelationInfo is provided.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_spatialRelationInfoToAddModList",
+    "field1": "closedLoopIndex",
+    "field2": "p0-PUCCH-Id",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.2.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\quad \\delta_{\\mathrm{PUCCH}, b, f, c}(i, l) is a TPC command value included in a DCI format associated with the PUCCH transmission for active UL BWP b of carrier f of the primary cell c that the UE detects for PUCCH transmission occasion i , or is jointly coded with other TPC commands in a DCI format 2 \\_2 with CRC scrambled by TPC-PUCCHRNTI [5, TS 38.212], as described in clause 11.3 - l \\in\\{0,1\\} if the UE is provided twoPUCCH-PC-AdjustmentStates and PUCCH-SpatialRelationInfo, or more than one sets of power control parameters for operation in FR1, and l=0 if the UE is not provided twoPUCCH-PC-AdjustmentStates or PUCCH-SpatialRelationInfo, and more than one sets of power control parameters - If the UE obtains a TPC command value from a DCI format associated with the PUCCH transmission and if the UE is provided PUCCH-SpatialRelationInfo, the UE obtains a mapping, by an index provided by p0-PUCCH-Id, between a set of pucch-SpatialRelationInfold values and a set of values for closedLoopIndex that provide the l value(s). If the UE receives an activation command indicating a value of pucch-SpatialRelationInfold, the UE determines the value closedLoopIndex that provides the value of l through the link to a corresponding p0-PUCCH-Id index - If the UE obtains a TPC command from a DCI format 2 _ 2 with CRC scrambled by a TPC-PUCCHRNTI, the l value is provided by the closed loop indicator field in DCI format 2_2 - If the UE transmits the PUCCH with N_{\\text {PUCCH }}^{\\text {repeat }}>1 repetitions, as described in clause 9.2.6, and the UE is provided twoPUCCH-PC-AdjustmentStates by pucch-PowerControl\n---\nPUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full\n---\n- If a configuration of a P_{0 \\_\\mathrm{PUCCH}, b, f, c}\\left(q_{u}\\right) value for a corresponding PUCCH power control adjustment state l for active UL BWP b of carrier f of primary cell c is provided by higher layers, - \\quad g_{b, f, c}(k, l)=0, \\quad k=0,1, \\ldots, i - if the UE is provided PUCCH-SpatialRelationInfo, the UE determines the value of l from the value of q_{u} based on a pucch-SpatialRelationInfold value associated with the p0-PUCCH-Id value corresponding to q_{u} and with the closedLoopIndex value corresponding to l ; - else, if the UE is provided more than one sets of power control parameters for operation in FR1, and if the UE receives an activation command for a PUCCH resource that indicates one or two sets of the more than one sets of power control parameters, the UE determines the value of l based on the closedLoopIndex value in the one or two sets of power control parameters; - else, l=0",
+    "generated_at": "2026-01-07T21:56:22.928711",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(field1 present, EQ(field2, field1))",
+      "preconditions": [
+        "field1 present"
+      ],
+      "predicate": "If field1 is present, field2 must equal field1",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=5, field2=5"
+        ],
+        "invalid": [
+          "field1=5, field2=6"
+        ]
+      },
+      "notes": "The evidence suggests a mapping between p0-PUCCH-Id and closedLoopIndex when PUCCH-SpatialRelationInfo is provided.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

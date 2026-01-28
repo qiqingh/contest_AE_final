@@ -1,0 +1,63 @@
+BandCombinationListSidelinkEUTRA-NR-r16 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombinationParametersSidelinkEUTRA-NR-r16
+
+BandCombinationListSidelinkEUTRA-NR-v1630 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombinationParametersSidelinkEUTRA-NR-v1630
+
+BandCombinationListSidelinkEUTRA-NR-v1710 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombinationParametersSidelinkEUTRA-NR-v1710
+
+BandCombinationParametersSidelinkEUTRA-NR-r16 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelinkEUTRA-NR-r16
+
+BandCombinationParametersSidelinkEUTRA-NR-v1630 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelinkEUTRA-NR-v1630
+
+BandCombinationParametersSidelinkEUTRA-NR-v1710 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelinkEUTRA-NR-v1710
+
+BandParametersSidelinkEUTRA-NR-r16 ::= CHOICE {
+    eutra                                  SEQUENCE {
+        bandParametersSidelinkEUTRA1-r16       OCTET STRING                         OPTIONAL,
+        bandParametersSidelinkEUTRA2-r16       OCTET STRING                         OPTIONAL
+    },
+    nr                                     SEQUENCE {
+        bandParametersSidelinkNR-r16           BandParametersSidelink-r16
+    }
+}
+
+BandParametersSidelinkEUTRA-NR-v1630 ::= CHOICE {
+    eutra                                    NULL,
+    nr                                       SEQUENCE {
+        tx-Sidelink-r16                          ENUMERATED {supported}                          OPTIONAL,
+        rx-Sidelink-r16                          ENUMERATED {supported}                          OPTIONAL,
+        sl-CrossCarrierScheduling-r16            ENUMERATED {supported}                          OPTIONAL
+    }
+}
+
+BandParametersSidelinkEUTRA-NR-v1710 ::= CHOICE {
+    eutra                                    NULL,
+    nr                                       SEQUENCE {
+        --32-4
+        sl-TransmissionMode2-PartialSensing-r17  SEQUENCE {
+            harq-TxProcessModeTwoSidelink-r17        ENUMERATED {n8, n16},
+            scs-CP-PatternTxSidelinkModeTwo-r17      CHOICE {
+                fr1-r17                                  SEQUENCE {
+                    scs-15kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                    scs-30kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                    scs-60kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL
+                },
+                fr2-r17                                  SEQUENCE {
+                    scs-60kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                    scs-120kHz-r17                           BIT STRING (SIZE (16))                OPTIONAL
+                }
+            }                                                                                      OPTIONAL,
+            extendedCP-Mode2PartialSensing-r17           ENUMERATED {supported}                    OPTIONAL,
+            dl-openLoopPC-Sidelink-r17                   ENUMERATED {supported}                    OPTIONAL
+        }                                                                                          OPTIONAL,
+        --32-2a:  Receiving NR sidelink of PSFCH
+        rx-sidelinkPSFCH-r17                     ENUMERATED {n5, n15, n25, n32, n35, n45, n50, n64} OPTIONAL,
+        --32-5a-1
+        tx-IUC-Scheme1-Mode2Sidelink-r17         ENUMERATED {supported}                            OPTIONAL,
+        --32-5b-1
+        tx-IUC-Scheme2-Mode2Sidelink-r17         ENUMERATED {n4, n8, n16}                          OPTIONAL
+    }
+}
+
+BandParametersSidelink-r16 ::= SEQUENCE {
+    freqBandSidelink-r16           FreqBandIndicatorNR
+}

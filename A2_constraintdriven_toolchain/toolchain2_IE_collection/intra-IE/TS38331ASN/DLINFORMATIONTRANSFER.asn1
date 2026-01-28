@@ -1,0 +1,26 @@
+DLInformationTransfer ::=           SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        dlInformationTransfer           DLInformationTransfer-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+DLInformationTransfer-IEs ::=       SEQUENCE {
+    dedicatedNAS-Message                DedicatedNAS-Message                OPTIONAL,   -- Need N
+    lateNonCriticalExtension            OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                DLInformationTransfer-v1610-IEs     OPTIONAL
+}
+
+DLInformationTransfer-v1610-IEs ::= SEQUENCE {
+    referenceTimeInfo-r16               ReferenceTimeInfo-r16               OPTIONAL,   -- Need N
+    nonCriticalExtension                DLInformationTransfer-v1700-IEs     OPTIONAL
+}
+
+DLInformationTransfer-v1700-IEs ::= SEQUENCE {
+    dedicatedInfoF1c-r17                DedicatedInfoF1c-r17                OPTIONAL,   -- Need N
+    rxTxTimeDiff-gNB-r17                RxTxTimeDiff-r17                    OPTIONAL,   -- Need N
+    ta-PDC-r17                          ENUMERATED {activate,deactivate}    OPTIONAL,   -- Need N
+    sib9Fallback-r17                    ENUMERATED {true}                   OPTIONAL,   -- Need N
+    nonCriticalExtension                SEQUENCE {}                         OPTIONAL
+}

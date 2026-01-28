@@ -1,0 +1,45 @@
+MeasurementTimingConfiguration ::=      SEQUENCE {
+    criticalExtensions                      CHOICE {
+        c1                                      CHOICE{
+            measTimingConf                          MeasurementTimingConfiguration-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture        SEQUENCE {}
+    }
+}
+
+MeasurementTimingConfiguration-IEs ::=  SEQUENCE {
+    measTiming                              MeasTimingList                                      OPTIONAL,
+    nonCriticalExtension                    MeasurementTimingConfiguration-v1550-IEs            OPTIONAL
+}
+
+MeasurementTimingConfiguration-v1550-IEs ::= SEQUENCE {
+    campOnFirstSSB                               BOOLEAN,
+    psCellOnlyOnFirstSSB                         BOOLEAN,
+    nonCriticalExtension                         MeasurementTimingConfiguration-v1610-IEs       OPTIONAL
+}
+
+MeasurementTimingConfiguration-v1610-IEs ::=  SEQUENCE {
+    csi-RS-Config-r16                             SEQUENCE {
+        csi-RS-SubcarrierSpacing-r16                  SubcarrierSpacing,
+        csi-RS-CellMobility-r16                       CSI-RS-CellMobility,
+        refSSBFreq-r16                                ARFCN-ValueNR
+    },
+    nonCriticalExtension                          SEQUENCE {}                                   OPTIONAL
+}
+
+MeasTimingList ::= SEQUENCE (SIZE (1..maxMeasFreqsMN)) OF MeasTiming
+
+MeasTiming ::= SEQUENCE {
+    frequencyAndTiming                      SEQUENCE {
+        carrierFreq                             ARFCN-ValueNR,
+        ssbSubcarrierSpacing                    SubcarrierSpacing,
+        ssb-MeasurementTimingConfiguration      SSB-MTC,
+        ss-RSSI-Measurement                     SS-RSSI-Measurement                             OPTIONAL
+    }                                                                                           OPTIONAL,
+    ...,
+    [[
+    ssb-ToMeasure                           SSB-ToMeasure                                       OPTIONAL,
+    physCellId                              PhysCellId                                          OPTIONAL
+    ]]
+}

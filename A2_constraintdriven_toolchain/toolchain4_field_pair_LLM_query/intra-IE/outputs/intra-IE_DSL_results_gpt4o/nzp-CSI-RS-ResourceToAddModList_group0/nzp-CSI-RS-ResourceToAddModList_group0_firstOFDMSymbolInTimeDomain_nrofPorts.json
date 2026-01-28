@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      693
+    ],
+    "field2_all": [
+      692
+    ],
+    "actual_pairs": [
+      [
+        [
+          693
+        ],
+        [
+          692
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct or conditional relationship between the fields 'firstOFDMSymbolInTimeDomain' and 'nrofPorts'. The evidence is primarily definitional and lacks explicit normative constraints involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "firstOFDMSymbolInTimeDomain",
+    "field2": "nrofPorts",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} firstOFDMSymbolinTimeDomain Time domain allocation within a physical resource block. The field indicates the first OFDM symbol in the PRB used for CSI-RS. See TS 38.211 [16], clause 7.4.1.5.3. Value 2 is supported only when dmrs-TypeA-Position equals pos3. \\end{tabular} \\begin{tabular}{l} freqBand Wideband or partial band CSI-RS, (see TS 38.214 [19], clause 5.2.2.3.1). \\end{tabular} \\begin{tabular}{l} frequencyDomainAllocation Frequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-10T21:42:11.298584",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct or conditional relationship between the fields 'firstOFDMSymbolInTimeDomain' and 'nrofPorts'. The evidence is primarily definitional and lacks explicit normative constraints involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

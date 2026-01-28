@@ -1,0 +1,119 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      108,
+      117,
+      173,
+      182,
+      238,
+      247
+    ],
+    "field2_all": [
+      83,
+      148,
+      213
+    ],
+    "actual_pairs": [
+      [
+        [
+          108,
+          117,
+          173,
+          182,
+          238,
+          247
+        ],
+        [
+          83,
+          148,
+          213
+        ]
+      ],
+      [
+        [
+          108,
+          117,
+          173,
+          182
+        ],
+        [
+          83,
+          148,
+          213
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between 'controlresourcesetid' from 'bwp-dedicated_pdcch-config' and 'duration' from 'commoncontrolresourceset'. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdcch-config",
+    "field1": "controlresourcesetid",
+    "ie2_name": "commoncontrolresourceset",
+    "field2": "duration",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 22,
+      "original_count": 22,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "7.3.2.2",
+      "7.4.1.1.2",
+      "3.2",
+      "8.4",
+      "8.2",
+      "9.2.1",
+      "10.1",
+      "11.4",
+      "6.1.2.1",
+      "5.1.4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "\\hline \\( N_{\\text {symb }}^{\\text {CORESET }} \\) & Time duration of a control resource set; see clause 7.3.2.2 \\\\\n---\nFor a CORESET configured by the ControlResourceSet [E: - \\( \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} \\) is given by the higher-layer parameter frequencyDomainResources; - \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;\n---\n- \\( \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} \\) is given by the higher-layer parameter frequencyDomainResources; - \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;\n---\n- \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;\n---\n- if the PDSCH duration \\( l_{\\mathrm{d}} \\in\\{2,3,4,5,6,7,8,9,10,11,12,13\\} \\) OFDM symbols for normal cyclic prefix or \\( l_{\\mathrm{d}} \\in \\{2,4,6\\} \\) OFDM symbols for extended cyclic prefix, and the front-loaded DM-RS of the PDSCH allocation collides with resources reserved for a search space set associated with a CORESET, \\( \\bar{l} \\) shall be incremented such that the first DM-RS symbol occurs immediately after the CORESET and until no collision with any CORESET occurs, and\n---\n- for all values of the PDSCH duration \\( l_{\\mathrm{d}} \\) other than 2,5 , and 7 symbols, the UE is not expected to receive DM-RS beyond the ( \\( l_{\\mathrm{d}}-1 \\) ):th symbol; - if the PDSCH duration \\( l_{\\mathrm{d}} \\) is less than or equal to 4 OFDM symbols, only single-symbol DM-RS is supported. - if the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, lte-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4 is configured, the PDSCH duration \\( l_{\\mathrm{d}}=10 \\) symbols for normal cyclic prefix, the subcarrier spacing configuration \\( \\mu=0 \\), single-symbol DM-RS is configured, and at least one PDSCH DM-RS symbol in the PDSCH allocation collides with a symbol containing resource elements as indicated by the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, ite-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4, then \\( \\bar{l} \\) shall be incremented by one in all slots.\n---\nthe duration of periodicityAndPattern in units of msec. When periodicityAndPattern is not configured for a pair, for a symbol level bitmap spanning two slots, the bits of the first and second slots correspond respectively to even and odd slots of a radio frame, and for a symbol level bitmap spanning one slot, the bits of the slot correspond to every slot of a radio frame. The pair can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup1 and rateMatchPatternGroup2). The rateMatchPatternToAddModList given by ServingCellConfig or ServingCellConfigCommon configuration in numerology \\( \\mu \\) applies only to PDSCH of the same numerology \\( \\mu \\). - within a BWP, a frequency domain resource of a CORESET configured by ControlResourceSet with controlResourceSetId or ControlResourceSetZero and time domain resource determined by the higher layer parameters monitoringSlotPeriodicityAndOffset, duration and monitoringSymbols WithinSlot of all search-space-sets configured by SearchSpace and time domain resource of search-space-set zero configured by searchSpaceZero associated with the CORESET as well as CORESET duration configured by ControlResourceSet with controlResourceSetld or ControlResourceSetZero. This resource not available for PDSCH can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup 1 and rateMatchPatternGroup2).\n---\n- For operation in unpaired spectrum, symbol(s) indicated by pdcch-ConfigSIBl in MIB for a CORESET for Type0-PDCCH CSS set are considered as invalid symbol(s) for PUSCH repetition Type B transmission. - For operation in unpaired spectrum, if numberOffnvalidSymbolsForDL-UL-Switching is configured, numberOffnvalidSymbolsForDL-UL-Switching symbol(s) after the last symbol that is indicated as downlink in each consecutive set of all symbols that are indicated as downlink by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated are considered as invalid symbol(s) for PUSCH repetition Type B transmission. The symbol(s) given by numberOflnvalidSymbolsForDL-UL-Switching are defined using the reference SCS configuration referenceSubcarrierSpacing provided in tdd-UL-DL-ConfigurationCommon. - For operation with shared spectrum channel access with semi-static channel occupancy, symbols in an idle duration associated with a periodic channel occupancy as described in Clause 4.3.1.1 of [16,37.213], or in an idle duration in a period associated with an initiated channel occupancy as described in Clause 4.3.2. of [16, TS 37.213] are considered as invalid symbol(s) for PUSCH repetition Type B transmission.\n---\nIn response to a PRACH transmission, a UE attempts to detect a DCI format \\( 1 \\_0 \\) with CRC scrambled by a corresponding RA-RNTI during a window controlled by higher layers [11, TS 38.321]. The window starts at the first symbol of the earliest CORESET the UE is configured to receive PDCCH for Type1-PDCCH CSS set, as defined in clause 10.1, that is at least one symbol, after the last symbol of the PRACH occasion corresponding to the PRACH transmission, where the symbol duration corresponds to the SCS for Type1-PDCCH CSS set as defined in clause 10.1. If \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\mathrm{UE}} \\) or \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\text {common }} \\), as defined in [4, TS 38.211], is not zero, the window starts after an additional \\( T_{\\mathrm{TA}}+k_{\\text {mac }} \\) msec where \\( T_{\\mathrm{TA}} \\) is defined in [4, TS 38.211] and \\( k_{\\mathrm{mac}} \\) is provided by \\( K \\)-Mac or \\( k_{\\mathrm{mac}}=0 \\) if \\( K \\)-Mac is not provided. The length of the window in number of slots, based on the SCS for Typel-PDCCH CSS set, is provided by raResponseWindow.\n---\nIn response to a transmission of a PRACH and a PUSCH , or to a transmission of only a PRACH if the PRACH preamble is mapped to a valid PUSCH occasion, a UE attempts to detect a DCI format 10 with CRC scrambled by a corresponding MsgB-RNTI during a window controlled by higher layers [11, TS 38.321]. The window starts at the first symbol of the earliest CORESET the UE is configured to receive PDCCH for Type1-PDCCH CSS set, as defined in clause 10.1, that is at least one symbol, after the last symbol of the PUSCH occasion corresponding to the PRACH transmission, where the symbol duration corresponds to the SCS for Typel-PDCCH CSS set. If \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\mathrm{UE}} \\) or \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\text {commnon }} \\), as defined in [4, TS 38.211], is not zero, the window starts after an additional \\( T_{\\mathrm{TA}}+k_{\\mathrm{mac}} \\) msec where \\( T_{\\mathrm{TA}} \\) is defined in [4, TS 38.211] and \\( k_{\\mathrm{mac}} \\) is provided by \\( K \\)-Mac or \\( k_{\\mathrm{mac}}=0 \\) if \\( K \\)-Mac is not provided. The length of the window in number of slots, based on the SCS for Type1-PDCCH CSS set, is provided by msgB-ResponseWindow.\n---\nIf the UE detects a DCI format \\( 1 \\_0 \\) with CRC scrambled by the corresponding MsgB-RNTI and receives a transport block within the window in a corresponding PDSCH, the UE may assume same DM-RS antenna port quasi co-location properties, as described in [6, TS 38.214], as for a SS/PBCH block the UE used for PRACH association, as described in clause 8.1, regardless of whether or not the UE is provided TCI-State for the CORESET where the UE receives the PDCCH with the DCI format \\( 1 \\_0 \\).  The UE does not expect to be indicated to transmit the PUCCH with the HARQ-ACK information at a time that is prior to a time when the UE applies a TA command that is provided by the transport block. If the UE does not detect the DCI format \\( 1 \\_0 \\) with CRC scrambled by the corresponding MsgB-RNTI within the window, or if the UE detects the DCI format 1_0 with CRC scrambled by the corresponding MsgB-RNTI within the window and LSBs of a SFN field in the DCI format 1_0, if applicable, are not same as corresponding LSBs of the SFN where the UE transmitted the PRACH, or if the UE does not correctly receive the transport block in the corresponding PDSCH within the window, or if the higher layers do not identify the RAPID associated with the PRACH transmission from the UE, the higher layers can indicate to the physical layer to transmit only PRACH according to Type-1 random access procedure or to transmit both PRACH and PUSCH according to Type-2 random access procedure [11, TS 38.321]. If requested by higher layers, the UE is expected to transmit a PRACH no later than \\( N_{\\mathrm{T}, 1}+0.75 \\mathrm{msec} \\) after the last symbol of the window, or the last symbol of the PDSCH reception, where \\( N_{\\mathrm{T}, 1} \\) is a time duration of \\( N_{1} \\) symbols corresponding to a PDSCH processing time for UE processing capability 1 when additional PDSCH DM-RS is configured. For \\( \\mu=0 \\), the UE assumes \\( N_{1,0}= \\) 14 [6, TS 38.214].\n---\nIn response to a PUSCH transmission scheduled by a RAR UL grant when a UE has not been provided a C-RNTI, the UE attempts to detect a DCI format \\( 1 \\_0 \\) with CRC scrambled by a corresponding TC-RNTI scheduling a PDSCH that includes a UE contention resolution identity [11, TS 38.321]. In response to the PDSCH reception with the UE contention resolution identity, the UE transmits HARQ-ACK information in a PUCCH. The PUCCH transmission is within a same active UL BWP as the PUSCH transmission. A minimum time between the last symbol of the PDSCH reception and the first symbol of the corresponding PUCCH transmission with the HARQ-ACK information is equal to \\( N_{T, 1}+0.5 \\mathrm{msec} . N_{T, 1} \\) is a time duration of \\( N_{1} \\) symbols corresponding to a PDSCH processing time for UE processing capability 1 when additional PDSCH DM-RS is configured. For \\( \\mu=0 \\), the UE assumes \\( N_{1,0}=14[6 \\), TS 38.214].  When detecting a DCI format in response to a PUSCH transmission scheduled by a RAR UL grant, as described in [11, TS 38.321], or corresponding PUSCH retransmission scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by a TCRNTI provided in the corresponding RAR message [11, TS 38.321], the UE may assume the PDCCH carrying the DCI format has the same DM-RS antenna port quasi co-location properties, as described in [6, TS 38.214], as for a SS/PBCH block the UE used for PRACH association, as described in clause 8.1, regardless of whether or not the UE is provided TCI-State for the CORESET where the UE receives the PDCCH with the DCI format.\n---\n- the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot - a duration of \\( T_{s}<k_{s} \\) indicating a number of slots that the search space set \\( s \\) exists by duration, or a number of slots in consecutive groups of slots where the search space set \\( s \\) can exist by duration-r 17\n---\nA UE does not expect to be provided a first symbol and a number of consecutive symbols for a CORESET that results to a PDCCH candidate mapping to symbols of different slots.  A UE does not expect any two PDCCH monitoring occasions on an active DL BWP, for a same search space set or for different search space sets, in a same CORESET to be separated by a non-zero number of symbols that is smaller than the CORESET duration.\n---\nA UE does not expect any two PDCCH monitoring occasions on an active DL BWP, for a same search space set or for different search space sets, in a same CORESET to be separated by a non-zero number of symbols that is smaller than the CORESET duration.\n---\nFor search space sets \\( s_{i}, s_{j}, s_{k} \\), and \\( s_{l} \\), that include searchSpaceLinking with values \\( s_{j}, s_{i}, s_{l} \\), and \\( s_{k} \\), respectively, a UE expects to simultaneously monitor PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)}=m_{s_{j}, n_{C I, 1}}^{(8)} \\), and \\( m_{s_{k}, n_{C I, 2}}^{(16)}=m_{s_{l}, n_{C I, 2}}^{(16)} \\) only if a first CCE of \\( m_{s_{i} n_{C I, 1}}^{(8)} \\) or \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\) has different index than a first CCE of \\( m_{s_{k} n}^{(16)}{ }_{C I, 2} \\) or \\( m_{s_{l} n n_{C I, 2}}^{(16)} \\) in a CORESET configured with \\( c c e \\) -REG-MappingType \\( = \\) 'nonInterleaved' and with duration of one symbol.\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol,\n---\nThe UE does not expect to cancel a transmission on the source cell if a first symbol of the transmission on the source cell is less than \\( T_{\\text {proc, } 2}+d \\) after a last symbol of a CORESET where the UE receives a PDCCH providing a DCI format scheduling a transmission on the target cell. \\( T_{\\text {proc }, 2} \\) is the PUSCH preparation time for the corresponding PUSCH processing capability [ 6 , TS 38.214] assuming \\( d_{2,1}=1, d \\) is a time duration corresponding to 2 symbols for SCS configuration \\( \\mu \\), and \\( \\mu \\) is the smallest SCS configuration between the SCS configuration of the PDCCH providing the DCI format and the SCS configuration for the transmission on the source cell. If the UE transmits PRACH using 1.25 kHz or 5 kHz SCS on the source cell, the UE determines \\( T_{\\text {proc, } 2} \\) assuming SCS configuration \\( \\mu=0 \\).\n---\nFor IAB-MT, duration indicates number of consecutive slots that a SearchSpace lasts in every occasion, i.e., upon every period as given in the periodicityAndOffset. If the field is absent, the IAB-MT applies the value 1 slot, except for DCI format \\( 2 \\_0 \\) and DCI format \\( 2 \\_5 \\). The IAB-MT ignores this field for DCI format \\( 2 \\_0 \\) and DCI format \\( 2 \\_5 \\). The maximum valid duration is periodicity-1 (periodicity as given in the monitoringSlotPeriodicityAndOffset). freqMonitorLocations Defines an association of the search space to multiple monitoring locations in the frequency domain and indicates whether the pattern configured in the associated CORESET is replicated to a specific RB set, see TS 38.213, clause 10.1. Each bit in the bitmap corresponds to one RB set, and the leftmost (most significant) bit corresponds to RB set 0 in the BWP. A bit set to 1 indicates that a frequency domain resource allocation replicated from the pattern configured in the associated CORESET is mapped to the RB set.\n---\nThe first symbol(s) for PDCCH monitoring in the slots configured for (multi-slot) PDCCH monitoring (see monitoringSlotPeriodicityAndOffset and duration). The most significant (left) bit represents the first OFDM in a slot, and the second most significant (left) bit represents the second OFDM symbol in a slot and so on. The bit(s) set to one identify the first OFDM symbol(s) of the control resource set within a slot. If the cyclic prefix of the BWP is set to extended CP, the last two bits within the bit string shall be ignored by the UE or IAB-MT.\n---\nFor DCI format 2_0, the first one symbol applies if the duration of CORESET (in the IE ControlResourceSet) identified by controlResourceSet/d indicates 3 symbols, the first two symbols apply if the duration of CORESET identified by controlResourceSet/d indicates 2 symbols, and the first three symbols apply if the duration of CORESET identified by controlResourceSet/d indicates 1 symbol. See TS 38.213 [13], clause 10. For IAB-MT: For DCI format \\( 2 \\_0 \\) or DCI format \\( 2 \\_5 \\), the first one symbol applies if the duration of CORESET (in the IE ControlResourceSet) identified by controlResourceSet/d indicates 3 symbols, the first two symbols apply if the duration of CORESET identified by controlResourceSet/dindicates 2 symbols, and the first three symbols apply if the duration of CORESET identified by controlResourceSet/d indicates 1 symbol.",
+    "generated_at": "2026-01-10T14:51:39.027403",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between 'controlresourcesetid' from 'bwp-dedicated_pdcch-config' and 'duration' from 'commoncontrolresourceset'. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

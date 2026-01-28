@@ -1,0 +1,60 @@
+Attaching to process 1431993
+[New LWP 1432026]
+[New LWP 1432027]
+[New LWP 1432028]
+[New LWP 1432029]
+[New LWP 1432030]
+[New LWP 1432031]
+[New LWP 1432032]
+[New LWP 1432033]
+[New LWP 1432057]
+[New LWP 1432058]
+[New LWP 1432059]
+[New LWP 1432060]
+[New LWP 1432061]
+[New LWP 1432062]
+[New LWP 1432063]
+[New LWP 1432064]
+[New LWP 1432065]
+[New LWP 1432066]
+[New LWP 1432067]
+[New LWP 1432068]
+[New LWP 1432069]
+[New LWP 1432070]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f953c1f27f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffcd6190550, rem=rem@entry=0x7ffcd6190550) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+[Thread 0x7f950cc96640 (LWP 1432067) exited]
+
+Thread 19 "UL__actor" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7f95117fa640 (LWP 1432066)]
+___pthread_mutex_lock (mutex=mutex@entry=0x8e72bb8) at ./nptl/pthread_mutex_lock.c:80
+(gdb) 80	./nptl/pthread_mutex_lock.c: No such file or directory.
+#0  ___pthread_mutex_lock (mutex=mutex@entry=0x8e72bb8) at ./nptl/pthread_mutex_lock.c:80
+        type = <optimized out>
+        __PRETTY_FUNCTION__ = "___pthread_mutex_lock"
+        id = <optimized out>
+#1  0x000059b9f1f96070 in pushNotifiedFIFO (nf=0x8e72ba8, msg=msg@entry=0x7f9508001740) at /home/openairinterface5g/common/utils/threadPool/./notified_fifo.h:134
+        ret = <optimized out>
+        __FUNCTION__ = "pushNotifiedFIFO"
+#2  0x000059b9f1f963b0 in actor_thread (arg=0x7f9522ffd820) at /home/openairinterface5g/common/utils/actor/actor.c:56
+        elt = 0x7f9508001740
+        actor = 0x7f9522ffd820
+        __FUNCTION__ = "actor_thread"
+#3  0x00007f953c1a1ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, 4836297880615466008, 140278220432960, 2, 140278935197648, 140723900448528, 4836297879205131288, 4836199176515433496}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#4  0x00007f953c233850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 1431993] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 1431993
+[Inferior 1 (process 1431993) detached]

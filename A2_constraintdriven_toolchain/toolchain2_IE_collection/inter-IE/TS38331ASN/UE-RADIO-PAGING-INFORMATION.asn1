@@ -1,0 +1,34 @@
+UERadioPagingInformation ::= SEQUENCE {
+    criticalExtensions                  CHOICE {
+        c1                                  CHOICE{
+            ueRadioPagingInformation            UERadioPagingInformation-IEs,
+            spare7 NULL,
+            spare6 NULL, spare5 NULL, spare4 NULL,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UERadioPagingInformation-IEs ::=    SEQUENCE {
+    supportedBandListNRForPaging        SEQUENCE (SIZE (1..maxBands)) OF FreqBandIndicatorNR    OPTIONAL,
+    nonCriticalExtension                UERadioPagingInformation-v15e0-IEs                      OPTIONAL
+}
+
+UERadioPagingInformation-v15e0-IEs ::= SEQUENCE {
+    dl-SchedulingOffset-PDSCH-TypeA-FDD-FR1     ENUMERATED {supported}          OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeA-TDD-FR1     ENUMERATED {supported}          OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeA-TDD-FR2     ENUMERATED {supported}          OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeB-FDD-FR1     ENUMERATED {supported}          OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeB-TDD-FR1     ENUMERATED {supported}          OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeB-TDD-FR2     ENUMERATED {supported}          OPTIONAL,
+    nonCriticalExtension                UERadioPagingInformation-v1700-IEs          OPTIONAL
+}
+
+UERadioPagingInformation-v1700-IEs ::= SEQUENCE {
+    ue-RadioPagingInfo-r17                 OCTET STRING (CONTAINING UE-RadioPagingInfo-r17)     OPTIONAL,
+    inactiveStatePO-Determination-r17      ENUMERATED {supported}                               OPTIONAL,
+    numberOfRxRedCap-r17                   ENUMERATED {one, two}                                OPTIONAL,
+    halfDuplexFDD-TypeA-RedCap-r17         SEQUENCE (SIZE (1..maxBands)) OF FreqBandIndicatorNR OPTIONAL,
+    nonCriticalExtension                   SEQUENCE {}                                          OPTIONAL
+}

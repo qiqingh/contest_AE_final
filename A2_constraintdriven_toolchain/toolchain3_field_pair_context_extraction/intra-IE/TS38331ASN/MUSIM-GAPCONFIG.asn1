@@ -1,0 +1,11 @@
+MUSIM-GapConfig-r17 ::=                  SEQUENCE {
+	musim-GapToReleaseList-r17       SEQUENCE (SIZE (1..3)) OF MUSIM-GapId-r17               OPTIONAL, -- Need N
+	musim-GapToAddModList-r17        SEQUENCE (SIZE (1..3)) OF MUSIM-Gap-r17             OPTIONAL, -- Need N
+	musim-AperiodicGap-r17           MUSIM-GapInfo-r17                OPTIONAL, -- Need N
+   ...
+}
+MUSIM-Gap-r17 ::=          SEQUENCE {
+    musim-GapId-r17                        MUSIM-GapId-r17,
+    musim-GapInfo-r17                      MUSIM-GapInfo-r17
+
+}

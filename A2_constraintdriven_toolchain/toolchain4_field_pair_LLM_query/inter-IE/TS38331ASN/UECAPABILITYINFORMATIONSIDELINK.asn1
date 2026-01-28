@@ -1,0 +1,103 @@
+UECapabilityInformationSidelink ::=         SEQUENCE {
+    rrc-TransactionIdentifier-r16               RRC-TransactionIdentifier,
+    criticalExtensions                          CHOICE {
+        ueCapabilityInformationSidelink-r16         UECapabilityInformationSidelink-r16-IEs,
+        criticalExtensionsFuture                    SEQUENCE {}
+    }
+}
+
+UECapabilityInformationSidelink-r16-IEs ::= SEQUENCE {
+    accessStratumReleaseSidelink-r16            AccessStratumReleaseSidelink-r16,
+    pdcp-ParametersSidelink-r16                 PDCP-ParametersSidelink-r16                                             OPTIONAL,
+    rlc-ParametersSidelink-r16                  RLC-ParametersSidelink-r16                                              OPTIONAL,
+    supportedBandCombinationListSidelinkNR-r16  BandCombinationListSidelinkNR-r16                                       OPTIONAL,
+    supportedBandListSidelink-r16               SEQUENCE (SIZE (1..maxBands)) OF BandSidelinkPC5-r16                    OPTIONAL,
+    appliedFreqBandListFilter-r16               FreqBandList                                                            OPTIONAL,
+    lateNonCriticalExtension                    OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                        UECapabilityInformationSidelink-v1700-IEs                               OPTIONAL
+}
+
+UECapabilityInformationSidelink-v1700-IEs ::= SEQUENCE {
+    mac-ParametersSidelink-r17                    MAC-ParametersSidelink-r17                                            OPTIONAL,
+    supportedBandCombinationListSidelinkNR-v1710  BandCombinationListSidelinkNR-v1710                                   OPTIONAL,
+    nonCriticalExtension                          SEQUENCE {}                                                           OPTIONAL
+}
+
+MAC-ParametersSidelink-r17 ::= SEQUENCE {
+    drx-OnSidelink-r17                          ENUMERATED {supported}                                                  OPTIONAL,
+    ...
+}
+
+AccessStratumReleaseSidelink-r16 ::= ENUMERATED { rel16, rel17, spare6, spare5, spare4, spare3, spare2, spare1, ... }
+
+PDCP-ParametersSidelink-r16 ::= SEQUENCE {
+    outOfOrderDeliverySidelink-r16              ENUMERATED {supported}      OPTIONAL,
+    ...
+}
+
+BandCombinationListSidelinkNR-r16 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombinationParametersSidelinkNR-r16
+
+BandCombinationListSidelinkNR-v1710 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombinationParametersSidelinkNR-v1710
+
+BandCombinationParametersSidelinkNR-r16 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelink-r16
+
+BandCombinationParametersSidelinkNR-v1710 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelink-v1710
+
+BandParametersSidelink-v1710 ::=    SEQUENCE {
+    --32-5a-1
+    tx-IUC-Scheme1-Mode2Sidelink-r17    ENUMERATED {supported}                      OPTIONAL,
+    --32-5b-1
+    tx-IUC-Scheme2-Mode2Sidelink-r17    ENUMERATED {n4, n8, n16}                    OPTIONAL
+}
+
+BandSidelinkPC5-r16 ::=           SEQUENCE {
+    freqBandSidelink-r16              FreqBandIndicatorNR,
+    --15-1
+    sl-Reception-r16                  SEQUENCE {
+        harq-RxProcessSidelink-r16        ENUMERATED {n16, n24, n32, n64},
+        pscch-RxSidelink-r16              ENUMERATED {value1, value2},
+        scs-CP-PatternRxSidelink-r16      CHOICE {
+            fr1-r16                           SEQUENCE {
+                scs-15kHz-r16                     BIT STRING (SIZE (16))                            OPTIONAL,
+                scs-30kHz-r16                     BIT STRING (SIZE (16))                            OPTIONAL,
+                scs-60kHz-r16                     BIT STRING (SIZE (16))                            OPTIONAL
+            },
+            fr2-r16                           SEQUENCE {
+                scs-60kHz-r16                     BIT STRING (SIZE (16))                            OPTIONAL,
+                scs-120kHz-r16                    BIT STRING (SIZE (16))                            OPTIONAL
+            }
+        }                                                                                           OPTIONAL,
+        extendedCP-RxSidelink-r16         ENUMERATED {supported}                                    OPTIONAL
+    }                                                                                               OPTIONAL,
+    --15-10
+    sl-Tx-256QAM-r16                  ENUMERATED {supported}                                        OPTIONAL,
+    --15-12
+    lowSE-64QAM-MCS-TableSidelink-r16 ENUMERATED {supported}                                        OPTIONAL,
+    ...,
+    [[
+    --15-14
+    csi-ReportSidelink-r16                SEQUENCE {
+        csi-RS-PortsSidelink-r16              ENUMERATED {p1, p2}
+    }                                                                                               OPTIONAL,
+    --15-19
+    rankTwoReception-r16                  ENUMERATED {supported}                                    OPTIONAL,
+    --15-23
+    sl-openLoopPC-RSRP-ReportSidelink-r16 ENUMERATED {supported}                                    OPTIONAL,
+    --13-1
+    sl-Rx-256QAM-r16                      ENUMERATED {supported}                                    OPTIONAL
+    ]],
+    [[
+    --32-5a-2
+    rx-IUC-Scheme1-PreferredMode2Sidelink-r17     ENUMERATED {supported}                           OPTIONAL,
+    --32-5a-3
+    rx-IUC-Scheme1-NonPreferredMode2Sidelink-r17  ENUMERATED {supported}                           OPTIONAL,
+    --32-5b-2
+    rx-IUC-Scheme2-Mode2Sidelink-r17               ENUMERATED {n5, n15, n25, n32, n35, n45, n50, n64} OPTIONAL,
+    --32-6-1
+    rx-IUC-Scheme1-SCI-r17                         ENUMERATED {supported}                           OPTIONAL,
+    --32-6-2
+    rx-IUC-Scheme1-SCI-ExplicitReq-r17             ENUMERATED {supported}                           OPTIONAL,
+    --32-7
+    scheme2-ConflictDeterminationRSRP-r17          ENUMERATED {supported}                           OPTIONAL
+    ]]
+}

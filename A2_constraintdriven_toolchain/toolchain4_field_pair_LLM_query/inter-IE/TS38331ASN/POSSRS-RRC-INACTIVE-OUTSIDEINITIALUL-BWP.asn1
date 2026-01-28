@@ -1,0 +1,19 @@
+PosSRS-RRC-Inactive-OutsideInitialUL-BWP-r17::= SEQUENCE {
+    -- R1 27-15b: Positioning SRS transmission in RRC_INACTIVE state configured outside initial UL BWP
+    maxSRSposBandwidthForEachSCS-withinCC-FR1-r17   ENUMERATED {bw5, bw10, bw15, bw20, bw25, bw30, bw35, bw40,
+                                                    bw45, bw50, bw60, bw70, bw80, bw90, bw100}                    OPTIONAL,
+    maxSRSposBandwidthForEachSCS-withinCC-FR2-r17   ENUMERATED {bw50, bw100, bw200, bw400}                        OPTIONAL,
+    maxNumOfSRSposResourceSets-r17                  ENUMERATED {n1, n2, n4, n8, n12, n16}                         OPTIONAL,
+    maxNumOfPeriodicSRSposResources-r17             ENUMERATED {n1, n2, n4, n8, n16, n32, n64}                    OPTIONAL,
+    maxNumOfPeriodicSRSposResourcesPerSlot-r17      ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}        OPTIONAL,
+    differentNumerologyBetweenSRSposAndInitialBWP-r17  ENUMERATED {supported}                                     OPTIONAL,
+    srsPosWithoutRestrictionOnBWP-r17               ENUMERATED {supported}                                        OPTIONAL,
+    maxNumOfPeriodicAndSemipersistentSRSposResources-r17  ENUMERATED {n1, n2, n4, n8, n16, n32, n64}              OPTIONAL,
+    maxNumOfPeriodicAndSemipersistentSRSposResourcesPerSlot-r17  ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}  OPTIONAL,
+    differentCenterFreqBetweenSRSposAndInitialBWP-r17  ENUMERATED {supported}                                     OPTIONAL,
+    switchingTimeSRS-TX-OtherTX-r17                 ENUMERATED {us100, us140, us200, us300, us500}                OPTIONAL,
+    -- R1 27-15c: Support of positioning SRS transmission in RRC_INACTIVE state outside initial BWP with semi-persistent SRS
+    maxNumOfSemiPersistentSRSposResources-r17       ENUMERATED {n1, n2, n4, n8, n16, n32, n64}                    OPTIONAL,
+    maxNumOfSemiPersistentSRSposResourcesPerSlot-r17  ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}      OPTIONAL,
+    ...
+}

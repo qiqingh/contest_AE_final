@@ -1,0 +1,5 @@
+SL-BWP-DiscPoolConfig-r17 ::=        SEQUENCE {
+    sl-DiscRxPool-r17                    SEQUENCE (SIZE (1..maxNrofRXPool-r16)) OF SL-ResourcePool-r16        OPTIONAL,    -- Cond HO
+    sl-DiscTxPoolSelected-r17            SL-TxPoolDedicated-r16                                               OPTIONAL,    -- Need M
+    sl-DiscTxPoolScheduling-r17          SL-TxPoolDedicated-r16                                               OPTIONAL     -- Need N
+}

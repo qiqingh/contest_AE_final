@@ -1,0 +1,11 @@
+ReportConfigToAddModList ::=        SEQUENCE (SIZE (1..maxReportConfigId)) OF ReportConfigToAddMod
+
+ReportConfigToAddMod ::=            SEQUENCE {
+    reportConfigId                      ReportConfigId,
+    reportConfig                        CHOICE {
+        reportConfigNR                      ReportConfigNR,
+        ...,
+        reportConfigInterRAT                ReportConfigInterRAT,
+        reportConfigNR-SL-r16               ReportConfigNR-SL-r16
+    }
+}

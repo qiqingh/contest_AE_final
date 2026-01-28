@@ -1,0 +1,78 @@
+{
+  "dsl_rule": "LE(field1, field2)",
+  "constraint_type": "RangeAlignment",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      686
+    ],
+    "field2_all": [
+      684
+    ],
+    "actual_pairs": [
+      [
+        [
+          686
+        ],
+        [
+          684
+        ]
+      ]
+    ]
+  },
+  "predicate": "field1 <= field2",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=4, field2=5",
+      "field1=2, field2=2"
+    ],
+    "invalid": [
+      "field1=6, field2=5"
+    ]
+  },
+  "notes": "The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs.",
+  "version_tags": [],
+  "meta": {
+    "ie_name": "pdsch-ServingCellConfig",
+    "field1": "maxMIMO-Layers",
+    "field2": "pdsch-ServingCellConfig",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "Indicates the maximum number of MIMO layers to be used for PDSCH in this DL BWP. If not configured, the UE uses the maxMIMO-Layers configuration in IE PDSCHServingCellConfig of the serving cell to which this BWP belongs, when the UE operates in this BWP. The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs.",
+    "generated_at": "2025-12-11T14:15:38.236914",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "RangeAlignment",
+      "dsl": "LE(field1, field2)",
+      "preconditions": [],
+      "predicate": "field1 <= field2",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=4, field2=5",
+          "field1=2, field2=2"
+        ],
+        "invalid": [
+          "field1=6, field2=5"
+        ]
+      },
+      "notes": "The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs.",
+      "version_tags": []
+    }
+  }
+}

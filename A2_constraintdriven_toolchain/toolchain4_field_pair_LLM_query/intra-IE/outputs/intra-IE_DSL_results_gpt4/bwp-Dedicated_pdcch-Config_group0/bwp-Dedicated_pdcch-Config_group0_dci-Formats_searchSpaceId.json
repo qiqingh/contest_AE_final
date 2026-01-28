@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      128
+    ],
+    "field2_all": [
+      116
+    ],
+    "actual_pairs": [
+      [
+        [
+          128
+        ],
+        [
+          116
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear, explicit, and normative relationship between the fields 'dci-Formats' and 'searchSpaceId' within the same IE 'bwp-Dedicated_pdcch-Config_group0'. The evidence discusses these fields in the context of various procedures and conditions, but does not provide a concrete rule linking their values or ranges directly.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "dci-Formats",
+    "field2": "searchSpaceId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 9,
+      "original_count": 9,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.3",
+      "7.3.1.6",
+      "11.4",
+      "10.1",
+      "6.3.2",
+      "11.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- for all other PDSCH transmissions, the set of N_{\\mathrm{BWP}, i}^{\\text {size }} resource blocks in bandwidth part i with starting position N_{\\mathrm{BWP}, i}^{\\text {start }} are divided into N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\mathrm{BWP}, i}^{\\text {size }}+\\left(N_{\\mathrm{BWP}, i}^{\\text {start }} \\bmod L_{i}\\right)\\right) / L_{i}\\right\\rceil resource-block bundles in increasing order of the resource-block number and bundle number where L_{i} is the bundle size for bandwidth part i provided by the higher-layer parameter vrb-ToPRB-Interleaver for DCI formats 1 \\_0,1 \\_1 , and 1 \\_3 in a UE-specific search space, or vrb-ToPRB-InterleaverDCI-1-2 for DCI format 1_2, and\n---\nA UE monitors a set of PDCCH candidates in one or more CORESETs on the active DL BWP on each activated serving cell configured with PDCCH monitoring according to corresponding search space sets where monitoring implies receiving each PDCCH candidate and decoding according to the monitored DCI formats.\n---\nIf a UE monitors PDCCH candidates for DCI formats with CRC scrambled by a C-RNTI and the UE is provided a nonzero value for searchSpacelD in PDCCH-ConfigCommon for a Type0/0A/2-PDCCH CSS set, or monitors PDCCH candidates for DCI formats with CRC scrambled by a MCCH-RNTI or a G-RNTI and the UE is provided a non-zero value for searchSpaceBroadcast in pdcch-Config-MCCH and pdcch-Config-MTCH for a Type0/0B-PDCCH CSS set, the UE determines monitoring occasions for PDCCH candidates of the Type0/0A/2-PDCCH CSS set, or of the Type0/0B-PDCCH set, respectively, based on the search space set associated with the value of searchSpaceID.\n---\n- a search space set index by searchSpaceLinking for another search space set that is linked to search space set s - if search space set s is a USS set, an indication by dci-Formats to monitor PDCCH candidates either for DCI format 0 \\_0 and DCI format 1 \\_0 , or for DCI format 0 \\_1 and DCI format 1 \\_1 , or an indication by dci-FormatsExt\n---\nA UE expects to monitor PDCCH candidates for up to 4 sizes of DCI formats that include up to 3 sizes of DCI formats with CRC scrambled by C-RNTI per serving cell. The UE counts a number of sizes for DCI formats per serving cell based on a number of configured PDCCH candidates in respective search space sets for the corresponding active DL BWP.\n---\nA PDCCH candidate with index m_{s_{j}, n_{C I}}^{(L)} for a search space set s_{j} using a set of L CCEs in a CORESET p on the active DL BWP for serving cell n_{C I} is not counted for monitoring if there is a PDCCH candidate with index m_{s_{i,} n_{C I}}^{(L)} for a search space set s_{i}<s_{j} , or if there is a PDCCH candidate with index n_{s_{j}, n_{C I}}^{(L)} and n_{s_{j}, n_{C I}}^{(L)}<m_{s_{j}, n_{C I}}^{(L)} , in the CORESET p on the active DL BWP for serving cell n_{C I} using a same set of L CCEs, the PDCCH candidates have identical scrambling, and the corresponding DCI formats for the PDCCH candidates have a same size; otherwise, the PDCCH candidate with index m_{s_{j}, n_{C I}}^{(L)} is counted for monitoring.\n---\nIf a PDCCH monitoring periodicity for DCI format 2 \\_0 , provided to a UE for the search space set S by monitoringSlotPeriodicityAndOffset, is smaller than a duration of a slot format combination the UE obtains at a PDCCH monitoring occasion for DCI format 2 \\_0 by a corresponding SFI-index field value, and the UE detects more than one DCI formats 2_0 indicating a slot format for a slot, the UE expects each of the more than one DCI formats 2_0 to indicate a same format for the slot.\n---\nIf a PDCCH monitoring periodicity for DCI format 2 \\_5 is smaller than a duration of an availability combination of soft symbols over a number of slots that the [AB-MT obtains at a PDCCH monitoring occasion for DCI format 2 _ 5 by a corresponding AI index field value, and the IAB-MT detects more than one DCI formats 2-5 indicating an availability combination of soft symbols or of soft RB sets in RB set groups in a slot, the IAB-MT expects that each of the more than one DCI formats 2_5 indicates a same value for the availability combination of the soft symbols or of soft RB sets in an RB set group in the slot. An [AB-MT monitors PDCCH candidates for a DCI format 2 _ 5 with CRC scrambled by AI-RNTI in one or both of the following search space sets:\n---\nThis parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to n -th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.",
+    "generated_at": "2025-12-11T14:17:02.791420",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence snippets do not establish a clear, explicit, and normative relationship between the fields 'dci-Formats' and 'searchSpaceId' within the same IE 'bwp-Dedicated_pdcch-Config_group0'. The evidence discusses these fields in the context of various procedures and conditions, but does not provide a concrete rule linking their values or ranges directly."
+    }
+  }
+}

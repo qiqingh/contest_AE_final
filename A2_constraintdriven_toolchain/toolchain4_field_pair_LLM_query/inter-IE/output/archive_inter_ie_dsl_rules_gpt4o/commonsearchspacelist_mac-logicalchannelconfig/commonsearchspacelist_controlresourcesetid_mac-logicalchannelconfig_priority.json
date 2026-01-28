@@ -1,0 +1,74 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      19
+    ],
+    "field2_all": [
+      89,
+      154,
+      219
+    ],
+    "actual_pairs": [
+      [
+        [
+          19
+        ],
+        [
+          89,
+          154,
+          219
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'controlresourcesetid' from 'commonsearchspacelist' and 'priority' from 'mac-logicalchannelconfig'. The evidence primarily discusses intra-IE behavior related to HARQ procedures.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "commonsearchspacelist",
+    "field1": "controlresourcesetid",
+    "ie2_name": "mac-logicalchannelconfig",
+    "field2": "priority",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- is not cancelled by an overlapping PUCCH or PUSCH transmission of larger priority index - overlaps with a symbol indicated as downlink by tdd-UL-DL-ConfigurationCommon or tdd-UL-DLConfigDedicated, or indicated for a SS/PBCH block by ssb-PositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set\n---\n- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, of smaller priority index and the UE drops the first PUCCH transmission due to an overlapping with a second PUSCH or PUCCH transmission of larger priority index, the UE stops the procedure to determine the earliest second slot in the slot - the second HARQ-ACK information bits correspond to SPS PDSCH configurations with spsHARQdeferral values that are larger than or equal to a time difference, with reference to slots for PUCCH transmissions on the primary cell, between the second slot and the slot of the SPS PDSCH reception, if any - if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot\n---\n- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "generated_at": "2025-12-10T13:57:01.066250",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'controlresourcesetid' from 'commonsearchspacelist' and 'priority' from 'mac-logicalchannelconfig'. The evidence primarily discusses intra-IE behavior related to HARQ procedures.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

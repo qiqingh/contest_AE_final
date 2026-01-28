@@ -1,0 +1,16 @@
+SL-CBR-PriorityTxConfigList-r16 ::= SEQUENCE (SIZE (1..8)) OF SL-PriorityTxConfigIndex-r16
+
+SL-CBR-PriorityTxConfigList-v1650 ::= SEQUENCE (SIZE (1..8)) OF SL-PriorityTxConfigIndex-v1650
+
+SL-PriorityTxConfigIndex-r16 ::=    SEQUENCE {
+    sl-PriorityThreshold-r16             INTEGER (1..8)                                                   OPTIONAL,    -- Need M
+    sl-DefaultTxConfigIndex-r16          INTEGER (0..maxCBR-Level-1-r16)                                  OPTIONAL,    -- Need M
+    sl-CBR-ConfigIndex-r16               INTEGER (0..maxCBR-Config-1-r16)                                 OPTIONAL,    -- Need M
+    sl-Tx-ConfigIndexList-r16            SEQUENCE (SIZE (1.. maxCBR-Level-r16)) OF SL-TxConfigIndex-r16   OPTIONAL     -- Need M
+}
+
+SL-PriorityTxConfigIndex-v1650 ::=  SEQUENCE {
+    sl-MCS-RangeList-r16                SEQUENCE (SIZE (1..maxCBR-Level-r16)) OF SL-MinMaxMCS-List-r16    OPTIONAL     -- Need M
+}
+
+SL-TxConfigIndex-r16 ::=            INTEGER (0..maxTxConfig-1-r16)

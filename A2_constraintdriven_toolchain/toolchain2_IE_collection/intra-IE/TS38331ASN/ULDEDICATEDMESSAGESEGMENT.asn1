@@ -1,0 +1,14 @@
+ULDedicatedMessageSegment-r16 ::=       SEQUENCE {
+    criticalExtensions                      CHOICE {
+        ulDedicatedMessageSegment-r16           ULDedicatedMessageSegment-r16-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+ULDedicatedMessageSegment-r16-IEs ::=     SEQUENCE {
+    segmentNumber-r16                         INTEGER (0..15),
+    rrc-MessageSegmentContainer-r16           OCTET STRING,
+    rrc-MessageSegmentType-r16                ENUMERATED {notLastSegment, lastSegment},
+    lateNonCriticalExtension                  OCTET STRING                                  OPTIONAL,
+    nonCriticalExtension                      SEQUENCE {}                                   OPTIONAL
+}

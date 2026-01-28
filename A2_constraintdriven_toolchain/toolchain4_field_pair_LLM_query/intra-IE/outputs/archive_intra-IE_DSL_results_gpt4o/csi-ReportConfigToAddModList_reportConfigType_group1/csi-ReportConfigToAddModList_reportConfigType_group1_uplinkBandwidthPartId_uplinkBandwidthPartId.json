@@ -1,0 +1,77 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      852
+    ],
+    [
+      852
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields 'uplinkBandwidthPartId' within the same IE. The evidence snippets do not mention these fields or relate them in a way that would establish a semantic constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_reportConfigType_group1",
+    "field1": "uplinkBandwidthPartId",
+    "field2": "uplinkBandwidthPartId",
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 298,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.1.3.1",
+      "6.4.1.4.3",
+      "5.1.6.1.1",
+      "5.1.2.2.2",
+      "5.1.2.1",
+      "7.3.1.6",
+      "16.5.1.1",
+      "6.3.2.2.2",
+      "5.1.2.2",
+      "9.1.2.1",
+      "5.1",
+      "4.4.5"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- l \\in\\{0,4\\}, l \\in\\{1,5\\}, l \\in\\{2,6\\}, l \\in\\{3,7\\}, l \\in\\{7,11\\}, l \\in\\{8,12\\} or l \\in\\{9,13\\} for frequency range 2 . - a single port CSI-RS resource with density \\rho=3 given by Table 7.4.1.5.3-1 from [4, TS 38.211] and higher layer parameter density configured by CSI-RS-ResourceMapping. - if carrier N_{\\mathrm{grid}}^{\\mathrm{size}, \\mu}=52, N_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}}=52, \\mu=0 and the carrier is configured in paired spectrum, the band width of the CSI-RS resource, as given by the higher layer parameter freq Band configured by CSI-RS-ResourceMapping, is X resource blocks, where X \\geq 28 resources if the UE indicates trs-AddB W-Set I for the trs-AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 1] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation and X \\geq 32 if the UE indicates t r s -AddBW-Set2 for the AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 2] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation; in these cases, if the UE is configured with CSI-RS comprising \\mathrm{X}<52 resource blocks, the UE does not expect that the total number of PRBs allocated for DL transmissions but not overlapped with the PRBs carrying CSI-RS for tracking is more than 4 , where all CSI-RS resource configurations shall span the same set of resource blocks; otherwise, the bandwidth of the CSI-RS resource, as given by the higher layer parameter freqBand configured by CSI-RS-ResourceMapping, is the minimum of 52 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks. For operation with shared spectrum channel access, freqBand configured by CSI-RSResourceMapping, is the minimum of 48 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}} sizesource blocks. - the UE is not expected to be configured with the periodicity of 2^{\\mu} \\times 10 slots if the band width of CSI-RS resource is larger than 52 resource blocks. - the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211].\n---\n9.1.2.1 Type-1 HARQ-ACK codebook in physical uplink control channel For a serving cell c , an active DL BWP, and an active UL BWP, as described in clause 12, the UE determines a set of M_{A, C} occasions for candidate PDSCH receptions for which the UE can transmit corresponding HARQ-ACK information in a PUCCH in slot n_{U} . If serving cell c is deactivated, the UE uses as the active DL BWP for determining the set of M_{A, c} occasions for candidate PDSCH receptions a DL BWP provided by firstActiveDowninkBWP-Id. The determination is based: a) on a set of slot timing values K_{1} associated with the active UL BWP on the primary cell or, if the PUCCH transmission is indicated by a DCI format to be on the PUCCH-sSCell as described in clause 9 A , on a set of slot timing values K_{1} associated with the active UL BWP on the PUCCH-sSCell - If the UE is configured to monitor PDCCH for DCI format 1 \\_0 and is not configured to monitor PDCCH for either DCI format 1 \\_1 or DCI format 1 \\_2 for serving cell c, \\bar{K}_{1} is provided by the slot timing values \\{1,2,3 , 4,5,6,7,8\\} for SCS configuration of PUCCH transmission \\mu \\leq 3,\\{7,8,12,16,20,24,28,32\\} for \\mu=5 , and \\{13,16,24,32,40,48,56,64\\} for \\mu=6\n---\nwhile m<M Set c=0 -serving cell index: lower indexes correspond to lower RRC indexes of corresponding cell while c<N_{\\text {cells }}^{\\mathrm{DL}} if PDCCH monitoring occasion m is before an active DL BWP change on serving cell c or an active UL BWP change on the PCell and an active DL BWP change is not triggered in PDCCH monitoring occasion m \\[ c=c+1 ;\n---\n16.5.1.1 Type-1 HARQ-ACK codebook in physical uplink control channel For a SL BWP on a carrier, and an active UL BWP on the primary cell, as described in clause 12, a UE determines a set M_{A} of occasions for candidate PSSCH transmissions with corresponding PSFCH reception occasions for which the UE can multiplex corresponding HARQ-ACK information in a PUCCH transmission in slot n_{U} . The determination is based on: a) a set of slot timing values K_{1} associated with the SLBWP where K_{1} is provided by sl-PSFCH-ToPUCCH for DCI format 3 \\_0 or by sl-PSFCH-ToPUCCH-CG-Typel b) the ratio 2^{\\mu_{\\mathrm{SL}}-\\mu_{\\mathrm{UL}}} between the sidelink SCS configuration \\mu_{\\mathrm{SL}} and the uplink SCS configuration \\mu_{\\mathrm{UL}} provided by subcarrierSpacing in sl-BWP-Config and BWP-Uplink for the SL BWP and the active UL BWP, respectively\n---\n4.4.5 Bandwidth part A bandwidth part is a subset of contiguous common resource blocks defined in clause 4.4.4.3 for a given numerology \\mu_{i} in bandwidth part i on a given carrier. The starting position N_{\\mathrm{BWP}, i}^{\\mathrm{start}, \\mu} and the number of resource blocks N_{\\mathrm{BWP}, i}^{\\mathrm{size}, \\mu} in a bandwidth part shall fulfil N_{\\operatorname{grid}, x}^{\\operatorname{start}, \\mu} \\leq N_{\\mathrm{BWP}, i}^{\\operatorname{start}, \\mu}<N_{\\operatorname{grid}, x}^{\\operatorname{start}, \\mu}+N_{\\operatorname{grid}, x}^{\\operatorname{size}, \\mu} and N_{\\operatorname{grid}, x}^{\\operatorname{start}, \\mu}<N_{\\mathrm{BWP}, i}^{\\operatorname{start}, \\mu}+N_{\\mathrm{BWP}, i}^{\\operatorname{size}, \\mu} \\leq N_{\\operatorname{grid}, x}^{\\operatorname{start}, \\mu}+N_{\\operatorname{grid}, x}^{\\operatorname{size}, \\mu} , respectively. Configuration of a bandwidth part is described in clause 12 of [5, TS 38.213]. A UE can be configured with up to four bandwidth parts in the downlink with a single downlink bandwidth part being active at a given time. The UE is not expected to receive PDSCH, PDCCH, or CSI-RS (except for RRM) outside an active band width part.\n---\n- m_{\\mathrm{cs}}=0 except for PUCCH format 0 when it depends on the information to be transmitted according to clause 9.2 of [5, TS 38.213]. - m_{\\text {int }} is given by - m_{\\text {int }}=5 n_{\\text {IRB }}^{\\mu} for PUCCH formats 0 and 1 if PUCCH shall use interlaced mapping according to any of the higher-layer parameters uselnterlacePUCCH-PUSCH in BWP-UplinkCommon or uselnterlacePUCCHPUSCH in BWP-UplinkDedicated, where n_{1 \\mathrm{RB}}^{\\mu} is the resource block number within the interlace; - m_{\\text {int }}=0 otherwise\n---\n- The reference point for k_{0}^{\\left(p_{i}\\right)}=0 is the lowest subcarrier of the configured bandwidth for SRS with Tx hopping configured by the parameter XXX in TxhoppingBandwidth. otherwise: - If N_{\\mathrm{BWP}}^{\\mathrm{start}} \\leq n_{\\text {shift }} the reference point for k_{0}^{\\left(p_{i}\\right)}=0 is subcarrier 0 in common resource block 0 , otherwise the reference point is the lowest subcarrier of the BWP. If the SRS is configured by the [E SRS-PosResource, the quantity k_{\\text {offset }}^{l^{\\prime}} is given by Table 6.4.1.4.3-2, otherwise k_{\\text {offset }}^{l^{\\prime}}=0 .\n---\nETSI TS 138211 V18.2.0 (2024-05) divided into N_{\\text {bundle }}=\\left[N_{\\text {BWP, init }}^{\\text {size }} / L\\right] resource-block bundles in increasing order of the resource-block number and bundle number where L=2 is the bundle size and N_{\\text {BWP, init }}^{\\text {size }} is the size of CORESET 0 . - resource block bundle N_{\\text {bundle }}-1 consists of N_{\\text {BWP, init }}^{\\text {size }} \\bmod L resource blocks if N_{\\text {BWP, init }}^{\\text {size }} \\bmod L>0 and L resource blocks otherwise, - all other resource block bundles consists of L resource blocks.\n---\nWhen a UE is configured with both sfnSchemePdsch and sfnSchemePdcch, the UE shall expect that sfnSchemePdsch and sfnSchemePdcch are set to the same scheme, either 'sfnSchemeA' or 'sfnSchemeB'. When a UE is configured with sfnSchemePdsch and/or sfnSchemePdcch, the UE shall expect that the sfnSchemePdsch and/or sfnSchemePdcch configuration are the same in all DL BWP within a CC other than initial BWP, and the UE shall ETSI\n---\nIf a UE is configured with pdsch-TimeDomainAllocationListForMultiPDSCH-r 17 in which one or more rows contain multiple SLIVs for PDSCH, the UE does not expect to be configured with higher layer parameter repetitionNumber in pdsch-TimeDomainAllocationListForMultiPDSCH-r17. If a UE is configured with pdsch-TimeDomainAllocationListForMultiPDSCH-r17 in which one or more rows contain multiple SLIVs for PDSCH on a DL BWP of a serving cell, the UE does not apply pdsch-AggregationFactor in PDSCH-config, if configured, to DCI format 1_1 on the DL BWP of the serving cell. If a UE is configured with pdsch-TimeDomainAllocationListForMultiPDSCH-r I 7 in which one or more rows contain multiple SLIVs for PDSCH on a DL BWP of a serving cell, when any two DL DCIs end in the same symbol and at least one of the DCIs schedules multiple PDSCHs, the UE does not expect that the scheduled PDSCH(s) by the two DCIs have overlapping spans, where the span associated with a DCI is defined from the beginning of the first scheduled PDSCH or up to the end of the last scheduled PDSCH.\n---\nresourceAllocationDCI-1-2 for DCI format 1 _2 or by the higher layer parameter resourceAllocation in PDSCH-ConfigMulticast for DCI format 4_2. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part. For a PDSCH scheduled with a DCI format 1 \\_0 in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format 1 \\_0 , the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.\n---\n\\] where L_{R B s} \\geq 1 and shall not exceed N_{B W P}^{s i z e}-R B_{\\text {start }} . When the DCI size for DCI format 1 \\_0 in USS is derived from the size of DCI format 1 \\_0 in CSS but applied to an active BWP with size of N_{\\mathrm{BWP}}^{\\text {active }} , a downlink type 1 resource block assignment field consists of a resource indication value ( R I V ) corresponding to a starting resource block R B_{s t a r t}=0, K, 2 \\cdot K, \\ldots,\\left(N_{\\mathrm{BWP}}^{\\text {intial }}-1\\right) \\cdot K and a length in terms of virtually contiguously allocated resource blocks L_{R B s}=K, 2 \\cdot K, \\ldots, N_{B W P}^{\\text {initial }} \\cdot K , where N_{B W P}^{\\text {initial }} is given by - the size of CORESET 0 if CORESET 0 is configured for the cell; - the size of initial DL bandwidth part if CORESET 0 is not configured for the cell.",
+    "generated_at": "2025-12-09T09:48:26.791063",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields 'uplinkBandwidthPartId' within the same IE. The evidence snippets do not mention these fields or relate them in a way that would establish a semantic constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

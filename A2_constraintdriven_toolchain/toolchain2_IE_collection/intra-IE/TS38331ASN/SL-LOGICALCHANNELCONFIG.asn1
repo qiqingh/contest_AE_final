@@ -1,0 +1,18 @@
+SL-LogicalChannelConfig-r16 ::=            SEQUENCE {
+    sl-Priority-r16                            INTEGER (1..8),
+    sl-PrioritisedBitRate-r16                  ENUMERATED {kBps0, kBps8, kBps16, kBps32, kBps64, kBps128, kBps256, kBps512,
+                                               kBps1024, kBps2048, kBps4096, kBps8192, kBps16384, kBps32768, kBps65536, infinity},
+    sl-BucketSizeDuration-r16                  ENUMERATED {ms5, ms10, ms20, ms50, ms100, ms150, ms300, ms500, ms1000,
+                                               spare7, spare6, spare5, spare4, spare3,spare2, spare1},
+    sl-ConfiguredGrantType1Allowed-r16         ENUMERATED {true}                                                        OPTIONAL,   -- Need R
+    sl-HARQ-FeedbackEnabled-r16                ENUMERATED {enabled, disabled }                                          OPTIONAL,   -- Need R
+    sl-AllowedCG-List-r16                      SEQUENCE (SIZE (0.. maxNrofCG-SL-1-r16)) OF SL-ConfigIndexCG-r16
+                                                                                                                        OPTIONAL,   -- Need R
+    sl-AllowedSCS-List-r16                     SEQUENCE (SIZE (1..maxSCSs)) OF SubcarrierSpacing                        OPTIONAL,   -- Need R
+    sl-MaxPUSCH-Duration-r16                   ENUMERATED {ms0p02, ms0p04, ms0p0625, ms0p125, ms0p25, ms0p5, spare2, spare1}
+                                                                                                                        OPTIONAL,   -- Need R
+    sl-LogicalChannelGroup-r16                 INTEGER (0..maxLCG-ID)                                                   OPTIONAL,   -- Need R
+    sl-SchedulingRequestId-r16                 SchedulingRequestId                                                      OPTIONAL,   -- Need R
+    sl-LogicalChannelSR-DelayTimerApplied-r16  BOOLEAN                                                                  OPTIONAL,   -- Need R
+    ...
+}

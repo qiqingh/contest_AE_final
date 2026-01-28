@@ -1,0 +1,26 @@
+SIB20-r17 ::=	SEQUENCE {
+    mcch-Config-r17                MCCH-Config-r17,
+    cfr-ConfigMCCH-MTCH-r17        CFR-ConfigMCCH-MTCH-r17 OPTIONAL,  -- Need S
+    lateNonCriticalExtension       OCTET STRING            OPTIONAL,
+    ...
+}
+
+MCCH-Config-r17 ::= SEQUENCE {
+    mcch-RepetitionPeriodAndOffset-r17   MCCH-RepetitionPeriodAndOffset-r17,
+    mcch-WindowStartSlot-r17             INTEGER (0..79),
+    mcch-WindowDuration-r17              ENUMERATED {sl2, sl4, sl8, sl10, sl20, sl40,sl80, sl160}     OPTIONAL, -- Need S
+    mcch-ModificationPeriod-r17          ENUMERATED {rf2, rf4, rf8, rf16, rf32, rf64, rf128, rf256,
+                                         rf512, rf1024, r2048, rf4096, rf8192, rf16384, rf32768, rf65536}
+}
+
+MCCH-RepetitionPeriodAndOffset-r17 ::= CHOICE {
+    rf1-r17                                INTEGER(0),
+    rf2-r17                                INTEGER(0..1),
+    rf4-r17                                INTEGER(0..3),
+    rf8-r17                                INTEGER(0..7),
+    rf16-r17                               INTEGER(0..15),
+    rf32-r17                               INTEGER(0..31),
+    rf64-r17                               INTEGER(0..63),
+    rf128-r17                              INTEGER(0..127),
+    rf256-r17                              INTEGER(0..255)
+}

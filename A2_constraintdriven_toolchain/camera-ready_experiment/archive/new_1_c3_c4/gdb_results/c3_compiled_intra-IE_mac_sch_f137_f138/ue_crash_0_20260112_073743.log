@@ -1,0 +1,175 @@
+Attaching to process 57848
+[New LWP 57864]
+[New LWP 57865]
+[New LWP 57866]
+[New LWP 57867]
+[New LWP 57868]
+[New LWP 57869]
+[New LWP 57871]
+[New LWP 57872]
+[New LWP 57912]
+[New LWP 57913]
+[New LWP 57914]
+[New LWP 57915]
+[New LWP 57916]
+[New LWP 57917]
+[New LWP 57918]
+[New LWP 57919]
+[New LWP 57920]
+[New LWP 57921]
+[New LWP 57922]
+[New LWP 57923]
+[New LWP 57924]
+[New LWP 57925]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000075a987c6f7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffd0d525640, rem=rem@entry=0x7ffd0d525640) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+44	./nptl/pthread_kill.c: No such file or directory.
+
+Thread 20 "UEthread_0" received signal SIGABRT, Aborted.
+[Switching to Thread 0x75a958725640 (LWP 57922)]
+__pthread_kill_implementation (no_tid=0, signo=6, threadid=129370193811008) at ./nptl/pthread_kill.c:44
+(gdb) #0  __pthread_kill_implementation (no_tid=0, signo=6, threadid=129370193811008) at ./nptl/pthread_kill.c:44
+        tid = <optimized out>
+        ret = 0
+        pd = 0x75a958725640
+        old_mask = {__val = {0 <repeats 16 times>}}
+        ret = <optimized out>
+        pd = <optimized out>
+        old_mask = <optimized out>
+        ret = <optimized out>
+        tid = <optimized out>
+        ret = <optimized out>
+        resultvar = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        __private = <optimized out>
+        __oldval = <optimized out>
+        result = <optimized out>
+#1  __pthread_kill_internal (signo=6, threadid=129370193811008) at ./nptl/pthread_kill.c:78
+No locals.
+#2  __GI___pthread_kill (threadid=129370193811008, signo=signo@entry=6) at ./nptl/pthread_kill.c:89
+No locals.
+#3  0x000075a987bcc476 in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+        ret = <optimized out>
+#4  0x000075a987bb27f3 in __GI_abort () at ./stdlib/abort.c:79
+        save_stage = 1
+        act = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {0 <repeats 16 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        sigs = {__val = {32, 0 <repeats 15 times>}}
+#5  0x000075a987c13677 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x75a987d65b77 "%s\n") at ../sysdeps/posix/libc_fatal.c:156
+        ap = {{gp_offset = 24, fp_offset = 30121, overflow_arg_area = 0x75a9587215c0, reg_save_area = 0x75a958721550}}
+        fd = <optimized out>
+        list = <optimized out>
+        nlist = <optimized out>
+        cp = <optimized out>
+#6  0x000075a987c2acfc in malloc_printerr (str=str@entry=0x75a987d68838 "free(): corrupted unsorted chunks") at ./malloc/malloc.c:5664
+No locals.
+#7  0x000075a987c2cf16 in _int_free (av=0x75a950000030, p=0x75a950007b70, have_lock=<optimized out>) at ./malloc/malloc.c:4630
+        size = 92208
+        fb = <optimized out>
+        nextchunk = 0x75a95001e3a0
+        nextsize = 80
+        nextinuse = <optimized out>
+        prevsize = <optimized out>
+        bck = 0x75a950000090
+        fwd = <optimized out>
+        __PRETTY_FUNCTION__ = "_int_free"
+#8  0x000075a987c2f453 in __GI___libc_free (mem=<optimized out>) at ./malloc/malloc.c:3391
+        ar_ptr = <optimized out>
+        p = <optimized out>
+        err = 9
+#9  0x00006293893ae205 in readFrame (UE=UE@entry=0x75a984024010, timestamp=timestamp@entry=0x75a958721bd8, toTrash=toTrash@entry=true) at /home/openairinterface5g/executables/nr-ue.c:764
+        i = <optimized out>
+        read_block_size = <optimized out>
+        tmp = 23040
+        slot = 0
+        x = <optimized out>
+        fp = 0x75a984024b10
+        num_frames = <optimized out>
+        rxp = {0x75a950007b80, 0x75a98458b5a0, 0x75a95002b5e0, 0x75a98458b5b0}
+        __FUNCTION__ = "readFrame"
+#10 0x00006293893af009 in UE_thread (arg=0x75a984024010) at /home/openairinterface5g/executables/nr-ue.c:923
+        res = <optimized out>
+        firstSymSamp = <optimized out>
+        readBlockSize = <optimized out>
+        newRx = <optimized out>
+        slot = <optimized out>
+        curMsg = <optimized out>
+        next_frame_tx = <optimized out>
+        next_tx_slot_and_frame = <optimized out>
+        slot_nr = <optimized out>
+        iq_shift_to_apply = <optimized out>
+        tmp = <optimized out>
+        writeTimestamp = <optimized out>
+        ret = <optimized out>
+        curMsgTx = <optimized out>
+        wait_for_prev_slot = <optimized out>
+        next_duration_rx_to_tx = <optimized out>
+        next_nr_slot_tx = <optimized out>
+        next_barrier = <optimized out>
+        tmp = <optimized out>
+        rx_timestamp = 151766148
+        writeBlockSize = <optimized out>
+        curMsgRx = <optimized out>
+        newTx = <optimized out>
+        slot_and_frame = <optimized out>
+        dummy = <optimized out>
+        UE = 0x75a984024010
+        rxp = {0x75a95cd13250, 0x0, 0x0, 0x0}
+        stream_status = STREAM_STATUS_SYNCED
+        cfg = 0x75a9842d0b38
+        tmp = <optimized out>
+        __FUNCTION__ = "UE_thread"
+        fp = 0x75a984024b10
+        sl_cfg = 0x0
+        tmp2 = <optimized out>
+        nf = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 0, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 39 times>, __align = 0}, notifF = {__data = {__wseq = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g1_start = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g_refs = {0, 0}, __g_size = {0, 0}, __g1_orig_size = 0, __wrefs = 0, __g_signals = {0, 0}}, __size = '\000' <repeats 47 times>, __align = 0}, abortFIFO = false}
+        freeBlocks = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = <optimized out>, __count = <optimized out>, __owner = <optimized out>, __nusers = <optimized out>, __kind = <optimized out>, __spins = <optimized out>, __elision = <optimized out>, __list = {__prev = <optimized out>, __next = <optimized out>}}, __size = {<optimized out> <repeats 40 times>}, __align = <optimized out>}, notifF = {__data = {__wseq = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g1_start = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g_refs = {<optimized out>, <optimized out>}, __g_size = {<optimized out>, <optimized out>}, __g1_orig_size = <optimized out>, __wrefs = <optimized out>, __g_signals = {<optimized out>, <optimized out>}}, __size = {<optimized out> <repeats 48 times>}, __align = <optimized out>}, abortFIFO = <optimized out>}
+        timing_advance = 0
+        mac = 0x75a96c473010
+        syncRunning = true
+        nb_slot_frame = 20
+        absolute_slot = 6587
+        decoded_frame_rx = 172
+        trashed_frames = <optimized out>
+        tx_wait_for_dlsch = {0 <repeats 160 times>}
+        shiftForNextFrame = 0
+        intialSyncOffset = 115200
+        sync_timestamp = 129370052100240
+        stats_printed = false
+        ntn_ta_common = 0
+        ntn_koffset = <optimized out>
+        duration_rx_to_tx = 3
+        nr_slot_tx_offset = 0
+        update_ntn_system_information = false
+#11 0x000075a987c1eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, 1706419513571862425, 129370193811008, 2, 129370987554768, 140724826951696, 1706419513296086937, 1706816871745775513}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#12 0x000075a987cb0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 57848] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 57848
+[Inferior 1 (process 57848) detached]

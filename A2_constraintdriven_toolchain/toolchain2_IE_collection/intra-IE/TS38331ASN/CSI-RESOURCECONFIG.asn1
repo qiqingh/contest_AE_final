@@ -1,0 +1,18 @@
+CSI-ResourceConfig ::=      SEQUENCE {
+    csi-ResourceConfigId        CSI-ResourceConfigId,
+    csi-RS-ResourceSetList      CHOICE {
+        nzp-CSI-RS-SSB              SEQUENCE {
+            nzp-CSI-RS-ResourceSetList  SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-ResourceSetsPerConfig)) OF NZP-CSI-RS-ResourceSetId
+                                                                                                                            OPTIONAL, -- Need R
+            csi-SSB-ResourceSetList     SEQUENCE (SIZE (1..maxNrofCSI-SSB-ResourceSetsPerConfig)) OF CSI-SSB-ResourceSetId  OPTIONAL  -- Need R
+        },
+        csi-IM-ResourceSetList      SEQUENCE (SIZE (1..maxNrofCSI-IM-ResourceSetsPerConfig)) OF CSI-IM-ResourceSetId
+    },
+
+    bwp-Id                      BWP-Id,
+    resourceType                ENUMERATED { aperiodic, semiPersistent, periodic },
+    ...,
+    [[
+    csi-SSB-ResourceSetListExt-r17      CSI-SSB-ResourceSetId                                                  OPTIONAL  -- Need R
+    ]]
+}

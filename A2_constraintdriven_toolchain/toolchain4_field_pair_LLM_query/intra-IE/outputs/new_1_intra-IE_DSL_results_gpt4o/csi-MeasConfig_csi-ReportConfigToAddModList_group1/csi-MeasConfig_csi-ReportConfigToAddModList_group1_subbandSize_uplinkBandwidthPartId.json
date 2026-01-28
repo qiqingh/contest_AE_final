@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      938
+    ],
+    "field2_all": [
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          938
+        ],
+        [
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between subbandSize and uplinkBandwidthPartId within the same IE. The evidence lacks explicit normative wording or mathematical relations linking these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "subbandSize",
+    "field2": "uplinkBandwidthPartId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.2.5",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- 7 or 8 when higher layer parameter typeII-RI-Restriction-r16 is configured with r_{i}=1 for any i>1 . - \\quad 7 or 8 when R=2 . - The parameter R is configured with the higher-layer parameter numberOfPMI-SubbandsPerCQI-Subband. This parameter controls the total number of precoding matrices N_{3} indicated by the PMI as a function of the number of configured subbands in csi-ReportingBand, the subband size configured by the higher-level parameter subbandSize and of the total number of PRBs in the bandwidth part according to Table 5.2.1.4-2, as follows: - When R=1 : - One precoding matrix is indicated by the PMI for each subband in csi-ReportingBand. - When R=2 : - For each subband in csi-ReportingBand that is not the first or last subband of a BWP, two precoding matrices are indicated by the PMI: the first precoding matrix corresponds to the first N_{P R B}^{S B} / 2 PRBs of the subband and the second precoding matrix corresponds to the last N_{P R B}^{S B} / 2 PRBs of the subband. - For each subband in csi-ReportingBand that is the first or last subband of a BWP - If \\left(N_{B W P, i}^{\\text {start }} \\bmod N_{P R B}^{S B}\\right) >= \\frac{N_{P R B}^{S B}}{2} , one precoding matrix is indicated by the PMI corresponding to the first subband. If \\left(N_{B W P, i}^{\\text {start }} \\bmod N_{P R B}^{S B}\\right)<\\frac{N_{P R B}^{S B}}{2} , two precoding matrices are indicated by the PMI corresponding to the first subband: the first precoding matrix corresponds to the first \\frac{N_{P R B}^{S B}}{2}- ( N_{B W P, i}^{s t a r t} \\bmod N_{P R B}^{S B} ) PRBs of the first subband and the second precoding matrix corresponds to the last \\frac{N_{P R B}^{S B}}{2} PRBs of the first subband.\n---\n\\begin{tabular}{l} subbandSize Indicates one out of two possible BWP-dependent values for the subband size as indicated in TS 38.214 [19], table 5.2.1.4-2. If csi-ReportingBand is absent, the UE shall ignore this field. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T16:28:52.628860",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between subbandSize and uplinkBandwidthPartId within the same IE. The evidence lacks explicit normative wording or mathematical relations linking these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

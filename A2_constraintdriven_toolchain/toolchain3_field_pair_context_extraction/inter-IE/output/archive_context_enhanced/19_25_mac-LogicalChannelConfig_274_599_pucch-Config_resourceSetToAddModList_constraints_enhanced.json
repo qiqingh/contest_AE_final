@@ -1,0 +1,207 @@
+[
+  {
+    "fields": [
+      "schedulingRequestID",
+      "pucch-ResourceSetId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "274_599_pucch-Config_resourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        274,
+        382,
+        490,
+        598
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "pucchResourceSetId"
+    ],
+    "original_sentence": "- a first set of PUCCH resources with pucch-ResourceSetld \\( =0 \\) if \\( O_{\\mathrm{UCl}} \\leq 2 \\) including 1 or 2 HARQ-ACK information bits and a positive or negative SR on one SR transmission occasion if transmission of HARQ-ACK information and SR occurs simultaneously, or - a second set of PUCCH resources with pucch-ResourceSetld \\( =1 \\), if provided by higher layers, if \\( 2<O_{\\mathrm{UCl}} \\leq N_{2} \\) where \\( \\mathrm{N}_{2} \\) is equal to maxPayloadSize if maxPayloadSize is provided for the PUCCH resource set with pucchResourceSetId \\( =1 \\); otherwise \\( N_{2} \\) is equal to 1706 , or",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.1",
+    "section_title": "PUCCH Resource Sets",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "resourceList"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "274_599_pucch-Config_resourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        275,
+        383,
+        491,
+        599
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "ResourceList"
+    ],
+    "original_sentence": "- if the UE is provided multi-CSI-PUCCH-ResourceList and if any of the multiple PUCCH resources overlap, the UE multiplexes all CSI reports in a resource from the resources provided by multi-CSI-PUCCH-ResourceList, as described in clause 9.2.5.2.  A UE multiplexes DL HARQ-ACK information, with or without SR, and CSI report(s) in a same PUCCH if the UE is provided simultaneousHARQ-ACK-CSI; otherwise, the UE drops the CSI report(s) and includes only DL HARQ-ACK information, with or without SR, in the PUCCH. If the UE would transmit multiple PUCCHs in a slot that include DL",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5",
+    "section_title": "UE procedure for reporting multiple UCI types",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "resourceList"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "274_599_pucch-Config_resourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        275,
+        383,
+        491,
+        599
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "ResourceList"
+    ],
+    "original_sentence": "9.2.5.2 UE procedure for multiplexing HARQ-ACK/SR/CSI in a PUCCH  For a transmission occasion of a single CSI report, a PUCCH resource is provided by pucch-CSI-ResourceList. For a transmission occasion of multiple CSI reports, corresponding PUCCH resources can be provided by multi-CSI-PUCCHResourceList. If a UE is provided first and second PUCCH-Config, multi-CSI-PUCCH-ResourceList is provided by the first PUCCH-Config, and PUCCH-Resourceld in pucch-CSI-ResourceList or multi-CSI-PUCCH-ResourceList indicates a corresponding PUCCH resource in PUCCH-Resource provided by the first PUCCH-Config-",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.2",
+    "section_title": "UE procedure for multiplexing HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "resourceList"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "274_599_pucch-Config_resourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        275,
+        383,
+        491,
+        599
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "ResourceList"
+    ],
+    "original_sentence": "If a UE has one or more CSI reports and zero or more HARQ-ACK/SR information bits to transmit in a PUCCH where the HARQ-ACK, if any, is in response to a PDSCH reception without a corresponding PDCCH - if any of the CSI reports are overlapping and the UE is provided by multi-CSI-PUCCH-ResourceList with \\( J \\leq 2 \\) PUCCH resources in a slot, for PUCCH format 2 and/or PUCCH format 3 and/or PUCCH format 4, as described in clause 9.2.1, where the resources are indexed according to an ascending order for the product of a number of corresponding REs, modulation order \\( Q_{m} \\), and configured code rate \\( r \\);",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.2",
+    "section_title": "UE procedure for multiplexing HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "resourceList"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "274_599_pucch-Config_resourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        275,
+        383,
+        491,
+        599
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "ResourceList"
+    ],
+    "original_sentence": "- if any of the CSI reports are overlapping and the UE is provided by multi-CSI-PUCCH-ResourceList with \\( J \\leq 2 \\) PUCCH resources in a slot, for PUCCH format 2 and/or PUCCH format 3 and/or PUCCH format 4, as described in clause 9.2.1, where the resources are indexed according to an ascending order for the product of a number of corresponding REs, modulation order \\( Q_{m} \\), and configured code rate \\( r \\); - if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CSI}}+O_{\\mathrm{CRC}}\\right) \\leq\\left(M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{SC}, \\mathrm{Ctrl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r\\right)_{0} \\), the UE uses PUCCH format 2 resource 0 , or the PUCCH format 3 resource 0 , or the PUCCH format 4 resource 0",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.2",
+    "section_title": "UE procedure for multiplexing HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      34
+    ],
+    "field2_all": [
+      38
+    ],
+    "actual_pairs": [
+      [
+        [
+          34
+        ],
+        [
+          38
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "No explicit normative constraint or logical relationship between field1 and field2 within the provided evidence.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ProhibitTimer",
+    "field2": "phr-Type2OtherCell",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} phr-ProhibitTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sfO corresponds to 0 subframe, value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-Tx-PowerFactorChange Value in dB for PHR reporting as specified in TS 38.321 [3]. Value d B 1 corresponds to 1 \\mathrm{~dB}, d B 3 corresponds to 3 dB and so on. The same value applies for each serving cell (although the associated functionality is performed independently for each cell). \\end{tabular} \\begin{tabular}{l} phr-Type2OtherCell If set to true, the UE shall report a PHR type 2 for the SpCell of the other MAC entity. See TS 38.321 [3], clause 5.4.6. Network sets this field to false if the UE is not configured with an E-UTRA MAC entity. \\end{tabular}",
+    "generated_at": "2026-01-10T21:40:20.022973",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "No explicit normative constraint or logical relationship between field1 and field2 within the provided evidence.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

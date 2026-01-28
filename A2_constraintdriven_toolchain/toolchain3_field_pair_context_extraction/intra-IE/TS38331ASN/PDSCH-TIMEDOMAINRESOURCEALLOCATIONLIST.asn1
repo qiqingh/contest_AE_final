@@ -1,0 +1,32 @@
+PDSCH-TimeDomainResourceAllocationList ::=  SEQUENCE (SIZE(1..maxNrofDL-Allocations)) OF PDSCH-TimeDomainResourceAllocation
+
+PDSCH-TimeDomainResourceAllocation ::=   SEQUENCE {
+    k0                                      INTEGER(0..32)                                                  OPTIONAL,   -- Need S
+    mappingType                             ENUMERATED {typeA, typeB},
+    startSymbolAndLength                    INTEGER (0..127)
+}
+
+PDSCH-TimeDomainResourceAllocationList-r16 ::=  SEQUENCE (SIZE(1..maxNrofDL-Allocations)) OF PDSCH-TimeDomainResourceAllocation-r16
+
+PDSCH-TimeDomainResourceAllocation-r16 ::=  SEQUENCE {
+    k0-r16                                     INTEGER(0..32)                                              OPTIONAL,   -- Need S
+    mappingType-r16                            ENUMERATED {typeA, typeB},
+    startSymbolAndLength-r16                   INTEGER (0..127),
+    repetitionNumber-r16                       ENUMERATED {n2, n3, n4, n5, n6, n7, n8, n16}                OPTIONAL,   -- Cond Formats1-0and1-1
+    ...,
+    [[
+    k0-v1710                                INTEGER(33..128)                                               OPTIONAL    -- Need S
+    ]],
+    [[
+    repetitionNumber-v1730                  ENUMERATED {n2, n3, n4, n5, n6, n7, n8, n16}                   OPTIONAL   -- Cond Format1-2
+    ]]
+}
+
+Dummy-TDRA-List ::= SEQUENCE (SIZE(1.. maxNrofDL-Allocations)) OF MultiPDSCH-TDRA-r17
+
+MultiPDSCH-TDRA-List-r17 ::= SEQUENCE (SIZE(1.. maxNrofDL-AllocationsExt-r17)) OF MultiPDSCH-TDRA-r17
+
+MultiPDSCH-TDRA-r17 ::= SEQUENCE {
+    pdsch-TDRA-List-r17                 SEQUENCE (SIZE(1..maxNrofMultiplePDSCHs-r17)) OF PDSCH-TimeDomainResourceAllocation-r16,
+    ...
+}

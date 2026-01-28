@@ -1,0 +1,29 @@
+DMRS-UplinkConfig ::=               SEQUENCE {
+    dmrs-Type                           ENUMERATED {type2}                                                  OPTIONAL,   -- Need S
+    dmrs-AdditionalPosition             ENUMERATED {pos0, pos1, pos3}                                       OPTIONAL,   -- Need S
+    phaseTrackingRS                     SetupRelease { PTRS-UplinkConfig }                                  OPTIONAL,   -- Need M
+    maxLength                           ENUMERATED {len2}                                                   OPTIONAL,   -- Need S
+    transformPrecodingDisabled          SEQUENCE {
+        scramblingID0                       INTEGER (0..65535)                                              OPTIONAL,   -- Need S
+        scramblingID1                       INTEGER (0..65535)                                              OPTIONAL,   -- Need S
+        ...,
+        [[
+        dmrs-Uplink-r16                     ENUMERATED {enabled}                                            OPTIONAL    -- Need R
+        ]]
+    }                                                                                                       OPTIONAL,   -- Need R
+    transformPrecodingEnabled           SEQUENCE {
+        nPUSCH-Identity                     INTEGER(0..1007)                                                OPTIONAL,   -- Need S
+        sequenceGroupHopping                ENUMERATED {disabled}                                           OPTIONAL,   -- Need S
+        sequenceHopping                     ENUMERATED {enabled}                                            OPTIONAL,   -- Need S
+        ...,
+        [[
+        dmrs-UplinkTransformPrecoding-r16   SetupRelease {DMRS-UplinkTransformPrecoding-r16}                OPTIONAL    -- Need M
+        ]]
+    }                                                                                                       OPTIONAL,   -- Need R
+    ...
+}
+
+DMRS-UplinkTransformPrecoding-r16  ::=  SEQUENCE {
+    pi2BPSK-ScramblingID0                   INTEGER(0..65535)                                               OPTIONAL,   -- Need S
+    pi2BPSK-ScramblingID1                   INTEGER(0..65535)                                               OPTIONAL    -- Need S
+}

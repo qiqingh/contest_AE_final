@@ -1,0 +1,13 @@
+CondReconfigToAddModList-r16 ::= SEQUENCE (SIZE (1.. maxNrofCondCells-r16)) OF CondReconfigToAddMod-r16
+
+CondReconfigToAddMod-r16 ::=     SEQUENCE {
+    condReconfigId-r16               CondReconfigId-r16,
+    condExecutionCond-r16            SEQUENCE (SIZE (1..2)) OF MeasId                      OPTIONAL,    -- Need M
+    condRRCReconfig-r16              OCTET STRING (CONTAINING RRCReconfiguration)          OPTIONAL,    -- Cond condReconfigAdd
+    ...,
+    [[
+    condExecutionCondSCG-r17         OCTET STRING (CONTAINING CondReconfigExecCondSCG-r17) OPTIONAL     -- Need M
+    ]]
+}
+
+CondReconfigExecCondSCG-r17 ::=  SEQUENCE (SIZE (1..2)) OF MeasId

@@ -1,0 +1,14 @@
+TCI-UL-State-r17 ::=             SEQUENCE {
+    tci-UL-StateId-r17              TCI-UL-StateId-r17,
+    servingCellId-r17                ServCellIndex                                         OPTIONAL,   -- Need R
+    bwp-Id-r17                       BWP-Id                                                OPTIONAL,   -- Cond CSI-RSorSRS-Indicated
+    referenceSignal-r17              CHOICE {
+        ssb-Index-r17                    SSB-Index,
+        csi-RS-Index-r17                 NZP-CSI-RS-ResourceId,
+        srs-r17                          SRS-ResourceId
+    },
+    additionalPCI-r17                AdditionalPCIIndex-r17                                OPTIONAL,   -- Need R
+    ul-powerControl-r17              Uplink-powerControlId-r17                             OPTIONAL,   -- Need R
+    pathlossReferenceRS-Id-r17       PathlossReferenceRS-Id-r17                            OPTIONAL,   -- Cond Mandatory
+    ...
+}

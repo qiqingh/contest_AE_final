@@ -1,0 +1,18 @@
+MeasObjectUTRA-FDD-r16 ::=                  SEQUENCE {
+    carrierFreq-r16                             ARFCN-ValueUTRA-FDD-r16,
+    utra-FDD-Q-OffsetRange-r16                  UTRA-FDD-Q-OffsetRange-r16              OPTIONAL,         -- Need R
+    cellsToRemoveList-r16                       UTRA-FDD-CellIndexList-r16              OPTIONAL,         -- Need N
+    cellsToAddModList-r16                       CellsToAddModListUTRA-FDD-r16           OPTIONAL,         -- Need N
+    ...
+}
+
+CellsToAddModListUTRA-FDD-r16 ::=           SEQUENCE (SIZE (1..maxCellMeasUTRA-FDD-r16)) OF CellsToAddModUTRA-FDD-r16
+
+CellsToAddModUTRA-FDD-r16 ::=               SEQUENCE {
+    cellIndexUTRA-FDD-r16                       UTRA-FDD-CellIndex-r16,
+    physCellId-r16                              PhysCellIdUTRA-FDD-r16
+}
+
+UTRA-FDD-CellIndexList-r16 ::=              SEQUENCE (SIZE (1..maxCellMeasUTRA-FDD-r16)) OF UTRA-FDD-CellIndex-r16
+
+UTRA-FDD-CellIndex-r16 ::=                  INTEGER (1..maxCellMeasUTRA-FDD-r16)

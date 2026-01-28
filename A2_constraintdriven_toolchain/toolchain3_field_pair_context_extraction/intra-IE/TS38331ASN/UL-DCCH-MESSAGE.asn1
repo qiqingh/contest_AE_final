@@ -1,0 +1,40 @@
+UL-DCCH-Message ::=             SEQUENCE {
+    message                         UL-DCCH-MessageType
+}
+
+UL-DCCH-MessageType ::=         CHOICE {
+    c1                              CHOICE {
+        measurementReport               MeasurementReport,
+        rrcReconfigurationComplete      RRCReconfigurationComplete,
+        rrcSetupComplete                RRCSetupComplete,
+        rrcReestablishmentComplete      RRCReestablishmentComplete,
+        rrcResumeComplete               RRCResumeComplete,
+        securityModeComplete            SecurityModeComplete,
+        securityModeFailure             SecurityModeFailure,
+        ulInformationTransfer           ULInformationTransfer,
+        locationMeasurementIndication   LocationMeasurementIndication,
+        ueCapabilityInformation         UECapabilityInformation,
+        counterCheckResponse            CounterCheckResponse,
+        ueAssistanceInformation         UEAssistanceInformation,
+        failureInformation              FailureInformation,
+        ulInformationTransferMRDC       ULInformationTransferMRDC,
+        scgFailureInformation           SCGFailureInformation,
+        scgFailureInformationEUTRA      SCGFailureInformationEUTRA
+    },
+    messageClassExtension           CHOICE {
+        c2                              CHOICE {
+            ulDedicatedMessageSegment-r16    ULDedicatedMessageSegment-r16,
+            dedicatedSIBRequest-r16         DedicatedSIBRequest-r16,
+            mcgFailureInformation-r16       MCGFailureInformation-r16,
+            ueInformationResponse-r16       UEInformationResponse-r16,
+            sidelinkUEInformationNR-r16     SidelinkUEInformationNR-r16,
+            ulInformationTransferIRAT-r16   ULInformationTransferIRAT-r16,
+            iabOtherInformation-r16         IABOtherInformation-r16,
+            mbsInterestIndication-r17       MBSInterestIndication-r17,
+            uePositioningAssistanceInfo-r17 UEPositioningAssistanceInfo-r17,
+            measurementReportAppLayer-r17   MeasurementReportAppLayer-r17,
+                                            spare6 NULL, spare5 NULL, spare4 NULL, spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        messageClassExtensionFuture-r16    SEQUENCE {}
+    }
+}

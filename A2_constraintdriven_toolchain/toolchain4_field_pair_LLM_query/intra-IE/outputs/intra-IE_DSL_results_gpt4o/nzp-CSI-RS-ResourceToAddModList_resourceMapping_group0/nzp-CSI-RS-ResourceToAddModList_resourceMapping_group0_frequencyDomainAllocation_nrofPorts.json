@@ -1,0 +1,97 @@
+{
+  "dsl_rule": "IMPLIES(IN(field1, {1, 2, 4}), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      706,
+      707,
+      708
+    ],
+    "field2_all": [
+      709
+    ],
+    "actual_pairs": [
+      [
+        [
+          706,
+          707,
+          708
+        ],
+        [
+          709
+        ]
+      ]
+    ]
+  },
+  "predicate": "The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=1, field2=1",
+      "field1=2, field2=1",
+      "field1=4, field2=1"
+    ],
+    "invalid": [
+      "field1=1, field2=2",
+      "field1=2, field2=3",
+      "field1=4, field2=4"
+    ]
+  },
+  "notes": "The evidence suggests a dependency between frequencyDomainAllocation and nrofPorts for specific rows in the table.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_resourceMapping_group0",
+    "field1": "frequencyDomainAllocation",
+    "field2": "nrofPorts",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.5.3",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "The reference point for k=0 is subcarrier 0 in common resource block 0 . The value of \\rho is given by the higher-layer parameter density in the CSI-RS-ResourceMapping [E or the CSI-RSCellMobility I E and the number of ports X is given by the higher-layer parameter nrofPorts. For NZP CSI-RS configured by the TRS-ResourceSet [E, the density \\rho=3 and number of ports X=1 . The UE is not expected to receive CSI-RS and DM-RS on the same resource elements. The UE shall assume \\beta_{\\text {CSIRS }}>0 for a non-zero-power CSI-RS where \\beta_{\\text {CSIRS }} is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled. The quantities k^{\\prime}, l^{\\prime}, w_{\\mathrm{f}}\\left(k^{\\prime}\\right) , and w_{\\mathrm{t}}\\left(l^{\\prime}\\right) are given by Tables 7.4.1.5.3-1 to 7.4.1.5.3-5 where each (\\bar{k}, \\bar{l}) in a given row of Table 7.4.1.5.3-1 corresponds to a CDM group of size 1 (no CDM) or size 2,4 , or 8. The CDM type is provided by the higher layer parameter cdm-Type in the CSI-RS-ResourceMapping IE. For NZP CSI-RS configured by the TRSResourceSet [E, the CDM type is 'noCDM'. The indices k^{\\prime} and l^{\\prime} index resource elements within a CDM group. The time-domain locations l_{0} \\in\\{0,1, \\ldots, 13\\} and l_{1} \\in\\{2,3, \\ldots, 12\\} are provided by the higher-layer parameters firstOFDMSymbollnTimeDomain and firstOFDMSymbollnTimeDomain2, respectively, in the CSI-RSResourceMapping IE or the CSI-RS-ResourceConfigMobility IE and defined relative to the start of a slot. For NZP CSIRS configured by TRS-ResourceSet [E, the time-domain location l_{0} \\in\\{0,1, \\ldots, 13\\} is provided by the higher-layer parameter firstOFDMSymbollnTimeDomain or firstOFDMSymbollnTimeDomain+4. The frequency-domain location is given by a bitmap provided by the higher-layer parameter frequencyDomainAllocation in the CSI-RS-ResourceMapping [E, the CSI-RS-ResourceConfigMobility [E, or the TRSResourceSet [E, with the bitmap and value of k_{i} in Table 7.4.1.5.3-1 given by - \\left[b_{3} \\cdots b_{0}\\right], k_{i-1}=f(i) for row 1 of Table 7.4.1.5.3-1 - \\left[b_{1}, \\cdots b_{0}\\right], k_{i-1}=f(i) for row 2 of Table 7.4.1.5.3-1\n---\n\\end{tabular} \\begin{tabular}{l} frequencyDomainAllocation Frequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation. \\end{tabular} \\begin{tabular}{l}\n---\n\\begin{tabular}{l} frequencyDomainAllocation Frequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-10T21:39:28.758862",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(IN(field1, {1, 2, 4}), EQ(field2, 1))",
+      "preconditions": [],
+      "predicate": "The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=1, field2=1",
+          "field1=2, field2=1",
+          "field1=4, field2=1"
+        ],
+        "invalid": [
+          "field1=1, field2=2",
+          "field1=2, field2=3",
+          "field1=4, field2=4"
+        ]
+      },
+      "notes": "The evidence suggests a dependency between frequencyDomainAllocation and nrofPorts for specific rows in the table.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

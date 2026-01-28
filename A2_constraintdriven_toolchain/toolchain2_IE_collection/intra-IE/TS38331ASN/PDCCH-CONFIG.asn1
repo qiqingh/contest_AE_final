@@ -1,0 +1,39 @@
+PDCCH-Config ::=                    SEQUENCE {
+    controlResourceSetToAddModList      SEQUENCE(SIZE (1..3)) OF ControlResourceSet                      OPTIONAL,   -- Need N
+    controlResourceSetToReleaseList     SEQUENCE(SIZE (1..3)) OF ControlResourceSetId                    OPTIONAL,   -- Need N
+    searchSpacesToAddModList            SEQUENCE(SIZE (1..10)) OF SearchSpace                            OPTIONAL,   -- Need N
+    searchSpacesToReleaseList           SEQUENCE(SIZE (1..10)) OF SearchSpaceId                          OPTIONAL,   -- Need N
+    downlinkPreemption                  SetupRelease { DownlinkPreemption }                              OPTIONAL,   -- Need M
+    tpc-PUSCH                           SetupRelease { PUSCH-TPC-CommandConfig }                         OPTIONAL,   -- Need M
+    tpc-PUCCH                           SetupRelease { PUCCH-TPC-CommandConfig }                         OPTIONAL,   -- Need M
+    tpc-SRS                             SetupRelease { SRS-TPC-CommandConfig}                            OPTIONAL,   -- Need M
+    ...,
+    [[
+    controlResourceSetToAddModListSizeExt-v1610 SEQUENCE (SIZE (1..2)) OF ControlResourceSet             OPTIONAL,   -- Need N
+    controlResourceSetToReleaseListSizeExt-r16 SEQUENCE (SIZE (1..5)) OF ControlResourceSetId-r16        OPTIONAL,   -- Need N
+    searchSpacesToAddModListExt-r16     SEQUENCE(SIZE (1..10)) OF SearchSpaceExt-r16                     OPTIONAL,   -- Need N
+    uplinkCancellation-r16              SetupRelease { UplinkCancellation-r16 }                          OPTIONAL,   -- Need M
+    monitoringCapabilityConfig-r16      ENUMERATED { r15monitoringcapability,r16monitoringcapability }   OPTIONAL,   -- Need M
+    searchSpaceSwitchConfig-r16         SearchSpaceSwitchConfig-r16                                      OPTIONAL    -- Need R
+    ]],
+    [[
+    searchSpacesToAddModListExt-v1700   SEQUENCE(SIZE (1..10)) OF SearchSpaceExt-v1700                   OPTIONAL,   -- Need N
+    monitoringCapabilityConfig-v1710    ENUMERATED { r17monitoringcapability }                           OPTIONAL,   -- Need M
+    searchSpaceSwitchConfig-r17         SearchSpaceSwitchConfig-r17                                      OPTIONAL,   -- Need R
+    pdcch-SkippingDurationList-r17      SEQUENCE(SIZE (1..3)) OF SCS-SpecificDuration-r17                OPTIONAL    -- Need R
+    ]]
+}
+
+SearchSpaceSwitchConfig-r16 ::=     SEQUENCE {
+    cellGroupsForSwitchList-r16         SEQUENCE(SIZE (1..4)) OF CellGroupForSwitch-r16                  OPTIONAL,   -- Need R
+    searchSpaceSwitchDelay-r16          INTEGER (10..52)                                                 OPTIONAL    -- Need R
+}
+
+SearchSpaceSwitchConfig-r17 ::=     SEQUENCE {
+    searchSpaceSwitchTimer-r17          SCS-SpecificDuration-r17                                         OPTIONAL,   -- Need R
+    searchSpaceSwitchDelay-r17          INTEGER (10..52)                                                 OPTIONAL    -- Need R
+}
+
+CellGroupForSwitch-r16 ::=          SEQUENCE(SIZE (1..16)) OF ServCellIndex
+
+SCS-SpecificDuration-r17   ::=      INTEGER (1..166)

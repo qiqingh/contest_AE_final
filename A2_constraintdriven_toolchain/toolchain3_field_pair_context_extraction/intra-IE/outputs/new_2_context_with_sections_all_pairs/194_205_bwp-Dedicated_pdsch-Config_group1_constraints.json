@@ -1,0 +1,2107 @@
+[
+  {
+    "fields": [
+      "bundleSize",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        205
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "bundleSize",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "If a UE is scheduled a PDSCH with DCI format 1 \\_0 or 4 \\_0 , the UE shall assume that P_{B W P, i}^{\\prime} is equal to 2 PRBs. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, P_{B W P, i}^{\\prime} for bandwidth part is equal to 2 PRBs unless configured by the higher layer parameter prbBundlingType given by PDSCH-Config. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'dynamicBundling', the higher layer parameters bundleSizeSet 1 and bundleSizeSet 2 configure two sets of P_{B W P, i}^{\\prime} values, the first set can take one or two P_{B W P, i}^{\\prime} values among \\{2,4 , wideband \\} , and the second set can take one P_{B W P, i}^{\\prime} value among \\{2,4 , wideband \\} . If the PRB 'bundling size indicator' signalled in DCI format 1 _1 as defined in Clause 7.3.1.2.2 of [5, TS 38.212] - is set to ' 0 ', the UE shall use the P_{B W P, i}^{\\prime} value from the second set of P_{B W P, i}^{\\prime} values when receiving PDSCH scheduled by the same DCI. - is set to ' 1 ' and one value is configured for the first set of P_{B W P, i}^{\\prime} values, the UE shall use this P_{B W P, i}^{\\prime} value when receiving PDSCH scheduled by the same DCI - is set to ' 1 ' and two values are configured for the first set of P_{B W P, i}^{\\prime} values as ' n 2 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 2 and wideband) or ' n 4 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 4 and wideband), the UE shall use the value when receiving PDSCH scheduled by the same DCI as follows: - If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        205
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "bundleSize",
+      "prbBundlingType"
+    ],
+    "original_sentence": "If a UE is scheduled a PDSCH with DCI format 1 \\_0 or 4 \\_0 , the UE shall assume that P_{B W P, i}^{\\prime} is equal to 2 PRBs. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, P_{B W P, i}^{\\prime} for bandwidth part is equal to 2 PRBs unless configured by the higher layer parameter prbBundlingType given by PDSCH-Config. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'dynamicBundling', the higher layer parameters bundleSizeSet 1 and bundleSizeSet 2 configure two sets of P_{B W P, i}^{\\prime} values, the first set can take one or two P_{B W P, i}^{\\prime} values among \\{2,4 , wideband \\} , and the second set can take one P_{B W P, i}^{\\prime} value among \\{2,4 , wideband \\} . If the PRB 'bundling size indicator' signalled in DCI format 1 _1 as defined in Clause 7.3.1.2.2 of [5, TS 38.212] - is set to ' 0 ', the UE shall use the P_{B W P, i}^{\\prime} value from the second set of P_{B W P, i}^{\\prime} values when receiving PDSCH scheduled by the same DCI. - is set to ' 1 ' and one value is configured for the first set of P_{B W P, i}^{\\prime} values, the UE shall use this P_{B W P, i}^{\\prime} value when receiving PDSCH scheduled by the same DCI - is set to ' 1 ' and two values are configured for the first set of P_{B W P, i}^{\\prime} values as ' n 2 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 2 and wideband) or ' n 4 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 4 and wideband), the UE shall use the value when receiving PDSCH scheduled by the same DCI as follows: - If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        205
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "bundleSize",
+      "RBG size"
+    ],
+    "original_sentence": "- If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4. For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)',",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "qcl-Type"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        201
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "QCL type"
+    ],
+    "original_sentence": "- powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE. - scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell. - trs-Info in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and for which the UE can assume that the antenna port with the same port index of the configured NZP CSI-RS resources in the NZP-CSI-RSResourceSet is the same as described in Clause 5.1.6.1.1 and can be configured when reporting setting is not configured or when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'none'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "when",
+    "is_self_reference": false,
+    "section_number": "5.2.2.3.1",
+    "section_title": "NZP CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "reference signal"
+    ],
+    "original_sentence": "For a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'semi-persistent': - when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} where \\mu is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a d l- PRS-ID indicated by DL-PRS ID field in the activation command. - if an SRS resource in the activated resource set is configured with the higher layer parameter spatialRelationInfo or spatialRelationInfoPos, the UE shall assume that the ID of the reference signal in the activation command overrides the one configured in spatialRelationInfo or spatialRelationInfoPos.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "reference signal"
+    ],
+    "original_sentence": "- N_{\\text {slot, offset, PDCCH }}^{\\mathrm{CA}} and \\mu_{\\text {off set, PDCCH }} are the N_{\\text {slot, offset }}^{\\mathrm{CA}} and the \\mu_{\\text {offset }} , respectively, which are determined by higher-layer configured ca-SlotOffset for the cell receiving the PDCCH, N_{\\text {slot, offset, SRS }}^{C A} and \\mu_{\\text {offset, SRS }} are the N_{\\text {slot,offsel }}^{C A} and the \\mu_{\\text {offset }} , respectively, which are determined by higher-layer configured ca-SlotOffset for the cell transmitting the SRS, as defined in [4, TS 38.211] clause 4.5. - if the UE is configured with the higher layer parameter spatialRelationInfo or spatialRelationInfoPos containing the ID of a reference 'ssb-Index', 'ssb-IndexServing' or 'ssb-IndexNcell', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference SS/PBCH block, if the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'csi-RS-Index' or 'csi-RS-IndexServing', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference periodic CSI-RS or of the reference semi-persistent CSI-RS, or of the latest reference aperiodic CSI-RS. If the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'srs' or 'srs-SpatialRelation', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the transmission of the reference periodic SRS or of the reference semi-persistent SRS or of the reference aperiodic SRS. When the SRS is configured by the higher layer parameter SRS-PosResourceSet and if the higher layer parameter spatialRelationInfoPos contains the ID of a reference 'dl-PRS', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS. - when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot n , the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} where \\mu is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set. The UE is not expected to be configured with different time domain behavior for SRS resources in the same SRS resource set. The UE is also not expected to be configured with different time domain behavior between SRS resource and associated SRS resources set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "determined by",
+    "is_self_reference": false,
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "original_sentence": "5.1.6.2 DM-RS reception procedure The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB. The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 \\_2 , by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCHConfig. When receiving PDSCH scheduled by DCI format 1 \\_0,4 \\_0 , or 4 \\_1 , or receiving PDSCH before dedicated higher layer configuration of any of the parameters dmrs-AdditionalPosition, maxLength and dmrs-Type, the UE shall assume that the PDSCH is not present in any symbol carrying DM-RS except for PDSCH with allocation duration of 2 symbols with PDSCH mapping type B (described in clause 7.4.1.1.2 of [4, TS 38.211]), and a single symbol front-loaded DM-RS of configuration type 1 on DM-RS port 1000 is transmitted, and that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE and in addition - For PDSCH with mapping type A and type B , the UE shall assume dmrs-AdditionalPosition='pos2' and up to two additional single-symbol DM-RS present in a slot according to the PDSCH duration indicated in the DCI as defined in Clause 7.4.1.1 of [4, TS 38.211], and - For PDSCH with allocation duration of 2 symbols with mapping type B , the UE shall assume that the PDSCH is present in the symbol carrying DM-RS.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrsAdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "original_sentence": "The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB. The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 \\_2 , by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCHConfig. When receiving PDSCH scheduled by DCI format 1 \\_0,4 \\_0 , or 4 \\_1 , or receiving PDSCH before dedicated higher layer configuration of any of the parameters dmrs-AdditionalPosition, maxLength and dmrs-Type, the UE shall assume that the PDSCH is not present in any symbol carrying DM-RS except for PDSCH with allocation duration of 2 symbols with PDSCH mapping type B (described in clause 7.4.1.1.2 of [4, TS 38.211]), and a single symbol front-loaded DM-RS of configuration type 1 on DM-RS port 1000 is transmitted, and that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE and in addition - For PDSCH with mapping type A and type B , the UE shall assume dmrs-AdditionalPosition='pos2' and up to two additional single-symbol DM-RS present in a slot according to the PDSCH duration indicated in the DCI as defined in Clause 7.4.1.1 of [4, TS 38.211], and - For PDSCH with allocation duration of 2 symbols with mapping type B , the UE shall assume that the PDSCH is present in the symbol carrying DM-RS. When receiving PDSCH scheduled by DCI format 1 _ 1 by PDCCH with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI or DCI format 4 _ 2 by PDCCH with CRC scrambled by G-RNTI or G-CS-RNTI, - the UE may be configured with the higher layer parameter dmrs-Type, and the configured DM-RS configuration type is used for receiving PDSCH in as defined in Clause 7.4.1.1 of [4, TS 38.211]. - the UE may be configured with the maximum number of front-loaded DM-RS symbols for PDSCH by higher layer parameter maxLength given by DMRS-DownlinkConfig.. - if maxLength is set to 'len1', single-symbol DM-RS can be scheduled for the UE by DCI, and the UE can be configured with a number of additional DM-RS for PDSCH by higher layer parameter dmrsAdditionalPosition, which can be set to 'pos0', 'pos1', 'pos2' or 'pos3'. - if maxLength is set to 'len2', both single-symbol DM-RS and double symbol DM-RS can be scheduled for the UE by DCI, and the UE can be configured with a number of additional DM-RS for PDSCH by higher layer parameter dmrs-AdditionalPosition, which can be set to 'pos0' or 'pos1'. - and the UE shall assume to receive additional DM-RS as specified in Table 7.4.1.1.2-3 and Table 7.4.1.1.2-4 as described in Clause 7.4.1.1.2 of [4, TS 38.211].",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "original_sentence": "the UE may assume that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE. If a UE receiving PDSCH scheduled by DCI format 1 _2 is configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA-DCI-J-2 or dmrs-DownlinkForPDSCH-MappingTypeB-DCI-J-2 or a UE receiving PDSCH scheduled by DCI format 1 \\_0 or DCI format 1 \\_1 is configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA or dmrs-DownlinkForPDSCHMappingTypeB, the UE may assume that the following configurations are not occurring simultaneously for the received PDSCH: - any DM-RS ports among 1004-1007 or 1006-1011 for DM-RS configurations type 1 and type 2, respectively are scheduled for the UE and the other UE(s) sharing the DM-RS REs on the same CDM group(s), and - PT-RS is transmitted to the UE. The UE is not expected to simultaneously be configured with the maximum number of front-loaded DM-RS symbols for PDSCH by higher layer parameter maxLength being set equal to 'len2' and more than one additional DM-RS symbol as given by the higher layer parameter dmrs-AdditionalPosition. The UE is not expected to assume co-scheduled UE(s) with different DM-RS configuration with respect to the actual number of front-loaded DM-RS symbol(s), the actual number of additional DM-RS, the DM-RS symbol location, and DM-RS configuration type as described in Clause 7.4.1.1 of [4, TS 38.211].",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCHMapping TypeA"
+    ],
+    "original_sentence": "\\begin{tabular}{|l|l|l|} \\multirow{2}{*}{ \\mu } & \\multicolumn{2}{|c|}{PDSCH decoding time N_{1} [symbols]} & dmrs-AdditionalPosition = 'pos0' in DMRS-DownlinkConfig in dmrs-DownlinkForPDSCHMapping TypeA and dmrs-DownlinkForPDSCH-MappingTypeB if either higher layer parameter is configured, and in dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 if either higher layer parameter is configured & dmrs-AdditionalPosition != 'pos0' in DMRS-DownlinkConfig in any of dmrs-DownlinkForPDSCHMapping TypeA, dmrs-DownlinkForPDSCH-MappingTypeB, dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2, dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2, or if none of the higher layer parameters is configured 0 & 8 & N_{t, 0} 1 & 10 & 13",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.3",
+    "section_title": "UE PDSCH processing procedure time",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "original_sentence": "\\begin{tabular}{|l|l|} \\multirow{2}{*}{ \\mu } & PDSCH decoding time N_{1} [symbols] & dmrs-AdditionalPosition = 'pos0' in DMRS-DownlinkConfig in dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB if either higher layer parameter is configured, and in dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 if either higher layer parameter is configured 0 & 3 1 & 4.5",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.3",
+    "section_title": "UE PDSCH processing procedure time",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB. The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 \\_2 , by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCHConfig. When receiving PDSCH scheduled by DCI format 1 \\_0,4 \\_0 , or 4 \\_1 , or receiving PDSCH before dedicated higher layer configuration of any of the parameters dmrs-AdditionalPosition, maxLength and dmrs-Type, the UE shall assume that the PDSCH is not present in any symbol carrying DM-RS except for PDSCH with allocation duration of 2 symbols with PDSCH mapping type B (described in clause 7.4.1.1.2 of [4, TS 38.211]), and a single symbol front-loaded DM-RS of configuration type 1 on DM-RS port 1000 is transmitted, and that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE and in addition - For PDSCH with mapping type A and type B , the UE shall assume dmrs-AdditionalPosition='pos2' and up to two additional single-symbol DM-RS present in a slot according to the PDSCH duration indicated in the DCI as defined in Clause 7.4.1.1 of [4, TS 38.211], and - For PDSCH with allocation duration of 2 symbols with mapping type B , the UE shall assume that the PDSCH is present in the symbol carrying DM-RS.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "resource allocation"
+    ],
+    "original_sentence": "- PT-RS is transmitted to the UE. The UE is not expected to simultaneously be configured with the maximum number of front-loaded DM-RS symbols for PDSCH by higher layer parameter maxLength being set equal to 'len2' and more than one additional DM-RS symbol as given by the higher layer parameter dmrs-AdditionalPosition. The UE is not expected to assume co-scheduled UE(s) with different DM-RS configuration with respect to the actual number of front-loaded DM-RS symbol(s), the actual number of additional DM-RS, the DM-RS symbol location, and DM-RS configuration type as described in Clause 7.4.1.1 of [4, TS 38.211]. The UE does not expect the precoding of the potential co-scheduled UE(s) in other DM-RS ports of the same CDM group to be different in the PRG-level grid configured to this UE with PRG =2 or 4 . The UE does not expect the resource allocation of the potential co-scheduled UE(s) in other DM-RS ports of the same CDM group to be misaligned in the PRG-level grid to this UE with PRG=2 or 4 . When receiving PDSCH scheduled by DCI format 1 _1, the UE shall assume that the CDM groups indicated in the configured index from Tables 7.3.1.2.2-1, 7.3.1.2.2-1A, 7.3.1.2.2-2, 7.3.1.2.2-2A, 7.3.1.2.2-3, 7.3.1.2.2-3A, 7.3.1.2.2-4, 7.3.1.2.2-4A of [5, TS. 38.212] contain potential co-scheduled downlink DM-RS and are not used for data transmission, where \" 1 \", \" 2 \" and \" 3 \" for the number of DM-RS CDM group(s) in Tables 7.3.1.2.2-1, 7.3.1.2.2-1A, 7.3.1.2.2-2, 7.3.1.2.2-3, 7.3.1.2.2-3A, 7.3.1.2.2-4, 7.3.1.2.2-4A of [5, TS. 38.212] correspond to CDM group 0,\\{0,1\\},\\{0,1,2\\} , respectively.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "5.1.6.2 DM-RS reception procedure The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB. The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 \\_2 , by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCHConfig. When receiving PDSCH scheduled by DCI format 1 \\_0,4 \\_0 , or 4 \\_1 , or receiving PDSCH before dedicated higher layer configuration of any of the parameters dmrs-AdditionalPosition, maxLength and dmrs-Type, the UE shall assume that the PDSCH is not present in any symbol carrying DM-RS except for PDSCH with allocation duration of 2 symbols with PDSCH mapping type B (described in clause 7.4.1.1.2 of [4, TS 38.211]), and a single symbol front-loaded DM-RS of configuration type 1 on DM-RS port 1000 is transmitted, and that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE and in addition",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 and dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB. The DM-RS reception procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 \\_2 , by applying the parameters of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast instead of dmrs-DownlinkForPDSCH-MappingTypeA and dmrs-DownlinkForPDSCH-MappingTypeB in PDSCHConfig. When receiving PDSCH scheduled by DCI format 1 \\_0,4 \\_0 , or 4 \\_1 , or receiving PDSCH before dedicated higher layer configuration of any of the parameters dmrs-AdditionalPosition, maxLength and dmrs-Type, the UE shall assume that the PDSCH is not present in any symbol carrying DM-RS except for PDSCH with allocation duration of 2 symbols with PDSCH mapping type B (described in clause 7.4.1.1.2 of [4, TS 38.211]), and a single symbol front-loaded DM-RS of configuration type 1 on DM-RS port 1000 is transmitted, and that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE and in addition",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "5.1.6.3 PT-RS reception procedure The procedures on PT-RS reception described in this clause apply to a UE receiving PDSCH scheduled by DCI format 1 _ 2 configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA-DCI-12 or dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 and to a UE receiving PDSCH scheduled by DCI format 1.0 or DCI format 1_1 configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCHMappingTypeA or dmrs-DownlinkForPDSCH-MappingTypeB. The procedures on PT-RS reception described in this clause apply to a UE receiving PDSCH scheduled by DCI format 4 \\_1 or 4 \\_2 configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA or dmrs-DownlinkForPDSCH-MappingTypeB in PDSCH-Config-Multicast. A UE shall report the preferred MCS and bandwidth thresholds based on the UE capability at a given carrier frequency, for each subcarrier spacing applicable to data channel at this carrier frequency, assuming the MCS table with the maximum Modulation Order as it reported to support.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "resource allocation"
+    ],
+    "original_sentence": "the UE may assume that all the remaining orthogonal antenna ports are not associated with transmission of PDSCH to another UE. If a UE receiving PDSCH scheduled by DCI format 1 _2 is configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA-DCI-J-2 or dmrs-DownlinkForPDSCH-MappingTypeB-DCI-J-2 or a UE receiving PDSCH scheduled by DCI format 1 \\_0 or DCI format 1 \\_1 is configured with the higher layer parameter phaseTrackingRS in dmrs-DownlinkForPDSCH-MappingTypeA or dmrs-DownlinkForPDSCHMappingTypeB, the UE may assume that the following configurations are not occurring simultaneously for the received PDSCH: - any DM-RS ports among 1004-1007 or 1006-1011 for DM-RS configurations type 1 and type 2, respectively are scheduled for the UE and the other UE(s) sharing the DM-RS REs on the same CDM group(s), and - PT-RS is transmitted to the UE. The UE is not expected to simultaneously be configured with the maximum number of front-loaded DM-RS symbols for PDSCH by higher layer parameter maxLength being set equal to 'len2' and more than one additional DM-RS symbol as given by the higher layer parameter dmrs-AdditionalPosition. The UE is not expected to assume co-scheduled UE(s) with different DM-RS configuration with respect to the actual number of front-loaded DM-RS symbol(s), the actual number of additional DM-RS, the DM-RS symbol location, and DM-RS configuration type as described in Clause 7.4.1.1 of [4, TS 38.211]. The UE does not expect the precoding of the potential co-scheduled UE(s) in other DM-RS ports of the same CDM group to be different in the PRG-level grid configured to this UE with PRG =2 or 4 . The UE does not expect the resource allocation of the potential co-scheduled UE(s) in other DM-RS ports of the same CDM group to be misaligned in the PRG-level grid to this UE with PRG=2 or 4 . When receiving PDSCH scheduled by DCI format 1 _1, the UE shall assume that the CDM groups indicated in the configured index from Tables 7.3.1.2.2-1, 7.3.1.2.2-1A, 7.3.1.2.2-2, 7.3.1.2.2-2A, 7.3.1.2.2-3, 7.3.1.2.2-3A, 7.3.1.2.2-4, 7.3.1.2.2-4A of [5, TS. 38.212] contain potential co-scheduled downlink DM-RS and are not used for data transmission, where \" 1 \", \" 2 \" and \" 3 \" for the number of DM-RS CDM group(s) in Tables 7.3.1.2.2-1, 7.3.1.2.2-1A, 7.3.1.2.2-2, 7.3.1.2.2-3, 7.3.1.2.2-3A, 7.3.1.2.2-4, 7.3.1.2.2-4A of [5, TS. 38.212] correspond to CDM group 0,\\{0,1\\},\\{0,1,2\\} , respectively.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.6.1.3",
+    "section_title": "CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "prb-BundlingType"
+    ],
+    "original_sentence": "5.1.2.3 Physical resource block (PRB) bundling The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of prb-BundlingTypeDCI-1-2 instead of prb-BundingType as well as vrb-ToPRB-InterleaverDCI-1-2 instead of vrb-ToPRB-Interleaver. The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4_2, by applying the parameters of prb-BundlingType given by PDSCH-Config-Multicast as well as vrb-ToPRB-Interleaver given by PDSCH-Config-Multicast. A UE may assume that precoding granularity is P_{B W P, i}^{\\prime} consecutive resource blocks in the frequency domain. P_{B W P, i}^{\\prime} can be equal to one of the values among \\{2,4 , wideband \\} .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "given by",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "prbBundlingType"
+    ],
+    "original_sentence": "If a UE is scheduled a PDSCH with DCI format 1 \\_0 or 4 \\_0 , the UE shall assume that P_{B W P, i}^{\\prime} is equal to 2 PRBs. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, P_{B W P, i}^{\\prime} for bandwidth part is equal to 2 PRBs unless configured by the higher layer parameter prbBundlingType given by PDSCH-Config. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'dynamicBundling', the higher layer parameters bundleSizeSet 1 and bundleSizeSet 2 configure two sets of P_{B W P, i}^{\\prime} values, the first set can take one or two P_{B W P, i}^{\\prime} values among \\{2,4 , wideband \\} , and the second set can take one P_{B W P, i}^{\\prime} value among \\{2,4 , wideband \\} .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "prb-BundlingType"
+    ],
+    "original_sentence": "When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, P_{B W P, i}^{\\prime} for bandwidth part is equal to 2 PRBs unless configured by the higher layer parameter prbBundlingType given by PDSCH-Config. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'dynamicBundling', the higher layer parameters bundleSizeSet 1 and bundleSizeSet 2 configure two sets of P_{B W P, i}^{\\prime} values, the first set can take one or two P_{B W P, i}^{\\prime} values among \\{2,4 , wideband \\} , and the second set can take one P_{B W P, i}^{\\prime} value among \\{2,4 , wideband \\} . If the PRB 'bundling size indicator' signalled in DCI format 1 _1 as defined in Clause 7.3.1.2.2 of [5, TS 38.212] - is set to ' 0 ', the UE shall use the P_{B W P, i}^{\\prime} value from the second set of P_{B W P, i}^{\\prime} values when receiving PDSCH scheduled by the same DCI. - is set to ' 1 ' and one value is configured for the first set of P_{B W P, i}^{\\prime} values, the UE shall use this P_{B W P, i}^{\\prime} value when receiving PDSCH scheduled by the same DCI - is set to ' 1 ' and two values are configured for the first set of P_{B W P, i}^{\\prime} values as ' n 2 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 2 and wideband) or ' n 4 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 4 and wideband), the UE shall use the value when receiving PDSCH scheduled by the same DCI as follows: - If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4. For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)',",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "qcl-Type"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        201
+      ]
+    ],
+    "matched_fields": [
+      "PDSCHConfig",
+      "qcl-Type"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) The UE may be configured with a DCI field for triggering the aperiodic ZP CSI-RS. A list of ZP-CSI-RSResourceSet(s), provided by higher layer parameter aperiodic-ZP-CSI-RS-ResourceSetsToAddModList in PDSCHConfig, is configured for aperiodic triggering. The maximum number of aperiodic ZP-CSI-RS-ResourceSet(s) configured per BWP is 3 . The bit-length of DCI field ZP CSI-RS trigger depends on the number of aperiodic ZP-CSI-RS-ResourceSet(s)configured (up to 2 bits). Each non-zero codepoint of 'ZP CSI-RS' trigger in DCI format 1 _1 triggers one aperiodic 'ZP-CSI-RS-ResourceSet' in the list aperiodic-ZP-CSI-RS-ResourceSetsToAddModList by indicating the aperiodic ZP CSI-RS resource set ID. The DCI codepoint '01' triggers the resource set with 'ZP-CSI-RS-ResourceSetId' set to ' 1 ', the DCI codepoint ' 10 ' triggers the resource set with 'ZP-CSI-RS-ResourceSetId' set to ' 2 ', and the DCI codepoint '11' triggers the resource set with 'ZP-CSI-RS-ResourceSetId' set to ' 3 '. Codepoint ' 00 ' is reserved for not triggering aperiodic ZP CSI-RS. When receiving PDSCH scheduled by DCI format 1 \\_0 or PDSCHs with SPS activated by DCI format 1_0, the REs corresponding to configured resources in aperiodic-ZP-CSI-RSResourceSetsToAddModList or in aperiodicZP-CSI-RS-ResourceSetsToAddModListDCI-1-2 are available for PDSCH. When the UE is configured with multi-slot and single-slot PDSCH scheduling, the triggered aperiodic ZP CSI-RS is applied to all the slot(s) of the PDSCH scheduled or the PDSCHs with SPS activated by the PDCCH containing the trigger. For a UE configured with a list of semi-persistent ZP-CSI-RS-ResourceSet(s) provided by higher layer parameter sp-ZP-CSI-RS-ResourceSetsToAddModList: - when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the activation command, as described in clause 6.1.3.19 of [10, TS 38.321], for ZP CSI-RS resource(s), the corresponding action in [10, TS 38.321] and the UE assumption on the PDSCH RE mapping corresponding to the activated ZP CSI-RS resource(s) shall be applied starting from the first slot that is after slot n+ 3 N_{\\text {slot }}^{\\text {sub frame }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K \\text { mac }}}} \\cdot k_{\\text {mac }} where \\mu is the SCS configuration for the PUCCH and \\mu_{K_{\\text {mac }}} is the subcarrier spacing configuration for k_{\\text {mac }} with a value of 0 for frequency range 1 , and k_{\\text {mac }} is provided by K-M a c or k_{\\mathrm{mac}}=0 if K -Mac is not provided. - when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the deactivation command, as described in clause 6.1.3.19 of [10, TS 38.321], for activated ZP CSI-RS resource(s), the corresponding action in [10, TS 38.321] and the UE assumption on cessation of the PDSCH RE mapping corresponding to the de-activated ZP CSI-RS resource(s) shall be applied starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {subframe } e^{\\mu}}+\\frac{2^{\\mu}}{2^{\\mu_{K \\text { mac }}}} \\cdot k_{\\text {mac }} where \\mu is the SCS configuration for the PUCCH and \\mu_{K_{\\text {mac }}} is the subcarrier spacing configuration for k_{\\text {mac }} with a value of 0 for frequency range 1 , and k_{\\text {mac }} is provided by K Mac or k_{\\mathrm{mac}}=0 if K -Mac is not provided. 5.1.5 Antenna ports quasi co-location The UE can be configured with a list of up to M TCI-State configurations within the higher layer parameter PDSCHConfig to decode PDSCH according to a detected PDCCH with DCI intended for the UE and the given serving cell, where M depends on the UE capability maxNumberConfiguredTCIstatesPerCC. Each TCI-State contains parameters for configuring a quasi co-location relationship between one or two downlink reference signals and the DM-RS ports of the PDSCH, the DM-RS port of PDCCH or the CSI-RS port(s) of a CSI-RS resource. The quasi co-location relationship is configured by the higher layer parameter qcl-Typel for the first DL RS, and qcl-Type 2 for the second DL RS (if configured). For the case of two DL RSs, the QCL types shall not be the same, regardless of whether the references are to the same DL RS or different DL RSs. The quasi co-location types corresponding to each DL RS are given by the higher layer parameter qcl-Type in QCL-Info and may take one of the following values: - 'typeA': \\{Doppler shift, Doppler spread, average delay, delay spread\\} - 'typeB': \\{Doppler shift, Doppler spread\\}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.4.2",
+    "section_title": "PDSCH resource mapping with RE level granularity",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "qcl-Type"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        201
+      ]
+    ],
+    "matched_fields": [
+      "PDSCHConfig",
+      "qcl-Type"
+    ],
+    "original_sentence": "5.1.5 Antenna ports quasi co-location The UE can be configured with a list of up to M TCI-State configurations within the higher layer parameter PDSCHConfig to decode PDSCH according to a detected PDCCH with DCI intended for the UE and the given serving cell, where M depends on the UE capability maxNumberConfiguredTCIstatesPerCC. Each TCI-State contains parameters for configuring a quasi co-location relationship between one or two downlink reference signals and the DM-RS ports of the PDSCH, the DM-RS port of PDCCH or the CSI-RS port(s) of a CSI-RS resource. The quasi co-location relationship is configured by the higher layer parameter qcl-Typel for the first DL RS, and qcl-Type 2 for the second DL RS (if configured). For the case of two DL RSs, the QCL types shall not be the same, regardless of whether the references are to the same DL RS or different DL RSs. The quasi co-location types corresponding to each DL RS are given by the higher layer parameter qcl-Type in QCL-Info and may take one of the following values: - 'typeA': \\{Doppler shift, Doppler spread, average delay, delay spread\\} - 'typeB': \\{Doppler shift, Doppler spread\\}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "rbg-Size"
+    ],
+    "original_sentence": "5.1.2.2.1 Downlink resource allocation type 0 In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "rbg-Size"
+    ],
+    "original_sentence": "- the size of all other RBGs is P . In downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast. The bitmap is of size N_{\\text {RBG }} bits with one bitmap bit per RBG such that each RBG is addressable. The RBGs shall be indexed in the order of increasing frequency and starting at the lowest frequency of the bandwidth part. The order of RBG bitmap is such that RBG 0 to RBG N_{\\text {RBG }}-1 are mapped from MSB to LSB. The RBG is allocated to the UE if the corresponding bit value in the bitmap is 1 , the RBG is not allocated to the UE otherwise.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "based on",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "RBG size"
+    ],
+    "original_sentence": "When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4. For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)',",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "PDSCHConfig",
+      "reference signal"
+    ],
+    "original_sentence": "5.1.5 Antenna ports quasi co-location The UE can be configured with a list of up to M TCI-State configurations within the higher layer parameter PDSCHConfig to decode PDSCH according to a detected PDCCH with DCI intended for the UE and the given serving cell, where M depends on the UE capability maxNumberConfiguredTCIstatesPerCC. Each TCI-State contains parameters for configuring a quasi co-location relationship between one or two downlink reference signals and the DM-RS ports of the PDSCH, the DM-RS port of PDCCH or the CSI-RS port(s) of a CSI-RS resource. The quasi co-location relationship is configured by the higher layer parameter qcl-Typel for the first DL RS, and qcl-Type 2 for the second DL RS (if configured). For the case of two DL RSs, the QCL types shall not be the same, regardless of whether the references are to the same DL RS or different DL RSs. The quasi co-location types corresponding to each DL RS are given by the higher layer parameter qcl-Type in QCL-Info and may take one of the following values: - 'typeA': \\{Doppler shift, Doppler spread, average delay, delay spread\\} - 'typeB': \\{Doppler shift, Doppler spread\\} - 'typeC': \\{Doppler shift, average delay\\} - 'typeD': \\{Spatial Rx parameter\\} The UE can be configured with a list of up to 128 DLorJointTCIState configurations, within the higher layer parameter PDSCH-Config for providing a reference signal for the quasi co-location for DM-RS of PDSCH and DM-RS of PDCCH in a CC, for CSI-RS, and to provide a reference, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "reference signal"
+    ],
+    "original_sentence": "- 'typeD': \\{Spatial Rx parameter\\} The UE can be configured with a list of up to 128 DLorJointTCIState configurations, within the higher layer parameter PDSCH-Config for providing a reference signal for the quasi co-location for DM-RS of PDSCH and DM-RS of PDCCH in a CC, for CSI-RS, and to provide a reference, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-config",
+      "resource allocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) value ' 0 '. When the minimum scheduling offset restriction is applied the UE is not expected to be scheduled with a DCI in slot n to receive a PDSCH scheduled with C-RNTI, CS-RNTI or MCS-C-RNTI with K_{0} smaller than \\left\\lceil K_{0 \\min } \\cdot \\frac{2 \\mu^{\\prime}}{2^{\\mu}}\\right\\rceil , where K_{0 \\mathrm{~mm}} and \\mu are the applied minimum scheduling offset restriction and the numerology of the active DL BWP of the scheduled cell when receiving the DCI in slot n , respectively, and \\mu^{\\prime} is the numerology of the new active DL BWP in case of active DL BWP change in the scheduled cell and is equal to \\mu , otherwise. The minimum scheduling offset restriction is not applied when PDSCH transmission is scheduled with C-RNTI, CS-RNTI or MCS-C-RNTI in common search space associated with CORESET0 and default PDSCH time domain resource allocation is used, in the search space set provided by recoverySearchSpaceld when monitoring PDCCH as described in [6, TS 38.213] or when PDSCH transmission is scheduled with SI-RNTI, MSGB-RNTI or RA-RNTI. The application delay of the change of the minimum scheduling offset restriction is determined in Clause 5.3.1. The UE is not expected to be configured with referenceOfSLIVDCI-1-2 for serving cells configured for cross-carrier scheduling with a scheduling cell of a different downlink SCS configuration. When a UE is configured by the higher layer parameter repetitionScheme set to 'tdmSchemeA' and indicated DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)', the number of PDSCH transmission occasions is derived by the number of TCI states indicated by the DCI field 'Transmission Configuration Indication' of the scheduling DCI. - If two TCI states are indicated by the DCI field 'Transmission Configuration Indication', the UE is expected to receive two PDSCH transmission occasions, where the first TCI state is applied to the first PDSCH transmission occasion and resource allocation in time domain for the first PDSCH transmission occasion follows Clause 5.1.2.1. The second TCI state is applied to the second PDSCH transmission occasion, and the second PDSCH transmission occasion shall have the same number of symbols as the first PDSCH transmission occasion. If the UE is configured by the higher layers with a value \\bar{K} in StartingSymbolOffsetK, it shall determine that the first symbol of the second PDSCH transmission occasion starts after \\bar{K} symbols from the last symbol of the first PDSCH transmission occasion. If the value \\bar{K} is not configured via the higher layer parameter StartingSymbolOffsetK, \\bar{K}=0 shall be assumed by the UE. The UE is not expected to receive more than two PDSCH transmission layers for each PDSCH transmission occasion. For two PDSCH transmission occasions, the redundancy version to be applied is derived according to Table 5.1.2.1-2, where n=0,1 applied respectively to the first and second TCI state. The UE expects the PDSCH mapping type indicated by DCI field 'Time domain resource assignment' to be mapping type B , and the indicated PDSCH mapping type is applied to both PDSCH transmission occasions. - Otherwise, the UE is expected to receive a single PDSCH transmission occasion, and the resource allocation in the time domain follows Clause 5.1.2.1. When a UE configured by the higher layer parameter PDSCH-config that indicates at least one entry contains repetitionNumber in PDSCH-TimeDomainResourceAllocation, - If two TCI states are indicated by the DCI field 'Transmission Configuration Indication' together with the DCI field 'Time domain resource assignment' indicating an entry which contains repetitionNumber in PDSCHTimeDomainResourceAllocation and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)', the same SLIV is applied for all PDSCH transmission occasions across the repetitionNumber consecutive slots, the first TCI state is applied to the first PDSCH transmission occasion and resource allocation in time domain for the first PDSCH transmission occasion follows Clause 5.1.2.1.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "pdsch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "\\end{table} - If one TCI state is indicated by the DCI field 'Transmission Configuration Indication' together with the DCI field 'Time domain resource assignment' indicating an entry which contains repetitionNumber in PDSCHTimeDomainResourceAllocation and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)', the same SLIV is applied for all PDSCH transmission occasions across the repetitionNumber consecutive slots, the first PDSCH transmission occasion follows Clause 5.1.2.1, the same TCI state is applied to all PDSCH transmission occasions. The UE may expect that each PDSCH transmission occasion is limited to two transmission layers. For all PDSCH transmission occasions, the redundancy version to be applied is derived according to Table 5.1.2.1-2, where n is counted considering PDSCH transmission occasions. - Otherwise, the UE is expected to receive a single PDSCH transmission occasion, and the resource allocation in the time domain follows Clause 5.1.2.1. For [pdsch-TimeDomainAllocationListForMultiPDSCH-r17] in pdsch-Config each PDSCH has a separate SLIV, mapping type and K_{0} . The number of scheduled PDSCHs is signalled by the number of indicated SLIVs in the row of the pdsch-TimeDomainAllocationListForMultiPDSCH-r17 signalled in DCI format 1_1. If a UE is configured with pdsch-TimeDomainAllocationListForMultiPDSCH-r17 in which one or more rows contain multiple SLIVs for PDSCH on a DL BWP of a serving cell, and the UE is indicated re-transmission of PDSCH corresponding to a DL SPS by DCI format 1_1, the UE does not expect that the number of indicated SLIVs in the row of the pdsch-TimeDomainAllocationListForMultiPDSCH-r17 by the DCI is more than one.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "pdsch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "\\multirow[t]{3}{*}{G-RNTI, G-CS-RNTI (for multicast)} & \\multirow[t]{3}{*}{Type-X common search space for multiast} & 1,2, 3 & No & - & No & { }^{-} & Default A & & 1,2, 3 & Yes & - & No & { }^{-} & pdsch-TimeDomainAllocationList provided in PDSCH-ConfigCommon (Note 1) & & 1,2, 3 & No/Ye s & - & Yes & - & pdsch-TimeDomainAllocationList provided in pdsch-Config-Multicast (Note 1) \\multicolumn{8}{|l|}{\\begin{tabular}{l} Note 1: For a UE that supports multicast, the same TDRA table applies to all G-RNTIs (configured for multicast) if configured on a given serving cell. Note 2: If pdsch-TimeDomainAllocationListForMultiPDSCH-r17 is provided, it is applicable to DCI format 1 _ 1 only. \\end{tabular}} \\end{tabular} \\begin{table} \\captionsetup{labelformat=empty} \\caption{Table 5.1.2.1.1-1A: Applicable PDSCH time domain resource allocation for DCl format 1_2} \\begin{tabular}{|l|l|l|l|} PDSCH-ConfigCommon includes pdschTimeDomainAllocation L ist & PDSCH-Config includes pdschTimeDomainAllocationL ist & PDSCH-Config includes pdschTimeDomainAllocationListD Cl-1-2 & PDSCH time domain resource allocation to apply",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "16 (Note 1) & 2,3 & Type A & 0 & 2 & 6 \\multicolumn{6}{|l|}{\\begin{tabular}{l} Note 1: The UE may assume that this PDSCH resource allocation is not used, if the PDSCH was scheduled with SI-RNTI in PDCCH Type0 common search space Note 2: This applies for Case F and Case G candidate SS/PBCH block pattern described in clause 4 of [6, TS 38.213] \\end{tabular}} \\end{tabular} \\end{table} 5.1.2.2 Resource allocation in frequency domain Two downlink resource allocation schemes, type 0 and type 1 , are supported. The UE shall assume that when the scheduling grant is received with DCI format 1 \\_0,4 \\_0 or 4 \\_1 then downlink resource allocation type 1 is used. If the scheduling DCI is configured to indicate the downlink resource allocation type as part of the 'Frequency domain resource assignment' field by setting a higher layer parameter resourceAllocation in PDSCH-Config to 'dynamicSwitch', for DCI format 1 \\_1 or setting a higher layer parameter resourceAllocationDCI-1-2 in PDSCH-Config to 'dynamicSwitch' for DCI format 1 _2 or setting a higher layer parameter resourceAllocation in PDSCH-ConfigMulticast to 'dynamicSwitch' for DCI format 4_2, the UE shall use downlink resource allocation type 0 or type 1 as defined by this DCI field. Otherwise the UE shall use the downlink frequency resource allocation type as defined by the higher layer parameter resourceAllocation in PDSCH-Config for DCI format 1 \\_1 or by the higher layer parameter ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2",
+    "section_title": "Resource allocation in frequency domain",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resourceAllocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) resourceAllocationDCI-1-2 for DCI format 1 _2 or by the higher layer parameter resourceAllocation in PDSCH-ConfigMulticast for DCI format 4_2. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part. For a PDSCH scheduled with a DCI format 1 \\_0 in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format 1 \\_0 , the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. 5.1.2.2.1 Downlink resource allocation type 0 In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "- the size of all other RBGs is P . In downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast. The bitmap is of size N_{\\text {RBG }} bits with one bitmap bit per RBG such that each RBG is addressable. The RBGs shall be indexed in the order of increasing frequency and starting at the lowest frequency of the bandwidth part. The order of RBG bitmap is such that RBG 0 to RBG N_{\\text {RBG }}-1 are mapped from MSB to LSB. The RBG is allocated to the UE if the corresponding bit value in the bitmap is 1 , the RBG is not allocated to the UE otherwise.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "based on",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "If N_{C F R}>N_{B W P}^{\\text {initial }}, K is the maximum value from set \\{1,2,4,6,8,10,12\\} which satisfies \\mathrm{K} <= \\left\\lfloor N_{C F R} / N_{B W P}^{\\text {initial }}\\right\\rfloor ; otherwise K=1 . In downlink resource allocation of type 1 scheduled using DCI format 42 with CRC scrambled by G-RNTI or G-CSRNTI, the description in clause 5.1.2.2.2 with the following changes: R \\bar{B}_{\\text {sart }} corresponds to a starting resource block in reference to the lowest RB of the CFR and N_{\\mathrm{BWP}}^{\\text {size }} is the size of the CFR. 5.1.2.3 Physical resource block (PRB) bundling The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of prb-BundlingTypeDCI-1-2 instead of prb-BundingType as well as vrb-ToPRB-InterleaverDCI-1-2 instead of vrb-ToPRB-Interleaver. The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4_2, by applying the parameters of prb-BundlingType given by PDSCH-Config-Multicast as well as vrb-ToPRB-Interleaver given by PDSCH-Config-Multicast. A UE may assume that precoding granularity is P_{B W P, i}^{\\prime} consecutive resource blocks in the frequency domain. P_{B W P, i}^{\\prime} can be equal to one of the values among \\{2,4 , wideband \\} .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "A UE expects a configuration provided by ssb-PositionsInBurst in ServingCellConfigCommon to be same as a configuration provided by ssb-PositionsInBurst in SIBI. When receiving PDSCH scheduled by PDCCH with CRC scrambled by C-RNTI, MCS-C-RNTI, CS-RNTI, G-RNTI, G-CS-RNTI, MCCH-RNTI or PDSCHs with SPS, the REs corresponding to the configured or dynamically indicated resources in Clauses 5.1.4.1, 5.1.4.2 are not available for PDSCH. Furthermore, the UE assumes SS/PBCH block transmission according to ssb-PositionsInBurst if the PDSCH resource allocation overlaps with PRBs containing SS/PBCH block transmission resources, and the UE shall assume that the PRBs containing SS/PBCH block transmission resources are not available for PDSCH in the OFDM symbols where SS/PBCH block is transmitted. A UE is not expected to handle the case where PDSCH DM-RS REs are overlapping, even partially, with any RE(s) not available for PDSCH. For operation with shared spectrum channel access, SS/PBCH block transmission according to ssb-PositionsInBurst represents all of the candidate SS/PBCH blocks corresponding to SS/PBCH block indices provided by ssbPositionsInBurst as described in Clause 4.1 of [6, TS 38.213]. 5.1.4.1 PDSCH resource mapping with RB symbol level granularity The procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of rateMatchPatternGrouplDCI-1-2, rateMatchPatternGroup2DCI-1-2 instead of rateMatchPatternGroupl and rateMatchPatternGroup2. The procedures for PDSCH scheduled by PDCCH with DCI format 1 \\ldots 0 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4_1, and the procedures for PDSCH scheduled by DCI format 1_1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4 _ 2 by applying the parameters of rateMatchPatternToAddModList, rateMatchPatternGroupl and rateMatchPatternGroup 2 configured in PDSCH-Config-Multicast. A UE may be configured with any of the following higher layer parameters indicating REs declared as not available for PDSCH:",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.4.1",
+    "section_title": "PDSCH resource mapping with RB symbol level granularity",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "prb-BundlingType",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        204
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "prb-BundlingType",
+      "RBG size"
+    ],
+    "original_sentence": "When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, P_{B W P, i}^{\\prime} for bandwidth part is equal to 2 PRBs unless configured by the higher layer parameter prbBundlingType given by PDSCH-Config. When receiving PDSCH scheduled by PDCCH with DCI format 1 \\_1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'dynamicBundling', the higher layer parameters bundleSizeSet 1 and bundleSizeSet 2 configure two sets of P_{B W P, i}^{\\prime} values, the first set can take one or two P_{B W P, i}^{\\prime} values among \\{2,4 , wideband \\} , and the second set can take one P_{B W P, i}^{\\prime} value among \\{2,4 , wideband \\} . If the PRB 'bundling size indicator' signalled in DCI format 1 _1 as defined in Clause 7.3.1.2.2 of [5, TS 38.212] - is set to ' 0 ', the UE shall use the P_{B W P, i}^{\\prime} value from the second set of P_{B W P, i}^{\\prime} values when receiving PDSCH scheduled by the same DCI. - is set to ' 1 ' and one value is configured for the first set of P_{B W P, i}^{\\prime} values, the UE shall use this P_{B W P, i}^{\\prime} value when receiving PDSCH scheduled by the same DCI - is set to ' 1 ' and two values are configured for the first set of P_{B W P, i}^{\\prime} values as ' n 2 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 2 and wideband) or ' n 4 -wideband' (corresponding to two P_{B W P, i}^{\\prime} values 4 and wideband), the UE shall use the value when receiving PDSCH scheduled by the same DCI as follows: - If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4. For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)',",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "prb-BundlingType",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        204
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "prb-BundlingType",
+      "RBG size"
+    ],
+    "original_sentence": "- If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4. For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)',",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "prb-BundlingType",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        204
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "prb-BundlingType",
+      "resource allocation"
+    ],
+    "original_sentence": "If N_{C F R}>N_{B W P}^{\\text {initial }}, K is the maximum value from set \\{1,2,4,6,8,10,12\\} which satisfies \\mathrm{K} <= \\left\\lfloor N_{C F R} / N_{B W P}^{\\text {initial }}\\right\\rfloor ; otherwise K=1 . In downlink resource allocation of type 1 scheduled using DCI format 42 with CRC scrambled by G-RNTI or G-CSRNTI, the description in clause 5.1.2.2.2 with the following changes: R \\bar{B}_{\\text {sart }} corresponds to a starting resource block in reference to the lowest RB of the CFR and N_{\\mathrm{BWP}}^{\\text {size }} is the size of the CFR. 5.1.2.3 Physical resource block (PRB) bundling The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of prb-BundlingTypeDCI-1-2 instead of prb-BundingType as well as vrb-ToPRB-InterleaverDCI-1-2 instead of vrb-ToPRB-Interleaver. The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4_2, by applying the parameters of prb-BundlingType given by PDSCH-Config-Multicast as well as vrb-ToPRB-Interleaver given by PDSCH-Config-Multicast. A UE may assume that precoding granularity is P_{B W P, i}^{\\prime} consecutive resource blocks in the frequency domain. P_{B W P, i}^{\\prime} can be equal to one of the values among \\{2,4 , wideband \\} .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.3",
+    "section_title": "Physical resource block (PRB) bundling",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "reference signal"
+    ],
+    "original_sentence": "5.1.5 Antenna ports quasi co-location The UE can be configured with a list of up to M TCI-State configurations within the higher layer parameter PDSCHConfig to decode PDSCH according to a detected PDCCH with DCI intended for the UE and the given serving cell, where M depends on the UE capability maxNumberConfiguredTCIstatesPerCC. Each TCI-State contains parameters for configuring a quasi co-location relationship between one or two downlink reference signals and the DM-RS ports of the PDSCH, the DM-RS port of PDCCH or the CSI-RS port(s) of a CSI-RS resource. The quasi co-location relationship is configured by the higher layer parameter qcl-Typel for the first DL RS, and qcl-Type 2 for the second DL RS (if configured). For the case of two DL RSs, the QCL types shall not be the same, regardless of whether the references are to the same DL RS or different DL RSs. The quasi co-location types corresponding to each DL RS are given by the higher layer parameter qcl-Type in QCL-Info and may take one of the following values: - 'typeA': \\{Doppler shift, Doppler spread, average delay, delay spread\\} - 'typeB': \\{Doppler shift, Doppler spread\\} - 'typeC': \\{Doppler shift, average delay\\} - 'typeD': \\{Spatial Rx parameter\\} The UE can be configured with a list of up to 128 DLorJointTCIState configurations, within the higher layer parameter PDSCH-Config for providing a reference signal for the quasi co-location for DM-RS of PDSCH and DM-RS of PDCCH in a CC, for CSI-RS, and to provide a reference, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "reference signal"
+    ],
+    "original_sentence": "- If a UE is configured with enableTwoDefaultTCI-States, and at least one TCI codepoint indicates two TCI states, the UE may assume that the DM-RS ports of PDSCH or PDSCH transmission occasions of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) associated with the TCI states corresponding to the lowest codepoint among the TCI codepoints containing two different TCI states. When the UE is configured by higher layer parameter repetitionScheme set to 'tdmSchemeA' or is configured with higher layer parameter repetitionNumber, and the offset between the reception of the DL DCI and the first PDSCH transmission occasion is less than the threshold timeDurationForQCL, the mapping of the TCI states to PDSCH transmission occasions is determined according to clause 5.1.2.1 by replacing the indicated TCI states with the TCI states corresponding to the lowest codepoint among the TCI codepoints containing two different TCI states based on the activated TCI states in the slot with the first PDSCH transmission occasion. In this case, if the 'QCL-TypeD' in both of the TCI states corresponding to the lowest codepoint among the TCI codepoints containing two different TCI states is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers) - If a UE is not configured with sfnSchemePdsch, and the UE is configured with sfnSchemePdcch set to 'sfnScheme A' and there is no TCI codepoint witih two TCI states in the activation command and the CORESET with the lowest ID in the latest slot is indicated with two TCI states, the UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) associated with the first TCI state of two TCI states indicated for the CORESET. - In all cases above, if none of configured TCI states for the serving cell of scheduled PDSCH is configured with qcl-Type set to 'typeD', the UE shall obtain the other QCL assumptions from the indicated TCI state(s) for its scheduled PDSCH irrespective of the time offset between the reception of the DL DCI and the corresponding PDSCH. If the PDCCH carrying the scheduling DCI is received on one component carrier, and a PDSCH scheduled by that DCI is on another component carrier: - The timeDurationForQCL is determined based on the subcarrier spacing of the scheduled PDSCH. If \\mu_{\\mathrm{PDCCH}}< \\mu_{\\text {PDSCH }} an additional timing delay d \\frac{2 \\mu_{\\text {PDSCH }}}{2^{\\mu_{\\text {PDCH }}}} is added to the timeDurationForQCL, where d is defined in 5.2.1.5.1a-1, otherwise d is zero; - When the UE is configured with enableDefaultBeamForCCS, if the offset between the reception of the DL DCI and the corresponding PDSCH is less than the threshold timeDurationForQCL, or if the DL DCI does not have the TCI field present, the UE obtains its QCL assumption for the scheduled PDSCH from the activated TCI state with the lowest ID applicable to PDSCH in the active BWP of the scheduled cell. A UE that has indicated a capability beamCorrespondenceWithoutUL-BeamSweeping set to '1', as described in [18, TS 38.822], can determine a spatial domain filter to be used while performing the applicable channel access procedures described in [16, TS 37.213] to transmit a UL transmission on the channel as follows: - if UE is indicated with an SRI corresponding to the UL transmission, the UE may use a spatial domain filter that is same as the spatial domain transmission filter associated with the indicated SRI, - if UE is configured with TCI-State configurations with DLorJointTCIState or UL-TCIState, the UE may use a spatial domain transmit filter that is same as the spatial domain receive filter the UE may use to receive the DL reference signal associated with the indicated TCI state. When the PDCCH reception includes two PDCCH from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the time offset between the reception of the DL DCI and the corresponding PDSCH, the PDCCH candidate that ends later in time is used. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "qclType",
+      "reference signal"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "according to",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "reference signal"
+    ],
+    "original_sentence": "The UE shall maintain power consistency and phase continuity within an actual TDW, across PUSCH transmissions of PUSCH repetition Type A scheduled by DCI format 0 \\_1 or 0 \\_2 , or PUSCH repetition Type A with a configured grant, or PUSCH repetition type B or TB processing over multiple slots, or across PUCCH transmissions of PUCCH repetition, in case the actual TDW is created in response to frequency hopping, or in response to the use of a different SRS resource set association for the two PUSCH transmissions of PUSCH repetition type A, or PUSCH repetition type B , or in response to the use of different spatial relations or different power control parameters for the two PUCCH transmissions of PUCCH repetition, or in response to any event not triggered by DCI or MAC-CE. The UE maintains power consistency and phase continuity within an actual TDW, across PUSCH transmissions of PUSCH repetition Type A scheduled by DCI format 0 \\_1 or 0 \\_2 , or PUSCH repetition Type A with a configured grant, or PUSCH repetition type B or TB processing over multiple slots, or across PUCCH transmissions of PUCCH repetition, in case the actual TDW is created in response to an event triggered by DCI other than frequency hopping or by MAC-CE, subject to UE capability. 6.2 UE reference signal (RS) procedure 6.2.1 UE sounding procedure The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with K >= 1 SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with K >= 1 SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously. When the UE is configured DLorJoint-TCIState or UL-TCIState, the UE can assume that SRS resource(s) in any SRS resource set, except SRS resource set for positioning and an SRS resource set configured with followUnifiedTCIstater17, can be configured with DLorJoint-TCIState or UL-TCIState or updated as described in clause [6.1.3.X] of [10, TS 38.321]. The reference RS in the DLorJoint-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter t r s -Info. The reference RS in the UL-TCIState(s) can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource with the higher layer parameter usage set to beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. If an SRS resource set, except an SRS resource set for positioning, is configured with [followUnifiedTCIstate-r17], the UE shall transmit the target SRS resource(s) within the SRS resource set according to the spatial relation, if applicable, with a reference to the RS used for determining UL TX spatial filter or the RS configured with qcl-Type set to 'typeD' in QCL-Info of the indicated DLorJoint-TCIState or UL-TCIState. The reference RS in the indicated DLorJoint-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. For aperiodic SRS at least one state of the DCI field is used to select at least one out of the configured SRS resource set(s).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) resourceAllocationDCI-1-2 for DCI format 1 _2 or by the higher layer parameter resourceAllocation in PDSCH-ConfigMulticast for DCI format 4_2. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part. For a PDSCH scheduled with a DCI format 1 \\_0 in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format 1 \\_0 , the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. 5.1.2.2.1 Downlink resource allocation type 0 In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "RBG size",
+      "resource allocation"
+    ],
+    "original_sentence": "resourceAllocationDCI-1-2 for DCI format 1 _2 or by the higher layer parameter resourceAllocation in PDSCH-ConfigMulticast for DCI format 4_2. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part. For a PDSCH scheduled with a DCI format 1 \\_0 in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format 1 \\_0 , the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. 5.1.2.2.1 Downlink resource allocation type 0 In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1. \\begin{table} \\captionsetup{labelformat=empty} \\caption{Table 5.1.2.2.1-1: Nominal RBG size P } \\begin{tabular}{|c|c|c|} Bandwidth Part Size & Configuration 1 & Configuration 2",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "rbg-Size",
+      "resource allocation"
+    ],
+    "original_sentence": "- the size of all other RBGs is P . In downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast. The bitmap is of size N_{\\text {RBG }} bits with one bitmap bit per RBG such that each RBG is addressable. The RBGs shall be indexed in the order of increasing frequency and starting at the lowest frequency of the bandwidth part. The order of RBG bitmap is such that RBG 0 to RBG N_{\\text {RBG }}-1 are mapped from MSB to LSB. The RBG is allocated to the UE if the corresponding bit value in the bitmap is 1 , the RBG is not allocated to the UE otherwise.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "based on",
+    "is_self_reference": false,
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "rbg-Size",
+      "resource allocation"
+    ],
+    "original_sentence": "The UE shall determine the resource block assignment in frequency domain using the resource allocation field in the detected PDCCH DCI except for a PUSCH transmission scheduled by a RAR UL grant or fallbackRAR UL grant, in which case the frequency domain resource allocation is determined according to clause 8.3 of [6,38.213] or a MsgA PUSCH transmission with frequency domain resource allocation determined according to clause 8.1A of [6,38.213]. Three uplink resource allocation schemes type 0 , type 1 and type 2 are supported. Uplink resource allocation scheme type 0 is supported for PUSCH only when transform precoding is disabled. Uplink resource allocation scheme type 1 and type 2 are supported for PUSCH for both cases when transform precoding is enabled or disabled. If the scheduling DCI is configured to indicate the uplink resource allocation type as part of the 'Frequency domain resource' assignment field by setting a higher layer parameter resourceAllocation in pusch-Config to 'dynamicSwitch', for DCI format 0 \\_1 or setting a higher layer parameter resourceAllocationDCI-0-2 in pusch-Config to 'dynamicSwitch' for DCI format 0_2, the UE shall use uplink resource allocation type 0 or type 1 as defined by this DCI field. Otherwise the UE shall use the uplink frequency resource allocation type as defined by the higher layer parameter resourceAllocation for DCI format 0 \\_1 or the higher layer parameter resourceAllocationDCI-0-2 for DCI format 0 \\_2 . The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_1 and useInterlacePUCCHPUSCH in BWP-UplinkDedicated is configured, uplink type 2 resource allocation is used. The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_0 , then uplink resource allocation type 1 is used, except when any of the higher layer parameters useInterlacePUCCH-PUSCH in BWPUplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured in which case uplink resource allocation type 2 is used. The UE expects that either none or both of uselnterlacePUCCH-PUSCH in BWP-UplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active bandwidth part change via DCI, the RB indexing for uplink type 0 , type 1 and type 2 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active bandwidh part change via DCI, the RB indexing for uplink type 0 , type 1 , type 2 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the uplink bandwidth part and then the resource allocation within the bandwidth part. RB numbering starts from the lowest RB in the determined uplink bandwidth part. 6.1.2.2.1 Uplink resource allocation type 0 In uplink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured in pusch-Config and the size of the bandwidth part as defined in Table 6.1.2.2.1-1. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.2.2.1",
+    "section_title": "Uplink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "RBG size",
+      "resource allocation"
+    ],
+    "original_sentence": "The UE expects that either none or both of uselnterlacePUCCH-PUSCH in BWP-UplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active bandwidth part change via DCI, the RB indexing for uplink type 0 , type 1 and type 2 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active bandwidh part change via DCI, the RB indexing for uplink type 0 , type 1 , type 2 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the uplink bandwidth part and then the resource allocation within the bandwidth part. RB numbering starts from the lowest RB in the determined uplink bandwidth part. 6.1.2.2.1 Uplink resource allocation type 0 In uplink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured in pusch-Config and the size of the bandwidth part as defined in Table 6.1.2.2.1-1. \\begin{table} \\captionsetup{labelformat=empty} \\caption{Table 6.1.2.2.1-1: Nominal RBG size P } \\begin{tabular}{|c|c|c|} Bandwidth Part Size & Configuration 1 & Configuration 2",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.2.2.1",
+    "section_title": "Uplink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "original_sentence": "- If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using RS resource with index q_{d} , where 0 <= q_{d}<Q_{d}-Q_{d} is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} where k is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\mu is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index q_{d} on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter - If the UE is provided pathlossReferenceRSs and is not provided PUCCH-SpatialRelationInfo and is not provided more than one sets of power control parameters for operation in FR1, the UE obtains the referenceSignal value in PUCCH-PathlossReferenceRS from the pucch-PathlossReferenceRS-Id with index 0 in PUCCH-PathlossReferenceRS where the RS resource is either on the primary cell or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking - If the UE - is not provided pathlossReferenceRSs, and - is not provided PUCCH-SpatialRelationInfo, and - is provided enableDefaultBeamPL-ForPUCCH, and - is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212] the UE determines a RS resource index q_{d} providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index q_{d} based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same q_{d} applies to the PUCCH transmission in each of the multiple slots. - The parameter \\Delta_{\\mathrm{F}_{\\mathrm{P}} \\mathrm{PCCH}}(F) is a value of deltaF-PUCCH-fofor PUCCH format 0 , deltaF-PUCCH-fl for PUCCH format 1, deltaF-PUCCH-f2 for PUCCH format 2, deltaF-PUCCH-f3 for PUCCH format 3, and deltaF-PUCCH-f4 for PUCCH format 4, if provided; otherwise \\Delta_{\\mathrm{F}_{-} \\mathrm{PUCCH}}(F)=0 . - \\quad \\Delta_{\\mathrm{TF}, b, f, c}(i) is a PUCCH transmission power adjustment component on active UL BWP b of carrier f of primary cell c",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE 6.1.3.16 SP CSI reporting on PUCCH Activation/Deactivation MAC CE The SP CSI reporting on PUCCH Activation/Deactivation MAC CE is identified by a MAC subheader with LCID as specified in Table 6.2.1-1. It has a fixed size of 16 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.16",
+    "section_title": "SP CSI reporting on PUCCH Activation/Deactivation MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI State ID"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) - SP CSI-IM resource set ID: This field contains an index of CSI-IM-ResourceSet containing Semi Persistent CSIIM resources, as specified in TS 38.331 [5], indicating the Semi Persistent CSI-[M resource set, which shall be activated or deactivated. The length of the field is 6 bits; - TCI State [D1: This field contains TCI-Stateld, as specified in TS 38.331 [5], of a TCI State, which is used as QCL source for the resource within the Semi Persistent NZP CSI-RS resource set indicated by SP CSI-RS resource set ID field. TCI State [D0 indicates TCI State for the first resource within the set, TCI State [D1 for the second one and so on. The length of the field is 7 bits. If the A / D field is set to 0 , the octets containing TCI State ID field(s) are not present; - R: Reserved bit, set to 0 . Figure 6.1.3.12-1: SP CSI-RS/CSI-IM Resource Set Activation/Deactivation MAC CE 6.1.3.13 Aperiodic CSI Trigger State Subselection MAC CE The Aperiodic CSI Trigger State Subselection MAC CE is identified by a MAC subheader with LCID as specified in Table 6.2.1-1. It has a variable size consisting of following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - T_{1} : This field indicates the selection status of the Aperiodic Trigger States configured within aperiodicTriggerStateList, as specified in TS 38.331 [5]. \\mathrm{T}_{0} refers to the first trigger state within the list, \\mathrm{T}_{1} to the second one and so on. If the list does not contain entry with index i , MAC entity shall ignore the \\mathrm{T}_{1} field. The T, field is set to 1 to indicate that the Aperiodic Trigger State i shall be mapped to the codepoint of the DCI CSI request field, as specified in TS 38.214 [7]. The codepoint to which the Aperiodic Trigger State is mapped is determined by its ordinal position among all the Aperiodic Trigger States with T_{1} field set to 1, i.e. the first Aperiodic Trigger State with \\mathrm{T}_{1} field set to 1 shall be mapped to the codepoint value 1, second Aperiodic Trigger State with T_{1} field set to 1 shall be mapped to the codepoint value 2 and so on. The maximum number of mapped Aperiodic Trigger States is 63; - R: Reserved bit, set to 0 .",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.3.13",
+    "section_title": "Aperiodic CSI Trigger State Subselection MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI State ID"
+    ],
+    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE 6.1.3.16 SP CSI reporting on PUCCH Activation/Deactivation MAC CE The SP CSI reporting on PUCCH Activation/Deactivation MAC CE is identified by a MAC subheader with LCID as specified in Table 6.2.1-1. It has a fixed size of 16 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.16",
+    "section_title": "SP CSI reporting on PUCCH Activation/Deactivation MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI state ID"
+    ],
+    "original_sentence": "The Enhanced TCI States Activation/Deactivation for UE-specific PDSCH MAC CE is identified by a MAC PDU subheader with eLCID as specified in Table 6.2.1-1b. It has a variable size consisting of following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneous TCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all the Serving Cells configured in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - \\mathrm{C}_{1} : This field indicates whether the octet containing TCI state \\mathrm{ID}_{1,2} is present. If this field is set to 1 , the octet containing TCI state ID _{1,2} is present. If this field is set to 0 , the octet containing TCI state ID _{1,2} is not present; - TCI state ID, This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5], where i is the index of the codepoint of the DCI Transmission configuration indication field as specified in TS 38.212",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.24",
+    "section_title": "Enhanced TCI States Activation/Deactivation for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI state ID"
+    ],
+    "original_sentence": "The Unified TCI States Activation/Deactivation MAC CE is identified by a MAC subheader with eLCID as specified in Table 6.2.1-1b. It has a variable size consisting of following fields: - CORESET Pool ID: This field indicates that the mapping between the activated TCI states and the codepoint of the DCI Transmission Configuration Indication set by field TCI state ID is specific to the ControlResourceSetld configured with CORESET Pool ID as specified in TS 38.331 [5]. This field set to 1 indicates that the TCI states are specified to CORESET pool ID equal to 1 , otherwise the TCI states are specified to CORESET pool ID equal to 0 . If no more than one value for the coresetPoollndex is configured for any CORESET in the BWP, the R bit is present instead; - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneous U-TCI-UpdateList I, simultaneousU-TCI-UpdateList2, simultaneousU-TCI-UpdateList3 or simultaneousU-TCI-UpdateList4 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneous U-TCIUpdateList1, simultaneousU-TCI-UpdateList2, simultaneousU-TCI-UpdateList3 or simultaneousU-TCIUpdateList4, respectively; - DL BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - UL BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. If value of unifiedTCI-StateType in the Serving Cell indicated by Serving Cell ID is joint, this field is considered as the reserved bits. The length of the BWP ID field is 2 bits; - \\mathrm{P}_{1} : This field indicates whether each TCI codepoint has multiple TCI states or single TCI state. If \\mathrm{P}_{1} field is set to 1 , it indicates that i^{\\text {th }} TCI codepoint includes the DL TCI state and the UL TCI state. If \\mathrm{P}_{1} field is set to 0 , it indicates that i^{\\text {th }} TCI codepoint includes only the DL/joint TCI state or the UL TCI state. The codepoint to which a TCI state is mapped is determined by its ordinal position among all the TCI state ID fields;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1.3.47",
+    "section_title": "Unified TCI States Activation/Deactivation MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI State ID"
+    ],
+    "original_sentence": "The SP/AP SRS TCI State Indication MAC CE is identified by a MAC subheader with eLCID as specified in Table 6.2.1-1b. It has a variable size with following fields: - A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell associated with all TCI states indicated by the TCI State ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP associated with all TCI states indicated by the TCI State [D, fields. The length of the field is 2 bits; - C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.59",
+    "section_title": "SP/AP SRS TCI State Indication MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI state ID"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) TCI State is used, 7 -bits length TCI state [D i.e. TCI-Stateld as specified in TS 38.331 [5] is used. If separate downlink and uplink TCI State is used, the most significant bit of TCI state ID is considered as a reserved bit and the remaining 6 bits indicate the TCI-UL-State-Id as specified in TS 38.331 [5]. The length of the field is 7 bits. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - R: Reserved bit, set to 0 . Figure 6.1.3.59-1: SP/AP SRS TCI State Indication MAC CE 6.1.3.60 Serving Cell Set based SRS TCI State Indication MAC CE The Serving Cell Set based SRS TCI State Indication MAC CE is identified by a MAC subheader with eLCID as specified. It has a variable size with following fields: - SRS Resource's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource. If the C field is set to 0 , this field also indicates the identity of the Serving Cell associated with all TCI States indicated by the TCI State IDi fields. The length of the field is 5 bits. The indicated Serving Cell is configured as part of simultaneousSpatial-UpdatedListl or simultaneousSpatial-UpdatedList2 in TS 38.331 [5], and this MAC CE applies to all the Serving Cells configured in the set simultaneousSpatial-UpdatedListl or simultaneousSpatial-UpdatedList2, respectively; - SRS Resource's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated AP/SP SRS Resource. If the C field is set to 0, this field also indicates the identity of the BWP associated with all TCI States indicated by the TCI State IDi fields. The length of the field is 2 bits; - C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1 , the TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.60",
+    "section_title": "Serving Cell Set based SRS TCI State Indication MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI state ID"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneous U-TCI-UpdateList I, simultaneousU-TCI-UpdateList2, simultaneousU-TCI-UpdateList3 or simultaneousU-TCI-UpdateList4 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneous U-TCIUpdateList1, simultaneousU-TCI-UpdateList2, simultaneousU-TCI-UpdateList3 or simultaneousU-TCIUpdateList4, respectively; - DL BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - F_{1,1} : This field indicates for the TCI state ID fields associated with the codepoint i of the DCI Transmission Configuration Indication field whether the j -th joint TCI state is present or not, where \\mathrm{j}=1,2 . If \\mathrm{F}_{1, \\mathrm{j}} field is set to 1 , it indicates the j -th joint TCI state for codepoint i is present. If F_{1, j} field is set to 0 , it indicates the j -th joint TCI state for codepoint i is absent. The codepoint to which a TCI state is mapped is determined by its ordinal position among all the TCI state ID fields; - TCI state ID: This field indicates the 7-bits length TCI state ID identified by TCI-Stateld as specified in TS 38.331 [5]. The maximum number of activated TCI states is 16 ; - R: Reserved bit, set to 0 .",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.70",
+    "section_title": "Enhanced Unified TCI States Activation/Deactivation MAC CE for Joint TCI States",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        198
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "TCI state ID"
+    ],
+    "original_sentence": "289 ETSI TS 138321 V18.2.0 (2024-08) - F_{1,1} : This field indicates for the TCI state ID fields associated with the codepoint i of the DCI Transmission Configuration Indication field whether the j -th DL TCI state is present or not, where \\mathrm{j}=1,2 . If \\mathrm{F}_{1,3} field is set to 1 , it indicates the j -th DL TCI state for codepoint i is present. If \\mathrm{F}_{1, \\mathrm{j}} field is set to 0 , it indicates the j -th DL TCI state for codepoint i is absent; - \\mathrm{S}_{1,1} : This field indicates for the TCI state ID fields associated with the codepoint i of the DCI Transmission Configuration Indication field whether the j -th UL TCI state is present or not, where \\mathrm{j}=1,2 . If \\mathrm{S}_{1, \\mathrm{j}} field is set to 1 , it indicates the j -th UL TCI state for codepoint i is present. If \\mathrm{S}_{1, \\mathrm{j}} field is set to 0 , it indicates the j -th UL TCI state for codepoint i is absent; - TCI state ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5]. If the indicated TCI state ID is DL TCI state, 7-bits length TCI state ID, i.e. TCI-Stateld, as specified in TS 38.331 [5] is used. If the indicated TCI state ID is UL TCI state, the most significant bit of TCI state ID is considered as the reserved bit and remainder 6 bits indicate the TCI-UL-State-Id as specified in TS 38.331 [5]. TCI state IDs are in the order of indication of \\mathrm{F}_{1,1} and \\mathrm{S}_{1,1} fields. The codepoint to which a TCI state is mapped is determined by its ordinal position among all the TCI state ID fields. The maximum number of activated TCI states is 32 ; - R: Reserved bit, set to 0 . \\begin{table} \\begin{tabular}{|l|l|l|l|l|l|l|l|l|} R & \\multicolumn{5}{|c|}{Serving Cell ID} & \\multicolumn{2}{|c|}{DL BWP ID} & Oct 1 R & R & R & R & R & R & \\multicolumn{2}{|c|}{UL BWP ID} & Oct 2 F_{1,1} & \\mathrm{F}_{1,2} & \\mathrm{S}_{1,1} & \\mathrm{S}_{1,2} & F_{2,1} & F_{2,2} & \\mathrm{S}_{2,1} & S_{2,2} & Oct 3",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "6.1.3.71",
+    "section_title": "Enhanced Unified TCI States Activation/Deactivation MAC CE for Separate TCI States",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "TCI State ID"
+    ],
+    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.15",
+    "section_title": "TCI State Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        205
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "bundle size",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "pdsch-TimeDomainAllocationList, pdsch-TimeDomainAllocationListDCI-1-2, pdsch-TimeDomainAllocationListForMultiPDSCH List of time-domain configurations for timing of DL assignment to DL data. The field pdsch-TimeDomainAllocationList (with or without suffix) applies to DCI format 1_0 and DCI format 1_1 (see table 5.1.2.1.1-1 in TS 38.214 [19]), and if the field pdsch-TimeDomainAllocationListDCI-1-2 is not configured, to DCI format 1_2. If the field pdsch-TimeDomainAllocationListDCI-1-2 is configured, it applies to DCI format 1_2 (see table 5.1.2.1.1-1A in TS 38.214 [19]). The field pdsch-TimeDomainAllocationListForMultiPDSCH applies to DCI format 1_1. The network does not configure the pdsch-TimeDomainAllocationList-r16 simultaneously with the pdsch-TimeDomainAllocationList (without suffix) in the same PDSCH-Config. \\end{tabular} \\begin{tabular}{l} prb-BundlingType, prb-BundlingTypeDCI-1-2 Indicates the PRB bundle type and bundle size(s) (see TS 38.214 [19], clause 5.1.2.3). If dynamic is chosen, the actual bundleSizeSet1 or bundleSizeSet2 to use is indicated via DCI. Constraints on bundleSize(Set) setting depending on vrb-ToPRB-Interleaverand mg-Size settings are described in TS 38.214 [19], clause 5.1.2.3. If a bundleSize(Set) value is absent, the UE applies the value n 2 . The field prb-BundlingType applies to DCI format 1_1, and the field prb-Bundling TypeDCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1 and TS 38.214 [19], clause 5.1.2.3). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        205
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "bundle size",
+      "prb-BundlingType"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} prb-BundlingType, prb-BundlingTypeDCI-1-2 Indicates the PRB bundle type and bundle size(s) (see TS 38.214 [19], clause 5.1.2.3). If dynamic is chosen, the actual bundleSizeSet1 or bundleSizeSet2 to use is indicated via DCI. Constraints on bundleSize(Set) setting depending on vrb-ToPRB-Interleaverand mg-Size settings are described in TS 38.214 [19], clause 5.1.2.3. If a bundleSize(Set) value is absent, the UE applies the value n 2 . The field prb-BundlingType applies to DCI format 1_1, and the field prb-Bundling TypeDCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1 and TS 38.214 [19], clause 5.1.2.3). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH"
+    ],
+    "original_sentence": "PDSCH-Config field descriptions antennaPortsFieldPresenceDCI-1-2 Configure the presence of \"Antenna ports\" field in DCI format 1_2. When the field is configured, then the \"Antenna ports\" field is present in DCI format 1_2. Otherwise, the field size is set to 0 for DCI format 1 \\_2 (See TS 38.212 [17], clause 7.3.1.1.3). If neither dmrs-DowninkForPDSCH-MappingTypeA-DCI-1-2 nor dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 is configured, this field is absent. aperiodic-ZP-CSI-RS-ResourceSetsToAddModList, aperiodic-ZP-CSI-RS-ResourceSetsToAddModListDCI-1-2 AddMod/Release lists for configuring aperiodically triggered zero-power CSI-RS resource sets. Each set contains a ZP-CSI-RS-ResourceSet/d and the IDs of one or more ZP-CSI-RS-Resources (the actual resources are defined in the 2 p -CSI-RS-ResourceToAddModList). The network configures the UE with at most 3 aperiodic ZP-CSI-RSResourceSets and it uses only the ZP-CSI-RS-ResourceSettd 1 to 3 . The network triggers a set by indicating its ZP-CSI-RS-ResourceSettd in the DCI payload. The DCI codepoint '01' triggers the resource set with ZP-CSI-RS-ResourceSet/d 1, the DCI codepoint '10' triggers the resource set with ZP-CSI-RS-ResourceSet/d 2, and the DCI codepoint '11' triggers the resource set with ZP-CSI-RS-ResourceSet/d 3 (see TS 38.214 [19], clause 5.1.4.2). The field aperiodic-ZP-CSI-RS-ResourceSetsToAddModList applies to DCI format 1_1 and the field aperiodic-ZP-CSI-RS-ResourceSets ToAddModListDCI-1-2 applies to DCI format 1 \\_2 (see TS 38.214 [19], clause 5.1.4.2 and TS 38.212 [17] clause 7.3.1). beamAppTime Indicates the first slot to apply the unified TCI indicated by DCI as specified in TS 38.214 Clause 5.1.5. The value n1 means 1 symbol, n2 two symbols and so on. The first slot is at least Y symbols indicated by beamAppTime parameter after the last symbol of the acknowledgment of the joint or separate DLUL beam indication. The same value shall be configured for all serving cells in any one of the simultaneousU-TCI-UpdateListN configured in IE CellGroupConfig based on the smallest SCS of the active BWP. dataScramblingidentityPDSCH, dataScramblingidentityPDSCH2 Identifier(s) used to initialize data scrambling (c_init) for PDSCH as specified in TS 38.211 [16], clause 7.3.1.1. The dataScrambling/dentityPDSCH2 is configured if coresetPoollndex is configured with 1 for at least one CORESET in the same BWP. di-OrJoint-TCIState-ToAddModList A list of Transmission Configuration Indicator (TCI) states indicating a transmission configuration which includes QCL-relationships between the DL RSs in one RS set and the PDSCH DMRS ports (see TS 38.214 [19], clause 5.1.5). dmrs-DownlinkForPDSCH-MappingTypeA, dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 DMRS configuration for PDSCH transmissions using PDSCH mapping type A (chosen dynamically via PDSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-DownlinkForPDSCH-MappingTypeA applies to DCI format 1_1 and the field dmrs-DowninkForPDSCH-MappingTypeA-DCI-1-2 applies to DCI format 1 \\_2 (see TS 38.212 [17], clause 7.3.1). dmrs-DownlinkForPDSCH-MappingTypeB, dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 DMRS configuration for PDSCH transmissions using PDSCH mapping type B (chosen dynamically via PDSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-DownilikForPDSCH-MappingTypeB applies to DCI format 1_1 and the field dmrs-DownilikForPDSCH-MappingTypeB-DCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1).",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        195
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-AdditionalPosition",
+      "dmrs-DownlinkForPDSCH-MappingTypeA"
+    ],
+    "original_sentence": "di-OrJoint-TCIState-ToAddModList A list of Transmission Configuration Indicator (TCI) states indicating a transmission configuration which includes QCL-relationships between the DL RSs in one RS set and the PDSCH DMRS ports (see TS 38.214 [19], clause 5.1.5). dmrs-DownlinkForPDSCH-MappingTypeA, dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2 DMRS configuration for PDSCH transmissions using PDSCH mapping type A (chosen dynamically via PDSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-DownlinkForPDSCH-MappingTypeA applies to DCI format 1_1 and the field dmrs-DowninkForPDSCH-MappingTypeA-DCI-1-2 applies to DCI format 1 \\_2 (see TS 38.212 [17], clause 7.3.1). dmrs-DownlinkForPDSCH-MappingTypeB, dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 DMRS configuration for PDSCH transmissions using PDSCH mapping type B (chosen dynamically via PDSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-DownilikForPDSCH-MappingTypeB applies to DCI format 1_1 and the field dmrs-DownilikForPDSCH-MappingTypeB-DCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1). dmrs-FD-OCC-DisabledForRank1-PDSCH If configured, the UE may assume that the set of remaining orthogonal antenna ports, which are within the same code division multiplexing (CDM) group and have different frequency domain orthogonal cover codes (FD-OCC), are not associated with the PDSCH of another UE (see TS 38.214 [19], clause 5.1.6.2). It is applicable for PDSCH SCS of 480 and 960 kHz when rank 1 PDSCH with type-1 or type-2 DMRS is scheduled.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-AdditionalPosition",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        196
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "DMRS-AdditionalPosition",
+      "resource allocation"
+    ],
+    "original_sentence": "nrofSlotsMsgA-PUSCH Number of slots (in active UL BWP numerology) containing one or multiple PUSCH occasions, each slot has the same time domain resource allocation (see TS 38.213 [13], clause 8.1A). startSymbolAndLengthMsgA-PO An index giving valid combinations of start symbol, length and mapping type as start and length indicator (SLIV) for the first msgA PUSCH occasion, for RRC_CONNECTED UEs in non-initial BWP as described in TS 38.214 [19] clause 6.1.2. The network configures the field so that the allocation does not cross the slot boundary. The number of occupied symbols excludes the guard period. If the field is absent, the UE shall use the value in msgA-PUSCH-TimeDomainAllocation (see TS 38.213 [13], clause 8.1A). The network configures one of msgA-PUSCH-TimeDomainAllocation and startSymbolAndLengthMsgA-PO, but not both. If the field is absent, the UE shall use the value of msgA-PUSCH-TimeDomainAllocation. \\begin{tabular}{|l|} MsgA-DMRS-Config field descriptions \\begin{tabular}{l} msgA-DMRS-AdditionalPosition Indicates the position for additional DM-RS. If the field is absent, the UE applies value pos2. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "- PDSCH-Config The PDSCH-Config IE is used to configure the UE specific PDSCH parameters. If this IE is used for MBS CFR, the following fields shall be absent: minimumSchedulingOffsetK0, antennaPortsFieldPresenceDCI-1-2, aperiodicZP-CSI-RS-ResourceSetsToAddModListDCI-1-2, aperiodicZP-CSI-RS-ResourceSetsToReleaseListDCI-1-2, dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2, dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2, dmrs-SequenceInitializationDCI-1-2, harq-ProcessNumberSizeDCI-1-2, mcs-TableDCI-1-2, numberOfBitsForRV-DCI-1-2, pdsch-AggregationFactor, pdsch-TimeDomainAllocationListDCI-1-2, prb-BundlingTypeDCI-1-2, priority[ndicatorDCI-1-2, rateMatchPatternGroup1DCI-1-2, rateMatchPatternGroup2DCI-1-2, resourceAllocationType1GranularityDCI-1-2, vrb-ToPRB-InterleaverDCI-1-2, referenceOfSLIVDCI-1-2, resourceAllocationDCI-1-2, dataScramblingIdentityPDSCH2-r16, repetitionSchemeConfig. PDSCH-Config information element",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-DownlinkForPDSCH-MappingTypeA",
+      "pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        195
+      ],
+      [
+        194
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-DownlinkForPDSCH",
+      "PDSCH-Config"
+    ],
+    "original_sentence": "ETSI TS 138331 V17.0.0 (2022-05) PDSCH-Config field descriptions antennaPortsFieldPresenceDCI-1-2 Configure the presence of \"Antenna ports\" field in DCI format 1_2. When the field is configured, then the \"Antenna ports\" field is present in DCI format 1_2. Otherwise, the field size is set to 0 for DCI format 1 \\_2 (See TS 38.212 [17], clause 7.3.1.1.3). If neither dmrs-DowninkForPDSCH-MappingTypeA-DCI-1-2 nor dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2 is configured, this field is absent. aperiodic-ZP-CSI-RS-ResourceSetsToAddModList, aperiodic-ZP-CSI-RS-ResourceSetsToAddModListDCI-1-2 AddMod/Release lists for configuring aperiodically triggered zero-power CSI-RS resource sets. Each set contains a ZP-CSI-RS-ResourceSet/d and the IDs of one or more ZP-CSI-RS-Resources (the actual resources are defined in the 2 p -CSI-RS-ResourceToAddModList). The network configures the UE with at most 3 aperiodic ZP-CSI-RSResourceSets and it uses only the ZP-CSI-RS-ResourceSettd 1 to 3 . The network triggers a set by indicating its ZP-CSI-RS-ResourceSettd in the DCI payload. The DCI codepoint '01' triggers the resource set with ZP-CSI-RS-ResourceSet/d 1, the DCI codepoint '10' triggers the resource set with ZP-CSI-RS-ResourceSet/d 2, and the DCI codepoint '11' triggers the resource set with ZP-CSI-RS-ResourceSet/d 3 (see TS 38.214 [19], clause 5.1.4.2). The field aperiodic-ZP-CSI-RS-ResourceSetsToAddModList applies to DCI format 1_1 and the field aperiodic-ZP-CSI-RS-ResourceSets ToAddModListDCI-1-2 applies to DCI format 1 \\_2 (see TS 38.214 [19], clause 5.1.4.2 and TS 38.212 [17] clause 7.3.1).",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "prb-BundlingType"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        204
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "prb-BundlingType"
+    ],
+    "original_sentence": "pdsch-TimeDomainAllocationList, pdsch-TimeDomainAllocationListDCI-1-2, pdsch-TimeDomainAllocationListForMultiPDSCH List of time-domain configurations for timing of DL assignment to DL data. The field pdsch-TimeDomainAllocationList (with or without suffix) applies to DCI format 1_0 and DCI format 1_1 (see table 5.1.2.1.1-1 in TS 38.214 [19]), and if the field pdsch-TimeDomainAllocationListDCI-1-2 is not configured, to DCI format 1_2. If the field pdsch-TimeDomainAllocationListDCI-1-2 is configured, it applies to DCI format 1_2 (see table 5.1.2.1.1-1A in TS 38.214 [19]). The field pdsch-TimeDomainAllocationListForMultiPDSCH applies to DCI format 1_1. The network does not configure the pdsch-TimeDomainAllocationList-r16 simultaneously with the pdsch-TimeDomainAllocationList (without suffix) in the same PDSCH-Config. \\end{tabular} \\begin{tabular}{l} prb-BundlingType, prb-BundlingTypeDCI-1-2 Indicates the PRB bundle type and bundle size(s) (see TS 38.214 [19], clause 5.1.2.3). If dynamic is chosen, the actual bundleSizeSet1 or bundleSizeSet2 to use is indicated via DCI. Constraints on bundleSize(Set) setting depending on vrb-ToPRB-Interleaverand mg-Size settings are described in TS 38.214 [19], clause 5.1.2.3. If a bundleSize(Set) value is absent, the UE applies the value n 2 . The field prb-BundlingType applies to DCI format 1_1, and the field prb-Bundling TypeDCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1 and TS 38.214 [19], clause 5.1.2.3). \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "qcl-Type"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        201
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "QCL type"
+    ],
+    "original_sentence": "\\begin{tabular}{l} qcl-info, qcl-info2 List of references to TCI-States for providing the QCL source and QCL type for each NZP-CSI-RS-Resource listed in nzp-CSI-RS-Resources of the NZP-CSI-RS-ResourceSet indicated by resourceSet within nzp-CSI-RS. Each TCI-Stateld refers to the TCI-State which has this value for tci-Stateld and is defined in tci-StatesToAddModList in the PDSCH-Config included in the BWP-Downlink corresponding to the serving cell and to the DL BWP to which the resourcesForChannelMeasurement (in the CSI-ReportConfig indicated by reportConfig/d above) belong to. First entry in qc/-info corresponds to first entry in nzp-CSI-RS-Resources of that NZP-CSI-RS-ResourceSet, second entry in qclinfo corresponds to second entry in nzp-CSI-RS-Resources, and so on (see TS 38.214 [19], clause 5.2.1.5.1). When this field is absent for aperiodic CSIRS, the UE shall use QCL information included in the \"indicated\" DL only/Joint TCI state as specified in TS 38.214 \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "qcl-Type"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        201
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "QCL type"
+    ],
+    "original_sentence": "\\begin{tabular}{l} qci-info List of references to TCI-States for providing the QCL source and QCL type for each NZP-CSI-RS-Resource listed in nzp-CSI-RS-Resources of the NZP-CSI-RS-ResourceSet indicated by resourceSet. Each TCI-Stateld refers to the TCI-State which has this value for tci-Stateld and is defined in tci-StatesToAddModList in the PDSCH-Config included in the BWP-Downlink of this serving cell indicated by firstActiveDownlinkBWP-ld in the ServingCellConfig in which this IE is included. First entry in qc/info corresponds to first entry in nzp-CS/-RS-Resources of that NZP-CS/-RS-ResourceSet, second entry in qc/info corresponds to second entry in nzp-CS/-RS-Resources, and so on (see TS 38.214 [19], clause x.y.z). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "rbg-Size"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        203
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "RBG size"
+    ],
+    "original_sentence": "\\begin{tabular}{l} rateMatchPatternGroup2, rateMatchPatternGroup2DCI-1-2 The IDs of a second group of RateMatchPatterns defined in PDSCH-Config->rateMatchPatternToAddModList (BWP Ievel) or in ServingCellConfig >rateMatchPatternToAddModList (cell level). These patterns can be activated dynamically by DCI (see TS 38.214 [19], clause 5.1.4.1). The field rateMatchPatternGroup2 applies to DCI format 1_1, and the field rateMatchPatternGroup2DCI-1-2 applies to DCI format 1 _ 2 (see TS 38.214 [19], clause 5.1.4.1). \\end{tabular} \\begin{tabular}{l} rateMatchPatternToAddModList Resources patterns which the UE should rate match PDSCH around. The UE rate matches around the union of all resources indicated in the rate match patterns (see TS 38.214 [19], clause 5.1.4.1). \\end{tabular} \\begin{tabular}{l} ng-Size Selection between config 1 and config 2 for RBG size for PDSCH. The UE ignores this field if resourceAllocation is set to resourceAllocation Type 1 (see TS 38.214 [19], clause 5.1.2.2.1). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resourceAllocation"
+    ],
+    "original_sentence": "\\begin{tabular}{l} rateMatchPatternGroup2, rateMatchPatternGroup2DCI-1-2 The IDs of a second group of RateMatchPatterns defined in PDSCH-Config->rateMatchPatternToAddModList (BWP Ievel) or in ServingCellConfig >rateMatchPatternToAddModList (cell level). These patterns can be activated dynamically by DCI (see TS 38.214 [19], clause 5.1.4.1). The field rateMatchPatternGroup2 applies to DCI format 1_1, and the field rateMatchPatternGroup2DCI-1-2 applies to DCI format 1 _ 2 (see TS 38.214 [19], clause 5.1.4.1). \\end{tabular} \\begin{tabular}{l} rateMatchPatternToAddModList Resources patterns which the UE should rate match PDSCH around. The UE rate matches around the union of all resources indicated in the rate match patterns (see TS 38.214 [19], clause 5.1.4.1). \\end{tabular} \\begin{tabular}{l} ng-Size Selection between config 1 and config 2 for RBG size for PDSCH. The UE ignores this field if resourceAllocation is set to resourceAllocation Type 1 (see TS 38.214 [19], clause 5.1.2.2.1). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        194
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "\\begin{tabular}{l} repetitionSchemeConfig Configure the UE with repetition schemes. The network does not configure repetitionSchemeConfig-r16 and repetitionSchemeConfig-v1630 simultaneously to setup in the same PDSCH-Config. \\end{tabular} \\begin{tabular}{l} resourceAllocation, resourceAllocationDCI-1-2 Configuration of resource allocation type 0 and resource allocation type 1 for non-fallback DCI (see TS 38.214 [19], clause 5.1.2.2). The field resourceAllocation applies to DCI format 1_1, and the field resourceAllocationDCI-1-2 applies to DCI format 1 \\_2 (see TS 38.214 [19], clause 5.1.2.2). \\end{tabular} \\begin{tabular}{l} resourceAllocationType1GranularityDCI-1-2 Configure the scheduling granularity applicable for both the starting point and length indication for resource allocation type 1 in DCI format 1_2. If this field is absent, the granularity is 1 PRB (see TS 38.214 [19], clause 5.1.2.2.2). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        199,
+        200
+      ]
+    ],
+    "matched_fields": [
+      "QCL type",
+      "referenceSignal"
+    ],
+    "original_sentence": "\\begin{tabular}{l} cell The UE's serving cell in which the referenceSignal is configured. If the field is absent, it applies to the serving cell in which the TC/-State is configured. The RS can be located on a serving cell other than the serving cell in which the TC/-State is configured only if the qc/-Type is configured as typeC or typeD. See TS 38.214 [19] clause 5.1.5. \\end{tabular} \\begin{tabular}{l} referenceSignal Reference signal with which quasi-collocation information is provided as specified in TS 38.214 [19] clause 5.1.5. \\end{tabular} \\begin{tabular}{l} qci-Type QCL type as specified in TS 38.214 [19] clause 5.1.5. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        201
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "TCI-StateId"
+    ],
+    "original_sentence": "ssb SSB-Index }, qcl-Type ENUMERATED {typeA, typeB, typeC, typeD}, ...; [ [ ``` ``` --Editor's note: Needed in Rel-15/16 TCI state for mTRP intercell and in Rel-17 TCI state for BM intercell. ] ] } DLorJoint-TCIState-rl7 ::= SEQUENCE { tci-StateUnifiedId-rl7 TCI-StateId, qcl-Typel-rl7 QCL-Info, ```",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "Needed",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "RBG size",
+      "resourceAllocation"
+    ],
+    "original_sentence": "\\begin{tabular}{l} rbg-Size Selection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent. Note: rbg-Size is used when the transformPrecoder parameter is disabled. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "RBG size",
+      "resourceAllocation"
+    ],
+    "original_sentence": "\\begin{tabular}{l} ng-Size Selection between config 1 and config 2 for RBG size for PDSCH. The UE ignores this field if resourceAllocation is set to resourceAllocation Type 1 (see TS 38.214 [19], clause 5.1.2.2.1). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "rbg-Size",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        203
+      ],
+      [
+        202
+      ]
+    ],
+    "matched_fields": [
+      "RBG size",
+      "resource allocation"
+    ],
+    "original_sentence": "\\begin{tabular}{l} pusch-TimeDomainAllocationListDCI-0-2 Configuration of the time domain resource allocation (TDRA) table for DCI format 0 \\_2 (see TS 38.214 [19], clause 6.1.2, table 6.1.2.1.1-1B). \\end{tabular} \\begin{tabular}{l} pusch-TimeDomainAllocationListForMultiPUSCH Configuration of the time domain resource allocation (TDRA) table for multiple PUSCH (see TS 38.214 [19], clause 6.1.2). The field pusch- TimeDomainAllocationListForMultiPUSCH-r17 is applicable for PUSCH SCS of 120 \\mathrm{kHz}, 480 and 960 kHz . The network configures at most 16 rows in this TDRA table in PUSCH-TimeDomainResourceAllocationList-r16 configured by this field and at most 16 rows in PUSCH-TimeDomainResourceAllocationList-r17. This field is not configured simultaneously with pusch-Aggregation Factor. \\end{tabular} \\begin{tabular}{l} rbg-Size Selection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent (see TS 38.214 [19], clause 6.1.2.2.1). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "tci-StateId"
+    ],
+    "field_ids": [
+      [
+        199,
+        200
+      ],
+      [
+        197
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "TCI-State-Id"
+    ],
+    "original_sentence": "\\begin{tabular}{l} pdsch-TCI Indicates TCI states for PDSCH reception at SCell addition/activation or of the PSCell at SCG activation. This field includes exactly one bit for each configured TCI state in this BWP ordered by increasing values of TC/-State/d, i.e. the first bit indicates the activation state of the TCI state with the lowest TC/-State/d value, the second value indicates the activation status of the TCI state with the second lowest TCI-State-Id value, and so on. A bit set to 0 indicates that the corresponding TCI state is deactivated, a bit set to 1 indicates that the TCl state is activated. \\end{tabular} \\end{tabular} - TCI-State The IE TCI-State associates one or two DL reference signals with a corresponding quasi-colocation (QCL) type. If additionalPCI is configured for the reference signal, same value is configured for both DL reference signals. TCI-State information element",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

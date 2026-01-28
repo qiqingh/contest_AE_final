@@ -1,0 +1,46 @@
+RACH-ConfigCommonTwoStepRA-r16 ::=                   SEQUENCE {
+    rach-ConfigGenericTwoStepRA-r16                      RACH-ConfigGenericTwoStepRA-r16,
+    msgA-TotalNumberOfRA-Preambles-r16                   INTEGER (1..63)                                    OPTIONAL, -- Need S
+    msgA-SSB-PerRACH-OccasionAndCB-PreamblesPerSSB-r16   CHOICE {
+        oneEighth                                            ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        oneFourth                                            ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        oneHalf                                              ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        one                                                  ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        two                                                  ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32},
+        four                                                 INTEGER (1..16),
+        eight                                                INTEGER (1..8),
+        sixteen                                              INTEGER (1..4)
+    }                                                                                                                   OPTIONAL, -- Cond 2StepOnly
+    msgA-CB-PreamblesPerSSB-PerSharedRO-r16              INTEGER (1..60)                                                OPTIONAL, -- Cond SharedRO
+    msgA-SSB-SharedRO-MaskIndex-r16                      INTEGER (1..15)                                                OPTIONAL, -- Need S
+    groupB-ConfiguredTwoStepRA-r16                       GroupB-ConfiguredTwoStepRA-r16                                 OPTIONAL, -- Need S
+    msgA-PRACH-RootSequenceIndex-r16                     CHOICE {
+        l839                                                 INTEGER (0..837),
+        l139                                                 INTEGER (0..137),
+        l571                                                 INTEGER (0..569),
+        l1151                                                INTEGER (0..1149)
+    }                                                                                                                   OPTIONAL, -- Cond 2StepOnly
+    msgA-TransMax-r16                                    ENUMERATED {n1, n2, n4, n6, n8, n10, n20, n50, n100, n200}     OPTIONAL, -- Need R
+    msgA-RSRP-Threshold-r16                              RSRP-Range                                                     OPTIONAL, -- Cond 2Step4Step
+    msgA-RSRP-ThresholdSSB-r16                           RSRP-Range                                                     OPTIONAL, -- Need R
+    msgA-SubcarrierSpacing-r16                           SubcarrierSpacing                                              OPTIONAL, -- Cond 2StepOnlyL139
+    msgA-RestrictedSetConfig-r16                         ENUMERATED {unrestrictedSet, restrictedSetTypeA,
+                                                                     restrictedSetTypeB}                                OPTIONAL, -- Cond 2StepOnly
+    ra-PrioritizationForAccessIdentityTwoStep-r16        SEQUENCE {
+        ra-Prioritization-r16                                RA-Prioritization,
+        ra-PrioritizationForAI-r16                           BIT STRING (SIZE (2))
+    }                                                                                                                   OPTIONAL, -- Cond InitialBWP-Only
+    ra-ContentionResolutionTimer-r16                     ENUMERATED {sf8, sf16, sf24, sf32, sf40, sf48, sf56, sf64}     OPTIONAL, -- Cond 2StepOnly
+    ...,
+    [[
+    ra-PrioritizationForSlicingTwoStep-r17               RA-PrioritizationForSlicing-r17              OPTIONAL, -- Cond InitialBWP-Only
+    featureCombinationPreamblesList-r17 SEQUENCE (SIZE(1..maxFeatureCombPreamblesPerRACHResource-r17)) OF FeatureCombinationPreambles-r17 OPTIONAL  -- Cond AdditionalRACH
+    ]]
+}
+
+GroupB-ConfiguredTwoStepRA-r16 ::=                       SEQUENCE {
+    ra-MsgA-SizeGroupA                                   ENUMERATED {b56, b144, b208, b256, b282, b480, b640, b800,
+                                                                     b1000, b72, spare6, spare5, spare4, spare3, spare2, spare1},
+    messagePowerOffsetGroupB                             ENUMERATED {minusinfinity, dB0, dB5, dB8, dB10, dB12, dB15, dB18},
+    numberOfRA-PreamblesGroupA                           INTEGER (1..64)
+}

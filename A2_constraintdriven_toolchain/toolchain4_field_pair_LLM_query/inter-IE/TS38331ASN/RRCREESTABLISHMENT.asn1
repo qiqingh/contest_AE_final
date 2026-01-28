@@ -1,0 +1,18 @@
+RRCReestablishment ::=              SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        rrcReestablishment                  RRCReestablishment-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCReestablishment-IEs ::=          SEQUENCE {
+    nextHopChainingCount                NextHopChainingCount,
+    lateNonCriticalExtension            OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                RRCReestablishment-v1700-IEs         OPTIONAL
+}
+
+RRCReestablishment-v1700-IEs ::=    SEQUENCE {
+    sl-L2RemoteUE-Config-r17            SetupRelease {SL-L2RemoteUE-Config-r17}    OPTIONAL, -- Cond L2RemoteUE
+    nonCriticalExtension                SEQUENCE {}                                OPTIONAL
+}

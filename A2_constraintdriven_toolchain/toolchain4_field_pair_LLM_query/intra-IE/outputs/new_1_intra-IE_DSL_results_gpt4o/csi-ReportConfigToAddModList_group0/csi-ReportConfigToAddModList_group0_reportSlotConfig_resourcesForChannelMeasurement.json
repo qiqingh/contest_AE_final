@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      826,
+      827
+    ],
+    "field2_all": [
+      823
+    ],
+    "actual_pairs": [
+      [
+        [
+          826,
+          827
+        ],
+        [
+          823
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any explicit normative relationship between 'reportSlotConfig' and 'resourcesForChannelMeasurement'. The evidence lacks both target fields or doesn't relate them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "reportSlotConfig",
+    "field2": "resourcesForChannelMeasurement",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} reportSlotConfig Periodicity and slot offset (see TS 38.214 [19], clause 5.2.1.4). If the field reportSlotConfig-v1530 is present, the UE shall ignore the value provided in reportSlotConfig (without suffix). \\end{tabular} \\begin{tabular}{l} reportSlotOffsetList, reportSlotOffsetListDCI-0-1, reportSIotOffsetListDCI-0-2 Timing offset Y for semi persistent reporting using PUSCH. This field lists the allowed offset values. This list must have the same number of entries as the puschTimeDomainAllocationList in PUSCH-Config. A particular value is indicated in DCI. The network indicates in the DCI field of the UL grant, which of the configured report slot offsets the UE shall apply. The DCI value 0 corresponds to the first report slot offset in this list, the DCI value 1 corresponds to the second report slot offset in this list, and so on. The first report is transmitted in slot \\mathrm{n}+\\mathrm{Y} , second report in \\mathrm{n}+\\mathrm{Y}+\\mathrm{P} , where P is the configured periodicity. Timing offset Y for aperiodic reporting using PUSCH. This field lists the allowed offset values. This list must have the same number of entries as the puschTimeDomainAllocationList in PUSCH-Config. A particular value is indicated in DCI. The network indicates in the DCI field of the UL grant, which of the configured report slot offsets the UE shall apply. The DCI value 0 corresponds to the first report slot offset in this list, the DCI value 1 corresponds to the second report slot offset in this list, and so on (see TS 38.214 [19], clause 6.1.2.1). The field reportSiotOffsetListDCI-0-1 applies to DCI format 0 1 and the field reportSlotOffsetListDCI-0-2 applies to DCI format 0 2 (see TS 38.214 [19], clause 6.1.2.1). \\end{tabular} \\begin{tabular}{l} resourcesForChanneIMeasurement Resources for channel measurement. csi-ResourceConfig/d of a CSS-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only NZP-CSI-RS resources and/or SSB resources. This CSI-ReportConfig is associated with the DL BWP indicated by bwpId in that CSI-ResourceConfig. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T16:35:29.776241",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any explicit normative relationship between 'reportSlotConfig' and 'resourcesForChannelMeasurement'. The evidence lacks both target fields or doesn't relate them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

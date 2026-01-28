@@ -1,0 +1,28 @@
+PDSCH-ServingCellConfig ::=             SEQUENCE {
+    codeBlockGroupTransmission              SetupRelease { PDSCH-CodeBlockGroupTransmission }              OPTIONAL,   -- Need M
+    xOverhead                               ENUMERATED { xOh6, xOh12, xOh18 }                              OPTIONAL,   -- Need S
+    nrofHARQ-ProcessesForPDSCH              ENUMERATED {n2, n4, n6, n10, n12, n16}                         OPTIONAL,   -- Need S
+    pucch-Cell                              ServCellIndex                                                  OPTIONAL,   -- Cond SCellAddOnly
+    ...,
+    [[
+    maxMIMO-Layers                          INTEGER (1..8)                                                 OPTIONAL,   -- Need M
+    processingType2Enabled                  BOOLEAN                                                        OPTIONAL    -- Need M
+    ]],
+    [[
+    pdsch-CodeBlockGroupTransmissionList-r16 SetupRelease { PDSCH-CodeBlockGroupTransmissionList-r16 }     OPTIONAL    -- Need M
+    ]],
+    [[
+    downlinkHARQ-FeedbackDisabled-r17       SetupRelease { DownlinkHARQ-FeedbackDisabled-r17 }              OPTIONAL,   -- Need M
+    nrofHARQ-ProcessesForPDSCH-v1700        ENUMERATED {n32}                                               OPTIONAL    -- Need R
+    ]]
+}
+
+PDSCH-CodeBlockGroupTransmission ::=    SEQUENCE {
+    maxCodeBlockGroupsPerTransportBlock     ENUMERATED {n2, n4, n6, n8},
+    codeBlockGroupFlushIndicator            BOOLEAN,
+    ...
+}
+
+PDSCH-CodeBlockGroupTransmissionList-r16 ::=    SEQUENCE (SIZE (1..2)) OF PDSCH-CodeBlockGroupTransmission
+
+DownlinkHARQ-FeedbackDisabled-r17 ::= BIT STRING (SIZE (32))

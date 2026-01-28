@@ -1,0 +1,13 @@
+UEAssistanceInformationSidelink-r17 ::=       SEQUENCE {
+    criticalExtensions                            CHOICE {
+        ueAssistanceInformationSidelink-r17           UEAssistanceInformationSidelink-r17-IEs,
+        criticalExtensionsFuture                      SEQUENCE {}
+    }
+}
+
+UEAssistanceInformationSidelink-r17-IEs ::=   SEQUENCE {
+    sl-PreferredDRX-ConfigList-r17                SEQUENCE (SIZE (1..maxNrofSL-RxInfoSet-r17)) OF SL-DRX-ConfigUC-SemiStatic-r17
+                                                                                                        OPTIONAL, -- Need R
+    lateNonCriticalExtension                      OCTET STRING                                          OPTIONAL,
+    nonCriticalExtension                          SEQUENCE {}                                           OPTIONAL
+}

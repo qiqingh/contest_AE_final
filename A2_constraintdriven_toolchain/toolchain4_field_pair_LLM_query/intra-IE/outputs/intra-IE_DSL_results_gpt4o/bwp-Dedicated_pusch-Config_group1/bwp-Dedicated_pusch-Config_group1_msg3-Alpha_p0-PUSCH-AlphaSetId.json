@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      538
+    ],
+    "field2_all": [
+      539
+    ],
+    "actual_pairs": [
+      [
+        [
+          538
+        ],
+        [
+          539
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct or conditional relationship between msg3-Alpha and p0-PUSCH-AlphaSetId within the same IE. The snippets reference these fields in different contexts without a clear normative constraint linking them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pusch-Config_group1",
+    "field1": "msg3-Alpha",
+    "field2": "p0-PUSCH-AlphaSetId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "24 ETSI TS 138213 V17.1.0 (2022-05) - second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID value in p0-PUSCH-SetList and second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID in p0-PUSCH-SetList2, respectively, if the open-loop power control parameter set indication value is ' 10 ' or ' 11 ' - else, the UE determines first and second values P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) from the value of the first and second P0-PUSCH-AlphaSet in p0-AlphaSets, respectively - For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 ,\n---\n\\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-10T21:44:18.268315",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct or conditional relationship between msg3-Alpha and p0-PUSCH-AlphaSetId within the same IE. The snippets reference these fields in different contexts without a clear normative constraint linking them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

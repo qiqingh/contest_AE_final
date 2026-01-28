@@ -1,0 +1,105 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      323,
+      340,
+      431,
+      539,
+      647
+    ],
+    "field2_all": [
+      340,
+      431,
+      539,
+      647
+    ],
+    "actual_pairs": [
+      [
+        [
+          323,
+          431,
+          539,
+          647
+        ],
+        [
+          340
+        ]
+      ],
+      [
+        [
+          340
+        ],
+        [
+          539,
+          647
+        ]
+      ],
+      [
+        [
+          323
+        ],
+        [
+          340
+        ]
+      ],
+      [
+        [
+          340
+        ],
+        [
+          431,
+          539
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between the fields 'p0' from 'initialuplinkbwp_srs-config' and 'p0-pusch-alphasetid' from 'pusch-powercontrol_p0-alphasets'. The evidence primarily discusses intra-IE behavior and mappings within the same IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_srs-config",
+    "field1": "p0",
+    "ie2_name": "pusch-powercontrol_p0-alphasets",
+    "field2": "p0-pusch-alphasetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If the UE is provided SRI-PUSCH-PowerControl and more than one values of p0-PUSCH-AlphaSetld in p0-AlphaSets, - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively. - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the first SRI field and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first value of \\( \\alpha_{b_{1}, c}(j) \\) from the P0-PUSCH-AlphaSetID value that is mapped to the first SRI field value, and\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.",
+    "generated_at": "2026-01-10T14:10:59.987424",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint found between field1 and field2 based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between the fields 'p0' from 'initialuplinkbwp_srs-config' and 'p0-pusch-alphasetid' from 'pusch-powercontrol_p0-alphasets'. The evidence primarily discusses intra-IE behavior and mappings within the same IE.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

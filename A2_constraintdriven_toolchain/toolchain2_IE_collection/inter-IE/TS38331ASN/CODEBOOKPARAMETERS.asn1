@@ -1,0 +1,393 @@
+CodebookParameters ::=             SEQUENCE {
+    type1                                  SEQUENCE {
+        singlePanel                           SEQUENCE {
+            supportedCSI-RS-ResourceList      SEQUENCE (SIZE (1.. maxNrofCSI-RS-Resources)) OF SupportedCSI-RS-Resource,
+            modes                                  ENUMERATED {mode1, mode1andMode2},
+            maxNumberCSI-RS-PerResourceSet    INTEGER (1..8)
+        },
+        multiPanel                            SEQUENCE {
+            supportedCSI-RS-ResourceList      SEQUENCE (SIZE (1.. maxNrofCSI-RS-Resources)) OF SupportedCSI-RS-Resource,
+            modes                                  ENUMERATED {mode1, mode2, both},
+            nrofPanels                            ENUMERATED {n2, n4},
+            maxNumberCSI-RS-PerResourceSet    INTEGER (1..8)
+        }                                                                                                               OPTIONAL
+    },
+    type2                                  SEQUENCE {
+        supportedCSI-RS-ResourceList        SEQUENCE (SIZE (1.. maxNrofCSI-RS-Resources)) OF SupportedCSI-RS-Resource,
+        parameterLx                           INTEGER (2..4),
+        amplitudeScalingType                 ENUMERATED {wideband, widebandAndSubband},
+        amplitudeSubsetRestriction          ENUMERATED {supported}              OPTIONAL
+    }                                                                                                                   OPTIONAL,
+    type2-PortSelection                  SEQUENCE {
+        supportedCSI-RS-ResourceList        SEQUENCE (SIZE (1.. maxNrofCSI-RS-Resources)) OF SupportedCSI-RS-Resource,
+        parameterLx                           INTEGER (2..4),
+        amplitudeScalingType                 ENUMERATED {wideband, widebandAndSubband}
+    }                                                                                                                   OPTIONAL
+}
+
+CodebookParameters-v1610 ::=        SEQUENCE {
+    supportedCSI-RS-ResourceListAlt-r16  SEQUENCE {
+        type1-SinglePanel-r16                SEQUENCE (SIZE (1..maxNrofCSI-RS-Resources)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)  OPTIONAL,
+        type1-MultiPanel-r16                 SEQUENCE (SIZE (1..maxNrofCSI-RS-Resources)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)  OPTIONAL,
+        type2-r16                            SEQUENCE (SIZE (1..maxNrofCSI-RS-Resources)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)  OPTIONAL,
+        type2-PortSelection-r16              SEQUENCE (SIZE (1..maxNrofCSI-RS-Resources)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)  OPTIONAL
+    }                                                                                                                                       OPTIONAL
+}
+
+CodebookParametersAddition-r16 ::=      SEQUENCE {
+    etype2-r16                             SEQUENCE {
+        -- R1 16-3a Regular eType 2 R=1
+        etype2R1-r16                           SEQUENCE {
+            supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF
+                                                                                              INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+        },
+        -- R1 16-3a-1 Regular eType 2 R=2
+        etype2R2-r16                           SEQUENCE {
+            supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF
+                                                                                              INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+        }                                                                  OPTIONAL,
+        -- R1 16-3a-2: Support of parameter combinations 7-8
+        paramComb7-8-r16                       ENUMERATED {supported}      OPTIONAL,
+        -- R1 16-3a-3: Support of rank 3,4
+        rank3-4-r16                            ENUMERATED {supported}      OPTIONAL,
+        -- R1 16-3a-4: CBSR with soft amplitude restriction
+        amplitudeSubsetRestriction-r16         ENUMERATED {supported}      OPTIONAL
+    }                                                                      OPTIONAL,
+    etype2-PS-r16                          SEQUENCE {
+        -- R1 16-3b Regular eType 2 R=1 PortSelection
+        etype2R1-PortSelection-r16             SEQUENCE {
+            supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF
+                                                                                              INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+        },
+        -- R1 16-3b-1 Regular eType 2 R=2 PortSelection
+        etype2R2-PortSelection-r16             SEQUENCE {
+            supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF
+                                                                                              INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+        }                                                                  OPTIONAL,
+        -- R1 16-3b-2: Support of rank 3,4
+        rank3-4-r16                            ENUMERATED {supported}      OPTIONAL
+    }                                                                      OPTIONAL
+}
+
+CodebookComboParametersAddition-r16 ::= SEQUENCE {
+    -- R1 16-8 Mixed codebook types
+    type1SP-Type2-null-r16                 SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-Type2PS-null-r16               SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-eType2R1-null-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-eType2R2-null-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-eType2R1PS-null-r16            SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-eType2R2PS-null-r16            SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1SP-Type2-Type2PS-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-Type2-null-r16                 SEQUENCE {
+    supportedCSI-RS-ResourceListAdd-r16        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-Type2PS-null-r16               SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-eType2R1-null-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-eType2R2-null-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-eType2R1PS-null-r16            SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-eType2R2PS-null-r16            SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL,
+    type1MP-Type2-Type2PS-r16              SEQUENCE {
+        supportedCSI-RS-ResourceListAdd-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+    }                                                          OPTIONAL
+}
+
+CodebookParametersfetype2-r17 ::= SEQUENCE {
+    -- R1 23-9-1  Basic Features of Further Enhanced Port-Selection Type II Codebook (FeType-II)
+    fetype2basic-r17        SEQUENCE (SIZE (1.. maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16),
+    -- R1 23-9-2  Support of M=2 and R=1 for FeType-II
+    fetype2R1-r17           SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r17)) OF INTEGER (0.. maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                       OPTIONAL,
+    -- R1 23-9-4  Support of R = 2 for FeType-II
+    fetype2R2-r17           SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r17)) OF INTEGER (0.. maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                       OPTIONAL,
+    -- R1 23-9-3  Support of rank 3, 4 for FeType-II
+    fetype2Rank3Rank4-r17   ENUMERATED {supported}     OPTIONAL
+}
+
+CodebookComboParameterMixedType-r17 ::= SEQUENCE {
+    -- R1 23-9-5 Active CSI-RS resources and ports for mixed codebook types in any slot
+    type1SP-feType2PS-null-r17              SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-feType2PS-M2R1-null-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-feType2PS-M2R2-null-r1          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-Type2-feType2-PS-M1-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-Type2-feType2-PS-M2R1-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1-feType2-PS-M1-r17      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1-feType2-PS-M2R1-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-null-r17              SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-M2R1-null-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-M2R2-null-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-feType2-PS-M1-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-feType2-PS-M2R1-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1-feType2-PS-M1-r17      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1-feType2-PS-M2R1-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookComboParameterMultiTRP-r17::= SEQUENCE {
+    -- R1 23-7-1b	Active CSI-RS resources and ports in the presence of multi-TRP CSI
+    --  {Codebook 2, Codebook 3} =(NULL, NULL}
+    nCJT-null-null                        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-null-null                     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    --    {Codebook 2, Codebook 3} = {( {"Rel 16 combinations in FG 16-8"}
+    nCJT-Type2-null-r16                   SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2PS-null-r16                 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-null-r16                SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R2-null-r16                SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1PS-null-r16              SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R2PS-null-r16              SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-Type2PS-r16                SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-null-r16                SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2PS-null-r16              SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-null-r16             SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R2-null-r16             SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1PS-null-r16           SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R2PS-null-r16           SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-Type2PS-r16             SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    -- {Codebook 2, Codebook 3} = {"New Rel17 combinations in FG 23-9-5"}
+    nCJT-feType2PS-null-r17               SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-feType2PS-M2R1-null-r17          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-feType2PS-M2R2-null-r17          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-feType2-PS-M1-r17          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-feType2-PS-M2R1-r17        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-feType2-PS-M1-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-feType2-PS-M2R1-r17     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-null-r17            SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-M2R1-null-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-M2R2-null-r1        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-feType2-PS-M1-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-feType2-PS-M2R1-r17     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-feType2-PS-M1-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-feType2-PS-M2R1-r17  SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookParametersAdditionPerBC-r16::=  SEQUENCE {
+    -- R1 16-3a Regular eType 2 R=1
+    etype2R1-r16                    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    -- R1 16-3a-1 Regular eType 2 R=2
+    etype2R2-r16                    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                                      OPTIONAL,
+    -- R1 16-3b Regular eType 2 R=1 PortSelection
+    etype2R1-PortSelection-r16      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    -- R1 16-3b-1 Regular eType 2 R=2 PortSelection
+    etype2R2-PortSelection-r16      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookComboParametersAdditionPerBC-r16::= SEQUENCE {
+    -- R1 16-8 Mixed codebook types
+    type1SP-Type2-null-r16          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-Type2PS-null-r16        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R2-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R2PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-Type2-Type2PS-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-null-r16          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2PS-null-r16        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R2-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R2PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-Type2PS-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookParametersfetype2PerBC-r17 ::= SEQUENCE {
+    -- R1 23-9-1	Basic Features of Further Enhanced Port-Selection Type II Codebook (FeType-II)
+    fetype2basic-r17    SEQUENCE (SIZE (1.. maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16),
+    -- R1 23-9-2	Support of M=2 and R=1 for FeType-II
+    fetype2R1-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r17)) OF INTEGER (0.. maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                  OPTIONAL,
+    -- R1 23-9-4	Support of R = 2 for FeType-II
+    fetype2R2-r17       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r17)) OF INTEGER (0.. maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                  OPTIONAL
+}
+
+CodebookComboParameterMixedTypePerBC-r17 ::= SEQUENCE {
+    -- R1 23-9-5 Active CSI-RS resources and ports for mixed codebook types in any slot
+    type1SP-feType2PS-null-r17      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-feType2PS-M2R1-null-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-feType2PS-M2R2-null-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                              OPTIONAL,
+    type1SP-Type2-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-Type2-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1SP-eType2R1-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-null-r17      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-M2R1-null-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-feType2PS-M2R2-null-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-Type2-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    type1MP-eType2R1-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookComboParameterMultiTRP-PerBC-r17::= SEQUENCE {
+    -- R1 23-7-1b	Active CSI-RS resources and ports in the presence of multi-TRP CSI
+    --  {Codebook 2, Codebook 3} =(NULL, NULL}
+    nCJT-null-null               SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-null-null            SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    --    {Codebook 2, Codebook 3} = {( {"Rel 16 combinations in FG 16-8"}
+    nCJT-Type2-null-r16          SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2PS-null-r16        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R2-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R2PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-Type2PS-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-null-r16       SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2PS-null-r16     SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-null-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R2-null-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1PS-null-r16  SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R2PS-null-r16  SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-Type2PS-r16    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    -- {Codebook 2, Codebook 3} = {"New Rel17 combinations in FG 23-9-5"}
+    nCJT-feType2PS-null-r17         SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-feType2PS-M2R1-null-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-feType2PS-M2R2-null-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-feType2-PS-M1-r17    SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-Type2-feType2-PS-M2R1-r17  SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT-eType2R1-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-null-r17      SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-M2R1-null-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-feType2PS-M2R2-null-r1  SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-Type2-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-feType2-PS-M1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL,
+    nCJT1SP-eType2R1-feType2-PS-M2R1-r17 SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesExt-r16)) OF INTEGER (0..maxNrofCSI-RS-ResourcesAlt-1-r16)
+                                                               OPTIONAL
+}
+
+CodebookVariantsList-r16 ::= SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesAlt-r16)) OF SupportedCSI-RS-Resource
+
+SupportedCSI-RS-Resource ::=     SEQUENCE {
+    maxNumberTxPortsPerResource      ENUMERATED {p2, p4, p8, p12, p16, p24, p32},
+    maxNumberResourcesPerBand        INTEGER (1..64),
+    totalNumberTxPortsPerBand        INTEGER (2..256)
+}

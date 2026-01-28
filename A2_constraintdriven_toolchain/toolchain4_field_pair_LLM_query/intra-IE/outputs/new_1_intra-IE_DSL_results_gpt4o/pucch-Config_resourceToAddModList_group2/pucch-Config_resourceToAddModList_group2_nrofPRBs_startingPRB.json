@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      611
+    ],
+    "field2_all": [
+      603,
+      609
+    ],
+    "actual_pairs": [
+      [
+        [
+          611
+        ],
+        [
+          603,
+          609
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain explicit normative wording or mathematical relations directly linking 'nrofPRBs' and 'startingPRB' within the same IE. The evidence snippet is descriptive and lacks a concrete rule.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group2",
+    "field1": "nrofPRBs",
+    "field2": "startingPRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} startPRB Starting PRB index of the measurement bandwidth. For the case where the reference subcarrier spacing is smaller than subcarrier spacing of active DL BWP(s), network configures startPRB and nrofPRBs are as a multiple of active BW SCS divided by reference SCS. \\end{tabular}",
+    "generated_at": "2026-01-07T16:28:28.842220",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain explicit normative wording or mathematical relations directly linking 'nrofPRBs' and 'startingPRB' within the same IE. The evidence snippet is descriptive and lacks a concrete rule.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      124
+    ],
+    "field2_all": [
+      108,
+      117
+    ],
+    "actual_pairs": [
+      [
+        [
+          124
+        ],
+        [
+          108,
+          117
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'aggregationLevel4' and 'controlResourceSetId' within the same IE. The evidence discusses general PDCCH configuration but does not specify constraints involving these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "aggregationLevel4",
+    "field2": "controlResourceSetId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For each DL BWP configured to a UE in a serving cell, the UE is provided by higher layers with S <= 10 search space sets where, for each search space set from the S search space sets, the UE is provided the following by SearchSpace: - a search space set index s, 0<s<40 , by searchSpaceld - an association between the search space set s and a CORESET p by controlResourceSetld or by controlResourceSetld-v1610 - a PDCCH monitoring periodicity of k_{s} slots and a PDCCH monitoring offset of o_{s} slots, by monitoringSlotPeriodicityAndOffset or by monitoringSlotPeriodicityAndOffset-r17 - a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot - a duration of T_{s}<k_{s} indicating a number of slots that the search space set s exists by duration, or a number of slots in consecutive groups of slots where the search space set s can exist by duration-r 17 - a bitmap, by monitoringSlots WithinSlotGroup, that applies per group of slots and provides a PDCCH monitoring pattern indicating slots in a group of slots for PDCCH monitoring - a size of the group of slots is same as a size of monitoringSlotsWithinSlotGroup - for a Type1-PDCCH CSS set provided by ra-SearchSpace in dedicated RRC signaling, or for a Type3PDCCH CSS set, or for a USS set, the PDCCH monitoring pattern indicates only consecutive slots in the group of slots for PDCCH monitoring and, at least for one combination ( X_{s}, Y_{s} ) indicated by the UE as a capability, a number of the consecutive slots is not larger than Y_{s} - a number of PDCCH candidates M_{s}^{(L)} per CCE aggregation level L by aggregationLevell, aggregationLevel2, aggregationLevel4, aggregationLevel8, and aggregationLevell6, for CCE aggregation level 1, CCE aggregation level 2, CCE aggregation level 4, CCE aggregation level 8, and CCE aggregation level 16, respectively - an indication that search space set S is either a CSS set or a USS set by searchSpaceType - if search space set s is a CSS set",
+    "generated_at": "2026-01-07T21:56:09.002890",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'aggregationLevel4' and 'controlResourceSetId' within the same IE. The evidence discusses general PDCCH configuration but does not specify constraints involving these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

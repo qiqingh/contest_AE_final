@@ -1,0 +1,11 @@
+BCCH-DL-SCH-Message ::=         SEQUENCE {
+    message                         BCCH-DL-SCH-MessageType
+}
+
+BCCH-DL-SCH-MessageType ::=     CHOICE {
+    c1                              CHOICE {
+        systemInformation               SystemInformation,
+        systemInformationBlockType1     SIB1
+    },
+    messageClassExtension           SEQUENCE {}
+}

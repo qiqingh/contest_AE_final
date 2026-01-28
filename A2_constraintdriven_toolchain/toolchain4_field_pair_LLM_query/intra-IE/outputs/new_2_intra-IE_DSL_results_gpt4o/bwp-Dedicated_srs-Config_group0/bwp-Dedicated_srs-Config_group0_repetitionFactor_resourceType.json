@@ -1,0 +1,72 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      454
+    ],
+    "field2_all": [
+      443,
+      461
+    ],
+    "actual_pairs": [
+      [
+        [
+          454
+        ],
+        [
+          443,
+          461
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct normative relationship between the fields 'repetitionFactor' and 'resourceType' within the same IE. The evidence discusses these fields in separate contexts without a clear dependency or constraint linking them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "repetitionFactor",
+    "field2": "resourceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1",
+      "6.4.1.4.3",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{array}\\right. \\] and where N_{b_{\\text {hop }}}=1 regardless of the value of N_{\\mathrm{b}} . The quantity n_{\\text {SRS }} counts the number of SRS transmissions. For the case of an SRS resource configured as aperiodic by the higher-layer parameter resourceType, it is given by n_{\\text {SRS }}= \\left[l^{\\prime} /(s R)\\right] within the slot in which the N_{\\text {symb }}^{\\text {SRS }} symbol SRS resource is transmitted. The quantity s is given by s=2 if the higher-layer parameter nrofSRS-Ports-n8 equals 'ports8tdm', otherwise s=1 . The quantity R <= N_{\\text {symb }}^{\\mathrm{SRS}} / s is the repetition factor given by the field repetition Factor if configured, otherwise R=N_{\\text {symb }}^{\\text {SRS }} - For the case of an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, the SRS counter is given by \\[\n---\n176 ETSI TS 138214 V17.1.0 (2022-05) - Time domain behaviour of SRS resource configuration as indicated by the higher layer parameter resourceType, which may be periodic, semi-persistent, aperiodic SRS transmission as defined in clause 6.4.1.4 of [4, TS 38.211]. - Slot level periodicity and slot level offset as defined by the higher layer parameters periodicityAndOffset- p or periodicityAndOffset-sp for an SRS resource of type periodic or semi-persistent. The UE is not expected to be configured with SRS resources in the same SRS resource set SRS-ResourceSet or SRS-PosResourceSet with different slot level periodicities. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a slot level offset is defined by the higher layer parameter slotOffset. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a list of zero up to four different available slot offset values from the reference slot n+k to the slot where the aperiodic SRS resource set is transmitted where n is the slot with triggering DCI and k is SlotOffset is defined by the higher layer parameter AvailableSlotOffset. The parameter AvailableSlotOffset can be configured up to 4 different values. For an SRSPosResourceSet configured with higher layer parameter resourceType set to 'aperiodic', the slot level offset is defined by the higher layer parameter slotOffset for each SRS resource. - Number of OFDM symbols in the SRS resource, starting OFDM symbol of the SRS resource within a slot including repetition factor R as defined by the higher layer parameter resourceMapping and described in clause 6.4-1.4 of [4, TS 38.211]. If R is not configured, then R is equal to the number of OFDM symbols in the SRS resource. - SRS bandwidth B_{S R S} and C_{S R S} , as defined by the higher layer parameter freqHopping and described in clause 6.4.1.4 of [4, TS 38.211]. If not configured, then B_{\\text {SRS }}=0 . - Frequency hopping bandwidth b_{\\text {hop }} , as defined by the higher layer parameter freqHopping and described in clause 6.4.1.4 of [4, TS 38.211]. If not configured, then b_{\\text {hop }}=0 .\n---\n\\begin{tabular}{l} resourceMapping OFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '. \\end{tabular} \\begin{tabular}{l} resourceType Periodicity and offset for semi-persistent and periodic SRS resource (see TS 38.214 [19], clause 6.2.1). For CLI SRS-RSRP measurement, only 'periodic' is applicable for resource Type. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T19:44:31.744861",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct normative relationship between the fields 'repetitionFactor' and 'resourceType' within the same IE. The evidence discusses these fields in separate contexts without a clear dependency or constraint linking them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

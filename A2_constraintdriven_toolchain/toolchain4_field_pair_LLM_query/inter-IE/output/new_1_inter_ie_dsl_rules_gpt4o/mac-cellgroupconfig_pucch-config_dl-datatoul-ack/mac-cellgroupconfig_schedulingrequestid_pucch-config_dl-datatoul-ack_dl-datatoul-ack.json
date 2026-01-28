@@ -1,0 +1,157 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      305,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      514,
+      515,
+      516,
+      517,
+      518,
+      519,
+      520,
+      521,
+      622,
+      623,
+      624,
+      625,
+      626,
+      627,
+      628,
+      629
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          514,
+          515,
+          516,
+          517,
+          518,
+          519,
+          520,
+          521,
+          622,
+          623,
+          624,
+          625,
+          626,
+          627,
+          628
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          305,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          413,
+          514,
+          515,
+          516,
+          517,
+          518,
+          519,
+          521,
+          622,
+          623,
+          624,
+          625,
+          626,
+          627,
+          629
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the 'schedulingrequestid' field from 'mac-cellgroupconfig' to the 'dl-datatoul-ack' field from 'pucch-config_dl-datatoul-ack'. The evidence primarily discusses the use of 'dl-datatoul-ack' in the context of PUCCH resource determination, without any direct reference or dependency on 'schedulingrequestid'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "pucch-config_dl-datatoul-ack",
+    "field2": "dl-datatoul-ack",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If a UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports [6, TS 38.214] to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, if present, or a value of dl-DataToUL-ACK, or dl-DataToUL-ACK-r16, or dl-DataToUL-ACK-DCI-1-2, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace }, 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, or a value provided by \\( d l \\) -DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-toHARQ_feedback timing indicator field is not present in a DCI format, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE has HARQ-ACK, SR and sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or by a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace, } 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats that have a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and",
+    "generated_at": "2026-01-09T12:38:57.444079",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the 'schedulingrequestid' field from 'mac-cellgroupconfig' to the 'dl-datatoul-ack' field from 'pucch-config_dl-datatoul-ack'. The evidence primarily discusses the use of 'dl-datatoul-ack' in the context of PUCCH resource determination, without any direct reference or dependency on 'schedulingrequestid'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+DownlinkConfigCommon ::=        SEQUENCE {
+    frequencyInfoDL                 FrequencyInfoDL                                 OPTIONAL,   -- Cond InterFreqHOAndServCellAdd
+    initialDownlinkBWP              BWP-DownlinkCommon                              OPTIONAL,   -- Cond ServCellAdd
+    ...,
+    [[
+    initialDownlinkBWP-RedCap-r17   BWP-DownlinkCommon                              OPTIONAL    -- Need R
+
+    ]]
+}

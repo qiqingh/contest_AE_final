@@ -1,0 +1,33 @@
+AvailabilityCombinationsPerCell-r16 ::=     SEQUENCE {
+    availabilityCombinationsPerCellIndex-r16     AvailabilityCombinationsPerCellIndex-r16,
+    iab-DU-CellIdentity-r16                      CellIdentity,
+    positionInDCI-AI-r16                         INTEGER(0..maxAI-DCI-PayloadSize-1-r16)                              OPTIONAL, -- Need M
+    availabilityCombinations-r16                 SEQUENCE (SIZE (1..maxNrofAvailabilityCombinationsPerSet-r16)) OF AvailabilityCombination-r16,
+    ...,
+    [[
+    availabilityCombinationsRB-Groups-r17   SEQUENCE (SIZE (1..maxNrofAvailabilityCombinationsPerSet-r16)) OF AvailabilityCombinationRB-Groups-r17    OPTIONAL -- Need M
+    ]],
+    [[
+    positionInDCI-AI-RBGroups-v1720              INTEGER(0..maxAI-DCI-PayloadSize-1-r16)                              OPTIONAL -- Need M
+    ]]
+}
+
+AvailabilityCombinationsPerCellIndex-r16 ::= INTEGER(0..maxNrofDUCells-r16)
+
+AvailabilityCombination-r16 ::=         SEQUENCE {
+    availabilityCombinationId-r16           AvailabilityCombinationId-r16,
+    resourceAvailability-r16                SEQUENCE (SIZE (1..maxNrofResourceAvailabilityPerCombination-r16)) OF INTEGER (0..7)
+}
+
+AvailabilityCombinationId-r16 ::=       INTEGER (0..maxNrofAvailabilityCombinationsPerSet-1-r16)
+
+AvailabilityCombinationRB-Groups-r17 ::= SEQUENCE {
+    availabilityCombinationId-r17    AvailabilityCombinationId-r16,
+    rb-SetGroups-r17                  SEQUENCE (SIZE (1..maxNrofRB-SetGroups-r17)) OF RB-SetGroup-r17                           OPTIONAL, -- Need R
+    resourceAvailability-r17         SEQUENCE (SIZE (1..maxNrofResourceAvailabilityPerCombination-r16)) OF INTEGER (0..7)    OPTIONAL -- Need R
+}
+
+RB-SetGroup-r17 ::=       SEQUENCE {
+    resourceAvailability-r17  SEQUENCE (SIZE (1..maxNrofResourceAvailabilityPerCombination-r16)) OF INTEGER (0..7) OPTIONAL, -- Need R
+    rb-Sets-r17                SEQUENCE (SIZE (1..maxNrofRB-Sets-r17)) OF INTEGER (0..7)                             OPTIONAL  -- Need R
+}

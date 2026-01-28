@@ -1,0 +1,77 @@
+{
+  "dsl_rule": "IMPLIES( resourceType == 'aperiodic', EQ(aperiodicSRS-ResourceTrigger, aperiodicSRS-ResourceTrigger) )",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": [
+    [
+      336
+    ],
+    [
+      336
+    ]
+  ],
+  "predicate": "EQ(aperiodicSRS-ResourceTrigger, aperiodicSRS-ResourceTrigger)",
+  "preconditions": [
+    "resourceType == 'aperiodic'"
+  ],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "aperiodicSRS-ResourceTrigger = 1, aperiodicSRS-ResourceTrigger = 1"
+    ],
+    "invalid": [
+      "aperiodicSRS-ResourceTrigger = 1, aperiodicSRS-ResourceTrigger = 2"
+    ]
+  },
+  "notes": "The evidence indicates that for aperiodic resource types, the aperiodicSRS-ResourceTrigger should be the same across SRS-ResourceSets.",
+  "version_tags": [
+    "r16"
+  ],
+  "meta": {
+    "ie_name": "srs-Config",
+    "field1": "aperiodicSRS-ResourceTrigger",
+    "field2": "aperiodicSRS-ResourceTrigger",
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "time. Each SRS resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or, - otherwise, for 1T4R, - zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and\n---\n- otherwise, for 1T4R, - zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic' and with a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. The UE shall expect that the two sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srsPowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRSResourceSet is different. Or, - For 1 \\mathrm{~T}=1 \\mathrm{R} , or 2 \\mathrm{~T}=2 \\mathrm{R} , or 4 \\mathrm{~T}=4 \\mathrm{R} , up to two SRS resource sets each with one SRS resource, where the number of SRS ports for each resource is equal to 1,2 , or 4 if the UE is not indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semipersistent' are not activated at the same time,, or - For 1T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and\n---\ntime. Each SRS resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or, - otherwise, for 1T4R, - zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and\n---\n- otherwise, for 1T4R, - zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic' and with a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. The UE shall expect that the two sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srsPowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRSResourceSet is different. Or, - For 1 \\mathrm{~T}=1 \\mathrm{R} , or 2 \\mathrm{~T}=2 \\mathrm{R} , or 4 \\mathrm{~T}=4 \\mathrm{R} , up to two SRS resource sets each with one SRS resource, where the number of SRS ports for each resource is equal to 1,2 , or 4 if the UE is not indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semipersistent' are not activated at the same time,, or - For 1T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and",
+    "generated_at": "2025-12-09T09:47:35.102145",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES( resourceType == 'aperiodic', EQ(aperiodicSRS-ResourceTrigger, aperiodicSRS-ResourceTrigger) )",
+      "preconditions": [
+        "resourceType == 'aperiodic'"
+      ],
+      "predicate": "EQ(aperiodicSRS-ResourceTrigger, aperiodicSRS-ResourceTrigger)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "aperiodicSRS-ResourceTrigger = 1, aperiodicSRS-ResourceTrigger = 1"
+        ],
+        "invalid": [
+          "aperiodicSRS-ResourceTrigger = 1, aperiodicSRS-ResourceTrigger = 2"
+        ]
+      },
+      "notes": "The evidence indicates that for aperiodic resource types, the aperiodicSRS-ResourceTrigger should be the same across SRS-ResourceSets.",
+      "version_tags": [
+        "r16"
+      ]
+    }
+  }
+}

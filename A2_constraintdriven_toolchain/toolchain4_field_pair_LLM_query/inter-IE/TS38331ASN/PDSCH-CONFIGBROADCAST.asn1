@@ -1,0 +1,14 @@
+PDSCH-ConfigBroadcast-r17 ::= SEQUENCE {
+    pdschConfigList-r17                    SEQUENCE (SIZE (1..maxNrofPDSCH-ConfigPTM-r17) ) OF PDSCH-ConfigPTM-r17,
+    pdsch-TimeDomainAllocationList-r17     PDSCH-TimeDomainResourceAllocationList-r16                          OPTIONAL,   -- Need R
+    rateMatchPatternToAddModList-r17       SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPattern   OPTIONAL,   -- Need R
+    lte-CRS-ToMatchAround-r17              RateMatchPatternLTE-CRS                                             OPTIONAL,   -- Need R
+    mcs-Table-r17                          ENUMERATED {qam256, qam64LowSE}                                     OPTIONAL,   -- Need S
+    xOverhead-r17                          ENUMERATED {xOh6, xOh12, xOh18}                                     OPTIONAL    -- Need S
+}
+
+PDSCH-ConfigPTM-r17 ::= SEQUENCE {
+    dataScramblingIdentityPDSCH-r17        INTEGER (0..1023)         OPTIONAL,   -- Need S
+    dmrs-ScramblingID0-r17                 INTEGER (0..65535)        OPTIONAL,   -- Need S
+    pdsch-AggregationFactor-r17            ENUMERATED {n2, n4, n8}   OPTIONAL    -- Need S
+}

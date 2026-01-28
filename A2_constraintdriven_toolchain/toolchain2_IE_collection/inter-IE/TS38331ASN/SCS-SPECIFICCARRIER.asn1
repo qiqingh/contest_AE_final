@@ -1,0 +1,9 @@
+SCS-SpecificCarrier ::=             SEQUENCE {
+    offsetToCarrier                     INTEGER (0..2199),
+    subcarrierSpacing                   SubcarrierSpacing,
+    carrierBandwidth                    INTEGER (1..maxNrofPhysicalResourceBlocks),
+    ...,
+    [[
+    txDirectCurrentLocation         INTEGER (0..4095)                                       OPTIONAL            -- Need S
+    ]]
+}

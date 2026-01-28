@@ -1,0 +1,13 @@
+DL-CCCH-Message ::=             SEQUENCE {
+    message                         DL-CCCH-MessageType
+}
+
+DL-CCCH-MessageType ::=         CHOICE {
+    c1                              CHOICE {
+        rrcReject                       RRCReject,
+        rrcSetup                        RRCSetup,
+        spare2                          NULL,
+        spare1                          NULL
+    },
+    messageClassExtension           SEQUENCE {}
+}

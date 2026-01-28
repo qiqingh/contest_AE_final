@@ -1,0 +1,56 @@
+CA-ParametersNRDC ::=                         SEQUENCE {
+     ca-ParametersNR-ForDC                       CA-ParametersNR                              OPTIONAL,
+     ca-ParametersNR-ForDC-v1540                 CA-ParametersNR-v1540                        OPTIONAL,
+     ca-ParametersNR-ForDC-v1550                 CA-ParametersNR-v1550                        OPTIONAL,
+     ca-ParametersNR-ForDC-v1560                 CA-ParametersNR-v1560                        OPTIONAL,
+     featureSetCombinationDC                     FeatureSetCombinationId                      OPTIONAL
+}
+
+CA-ParametersNRDC-v15g0 ::=                  SEQUENCE {
+    ca-ParametersNR-ForDC-v15g0                   CA-ParametersNR-v15g0                        OPTIONAL
+}
+
+CA-ParametersNRDC-v1610 ::= SEQUENCE {
+    -- R1 18-1: Semi-static power sharing mode1 between MCG and SCG cells of same FR for NR dual connectivity
+    intraFR-NR-DC-PwrSharingMode1-r16        ENUMERATED {supported}         OPTIONAL,
+    -- R1 18-1a: Semi-static power sharing mode 2 between MCG and SCG cells of same FR for NR dual connectivity
+    intraFR-NR-DC-PwrSharingMode2-r16        ENUMERATED {supported}         OPTIONAL,
+    -- R1 18-1b: Dynamic power sharing between MCG and SCG cells of same FR for NR dual connectivity
+    intraFR-NR-DC-DynamicPwrSharing-r16      ENUMERATED {short, long}       OPTIONAL,
+    asyncNRDC-r16                            ENUMERATED {supported}         OPTIONAL
+}
+
+CA-ParametersNRDC-v1630 ::=                         SEQUENCE {
+     ca-ParametersNR-ForDC-v1610                 CA-ParametersNR-v1610                        OPTIONAL,
+     ca-ParametersNR-ForDC-v1630                 CA-ParametersNR-v1630                        OPTIONAL
+}
+
+CA-ParametersNRDC-v1640 ::=                  SEQUENCE {
+    ca-ParametersNR-ForDC-v1640                  CA-ParametersNR-v1640                        OPTIONAL
+}
+
+CA-ParametersNRDC-v1650 ::=                  SEQUENCE {
+    supportedCellGrouping-r16                    BIT STRING (SIZE (1..maxCellGroupings-r16))  OPTIONAL
+}
+
+CA-ParametersNRDC-v16a0 ::=                  SEQUENCE {
+    ca-ParametersNR-ForDC-v16a0                  CA-ParametersNR-v16a0                        OPTIONAL
+}
+
+CA-ParametersNRDC-v1700 ::=                   SEQUENCE {
+    -- R1 31-9: Indicates the support of simultaneous transmission and reception of an IAB-node from multiple parent nodes
+    simultaneousRxTx-IAB-MultipleParents-r17     ENUMERATED {supported}                       OPTIONAL,
+    condPSCellAdditionNRDC-r17                   ENUMERATED {supported}                       OPTIONAL,
+    scg-ActivationDeactivationNRDC-r17           ENUMERATED {supported}                       OPTIONAL,
+    scg-ActivationDeactivationResumeNRDC-r17     ENUMERATED {supported}                       OPTIONAL,
+    beamManagementType-CBM-r17                   ENUMERATED {supported}                       OPTIONAL
+}
+
+CA-ParametersNRDC-v1720 ::=                  SEQUENCE {
+    ca-ParametersNR-ForDC-v1700                  CA-ParametersNR-v1700                        OPTIONAL,
+    ca-ParametersNR-ForDC-v1720                  CA-ParametersNR-v1720                        OPTIONAL
+}
+
+CA-ParametersNRDC-v1730 ::=                  SEQUENCE {
+    ca-ParametersNR-ForDC-v1730                   CA-ParametersNR-v1730                        OPTIONAL
+}

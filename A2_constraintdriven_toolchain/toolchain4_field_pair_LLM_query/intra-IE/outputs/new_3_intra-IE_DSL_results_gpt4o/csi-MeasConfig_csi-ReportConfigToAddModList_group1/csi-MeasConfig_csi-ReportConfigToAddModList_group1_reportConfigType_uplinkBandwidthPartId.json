@@ -1,0 +1,69 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      927
+    ],
+    "field2_all": [
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          927
+        ],
+        [
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between 'reportConfigType' and 'uplinkBandwidthPartId'. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "reportConfigType",
+    "field2": "uplinkBandwidthPartId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.5",
+      "5.2.1.1",
+      "5.2.1.5.2",
+      "5.2.1.5.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "5.2.1.1 Reporting settings Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index. The time domain behavior of the CSI-ReportConfig is indicated by the higher layer parameter reportConfigType and can be set to 'aperiodic', 'semiPersistentOnPUCCH', 'semiPersistentOnPUSCH', or 'periodic'. For 'periodic' and 'semiPersistentOnPUCCH/'semiPersistentOnPUSCH' CSI reporting, the configured periodicity and slot offset applies in the numerology of the UL BWP in which the CSI report is configured to be transmitted on. The higher layer parameter reportQuantity indicates the CSI-related, L1-RSRP-related, L1-SINR-related or Capability[Set][ndex-related quantities to report. The reportFreqConfiguration indicates the reporting granularity in the frequency domain, including the CSI reporting band and if PMI/CQI reporting is wideband or sub-band. The timeRestrictionForChannelMeasurements parameter in CSI-ReportConfig can be configured to enable time domain restriction for channel measurements and timeRestrictionForInterferenceMeasurements can be configured to enable time domain restriction for interference measurements. The CSI-ReportConfig can also contain CodebookConfig, which contains configuration parameters for Type-I, Type II, Enhanced Type II CSI, or Further Enhanced Type II Port Selection including codebook subset restriction when applicable, and configurations of group-based reporting. ETSI\n---\n5.2.1.5.1 Aperiodic CSI Reporting/Aperiodic CSI-RS when the triggering PDCCH and the CSI-RS have the same numerology For CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI , - the last symbol of the PDCCH span of the DCI carrying the BWP switching shall be no later than the last symbol of the PDCCH span of the DCI carrying the CSI trigger, irrespective of whether they are in the same carrier of a serving cell or not and irrespective of whether they are in the same SCS or not; - the UE is not expected to have any other BWP switching in that carrier after the last symbol of the PDCCH span covering the DCI carrying the CSI trigger and before the first symbol of the triggered NZP CSI-RS or CSI-IM.\n---\nFor semi-persistent reporting on PUSCH, a set of trigger states are higher layer configured by CSI-SemiPersistentOnPUSCH-TriggerStateList, where the CSI request field in DCI scrambled with SP-CSI-RNTI activates one of the trigger states. A UE is not expected to receive a DCI scrambled with SP-CSI-RNTI activating one semipersistent CSI report with the same CSI-ReportConfigId as in semi-persistent CSI report which is activated by a previously received DCI scrambled with SP-CSI-RNTI. For semi-persistent reporting on PUCCH , the PUCCH resource used for transmitting the CSI report are configured by reportConfigType. Semi-persistent reporting on PUCCH is activated by an activation command as described in clause 6.1.3.16 of [10, TS 38.321], which selects one of the semi-persistent Reporting Settings for use by the UE on the PUCCH. When the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the activation command, the indicated semi-persistent Reporting Setting should be applied starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {subframe }}, \\mu where \\mu is the SCS configuration for the PUCCH. For a UE configured with CSI resource setting(s) where the higher layer parameter resourceType set to 'semiPersistent'. - when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot n corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} where \\mu is the SCS configuration for the PUCCH and \\mu_{K_{\\text {mac }}} is the subcarrier spacing configuration for k_{\\text {mac }} with a value of 0 for frequency range 1 , and k_{\\text {mac }} is provided by K-M a c or k_{\\mathrm{mac}}=0 if K-M a c is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP. - when a UE receives a deactivation command, as described in clause 6.1.3.12 of [10, TS 38.321], for activated CSI-RS/CSI-[M resource set(s) associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the deactivation command, the corresponding actions in [10, TS 38.321] and UE assumption on cessation of CS[-RS/CSI-[M transmission corresponding to the deactivated CSI-RS/CSI-[M resource set(s) shall apply starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {subframe }{ }^{\\mu}}+\\frac{2^{\\mu}}{2^{\\mu} K_{\\text {mac }}} \\cdot k_{\\text {mac }} where \\mu is the SCS configuration for the PUCCH and \\mu_{K_{m a c}} is the subcarrier spacing configuration for k_{m a c} with a value of 0 for frequency range 1 , and k_{\\mathrm{mac}} is provided by K-M a c or k_{\\mathrm{mac}}=0 if K-M a c is not provided.\n---\nIf there is no valid downlink slot for the CSI reference resource corresponding to a CSI Report Setting in a serving cell, CSI reporting is omitted for the serving cell in uplink slot n^{\\prime} . After the CSI report (re)configuration, serving cell activation, BWP change, or activation of SP-CSI, the UE reports a CSI report only after receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-IM occasion for interference measurement no later than CSI reference resource and drops the report otherwise. When DRX is configured, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-[M occasion for interference measurement in DRX Active Time no later than CSI reference resource and drops the report otherwise. When DRX is configured and the CSI-RS Resource Set for channel measurement corresponding to a CSI report is configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for each CSI-RS resource in a Resource Pair within the same DRX Active Time no later than CSI reference resource and drops the report otherwise. When the UE is configured to monitor DCI format 2 _ 6 and if the UE configured by higher layer parameter ps-TransmitOtherPeriodicCSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP- Capability[Set]Index', and 'ssb-Index-RSRP-Capability[Set]Index ' when drx-onDurationTimer is not started, the UE shall report CSI during the time duration indicated by drx-onDurationTimer in DRX-Config also outside active time according to the procedure described in Clause 5-2-1.4 if receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-[M occasion for interference measurement during the time duration indicated by drx-onDurationTimer in DRX-Config outside DRX active time or in DRX Active Time no later than CSI reference resource and drops the report otherwise. When the UE is configured to monitor DCI format 2 _ 6 and if the UE configured by higher layer parameter ps-TransmitPeriodicL 1 -RSRP to report L1-RSRP with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP- Capability[Set]Index', or 'ssb-Index-RSRP-Capability[Set]Index' when drx-onDurationTimer is not started, the UE shall report L1-RSRP during the time duration indicated by drx-onDurationTimer in DRX-Config also outside active time according to the procedure described in clause 5-2.1-4 and when reportQuantity set to 'cri-RSRP' or 'cri-RSRPCapability[Set]Index' if receiving at least one CSI-RS transmission occasion for channel measurement during the time duration indicated by drx-onDurationTimer in DRX-Config outside DRX active time or in DRX Active Time no later than CSI reference resource and drops the report otherwise.",
+    "generated_at": "2026-01-07T21:49:33.572214",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between 'reportConfigType' and 'uplinkBandwidthPartId'. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

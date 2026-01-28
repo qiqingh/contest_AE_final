@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field2, 'nonCodebook'), EQ(field1, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      664
+    ],
+    "field2_all": [
+      660
+    ],
+    "actual_pairs": [
+      [
+        [
+          664
+        ],
+        [
+          660
+        ]
+      ]
+    ]
+  },
+  "predicate": "When usage is 'nonCodebook', nrofSRS-Ports must be 1.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "usage = 'nonCodebook', nrofSRS-Ports = 1"
+    ],
+    "invalid": [
+      "usage = 'nonCodebook', nrofSRS-Ports = 2"
+    ]
+  },
+  "notes": "The evidence specifies a condition where the number of antenna ports is determined by the usage parameter being 'nonCodebook'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group2",
+    "field1": "nrofSRS-Ports",
+    "field2": "usage",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 5,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "An SRS resource is configured by the SRS-Resource IE or the SRS-PosResource [E and consists of - \\quad N_{\\text {ap }}^{\\text {SRS }} \\in\\{1,2,4,8\\} antenna ports \\left\\{p_{i}\\right\\}_{i=0}^{N_{\\text {ap }}^{\\text {SRS }}-1} , where the number of antenna ports is given by the higher layer parameter nrofSRS-Ports or nrofSRS-Ports- n 8 if configured, otherwise N_{\\text {ap }}^{\\mathrm{SRS}}=1 , and p_{i}=1000+i when the SRS resource is in a SRS resource set with higher-layer parameter usage in SRS-ResourceSet not set to 'nonCodebook', or determined according to [6, TS 38.214] when the SRS resource is in a SRS resource set with higher-layer parameter usage in SRS-ResourceSet set to 'nonCodebook'. - \\quad N_{\\mathrm{hop}} , the number of hops for SRS Tx hopping for an SRS resource configured by SRS-PosResource given by the higher layer parameter SRShoppingNrofHops if configured, otherwise N_{\\mathrm{hop}}=1 . - \\quad N_{\\text {symb }}^{\\text {SRS }} \\in\\{1,2,4,8,10,12,14\\} consecutive OFDM symbols given by the field nrofSymbols contained in the higher layer parameter resourceMapping. If N_{\\mathrm{hop}}>1, N_{\\mathrm{symb}}^{\\mathrm{SRS}} is the number of consecutive OFDM symbol per hop.",
+    "generated_at": "2026-01-07T19:43:46.074604",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field2, 'nonCodebook'), EQ(field1, 1))",
+      "preconditions": [],
+      "predicate": "When usage is 'nonCodebook', nrofSRS-Ports must be 1.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "usage = 'nonCodebook', nrofSRS-Ports = 1"
+        ],
+        "invalid": [
+          "usage = 'nonCodebook', nrofSRS-Ports = 2"
+        ]
+      },
+      "notes": "The evidence specifies a condition where the number of antenna ports is determined by the usage parameter being 'nonCodebook'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

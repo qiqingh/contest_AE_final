@@ -1,0 +1,36 @@
+VisitedCellInfoList-r16 ::= SEQUENCE (SIZE (1..maxCellHistory-r16)) OF VisitedCellInfo-r16
+
+VisitedCellInfo-r16 ::=  SEQUENCE {
+    visitedCellId-r16        CHOICE {
+        nr-CellId-r16            CHOICE {
+            cgi-Info                 CGI-Info-Logging-r16,
+            pci-arfcn-r16            PCI-ARFCN-NR-r16
+        },
+        eutra-CellId-r16         CHOICE {
+            cellGlobalId-r16         CGI-InfoEUTRA,
+            pci-arfcn-r16                PCI-ARFCN-EUTRA-r16
+        }
+    }                                        OPTIONAL,
+    timeSpent-r16            INTEGER (0..4095),
+    ...,
+    [[
+    visitedPSCellInfoListReport-r17    VisitedPSCellInfoList-r17                   OPTIONAL
+    ]]
+}
+
+VisitedPSCellInfoList-r17 ::= SEQUENCE (SIZE (1..maxPSCellHistory-r17)) OF VisitedPSCellInfo-r17
+
+VisitedPSCellInfo-r17 ::=    SEQUENCE {
+    visitedCellId-r17            CHOICE {
+        nr-CellId-r17                CHOICE {
+            cgi-Info-r17                 CGI-Info-Logging-r16,
+            pci-arfcn-r17                PCI-ARFCN-NR-r16
+        },
+        eutra-CellId-r17         CHOICE {
+            cellGlobalId-r17         CGI-InfoEUTRALogging,
+            pci-arfcn-r17            PCI-ARFCN-EUTRA-r16
+        }
+    }                                                 OPTIONAL,
+    timeSpent-r17            INTEGER (0..4095),
+    ...
+}

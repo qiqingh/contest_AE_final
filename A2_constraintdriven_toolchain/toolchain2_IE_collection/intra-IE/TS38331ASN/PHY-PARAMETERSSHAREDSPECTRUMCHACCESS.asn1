@@ -1,0 +1,44 @@
+Phy-ParametersSharedSpectrumChAccess-r16 ::=    SEQUENCE {
+    -- 10-32 (1-2): SS block based SINR measurement (SS-SINR) for unlicensed spectrum
+    ss-SINR-Meas-r16                                ENUMERATED {supported}                      OPTIONAL,
+    -- 10-33 (2-32a): Semi-persistent CSI report on PUCCH for unlicensed spectrum
+    sp-CSI-ReportPUCCH-r16                          ENUMERATED {supported}                      OPTIONAL,
+    -- 10-33a (2-32b): Semi-persistent CSI report on PUSCH for unlicensed spectrum
+    sp-CSI-ReportPUSCH-r16                          ENUMERATED {supported}                      OPTIONAL,
+    -- 10-34 (3-6): Dynamic SFI monitoring for unlicensed spectrum
+    dynamicSFI-r16                                  ENUMERATED {supported}                      OPTIONAL,
+    -- 10-35c (4-19c): SR/HARQ-ACK/CSI multiplexing once per slot using a PUCCH (or HARQ-ACK/CSI piggybacked on a PUSCH) when SR/HARQ-
+    -- ACK/CSI are supposed to be sent with different starting symbols in a slot for unlicensed spectrum
+    -- 10-35 (4-19): SR/HARQ-ACK/CSI multiplexing once per slot using a PUCCH (or HARQ-ACK/CSI piggybacked on a PUSCH) when SR/HARQ-
+    -- ACK/CSI are supposed to be sent with the same starting symbol on the PUCCH resources in a slot for unlicensed spectrum
+    mux-SR-HARQ-ACK-CSI-PUCCH-OncePerSlot-r16       SEQUENCE {
+        sameSymbol-r16                                  ENUMERATED {supported}                  OPTIONAL,
+        diffSymbol-r16                                  ENUMERATED {supported}                  OPTIONAL
+    }                                                                                           OPTIONAL,
+    -- 10-35a (4-19a): Overlapping PUCCH resources have different starting symbols in a slot for unlicensed spectrum
+    mux-SR-HARQ-ACK-PUCCH-r16                       ENUMERATED {supported}                      OPTIONAL,
+    -- 10-35b (4-19b): SR/HARQ-ACK/CSI multiplexing more than once per slot using a PUCCH (or HARQ-ACK/CSI piggybacked on a PUSCH) when
+    -- SR/HARQ ACK/CSI are supposed to be sent with the same or different starting symbol in a slot for unlicensed spectrum
+    mux-SR-HARQ-ACK-CSI-PUCCH-MultiPerSlot-r16      ENUMERATED {supported}                      OPTIONAL,
+    -- 10-36 (4-28): HARQ-ACK multiplexing on PUSCH with different PUCCH/PUSCH starting OFDM symbols for unlicensed spectrum
+    mux-HARQ-ACK-PUSCH-DiffSymbol-r16               ENUMERATED {supported}                      OPTIONAL,
+    -- 10-37 (4-23): Repetitions for PUCCH format 1, 3, and 4 over multiple slots with K = 2, 4, 8 for unlicensed spectrum
+    pucch-Repetition-F1-3-4-r16                     ENUMERATED {supported}                      OPTIONAL,
+    -- 10-38 (5-14): Type 1 configured PUSCH repetitions over multiple slots for unlicensed spectrum
+    type1-PUSCH-RepetitionMultiSlots-r16            ENUMERATED {supported}                      OPTIONAL,
+    -- 10-39 (5-16): Type 2 configured PUSCH repetitions over multiple slots for unlicensed spectrum
+    type2-PUSCH-RepetitionMultiSlots-r16            ENUMERATED {supported}                      OPTIONAL,
+    -- 10-40 (5-17): PUSCH repetitions over multiple slots for unlicensed spectrum
+    pusch-RepetitionMultiSlots-r16                  ENUMERATED {supported}                      OPTIONAL,
+    -- 10-40a (5-17a): PDSCH repetitions over multiple slots for unlicensed spectrum
+    pdsch-RepetitionMultiSlots-r16                  ENUMERATED {supported}                      OPTIONAL,
+    -- 10-41 (5-18): DL SPS
+    downlinkSPS-r16                                 ENUMERATED {supported}                      OPTIONAL,
+    -- 10-42 (5-19): Type 1 Configured UL grant
+    configuredUL-GrantType1-r16                     ENUMERATED {supported}                      OPTIONAL,
+    -- 10-43 (5-20): Type 2 Configured UL grant
+    configuredUL-GrantType2-r16                     ENUMERATED {supported}                      OPTIONAL,
+    -- 10-44 (5-21): Pre-emption indication for DL
+    pre-EmptIndication-DL-r16                       ENUMERATED {supported}                      OPTIONAL,
+    ...
+}

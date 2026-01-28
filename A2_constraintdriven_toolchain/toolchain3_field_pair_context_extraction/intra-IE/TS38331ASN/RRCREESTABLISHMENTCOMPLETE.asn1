@@ -1,0 +1,17 @@
+RRCReestablishmentComplete ::=              SEQUENCE {
+    rrc-TransactionIdentifier                   RRC-TransactionIdentifier,
+    criticalExtensions                          CHOICE {
+        rrcReestablishmentComplete                  RRCReestablishmentComplete-IEs,
+        criticalExtensionsFuture                    SEQUENCE {}
+    }
+}
+
+RRCReestablishmentComplete-IEs ::=          SEQUENCE {
+    lateNonCriticalExtension                    OCTET STRING                            OPTIONAL,
+    nonCriticalExtension                        RRCReestablishmentComplete-v1610-IEs    OPTIONAL
+}
+
+RRCReestablishmentComplete-v1610-IEs ::=    SEQUENCE {
+    ue-MeasurementsAvailable-r16                UE-MeasurementsAvailable-r16    OPTIONAL,
+    nonCriticalExtension                        SEQUENCE {}                     OPTIONAL
+}

@@ -1,0 +1,11 @@
+SIB10-r16 ::=               SEQUENCE {
+    hrnn-List-r16               HRNN-List-r16                                   OPTIONAL,   -- Need R
+    lateNonCriticalExtension    OCTET STRING                                    OPTIONAL,
+    ...
+}
+
+HRNN-List-r16 ::=           SEQUENCE (SIZE (1..maxNPN-r16)) OF HRNN-r16
+
+HRNN-r16 ::=                SEQUENCE {
+    hrnn-r16                    OCTET STRING (SIZE(1.. maxHRNN-Len-r16))        OPTIONAL   -- Need R
+}

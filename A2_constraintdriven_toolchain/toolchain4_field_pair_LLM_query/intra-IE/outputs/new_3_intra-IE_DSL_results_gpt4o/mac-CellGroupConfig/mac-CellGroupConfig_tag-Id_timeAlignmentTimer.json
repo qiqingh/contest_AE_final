@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES(field1 present, EQ(field2, 'configured'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      30
+    ],
+    "field2_all": [
+      31
+    ],
+    "actual_pairs": [
+      [
+        [
+          30
+        ],
+        [
+          31
+        ]
+      ]
+    ]
+  },
+  "predicate": "If field1 is present, field2 must be configured according to the received timeAlignmentTimer.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 present, field2 = 'configured'"
+    ],
+    "invalid": [
+      "field1 present, field2 = 'not configured'"
+    ]
+  },
+  "notes": "The evidence suggests a dependency where field2 must be configured if field1 is present.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "tag-Id",
+    "field2": "timeAlignmentTimer",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.5.5.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "1> if the received mac-CellGroupConfig includes the tag-ToReleaseList: 2> for each T A G-I d value included in the tag-ToReleaseList that is part of the current UE configuration: 3> release the TAG indicated by TAG-Id; 1> if the received mac-CellGroupConfig includes the tag-ToAddModList: ⇒ for each tag-Id value included in tag-ToAddModList that is not part of the current UE configuration (TAG addition): 3> add the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer; 2> for each t a g -Id value included in tag-ToAddModList that is part of the current UE configuration (TAG modification): 3> reconfigure the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer.\n---\n3> release the TAG indicated by TAG-Id; 1> if the received mac-CellGroupConfig includes the tag-ToAddModList: ⇒ for each tag-Id value included in tag-ToAddModList that is not part of the current UE configuration (TAG addition): 3> add the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer; 2> for each t a g -Id value included in tag-ToAddModList that is part of the current UE configuration (TAG modification): 3> reconfigure the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer.",
+    "generated_at": "2026-01-07T21:49:50.832947",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(field1 present, EQ(field2, 'configured'))",
+      "preconditions": [],
+      "predicate": "If field1 is present, field2 must be configured according to the received timeAlignmentTimer.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 present, field2 = 'configured'"
+        ],
+        "invalid": [
+          "field1 present, field2 = 'not configured'"
+        ]
+      },
+      "notes": "The evidence suggests a dependency where field2 must be configured if field1 is present.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

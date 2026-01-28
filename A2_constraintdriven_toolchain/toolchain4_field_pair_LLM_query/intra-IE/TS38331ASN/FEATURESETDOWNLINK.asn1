@@ -1,0 +1,238 @@
+FeatureSetDownlink ::=                  SEQUENCE {
+    featureSetListPerDownlinkCC             SEQUENCE (SIZE (1..maxNrofServingCells)) OF FeatureSetDownlinkPerCC-Id,
+
+    intraBandFreqSeparationDL               FreqSeparationClass                                                     OPTIONAL,
+    scalingFactor                           ENUMERATED {f0p4, f0p75, f0p8}                                          OPTIONAL,
+    dummy8                                  ENUMERATED {supported}                                                  OPTIONAL,
+    scellWithoutSSB                         ENUMERATED {supported}                                                  OPTIONAL,
+    csi-RS-MeasSCellWithoutSSB              ENUMERATED {supported}                                                  OPTIONAL,
+    dummy1                                  ENUMERATED {supported}                                                  OPTIONAL,
+    type1-3-CSS                             ENUMERATED {supported}                                                  OPTIONAL,
+    pdcch-MonitoringAnyOccasions            ENUMERATED {withoutDCI-Gap, withDCI-Gap}                                OPTIONAL,
+    dummy2                                  ENUMERATED {supported}                                                  OPTIONAL,
+    ue-SpecificUL-DL-Assignment             ENUMERATED {supported}                                                  OPTIONAL,
+    searchSpaceSharingCA-DL                 ENUMERATED {supported}                                                  OPTIONAL,
+    timeDurationForQCL                      SEQUENCE {
+        scs-60kHz                           ENUMERATED {s7, s14, s28}                                               OPTIONAL,
+        scs-120kHz                          ENUMERATED {s14, s28}                                                   OPTIONAL
+    }                                                                                                           OPTIONAL,
+    pdsch-ProcessingType1-DifferentTB-PerSlot SEQUENCE {
+        scs-15kHz                               ENUMERATED {upto2, upto4, upto7}                                    OPTIONAL,
+        scs-30kHz                               ENUMERATED {upto2, upto4, upto7}                                    OPTIONAL,
+        scs-60kHz                               ENUMERATED {upto2, upto4, upto7}                                    OPTIONAL,
+        scs-120kHz                              ENUMERATED {upto2, upto4, upto7}                                    OPTIONAL
+    }                                                                                                           OPTIONAL,
+    dummy3                                  DummyA                                                                  OPTIONAL,
+    dummy4                                  SEQUENCE (SIZE (1.. maxNrofCodebooks)) OF DummyB                        OPTIONAL,
+    dummy5                                  SEQUENCE (SIZE (1.. maxNrofCodebooks)) OF DummyC                        OPTIONAL,
+    dummy6                                  SEQUENCE (SIZE (1.. maxNrofCodebooks)) OF DummyD                        OPTIONAL,
+    dummy7                                  SEQUENCE (SIZE (1.. maxNrofCodebooks)) OF DummyE                        OPTIONAL
+}
+
+FeatureSetDownlink-v1540 ::= SEQUENCE {
+    oneFL-DMRS-TwoAdditionalDMRS-DL         ENUMERATED {supported}                       OPTIONAL,
+    additionalDMRS-DL-Alt                   ENUMERATED {supported}                       OPTIONAL,
+    twoFL-DMRS-TwoAdditionalDMRS-DL         ENUMERATED {supported}                       OPTIONAL,
+    oneFL-DMRS-ThreeAdditionalDMRS-DL       ENUMERATED {supported}                       OPTIONAL,
+    pdcch-MonitoringAnyOccasionsWithSpanGap SEQUENCE {
+        scs-15kHz                               ENUMERATED {set1, set2, set3}                OPTIONAL,
+        scs-30kHz                               ENUMERATED {set1, set2, set3}                OPTIONAL,
+        scs-60kHz                               ENUMERATED {set1, set2, set3}                OPTIONAL,
+        scs-120kHz                              ENUMERATED {set1, set2, set3}                OPTIONAL
+    }                                                                                    OPTIONAL,
+    pdsch-SeparationWithGap                 ENUMERATED {supported}                       OPTIONAL,
+    pdsch-ProcessingType2                   SEQUENCE {
+        scs-15kHz                               ProcessingParameters                         OPTIONAL,
+        scs-30kHz                               ProcessingParameters                         OPTIONAL,
+        scs-60kHz                               ProcessingParameters                         OPTIONAL
+    } OPTIONAL,
+    pdsch-ProcessingType2-Limited           SEQUENCE {
+        differentTB-PerSlot-SCS-30kHz           ENUMERATED {upto1, upto2, upto4, upto7}
+    } OPTIONAL,
+    dl-MCS-TableAlt-DynamicIndication       ENUMERATED {supported}                       OPTIONAL
+}
+
+FeatureSetDownlink-v15a0 ::= SEQUENCE {
+    supportedSRS-Resources              SRS-Resources                                    OPTIONAL
+}
+
+FeatureSetDownlink-v1610 ::=   SEQUENCE {
+    -- R1 22-4e/4f/4g/4h: CBG based reception for DL with unicast PDSCH(s) per slot per CC with UE processing time Capability 1
+    cbgPDSCH-ProcessingType1-DifferentTB-PerSlot-r16   SEQUENCE {
+        scs-15kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-30kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-60kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-120kHz-r16       ENUMERATED {one, upto2, upto4, upto7} OPTIONAL
+    } OPTIONAL,
+
+    -- R1 22-3e/3f/3g/3h: CBG based reception for DL with unicast PDSCH(s) per slot per CC with UE processing time Capability 2
+    cbgPDSCH-ProcessingType2-DifferentTB-PerSlot-r16   SEQUENCE {
+        scs-15kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-30kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-60kHz-r16        ENUMERATED {one, upto2, upto4, upto7} OPTIONAL,
+        scs-120kHz-r16       ENUMERATED {one, upto2, upto4, upto7} OPTIONAL
+    } OPTIONAL,
+    intraFreqDAPS-r16                  SEQUENCE {
+        intraFreqDiffSCS-DAPS-r16          ENUMERATED {supported}            OPTIONAL,
+        intraFreqAsyncDAPS-r16             ENUMERATED {supported}            OPTIONAL
+    }                                                                        OPTIONAL,
+    intraBandFreqSeparationDL-v1620    FreqSeparationClassDL-v1620           OPTIONAL,
+    intraBandFreqSeparationDL-Only-r16 FreqSeparationClassDL-Only-r16        OPTIONAL,
+
+    -- R1 11-2: Rel-16 PDCCH monitoring capability
+    pdcch-Monitoring-r16               SEQUENCE {
+        pdsch-ProcessingType1-r16          SEQUENCE {
+            scs-15kHz-r16                      PDCCH-MonitoringOccasions-r16 OPTIONAL,
+            scs-30kHz-r16                      PDCCH-MonitoringOccasions-r16 OPTIONAL
+        }                                                                    OPTIONAL,
+        pdsch-ProcessingType2-r16      SEQUENCE {
+            scs-15kHz-r16                  PDCCH-MonitoringOccasions-r16     OPTIONAL,
+            scs-30kHz-r16                  PDCCH-MonitoringOccasions-r16     OPTIONAL
+        }                                                                    OPTIONAL
+    }                                                                        OPTIONAL,
+
+    -- R1 11-2b: Mix of Rel. 16 PDCCH monitoring capability and Rel. 15 PDCCH monitoring capability on different carriers
+    pdcch-MonitoringMixed-r16          ENUMERATED {supported}                OPTIONAL,
+
+    -- R1 18-5c: Processing up to X unicast DCI scheduling for DL per scheduled CC
+    crossCarrierSchedulingProcessing-DiffSCS-r16  SEQUENCE {
+        scs-15kHz-120kHz-r16               ENUMERATED {n1,n2,n4}             OPTIONAL,
+        scs-15kHz-60kHz-r16                ENUMERATED {n1,n2,n4}             OPTIONAL,
+        scs-30kHz-120kHz-r16               ENUMERATED {n1,n2,n4}             OPTIONAL,
+        scs-15kHz-30kHz-r16                ENUMERATED {n2}                   OPTIONAL,
+        scs-30kHz-60kHz-r16                ENUMERATED {n2}                   OPTIONAL,
+        scs-60kHz-120kHz-r16               ENUMERATED {n2}                   OPTIONAL
+    }                                                                        OPTIONAL,
+
+    -- R1 16-2b-1: Support of single-DCI based SDM scheme
+    singleDCI-SDM-scheme-r16           ENUMERATED {supported}                OPTIONAL
+}
+
+FeatureSetDownlink-v1700 ::= SEQUENCE {
+    -- R1 36-2: Scaling factor to be applied to 1024QAM for FR1
+    scalingFactor-1024QAM-FR1-r17 ENUMERATED {f0p4, f0p75, f0p8}             OPTIONAL,
+    -- R1 24 feature for existing UE cap to include new SCS
+    timeDurationForQCL-v1710     SEQUENCE {
+        scs-480kHz                   ENUMERATED {s56, s112}                  OPTIONAL,
+        scs-960kHz                   ENUMERATED {s112, s224}                 OPTIONAL
+    }                                                                        OPTIONAL,
+    -- R1 23-6-1	SFN scheme A (scheme 1) for PDSCH and PDCCH
+    sfn-SchemeA-r17                  ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-1-1	SFN scheme A (scheme 1) for PDCCH only
+    sfn-SchemeA-PDCCH-only-r17       ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-1a	Dynamic switching - scheme A
+    sfn-SchemeA-DynamicSwitching-r17 ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-1b	SFN scheme A (scheme 1) for PDSCH only
+    sfn-SchemeA-PDSCH-only-r17       ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-2	SFN scheme B (TRP based pre-compensation) for PDSCH and PDCCH
+    sfn-SchemeB-r17                  ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-2a	Dynamic switching - scheme B
+    sfn-SchemeB-DynamicSwitching-r17 ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-6-2b	SFN scheme B (TRP based pre-compensation) for PDSCH only
+    sfn-SchemeB-PDSCH-only-r17       ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-2-1d	PDCCH repetition for Case 2 PDCCH monitoring with a span gap
+    mTRP-PDCCH-Case2-1SpanGap-r17    SEQUENCE {
+        scs-15kHz-r17                    PDCCH-RepetitionParameters-r17      OPTIONAL,
+        scs-30kHz-r17                    PDCCH-RepetitionParameters-r17      OPTIONAL,
+        scs-60kHz-r17                    PDCCH-RepetitionParameters-r17      OPTIONAL,
+        scs-120kHz-r17                   PDCCH-RepetitionParameters-r17      OPTIONAL
+    }                                                                        OPTIONAL,
+    -- R1 23-2-1e	PDCCH repetition for Rel-16 PDCCH monitoring
+    mTRP-PDCCH-legacyMonitoring-r17  SEQUENCE {
+        scs-15kHz-r17                    PDCCH-RepetitionParameters-r17      OPTIONAL,
+        scs-30kHz-r17                    PDCCH-RepetitionParameters-r17      OPTIONAL
+    }                                                                        OPTIONAL,
+    -- R1  23-2-4	Simultaneous configuration of PDCCH repetition and multi-DCI based multi-TRP
+    mTRP-PDCCH-multiDCI-multiTRP-r17 ENUMERATED {supported}                  OPTIONAL,
+    -- R1 33-2:	Dynamic scheduling for multicast for PCell
+    dynamicMulticastPCell-r17        ENUMERATED {supported}                  OPTIONAL,
+    -- R1 23-2-1	PDCCH repetition
+    mTRP-PDCCH-Repetition-r17        SEQUENCE {
+        numBD-twoPDCCH-r17               INTEGER (2..3),
+        maxNumOverlaps-r17               ENUMERATED {n1,n2,n3,n5,n10,n20,n40}
+    }                                                                        OPTIONAL
+}
+
+FeatureSetDownlink-v1720 ::=                SEQUENCE {
+    -- R1 25-19: RTT-based Propagation delay compensation based on CSI-RS for tracking and SRS
+    rtt-BasedPDC-CSI-RS-ForTracking-r17         ENUMERATED {supported}                                                   OPTIONAL,
+    -- R1 25-19a: RTT-based Propagation delay compensation based on DL PRS for RTT-based PDC and SRS
+    rtt-BasedPDC-PRS-r17                        SEQUENCE {
+        maxNumberPRS-Resource-r17                   ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+        maxNumberPRS-ResourceProcessedPerSlot-r17   SEQUENCE {
+            scs-15kHz-r17                               ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+            scs-30kHz-r17                               ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+            scs-60kHz-r17                               ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+            scs-120kHz-r17                              ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL
+        }
+    }                                                                                                                    OPTIONAL,
+    -- R1 33-5-1: SPS group-common PDSCH for multicast on PCell
+    sps-Multicast-r17                           ENUMERATED {supported}                                                   OPTIONAL
+}
+
+FeatureSetDownlink-v1730 ::=                SEQUENCE {
+    -- R1 25-19b: Support of PRS as spatial relation RS for SRS
+    prs-AsSpatialRelationRS-For-SRS-r17         ENUMERATED {supported}                                                   OPTIONAL
+}
+
+PDCCH-MonitoringOccasions-r16 ::= SEQUENCE {
+    period7span3-r16                  ENUMERATED {supported}                 OPTIONAL,
+    period4span3-r16                  ENUMERATED {supported}                 OPTIONAL,
+    period2span2-r16                  ENUMERATED {supported}                 OPTIONAL
+}
+
+PDCCH-RepetitionParameters-r17 ::= SEQUENCE {
+    supportedMode-r17                  ENUMERATED {intra-span, inter-span, both},
+    limitX-PerCC-r17                   ENUMERATED {n4, n8, n16, n32, n44, n64, nolimit}                      OPTIONAL,
+    limitX-AcrossCC-r17                ENUMERATED {n4, n8, n16, n32, n44, n64, n128, n256, n512, nolimit}    OPTIONAL
+}
+
+DummyA ::=      SEQUENCE {
+    maxNumberNZP-CSI-RS-PerCC                   INTEGER (1..32),
+    maxNumberPortsAcrossNZP-CSI-RS-PerCC        ENUMERATED {p2, p4, p8, p12, p16, p24, p32, p40, p48, p56, p64, p72, p80,
+                                                            p88, p96, p104, p112, p120, p128, p136, p144, p152, p160, p168,
+                                                            p176, p184, p192, p200, p208, p216, p224, p232, p240, p248, p256},
+    maxNumberCS-IM-PerCC                        ENUMERATED {n1, n2, n4, n8, n16, n32},
+    maxNumberSimultaneousCSI-RS-ActBWP-AllCC    ENUMERATED {n5, n6, n7, n8, n9, n10, n12, n14, n16, n18, n20, n22, n24, n26,
+                                                                n28, n30, n32, n34, n36, n38, n40, n42, n44, n46, n48, n50, n52,
+                                                                n54, n56, n58, n60, n62, n64},
+    totalNumberPortsSimultaneousCSI-RS-ActBWP-AllCC ENUMERATED {p8, p12, p16, p24, p32, p40, p48, p56, p64, p72, p80,
+                                                                p88, p96, p104, p112, p120, p128, p136, p144, p152, p160, p168,
+                                                                p176, p184, p192, p200, p208, p216, p224, p232, p240, p248, p256}
+}
+
+DummyB ::=       SEQUENCE {
+    maxNumberTxPortsPerResource         ENUMERATED {p2, p4, p8, p12, p16, p24, p32},
+    maxNumberResources                  INTEGER (1..64),
+    totalNumberTxPorts                  INTEGER (2..256),
+    supportedCodebookMode               ENUMERATED {mode1, mode1AndMode2},
+    maxNumberCSI-RS-PerResourceSet      INTEGER (1..8)
+}
+
+DummyC ::=        SEQUENCE {
+    maxNumberTxPortsPerResource         ENUMERATED {p8, p16, p32},
+    maxNumberResources                  INTEGER (1..64),
+    totalNumberTxPorts                  INTEGER (2..256),
+    supportedCodebookMode               ENUMERATED {mode1, mode2, both},
+    supportedNumberPanels               ENUMERATED {n2, n4},
+    maxNumberCSI-RS-PerResourceSet      INTEGER (1..8)
+}
+
+DummyD ::=                 SEQUENCE {
+    maxNumberTxPortsPerResource         ENUMERATED {p4, p8, p12, p16, p24, p32},
+    maxNumberResources                  INTEGER (1..64),
+    totalNumberTxPorts                  INTEGER (2..256),
+    parameterLx                         INTEGER (2..4),
+    amplitudeScalingType                ENUMERATED {wideband, widebandAndSubband},
+    amplitudeSubsetRestriction          ENUMERATED {supported}                          OPTIONAL,
+    maxNumberCSI-RS-PerResourceSet      INTEGER (1..8)
+}
+
+DummyE ::=    SEQUENCE {
+    maxNumberTxPortsPerResource         ENUMERATED {p4, p8, p12, p16, p24, p32},
+    maxNumberResources                  INTEGER (1..64),
+    totalNumberTxPorts                  INTEGER (2..256),
+    parameterLx                         INTEGER (2..4),
+    amplitudeScalingType                ENUMERATED {wideband, widebandAndSubband},
+    maxNumberCSI-RS-PerResourceSet      INTEGER (1..8)
+}

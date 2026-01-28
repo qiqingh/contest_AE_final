@@ -1,0 +1,25 @@
+MeasConfig ::=                      SEQUENCE {
+    measObjectToRemoveList              MeasObjectToRemoveList                                              OPTIONAL,   -- Need N
+    measObjectToAddModList              MeasObjectToAddModList                                              OPTIONAL,   -- Need N
+    reportConfigToRemoveList            ReportConfigToRemoveList                                            OPTIONAL,   -- Need N
+    reportConfigToAddModList            ReportConfigToAddModList                                            OPTIONAL,   -- Need N
+    measIdToRemoveList                  MeasIdToRemoveList                                                  OPTIONAL,   -- Need N
+    measIdToAddModList                  MeasIdToAddModList                                                  OPTIONAL,   -- Need N
+    s-MeasureConfig                     CHOICE {
+        ssb-RSRP                            RSRP-Range,
+        csi-RSRP                            RSRP-Range
+    }                                                                                                       OPTIONAL,   -- Need M
+    quantityConfig                      QuantityConfig                                                      OPTIONAL,   -- Need M
+    measGapConfig                       MeasGapConfig                                                       OPTIONAL,   -- Need M
+    measGapSharingConfig                MeasGapSharingConfig                                                OPTIONAL,   -- Need M
+    ...,
+    [[
+    interFrequencyConfig-NoGap-r16      ENUMERATED {true}                                                   OPTIONAL    -- Need R
+    ]]
+}
+
+MeasObjectToRemoveList ::=              SEQUENCE (SIZE (1..maxNrofObjectId)) OF MeasObjectId
+
+MeasIdToRemoveList ::=                  SEQUENCE (SIZE (1..maxNrofMeasId)) OF MeasId
+
+ReportConfigToRemoveList ::=            SEQUENCE (SIZE (1..maxReportConfigId)) OF ReportConfigId

@@ -1,0 +1,22 @@
+SPS-Config ::=                  SEQUENCE {
+    periodicity                     ENUMERATED {ms10, ms20, ms32, ms40, ms64, ms80, ms128, ms160, ms320, ms640,
+                                                        spare6, spare5, spare4, spare3, spare2, spare1},
+    nrofHARQ-Processes              INTEGER (1..8),
+    n1PUCCH-AN                      PUCCH-ResourceId                                                            OPTIONAL,   -- Need M
+    mcs-Table                       ENUMERATED {qam64LowSE}                                                     OPTIONAL,   -- Need S
+    ...,
+    [[
+    sps-ConfigIndex-r16             SPS-ConfigIndex-r16                                                         OPTIONAL,   -- Cond SPS-List
+    harq-ProcID-Offset-r16          INTEGER (0..15)                                                             OPTIONAL,   -- Need R
+    periodicityExt-r16              INTEGER (1..5120)                                                           OPTIONAL,   -- Need R
+    harq-CodebookID-r16             INTEGER (1..2)                                                              OPTIONAL,   -- Need R
+    pdsch-AggregationFactor-r16     ENUMERATED {n1, n2, n4, n8 }                                                OPTIONAL    -- Need S
+    ]],
+    [[
+    sps-HARQ-Deferral-r17           INTEGER (1..32)                                                             OPTIONAL,   -- Need R
+    n1PUCCH-AN-PUCCHsSCell-r17      PUCCH-ResourceId                                                            OPTIONAL,   -- Need R
+    periodicityExt-r17              INTEGER (1..40960)                                                          OPTIONAL,   -- Need R
+    nrofHARQ-Processes-v1710        INTEGER(9..32)                                                              OPTIONAL,   -- Need R
+    harq-ProcID-Offset-v1700        INTEGER (16..31)                                                            OPTIONAL    -- Need R
+    ]]
+}

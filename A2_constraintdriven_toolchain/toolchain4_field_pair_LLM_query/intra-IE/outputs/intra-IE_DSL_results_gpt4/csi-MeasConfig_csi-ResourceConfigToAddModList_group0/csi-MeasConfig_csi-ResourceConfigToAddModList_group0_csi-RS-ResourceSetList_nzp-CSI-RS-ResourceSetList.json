@@ -1,0 +1,82 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      778,
+      783,
+      788,
+      789,
+      793,
+      798,
+      803,
+      804
+    ],
+    "field2_all": [
+      784,
+      799
+    ],
+    "actual_pairs": [
+      [
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804
+        ],
+        [
+          784,
+          799
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear, normative, and machine-checkable relationship between the fields 'csi-RS-ResourceSetList' and 'nzp-CSI-RS-ResourceSetList' within the same IE instance. The snippets discuss the fields and their functionalities but do not provide a rule that directly relates the values or states of these two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ResourceConfigToAddModList_group0",
+    "field1": "csi-RS-ResourceSetList",
+    "field2": "nzp-CSI-RS-ResourceSetList",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 108,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138321v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.2",
+      "6.1.3.12",
+      "5.4",
+      "5.2.2.3.1",
+      "7.4.1.5.1",
+      "5.1.6.1.1",
+      "5.1.6.1",
+      "9.2.5",
+      "5.2.2.5",
+      "5.2.1.5.1",
+      "7.4.1.5.3",
+      "5.2.1.6"
+    ],
+    ,
+    "evidence": "For a CSI-RS resource associated with a NZP-CSI-RS-ResourceSet with the higher layer parameter repetition set to 'on', the UE shall not expect to be configured with CSI-RS over the symbols during which the UE is also configured to monitor the CORESET, while for other NZP-CSI-RS-ResourceSet configurations, if the UE is configured with a CSI-RS resource and a search space set associated with a CORESET in the same OFDM symbol(s), the UE may assume that the CSI-RS and a PDCCH DM-RS transmitted in all the search space sets associated with CORESET are quasi co-located with 'typeD', if 'typeD' is applicable. If the CORESET is activated with two TCI states, UE may assume that the first TCI state of the CORESET as the default QCL assumption for the CSI-RS. This also applies to the case when CSI-RS and the CORESET are in different intra-band component carriers, if 'typeD' is applicable. Furthermore, the UE shall not\n---\nFor a NZP-CSI-RS-ResourceSet configured with the higher layer parameter trs-Info, the UE shall assume the antenna port with the same port index of the configured NZP CSI-RS resources in the NZP-CSI-RS-ResourceSet is the same.\n---\nIf a UE is configured with a NZP-CSI-RS-ResourceSet configured with the higher layer parameter repetition set to 'on', the UE may assume that the CSI-RS resources, described in Clause 5.2.2.3.1, within the NZP-CSI-RS-ResourceSet are transmitted with the same downlink spatial domain transmission filter, where the CSI-RS resources in the NZP-CSI-RS-\n---\n- SP CSI-RS resource set ID: This field contains an index of NZP-CSI-RS-ResourceSet containing Semi Persistent NZP CSI-RS resources, as specified in TS 38.331 [5], indicating the Semi Persistent NZP CSI-RS resource set, which shall be activated or deactivated. The length of the field is 6 bits;\n---\nFor CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI ,\n---\nIn any slot, the UE is not expected to have more active CSI-RS ports or active CSI-RS resources in active BWPs than reported as capability. NZP CSI-RS resource is active in a duration of time defined as follows. For aperiodic CSI-RS, starting from the end of the PDCCH containing the request and ending at the end of the scheduled PUSCH containing the report associated with this aperiodic CSI-RS. When the PDCCH candidates are associated with a search space set configured with searchSpaceLinking, for the purpose of determining the NZP CSI-RS resource active duration, the PDCCH candidate that ends later in time among the two linked PDCCH candidates is used. For semi-persistent CSI-RS, starting from the end of when the activation command is applied, and ending at the end of when the deactivation command is applied. For periodic CSI-RS, starting when the periodic CSI-RS is configured by higher layer signalling, and ending when the periodic CSI-RS configuration is released. If a CSI-RS resource is referred N times by one or more CSI Reporting Settings, the CSI-RS resource and the CSI-RS ports within the CSI-RS resource are counted N times. For a CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, if a CSIRS resource is referred X times by one of the M CSI-RS resources, where M is defined in clause 5.2.1.4.2, and/or one or two Resource Pairs, the CSI-RS resource and the CSI-RS ports within the CSI-RS resource are counted X times.\n---\nThe following parameters for which the UE shall assume non-zero transmission power for CSI-RS resource are configured via the higher layer parameter NZP-CSI-RS-Resource, CSI-ResourceConfig and NZP-CSI-RS-ResourceSet for each CSI-RS resource configuration:\n---\nWhen deriving CSI feedback, the UE is not expected that a NZP CSI -RS resource for channel measurement overlaps with CSI-IM resource for interference measurement or NZP CSI -RS resource for interference measurement.\n---\nwhere Z_{\\text {ref }} is defined as the next uplink symbol with its CP starting T_{\\text {wo.CE }}=(Z)(2048+144) \\cdot K 2^{-\\mu} \\cdot T_{\\mathrm{c}}+T_{\\text {meach }} after the end of the last symbol of the PDCCH triggering the CSI report(s), and where Z_{\\text {ref }}(n) , is defined as the next uplink symbol with its CP starting T^{\\dagger}{ }_{\\sigma \\alpha \\cdot C V}=\\left(Z^{\\prime}\\right)(2048+144) \\cdot K 2^{-\\mu} \\cdot T_{\\mathrm{c}} after the end of the last symbol in time of the latest of: aperiodic CSI-RS resource for channel measurements, aperiodic CSI-IM used for interference measurements, and aperiodic NZP CSI-RS for interference measurement, when aperiodic CSI-RS is used for channel measurement for the n -th triggered CSI report, and where T_{\\text {switch }} is defined in clause 6.4 and is applied only if Z_{1} of table 5.4-1 is applied.\n---\nZero-power (ZP) and non-zero-power (NZP) CSI-RS are defined - for a non-zero-power CSI-RS configured by the NZP-CSI-RS-Resource [E or by the CSI-RS-Resource-Mobility field in the CSI-RS-ResourceConfigMobility [E or by the TRS-ResourceSet [E, the sequence shall be generated according to clause 7.4.1.5.2 and mapped to resource elements according to clause 7.4.1.5.3\n---\nThe UE is not expected to receive CSI-RS and DM-RS on the same resource elements. The UE shall assume \\beta_{\\text {CSIRS }}>0 for a non-zero-power CSI-RS where \\beta_{\\text {CSIRS }} is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled.\n---\n- the last symbol of aperiodic NZP CSI-RS for interference measurements, when aperiodic CSI-RS is used for channel measurement for triggered CSI report n",
+    "generated_at": "2025-12-11T14:27:34.733699",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence snippets do not establish a clear, normative, and machine-checkable relationship between the fields 'csi-RS-ResourceSetList' and 'nzp-CSI-RS-ResourceSetList' within the same IE instance. The snippets discuss the fields and their functionalities but do not provide a rule that directly relates the values or states of these two fields."
+    }
+  }
+}

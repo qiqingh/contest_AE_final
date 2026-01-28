@@ -1,0 +1,66 @@
+RadioBearerConfig ::=                   SEQUENCE {
+    srb-ToAddModList                        SRB-ToAddModList                                        OPTIONAL,   -- Cond HO-Conn
+    srb3-ToRelease                          ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    drb-ToAddModList                        DRB-ToAddModList                                        OPTIONAL,   -- Cond HO-toNR
+    drb-ToReleaseList                       DRB-ToReleaseList                                       OPTIONAL,   -- Need N
+    securityConfig                          SecurityConfig                                          OPTIONAL,   -- Need M
+    ...,
+    [[
+    mrb-ToAddModList-r17                    MRB-ToAddModList-r17                                    OPTIONAL,   -- Need N
+    mrb-ToReleaseList-r17                   MRB-ToReleaseList-r17                                   OPTIONAL,   -- Need N
+    srb4-ToAddMod-r17                       SRB-ToAddMod                                            OPTIONAL,   -- Need N
+    srb4-ToRelease-r17                      ENUMERATED{true}                                        OPTIONAL    -- Need N
+    ]]
+
+}
+
+SRB-ToAddModList ::=                    SEQUENCE (SIZE (1..2)) OF SRB-ToAddMod
+
+SRB-ToAddMod ::=                        SEQUENCE {
+    srb-Identity                            SRB-Identity,
+    reestablishPDCP                         ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    discardOnPDCP                           ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    pdcp-Config                             PDCP-Config                                             OPTIONAL,   -- Cond PDCP
+    ...,
+    [[
+    srb-Identity-v1700                      SRB-Identity-v1700                                      OPTIONAL    -- Need M
+    ]]
+}
+
+DRB-ToAddModList ::=                    SEQUENCE (SIZE (1..maxDRB)) OF DRB-ToAddMod
+
+DRB-ToAddMod ::=                        SEQUENCE {
+    cnAssociation                           CHOICE {
+        eps-BearerIdentity                      INTEGER (0..15),
+        sdap-Config                             SDAP-Config
+    }                                                                                               OPTIONAL,   -- Cond DRBSetup
+    drb-Identity                            DRB-Identity,
+    reestablishPDCP                         ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    recoverPDCP                             ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    pdcp-Config                             PDCP-Config                                             OPTIONAL,   -- Cond PDCP
+    ...,
+    [[
+    daps-Config-r16                         ENUMERATED{true}                                        OPTIONAL    -- Cond DAPS
+    ]]
+}
+DRB-ToReleaseList ::=                   SEQUENCE (SIZE (1..maxDRB)) OF DRB-Identity
+
+SecurityConfig ::=                      SEQUENCE {
+    securityAlgorithmConfig                 SecurityAlgorithmConfig                                 OPTIONAL,   -- Cond RBTermChange1
+    keyToUse                                ENUMERATED{master, secondary}                           OPTIONAL,   -- Cond RBTermChange
+    ...
+}
+
+MRB-ToAddModList-r17 ::=                SEQUENCE (SIZE (1..maxMRB-r17)) OF MRB-ToAddMod-r17
+
+MRB-ToAddMod-r17 ::=                    SEQUENCE {
+    mbs-SessionId-r17                       TMGI-r17                                                OPTIONAL,   -- Cond MRBSetup
+    mrb-Identity-r17                        MRB-Identity-r17,
+    mrb-IdentityNew-r17                     MRB-Identity-r17                                        OPTIONAL,   -- Need N
+    reestablishPDCP-r17                     ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    recoverPDCP-r17                         ENUMERATED{true}                                        OPTIONAL,   -- Need N
+    pdcp-Config-r17                         PDCP-Config                                             OPTIONAL,   -- Cond PDCP
+    ...
+}
+
+MRB-ToReleaseList-r17 ::=               SEQUENCE (SIZE (1..maxMRB-r17)) OF MRB-Identity-r17

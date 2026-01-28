@@ -1,0 +1,151 @@
+{
+  "dsl_rule": "ASSOCIATED(field1, field2, 'CSI-ReportConfig is associated with a single downlink BWP')",
+  "constraint_type": "Association",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      359,
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "field2_all": [
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "actual_pairs": [
+      [
+        [
+          438,
+          546
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          438,
+          546
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          438,
+          546
+        ]
+      ],
+      [
+        [
+          438,
+          546,
+          654
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ]
+    ]
+  },
+  "predicate": "The codebook subset from bwp-dedicated_pusch-config is associated with the BWP-Id from uplinkbwp-toaddmodlist_bwp-id through the CSI-ReportConfig",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "codebooksubset from bwp-dedicated_pusch-config is associated with the same BWP-Id in uplinkbwp-toaddmodlist_bwp-id"
+    ],
+    "invalid": [
+      "codebooksubset from bwp-dedicated_pusch-config is associated with a different BWP-Id in uplinkbwp-toaddmodlist_bwp-id"
+    ]
+  },
+  "notes": "The evidence explicitly mentions that each CSI-ReportConfig is associated with a single downlink BWP, which includes the codebook subset restriction from bwp-dedicated_pusch-config and the BWP-Id from uplinkbwp-toaddmodlist_bwp-id.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pusch-config",
+    "field1": "codebooksubset",
+    "ie2_name": "uplinkbwp-toaddmodlist_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
+    "generated_at": "2025-12-11T09:26:46.881121",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "Association",
+      "dsl": "ASSOCIATED(field1, field2, 'CSI-ReportConfig is associated with a single downlink BWP')",
+      "preconditions": [],
+      "predicate": "The codebook subset from bwp-dedicated_pusch-config is associated with the BWP-Id from uplinkbwp-toaddmodlist_bwp-id through the CSI-ReportConfig",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "codebooksubset from bwp-dedicated_pusch-config is associated with the same BWP-Id in uplinkbwp-toaddmodlist_bwp-id"
+        ],
+        "invalid": [
+          "codebooksubset from bwp-dedicated_pusch-config is associated with a different BWP-Id in uplinkbwp-toaddmodlist_bwp-id"
+        ]
+      },
+      "notes": "The evidence explicitly mentions that each CSI-ReportConfig is associated with a single downlink BWP, which includes the codebook subset restriction from bwp-dedicated_pusch-config and the BWP-Id from uplinkbwp-toaddmodlist_bwp-id.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

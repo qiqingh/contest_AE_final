@@ -1,0 +1,63 @@
+SL-ReportConfigList-r16 ::=           SEQUENCE (SIZE (1..maxNrofSL-ReportConfigId-r16)) OF SL-ReportConfigInfo-r16
+
+SL-ReportConfigInfo-r16 ::=           SEQUENCE {
+    sl-ReportConfigId-r16                     SL-ReportConfigId-r16,
+    sl-ReportConfig-r16                       SL-ReportConfig-r16,
+    ...
+}
+
+SL-ReportConfigId-r16 ::=             INTEGER (1..maxNrofSL-ReportConfigId-r16)
+
+SL-ReportConfig-r16 ::=               SEQUENCE {
+    sl-ReportType-r16                     CHOICE {
+        sl-Periodical-r16                     SL-PeriodicalReportConfig-r16,
+        sl-EventTriggered-r16                 SL-EventTriggerConfig-r16,
+        ...
+    },
+    ...
+}
+
+SL-PeriodicalReportConfig-r16 ::=     SEQUENCE {
+    sl-ReportInterval-r16                 ReportInterval,
+    sl-ReportAmount-r16                   ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    sl-ReportQuantity-r16                 SL-MeasReportQuantity-r16,
+    sl-RS-Type-r16                        SL-RS-Type-r16,
+    ...
+}
+
+SL-EventTriggerConfig-r16 ::=        SEQUENCE {
+    sl-EventId-r16                       CHOICE {
+        eventS1-r16                          SEQUENCE {
+            s1-Threshold-r16                     SL-MeasTriggerQuantity-r16,
+            sl-ReportOnLeave-r16                 BOOLEAN,
+            sl-Hysteresis-r16                    Hysteresis,
+            sl-TimeToTrigger-r16                 TimeToTrigger,
+            ...
+        },
+        eventS2-r16                          SEQUENCE {
+            s2-Threshold-r16                     SL-MeasTriggerQuantity-r16,
+            sl-ReportOnLeave-r16                 BOOLEAN,
+            sl-Hysteresis-r16                    Hysteresis,
+            sl-TimeToTrigger-r16                 TimeToTrigger,
+            ...
+        },
+        ...
+    },
+    sl-ReportInterval-r16                ReportInterval,
+    sl-ReportAmount-r16                      ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    sl-ReportQuantity-r16                    SL-MeasReportQuantity-r16,
+    sl-RS-Type-r16                           SL-RS-Type-r16,
+    ...
+}
+
+SL-MeasReportQuantity-r16 ::=         CHOICE {
+    sl-RSRP-r16                           BOOLEAN,
+    ...
+}
+
+SL-MeasTriggerQuantity-r16 ::=        CHOICE {
+    sl-RSRP-r16                           RSRP-Range,
+    ...
+}
+
+SL-RS-Type-r16 ::=                    ENUMERATED {dmrs, spare3, spare2, spare1}

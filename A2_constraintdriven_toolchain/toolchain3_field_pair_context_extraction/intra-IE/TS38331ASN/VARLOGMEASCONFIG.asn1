@@ -1,0 +1,13 @@
+VarLogMeasConfig-r16-IEs ::= SEQUENCE {
+    areaConfiguration-r16        AreaConfiguration-r16        OPTIONAL,
+    bt-NameList-r16              BT-NameList-r16              OPTIONAL,
+    wlan-NameList-r16            WLAN-NameList-r16            OPTIONAL,
+    sensor-NameList-r16          Sensor-NameList-r16          OPTIONAL,
+    loggingDuration-r16          LoggingDuration-r16,
+    reportType                   CHOICE {
+        periodical                   LoggedPeriodicalReportConfig-r16,
+        eventTriggered               LoggedEventTriggerConfig-r16
+    },
+    earlyMeasIndication-r17      ENUMERATED {true}            OPTIONAL,
+    areaConfiguration-v1700      AreaConfiguration-v1700      OPTIONAL
+}

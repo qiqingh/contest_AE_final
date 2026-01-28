@@ -1,0 +1,34 @@
+ServingCellConfigCommonSIB ::=      SEQUENCE {
+    downlinkConfigCommon                DownlinkConfigCommonSIB,
+    uplinkConfigCommon                  UplinkConfigCommonSIB                                       OPTIONAL, -- Need R
+    supplementaryUplink                 UplinkConfigCommonSIB                                       OPTIONAL, -- Need R
+    n-TimingAdvanceOffset               ENUMERATED { n0, n25600, n39936 }                           OPTIONAL, -- Need S
+    ssb-PositionsInBurst                SEQUENCE {
+        inOneGroup                          BIT STRING (SIZE (8)),
+        groupPresence                       BIT STRING (SIZE (8))                                   OPTIONAL  -- Cond FR2-Only
+    },
+    ssb-PeriodicityServingCell          ENUMERATED {ms5, ms10, ms20, ms40, ms80, ms160},
+    tdd-UL-DL-ConfigurationCommon       TDD-UL-DL-ConfigCommon                                      OPTIONAL, -- Cond TDD
+    ss-PBCH-BlockPower                  INTEGER (-60..50),
+    ...,
+    [[
+    channelAccessMode-r16               CHOICE {
+        dynamic                             NULL,
+        semiStatic                          SemiStaticChannelAccessConfig-r16
+    }                                                                                               OPTIONAL, -- Cond SharedSpectrum
+    discoveryBurstWindowLength-r16      ENUMERATED {ms0dot5, ms1, ms2, ms3, ms4, ms5}               OPTIONAL, -- Need R
+    highSpeedConfig-r16                 HighSpeedConfig-r16                                         OPTIONAL  -- Need R
+    ]],
+    [[
+    channelAccessMode2-r17              ENUMERATED {enabled}                                        OPTIONAL, -- Cond SharedSpectrum2
+    discoveryBurstWindowLength-v1700    ENUMERATED {ms0dot125, ms0dot25, ms0dot5, ms0dot75, ms1, ms1dot25} OPTIONAL,  -- Need R
+    highSpeedConfigFR2-r17              HighSpeedConfigFR2-r17                                      OPTIONAL, -- Need R
+    uplinkConfigCommon-v1700            UplinkConfigCommonSIB-v1700                                 OPTIONAL  -- Need R
+    ]],
+    [[
+    enhancedMeasurementLEO-r17          ENUMERATED {true}                                           OPTIONAL  -- Need R
+    ]],
+    [[
+    ra-ChannelAccess-r17                ENUMERATED {enabled}                                        OPTIONAL  -- Cond SharedSpectrum2
+    ]]
+}

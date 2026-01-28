@@ -1,0 +1,276 @@
+[
+  {
+    "fields": [
+      "closedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "field_ids": [
+      [
+        419
+      ],
+      [
+        418
+      ]
+    ],
+    "matched_fields": [
+      "closedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "original_sentence": "- \\quad \\delta_{\\mathrm{PUCCH}, b, f, c}(i, l) is a TPC command value included in a DCI format associated with the PUCCH transmission for active UL BWP b of carrier f of the primary cell c that the UE detects for PUCCH transmission occasion i , or is jointly coded with other TPC commands in a DCI format 2 \\_2 with CRC scrambled by TPC-PUCCHRNTI [5, TS 38.212], as described in clause 11.3 - l \\in\\{0,1\\} if the UE is provided twoPUCCH-PC-AdjustmentStates and PUCCH-SpatialRelationInfo, or more than one sets of power control parameters for operation in FR1, and l=0 if the UE is not provided twoPUCCH-PC-AdjustmentStates or PUCCH-SpatialRelationInfo, and more than one sets of power control parameters - If the UE obtains a TPC command value from a DCI format associated with the PUCCH transmission and if the UE is provided PUCCH-SpatialRelationInfo, the UE obtains a mapping, by an index provided by p0-PUCCH-Id, between a set of pucch-SpatialRelationInfold values and a set of values for closedLoopIndex that provide the l value(s). If the UE receives an activation command indicating a value of pucch-SpatialRelationInfold, the UE determines the value closedLoopIndex that provides the value of l through the link to a corresponding p0-PUCCH-Id index - If the UE obtains a TPC command from a DCI format 2 _ 2 with CRC scrambled by a TPC-PUCCHRNTI, the l value is provided by the closed loop indicator field in DCI format 2_2 - If the UE transmits the PUCCH with N_{\\text {PUCCH }}^{\\text {repeat }}>1 repetitions, as described in clause 9.2.6, and the UE is provided twoPUCCH-PC-AdjustmentStates by pucch-PowerControl",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "closedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "field_ids": [
+      [
+        419
+      ],
+      [
+        418
+      ]
+    ],
+    "matched_fields": [
+      "closedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "original_sentence": "- If a configuration of a P_{0 \\_\\mathrm{PUCCH}, b, f, c}\\left(q_{u}\\right) value for a corresponding PUCCH power control adjustment state l for active UL BWP b of carrier f of primary cell c is provided by higher layers, - \\quad g_{b, f, c}(k, l)=0, \\quad k=0,1, \\ldots, i - if the UE is provided PUCCH-SpatialRelationInfo, the UE determines the value of l from the value of q_{u} based on a pucch-SpatialRelationInfold value associated with the p0-PUCCH-Id value corresponding to q_{u} and with the closedLoopIndex value corresponding to l ; - else, if the UE is provided more than one sets of power control parameters for operation in FR1, and if the UE receives an activation command for a PUCCH resource that indicates one or two sets of the more than one sets of power control parameters, the UE determines the value of l based on the closedLoopIndex value in the one or two sets of power control parameters; - else, l=0",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUCCH-Id",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        418
+      ],
+      [
+        417
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUCCH",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "original_sentence": "A UE transmits a PUCCH on a PUCCH-sSCell with a power that the UE determines as described in clause 7.2.1, where the UE applies - a p0-PUCCH-Value from pucch-PowerControl in PUCCH-Config for the PUCCH-sSCell for the determination of P_{O, P \\cup C C H, b, f, c}\\left(q_{u}\\right) - a pucch-PathlossReferenceRS-Id from pucch-PowerControl in PUCCH-Config for the PUCCH-sSCell for the determination of P L_{b, f, c}\\left(q_{d}\\right) - a PUCCH power control adjustment state g_{b, 0, c}(i, 0) for active UL BWP b of the UL carrier of PUCCH-sSCell c and PUCCH transmission occasion i where \\delta_{\\mathrm{PUCCH}, b, 0_{c} c}(i, 0) is a TPC command value included in a DCI format associated with generation of HARQ-ACK information for multiplexing in a PUCCH transmission on the PUCCH-sSCell as indicated either by a pucch-sSCellPattern or by a PUCCH cell indicator field in the DCI format, or provided by DCI format 2_2 with CRC scrambled by TPC-PUCCH-RNTI for the PUCCH-sSCell as described in clause 11.3 9.1 HARQ-ACK codebook determination",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "8.4",
+    "section_title": "PDSCH with UE contention resolution identity",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        417
+      ],
+      [
+        415,
+        416
+      ]
+    ],
+    "matched_fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using RS resource with index q_{d} , where 0 <= q_{d}<Q_{d}-Q_{d} is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} where k is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\mu is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index q_{d} on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        417
+      ],
+      [
+        415,
+        416
+      ]
+    ],
+    "matched_fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "original_sentence": "- If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using RS resource with index q_{d} , where 0 <= q_{d}<Q_{d}-Q_{d} is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} where k is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\mu is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index q_{d} on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "closedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "field_ids": [
+      [
+        419
+      ],
+      [
+        418
+      ]
+    ],
+    "matched_fields": [
+      "ClosedLoopIndex",
+      "p0-PUCCH-Id"
+    ],
+    "original_sentence": "PUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "closedLoopIndex",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        419
+      ],
+      [
+        417
+      ]
+    ],
+    "matched_fields": [
+      "ClosedLoopIndex",
+      "PUCCH-PathlossReferenceRS"
+    ],
+    "original_sentence": "} } PUCCH-PathlossReferenceRS-rl6 ::= SEQUENCE [ pucch-PathlossReferenceRS-Id-r16 referenceSignal-rl6 ssb-Index-rl6 csi-RS-Index-rl6 } } PUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "closedLoopIndex",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        419
+      ],
+      [
+        415,
+        416
+      ]
+    ],
+    "matched_fields": [
+      "ClosedLoopIndex",
+      "referenceSignal"
+    ],
+    "original_sentence": "PUCCH-PathlossReferenceRS-rl6 ::= SEQUENCE [ pucch-PathlossReferenceRS-Id-r16 referenceSignal-rl6 ssb-Index-rl6 csi-RS-Index-rl6 } } PUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUCCH-Id",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        418
+      ],
+      [
+        417
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUCCH-Id",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "original_sentence": "PUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full --Editor's note: to be aligned with the corresponding MAC CE design",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        417
+      ],
+      [
+        415,
+        416
+      ]
+    ],
+    "matched_fields": [
+      "pucch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "original_sentence": "PUCCH-PathlossReferenceRS-rl6 ::= SEQUENCE [ pucch-PathlossReferenceRS-Id-r16 referenceSignal-rl6 ssb-Index-rl6 csi-RS-Index-rl6 } } PUCCH-PowerControlSetInfo-rl7 ::= SEQUENCE \\ pucch-PowerControlSetInfoId-rl7 PUCCH-PowerControlSetInfoId-rl7, p0-PUCCH-Id-rl7 pucch-ClosedLoopIndex-rl7 ENUMERATED [ i0, il }, pucch-PathlossReferenceRS-Id-rl7 PUCCH-PathlossReferenceRS-Id -- Editor's Note: Check if new id -rll is needed to cover full --Editor's note: to be aligned with the corresponding MAC CE design",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      324,
+      432,
+      540,
+      648
+    ],
+    "field2_all": [
+      323
+    ],
+    "actual_pairs": [
+      [
+        [
+          324,
+          432,
+          540,
+          648
+        ],
+        [
+          323
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not explicitly relate the fields p0 and p0-pusch-alphasetid across different IEs. The evidence provided describes behavior within a single IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "323_649_pusch-powercontrol_p0-alphasets",
+    "field1": "p0",
+    "ie2_name": "323_p0-alphasets_p0-pusch-alphasetid",
+    "field2": "p0-pusch-alphasetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If the UE is provided SRI-PUSCH-PowerControl and more than one values of p0-PUSCH-AlphaSetld in p0-AlphaSets, - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.",
+    "generated_at": "2026-01-10T14:24:18.624794",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between p0 and p0-pusch-alphasetid based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not explicitly relate the fields p0 and p0-pusch-alphasetid across different IEs. The evidence provided describes behavior within a single IE context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

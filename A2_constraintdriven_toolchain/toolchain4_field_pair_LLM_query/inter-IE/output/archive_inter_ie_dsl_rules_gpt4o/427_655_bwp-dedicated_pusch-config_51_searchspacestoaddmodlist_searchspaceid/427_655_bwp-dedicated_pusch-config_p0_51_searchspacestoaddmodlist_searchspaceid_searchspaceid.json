@@ -1,0 +1,74 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      432,
+      540,
+      648
+    ],
+    "field2_all": [
+      51
+    ],
+    "actual_pairs": [
+      [
+        [
+          432,
+          540,
+          648
+        ],
+        [
+          51
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE relationship between the fields p0 and searchspaceid.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "427_655_bwp-dedicated_pusch-config",
+    "field1": "p0",
+    "ie2_name": "51_searchspacestoaddmodlist_searchspaceid",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "4.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of \\( P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) \\), and SRS power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index \\( q_{d} \\) for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set  In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1",
+    "generated_at": "2025-12-10T13:49:36.955984",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between p0 and searchspaceid is evidenced.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE relationship between the fields p0 and searchspaceid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

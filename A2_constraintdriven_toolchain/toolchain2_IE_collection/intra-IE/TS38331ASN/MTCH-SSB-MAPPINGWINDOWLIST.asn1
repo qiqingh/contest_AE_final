@@ -1,0 +1,10 @@
+MTCH-SSB-MappingWindowList-r17 ::= SEQUENCE (SIZE (1..maxNrofMTCH-SSB-MappingWindow-r17)) OF MTCH-SSB-MappingWindowCycleOffset-r17
+
+MTCH-SSB-MappingWindowCycleOffset-r17 ::= CHOICE {
+    ms10                                      INTEGER(0..9),
+    ms20                                      INTEGER(0..19),
+    ms32                                      INTEGER(0..31),
+    ms64                                      INTEGER(0..63),
+    ms128                                     INTEGER(0..127),
+    ms256                                     INTEGER(0..255)
+}

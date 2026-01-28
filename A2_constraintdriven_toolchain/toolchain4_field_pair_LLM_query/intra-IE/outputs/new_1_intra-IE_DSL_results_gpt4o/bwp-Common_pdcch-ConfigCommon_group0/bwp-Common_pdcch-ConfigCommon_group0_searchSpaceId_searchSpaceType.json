@@ -1,0 +1,78 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      88
+    ],
+    "field2_all": [
+      99
+    ],
+    "actual_pairs": [
+      [
+        [
+          88
+        ],
+        [
+          99
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields 'searchSpaceId' and 'searchSpaceType' within the same IE. The evidence lacks normative wording or explicit math/table relations connecting these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Common_pdcch-ConfigCommon_group0",
+    "field1": "searchSpaceId",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 176,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.9",
+      "5.7",
+      "5.1.2.1",
+      "10.3",
+      "5.1.2.1.1",
+      "5.1.4",
+      "5.5",
+      "5.15.1",
+      "5.1",
+      "10.4",
+      "6.1.3.44",
+      "5.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "If the \\mu_{\\mathrm{PDCCH}}>\\mu_{\\mathrm{PDSCH}} , the UE is expected to receive the scheduled PDSCH, if the first symbol in the PDSCH allocation, including the DM-RS, as defined by the slot offset K_{0} and the start and length indicator SLIV of the scheduling DCI starts no earlier than N_{\\text {pasch }} PDCCH symbols after the end of the PDCCH scheduling the PDSCH, not taking into account the effect of receive timing difference between the scheduling cell and the scheduled cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining N_{\\text {pasch }} , the PDCCH candidate that ends later in time is used. \\begin{table}\n---\nA UE configured with DRX mode operation [11, TS 38.321] can be provided the following for detection of a DCI format 2_6 in a PDCCH reception on the PCell or on the SpCell [12, TS 38.331] - a PS-RNTI for DCI format 2_6 by ps-RNTI - a number of search space sets, by dci-Format2-6, to monitor PDCCH for detection of DCI format 2 _6 on the active DL BWP of the PCell or of the SpCell according to a common search space as described in clause 10.1 - a payload size for DCI format 2_6 by sizeDCI-2-6 - a location in DCI format 2_6 of a Wake-up indication bit by ps-PositionDCI-2-6\n---\n163 ETSI TS 138213 V17.1.0 (2022-05) 10.4 Search space set group switching and skipping of PDCCH monitoring A UE can be provided a group index for a respective Type3-PDCCH CSS set or USS set by searchSpaceGroupIdList for PDCCH monitoring on a serving cell. If the UE is not provided searchSpaceGroupIdList for a search space set, the following procedures are not applicable for PDOCH monitoring according to the search space set.\n---\n- msgA-TransMax: The maximum number of MSGA transmissions when both 4 -step and 2 -step RA type Random Access Resources are configured; - candidateBeamRSList: a list of reference signals (CSI-RS and/or SSB) identifying the candidate beams for recovery and the associated Random Access parameters; - recoverySearchSpaceld: the search space identity for monitoring the response of the beam failure recovery request; - powerRampingStep: the power-ramping factor; - msgA-PreamblePowerRampingStep: the power ramping factor for MSGA preamble;\n---\n2> else: 3> start the ra-ResponseWindow configured in BeamFailureRecoveryConfig at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while ra-ResponseWindow is running. 1> else:\n---\n2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe.\n---\n2> not monitor the PDCCH for the SCell; 2> not transmit PUCCH on the SCell; 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.\n---\nETSI TS 138321 V18.2.0 (2024-08) 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.\n---\nETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE\n---\nETSI TS 138214 V17.1.0 (2022-05) HARQ-ACK for the two PDSCHs are associated with the HARQ-ACK codebook of the same priority. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH, and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH if the HARQ-ACK for the two PDSCHs are associated with HARQ-ACK codebooks of different priorities. For any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start receiving a first PDSCH starting in symbol j by a PDCCH ending in symbol i on a scheduling cell, the UE is not expected to be scheduled to receive a PDSCH starting earlier than the end of the first PDSCH with a PDCCH that ends later than symbol i of a scheduling cell,. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH ending in symbol i is determined based on the PDCCH candidate that ends later in time. In a given scheduled cell, for any PDSCH corresponding to SI-RNTI, the UE is not expected to decode a re-transmission of an earlier PDSCH with a starting symbol less than N symbols after the last symbol of that PDSCH, where the value of N depends on the PDSCH subcarrier spacing configuration \\mu with N=13 for \\mu=0, N=13 for \\mu=1, N=20 for \\mu=2, N=24 for \\mu=3, N=96 for \\mu=5 , and N=192 for \\mu=6 . When receiving PDSCH scheduled with SI-RNTI, P-RNTI, G-RNTI for broadcast or MCCH-RNTI, the UE may assume that the DM-RS port of PDSCH is quasi co-located with the associated SS/PBCH block with respect to Doppler shift, Doppler spread, average delay, delay spread, spatial RX parameters when applicable.\n---\nETSI TS 138214 V17.1.0 (2022-05) symbol S is relative to the starting symbol S_{0} of the PDCCH monitoring occasion where DCI format 1 \\_2 is detected; when the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH candidate that starts later in time is used for the purpose of determining the starting symbol S_{0} ; - otherwise, the starting symbol S is relative to the start of the slot using S_{0}=0 . - The number of consecutive symbols L counting from the starting symbol S allocated for the PDSCH are determined from the start and length indicator SLIV:\n---\n& & 1,2, 3 & No/Ye s & - & Yes & - & pdsch-TimeDomainAllocationList provided in PDSCH-Config-MTCH, if configured, otherwise TimeDomainAllocationList provided in PDSCH-Config-MCCH \\multirow[t]{2}{*}{C-RNTI, MCS-CRNTI, CSRNTI} & & 1, 2, 3 & No & - & - & - & Default A & Any common search space associated with CORESET 0 & 1, 2, 3 & Yes & - & - & - & pdsch-TimeDomainAllocationList provided in PDSCH-ConfigCommon \\multirow[t]{4}{*}{C-RNTI, MCS-CRNTI, CSRNTI} & \\multirow{4}{*}{Any common search space not associated with CORESET 0 UE specific search space} & 1,2, 3 & No & No & - & - & Default A & & 1,2, 3 & Yes & No & - & - & pdsch-TimeDomainAllocationList provided in PDSCH-ConfigCommon",
+    "generated_at": "2026-01-07T16:30:34.462645",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields 'searchSpaceId' and 'searchSpaceType' within the same IE. The evidence lacks normative wording or explicit math/table relations connecting these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

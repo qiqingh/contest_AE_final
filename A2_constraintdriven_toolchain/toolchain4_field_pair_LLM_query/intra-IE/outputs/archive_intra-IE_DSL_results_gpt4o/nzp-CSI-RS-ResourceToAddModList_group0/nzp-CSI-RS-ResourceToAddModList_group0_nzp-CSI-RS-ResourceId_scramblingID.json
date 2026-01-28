@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      688
+    ],
+    [
+      701
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between nzp-CSI-RS-ResourceId and scramblingID within the same IE. The evidence discusses scramblingID in the context of resource sets, not individual IE fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "nzp-CSI-RS-ResourceId",
+    "field2": "scramblingID",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the QCL information for periodic NZP CSI-RS resources, is given by the higher layer parameter s s b -Index configured by a TRS-ResourceSet, is a SS/PBCH block, applies to all resources in a TRS-ResourceSet. - One or more scramblingIDs where if a single scramblingID is configured, it applies to all NZP-CSI-RS resources in the resource set, otherwise, each NZP-CSI-RS resource is provided with a scramblingID.\n---\n- One or more scramblingIDs where if a single scramblingID is configured, it applies to all NZP-CSI-RS resources in the resource set, otherwise, each NZP-CSI-RS resource is provided with a scramblingID.",
+    "generated_at": "2025-12-09T09:44:29.740560",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between nzp-CSI-RS-ResourceId and scramblingID within the same IE. The evidence discusses scramblingID in the context of resource sets, not individual IE fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

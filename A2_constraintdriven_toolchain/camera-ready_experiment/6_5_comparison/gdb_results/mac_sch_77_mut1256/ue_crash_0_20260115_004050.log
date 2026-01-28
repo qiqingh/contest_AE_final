@@ -1,0 +1,188 @@
+Attaching to process 4046425
+[New LWP 4046442]
+[New LWP 4046443]
+[New LWP 4046444]
+[New LWP 4046445]
+[New LWP 4046446]
+[New LWP 4046447]
+[New LWP 4046448]
+[New LWP 4046449]
+[New LWP 4046489]
+[New LWP 4046490]
+[New LWP 4046491]
+[New LWP 4046492]
+[New LWP 4046493]
+[New LWP 4046494]
+[New LWP 4046495]
+[New LWP 4046496]
+[New LWP 4046497]
+[New LWP 4046498]
+[New LWP 4046499]
+[New LWP 4046500]
+[New LWP 4046501]
+[New LWP 4046502]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007b4b94df27f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fff7243de40, rem=rem@entry=0x7fff7243de40) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+(gdb) (gdb) Continuing.
+44	./nptl/pthread_kill.c: No such file or directory.
+
+Thread 20 "UEthread_0" received signal SIGABRT, Aborted.
+[Switching to Thread 0x7b4b65886640 (LWP 4046499)]
+__pthread_kill_implementation (no_tid=0, signo=6, threadid=135563756201536) at ./nptl/pthread_kill.c:44
+(gdb) #0  __pthread_kill_implementation (no_tid=0, signo=6, threadid=135563756201536) at ./nptl/pthread_kill.c:44
+        tid = <optimized out>
+        ret = 0
+        pd = 0x7b4b65886640
+        old_mask = {__val = {0 <repeats 16 times>}}
+        ret = <optimized out>
+        pd = <optimized out>
+        old_mask = <optimized out>
+        ret = <optimized out>
+        tid = <optimized out>
+        ret = <optimized out>
+        resultvar = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        __private = <optimized out>
+        __oldval = <optimized out>
+        result = <optimized out>
+#1  __pthread_kill_internal (signo=6, threadid=135563756201536) at ./nptl/pthread_kill.c:78
+No locals.
+#2  __GI___pthread_kill (threadid=135563756201536, signo=signo@entry=6) at ./nptl/pthread_kill.c:89
+No locals.
+#3  0x00007b4b94d4f476 in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+        ret = <optimized out>
+#4  0x00007b4b94d357f3 in __GI_abort () at ./stdlib/abort.c:79
+        save_stage = 1
+        act = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {135563663404392, 250, 135563756184824, 135563756184828, 135564550153299, 0, 135564550047696, 19, 12154101381987668992, 135563663404384, 18446744073709551432, 0, 105410679326736, 135563327891424, 135563756184824, 135563756184828}}, sa_flags = -1797577645, sa_restorer = 0x0}
+        sigs = {__val = {32, 0, 4120854346931896320, 12154101381987668992, 0, 18446744073709551432, 0, 135563663382128, 135563756183552, 135563663382336, 0, 135564550153299, 206158430256, 12154101381987668992, 135563756183504, 18446744073709551432}}
+#5  0x00005fde9a9850a7 in exit_function (file=file@entry=0x5fde9ac30f38 "/home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c", function=function@entry=0x5fde9ac33f50 <__FUNCTION__.2> "configure_csi_resource_mapping", line=line@entry=2709, s=s@entry=0x5fde9abf0092 "_Assert_Exit_", assert=assert@entry=1) at /home/openairinterface5g/executables/nr-uesoftmodem.c:201
+        CC_id = <optimized out>
+#6  0x00005fde9aad1c3a in configure_csi_resource_mapping (csirs_config_pdu=csirs_config_pdu@entry=0x5fded618c820, resourceMapping=resourceMapping@entry=0x7b4b4c00e8e8, bwp_size=bwp_size@entry=5, bwp_start=bwp_start@entry=155) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:2709
+        __FUNCTION__ = "configure_csi_resource_mapping"
+#7  0x00005fde9aad1e98 in nr_schedule_csirs_reception (mac=<optimized out>, frame=288, slot=0) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:2848
+        csi_res_id = <optimized out>
+        nzpcsi = 0x7b4b4c00e8e0
+        period = 160
+        offset = 0
+        csirs_config_pdu = 0x5fded618c820
+        id = 0
+        csi_measconfig = 0x7b4b4c00e7e0
+        dl_config = 0x5fded618c810
+        current_DL_BWP = 0x7b4b60033f00
+        dl_bwp_id = 1
+        mu = 1
+        bwp_size = 5
+        bwp_start = 155
+        __FUNCTION__ = "nr_schedule_csirs_reception"
+#8  0x00005fde9aad23ae in nr_ue_dl_scheduler (mac=mac@entry=0x7b4b795af010, dl_info=dl_info@entry=0x7b4b65882c50) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:1369
+        rx_frame = 288
+        rx_slot = 0
+        dl_config = 0x5fded618c810
+        scheduled_response = {module_id = 0, CC_id = 0, dl_config = 0x0, ul_config = 0x0, sl_rx_config = 0x0, sl_tx_config = 0x0, phy_data = 0x0, mac = 0x0}
+        __FUNCTION__ = "nr_ue_dl_scheduler"
+#9  0x00005fde9aa779e1 in nr_ue_dl_indication (dl_info=0x7b4b65882c50) at /home/openairinterface5g/openair2/NR_UE_PHY_INTERFACE/NR_IF_Module.c:1325
+        ret2 = 0
+        mac = 0x7b4b795af010
+        ret = 0
+        __FUNCTION__ = "nr_ue_dl_indication"
+#10 0x00005fde9a998c82 in UE_dl_preprocessing (stats_printed=<synthetic pointer>, phy_data=0x7b4b6003efb8, tx_wait_for_dlsch=0x7b4b65882d20, proc=0x7b4b6003ef80, UE=0x7b4b7b939010) at /home/openairinterface5g/executables/nr-ue.c:658
+        dl_indication = {module_id = 0, gNB_index = 0, cc_id = 0, frame = 288, slot = 0, rx_ind = 0x0, ssb_index = 0, dci_ind = 0x0, phy_data = 0x7b4b6003efb8}
+        sampleShift = 2147483647
+        fp = 0x7b4b7b939b10
+        msg = 0x0
+        dl_slot = true
+        sampleShift = <optimized out>
+        fp = <optimized out>
+        msg = <optimized out>
+        dl_slot = <optimized out>
+        __FUNCTION__ = "UE_dl_preprocessing"
+        dl_indication = <optimized out>
+        ack_nack_slot = <optimized out>
+        sl_indication = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+#11 UE_thread (arg=0x7b4b7b939010) at /home/openairinterface5g/executables/nr-ue.c:1096
+        firstSymSamp = <optimized out>
+        readBlockSize = <optimized out>
+        newRx = 0x7b4b6003ef00
+        slot = <optimized out>
+        curMsg = {proc = {timestamp_tx = <optimized out>, gNB_id = 0, nr_slot_tx = 3, nr_slot_tx_offset = <optimized out>, rx_slot_type = 1, nr_slot_rx = 0, tx_slot_type = 1, frame_tx = <optimized out>, frame_rx = <optimized out>}, UE = <optimized out>, writeBlockSize = <optimized out>, phy_data = {phy_pdcch_config = {nb_search_space = <optimized out>, pdcch_config = {{rnti = <optimized out>, BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, coreset = {frequency_domain_resource = {<optimized out>, <optimized out>, <optimized out>, <optimized out>, <optimized out>, <optimized out>}, StartSymbolIndex = <optimized out>, duration = <optimized out>, CceRegMappingType = <optimized out>, RegBundleSize = <optimized out>, InterleaverSize = <optimized out>, ShiftIndex = <optimized out>, CoreSetType = <optimized out>, precoder_granularity = <optimized out>, pdcch_dmrs_scrambling_id = <optimized out>, scrambling_rnti = <optimized out>, tci_state_pdcch = <optimized out>, tci_present_in_dci = <optimized out>}, number_of_candidates = <optimized out>, CCE = {<optimized out> <repeats 64 times>}, L = {<optimized out> <repeats 64 times>}, num_dci_options = <optimized out>, dci_length_options = {<optimized out>, <optimized out>}, dci_format_options = {<optimized out>, <optimized out>}, ss_type_options = {<optimized out>, <optimized out>}} <repeats 40 times>}}, dlsch = {{rnti = <optimized out>, rnti_type = <optimized out>, active = <optimized out>, dlsch_config = {BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, resource_alloc = <optimized out>, rb_bitmap = {<optimized out> <repeats 36 times>}, number_rbs = <optimized out>, start_rb = <optimized out>, number_symbols = <optimized out>, start_symbol = <optimized out>, rb_offset = <optimized out>, dlDmrsSymbPos = <optimized out>, dmrsConfigType = <optimized out>, prb_bundling_size_ind = <optimized out>, rate_matching_ind = <optimized out>, zp_csi_rs_trigger = <optimized out>, mcs = <optimized out>, new_data_indicator = <optimized out>, rv = <optimized out>, targetCodeRate = <optimized out>, qamModOrder = <optimized out>, TBS = <optimized out>, tb2_mcs = <optimized out>, tb2_new_data_indicator = <optimized out>, tb2_rv = <optimized out>, harq_process_nbr = <optimized out>, vrb_to_prb_mapping = <optimized out>, dai = <optimized out>, scaling_factor_S = <optimized out>, pucch_resource_id = <optimized out>, pdsch_to_harq_feedback_time_ind = <optimized out>, n_dmrs_cdm_groups = <optimized out>, dmrs_ports = <optimized out>, n_front_load_symb = <optimized out>, tci_state = <optimized out>, cbgti = <optimized out>, codeBlockGroupFlushIndicator = <optimized out>, PTRSPortIndex = <optimized out>, PTRSTimeDensity = <optimized out>, PTRSFreqDensity = <optimized out>, PTRSReOffset = <optimized out>, nEpreRatioOfPDSCHToPTRS = <optimized out>, mcs_table = <optimized out>, tbslbrm = <optimized out>, nscid = <optimized out>, dlDmrsScramblingId = <optimized out>, dlDataScramblingId = <optimized out>, pduBitmap = <optimized out>, k1_feedback = <optimized out>, ldpcBaseGraph = <optimized out>, numCsiRsForRateMatching = <optimized out>, csiRsForRateMatching = {{subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}}, Nl = <optimized out>, max_ldpc_iterations = <optimized out>, last_iteration_cnt = <optimized out>, ptrs_symbols = <optimized out>, ptrs_symbol_index = <optimized out>}, {rnti = <optimized out>, rnti_type = <optimized out>, active = <optimized out>, dlsch_config = {BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, resource_alloc = <optimized out>, rb_bitmap = {<optimized out> <repeats 36 times>}, number_rbs = <optimized out>, start_rb = <optimized out>, number_symbols = <optimized out>, start_symbol = <optimized out>, rb_offset = <optimized out>, dlDmrsSymbPos = <optimized out>, dmrsConfigType = <optimized out>, prb_bundling_size_ind = <optimized out>, rate_matching_ind = <optimized out>, zp_csi_rs_trigger = <optimized out>, mcs = <optimized out>, new_data_indicator = <optimized out>, rv = <optimized out>, targetCodeRate = <optimized out>, qamModOrder = <optimized out>, TBS = <optimized out>, tb2_mcs = <optimized out>, tb2_new_data_indicator = <optimized out>, tb2_rv = <optimized out>, harq_process_nbr = <optimized out>, vrb_to_prb_mapping = <optimized out>, dai = <optimized out>, scaling_factor_S = <optimized out>, pucch_resource_id = <optimized out>, pdsch_to_harq_feedback_time_ind = <optimized out>, n_dmrs_cdm_groups = <optimized out>, dmrs_ports = <optimized out>, n_front_load_symb = <optimized out>, tci_state = <optimized out>, cbgti = <optimized out>, codeBlockGroupFlushIndicator = <optimized out>, PTRSPortIndex = <optimized out>, PTRSTimeDensity = <optimized out>, PTRSFreqDensity = <optimized out>, PTRSReOffset = <optimized out>, nEpreRatioOfPDSCHToPTRS = <optimized out>, mcs_table = <optimized out>, tbslbrm = <optimized out>, nscid = <optimized out>, dlDmrsScramblingId = <optimized out>, dlDataScramblingId = <optimized out>, pduBitmap = <optimized out>, k1_feedback = <optimized out>, ldpcBaseGraph = <optimized out>, numCsiRsForRateMatching = <optimized out>, csiRsForRateMatching = {{subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}}, Nl = <optimized out>, max_ldpc_iterations = <optimized out>, last_iteration_cnt = <optimized out>, ptrs_symbols = <optimized out>, ptrs_symbol_index = <optimized out>}}, sl_rx_action = <optimized out>, csirs_vars = {active = <optimized out>, csirs_config_pdu = {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}, csiim_vars = {active = <optimized out>, csiim_config_pdu = {bwp_size = <optimized out>, bwp_start = <optimized out>, subcarrier_spacing = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, k_csiim = {<optimized out>, <optimized out>, <optimized out>, <optimized out>}, l_csiim = {<optimized out>, <optimized out>, <optimized out>, <optimized out>}}}}, next_barrier = <optimized out>}
+        next_frame_tx = <optimized out>
+        next_tx_slot_and_frame = <optimized out>
+        slot_nr = 0
+        iq_shift_to_apply = <optimized out>
+        tmp = <optimized out>
+        writeTimestamp = 132778920
+        ret = <optimized out>
+        curMsgTx = <optimized out>
+        wait_for_prev_slot = <optimized out>
+        next_duration_rx_to_tx = <optimized out>
+        next_nr_slot_tx = <optimized out>
+        next_barrier = <optimized out>
+        tmp = <optimized out>
+        rx_timestamp = 132712068
+        writeBlockSize = <optimized out>
+        curMsgRx = 0x7b4b6003ef80
+        newTx = <optimized out>
+        slot_and_frame = <optimized out>
+        dummy = <optimized out>
+        UE = 0x7b4b7b939010
+        rxp = {0x7b4b69c77a50, 0x0, 0x0, 0x0}
+        stream_status = STREAM_STATUS_SYNCED
+        cfg = 0x7b4b7bbe5b38
+        tmp = <optimized out>
+        __FUNCTION__ = "UE_thread"
+        fp = 0x7b4b7b939b10
+        sl_cfg = 0x0
+        tmp2 = <optimized out>
+        nf = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 0, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 39 times>, __align = 0}, notifF = {__data = {__wseq = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g1_start = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g_refs = {0, 0}, __g_size = {0, 0}, __g1_orig_size = 0, __wrefs = 0, __g_signals = {0, 0}}, __size = '\000' <repeats 47 times>, __align = 0}, abortFIFO = false}
+        freeBlocks = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = <optimized out>, __count = <optimized out>, __owner = <optimized out>, __nusers = <optimized out>, __kind = <optimized out>, __spins = <optimized out>, __elision = <optimized out>, __list = {__prev = <optimized out>, __next = <optimized out>}}, __size = {<optimized out> <repeats 40 times>}, __align = <optimized out>}, notifF = {__data = {__wseq = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g1_start = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g_refs = {<optimized out>, <optimized out>}, __g_size = {<optimized out>, <optimized out>}, __g1_orig_size = <optimized out>, __wrefs = <optimized out>, __g_signals = {<optimized out>, <optimized out>}}, __size = {<optimized out> <repeats 48 times>}, __align = <optimized out>}, abortFIFO = <optimized out>}
+        timing_advance = 0
+        mac = 0x7b4b795af010
+        syncRunning = false
+        nb_slot_frame = 20
+        absolute_slot = <optimized out>
+        decoded_frame_rx = 172
+        trashed_frames = <optimized out>
+        tx_wait_for_dlsch = {0 <repeats 160 times>}
+        shiftForNextFrame = 0
+        intialSyncOffset = 69120
+        sync_timestamp = 79257599
+        stats_printed = false
+        ntn_ta_common = 0
+        ntn_koffset = <optimized out>
+        duration_rx_to_tx = 3
+        nr_slot_tx_offset = 0
+        update_ntn_system_information = false
+#12 0x00007b4b94da1ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, -2752804660146413891, 135563756201536, 2, 135564550084560, 140735110436880, -2752804658801090883, -2752279794357051715}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#13 0x00007b4b94e33850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 4046425] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 4046425
+[Inferior 1 (process 4046425) detached]

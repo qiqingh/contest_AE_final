@@ -1,0 +1,111 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      28
+    ],
+    "field2_all": [
+      293,
+      401,
+      509,
+      617
+    ],
+    "actual_pairs": [
+      [
+        [
+          28
+        ],
+        [
+          293
+        ]
+      ],
+      [
+        [
+          28
+        ],
+        [
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          28
+        ],
+        [
+          401,
+          617
+        ]
+      ],
+      [
+        [
+          28
+        ],
+        [
+          293,
+          401,
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          28
+        ],
+        [
+          401,
+          509
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE constraint between 'periodicbsr-timer' from 'mac-cellgroupconfig' and 'schedulingrequestresourceid' from 'pucch-config_schedulingrequestresourcetoaddmodlist'. The evidence only describes behavior related to buffer status reporting within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "periodicbsr-timer",
+    "ie2_name": "pucch-config_schedulingrequestresourcetoaddmodlist",
+    "field2": "schedulingrequestresourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.22.1.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "All triggered SL-BSRs may be cancelled when the SL grant(s) can accommodate all pending data available for transmission. All BSRs triggered prior to MAC PDU assembly shall be cancelled when a MAC PDU is transmitted and this PDU includes an SL-BSR MAC CE which contains buffer status up to (and including) the last event that triggered an SL-BSR prior to the MAC PDU assembly. All triggered SL-BSRs shall be cancelled, and \\( s l \\)-retx-BSR-Timer and \\( s l \\) -periodic-BSR-Timer shall be stopped, when RRC configures Sidelink resource allocation mode 2.  NOTE 2: MAC PDU assembly can happen at any point in time between uplink grant reception and actual transmission of the corresponding MAC PDU. SL-BSR and SR can be triggered after the assembly of a MAC PDU which contains an SL-BSR MAC CE, but before the transmission of this MAC PDU. In addition, SL-BSR and SR can be triggered during MAC PDU assembly.",
+    "generated_at": "2026-01-09T12:42:03.293309",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE constraint between 'periodicbsr-timer' from 'mac-cellgroupconfig' and 'schedulingrequestresourceid' from 'pucch-config_schedulingrequestresourcetoaddmodlist'. The evidence only describes behavior related to buffer status reporting within a single IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

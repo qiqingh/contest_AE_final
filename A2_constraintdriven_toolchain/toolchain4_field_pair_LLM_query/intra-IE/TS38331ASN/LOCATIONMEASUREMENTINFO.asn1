@@ -1,0 +1,29 @@
+LocationMeasurementInfo ::=     CHOICE {
+    eutra-RSTD                  EUTRA-RSTD-InfoList,
+    ...,
+    eutra-FineTimingDetection   NULL,
+    nr-PRS-Measurement-r16      NR-PRS-MeasurementInfoList-r16
+}
+
+EUTRA-RSTD-InfoList ::= SEQUENCE (SIZE (1..maxInterRAT-RSTD-Freq)) OF EUTRA-RSTD-Info
+
+EUTRA-RSTD-Info ::= SEQUENCE {
+    carrierFreq                 ARFCN-ValueEUTRA,
+    measPRS-Offset              INTEGER (0..39),
+    ...
+}
+
+NR-PRS-MeasurementInfoList-r16 ::= SEQUENCE (SIZE (1..maxFreqLayers)) OF NR-PRS-MeasurementInfo-r16
+
+NR-PRS-MeasurementInfo-r16 ::=      SEQUENCE {
+    dl-PRS-PointA-r16                   ARFCN-ValueNR,
+    nr-MeasPRS-RepetitionAndOffset-r16  CHOICE {
+        ms20-r16                            INTEGER (0..19),
+        ms40-r16                            INTEGER (0..39),
+        ms80-r16                            INTEGER (0..79),
+        ms160-r16                           INTEGER (0..159),
+        ...
+    },
+    nr-MeasPRS-length-r16               ENUMERATED {ms1dot5, ms3, ms3dot5, ms4, ms5dot5, ms6, ms10, ms20},
+    ...
+}

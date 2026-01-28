@@ -1,0 +1,61 @@
+SIB5 ::=                            SEQUENCE {
+    carrierFreqListEUTRA                CarrierFreqListEUTRA                        OPTIONAL,       -- Need R
+    t-ReselectionEUTRA                  T-Reselection,
+    t-ReselectionEUTRA-SF               SpeedStateScaleFactors                      OPTIONAL,       -- Need S
+    lateNonCriticalExtension            OCTET STRING                                OPTIONAL,
+    ...,
+    [[
+    carrierFreqListEUTRA-v1610      CarrierFreqListEUTRA-v1610                      OPTIONAL        -- Need R
+    ]],
+    [[
+    carrierFreqListEUTRA-v1700      CarrierFreqListEUTRA-v1700                      OPTIONAL,       -- Need R
+    idleModeMeasVoiceFallback-r17   ENUMERATED{true}                                OPTIONAL        -- Need R
+    ]]
+}
+
+CarrierFreqListEUTRA ::=            SEQUENCE (SIZE (1..maxEUTRA-Carrier)) OF CarrierFreqEUTRA
+
+CarrierFreqListEUTRA-v1610 ::=      SEQUENCE (SIZE (1..maxEUTRA-Carrier)) OF CarrierFreqEUTRA-v1610
+
+CarrierFreqListEUTRA-v1700 ::=      SEQUENCE (SIZE (1..maxEUTRA-Carrier)) OF CarrierFreqEUTRA-v1700
+
+CarrierFreqEUTRA ::=                SEQUENCE {
+    carrierFreq                         ARFCN-ValueEUTRA,
+    eutra-multiBandInfoList             EUTRA-MultiBandInfoList                     OPTIONAL,       -- Need R
+    eutra-FreqNeighCellList             EUTRA-FreqNeighCellList                     OPTIONAL,       -- Need R
+    eutra-ExcludedCellList              EUTRA-FreqExcludedCellList                  OPTIONAL,       -- Need R
+    allowedMeasBandwidth                EUTRA-AllowedMeasBandwidth,
+    presenceAntennaPort1                EUTRA-PresenceAntennaPort1,
+    cellReselectionPriority             CellReselectionPriority                     OPTIONAL,       -- Need R
+    cellReselectionSubPriority          CellReselectionSubPriority                  OPTIONAL,       -- Need R
+    threshX-High                        ReselectionThreshold,
+    threshX-Low                         ReselectionThreshold,
+    q-RxLevMin                          INTEGER (-70..-22),
+    q-QualMin                           INTEGER (-34..-3),
+    p-MaxEUTRA                          INTEGER (-30..33),
+    threshX-Q                           SEQUENCE {
+        threshX-HighQ                       ReselectionThresholdQ,
+        threshX-LowQ                        ReselectionThresholdQ
+    }                                                                               OPTIONAL        -- Cond RSRQ
+}
+
+CarrierFreqEUTRA-v1610 ::= SEQUENCE {
+    highSpeedEUTRACarrier-r16       ENUMERATED {true}                               OPTIONAL        -- Need R
+}
+
+CarrierFreqEUTRA-v1700 ::=          SEQUENCE {
+    eutra-FreqNeighHSDN-CellList-r17    EUTRA-FreqNeighHSDN-CellList-r17            OPTIONAL        -- Need R
+}
+
+EUTRA-FreqNeighHSDN-CellList-r17 ::= SEQUENCE (SIZE (1..maxCellEUTRA)) OF EUTRA-PhysCellIdRange
+
+EUTRA-FreqExcludedCellList ::=      SEQUENCE (SIZE (1..maxEUTRA-CellExcluded)) OF EUTRA-PhysCellIdRange
+
+EUTRA-FreqNeighCellList ::=         SEQUENCE (SIZE (1..maxCellEUTRA)) OF EUTRA-FreqNeighCellInfo
+
+EUTRA-FreqNeighCellInfo ::=         SEQUENCE {
+    physCellId                          EUTRA-PhysCellId,
+    dummy                               EUTRA-Q-OffsetRange,
+    q-RxLevMinOffsetCell                INTEGER (1..8)                              OPTIONAL,       -- Need R
+    q-QualMinOffsetCell                 INTEGER (1..8)                              OPTIONAL        -- Need R
+}

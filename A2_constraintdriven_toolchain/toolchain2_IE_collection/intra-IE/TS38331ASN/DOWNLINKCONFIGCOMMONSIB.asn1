@@ -1,0 +1,67 @@
+DownlinkConfigCommonSIB ::=     SEQUENCE {
+    frequencyInfoDL                 FrequencyInfoDL-SIB,
+    initialDownlinkBWP              BWP-DownlinkCommon,
+    bcch-Config                     BCCH-Config,
+    pcch-Config                     PCCH-Config,
+    ...,
+    [[
+    pei-Config-r17                  PEI-Config-r17                         OPTIONAL,     -- Need R
+    initialDownlinkBWP-RedCap-r17   BWP-DownlinkCommon                     OPTIONAL      -- Need R
+    ]]
+}
+
+
+BCCH-Config ::=                 SEQUENCE {
+    modificationPeriodCoeff         ENUMERATED {n2, n4, n8, n16},
+    ...
+}
+
+
+PCCH-Config ::=             SEQUENCE {
+    defaultPagingCycle                  PagingCycle,
+    nAndPagingFrameOffset               CHOICE {
+        oneT                                NULL,
+        halfT                               INTEGER (0..1),
+        quarterT                            INTEGER (0..3),
+        oneEighthT                          INTEGER (0..7),
+        oneSixteenthT                       INTEGER (0..15)
+    },
+    ns                                  ENUMERATED {four, two, one},
+    firstPDCCH-MonitoringOccasionOfPO   CHOICE {
+        sCS15KHZoneT                                                                SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..139),
+        sCS30KHZoneT-SCS15KHZhalfT                                                  SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..279),
+        sCS60KHZoneT-SCS30KHZhalfT-SCS15KHZquarterT                                 SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..559),
+        sCS120KHZoneT-SCS60KHZhalfT-SCS30KHZquarterT-SCS15KHZoneEighthT             SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..1119),
+        sCS120KHZhalfT-SCS60KHZquarterT-SCS30KHZoneEighthT-SCS15KHZoneSixteenthT    SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..2239),
+        sCS480KHZoneT-SCS120KHZquarterT-SCS60KHZoneEighthT-SCS30KHZoneSixteenthT    SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..4479),
+        sCS480KHZhalfT-SCS120KHZoneEighthT-SCS60KHZoneSixteenthT                    SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..8959),
+        sCS480KHZquarterT-SCS120KHZoneSixteenthT                                    SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..17919)
+    }      OPTIONAL,           -- Need R
+    ...,
+    [[
+    nrofPDCCH-MonitoringOccasionPerSSB-InPO-r16        INTEGER (2..4)               OPTIONAL  -- Cond SharedSpectrum2
+    ]],
+    [[
+    ranPagingInIdlePO-r17                              ENUMERATED {true}            OPTIONAL,  -- Need R
+
+    firstPDCCH-MonitoringOccasionOfPO-v1710  CHOICE {
+       sCS480KHZoneEighthT        SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..35839),
+       sCS480KHZoneSixteenthT     SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..71679)
+}                                                                                  OPTIONAL  -- Need R
+    ]]
+}
+
+PEI-Config-r17 ::=                        SEQUENCE {
+    po-NumPerPEI-r17                          ENUMERATED {po1, po2, po4, po8},
+    payloadSizeDCI-2-7-r17                    INTEGER (1..maxDCI-2-7-Size-r17),
+    pei-FrameOffset-r17                       INTEGER (0..16),
+    subgroupConfig-r17                        SubgroupConfig-r17,
+    lastUsedCellOnly-r17                      ENUMERATED {true}                                                OPTIONAL,  -- Need R
+    ...
+}
+
+SubgroupConfig-r17 ::=     SEQUENCE {
+    subgroupsNumPerPO-r17      INTEGER (1.. maxNrofPagingSubgroups-r17),
+    subgroupsNumForUEID-r17    INTEGER (1.. maxNrofPagingSubgroups-r17)                                        OPTIONAL,  -- Need S
+    ...
+}

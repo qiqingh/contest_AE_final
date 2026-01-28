@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      833
+    ],
+    "field2_all": [
+      829
+    ],
+    "actual_pairs": [
+      [
+        [
+          833
+        ],
+        [
+          829
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any normative or logical relationship between the fields 'pmi-FormatIndicator' and 'pucch-Resource'. The evidence lacks explicit constraints or dependencies between these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "pmi-FormatIndicator",
+    "field2": "pucch-Resource",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} pmi-Formatindicator Indicates whether the UE shall report a single (wideband) or multiple (subband) PMI. (see TS 38.214 [19], clause 5.2.1.4). \\end{tabular} \\begin{tabular}{l} pucch-CSI-ResourceList Indicates which PUCCH resource to use for reporting on PUCCH. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T19:46:41.197248",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any normative or logical relationship between the fields 'pmi-FormatIndicator' and 'pucch-Resource'. The evidence lacks explicit constraints or dependencies between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

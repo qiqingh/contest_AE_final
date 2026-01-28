@@ -1,0 +1,80 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      64
+    ],
+    "field2_all": [
+      89,
+      154,
+      219
+    ],
+    "actual_pairs": [
+      [
+        [
+          64
+        ],
+        [
+          89,
+          154,
+          219
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between controlresourcesetid and pdsch-config. Each snippet describes behavior within a single IE or lacks explicit normative wording for a cross-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "commonsearchspacelist",
+    "field1": "controlresourcesetid",
+    "ie2_name": "initialdownlinkbwp_pdsch-config",
+    "field2": "pdsch-config",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.2.1.1",
+      "5.1.4.2",
+      "6.1.3.15"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "\\hline & & 1,2, 3 & No/Ye s & - & Yes & - & pdsch-TimeDomainAllocationList provided in PDSCH-Config-MTCH, if configured, otherwise TimeDomainAllocationList provided in PDSCH-Config-MCCH \\\\ \\hline \\multirow[t]{2}{*}{C-RNTI, MCS-CRNTI, CSRNTI} & & 1, 2, 3 & No & - & - & - & Default A \\\\ \\hline & Any common search space associated with CORESET 0 & 1, 2, 3 & Yes & - & - & - & pdsch-TimeDomainAllocationList provided in PDSCH-ConfigCommon \\\\\n---\n- For the UE in RRC_IDLE and RRC_INACTIVE modes for broadcast reception, REs indicated by 'RateMatchPatternLTE-CRS' in PDSCH-Config-MCCH or PDSCH-Config-MCCH configuring cell-specific RS, in 15 kHz subcarrier spacing applicable only to 15 kHz subcarrier spacing PDSCH, of one LTE carrier in a serving cell are declared as not available for PDSCH. - Each RateMatchPatternLTE-CRS configuration contains v-Shift consisting of LTE-CRS-vshift(s), nrofCRS-Ports consisting of LTE-CRS antenna ports 1, 2 or 4 ports, carrierFreqDL representing the offset in units of 15 kHz subcarriers from (reference) point A to the LTE carrier centre subcarrier location, carrierBandwidthDL representing the LTE carrier bandwidth, and may also configure mbsfn-SubframeConfigList representing MBSFN subframe configuration. A UE determines the CRS position within the slot according to Clause 6.10.1.2 in [15, TS 36.211], where slot corresponds to LTE subframe.\n---\n- if the UE is configured with crs-RateMatch-PerCoresetPoollndex, REs indicated by the CRS pattern(s) in Ite-CRS-PatternList 1-r16 if the PDSCH is associated with coresetPoollndex set to ' 0 ', or the CRS pattern(s) in lte-CRS-PatternList2-r16 if PDSCH is associated with coresetPoollndex set to ' 1 '; - otherwise, REs indicated by lte-CRS-PatternList1-r16 and lte-CRS-PatternList2-r16, in ServingCellConfig- - Within a BWP, the UE can be configured with one or more ZP CSI-RS resource set configuration(s) for aperiodic, semi-persistent and periodic time-domain behaviours (higher layer parameters aperiodic-ZP-CSI-RSResourceSetsToAddModList, sp-ZP-CSI-RS-ResourceSetsToAddModList and \\( p \\)-ZP-CSI-RS-ResourceSet respectively comprised in PDSCH-Config), with each ZP CSI-RS resource set consisting of at most 16 ZP CSIRS resources (higher layer parameter ZP-CSI-RS-Resource) in numerology of the BWP. The REs indicated by \\( p \\) -ZP-CSI-RS-ResourceSet are declared as not available for PDSCH. The REs indicated by sp-ZP-CSI-RSResourceSetsToAddModList and aperiodic-ZP-CSI-RS-ResourceSetsToAddModList are declared as not available for PDSCH when their triggering and activation are applied, respectively. The following parameters are configured via higher layer signaling for each ZP CSI-RS resource configuration:\n---\n- CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits.",
+    "generated_at": "2026-01-09T12:59:37.986816",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between controlresourcesetid and pdsch-config based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between controlresourcesetid and pdsch-config. Each snippet describes behavior within a single IE or lacks explicit normative wording for a cross-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+MeasResultCellListSFTD-EUTRA ::=          SEQUENCE (SIZE (1..maxCellSFTD)) OF MeasResultSFTD-EUTRA
+
+MeasResultSFTD-EUTRA ::=           SEQUENCE {
+    eutra-PhysCellId                    EUTRA-PhysCellId,
+    sfn-OffsetResult                    INTEGER (0..1023),
+    frameBoundaryOffsetResult           INTEGER (-30720..30719),
+    rsrp-Result                         RSRP-Range                      OPTIONAL
+}

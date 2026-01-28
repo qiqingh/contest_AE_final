@@ -1,0 +1,31 @@
+AreaConfiguration-r16 ::=        SEQUENCE {
+    areaConfig-r16                   AreaConfig-r16,
+    interFreqTargetList-r16          SEQUENCE(SIZE (1..maxFreq)) OF InterFreqTargetInfo-r16              OPTIONAL  -- Need R
+}
+
+AreaConfiguration-v1700 ::=      SEQUENCE {
+    areaConfig-r17                   AreaConfig-r16                                                      OPTIONAL, -- Need R
+    interFreqTargetList-r17          SEQUENCE(SIZE (1..maxFreq)) OF InterFreqTargetInfo-r16              OPTIONAL  -- Need R
+}
+
+AreaConfig-r16 ::=     CHOICE {
+    cellGlobalIdList-r16             CellGlobalIdList-r16,
+    trackingAreaCodeList-r16         TrackingAreaCodeList-r16,
+    trackingAreaIdentityList-r16     TrackingAreaIdentityList-r16
+}
+
+InterFreqTargetInfo-r16    ::=   SEQUENCE {
+    dl-CarrierFreq-r16               ARFCN-ValueNR,
+    cellList-r16                     SEQUENCE (SIZE (1..32)) OF  PhysCellId  OPTIONAL      -- Need R
+}
+
+CellGlobalIdList-r16 ::=         SEQUENCE (SIZE (1..32)) OF CGI-Info-Logging-r16
+
+TrackingAreaCodeList-r16 ::=     SEQUENCE (SIZE (1..8)) OF TrackingAreaCode
+
+TrackingAreaIdentityList-r16 ::= SEQUENCE (SIZE (1..8)) OF TrackingAreaIdentity-r16
+
+TrackingAreaIdentity-r16 ::=     SEQUENCE {
+    plmn-Identity-r16                PLMN-Identity,
+    trackingAreaCode-r16             TrackingAreaCode
+}

@@ -1,0 +1,40 @@
+MsgA-PUSCH-Config-r16 ::=                      SEQUENCE {
+    msgA-PUSCH-ResourceGroupA-r16                  MsgA-PUSCH-Resource-r16                                       OPTIONAL, -- Cond InitialBWPConfig
+    msgA-PUSCH-ResourceGroupB-r16                  MsgA-PUSCH-Resource-r16                                       OPTIONAL, -- Cond GroupBConfigured
+    msgA-TransformPrecoder-r16                    ENUMERATED {enabled, disabled}                                 OPTIONAL, -- Need R
+    msgA-DataScramblingIndex-r16                   INTEGER (0..1023)                                             OPTIONAL, -- Need S
+    msgA-DeltaPreamble-r16                         INTEGER (-1..6)                                               OPTIONAL  -- Need R
+}
+
+MsgA-PUSCH-Resource-r16 ::=                    SEQUENCE {
+    msgA-MCS-r16                                   INTEGER (0..15),
+    nrofSlotsMsgA-PUSCH-r16                        INTEGER (1..4),
+    nrofMsgA-PO-PerSlot-r16                        ENUMERATED {one, two, three, six},
+    msgA-PUSCH-TimeDomainOffset-r16                INTEGER (1..32),
+    msgA-PUSCH-TimeDomainAllocation-r16            INTEGER (1..maxNrofUL-Allocations)                            OPTIONAL, -- Need S
+    startSymbolAndLengthMsgA-PO-r16                INTEGER (0..127)                                              OPTIONAL, -- Need S
+    mappingTypeMsgA-PUSCH-r16                      ENUMERATED {typeA, typeB}                                     OPTIONAL, -- Need S
+    guardPeriodMsgA-PUSCH-r16                      INTEGER (0..3)                                                OPTIONAL, -- Need R
+    guardBandMsgA-PUSCH-r16                        INTEGER (0..1),
+    frequencyStartMsgA-PUSCH-r16                   INTEGER (0..maxNrofPhysicalResourceBlocks-1),
+    nrofPRBs-PerMsgA-PO-r16                        INTEGER (1..32),
+    nrofMsgA-PO-FDM-r16                            ENUMERATED {one, two, four, eight},
+    msgA-IntraSlotFrequencyHopping-r16             ENUMERATED {enabled}                                          OPTIONAL, -- Need R
+    msgA-HoppingBits-r16                           BIT STRING (SIZE(2))                                          OPTIONAL, -- Cond FreqHopConfigured
+    msgA-DMRS-Config-r16                           MsgA-DMRS-Config-r16,
+    nrofDMRS-Sequences-r16                         INTEGER (1..2),
+    msgA-Alpha-r16                                 ENUMERATED {alpha0, alpha04, alpha05, alpha06,
+                                                               alpha07, alpha08, alpha09, alpha1}                OPTIONAL, -- Need S
+    interlaceIndexFirstPO-MsgA-PUSCH-r16           INTEGER (1..10)                                               OPTIONAL, -- Need R
+    nrofInterlacesPerMsgA-PO-r16                   INTEGER (1..10)                                               OPTIONAL, -- Need R
+    ...
+}
+
+MsgA-DMRS-Config-r16 ::=                       SEQUENCE {
+    msgA-DMRS-AdditionalPosition-r16               ENUMERATED {pos0, pos1, pos3}                                 OPTIONAL, -- Need S
+    msgA-MaxLength-r16                             ENUMERATED {len2}                                             OPTIONAL, -- Need S
+    msgA-PUSCH-DMRS-CDM-Group-r16                  INTEGER (0..1)                                                OPTIONAL, -- Need S
+    msgA-PUSCH-NrofPorts-r16                       INTEGER (0..1)                                                OPTIONAL, -- Need S
+    msgA-ScramblingID0-r16                         INTEGER (0..65535)                                            OPTIONAL, -- Need S
+    msgA-ScramblingID1-r16                         INTEGER (0..65535)                                            OPTIONAL  -- Need S
+}

@@ -1,0 +1,41 @@
+SL-ConfigDedicatedNR-r16 ::=         SEQUENCE {
+    sl-PHY-MAC-RLC-Config-r16            SL-PHY-MAC-RLC-Config-r16                                              OPTIONAL,    -- Need M
+    sl-RadioBearerToReleaseList-r16      SEQUENCE (SIZE (1..maxNrofSLRB-r16)) OF SLRB-Uu-ConfigIndex-r16        OPTIONAL,    -- Need N
+    sl-RadioBearerToAddModList-r16       SEQUENCE (SIZE (1..maxNrofSLRB-r16)) OF SL-RadioBearerConfig-r16       OPTIONAL,    -- Need N
+    sl-MeasConfigInfoToReleaseList-r16   SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-DestinationIndex-r16     OPTIONAL,    -- Need N
+    sl-MeasConfigInfoToAddModList-r16    SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-MeasConfigInfo-r16       OPTIONAL,    -- Need N
+    t400-r16                             ENUMERATED {ms100, ms200, ms300, ms400, ms600, ms1000, ms1500, ms2000} OPTIONAL,    -- Need M
+    ...,
+    [[
+    sl-PHY-MAC-RLC-Config-v1700          SetupRelease { SL-PHY-MAC-RLC-Config-v1700 }                           OPTIONAL,    -- Need M
+    sl-DiscConfig-r17                    SetupRelease { SL-DiscConfig-r17}                                      OPTIONAL     -- Need M
+    ]]
+}
+
+SL-DestinationIndex-r16  ::=             INTEGER (0..maxNrofSL-Dest-1-r16)
+
+SL-PHY-MAC-RLC-Config-r16::=         SEQUENCE {
+    sl-ScheduledConfig-r16               SetupRelease { SL-ScheduledConfig-r16 }                                OPTIONAL,    -- Need M
+    sl-UE-SelectedConfig-r16             SetupRelease { SL-UE-SelectedConfig-r16 }                              OPTIONAL,    -- Need M
+    sl-FreqInfoToReleaseList-r16         SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-Freq-Id-r16               OPTIONAL,    -- Need N
+    sl-FreqInfoToAddModList-r16          SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-FreqConfig-r16            OPTIONAL,    -- Need N
+    sl-RLC-BearerToReleaseList-r16       SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-BearerConfigIndex-r16    OPTIONAL,    -- Need N
+    sl-RLC-BearerToAddModList-r16        SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-BearerConfig-r16         OPTIONAL,    -- Need N
+    sl-MaxNumConsecutiveDTX-r16          ENUMERATED {n1, n2, n3, n4, n6, n8, n16, n32}                          OPTIONAL,    -- Need M
+    sl-CSI-Acquisition-r16               ENUMERATED {enabled}                                                   OPTIONAL,    -- Need R
+    sl-CSI-SchedulingRequestId-r16       SetupRelease {SchedulingRequestId}                                     OPTIONAL,    -- Need M
+    sl-SSB-PriorityNR-r16                INTEGER (1..8)                                                         OPTIONAL,    -- Need R
+    networkControlledSyncTx-r16          ENUMERATED {on, off}                                                   OPTIONAL     -- Need M
+}
+
+SL-PHY-MAC-RLC-Config-v1700 ::=      SEQUENCE {
+    sl-DRX-Config-r17                    SL-DRX-Config-r17                                                      OPTIONAL,    -- Need M
+    sl-RLC-ChannelToReleaseList-r17      SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-ChannelID-r17            OPTIONAL, -- Cond L2U2N
+    sl-RLC-ChannelToAddModList-r17       SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-ChannelConfig-r17        OPTIONAL, -- Cond L2U2N
+    ...
+}
+
+SL-DiscConfig-r17::=                 SEQUENCE {
+    sl-RelayUE-Config-r17                SetupRelease { SL-RelayUE-Config-r17}                                  OPTIONAL, -- Cond L2RelayUE
+    sl-RemoteUE-Config-r17               SetupRelease { SL-RemoteUE-Config-r17}                                 OPTIONAL  -- Cond L2RemoteUE
+}

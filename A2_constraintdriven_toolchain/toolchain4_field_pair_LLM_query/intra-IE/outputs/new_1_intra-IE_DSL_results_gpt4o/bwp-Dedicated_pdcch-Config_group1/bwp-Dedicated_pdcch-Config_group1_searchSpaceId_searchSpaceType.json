@@ -1,0 +1,79 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      181
+    ],
+    "field2_all": [
+      192
+    ],
+    "actual_pairs": [
+      [
+        [
+          181
+        ],
+        [
+          192
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields searchSpaceId and searchSpaceType within the same IE. The evidence snippets do not mention both fields together or establish a dependency between them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "searchSpaceId",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 176,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.3",
+      "6.3.1.1",
+      "10.3",
+      "7.3.1.1",
+      "5.1.4",
+      "7.4.1.3.1",
+      "5.5",
+      "10.4",
+      "6.4.1.1.1.2",
+      "7.3.1.6",
+      "5.1.1",
+      "7.4.1.1.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "If the \\mu_{\\mathrm{PDCCH}}>\\mu_{\\mathrm{PDSCH}} , the UE is expected to receive the scheduled PDSCH, if the first symbol in the PDSCH allocation, including the DM-RS, as defined by the slot offset K_{0} and the start and length indicator SLIV of the scheduling DCI starts no earlier than N_{\\text {pasch }} PDCCH symbols after the end of the PDCCH scheduling the PDSCH, not taking into account the effect of receive timing difference between the scheduling cell and the scheduled cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining N_{\\text {pasch }} , the PDCCH candidate that ends later in time is used. \\begin{table}\n---\nA UE configured with DRX mode operation [11, TS 38.321] can be provided the following for detection of a DCI format 2_6 in a PDCCH reception on the PCell or on the SpCell [12, TS 38.331] - a PS-RNTI for DCI format 2_6 by ps-RNTI - a number of search space sets, by dci-Format2-6, to monitor PDCCH for detection of DCI format 2 _6 on the active DL BWP of the PCell or of the SpCell according to a common search space as described in clause 10.1 - a payload size for DCI format 2_6 by sizeDCI-2-6 - a location in DCI format 2_6 of a Wake-up indication bit by ps-PositionDCI-2-6\n---\n163 ETSI TS 138213 V17.1.0 (2022-05) 10.4 Search space set group switching and skipping of PDCCH monitoring A UE can be provided a group index for a respective Type3-PDCCH CSS set or USS set by searchSpaceGroupIdList for PDCCH monitoring on a serving cell. If the UE is not provided searchSpaceGroupIdList for a search space set, the following procedures are not applicable for PDOCH monitoring according to the search space set.\n---\n\\] where - n_{1 \\mathrm{D}} \\in\\{0,1, \\ldots, 1023\\} equals the higher-layer parameter dataScramblingldentityPUSCH if configured and the RNTI equals the C-RNTI, MCS-C-RNTI, SP-CSI-RNTI or CS-RNTI, and the transmission is not scheduled using DCI format 0 \\_0 in a common search space; - n_{1 \\mathrm{D}} \\in\\{0,1, \\ldots, 1023\\} equals the higher-layer parameter msgA-DataScramblingIndex if configured and the PUSCH transmission is triggered by a Type-2 random access procedure as described in clause 8.1A of [5, TS 38.213]; - n_{1 \\mathrm{D}}=N_{1 \\mathrm{D}}^{\\text {cell }} otherwise\n---\n\\] where r_{u, v}^{(\\alpha, \\delta)}(n) with \\delta=1 depends on the configuration: - if the higher-layer parameter dmrs-UplinkTransformPrecoding is configured, \\pi / 2 -BPSK modulation is used for PUSCH, and the PUSCH transmission is not a msg3 transmission, and the transmission is not scheduled using DCI format 0 \\_0 in a common search space, r_{u, v}^{(\\alpha, \\delta)}(n) is given by clause 5.2 .3 with c_{\\text {init }} given by \\[ c_{\\mathrm{in}, \\mathrm{it}}=\\left(2^{17}\\left(N_{\\mathrm{symb}}^{\\mathrm{slot}} n_{\\mathrm{s}, \\mathrm{f}}^{\\mu}+l+1\\right)\\left(2 N_{\\mathrm{JD}}^{n_{\\mathrm{SCID}}}+1\\right)+2 N_{\\mathrm{JD}}^{n_{\\mathrm{SCID}}}+n_{\\mathrm{SCID}}\\right) \\bmod 2^{31}\n---\n\\] where - n_{\\mathrm{ID}} \\in\\{0,1, \\ldots, 1023\\} equals the higher-layer parameter dataScramblingldentityPDSCH if configured and the RNTI equals the C-RNTI, MCS-C-RNTI, or CS-RNTI, and the transmission is not scheduled using DCI format 1 \\_0 in a common search space; - n_{\\mathrm{ID}} \\in\\{0,1, \\ldots, 1023\\} equals the higher-layer parameter dataScramblingldentityPDSCH if configured in a common MBS frequency resource and the RNTI equals the G-RNTI, G-CS-RNTI, MCCH-RNTI, or multicast-MCCH-RNTI, and the transmission is scheduled using DCI in a common search space configured in the common MBS frequency resource; - n_{\\mathrm{ID}} \\in\\{0,1, \\ldots, 1023\\} equals\n---\nThe UE shall assume the virtual resource blocks are mapped to physical resource blocks according to the indicated mapping scheme, non-interleaved or interleaved mapping. If no mapping scheme is indicated, the UE shall assume noninterleaved mapping. For non-interleaved VRB-to-PRB mapping, virtual resource block n is mapped to physical resource block n , except for PDSCH transmissions scheduled with DCI format 1 \\_0 in a common search space in which case virtual resource block n is mapped to physical resource block n+N_{\\text {start }}^{\\text {COREST }} where N_{\\text {start }}^{\\text {CORESET }} is the lowest-numbered physical resource block in the control resource set where the corresponding DCI was received. When two PDCCH candidates from two linked common search space sets as indicated by the higher-layer parameter searchSpaceLinking are detected, and the two linked common search space sets are associated with different control resource sets, the control resource set with the lowest number among the two linked control resource sets is used to determine N_{\\text {start }}^{\\text {CORESET }} . For interleaved VRB-to-PRB mapping, the mapping process is defined by:\n---\n\\] where - for a UE-specific search space as defined in clause 10 of \\left[5\\right. , TS 38.213], n_{\\mathrm{ID}} \\in\\{0,1, \\ldots, 65535\\} equals the higherlayer parameter pdcch-DMRS-ScramblingID if configured; - for a PDCCH with the CRC scrambled by G-RNTI, G-CS-RNTI, MCCH-RNTI, or multicast-MCCH-RNTI in a common search space as defined in clause 10 of [5, TS 38.213], n_{1 \\mathrm{D}} \\in\\{0,1, \\ldots, 65535\\} equals the higher-layer parameter pdcch-DMRS-ScramblingID if configured in a common MBS frequency resource; - n_{1 \\mathrm{D}}=N_{1 \\mathrm{D}}^{\\text {cell }} otherwise\n---\nThe reference point for k is - subcarrier 0 of the lowest-numbered resource block in CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI; - otherwise, subcarrier 0 in common resource block 0\n---\n135 ETSI TS 138211 V18.2.0 (2024-05) - \\quad N_{\\text {ID }} \\in\\{0,1, \\ldots, 65535\\} is given by the higher-layer parameter pdcch-DMRS-ScramblingID if configured for a common search space in a common MBS frequency resource; - \\quad N_{\\text {ID }}=N_{\\text {ID }}^{\\text {cell }} otherwise. 7.4.1.3.2 Mapping to physical resources\n---\n- msgA-TransMax: The maximum number of MSGA transmissions when both 4 -step and 2 -step RA type Random Access Resources are configured; - candidateBeamRSList: a list of reference signals (CSI-RS and/or SSB) identifying the candidate beams for recovery and the associated Random Access parameters; - recoverySearchSpaceld: the search space identity for monitoring the response of the beam failure recovery request; - powerRampingStep: the power-ramping factor; - msgA-PreamblePowerRampingStep: the power ramping factor for MSGA preamble;\n---\n2> else: 3> start the ra-ResponseWindow configured in BeamFailureRecoveryConfig at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while ra-ResponseWindow is running. 1> else:",
+    "generated_at": "2026-01-07T16:27:32.553881",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields searchSpaceId and searchSpaceType within the same IE. The evidence snippets do not mention both fields together or establish a dependency between them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

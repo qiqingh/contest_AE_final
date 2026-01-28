@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      327,
+      328
+    ],
+    "field2_all": [
+      320
+    ],
+    "actual_pairs": [
+      [
+        [
+          327,
+          328
+        ],
+        [
+          320
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'referenceSignal' and 'txConfig' within the same IE 'pusch-Config'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pusch-Config",
+    "field1": "referenceSignal",
+    "field2": "txConfig",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 2,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "generated_at": "2026-01-07T21:47:20.897660",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'referenceSignal' and 'txConfig' within the same IE 'pusch-Config'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

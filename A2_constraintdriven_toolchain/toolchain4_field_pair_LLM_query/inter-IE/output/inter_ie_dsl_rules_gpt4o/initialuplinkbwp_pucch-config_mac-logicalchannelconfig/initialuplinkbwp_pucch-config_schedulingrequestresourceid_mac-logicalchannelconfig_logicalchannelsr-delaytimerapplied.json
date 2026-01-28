@@ -1,0 +1,71 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      25
+    ],
+    "field2_all": [
+      293
+    ],
+    "actual_pairs": [
+      [
+        [
+          25
+        ],
+        [
+          293
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation between the specified fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "schedulingrequestresourceid",
+    "ie2_name": "mac-logicalchannelconfig",
+    "field2": "logicalchannelsr-delaytimerapplied",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.5",
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "logicalChannelSR-DelayTimerApplied \\\\ Indicates whether to apply the delay timer for SR transmission for this logical channel. Set to false if logicalChannelSR-Delay Timer is not included in BSR-Config.\n---\ns/-LogicalChannelSR-Delay TimerApplied \\\\ Indicates whether to apply the delay timer for SR transmission for this sidelink logical channel. Set to false if logicalChannelSR-DelayTimer is not included in sl-BSR-Config.",
+    "generated_at": "2026-01-10T14:09:32.595861",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between schedulingrequestresourceid and logicalchannelsr-delaytimerapplied based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation between the specified fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

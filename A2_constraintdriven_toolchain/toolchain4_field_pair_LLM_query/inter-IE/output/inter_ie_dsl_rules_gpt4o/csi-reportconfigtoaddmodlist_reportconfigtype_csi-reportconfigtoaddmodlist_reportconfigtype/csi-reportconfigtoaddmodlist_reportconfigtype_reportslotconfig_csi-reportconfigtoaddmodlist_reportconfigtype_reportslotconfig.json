@@ -1,0 +1,147 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      826,
+      827,
+      850,
+      851,
+      865,
+      866,
+      889,
+      890,
+      904,
+      905,
+      928,
+      929
+    ],
+    "field2_all": [
+      826,
+      827,
+      850,
+      851,
+      865,
+      866,
+      889,
+      890,
+      904,
+      905,
+      928,
+      929
+    ],
+    "actual_pairs": [
+      [
+        [
+          826,
+          827,
+          850,
+          851,
+          865,
+          866,
+          889,
+          890,
+          904,
+          905
+        ],
+        [
+          826,
+          827,
+          850,
+          851,
+          865,
+          866,
+          889,
+          890,
+          904,
+          905,
+          928,
+          929
+        ]
+      ],
+      [
+        [
+          826,
+          827,
+          850,
+          851,
+          865,
+          866,
+          889,
+          890,
+          904,
+          905,
+          928,
+          929
+        ],
+        [
+          826,
+          827,
+          850,
+          851,
+          865,
+          866,
+          889,
+          890,
+          904,
+          905,
+          928,
+          929
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided only describes the behavior of the 'reportSlotConfig' field within a single IE context and does not establish any inter-IE relationship between the two fields from different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field1": "reportslotconfig",
+    "ie2_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field2": "reportslotconfig",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.2.1.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "For a periodic or semi-persistent CSI report on PUCCH, the periodicity \\( T_{C S I} \\) (measured in slots) and the slot offset \\( T_{\\text {offset }} \\) are configured by the higher layer parameter reportSlotConfig. Unless specified otherwise, the UE shall transmit the CSI report in frames with SFN \\( n_{f} \\) and slot number within the frame \\( n_{s, f}^{\\mu} \\) satisfying\n---\nFor a semi-persistent CSI report on PUSCH, the periodicity \\( T_{C S I} \\) (measured in slots) is configured by the higher layer parameter reportSlotConfig. Unless specified otherwise, the UE shall transmit the CSI report in frames with SFN \\( n_{f} \\) and slot number within the frame \\( n_{s, f}^{\\mu} \\) satisfying\n---\nreportSlotConfig \\\\ Periodicity and slot offset (see TS 38.214 [19], clause 5.2.1.4). If the field reportSlotConfig-v1530 is present, the UE shall ignore the value provided in reportSlotConfig (without suffix).",
+    "generated_at": "2026-01-10T14:09:14.809985",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided only describes the behavior of the 'reportSlotConfig' field within a single IE context and does not establish any inter-IE relationship between the two fields from different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

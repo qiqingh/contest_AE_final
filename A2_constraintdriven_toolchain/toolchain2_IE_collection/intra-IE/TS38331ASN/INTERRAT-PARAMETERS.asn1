@@ -1,0 +1,48 @@
+InterRAT-Parameters ::=             SEQUENCE {
+    eutra                               EUTRA-Parameters                OPTIONAL,
+    ...,
+    [[
+    utra-FDD-r16                        UTRA-FDD-Parameters-r16         OPTIONAL
+    ]]
+
+}
+
+EUTRA-Parameters ::=                SEQUENCE {
+    supportedBandListEUTRA          SEQUENCE (SIZE (1..maxBandsEUTRA)) OF FreqBandIndicatorEUTRA,
+    eutra-ParametersCommon              EUTRA-ParametersCommon                                      OPTIONAL,
+    eutra-ParametersXDD-Diff            EUTRA-ParametersXDD-Diff                                    OPTIONAL,
+    ...
+}
+
+EUTRA-ParametersCommon ::=      SEQUENCE {
+    mfbi-EUTRA                          ENUMERATED {supported}          OPTIONAL,
+    modifiedMPR-BehaviorEUTRA           BIT STRING (SIZE (32))          OPTIONAL,
+    multiNS-Pmax-EUTRA                  ENUMERATED {supported}          OPTIONAL,
+    rs-SINR-MeasEUTRA                   ENUMERATED {supported}          OPTIONAL,
+    ...,
+    [[
+    ne-DC                               ENUMERATED {supported}          OPTIONAL
+    ]],
+    [[
+    nr-HO-ToEN-DC-r16                   ENUMERATED {supported}          OPTIONAL
+    ]]
+}
+
+EUTRA-ParametersXDD-Diff ::=        SEQUENCE {
+    rsrqMeasWidebandEUTRA               ENUMERATED {supported}          OPTIONAL,
+    ...
+}
+
+UTRA-FDD-Parameters-r16 ::=                SEQUENCE {
+    supportedBandListUTRA-FDD-r16              SEQUENCE (SIZE (1..maxBandsUTRA-FDD-r16)) OF SupportedBandUTRA-FDD-r16,
+    ...
+}
+
+SupportedBandUTRA-FDD-r16 ::=           ENUMERATED {
+                                            bandI, bandII, bandIII, bandIV, bandV, bandVI,
+                                            bandVII, bandVIII, bandIX, bandX, bandXI,
+                                            bandXII, bandXIII, bandXIV, bandXV, bandXVI,
+                                            bandXVII, bandXVIII, bandXIX, bandXX,
+                                            bandXXI, bandXXII, bandXXIII, bandXXIV,
+                                            bandXXV, bandXXVI, bandXXVII, bandXXVIII,
+                                            bandXXIX, bandXXX, bandXXXI, bandXXXII}

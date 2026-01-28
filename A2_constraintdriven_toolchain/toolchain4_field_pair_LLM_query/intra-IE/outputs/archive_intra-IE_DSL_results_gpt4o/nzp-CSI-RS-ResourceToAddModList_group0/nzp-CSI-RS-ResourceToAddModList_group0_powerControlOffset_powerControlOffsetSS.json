@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      699
+    ],
+    [
+      700
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative constraint between powerControlOffset and powerControlOffsetSS. The descriptions are definitional and do not imply a dependency or alignment.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "powerControlOffset",
+    "field2": "powerControlOffsetSS",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- powerControlOffset: which is the assumed ratio of PDSCH EPRE to NZP CSI-RS EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. For CQI calculation based on a pair of NZP CSI-RS resources, powerControlOffset of each NZP CSI-RS resource in the pair of NZP CSI-RS resources for channel measurement is the assumed ratio of EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. - powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE.",
+    "generated_at": "2025-12-09T09:44:30.635449",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative constraint between powerControlOffset and powerControlOffsetSS. The descriptions are definitional and do not imply a dependency or alignment.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

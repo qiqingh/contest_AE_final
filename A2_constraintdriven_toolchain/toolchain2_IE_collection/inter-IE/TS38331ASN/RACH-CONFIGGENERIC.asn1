@@ -1,0 +1,21 @@
+RACH-ConfigGeneric ::=              SEQUENCE {
+    prach-ConfigurationIndex            INTEGER (0..255),
+    msg1-FDM                            ENUMERATED {one, two, four, eight},
+    msg1-FrequencyStart                 INTEGER (0..maxNrofPhysicalResourceBlocks-1),
+    zeroCorrelationZoneConfig           INTEGER(0..15),
+    preambleReceivedTargetPower         INTEGER (-202..-60),
+    preambleTransMax                    ENUMERATED {n3, n4, n5, n6, n7, n8, n10, n20, n50, n100, n200},
+    powerRampingStep                    ENUMERATED {dB0, dB2, dB4, dB6},
+    ra-ResponseWindow                   ENUMERATED {sl1, sl2, sl4, sl8, sl10, sl20, sl40, sl80},
+    ...,
+    [[
+    prach-ConfigurationPeriodScaling-IAB-r16    ENUMERATED {scf1,scf2,scf4,scf8,scf16,scf32,scf64}              OPTIONAL,   -- Need R
+    prach-ConfigurationFrameOffset-IAB-r16      INTEGER (0..63)                                                 OPTIONAL,   -- Need R
+    prach-ConfigurationSOffset-IAB-r16          INTEGER (0..39)                                                 OPTIONAL,   -- Need R
+    ra-ResponseWindow-v1610                     ENUMERATED { sl60, sl160}                                       OPTIONAL,   -- Need R
+    prach-ConfigurationIndex-v1610              INTEGER (256..262)                                              OPTIONAL    -- Need R
+    ]],
+    [[
+    ra-ResponseWindow-v1700                     ENUMERATED {sl240, sl320, sl640, sl960, sl1280, sl1920, sl2560} OPTIONAL    -- Need R
+    ]]
+}

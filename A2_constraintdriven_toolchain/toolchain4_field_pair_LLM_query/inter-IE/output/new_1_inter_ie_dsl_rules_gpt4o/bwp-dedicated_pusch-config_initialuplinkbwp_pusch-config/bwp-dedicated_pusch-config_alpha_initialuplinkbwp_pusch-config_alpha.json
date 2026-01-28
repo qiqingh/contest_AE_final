@@ -1,0 +1,102 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      325
+    ],
+    "field2_all": [
+      433,
+      541,
+      649
+    ],
+    "actual_pairs": [
+      [
+        [
+          325
+        ],
+        [
+          433,
+          541,
+          649
+        ]
+      ],
+      [
+        [
+          325
+        ],
+        [
+          433,
+          541
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE constraint between the 'alpha' fields from 'bwp-dedicated_pusch-config' and 'initialuplinkbwp_pusch-config'. All evidence snippets describe behavior within a single IE or do not relate the two fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pusch-config",
+    "field1": "alpha",
+    "ie2_name": "initialuplinkbwp_pusch-config",
+    "field2": "alpha",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 69,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.2.7",
+      "10.1.1",
+      "5.2.3",
+      "6.3.2.4.1",
+      "16.2",
+      "4.3",
+      "7.1.1",
+      "16.2.1",
+      "6.3.2.2.2",
+      "6.1.2.3",
+      "9.2.3",
+      "8.3.4.2.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The cyclic shift \\( \\alpha \\) varies as a function of the symbol and slot number according to\n---\nThe complex-valued symbol \\( d(0) \\) shall be multiplied with a sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) according to\n---\nIf the higher-layer parameter sl-PSFCH-Type is configured and set to 'type2', the mapping operation shall be repeated for each resource block assigned for transmission of the common interlace and for PSFCH transmission with HARQACK information over the assigned physical resource according to clause 16.3 of [5, TS 38.213], with the resourceblock dependent sequence generated according to clause 8.3.4.2.1, where the cyclic shift \\( \\alpha \\) on each resource block assigned for transmission of the common interlace is up to UE implementation.\n---\n- If \\( \\alpha=1, m^{(i)}=i, i=0,1, \\ldots, \\frac{P C S I-R S}{2}-1 \\), and \\( i_{1,2} \\) is not reported.\n---\nWhen the UE is scheduled to transmit a transport block on PUSCH not using repetition type B multiplexed with a CSI \\( \\left[\\alpha \\cdot \\sum_{l=0}^{N_{\\mathrm{symb}, \\mathrm{all}}^{\\mathrm{PUSCH}}-1} M_{\\mathrm{sC}}^{\\mathrm{UCl}}(l)\\right]-Q_{A C K / C G-U C I}^{\\prime}-Q_{\\mathrm{CSl}-1}^{\\prime} \\), where parameters \\( O_{\\mathrm{CSI}-2}, L_{\\mathrm{CSI}-2}, \\beta_{\\mathrm{o}[\\mathrm{set}}^{\\mathrm{PUSCH}}, N_{\\mathrm{symbåll}}^{\\mathrm{PUSCH}}, M_{\\mathrm{sc}}^{\\mathrm{UCl}}(l) \\), \\( C_{\\text {ULSCH }}, K_{r}, Q_{\\text {CSI-I }}^{\\prime}, Q_{A C K / C G-U C I}^{\\prime} \\) and \\( \\alpha \\) are defined in Clause 6.3.2.4 of [5, TS 38.212].\n---\nFor PUSCH transmissions with a Type 1 configured grant, when two SRS resource sets are configured in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, if configuredGrantConfig contains only one pathlossReferenceIndex, p0-PUSCH-Alpha, powerControlLoopToUse, srs-ResourceIndicator and precodingAndNumberOfLayers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook'), PUSCH repetitions are associated only with the first SRS resource set.\n---\n- in clause 7.1.1, if \\( p 0 \\)-Alpha-CLID-PUSCH-Set is provided, the values of \\( P_{0 \\_ \\text {UE PUSCH, } b, f, c}(j), \\alpha_{b, f, c}(j) \\), and the PUSCH power control adjustment state \\( l \\) are provided by \\( p 0 \\)-Alpha-CLID-PUSCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate\n---\n- If the SRS resource set indicator value is 00 , first \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) \\) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig.\n---\nIf a UE transmits a PUCCH with HARQ-ACK information using PUCCH format 0 , the UE determines values \\( m_{0} \\) and \\( m_{\\mathrm{CS}} \\) for computing a value of cyclic shift \\( \\alpha \\) [4, TS 38.211] where \\( m_{0} \\) is provided by mittalCyclicShift of PUCCHformat0 or, if initialCyclicShift is not provided, by the initial cyclic shift index as described in clause 9.2.1 and \\( m_{\\mathrm{CS}} \\) is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.3-3 and Table 9.2.3-4, respectively.\n---\nFor scheduling on the primary cell from the primary cell, the UE is not required to monitor more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(M_{\\text {PDCCH }}^{\\max , \\text { slot }, \\mu_{P}}, M_{\\text {PDCCH }}^{\\text {total }, \\text { slot }, \\mu_{P}}\\right)\\right\\rfloor \\) PDCCH candidates per slot or more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu_{P}}, C_{\\text {PDCCH }}^{\\text {total, slot, } \\mu_{P}}\\right)\\right\\rfloor \\) nonoverlapping CCEs per slot on the active DL BWP of the primary cell, where \\( \\alpha \\) is provided by ccs-BlindDetectionSplit.\n---\n- \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}} \\) is a value of dl-Alpha-PSBCH, if provided; else, \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}}=1 \\)\n---\n- \\( \\alpha_{D} \\) is a value of dl-Alpha-PSSCH-PSCCH, if provided; else, \\( \\alpha_{D}=1 \\)",
+    "generated_at": "2026-01-09T12:12:59.034243",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE constraint between the 'alpha' fields from 'bwp-dedicated_pusch-config' and 'initialuplinkbwp_pusch-config'. All evidence snippets describe behavior within a single IE or do not relate the two fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

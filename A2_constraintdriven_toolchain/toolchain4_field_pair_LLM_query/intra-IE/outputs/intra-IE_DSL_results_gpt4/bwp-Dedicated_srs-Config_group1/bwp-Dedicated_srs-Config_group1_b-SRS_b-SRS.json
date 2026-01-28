@@ -1,0 +1,63 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      566
+    ],
+    "field2_all": [
+      566
+    ],
+    "actual_pairs": [
+      [
+        [
+          566
+        ],
+        [
+          566
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not contain any explicit normative wording or mathematical relations that would establish a semantic constraint between the two fields within the same IE. Furthermore, the target fields are identical, which does not allow for a meaningful constraint to be established between them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "b-SRS",
+    "field2": "b-SRS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.22.1.6",
+      "5.4.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "3> instruct the Multiplexing and Assembly procedure to generate the BSR MAC CE(s) as defined in clause 6.1.3.1; 3> start or restart periodicBSR-Timer except when all the generated BSRs are long or short Truncated or Extended long or short Truncated BSRs; 3> start or restart retxBSR-Timer.\n---\nThe MAC entity shall restart retxBSR-Timer upon reception of a grant for transmission of new data on any UL-SCH. All triggered BSRs may be cancelled when the UL grant(s) can accommodate all pending data available for transmission but is not sufficient to additionally accommodate the BSR MAC CE plus its subheader. All BSRs triggered prior to MAC PDU assembly shall be cancelled when a MAC PDU is transmitted and this PDU includes a Long, Refined Long, Extended Long, Short, or Extended Short BSR MAC CE which contains buffer status up to (and including) the last event that triggered a BSR prior to the MAC PDU assembly. NOTE 3: MAC PDU assembly can happen at any point in time between uplink grant reception and actual transmission of the corresponding MAC PDU. BSR and SR can be triggered after the assembly of a MAC PDU which contains a BSR MAC CE, but before the transmission of this MAC PDU. In addition, BSR and SR can be triggered during MAC PDU assembly.\n---\n2> if UL-SCH resources are available for a new transmission and the UL-SCH resources can accommodate the SL-BSR MAC CE plus its subheader as a result of logical channel prioritization according to clause 5.4.3.1: 3> instruct the Multiplexing and Assembly procedure in clause 5.4 .3 to generate the SL-BSR MAC CE(s); 3> start or restart sl-periodicBSR-Timer except when all the generated SL-BSRs are Truncated SL-BSRs; 3> start or restart sl-retxBSR-Timer. 2> if a Regular SL-BSR has been triggered and sl-logicalChannelSR-DelayTimer is not running:\n---\nThe MAC entity shall restart sl-retxBSR-Timer upon reception of an SL grant for transmission of new data on any SLSCH. All triggered SL-BSRs may be cancelled when the SL grant(s) can accommodate all pending data available for transmission. All BSRs triggered prior to MAC PDU assembly shall be cancelled when a MAC PDU is transmitted and this PDU includes an SL-BSR MAC CE which contains buffer status up to (and including) the last event that triggered an SL-BSR prior to the MAC PDU assembly. All triggered SL-BSRs shall be cancelled, and s l -retx-BSR-Timer and s l -periodic-BSR-Timer shall be stopped, when RRC configures Sidelink resource allocation mode 2. NOTE 2: MAC PDU assembly can happen at any point in time between uplink grant reception and actual transmission of the corresponding MAC PDU. SL-BSR and SR can be triggered after the assembly of a MAC PDU which contains an SL-BSR MAC CE, but before the transmission of this MAC PDU. In addition, SL-BSR and SR can be triggered during MAC PDU assembly.",
+    "generated_at": "2025-12-11T14:23:27.059299",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not contain any explicit normative wording or mathematical relations that would establish a semantic constraint between the two fields within the same IE. Furthermore, the target fields are identical, which does not allow for a meaningful constraint to be established between them.",
+      "version_tags": []
+    }
+  }
+}

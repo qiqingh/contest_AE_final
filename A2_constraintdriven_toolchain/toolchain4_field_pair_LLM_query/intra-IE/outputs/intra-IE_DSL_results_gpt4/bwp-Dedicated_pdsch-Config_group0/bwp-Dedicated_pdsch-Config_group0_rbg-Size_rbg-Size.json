@@ -1,0 +1,52 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      138
+    ],
+    "field2_all": [
+      138
+    ],
+    "actual_pairs": [
+      [
+        [
+          138
+        ],
+        [
+          138
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a semantic constraint between the two instances of the same field 'rbg-Size'. The note in the evidence only describes the behavior of the 'rbg-Size' field under certain conditions, but it does not imply a value or range dependency between two instances of 'rbg-Size'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group0",
+    "field1": "rbg-Size",
+    "field2": "rbg-Size",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "rbg-Size Selection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent. Note: rbg-Size is used when the transformPrecoder parameter is disabled. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2025-12-11T14:22:11.146431",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The evidence provided does not establish a semantic constraint between the two instances of the same field 'rbg-Size'. The note in the evidence only describes the behavior of the 'rbg-Size' field under certain conditions, but it does not imply a value or range dependency between two instances of 'rbg-Size'."
+    }
+  }
+}

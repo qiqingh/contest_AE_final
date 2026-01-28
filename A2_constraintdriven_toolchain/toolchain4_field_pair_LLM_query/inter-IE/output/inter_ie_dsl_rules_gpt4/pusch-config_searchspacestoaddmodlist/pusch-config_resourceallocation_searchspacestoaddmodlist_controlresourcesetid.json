@@ -1,0 +1,88 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      117,
+      182,
+      247
+    ],
+    "field2_all": [
+      437,
+      545,
+      653
+    ],
+    "actual_pairs": [
+      [
+        [
+          117,
+          182,
+          247
+        ],
+        [
+          437,
+          545,
+          653
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'resourceallocation' field from 'pusch-config' and the 'controlresourcesetid' field from 'searchspacestoaddmodlist'. The snippets discuss the behavior and configuration of these fields, but do not provide a rule that directly relates the two fields from different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pusch-config",
+    "field1": "resourceallocation",
+    "ie2_name": "searchspacestoaddmodlist",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 6,
+      "original_count": 6,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "10.1",
+      "5.1.2.2",
+      "9.1",
+      "5.1.2.2.2",
+      "6.1.2.2.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "Defines an association of the search space to multiple monitoring locations in the frequency domain and indicates whether the pattern configured in the associated CORESET is replicated to a specific RB set, see TS 38.213, clause 10.1. Each bit in the bitmap corresponds to one RB set, and the leftmost (most significant) bit corresponds to RB set 0 in the BWP. A bit set to 1 indicates that a frequency domain resource allocation replicated from the pattern configured in the associated CORESET is mapped to the RB set.\n---\n- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.\n---\nIf a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part.  For a PDSCH scheduled with a DCI format \\( 1 \\_0 \\) in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format \\( 1 \\_0 \\), the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.\n---\n5.1.2.2.2 Downlink resource allocation type 1  In downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell.\n---\nIn uplink resource allocation of type 2, the resource block assignment information defined in [5, TS 38.212] indicates to a UE a set of up to \\( M \\) interlace indices, and for DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DCI 0_1 a set of up to \\( N_{\\text {RB-set, UL }}^{\\mathrm{BWP}} \\) contiguous RB sets, where \\( M \\) and interlace indexing are defined in Clause 4.4.4.6 in [4, TS 38.211]. Within the active UL BWP, the assigned physical resource block \\( n \\) is mapped to virtual resource block \\( n \\). For DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DCI 0_1, the UE shall determine the resource allocation in frequency domain as an intersection of the resource blocks of the indicated interlaces and the union of the indicated set of RB sets and intra-cell guard bands defined in Clause 7 between the indicated RB sets, if any. For DCI 00 monitored in a common search space, the UE shall determine the resource allocation in frequency domain as an intersection of the resource blocks of the indicated interlaces and a single uplink RB set of the active UL BWP. For DCI \\( 0 \\_0 \\) monitored in a CSS with CRC scrambled by an RNTI other than TC-RNTI, the uplink RB set is the lowest indexed one amongst uplink RB set(s) that intersects the lowest-indexed CCE of the PDCCH in which the UE detects the DCI \\( 0 \\_0 \\) in the active downlink BWP . When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the uplink RB set of a PUSCH when scheduled by DCI \\( 0 \\_0 \\) monitored in a CSS with CRC scrambled by an RNTI other than TC-RNTI, the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. If there is no intersection, the uplink RB set is RB set 0 in the active uplink BWP. For DCI \\( 0-0 \\) with CRC scrambled by TC-RNTI, the uplink RB set is the same one in which the UE transmits the PRACH associated with the RAR UL grant, in which case the UE assumes that the uplink RB set is defined as when the UE is not configured with intraCellGuardBandsUL-List (see Clause 7).\n---\n\\hline 2019-12 & RAN\\#86 & RP-192627 & 0045 & - & F & Conrection on resource allocation for uplink transmission with configured grant Type 1 & 15.8.0 \\\\ \\hline 2019-12 & RAN\\#86 & RP-192627 & 0046 & - & F & Clanification to the dynamically scheduled PDSCH collision with SPS-PDSCH & 15.8.0 \\\\ \\hline 2019-12 & RAN\\#86 & RP-192627 & 0047 & - & F & Correction on rate-matching for LTE-CRS-toMatchAround & 15.8 .0 \\\\",
+    "generated_at": "2025-12-11T10:01:05.262159",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'resourceallocation' field from 'pusch-config' and the 'controlresourcesetid' field from 'searchspacestoaddmodlist'. The snippets discuss the behavior and configuration of these fields, but do not provide a rule that directly relates the two fields from different IEs.",
+      "version_tags": []
+    }
+  }
+}

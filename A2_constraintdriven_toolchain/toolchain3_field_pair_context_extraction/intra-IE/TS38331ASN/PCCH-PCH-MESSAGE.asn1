@@ -1,0 +1,11 @@
+PCCH-Message ::=                SEQUENCE {
+    message                         PCCH-MessageType
+}
+
+PCCH-MessageType ::=            CHOICE {
+    c1                              CHOICE {
+        paging                          Paging,
+        spare1  NULL
+    },
+    messageClassExtension       SEQUENCE {}
+}

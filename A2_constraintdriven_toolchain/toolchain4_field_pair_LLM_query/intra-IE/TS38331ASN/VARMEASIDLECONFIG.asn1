@@ -1,0 +1,6 @@
+VarMeasIdleConfig-r16 ::=     SEQUENCE {
+    measIdleCarrierListNR-r16     SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierNR-r16                  OPTIONAL,
+    measIdleCarrierListEUTRA-r16  SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierEUTRA-r16               OPTIONAL,
+    measIdleDuration-r16          ENUMERATED {sec10, sec30, sec60, sec120, sec180, sec240, sec300, spare},
+    validityAreaList-r16          ValidityAreaList-r16                                                           OPTIONAL
+}

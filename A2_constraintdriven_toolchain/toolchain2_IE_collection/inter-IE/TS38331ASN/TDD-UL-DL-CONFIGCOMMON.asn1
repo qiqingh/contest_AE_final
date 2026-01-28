@@ -1,0 +1,18 @@
+TDD-UL-DL-ConfigCommon ::=          SEQUENCE {
+    referenceSubcarrierSpacing          SubcarrierSpacing,
+    pattern1                            TDD-UL-DL-Pattern,
+    pattern2                            TDD-UL-DL-Pattern                                                       OPTIONAL, -- Need R
+    ...
+}
+
+TDD-UL-DL-Pattern ::=               SEQUENCE {
+    dl-UL-TransmissionPeriodicity       ENUMERATED {ms0p5, ms0p625, ms1, ms1p25, ms2, ms2p5, ms5, ms10},
+    nrofDownlinkSlots                   INTEGER (0..maxNrofSlots),
+    nrofDownlinkSymbols                 INTEGER (0..maxNrofSymbols-1),
+    nrofUplinkSlots                     INTEGER (0..maxNrofSlots),
+    nrofUplinkSymbols                   INTEGER (0..maxNrofSymbols-1),
+    ...,
+    [[
+    dl-UL-TransmissionPeriodicity-v1530     ENUMERATED {ms3, ms4}                                               OPTIONAL -- Need R
+    ]]
+}

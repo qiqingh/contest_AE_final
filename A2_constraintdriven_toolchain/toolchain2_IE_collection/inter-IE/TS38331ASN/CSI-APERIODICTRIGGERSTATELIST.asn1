@@ -1,0 +1,35 @@
+CSI-AperiodicTriggerStateList ::=   SEQUENCE (SIZE (1..maxNrOfCSI-AperiodicTriggers)) OF CSI-AperiodicTriggerState
+
+CSI-AperiodicTriggerState ::=       SEQUENCE {
+    associatedReportConfigInfoList      SEQUENCE (SIZE(1..maxNrofReportConfigPerAperiodicTrigger)) OF CSI-AssociatedReportConfigInfo,
+    ...,
+    [[
+    ap-CSI-MultiplexingMode-r17         ENUMERATED {enabled}                                          OPTIONAL  -- Need R
+    ]]
+}
+
+CSI-AssociatedReportConfigInfo ::=  SEQUENCE {
+    reportConfigId                      CSI-ReportConfigId,
+    resourcesForChannel                 CHOICE {
+        nzp-CSI-RS                          SEQUENCE {
+            resourceSet                         INTEGER (1..maxNrofNZP-CSI-RS-ResourceSetsPerConfig),
+            qcl-info                            SEQUENCE (SIZE(1..maxNrofAP-CSI-RS-ResourcesPerSet)) OF TCI-StateId
+                                                                                                      OPTIONAL  -- Cond Aperiodic
+        },
+        csi-SSB-ResourceSet                 INTEGER (1..maxNrofCSI-SSB-ResourceSetsPerConfig)
+    },
+    csi-IM-ResourcesForInterference     INTEGER(1..maxNrofCSI-IM-ResourceSetsPerConfig)               OPTIONAL, -- Cond CSI-IM-ForInterference
+    nzp-CSI-RS-ResourcesForInterference INTEGER (1..maxNrofNZP-CSI-RS-ResourceSetsPerConfig)          OPTIONAL, -- Cond NZP-CSI-RS-ForInterference
+    ...,
+    [[
+    resourcesForChannel2-r17        CHOICE {
+        nzp-CSI-RS2-r17                 SEQUENCE {
+            resourceSet2-r17                INTEGER (1..maxNrofNZP-CSI-RS-ResourceSetsPerConfig),
+            qcl-info2-r17                   SEQUENCE (SIZE(1..maxNrofAP-CSI-RS-ResourcesPerSet)) OF TCI-StateId
+                                                                                                  OPTIONAL   -- Cond Aperiodic
+        },
+        csi-SSB-ResourceSet2-r17        INTEGER (1..maxNrofCSI-SSB-ResourceSetsPerConfigExt)
+    }                                                                                             OPTIONAL,  -- Cond NoUnifiedTCI
+    csi-SSB-ResourceSetExt          INTEGER (1..maxNrofCSI-SSB-ResourceSetsPerConfigExt)          OPTIONAL   -- Need R
+    ]]
+}

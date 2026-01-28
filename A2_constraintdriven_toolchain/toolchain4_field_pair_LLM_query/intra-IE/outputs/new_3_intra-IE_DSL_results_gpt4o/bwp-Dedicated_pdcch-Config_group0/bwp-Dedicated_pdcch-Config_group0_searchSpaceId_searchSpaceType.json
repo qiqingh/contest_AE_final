@@ -1,0 +1,69 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116
+    ],
+    "field2_all": [
+      127
+    ],
+    "actual_pairs": [
+      [
+        [
+          116
+        ],
+        [
+          127
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between the fields searchSpaceId and searchSpaceType within the same IE. The evidence snippets do not contain explicit normative constraints or mathematical/logical relations involving these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "searchSpaceId",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 176,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.4",
+      "10.3",
+      "5.5"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "If the \\mu_{\\mathrm{PDCCH}}>\\mu_{\\mathrm{PDSCH}} , the UE is expected to receive the scheduled PDSCH, if the first symbol in the PDSCH allocation, including the DM-RS, as defined by the slot offset K_{0} and the start and length indicator SLIV of the scheduling DCI starts no earlier than N_{\\text {pasch }} PDCCH symbols after the end of the PDCCH scheduling the PDSCH, not taking into account the effect of receive timing difference between the scheduling cell and the scheduled cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining N_{\\text {pasch }} , the PDCCH candidate that ends later in time is used. \\begin{table}\n---\nA UE configured with DRX mode operation [11, TS 38.321] can be provided the following for detection of a DCI format 2_6 in a PDCCH reception on the PCell or on the SpCell [12, TS 38.331] - a PS-RNTI for DCI format 2_6 by ps-RNTI - a number of search space sets, by dci-Format2-6, to monitor PDCCH for detection of DCI format 2 _6 on the active DL BWP of the PCell or of the SpCell according to a common search space as described in clause 10.1 - a payload size for DCI format 2_6 by sizeDCI-2-6 - a location in DCI format 2_6 of a Wake-up indication bit by ps-PositionDCI-2-6\n---\n163 ETSI TS 138213 V17.1.0 (2022-05) 10.4 Search space set group switching and skipping of PDCCH monitoring A UE can be provided a group index for a respective Type3-PDCCH CSS set or USS set by searchSpaceGroupIdList for PDCCH monitoring on a serving cell. If the UE is not provided searchSpaceGroupIdList for a search space set, the following procedures are not applicable for PDOCH monitoring according to the search space set.\n---\n- a current active DL BWP, for the UE for each activated SCell in the corresponding group of configured SCells, if the current active DL BWP is not the dormant DL BWP - the UE sets the active DL BWP to the indicated active DL BWP - an offset by p s -Offset indicating a time, where the UE starts monitoring PDCCH for detection of DCI format 26 according to the number of search space sets, prior to a slot where the drx-onDurationTimer would start on the PCell or on the SpCell [11, TS 38.321] - for each search space set, the PDCCH monitoring occasions are the ones in the first T_{\\mathrm{s}} slots indicated by duration, or T_{\\mathrm{s}}=1 slot if duration is not provided, starting from the first slot of the first T_{\\mathrm{s}} slots and ending prior to the start of drx-onDurationTimer.\n---\n\\end{table} If a UE is provided search space sets to monitor PDCCH for detection of DCI format 2_6 in the active DL BWP of the PCell or of the SpCell and the UE detects DCI format 2_6, the physical layer of a UE reports the value of the Wake-up indication bit for the UE to higher layers [11, TS 38.321] for the next long DRX cycle. If a UE is provided search space sets to monitor PDCCH for detection of DCI format 2_6 in the active DL BWP of the PCell or of the SpCell and the UE does not detect DCI format 2_6, the physical layer of the UE does not report a value of the Wake-up indication bit to higher layers for the next long DRX cycle.\n---\n- the UE sets the active DL BWP to the indicated active DL BWP If a UE is provided search space sets to monitor PDCCH for detection of DCI format 1_1, and if - the CRC of DCI format 1_1 is scrambled by a C-RNTI or a MCS-C-RNTI, and if - a one-shot HARQ-ACK request field is not present or has a ' 0 ' value, and if\n---\nA UE can be provided, by searchSpaceSwitchTimer, a timer value for a serving cell that the UE is provided searchSpaceGroupIdList or, if provided, for a set of serving cells provided by cellGroupsForSwitchList. The UE decrements the timer value by one after each slot based on a reference SCS configuration that is the smallest SCS configuration \\mu among all configured DL BWPs in the serving cell, or in the set of serving cells. The UE maintains the reference SCS configuration during the timer decrement procedure. If a UE is provided by SearchSpaceSwitchTrigger a location of a search space set group switching flag field in a DCI format 2 \\_0 , as described in clause 11.1.1, for a serving cell where the UE has active DL BWP with SCS configuration \\mu - if the UE detects a DCI format 2_0 and a value of the search space set group switching flag field in the DCI format 2 \\_0 is 0 , the UE starts monitoring PDCCH according to search space sets with group index 0 , and stops monitoring PDCCH according to search space sets with group index 1 , for the serving cell - at the beginning of the first slot that is at least P_{\\text {switch }} symbols after the last symbol of the PDCCH with the DCI format 2 \\_0 when \\mu \\in\\{0,1,2,3\\}\n---\nIf a UE is not provided SearchSpaceSwitchTrigger for a serving cell, - if the UE detects a DCI format by monitoring PDCCH according to a search space set with group index 0 , the UE starts monitoring PDCCH according to search space sets with group index 1 , and stops monitoring PDCCH according to search space sets with group index 0 , for the serving cell - at the beginning of the first slot that is at least P_{\\text {switch }} symbols after the last symbol of the PDCCH with the DCI format when \\mu \\in\\{0,1,2,3\\} , - at the beginning of the first slot, of a group of X_{s} slots, that is at least P_{\\text {switch }} symbols after the last symbol of the PDCCH with the DCI format when \\mu \\in\\{5,6\\}\n---\nIf the field has 1 bit and for PDCCH monitoring by the UE according to Type3-PDCCH CSS sets or USS sets on the active DL BWP of the serving cell - a ' 0 ' value for the bit indicates start of PDCCH monitoring according to search space sets with group index 0 and stop of PDCCH monitoring according to search space sets with other group indexes, if any - a ' 1 ' value for the bit indicates start of PDCCH monitoring according to search space sets with group index 1 and stop of PDCCH monitoring according to search space sets with other group indexes, if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r 17\n---\nIf the field has 2 bits and for PDCCH monitoring by the UE according to Type3-PDCCH CSS sets or USS sets on the active DL BWP of the serving cell - a ' 00^{\\prime} value for the bit indicates start of PDCCH monitoring according to search space sets with group index 0 and stop of PDCCH monitoring according to search space sets with other group indexes, if any - a ' 01 ' value for the bit indicates start of PDCCH monitoring according to search space sets with group index 1 and stop of PDCCH monitoring according to search space sets with other group indexes, if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r 17 - a ' 10^{\\prime} value for the bit indicates start of PDCCH monitoring according to search space sets with group index 2 and stop of PDCCH monitoring according to search space sets with other group indexes, if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r 17 - a '11' value is reserved A UE can be provided a set of durations by PDCCHSkippingDurationList and group indexes for a Type3-PDCCH CSS set or USS set by searchSpaceGroupldList-r 17 for PDCCH monitoring on an active DL BWP of a serving cell and, a DCI format 0 \\_1 and a DCI format 0 \\_2 that schedule PUSCH transmissions, and a DCI format 1 \\_1 and a DCI format 1 \\_2 that schedule PDSCH receptions can include a PDCCH monitoring adaptation field of 2 bits. If the set of durations includes one value and for PDCCH monitoring by the UE according to Type3-PDCCH CSS sets or USS sets on the active DL BWP of the serving cell - a ' 00^{\\prime} value for the bits indicates start of PDCCH monitoring according to search space sets with group index 0 and stop of PDCCH monitoring according to search space sets with group index 1 , if any - a '01' value for the bits indicates start of PDCCH monitoring according to search space sets with group index 1 and stop of PDCCH monitoring according to search space sets with group index 0 , if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r 17 - a ' 10^{\\prime} value for the bits indicates skipping PDCCH monitoring for a duration provided by the value in the set of durations\n---\nIf the set of durations includes one value and for PDCCH monitoring by the UE according to Type3-PDCCH CSS sets or USS sets on the active DL BWP of the serving cell - a ' 00^{\\prime} value for the bits indicates start of PDCCH monitoring according to search space sets with group index 0 and stop of PDCCH monitoring according to search space sets with group index 1 , if any - a '01' value for the bits indicates start of PDCCH monitoring according to search space sets with group index 1 and stop of PDCCH monitoring according to search space sets with group index 0 , if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r 17 - a ' 10^{\\prime} value for the bits indicates skipping PDCCH monitoring for a duration provided by the value in the set of durations - a '11' value is reserved If the set of durations includes two values and for PDCCH monitoring by the UE according to Type3-PDCCH CSS sets or USS sets on active DL BWP of the the serving cell - a ' 00^{\\prime} value for the bits indicates start of PDCCH monitoring according to search space sets with group index 0 and stop of PDCCH monitoring according to search space sets with group index 1, if any ETSI\n---\n166 ETSI TS 138213 V17.1.0 (2022-05) - a '01' value for the bits indicates start of PDCCH monitoring according to search space sets with group index 1 and stop of PDCCH monitoring according to search space sets with group index 0 , if any, and the UE sets the timer value to the one provided by searchSpaceSwitchTimer-r17 - a '10' value for the bits indicates skipping PDCCH monitoring for a duration provided by the first value in the set of durations - a '11' value for the bits indicates skipping PDCCH monitoring for a duration provided by the second value in the set of durations",
+    "generated_at": "2026-01-07T21:55:58.213637",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between the fields searchSpaceId and searchSpaceType within the same IE. The evidence snippets do not contain explicit normative constraints or mathematical/logical relations involving these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

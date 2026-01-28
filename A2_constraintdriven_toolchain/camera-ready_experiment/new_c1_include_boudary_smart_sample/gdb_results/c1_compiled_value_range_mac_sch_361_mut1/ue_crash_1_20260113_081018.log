@@ -1,0 +1,173 @@
+Attaching to process 2662731
+[New LWP 2662735]
+[New LWP 2662736]
+[New LWP 2662737]
+[New LWP 2662738]
+[New LWP 2662739]
+[New LWP 2662740]
+[New LWP 2662741]
+[New LWP 2662742]
+[New LWP 2662762]
+[New LWP 2662763]
+[New LWP 2662764]
+[New LWP 2662765]
+[New LWP 2662766]
+[New LWP 2662767]
+[New LWP 2662768]
+[New LWP 2662769]
+[New LWP 2662770]
+[New LWP 2662771]
+76	../sysdeps/ieee754/dbl-64/s_sincos.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__sincos (x=317510.56298983272, sinx=sinx@entry=0x7fff2394b938, cosx=cosx@entry=0x7fff2394b930) at ../sysdeps/ieee754/dbl-64/s_sincos.c:76
+(gdb) (gdb) Continuing.
+[New Thread 0x77a6cedab640 (LWP 2662792)]
+[New Thread 0x77a6ce5aa640 (LWP 2662793)]
+[New Thread 0x77a6cdda9640 (LWP 2662794)]
+[New Thread 0x77a6cd5a8640 (LWP 2662795)]
+[Thread 0x77a6cedab640 (LWP 2662792) exited]
+
+Thread 19 "UL__actor" received signal SIGABRT, Aborted.
+[Switching to Thread 0x77a6d77fe640 (LWP 2662771)]
+__pthread_kill_implementation (no_tid=0, signo=6, threadid=131558463759936) at ./nptl/pthread_kill.c:44
+(gdb) #0  __pthread_kill_implementation (no_tid=0, signo=6, threadid=131558463759936) at ./nptl/pthread_kill.c:44
+44	./nptl/pthread_kill.c: No such file or directory.
+        tid = <optimized out>
+        ret = 0
+        pd = 0x77a6d77fe640
+        old_mask = {__val = {0, 0, 2, 9223372036854775814, 0, 0, 0, 0, 0, 0, 2, 9223372036854775814, 0, 0, 0, 0}}
+        ret = <optimized out>
+        pd = <optimized out>
+        old_mask = <optimized out>
+        ret = <optimized out>
+        tid = <optimized out>
+        ret = <optimized out>
+        resultvar = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        __private = <optimized out>
+        __oldval = <optimized out>
+        result = <optimized out>
+#1  __pthread_kill_internal (signo=6, threadid=131558463759936) at ./nptl/pthread_kill.c:78
+No locals.
+#2  __GI___pthread_kill (threadid=131558463759936, signo=signo@entry=6) at ./nptl/pthread_kill.c:89
+No locals.
+#3  0x000077a6fe2b0476 in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+        ret = <optimized out>
+#4  0x000077a6fe2967f3 in __GI_abort () at ./stdlib/abort.c:79
+        save_stage = 1
+        act = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {131558203747688, 250, 3, 131559114446944, 131559112914003, 0, 131559112808400, 19, 18001619748861060864, 131558203747680, 18446744073709551432, 0, 16, 0, 3, 131559114446944}}, sa_flags = -30329773, sa_restorer = 0x0}
+        sigs = {__val = {32, 18001619748861060864, 4048789941075836928, 18001619748861060864, 0, 18446744073709551432, 0, 131559112903979, 131558463663984, 131558203725632, 0, 131559112914003, 206158430256, 18001619748861060864, 131558463663936, 18446744073709551432}}
+#5  0x000056a833d620a7 in exit_function (file=file@entry=0x56a833ffa748 "/home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/nr_ulsch_coding.c", function=function@entry=0x56a833ffa940 <__FUNCTION__.0> "nr_ulsch_encoding", line=line@entry=108, s=s@entry=0x56a833fcd092 "_Assert_Exit_", assert=assert@entry=1) at /home/openairinterface5g/executables/nr-uesoftmodem.c:201
+        CC_id = <optimized out>
+#6  0x000056a833e1170e in nr_ulsch_encoding (ue=ue@entry=0x77a6f5293010, ulsch=ulsch@entry=0x77a6d77fd1e0, frame=frame@entry=669, slot=slot@entry=17 '\021', G=G@entry=0x77a6d77e7848, nb_ulsch=nb_ulsch@entry=1, ULSCH_ids=<optimized out>) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/nr_ulsch_coding.c:108
+        TB_parameters = <optimized out>
+        harq_process = <optimized out>
+        A = <optimized out>
+        Qm = <optimized out>
+        Coderate = <optimized out>
+        ULSCH_id = <optimized out>
+        harq_pid = <optimized out>
+        crc = <optimized out>
+        max_payload_bytes = <optimized out>
+        B = 16
+        pusch_pdu = 0x77a6d77fd1e0
+        nb_rb = <optimized out>
+        pusch_id = <optimized out>
+        __FUNCTION__ = "nr_ulsch_encoding"
+        TBs = 0x77a6d77e7010
+        slot_parameters = {frame = 669, slot = 17, nb_TBs = 1, threadPool = 0x56a83456c570 <nrUE_params+16>, tinput = 0x0, tprep = 0x0, tparity = 0x0, toutput = 0x0, TBs = 0x77a6d77e7010}
+        max_num_segments = <optimized out>
+        segments = <optimized out>
+#7  0x000056a833de0cb6 in nr_ue_ulsch_procedures (UE=UE@entry=0x77a6f5293010, frame=669, slot=slot@entry=17 '\021', phy_data=phy_data@entry=0x77a6d77fd1e0, txdataF=txdataF@entry=0x77a6d77e7c90) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/nr_ulsch_ue.c:542
+        harq_pid = 0
+        ULSCH_ids = ""
+        G = {0}
+        pusch_id = 0 '\000'
+        __FUNCTION__ = "nr_ue_ulsch_procedures"
+        ulsch_ue = 0x77a6d77fd1e0
+        harq_process_ul_ue = 0x77a6f5541870
+        pusch_pdu = 0x77a6d77fd1e0
+        number_dmrs_symbols = <optimized out>
+        nb_rb = 0
+        number_of_symbols = 0 '\000'
+        dmrs_type = 0 '\000'
+        cdm_grps_no_data = 0 '\000'
+        nb_dmrs_re_per_rb = <optimized out>
+        start_symbol = 0
+        ul_dmrs_symb_pos = 0
+        mod_order = <optimized out>
+        Nl = 0 '\000'
+        tb_size = 0
+        rnti = 0
+        K_ptrs = 0
+        k_RE_ref = 0
+        unav_res = <optimized out>
+        tmp = {nr = true, direction = 0, pdu_buffer = 0x56a86621c480 "", pdu_buffer_size = 0, ueid = 0, rntiType = 3, rnti = 0, sysFrame = 669, subframe = 17 '\021', harq_pid = 0 '\000', oob_event = 0, oob_event_value = 0, crcStatus = 0, isPredefinedData = 0 '\000', retx = 0 '\000'}
+        l_prime = <optimized out>
+        frame_parms = <optimized out>
+        N_PRB_oh = <optimized out>
+        start_rb = <optimized out>
+        start_sc = <optimized out>
+        N_RE_prime = <optimized out>
+        available_bits = <optimized out>
+        scrambled_output = <optimized out>
+        max_num_re = <optimized out>
+        d_mod = <optimized out>
+        sz = <optimized out>
+        ulsch_mod = <optimized out>
+        u = <optimized out>
+        v = <optimized out>
+        dmrs_seq = <optimized out>
+        ulsch_mod_tp = <optimized out>
+        slot_sz = <optimized out>
+        tx_precoding = <optimized out>
+        harq_process_ulsch = <optimized out>
+#8  0x000056a833da09f1 in phy_procedures_nrUE_TX (ue=ue@entry=0x77a6f5293010, proc=proc@entry=0x77a6c8041800, phy_data=phy_data@entry=0x77a6d77fd1e0) at /home/openairinterface5g/openair1/SCHED_NR_UE/phy_procedures_nr_ue.c:290
+        slot_tx = <optimized out>
+        frame_tx = <optimized out>
+        __FUNCTION__ = "phy_procedures_nrUE_TX"
+        samplesF_per_slot = <optimized out>
+        txdataF_buf = <optimized out>
+        txdataF = 0x77a6d77e7c90
+#9  0x000056a833d72e45 in processSlotTX (arg=0x77a6c8041800) at /home/openairinterface5g/executables/nr-ue.c:568
+        rxtxD = <optimized out>
+        proc = <optimized out>
+        UE = 0x77a6f5293010
+        phy_data = {ulsch = {pusch_pdu = {pdu_bit_map = 0, rnti = 0, handle = 0, bwp_size = 0, bwp_start = 0, subcarrier_spacing = 0 '\000', cyclic_prefix = 0 '\000', target_code_rate = 0, qam_mod_order = 0 '\000', mcs_index = 0 '\000', mcs_table = 0 '\000', transform_precoding = 0 '\000', data_scrambling_id = 0, nrOfLayers = 0 '\000', Tpmi = 0 '\000', ul_dmrs_symb_pos = 0, dmrs_config_type = 0 '\000', ul_dmrs_scrambling_id = 0, scid = 0 '\000', num_dmrs_cdm_grps_no_data = 0 '\000', dmrs_ports = 0, resource_alloc = 0 '\000', rb_bitmap = '\000' <repeats 35 times>, rb_start = 0, rb_size = 0, vrb_to_prb_mapping = 0 '\000', frequency_hopping = 0 '\000', tx_direct_current_location = 0, uplink_frequency_shift_7p5khz = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', tbslbrm = 0, ldpcBaseGraph = 0 '\000', ulsch_indicator = 0 '\000', pusch_data = {rv_index = 0 '\000', harq_process_id = 0 '\000', new_data_indicator = false, tb_size = 0, num_cb = 0, cb_present_and_position = ""}, pusch_uci = {harq_ack_bit_length = 0, harq_payload = 0, csi_part1_bit_length = 0, csi_part1_payload = 0, csi_part2_bit_length = 0, csi_part2_payload = 0, alpha_scaling = 0 '\000', beta_offset_harq_ack = 0 '\000', beta_offset_csi1 = 0 '\000', beta_offset_csi2 = 0 '\000'}, pusch_ptrs = {num_ptrs_ports = 0 '\000', ptrs_ports_list = 0x0, ptrs_time_density = 0 '\000', ptrs_freq_density = 0 '\000', ul_ptrs_power = 0 '\000'}, dfts_ofdm = {low_papr_group_number = 0 '\000', low_papr_sequence_number = 0, ul_ptrs_sample_density = 0 '\000', ul_ptrs_time_density_transform_precoding = 0 '\000'}, beamforming = {num_prgs = 0, prg_size = 0, dig_bf_interface = 0 '\000', prgs_list = 0x0}, tx_power = 0, tx_request_body = {pdu_length = 0, fapiTxPdu = 0x0}}, number_harq_processes_for_pusch = 0 '\000', rnti_type = TYPE_C_RNTI_, Nid_cell = 0, ptrs_symbols = 0}, pucch_vars = {active = {false, false}, pucch_pdu = {{rnti = 0, bwp_size = 0, bwp_start = 0, format_type = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', prb_start = 0, prb_size = 0, hopping_id = 0, freq_hop_flag = 0 '\000', group_hop_flag = 0 '\000', sequence_hop_flag = 0 '\000', second_hop_prb = 0, initial_cyclic_shift = 0, time_domain_occ_idx = 0 '\000', add_dmrs_flag = 0 '\000', dmrs_scrambling_id = 0, data_scrambling_id = 0, dmrs_cyclic_shift = 0 '\000', pi_2bpsk = 0 '\000', mcs = 0 '\000', pre_dft_occ_idx = 0 '\000', pre_dft_occ_len = 0 '\000', pucch_tx_power = 0, n_bit = 0, payload = 0}, {rnti = 0, bwp_size = 0, bwp_start = 0, format_type = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', prb_start = 0, prb_size = 0, hopping_id = 0, freq_hop_flag = 0 '\000', group_hop_flag = 0 '\000', sequence_hop_flag = 0 '\000', second_hop_prb = 0, initial_cyclic_shift = 0, time_domain_occ_idx = 0 '\000', add_dmrs_flag = 0 '\000', dmrs_scrambling_id = 0, data_scrambling_id = 0, dmrs_cyclic_shift = 0 '\000', pi_2bpsk = 0 '\000', mcs = 0 '\000', pre_dft_occ_idx = 0 '\000', pre_dft_occ_len = 0 '\000', pucch_tx_power = 0, n_bit = 0, payload = 0}}}, sl_tx_action = 0, psbch_vars = {psbch_payload = "\000\000\000", tx_slss_id = 0, psbch_tx_power = 0}}
+        sl_tx_action = false
+        __FUNCTION__ = "processSlotTX"
+#10 0x000056a833fcb3d5 in actor_thread (arg=0x77a6f57fa820) at /home/openairinterface5g/common/utils/threadPool/./notified_fifo.h:92
+        elt = 0x77a6c8041780
+        actor = 0x77a6f57fa820
+        __FUNCTION__ = "actor_thread"
+#11 0x000077a6fe302ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, -2733971813951349089, 131558463759936, 2, 131559112845264, 140733790337952, -2733971814336176481, -2734061550736384353}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#12 0x000077a6fe394850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 2662731] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 2662731
+[Inferior 1 (process 2662731) detached]

@@ -1,0 +1,118 @@
+SharedSpectrumChAccessParamsPerBand-r16 ::=           SEQUENCE {
+
+    -- R1 10-1: UL channel access for dynamic channel access mode
+    ul-DynamicChAccess-r16                              ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-1a: UL channel access for semi-static channel access mode
+    ul-Semi-StaticChAccess-r16                          ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2: SSB-based RRM for dynamic channel access mode
+    ssb-RRM-DynamicChAccess-r16                         ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2a: SSB-based RRM for semi-static channel access mode
+    ssb-RRM-Semi-StaticChAccess-r16                     ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2b: MIB reading on unlicensed cell
+    mib-Acquisition-r16                                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2c: SSB-based RLM for dynamic channel access mode
+    ssb-RLM-DynamicChAccess-r16                         ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2d: SSB-based RLM for semi-static channel access mode
+    ssb-RLM-Semi-StaticChAccess-r16                     ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2e: SIB1 reception on unlicensed cell
+    sib1-Acquisition-r16                                ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2f: Support monitoring of extended RAR window
+    extRA-ResponseWindow-r16                            ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2g: SSB-based BFD/CBD for dynamic channel access mode
+    ssb-BFD-CBD-dynamicChannelAccess-r16                ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2h: SSB-based BFD/CBD for semi-static channel access mode
+    ssb-BFD-CBD-semi-staticChannelAccess-r16            ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-2i: CSI-RS-based BFD/CBD for NR-U
+    csi-RS-BFD-CBD-r16                                  ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-7: UL channel access for 10 MHz SCell
+    ul-ChannelBW-SCell-10mhz-r16                        ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-10: RSSI and channel occupancy measurement and reporting
+    rssi-ChannelOccupancyReporting-r16                  ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-11:SRS starting position at any OFDM symbol in a slot
+    srs-StartAnyOFDM-Symbol-r16                         ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-20: Support search space set configuration with freqMonitorLocation-r16
+    searchSpaceFreqMonitorLocation-r16                  INTEGER (1..5)                    OPTIONAL,
+    -- R1 10-20a: Support coreset configuration with rb-Offset
+    coreset-RB-Offset-r16                               ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-23:CGI reading on unlicensed cell for ANR functionality
+    cgi-Acquisition-r16                                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-25: Enable configured UL transmissions when DCI 2_0 is configured but not detected
+    configuredUL-Tx-r16                                  ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-27: Wideband PRACH
+    prach-Wideband-r16                                  ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-29: Support available RB set indicator field in DCI 2_0
+    dci-AvailableRB-Set-r16                             ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-30: Support channel occupancy duration indicator field in DCI 2_0
+    dci-ChOccupancyDuration-r16                         ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-8: Type B PDSCH length {3, 5, 6, 8, 9, 10, 11, 12, 13} without DMRS shift due to CRS collision
+    typeB-PDSCH-length-r16                              ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-9: Search space set group switching with explicit DCI 2_0 bit field trigger or with implicit PDCCH decoding with DCI 2_0 monitoring
+    searchSpaceSwitchWithDCI-r16                        ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-9b: Search space set group switching with implicit PDCCH decoding without DCI 2_0 monitoring
+    searchSpaceSwitchWithoutDCI-r16                     ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-9d: Support Search space set group switching capability 2
+    searchSpaceSwitchCapability2-r16                    ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-14: Non-numerical PDSCH to HARQ-ACK timing
+    non-numericalPDSCH-HARQ-timing-r16                  ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-15: Enhanced dynamic HARQ codebook
+    enhancedDynamicHARQ-codebook-r16                    ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-16: One-shot HARQ ACK feedback
+    oneShotHARQ-feedback-r16                            ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-17: Multi-PUSCH UL grant
+    multiPUSCH-UL-grant-r16                             ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-26: CSI-RS based RLM for NR-U
+    csi-RS-RLM-r16                                      ENUMERATED {supported}            OPTIONAL,
+    dummy                                              ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-31: Support of P/SP-CSI-RS reception with CSI-RS-ValidationWith-DCI-r16 configured
+    periodicAndSemi-PersistentCSI-RS-r16                ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-3: PRB interlace mapping for PUSCH
+    pusch-PRB-interlace-r16                             ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-3a: PRB interlace mapping for PUCCH
+    pucch-F0-F1-PRB-Interlace-r16                       ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-12: OCC for PRB interlace mapping for PF2 and PF3
+    occ-PRB-PF2-PF3-r16                                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-13a: Extended CP range of more than one symbol for CG-PUSCH
+    extCP-rangeCG-PUSCH-r16                             ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-18: Configured grant with retransmission in CG resources
+    configuredGrantWithReTx-r16                         ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-21a: Support using ED threshold given by gNB for UL to DL COT sharing
+    ed-Threshold-r16                                    ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-21b: Support UL to DL COT sharing
+    ul-DL-COT-Sharing-r16                               ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-24: CG-UCI multiplexing with HARQ ACK
+    mux-CG-UCI-HARQ-ACK-r16                             ENUMERATED {supported}            OPTIONAL,
+    -- R1 10-28: Configured grant with Rel-16 enhanced resource configuration
+    cg-resourceConfig-r16                               ENUMERATED {supported}            OPTIONAL
+}
+
+SharedSpectrumChAccessParamsPerBand-v1630 ::=       SEQUENCE {
+    -- R4 4-1: DL reception in intra-carrier guardband
+    dl-ReceptionIntraCellGuardband-r16                  ENUMERATED {supported}            OPTIONAL,
+    -- R4 4-2: DL reception when gNB does not transmit on all RB sets of a carrier as a result of LBT
+    dl-ReceptionLBT-subsetRB-r16                        ENUMERATED {supported}            OPTIONAL
+}
+
+SharedSpectrumChAccessParamsPerBand-v1640 ::=       SEQUENCE {
+    -- 10-26b(1-4): CSI-RS based RRM measurement with associated SS-block
+    csi-RSRP-AndRSRQ-MeasWithSSB-r16                     ENUMERATED {supported}              OPTIONAL,
+    -- 10-26c(1-5): CSI-RS based RRM measurement without associated SS-block
+    csi-RSRP-AndRSRQ-MeasWithoutSSB-r16                 ENUMERATED {supported}               OPTIONAL,
+    -- 10-26d(1-6): CSI-RS based RS-SINR measurement
+    csi-SINR-Meas-r16                                      ENUMERATED {supported}               OPTIONAL,
+    -- 10-26e(1-8): RLM based on a mix of SS block and CSI-RS signals within active BWP
+    ssb-AndCSI-RS-RLM-r16                                 ENUMERATED {supported}               OPTIONAL,
+    -- 10-26f(1-9): CSI-RS based contention free RA for HO
+    csi-RS-CFRA-ForHO-r16                                 ENUMERATED {supported}               OPTIONAL
+}
+
+SharedSpectrumChAccessParamsPerBand-v1650 ::=       SEQUENCE {
+    -- Extension of R1 10-9 capability to configure up to 16 instead of 4 cells or cell groups, respectively
+    extendedSearchSpaceSwitchWithDCI-r16                ENUMERATED {supported}               OPTIONAL
+}
+
+SharedSpectrumChAccessParamsPerBand-v1710 ::=    SEQUENCE {
+    -- R1 25-12: UE initiated semi-static channel occupancy with dependent configurations
+    ul-Semi-StaticChAccessDependentConfig-r17        ENUMERATED {supported}            OPTIONAL,
+    -- R1 25-13: UE initiated semi-static channel occupancy with independent configurations
+    ul-Semi-StaticChAccessIndependentConfig-r17      ENUMERATED {supported}            OPTIONAL
+}

@@ -1,0 +1,2410 @@
+[
+  {
+    "fields": [
+      "resourceType",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        443,
+        551
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP"
+    ],
+    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.  The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.2",
+    "section_title": "Resource settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceType",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        443,
+        551
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP"
+    ],
+    "original_sentence": "For CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI ,",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.1",
+    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceType",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        443,
+        551
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP"
+    ],
+    "original_sentence": "For a UE configured with CSI resource setting(s) where the higher layer parameter resourceType set to 'semiPersistent'. - when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot \\( n \\) corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot \\( n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH and \\( \\mu_{K_{\\text {mac }}} \\) is the subcarrier spacing configuration for \\( k_{\\text {mac }} \\) with a value of 0 for frequency range 1 , and \\( k_{\\text {mac }} \\) is provided by \\( K-M a c \\) or \\( k_{\\mathrm{mac}}=0 \\) if \\( K-M a c \\) is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.2",
+    "section_title": "Semi",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceType",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        443,
+        551
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP"
+    ],
+    "original_sentence": "For a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'semi-persistent': - when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceType",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        443,
+        551
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP"
+    ],
+    "original_sentence": "If the UE has an active semi-persistent SRS resource configuration and has not received a deactivation command, the semi-persistent SRS configuration is considered to be active in the UL BWP which is active, otherwise it is considered suspended.  For a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'aperiodic':",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "srs-ResourceSetId",
+      "BWP"
+    ],
+    "original_sentence": "- If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission. - If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.1.2",
+    "section_title": "Non",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "For non-codebook based transmission, the UE can calculate the precoder used for the transmission of SRS based on measurement of an associated NZP CSI-RS resource. A UE can be configured with only one NZP CSI-RS resource for the SRS resource set with higher layer parameter usage in SRS-ResourceSet set to 'nonCodebook' if configured. - If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission. - If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.1.2",
+    "section_title": "Non",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "When the UE is configured with minimumSchedulingOffsetK2 in an active UL BWP it applies a minimum scheduling offset restriction indicated by the 'Minimum applicable scheduling offset indicator' field in DCI format 0_1 or DCI format 1 _ 1 if the same field is available. When the UE is configured with minimumSchedulingOffsetK2 in an active UL BWP and it has not received 'Minimum applicable scheduling offset indicator' field in DCI format \\( 0 \\_1 \\) or \\( 1 \\_1 \\), the UE shall apply a minimum scheduling offset restriction indicated based on 'Minimum applicable scheduling offset indicator' value ' 0 '. When the minimum scheduling offset restriction is applied the UE is not expected to be scheduled with a DCI in slot \\( n \\) to transmit a PUSCH scheduled with C-RNTI, CS-RNTI, MCS-C-RNTI or SP-CSI-RNTI with \\( K_{2} \\) smaller than \\( \\left\\lceil K_{2 \\text { min }} \\cdot \\frac{2^{\\mu}}{2^{\\mu}}\\right\\rceil \\), where \\( K_{2 \\text { mn }} \\) and \\( \\mu \\) are the applied minimum scheduling offset restriction and the numerology of the active UL BWP of the scheduled cell when receiving the DCI in slot \\( n \\), respectively, and \\( \\mu^{\\prime} \\) is the numerology of the new active UL BWP in case of active UL BWP change in the scheduled cell and is equal to \\( \\mu \\), otherwise. The minimum scheduling offset restriction is not applied when PUSCH transmission is scheduled by RAR UL grant or fallbackRAR UL grant for RACH procedure, or when PUSCH is scheduled with TC-RNTI. The application delay of the change of the minimum scheduling offset restriction is determined in Clause 5.3.1.  When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with higher layer parameter usage in SRS-ResourceSet set to 'codebook' or 'noncodebook', for PUSCH repetition Type A, in case \\( K>1 \\), the same symbol allocation is applied across the \\( K \\) consecutive slots and the PUSCH is limited to a single transmission layer. The UE shall repeat the TB across the \\( K \\) consecutive slots applying the same symbol allocation in each slot, and the association of the first and second SRS resource set in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 to each slot is determined as follows:",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "DCI format 0_1 for a given resource allocation type indicated by resourceAllocation, except if uselnterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured, in which case uplink type 2 resource allocation is used wherein the UE interprets the LSB bits in the higher layer parameter frequencyDomainAllocation as for the frequency domain resource assignment field of DCI 0_1 according to the procedure in Clause 6.1.2.2.3; - The \\( I_{M C S} \\) is provided by higher layer parameter mcsAndTBS; - Number of DM-RS CDM groups, DM-RS ports, SRS resource indication and DM-RS sequence initialization are determined as in Clause 7.3.1.1.2 of [5, TS 38.212], and the antenna port value, the bit value for DM-RS sequence initialization, precoding information and number of layers, SRS resource indicator are provided by antennaPort, dmrs-SeqInitialization, precodingAndNumberOfLayers, and srs-ResourceIndicator respectively; When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, precoding information and number of layers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook') associated with the first and second SRS resource set is provided by precodingAndNumberOfLayers and precodingAndNumberOfLayers2, respectively, and SRS resource indicators associated with the first and second SRS resource sets are provided by srs-ResourceIndicator and srs-ResourceIndicator2, respectively. When both srsResourceSetToAddModList and srs-ResourceSetToAddModListDCI-0-2 are configured with two SRS resource sets, the two SRS resource sets configured by srs-ResourceSetToAddModList is used to determine the SRS resource indications by srs-ResourceIndicator and srs-ResourceIndicator2.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.3",
+    "section_title": "Resource allocation for uplink transmission with configured grant",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "When the higher layer parameter enableDefaultBeamPL-ForSRS is set 'enabled', and if the higher layer parameter spatialRelationInfo for the SRS resource, except for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'beamManagement' or for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'nonCodebook' with configuration of associatedCSI-RS or for the SRS resource configured by the higher layer parameter SRS-PosResourceSet, is not configured in FR2 and if the UE is not configured with higher layer parameter(s) pathlossReferenceRS, and if the UE is not configured with different values of coresetPoollndex in ControlResourceSets, and is not provided at least one TCI codepoint mapped with two TCI states, the UE shall transmit the target SRS resource in an active UL BWP of a CC,",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.17",
+    "section_title": "SP SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS resource set ID",
+      "BWP"
+    ],
+    "original_sentence": "- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell which contains all resources indicated by the Resource ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource ID, fields. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1, Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- \\( F_{1} \\) : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP/AP SRS Resource Set indicated with SP/AP SRS Resource Set ID field. Fo refers to the first SRS resource within the resource set, \\( F_{1} \\) to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - Resource Serving Cell ID: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains activated SRS Resource Set. The length of the field is 2 bits; - SRS Resource Set ID: This field indicates the SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.27",
+    "section_title": "SRS Pathloss Reference RS Update MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) within the field Spatial Relation for Resource ID, are present, except for Spatial Relation Resource ID, with DL-PRS or SSB. When A/D is set to 1 , if this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) in the field Spatial Relation for Resource ID, are present, otherwise if this field is set to 0 , they are not present. When \\( A / D \\) is set to 0 , this field is always set to 0 that they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - Positoining SRS Resource Set ID: This field indicates the SP Positioning SRS Resource Set identified by SRSPosResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.36",
+    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.59",
+    "section_title": "SP/AP SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell - If the SRS resource set indicator value is 00 , first \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) \\) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- If the SRS resource set indicator value is 10 or 11 , first and second \\( P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) \\) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, \\( P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) \\) is provided by \\( p 0 \\) obtained from \\( p 0 \\)-PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by \\( p 0- \\) PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- else, \\( P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) \\) is provided by \\( p 0 \\) obtained from \\( p 0 \\)-PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by \\( p 0- \\) PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- If the SRS resource set indicator value is 10 or 11 , first and second \\( \\alpha_{b, f, c}(1) \\) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "BWP"
+    ],
+    "original_sentence": "- else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- \\( l \\) is provided by the value of powerControlLoopTo Use if \\( P_{0_{-} \\cup E_{-} \\mathrm{PuSCH}, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha in ConfiguredGrantConfig - \\( l \\) is provided by the value of powerControlLoopToUse 2 if \\( P_{\\mathrm{O}_{-} \\mathrm{UE} \\_ \\text {PusCH }, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig - \\( f_{b, f, c}(i, l)=\\delta_{\\text {PUSCH }, b, f, c}(i, l) \\) is the PUSCH power control adjustment state for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and PUSCH transmission occasion \\( i \\) if the UE is provided tpc-Accumulation, where",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- \\( l \\) is provided by the value of powerControlLoopToUse 2 if \\( P_{\\mathrm{O}_{-} \\mathrm{UE} \\_ \\text {PusCH }, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig - \\( f_{b, f, c}(i, l)=\\delta_{\\text {PUSCH }, b, f, c}(i, l) \\) is the PUSCH power control adjustment state for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and PUSCH transmission occasion \\( i \\) if the UE is provided tpc-Accumulation, where",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\quad P_{0 \\_\\mathrm{SRS}, b, f, c}\\left(q_{s}\\right) \\) is provided by \\( p 0 \\) for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and SRS resource set \\( q_{s} \\) provided by SRS-ResourceSet and SRS-ResourceSetld - \\( M_{\\text {SRS }, b, f, c}(i) \\) is a SRS bandwidth expressed in number of resource blocks for SRS transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211] - \\( \\quad \\alpha_{\\mathrm{SRS}, b, f, c}\\left(q_{s}\\right) \\) is provided by alpha for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and SRS resource set \\( q_{s} \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.3.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "BWP"
+    ],
+    "original_sentence": "The SCS configuration \\( \\mu_{P} \\) for the active DL BWP on the primary cell is smaller than or equal to the SCS configuration \\( \\mu_{S} \\) for the active DL BWP on the secondary cell.  For the remaining of this clause, either the secondary cell is activated and the active DL BWP is not a dormant DL BWP for a UE, or the UE does not indicate a capability [16, TS 36.306] for disabling \\( \\alpha \\) that is provided by ccsBlindDetectionSplit; otherwise, procedures described in the remaining of this clause are not applicable for the UE and the procedures are as described in clause 10.1.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1.1",
+    "section_title": "Self",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "BWP"
+    ],
+    "original_sentence": "For scheduling on the primary cell from the primary cell, the UE is not required to monitor more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(M_{\\text {PDCCH }}^{\\max , \\text { slot }, \\mu_{P}}, M_{\\text {PDCCH }}^{\\text {total }, \\text { slot }, \\mu_{P}}\\right)\\right\\rfloor \\) PDCCH candidates per slot or more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu_{P}}, C_{\\text {PDCCH }}^{\\text {total, slot, } \\mu_{P}}\\right)\\right\\rfloor \\) nonoverlapping CCEs per slot on the active DL BWP of the primary cell, where \\( \\alpha \\) is provided by ccs-BlindDetectionSplit.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1.1",
+    "section_title": "Self",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "BWP"
+    ],
+    "original_sentence": "For scheduling on the primary cell from the secondary cell, the UE is not required to monitor on the active DL BWP of the secondary cell more than - \\( M_{\\text {PDCCH }}^{\\text {max, } s l o t, \\mu S} \\) PDCCH candidates per slot or more than \\( C_{\\text {PDCCH }}^{\\text {max, } s l o t, \\mu_{S}} \\) non-overlapping CCEs per slot of the active DL BWP of the secondary cell - \\( \\min \\left(M_{\\text {PDCCH }}^{\\text {max }, \\text { slot }, \\mu_{P}}, M_{\\text {PDCCH }}^{\\text {total, slot }, \\mu_{P}}\\right)-\\left\\lfloor\\alpha \\cdot \\min \\left(M_{\\text {PDCCH }}^{\\text {max, } \\text { slot, } \\mu_{P}}, M_{\\text {PDCCH }}^{\\text {total, slot, } \\mu_{P}}\\right)\\right\\rfloor \\) PDCCH candidates per slot or more than \\( \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu_{P}}, C_{\\text {PDCCH }}^{\\text {total, slot }}, \\mu_{P}\\right)-\\left\\lfloor\\alpha \\cdot \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu_{P}}, C_{\\text {PDCCH }}^{\\text {total, slot, } \\mu_{P}}\\right)\\right\\rfloor \\) non-overlapping CCEs per slot of the active DL BWP of the primary cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1.1",
+    "section_title": "Self",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}} \\) is a value of dl-Alpha-PSBCH, if provided; else, \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}}=1 \\) - \\( P L=P L_{b_{1}, f_{1} c}\\left(q_{d}\\right) \\) when the active SL BWP is on a serving cell \\( c \\), as described in clause 7.1.1 except that",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2",
+    "section_title": "Power control",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "alpha",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        445,
+        553
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\alpha_{D} \\) is a value of dl-Alpha-PSSCH-PSCCH, if provided; else, \\( \\alpha_{D}=1 \\) - \\( P L_{D}=P L_{b_{1} f_{1} c}\\left(q_{d}\\right) \\) when the active SL BWP is on a serving cell \\( c \\), as described in clause 7.1.1 except that",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.1",
+    "section_title": "PSSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- If the SRS resource set indicator value is 10 or 11 , first and second \\( P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) \\) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, \\( P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) \\) is provided by \\( p 0 \\) obtained from \\( p 0 \\)-PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by \\( p 0- \\) PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "P0",
+      "BWP"
+    ],
+    "original_sentence": "- else, \\( P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) \\) is provided by \\( p 0 \\) obtained from \\( p 0 \\)-PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by \\( p 0- \\) PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "P0",
+      "BWP"
+    ],
+    "original_sentence": "- For \\( j \\in\\{2, \\ldots, J-1\\}=S_{J} \\), a \\( P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) \\) value, applicable for all \\( j \\in S_{J} \\), is provided by \\( p 0 \\) provided, for each carrier \\( f \\) of serving cell \\( c \\) and a set of \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) \\) values are provided by a set of \\( p 0 \\) in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by \\( p 0 \\)-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of \\( P_{0} \\) ue_pusch, \\( b, f, c \\) ( \\( j \\) ) from the \\( p 0-P U S C H \\) AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by \\( p 0 \\)-PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of \\( P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) \\) from the \\( p 0 \\)-PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- If the SRS resource set indicator value is 10 or 11 , first and second \\( \\alpha_{b, f, c}(1) \\) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "P0",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, \\( j=2 \\), and the UE determines \\( \\alpha_{b_{1}, c}(j) \\) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\( \\alpha_{b, f, c}(j) \\) from first and second \\( P 0 \\) -PUSCH-AlphaSet in p0-AlphaSets - \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211]",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\( \\alpha_{b, f, c}(j) \\) from first and second \\( P 0 \\) -PUSCH-AlphaSet in p0-AlphaSets - \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211]",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\quad \\delta_{\\mathrm{PUSCH}, b_{1} f_{1} c}(i, l) \\) is a TPC command value included in a DCI format that schedules the PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) or jointly coded with other TPC commands in a DCI format 2_2 with CRC scrambled by TPC-PUSCH-RNTI, as described in clause 11.3 - \\( l \\in\\{0,1\\} \\) if the UE is configured with twoPUSCH-PC-AdjustmentStates and \\( l=0 \\) if the UE is not configured with twoPUSCH-PC-AdjustmentStates or if the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3 - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- \\( l \\) is provided by the value of powerControlLoopTo Use if \\( P_{0_{-} \\cup E_{-} \\mathrm{PuSCH}, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha in ConfiguredGrantConfig - \\( l \\) is provided by the value of powerControlLoopToUse 2 if \\( P_{\\mathrm{O}_{-} \\mathrm{UE} \\_ \\text {PusCH }, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig - \\( f_{b, f, c}(i, l)=\\delta_{\\text {PUSCH }, b, f, c}(i, l) \\) is the PUSCH power control adjustment state for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and PUSCH transmission occasion \\( i \\) if the UE is provided tpc-Accumulation, where",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- \\( l \\) is provided by the value of powerControlLoopToUse 2 if \\( P_{\\mathrm{O}_{-} \\mathrm{UE} \\_ \\text {PusCH }, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig - \\( f_{b, f, c}(i, l)=\\delta_{\\text {PUSCH }, b, f, c}(i, l) \\) is the PUSCH power control adjustment state for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and PUSCH transmission occasion \\( i \\) if the UE is provided tpc-Accumulation, where",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- \\( P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) \\) is a parameter composed of the sum of a component \\( P_{0 \\_N O M I N A L, P U C C H} \\), provided by p 0 -nominal, or \\( P_{0 \\_N O M I N A L} \\) PUCCH \\( =0 \\mathrm{dBm} \\) if \\( p 0 \\)-nominal is not provided, for carrier \\( f \\) of primary cell \\( c \\) and, if provided, a component \\( P_{0 \\_ \\text {UE_PUCCH }}\\left(q_{u}\\right) \\) provided by p0-PUCCH-Value in P0-PUCCH for active UL BWP \\( b \\) of carrier \\( f \\) of primary cell \\( c \\), where \\( 0 \\leq q_{u}<Q_{u}-Q_{u} \\) is a size for a set of \\( P_{O_{-} U E \\_P U C C H} \\) values provided by maxNrofPUCCH\\( P 0 \\)-PerSet. The set of \\( P_{\\mathrm{O} \\_ \\text {UE_PUCCH }} \\) values is provided by p0-Set. If \\( p 0 \\)-Set is not provided to the UE, \\( P_{0 \\_ \\text {РШССН }, b_{1} f_{1} c}\\left(q_{u}\\right)=0,0 \\leq q_{u}<Q_{u} \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\quad \\delta_{\\mathrm{PUCCH}, b, f, c}(i, l) \\) is a TPC command value included in a DCI format associated with the PUCCH transmission for active UL BWP \\( b \\) of carrier \\( f \\) of the primary cell \\( c \\) that the UE detects for PUCCH transmission occasion \\( i \\), or is jointly coded with other TPC commands in a DCI format \\( 2 \\_2 \\) with CRC scrambled by TPC-PUCCHRNTI [5, TS 38.212], as described in clause 11.3 - \\( l \\in\\{0,1\\} \\) if the UE is provided twoPUCCH-PC-AdjustmentStates and PUCCH-SpatialRelationInfo, or more than one sets of power control parameters for operation in FR1, and \\( l=0 \\) if the UE is not provided twoPUCCH-PC-AdjustmentStates or PUCCH-SpatialRelationInfo, and more than one sets of power control parameters - If the UE obtains a TPC command value from a DCI format associated with the PUCCH transmission and if the UE is provided PUCCH-SpatialRelationInfo, the UE obtains a mapping, by an index provided by p0-PUCCH-Id, between a set of pucch-SpatialRelationInfold values and a set of values for closedLoopIndex that provide the \\( l \\) value(s). If the UE receives an activation command indicating a value of pucch-SpatialRelationInfold, the UE determines the value closedLoopIndex that provides the value of \\( l \\) through the link to a corresponding p0-PUCCH-Id index",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- If a configuration of a \\( P_{0 \\_\\mathrm{PUCCH}, b, f, c}\\left(q_{u}\\right) \\) value for a corresponding PUCCH power control adjustment state \\( l \\) for active UL BWP \\( b \\) of carrier \\( f \\) of primary cell \\( c \\) is provided by higher layers, - \\( \\quad g_{b, f, c}(k, l)=0, \\quad k=0,1, \\ldots, i \\) - if the UE is provided PUCCH-SpatialRelationInfo, the UE determines the value of \\( l \\) from the value of \\( q_{u} \\) based on a pucch-SpatialRelationInfold value associated with the p0-PUCCH-Id value corresponding to \\( q_{u} \\) and with the closedLoopIndex value corresponding to \\( l \\);",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "p0",
+      "BWP"
+    ],
+    "original_sentence": "- a p0-PUCCH-Value from pucch-PowerControl in PUCCH-Config for the PUCCH-sSCell for the determination of \\( P_{O, P \\cup C C H, b, f, c}\\left(q_{u}\\right) \\) - a pucch-PathlossReferenceRS-Id from pucch-PowerControl in PUCCH-Config for the PUCCH-sSCell for the determination of \\( P L_{b, f, c}\\left(q_{d}\\right) \\) - a PUCCH power control adjustment state \\( g_{b, 0, c}(i, 0) \\) for active UL BWP \\( b \\) of the UL carrier of PUCCH-sSCell \\( c \\) and PUCCH transmission occasion \\( i \\) where \\( \\delta_{\\mathrm{PUCCH}, b, 0_{c} c}(i, 0) \\) is a TPC command value included in a DCI format associated with generation of HARQ-ACK information for multiplexing in a PUCCH transmission on the PUCCH-sSCell as indicated either by a pucch-sSCellPattern or by a PUCCH cell indicator field in the DCI format, or provided by DCI format 2_2 with CRC scrambled by TPC-PUCCH-RNTI for the PUCCH-sSCell as described in clause 11.3",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "8.4",
+    "section_title": "PDSCH with UE contention resolution identity",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "p0",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        446,
+        554
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "P0",
+      "BWP"
+    ],
+    "original_sentence": "A UE with \\( N_{\\text {sch, Tx, PSFCH }} \\) scheduled PSFCH transmissions for HARQ-ACK information and conflict information, and capable of transmitting a maximum of \\( N_{\\text {max, PSFCH }} \\) PSFCHs, determines a number \\( N_{\\mathrm{Tx}, \\mathrm{PSFCH}} \\) of simultaneous PSFCH transmissions and a power \\( P_{\\mathrm{PSFCH}, \\mathrm{k}}(i) \\) for a PSFCH transmission \\( k, 1 \\leq k \\leq N_{\\mathrm{Tx}, \\mathrm{PSFCH}} \\), on a resource pool in PSFCH transmission occasion \\( i \\) on active SL BWP \\( b \\) of carrier \\( f \\) as - if dl-P0-PSFCH is provided,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.3",
+    "section_title": "PSFCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "For a PUSCH transmission on active UL BWP \\( b \\), as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\), a UE first calculates a linear value \\( \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) \\) of the transmit power \\( P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) \\), with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format \\( 0 \\_0 \\), or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\( \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) \\) by \\( s \\) where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, \\( s \\) is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1",
+    "section_title": "Physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- For \\( j \\in\\{2, \\ldots, J-1\\}=S_{J} \\), a \\( P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) \\) value, applicable for all \\( j \\in S_{J} \\), is provided by \\( p 0 \\) provided, for each carrier \\( f \\) of serving cell \\( c \\) and a set of \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) \\) values are provided by a set of \\( p 0 \\) in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by \\( p 0 \\)-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of \\( P_{0} \\) ue_pusch, \\( b, f, c \\) ( \\( j \\) ) from the \\( p 0-P U S C H \\) AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by \\( p 0 \\)-PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of \\( P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) \\) from the \\( p 0 \\)-PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- For \\( j \\in S_{J} \\), a set of \\( \\alpha_{b_{, f, c}}(j) \\) values are provided by a set of alpha in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) - If the UE is provided SRI-PUSCH-PowerControl and more than one values of p0-PUSCH-AlphaSetld in p0-AlphaSets, - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, \\( j=2 \\), and the UE determines \\( \\alpha_{b_{1}, c}(j) \\) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\( \\alpha_{b, f, c}(j) \\) from first and second \\( P 0 \\) -PUSCH-AlphaSet in p0-AlphaSets - \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211]",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\( \\alpha_{b, f, c}(j) \\) from first and second \\( P 0 \\) -PUSCH-AlphaSet in p0-AlphaSets - \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211]",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        444,
+        552
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP"
+    ],
+    "original_sentence": "- \\( \\quad \\delta_{\\mathrm{PUSCH}, b_{1} f_{1} c}(i, l) \\) is a TPC command value included in a DCI format that schedules the PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) or jointly coded with other TPC commands in a DCI format 2_2 with CRC scrambled by TPC-PUSCH-RNTI, as described in clause 11.3 - \\( l \\in\\{0,1\\} \\) if the UE is configured with twoPUSCH-PC-AdjustmentStates and \\( l=0 \\) if the UE is not configured with twoPUSCH-PC-AdjustmentStates or if the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3 - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "441_554_srs-Config_srs-ResourceSetToAddModList",
+      "825_927_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        441,
+        549
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906
+      ]
+    ],
+    "matched_fields": [
+      "srs-ResourceSetid",
+      "BWP"
+    ],
+    "original_sentence": "srs-ResourceSetid, srs-PosResourceSetid \\\\ The ID of this resource set. It is unique in the context of the BWP in which the parent SRS-Config is defined.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  }
+]

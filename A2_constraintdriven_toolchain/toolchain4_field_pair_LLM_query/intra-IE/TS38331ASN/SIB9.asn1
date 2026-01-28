@@ -1,0 +1,13 @@
+SIB9 ::=                            SEQUENCE {
+    timeInfo                            SEQUENCE {
+        timeInfoUTC                         INTEGER (0..549755813887),
+        dayLightSavingTime                  BIT STRING (SIZE (2))                   OPTIONAL,   -- Need R
+        leapSeconds                         INTEGER (-127..128)                     OPTIONAL,   -- Need R
+        localTimeOffset                     INTEGER (-63..64)                       OPTIONAL    -- Need R
+    }                                                                               OPTIONAL,   -- Need R
+    lateNonCriticalExtension            OCTET STRING                                OPTIONAL,
+    ...,
+     [[
+    referenceTimeInfo-r16           ReferenceTimeInfo-r16                           OPTIONAL    -- Need R
+    ]]
+}

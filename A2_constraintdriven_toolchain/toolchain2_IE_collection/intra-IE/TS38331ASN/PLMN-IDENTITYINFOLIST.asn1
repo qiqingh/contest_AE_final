@@ -1,0 +1,17 @@
+PLMN-IdentityInfoList ::=               SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-IdentityInfo
+
+PLMN-IdentityInfo ::=                   SEQUENCE {
+    plmn-IdentityList                       SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-Identity,
+    trackingAreaCode                        TrackingAreaCode                                            OPTIONAL,       -- Need R
+    ranac                                   RAN-AreaCode                                                OPTIONAL,       -- Need R
+    cellIdentity                            CellIdentity,
+    cellReservedForOperatorUse              ENUMERATED {reserved, notReserved},
+    ...,
+    [[
+    iab-Support-r16                     ENUMERATED {true}                                               OPTIONAL       -- Need S
+    ]],
+    [[
+    trackingAreaList-r17                SEQUENCE (SIZE (1..maxTAC-r17)) OF TrackingAreaCode             OPTIONAL,      -- Need R
+    gNB-ID-Length-r17                   INTEGER (22..32)                                                OPTIONAL       -- Need R
+    ]]
+}

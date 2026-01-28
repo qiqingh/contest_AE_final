@@ -1,0 +1,37 @@
+BWP-DownlinkDedicated ::=           SEQUENCE {
+    pdcch-Config                        SetupRelease { PDCCH-Config }                                     OPTIONAL,   -- Need M
+    pdsch-Config                        SetupRelease { PDSCH-Config }                                     OPTIONAL,   -- Need M
+    sps-Config                          SetupRelease { SPS-Config }                                       OPTIONAL,   -- Need M
+    radioLinkMonitoringConfig           SetupRelease { RadioLinkMonitoringConfig }                        OPTIONAL,   -- Need M
+    ...,
+    [[
+    sps-ConfigToAddModList-r16          SPS-ConfigToAddModList-r16                                        OPTIONAL,   -- Need N
+    sps-ConfigToReleaseList-r16         SPS-ConfigToReleaseList-r16                                       OPTIONAL,   -- Need N
+    sps-ConfigDeactivationStateList-r16 SPS-ConfigDeactivationStateList-r16                               OPTIONAL,   -- Need R
+    beamFailureRecoverySCellConfig-r16  SetupRelease {BeamFailureRecoveryRSConfig-r16}                    OPTIONAL,   -- Cond SCellOnly
+    sl-PDCCH-Config-r16                 SetupRelease { PDCCH-Config }                                     OPTIONAL,   -- Need M
+    sl-V2X-PDCCH-Config-r16             SetupRelease { PDCCH-Config }                                     OPTIONAL    -- Need M
+    ]],
+    [[
+    preConfGapStatus-r17                BIT STRING (SIZE (maxNrofGapId-r17))                              OPTIONAL,   -- Cond PreConfigMG
+    beamFailureRecoverySpCellConfig-r17 SetupRelease { BeamFailureRecoveryRSConfig-r16}                   OPTIONAL,   -- Cond SpCellOnly
+    harq-FeedbackEnablingforSPSactive-r17 BOOLEAN                                                         OPTIONAL,   -- Need R
+    cfr-ConfigMulticast-r17             SetupRelease { CFR-ConfigMulticast-r17 }                          OPTIONAL,   -- Need M
+    dl-PPW-PreConfigToAddModList-r17    DL-PPW-PreConfigToAddModList-r17                                  OPTIONAL,   -- Need N
+    dl-PPW-PreConfigToReleaseList-r17   DL-PPW-PreConfigToReleaseList-r17                                 OPTIONAL,   -- Need N
+    nonCellDefiningSSB-r17              NonCellDefiningSSB-r17                                            OPTIONAL,   -- Need R
+    servingCellMO-r17                   MeasObjectId                                                  OPTIONAL -- Cond MeasObject-NCD-SSB
+    ]]
+}
+
+SPS-ConfigToAddModList-r16 ::=          SEQUENCE (SIZE (1..maxNrofSPS-Config-r16)) OF SPS-Config
+
+SPS-ConfigToReleaseList-r16 ::=         SEQUENCE (SIZE (1..maxNrofSPS-Config-r16)) OF SPS-ConfigIndex-r16
+
+SPS-ConfigDeactivationState-r16 ::=     SEQUENCE (SIZE (1..maxNrofSPS-Config-r16)) OF SPS-ConfigIndex-r16
+
+SPS-ConfigDeactivationStateList-r16 ::= SEQUENCE (SIZE (1..maxNrofSPS-DeactivationState)) OF SPS-ConfigDeactivationState-r16
+
+DL-PPW-PreConfigToAddModList-r17 ::=    SEQUENCE (SIZE (1..maxNrofPPW-Config-r17)) OF DL-PPW-PreConfig-r17
+
+DL-PPW-PreConfigToReleaseList-r17 ::=   SEQUENCE (SIZE (1..maxNrofPPW-Config-r17)) OF DL-PPW-ID-r17

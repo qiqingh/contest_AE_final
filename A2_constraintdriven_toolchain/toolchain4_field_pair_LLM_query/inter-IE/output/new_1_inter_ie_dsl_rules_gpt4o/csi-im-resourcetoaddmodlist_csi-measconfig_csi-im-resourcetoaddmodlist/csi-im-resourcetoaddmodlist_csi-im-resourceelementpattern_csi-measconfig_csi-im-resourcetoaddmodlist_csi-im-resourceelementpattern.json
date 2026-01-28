@@ -1,0 +1,88 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      746,
+      754,
+      762
+    ],
+    "field2_all": [
+      746,
+      754,
+      762
+    ],
+    "actual_pairs": [
+      [
+        [
+          746,
+          754
+        ],
+        [
+          746,
+          754,
+          762
+        ]
+      ],
+      [
+        [
+          746,
+          754,
+          762
+        ],
+        [
+          754,
+          762
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes behavior within a single IE and lacks explicit inter-IE constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-im-resourcetoaddmodlist",
+    "field1": "csi-im-resourceelementpattern",
+    "ie2_name": "csi-measconfig_csi-im-resourcetoaddmodlist",
+    "field2": "csi-im-resourceelementpattern",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- subcarrierLocation-p0 or subcarrierLocation-pl defines subcarrier occupancy of the CSI-[M resource within a slot for csi-IM-ResourceElementPattern set to 'pattern0' or 'pattern1', respectively.\n---\n- subcarrierLocation-p0 or subcarrierLocation-pl defines subcarrier occupancy of the CSI-[M resource within a slot for csi-IM-ResourceElementPattern set to 'pattern0' or 'pattern1', respectively. - symbolLocation-p0 or symbolLocation-pl defines OFDM symbol location of the CSI-[M resource within a slot for csi-IM-ResourceElementPattern set to 'pattern0' or 'pattern1', respectively.\n---\n- resource elements \\( \\left(k_{C S I-M}, l_{C S I-M}\\right),\\left(k_{C S I-M}+1, l_{C S I-M}\\right),\\left(k_{C S I-M}+2, l_{C S I-M}\\right) \\) and \\( \\left(k_{C S I-M}+3, l_{C S-I M}\\right) \\) if csi-IM-ResourceElementPattern is set to 'pattern1',",
+    "generated_at": "2026-01-09T12:23:18.422898",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between csi-im-resourceelementpattern fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes behavior within a single IE and lacks explicit inter-IE constraints.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

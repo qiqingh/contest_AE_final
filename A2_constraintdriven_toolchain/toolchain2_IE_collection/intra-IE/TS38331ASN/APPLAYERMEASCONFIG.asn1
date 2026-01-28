@@ -1,0 +1,23 @@
+AppLayerMeasConfig-r17 ::=           SEQUENCE {
+    measConfigAppLayerToAddModList-r17   SEQUENCE (SIZE (1..maxNrofAppLayerMeas-r17)) OF MeasConfigAppLayer-r17     OPTIONAL, -- Need N
+    measConfigAppLayerToReleaseList-r17  SEQUENCE (SIZE (1..maxNrofAppLayerMeas-r17)) OF MeasConfigAppLayerId-r17   OPTIONAL, -- Need N
+    rrc-SegAllowed-r17                   ENUMERATED {enabled}                                                       OPTIONAL, -- Need R
+    ...
+}
+
+MeasConfigAppLayer-r17 ::=           SEQUENCE {
+    measConfigAppLayerId-r17             MeasConfigAppLayerId-r17,
+    measConfigAppLayerContainer-r17      OCTET STRING (SIZE (1..8000))                                              OPTIONAL, -- Need N
+    serviceType-r17                      ENUMERATED {streaming, mtsi, vr, spare5, spare4, spare3, spare2, spare1}   OPTIONAL, -- Need M
+    pauseReporting-r17                   BOOLEAN                                                                    OPTIONAL, -- Need M
+    transmissionOfSessionStartStop-r17   BOOLEAN                                                                    OPTIONAL, -- Need M
+    ran-VisibleParameters-r17            SetupRelease {RAN-VisibleParameters-r17}                                   OPTIONAL, -- Cond ServiceType
+    ...
+}
+
+RAN-VisibleParameters-r17 ::=        SEQUENCE {
+    ran-VisiblePeriodicity-r17           ENUMERATED {ms120, ms240, ms480, ms640, ms1024}                            OPTIONAL, -- Need S
+    numberOfBufferLevelEntries-r17       INTEGER (1..8)                                                             OPTIONAL, -- Need R
+    reportPlayoutDelayForMediaStartup-r17 BOOLEAN                                                                   OPTIONAL, -- Need M
+    ...
+}

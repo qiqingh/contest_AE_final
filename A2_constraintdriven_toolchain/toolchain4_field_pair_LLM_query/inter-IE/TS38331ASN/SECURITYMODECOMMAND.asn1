@@ -1,0 +1,19 @@
+SecurityModeCommand ::=             SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        securityModeCommand                 SecurityModeCommand-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+SecurityModeCommand-IEs ::=         SEQUENCE {
+    securityConfigSMC                   SecurityConfigSMC,
+
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                SEQUENCE{}                                                              OPTIONAL
+}
+
+SecurityConfigSMC ::=               SEQUENCE {
+    securityAlgorithmConfig             SecurityAlgorithmConfig,
+    ...
+}

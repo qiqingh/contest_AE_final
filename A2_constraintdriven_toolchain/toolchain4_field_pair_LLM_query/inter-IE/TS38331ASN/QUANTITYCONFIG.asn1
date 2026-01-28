@@ -1,0 +1,37 @@
+QuantityConfig ::=                  SEQUENCE {
+    quantityConfigNR-List               SEQUENCE (SIZE (1..maxNrofQuantityConfig)) OF QuantityConfigNR          OPTIONAL,   -- Need M
+    ...,
+    [[
+    quantityConfigEUTRA                 FilterConfig                                                            OPTIONAL    -- Need M
+    ]],
+    [[
+    quantityConfigUTRA-FDD-r16          QuantityConfigUTRA-FDD-r16                                              OPTIONAL,   -- Need M
+    quantityConfigCLI-r16               FilterConfigCLI-r16                                                     OPTIONAL    -- Need M
+    ]]
+}
+
+QuantityConfigNR::=                 SEQUENCE {
+    quantityConfigCell                  QuantityConfigRS,
+    quantityConfigRS-Index              QuantityConfigRS                                                        OPTIONAL    -- Need M
+}
+
+QuantityConfigRS ::=                SEQUENCE {
+    ssb-FilterConfig                    FilterConfig,
+    csi-RS-FilterConfig                 FilterConfig
+}
+
+FilterConfig ::=                    SEQUENCE {
+    filterCoefficientRSRP               FilterCoefficient                                       DEFAULT fc4,
+    filterCoefficientRSRQ               FilterCoefficient                                       DEFAULT fc4,
+    filterCoefficientRS-SINR            FilterCoefficient                                       DEFAULT fc4
+}
+
+FilterConfigCLI-r16 ::=             SEQUENCE {
+    filterCoefficientSRS-RSRP-r16       FilterCoefficient                                       DEFAULT fc4,
+    filterCoefficientCLI-RSSI-r16       FilterCoefficient                                       DEFAULT fc4
+}
+
+QuantityConfigUTRA-FDD-r16 ::=      SEQUENCE {
+    filterCoefficientRSCP-r16           FilterCoefficient                                       DEFAULT fc4,
+    filterCoefficientEcNO-r16           FilterCoefficient                                       DEFAULT fc4
+}

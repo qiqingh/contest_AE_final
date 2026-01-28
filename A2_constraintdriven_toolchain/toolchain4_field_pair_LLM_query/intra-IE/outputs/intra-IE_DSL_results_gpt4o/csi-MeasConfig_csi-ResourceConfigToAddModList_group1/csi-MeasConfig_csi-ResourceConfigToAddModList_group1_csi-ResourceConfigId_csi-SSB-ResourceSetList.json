@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      807,
+      812,
+      817
+    ],
+    "field2_all": [
+      809
+    ],
+    "actual_pairs": [
+      [
+        [
+          807,
+          812,
+          817
+        ],
+        [
+          809
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any normative constraint between csi-ResourceConfigId and csi-SSB-ResourceSetList within the same IE.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ResourceConfigToAddModList_group1",
+    "field1": "csi-ResourceConfigId",
+    "field2": "csi-SSB-ResourceSetList",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} csi-ResourceConfigid Used in CS/-ReportConfig to refer to an instance of CSI-ResourceConfig. \\end{tabular} \\begin{tabular}{l} csi-SSB-ResourceSetList List of references to SSB resources used for CSI measurement and reporting in a CSI-RS resource set (see TS 38.214 [19], clause 5.2.1.2). \\end{tabular} \\begin{tabular}{l} csi-SSB-ResourceSetListExt Adds an element to csi-SSB-ResourceSetList when nrofReportedGroups-r17 is configured in IE CSI-ReportConfig (see TS 38.214 [19], clause 5.2.1.2). \\end{tabular}",
+    "generated_at": "2026-01-10T21:43:14.916638",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any normative constraint between csi-ResourceConfigId and csi-SSB-ResourceSetList within the same IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

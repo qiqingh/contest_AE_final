@@ -1,0 +1,103 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      740,
+      742,
+      744
+    ],
+    "field2_all": [
+      740,
+      742,
+      744
+    ],
+    "actual_pairs": [
+      [
+        [
+          740,
+          742,
+          744
+        ],
+        [
+          742,
+          744
+        ]
+      ],
+      [
+        [
+          740,
+          742
+        ],
+        [
+          740,
+          742,
+          744
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks explicit inter-IE constraints between the specified fields. All evidence pertains to single-IE behavior or lacks normative cross-references.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcesettoaddmodlist",
+    "field1": "nzp-csi-rs-resources",
+    "ie2_name": "nzp-csi-rs-resourcesettoaddmodlist",
+    "field2": "nzp-csi-rs-resources",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 27,
+      "original_count": 27,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.1.6.1.1",
+      "6.1.3.12",
+      "6.4",
+      "5.2.1.4.1",
+      "5.2.2.3.1",
+      "5.2.1.4.2",
+      "5.2.1.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- SP CSI-RS resource set ID: This field contains an index of NZP-CSI-RS-ResourceSet containing Semi Persistent NZP CSI-RS resources, as specified in TS 38.331 [5], indicating the Semi Persistent NZP CSI-RS resource set, which shall be activated or deactivated. The length of the field is 6 bits;\n---\nFor a NZP-CSI-RS-ResourceSet configured with the higher layer parameter trs-Info, the UE shall assume the antenna port with the same port index of the configured NZP CSI-RS resources in the NZP-CSI-RS-ResourceSet is the same.\n---\n- the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of \\( 2^{\\mu} X_{p} \\) slots where \\( X_{F}=10,20,40 \\), or 80 and where \\( \\mu \\) is defined in Clause 4.3 of [4, TS 38.211].\n---\n- For frequency range 1 , the UE may be configured with one or more TRS resource set(s), where each TRS resource set configured by a TRS-ResourceSet consists of four periodic NZP CSI-RS resources in two consecutive slots with two periodic NZP CSI-RS resources in each slot. If no two consecutive slots are indicated as downlink slots by tdd-UL-DL-ConfigurationCommon, then the UE may be configured with one or more NZP CSI-RS set(s), where a TRS-ResourceSet consists of two periodic NZP CSI-RS resources in one slot.\n---\n- the number of periodic NZP CSI-RS resources configured by a TRS-ResourceSet is given by numberOfresources\n---\n- the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of \\( 2^{\\mu} X_{p} \\) slots where \\( X_{F}=10,20,40 \\), or 80 and where \\( \\mu \\) is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet.\n---\n- the UE may assume the sub-carrier spacing of the NZP CSI-RS resources configured by TRS-ResourceSet to be same as the sub-carrier spacing of the initial DL BWP. - powerControlOffsetSS given by a TRS-ResourceSet applies to all resources in a TRS-ResourceSet. - the QCL information for periodic NZP CSI-RS resources, is given by the higher layer parameter \\( s s b \\)-Index configured by a TRS-ResourceSet, is a SS/PBCH block, applies to all resources in a TRS-ResourceSet.\n---\n- the QCL information for periodic NZP CSI-RS resources, is given by the higher layer parameter \\( s s b \\)-Index configured by a TRS-ResourceSet, is a SS/PBCH block, applies to all resources in a TRS-ResourceSet. - One or more scramblingIDs where if a single scramblingID is configured, it applies to all NZP-CSI-RS resources in the resource set, otherwise, each NZP-CSI-RS resource is provided with a scramblingID.\n---\nIf a UE is configured with semi-persistent CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic or semi-persistent. If a UE is configured with aperiodic CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic, semi-persistent or aperiodic.\n---\nA UE is not expected to be configured with more than one CSI-RS resource in resource set for channel measurement for a CSI-ReportConfig with the higher layer parameter codebookType set to 'type[I', 'type[I-PortSelection', 'type[I-r16', 'type[I-PortSelection-r16', or 'type[I-PortSelection-r17'. A UE is not expected to be configured with more than 64 NZP CSI-RS resources and/or SS/PBCH block resources in resource setting for channel measurement for a CSIReportConfig with the higher layer parameter reportQuantity set to 'none', 'cri-RI-CQI', 'cri-RSRP', 'ssb-Index-RSRP', 'cri-SINR' or 'ssb-Index-SINR', 'cri-RSRP-Capability[Set][ndex', 'ssb-Index-RSRP-Capability[Set][ndex', 'cri-SINRCapability[Set]Index' or 'ssb-Index-SINR-Capability[Set]Index'. If interference measurement is performed on CSI-IM, each CSI-RS resource for channel measurement is resource-wise associated with a CSI-IM resource by the ordering of the CSI-RS resource and CSI-IM resource in the corresponding resource sets. The number of CSI-RS resources for channel measurement equals to the number of CSI-[M resources.\n---\nIf the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RSRP', 'cri-RI-PMI-CQI ', 'cri-RI-i1', 'cri-RI-i1-CQI', 'cri-RI-CQI', 'cri-RI-LI-PMI-CQI', 'cri-SINR', or 'cri-SINRCapability[Set]Index', and \\( K_{s}>1 \\) resources are configured in the corresponding resource set for channel measurement, then the UE shall derive the CSI parameters other than CRI conditioned on the reported CRI, where CRI \\( k(k \\geq 0) \\) corresponds to the configured ( \\( k+1 \\) )-th entry of associated nzp-CSI-RS-Resources in the corresponding NZP-CSI-RSResourceSet for channel measurement, and ( \\( k+1 \\) )-th entry of associated csi-IM-Resource in the corresponding csi-IMResourceSet (if configured) or ( \\( k+1 \\) )-th entry of associated nzp-CSI-RS-Resources in the corresponding NZP-CSI-RSResourceSet (if configured for CSI-ReportConfig with reportQuantity set to 'cri-SINR' or 'cri-SINRCapability[Set][ndex') for interference measurement. If \\( K_{s}=2 \\mathrm{CSI} \\)-RS resources are configured, each resource shall contain at most 16 CSI-RS ports. If \\( 2<K_{s} \\leq 8 \\) CSI-RS resources are configured, each resource shall contain at most 8 CSI-RS ports.\n---\n- The UE is not expected to be configured with NZP CSI-RS for interference measurement other than the NZP CSI-RS resources for channel measurement configured in the \\( N \\) Resource Pairs.\n---\nFor L1-SINR computation, for channel measurement the UE may be configured with NZP CSI-RS resources and/or SS/PBCH Block resources, for interference measurement the UE may be configured with NZP CSI-RS or CSI-IM resources.\n---\n- powerControlOffset: which is the assumed ratio of PDSCH EPRE to NZP CSI-RS EPRE when UE derives CSI feedback and takes values in the range of \\( [-8,15] \\mathrm{dB} \\) with 1 dB step size. For CQI calculation based on a pair of NZP CSI-RS resources, powerControlOffset of each NZP CSI-RS resource in the pair of NZP CSI-RS resources for channel measurement is the assumed ratio of EPRE when UE derives CSI feedback and takes values in the range of \\( [-8,15] \\mathrm{dB} \\) with 1 dB step size.\n---\n- trs-Info in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and for which the UE can assume that the antenna port with the same port index of the configured NZP CSI-RS resources in the NZP-CSI-RSResourceSet is the same as described in Clause 5.1.6.1.1 and can be configured when reporting setting is not configured or when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'none'.\n---\nList of references to TCI-States for providing the QCL source and QCL type for each NZP-CSI-RS-Resource listed in nzp-CSI-RS-Resources of the NZP-CSI-RS-ResourceSet indicated by resourceSet within nzp-CSI-RS. Each TCI-Stateld refers to the TCI-State which has this value for tci-Stateld and is defined in tci-StatesToAddModList in the PDSCH-Config included in the BWP-Downlink corresponding to the serving cell and to the DL BWP to which the resourcesForChannelMeasurement (in the CSI-ReportConfig indicated by reportConfig/d above) belong to. First entry in qc/-info corresponds to first entry in nzp-CSI-RS-Resources of that NZP-CSI-RS-ResourceSet, second entry in qclinfo corresponds to second entry in nzp-CSI-RS-Resources, and so on (see TS 38.214 [19], clause 5.2.1.5.1). When this field is absent for aperiodic CSIRS, the UE shall use QCL information included in the \"indicated\" DL only/Joint TCI state as specified in TS 38.214\n---\n\\hline Aperiodic & The field is mandatory present if the NZP-CSI-RS-Resources in the associated resourceSet have the resourceType aperiodic and unifiedtci-StateType is not configured. The field is optional Need R if the NZP-CSI-RS-Resources in the associated resourceSethave the resourceType aperiodic and unifiedtci-StateType is configured. The field is absent otherwise. \\\\\n---\nThe first entry in non-PM/-Portindication corresponds to the NZP-CSI-RS-Resource indicated by the first entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the CSI-ResourceConfig whose CSI-ResourceConfigld is indicated in a CSI-MeasId together with the above CSIReportConfig/d; the second entry in non-PMI-PortIndication corresponds to the NZP-CSI-RS-Resource indicated by the second entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig, and so on until the NZP-CSI-RS-Resource indicated by the last entry in nzp-CSI-RS-Resources in the in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig. Then the next entry corresponds to the NZP-CSI-RS-Resource indicated by the first entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the second entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig and so on.\n---\nNZP CSI RS resources for interference measurement. csi-ResourceConfig/d of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CS/-ResourceConfig indicated here contains only NZP-CSI-RS resources. The bwp-ld in that CSI-ResourceConfig is the same value as the bwp-ld in the CSI-ResourceConfig indicated by resourcesForChannelMeasurement.\n---\nList of references to NZP CSI-RS resources used for beam measurement and reporting in a CSI-RS resource set. Contains up to maxNrofNZP-CSI-RS- \\\\\n---\nOffset X between the slot containing the DCI that triggers a set of aperiodic NZP CSI-RS resources and the slot in which the CSI-RS resource set is transmitted. For aperiodic TriggeringOffset, the value 0 corresponds to 0 slots, value 1 corresponds to 1 slot, value 2 corresponds to 2 slots, value 3 corresponds to 3 slots, value 4 corresponds to 4 slots, value 5 corresponds to 16 slots, value 6 corresponds to 24 slots. For aperiodicTriggeringOffset-r16, the value indicates the number of slots. The network configures only one of the fields. When neither field is included, the UE applies the value 0 .\n---\nA pair of NZP CSI-RS resources. In one pair, one resource shall belong to group 1 and the other resource shall belong to group 2 as configured by nrofResourcesGroup 1 and nrofResourcesGroup2. (see TS 38.214 [19], clause xx).\n---\nnzp-CSI-RS-Resources \\\\ NZP-CSI-RS-Resources associated with this NZP-CSI-RS resource set (see TS 38.214 [19], clause 5.2). For CSI, there are at most 8 NZP CSI RS resources per resource set.\n---\nIndicates whether repetition is on/off. If the field is set to off or if the field is absent, the UE may not assume that the NZP-CSI-RS resources within the resource set are transmitted with the same downlink spatial domain transmission filter (see TS 38.214 [19], clauses 5.2.2.3.1 and 5.1.6.1.2). It can only be configured for CSI-RS resource sets which are associated with CS/-ReportConfig with report of L1 RSRP, L1 SINR or \"no report\".\n---\nIndicates that the antenna port for all NZP-CSI-RS resources in the CSI-RS resource set is same. If the field is absent or released the UE applies the value false (see TS 38.214 [19], clause 5.2.2.3.1).\n---\nList of references to TCI-States for providing the QCL source and QCL type for each NZP-CSI-RS-Resource listed in nzp-CSI-RS-Resources of the NZP-CSI-RS-ResourceSet indicated by resourceSet. Each TCI-Stateld refers to the TCI-State which has this value for tci-Stateld and is defined in tci-StatesToAddModList in the PDSCH-Config included in the BWP-Downlink of this serving cell indicated by firstActiveDownlinkBWP-ld in the ServingCellConfig in which this IE is included. First entry in qc/info corresponds to first entry in nzp-CS/-RS-Resources of that NZP-CS/-RS-ResourceSet, second entry in qc/info corresponds to second entry in nzp-CS/-RS-Resources, and so on (see TS 38.214 [19], clause x.y.z).\n---\nINTEGER ::= 64 -- Maximum number of NZP CSI-RS resources per resource set",
+    "generated_at": "2026-01-10T14:24:52.254919",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between field1 and field2.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks explicit inter-IE constraints between the specified fields. All evidence pertains to single-IE behavior or lacks normative cross-references.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

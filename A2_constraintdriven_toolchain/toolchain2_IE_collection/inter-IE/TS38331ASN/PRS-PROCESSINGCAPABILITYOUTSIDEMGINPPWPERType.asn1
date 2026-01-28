@@ -1,0 +1,28 @@
+PRS-ProcessingCapabilityOutsideMGinPPWperType-r17 ::= SEQUENCE {
+    prsProcessingType-r17                                 ENUMERATED {type1A, type1B, type2},
+    ppw-dl-PRS-BufferType-r17                             ENUMERATED {type1, type2, ...},
+    ppw-durationOfPRS-Processing-r17                      CHOICE {
+        ppw-durationOfPRS-Processing1-r17                     SEQUENCE {
+            ppw-durationOfPRS-ProcessingSymbolsN-r17              ENUMERATED {msDot125, msDot25, msDot5, ms1, ms2, ms4, ms6, ms8, ms12,
+                                                                              ms16, ms20, ms25, ms30, ms32, ms35, ms40, ms45, ms50},
+            ppw-durationOfPRS-ProcessingSymbolsT-r17              ENUMERATED {ms1, ms2, ms4, ms8, ms16, ms20, ms30, ms40, ms80,
+                                                                              ms160, ms320, ms640, ms1280}
+        },
+        ppw-durationOfPRS-Processing2-r17                     SEQUENCE {
+            ppw-durationOfPRS-ProcessingSymbolsN2-r17             ENUMERATED {msDot125, msDot25, msDot5, ms1, ms2, ms3, ms4, ms5,
+                                                                              ms6, ms8, ms12},
+            ppw-durationOfPRS-ProcessingSymbolsT2-r17             ENUMERATED {ms4, ms5, ms6, ms8}
+        }
+    }                                                                                                                          OPTIONAL,
+    ppw-maxNumOfDL-PRS-ResProcessedPerSlot-r17            SEQUENCE {
+        scs15-r17                                             ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+        scs30-r17                                             ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+        scs60-r17                                             ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+        scs120-r17                                            ENUMERATED {n1, n2, n4, n6, n8, n12, n16, n24, n32, n48, n64}    OPTIONAL,
+        ...
+    },
+    ppw-maxNumOfDL-Bandwidth-r17                          CHOICE {
+        fr1-r17                                               ENUMERATED {mhz5, mhz10, mhz20, mhz40,	mhz50, mhz80, mhz100},
+        fr2-r17                                               ENUMERATED {mhz50, mhz100, mhz200, mhz400}
+    }                                                                                                                          OPTIONAL
+}

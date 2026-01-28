@@ -1,0 +1,29 @@
+UE-CapabilityRequestFilterCommon ::=            SEQUENCE {
+    mrdc-Request                                SEQUENCE {
+        omitEN-DC                                   ENUMERATED {true}                      OPTIONAL,    -- Need N
+        includeNR-DC                                ENUMERATED {true}                      OPTIONAL,    -- Need N
+        includeNE-DC                                ENUMERATED {true}                      OPTIONAL     -- Need N
+    }                                                                                  OPTIONAL,        -- Need N
+    ...,
+    [[
+    codebookTypeRequest-r16        SEQUENCE {
+        type1-SinglePanel-r16          ENUMERATED {true}                                    OPTIONAL,    -- Need N
+        type1-MultiPanel-r16           ENUMERATED {true}                                    OPTIONAL,    -- Need N
+        type2-r16                      ENUMERATED {true}                                    OPTIONAL,    -- Need N
+        type2-PortSelection-r16        ENUMERATED {true}                                    OPTIONAL     -- Need N
+    }                                                                                   OPTIONAL,    -- Need N
+    uplinkTxSwitchRequest-r16      ENUMERATED {true}                                    OPTIONAL     -- Need N
+    ]],
+    [[
+    requestedCellGrouping-r16      SEQUENCE (SIZE (1..maxCellGroupings-r16)) OF CellGrouping-r16    OPTIONAL    -- Cond NRDC
+    ]],
+    [[
+    fallbackGroupFiveRequest-r17   ENUMERATED {true}                                    OPTIONAL     -- Need N
+    ]]
+}
+
+CellGrouping-r16 ::=    SEQUENCE {
+    mcg-r16                 SEQUENCE (SIZE (1..maxBands)) OF FreqBandIndicatorNR,
+    scg-r16                 SEQUENCE (SIZE (1..maxBands)) OF FreqBandIndicatorNR,
+    mode-r16                ENUMERATED {sync, async}
+}

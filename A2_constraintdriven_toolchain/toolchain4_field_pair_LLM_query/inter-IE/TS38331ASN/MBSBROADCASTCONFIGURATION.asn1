@@ -1,0 +1,16 @@
+MBSBroadcastConfiguration-r17 ::= SEQUENCE {
+    criticalExtensions                CHOICE {
+        mbsBroadcastConfiguration-r17     MBSBroadcastConfiguration-r17-IEs,
+        criticalExtensionsFuture          SEQUENCE {}
+    }
+}
+
+MBSBroadcastConfiguration-r17-IEs ::= SEQUENCE {
+    mbs-SessionInfoList-r17               MBS-SessionInfoList-r17                                              OPTIONAL,   -- Need R
+    mbs-NeighbourCellList-r17             MBS-NeighbourCellList-r17                                            OPTIONAL,   -- Need S
+    drx-ConfigPTM-List-r17                SEQUENCE (SIZE (1..maxNrofDRX-ConfigPTM-r17)) OF DRX-ConfigPTM-r17   OPTIONAL,   -- Need R
+    pdsch-ConfigMTCH-r17                  PDSCH-ConfigBroadcast-r17                                            OPTIONAL,   -- Need S
+    mtch-SSB-MappingWindowList-r17        MTCH-SSB-MappingWindowList-r17                                       OPTIONAL,   -- Need R
+    lateNonCriticalExtension              OCTET STRING                                                         OPTIONAL,
+    nonCriticalExtension                  SEQUENCE {}                                                          OPTIONAL
+}

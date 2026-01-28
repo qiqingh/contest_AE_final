@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      495,
+      501
+    ],
+    "field2_all": [
+      495,
+      501
+    ],
+    "actual_pairs": [
+      [
+        [
+          495,
+          501
+        ],
+        [
+          495,
+          501
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a relationship between the two target fields 'startingPRB' within the same IE instance. The evidence discusses DL PRS resources, which are not related to the target fields in the context of the PUCCH-Config IE.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group1",
+    "field1": "startingPRB",
+    "field2": "startingPRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- dl-PRS-CombSizeN defines the comb size of a DL PRS resource where the allowable values are given in Clause 7.4.1.7.3 of [TS38.211]. All DL PRS resource sets belonging to the same positioning frequency layer have the same value of dl-PRS-CombSizeN. - dl-PRS-ResourceBandwidth defines the number of resource blocks configured for DL PRS transmission. The parameter has a granularity of 4 PRBs with a minimum of 24 PRBs and a maximum of 272 PRBs. All DL. PRS resources sets within a positioning frequency layer have the same value of d l -PRS-ResourceBandwidth. - dl-PRS-StartPRB defines the starting PRB index of the DL PRS resource with respect to reference Point A, where reference Point A is given by the higher-layer parameter d l -PRS-PointA. The starting PRB index has a granularity of one PRB with a minimum value of 0 and a maximum value of 2176 PRBs. All DL PRS resource sets belonging to the same positioning frequency layer have the same value of d l -PRS-StartPRB. - dl-PRS-NumSymbols defines the number of symbols of the DL PRS resource within a slot where the allowable values are given in Clause 7.4.1.7.3 of [4, TS38.211].",
+    "generated_at": "2025-12-11T14:20:40.785273",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a relationship between the two target fields 'startingPRB' within the same IE instance. The evidence discusses DL PRS resources, which are not related to the target fields in the context of the PUCCH-Config IE.",
+      "version_tags": []
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      176
+    ],
+    "field2_all": [
+      185,
+      186
+    ],
+    "actual_pairs": [
+      [
+        [
+          176
+        ],
+        [
+          185,
+          186
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not contain any explicit normative wording or mathematical relations that link the target fields 'duration' and 'monitoringSymbolsWithinSlot'. Therefore, no rule can be derived.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "duration",
+    "field2": "monitoringSymbolsWithinSlot",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.4.1",
+      "10.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "the duration of periodicityAndPattern in units of msec. When periodicityAndPattern is not configured for a pair, for a symbol level bitmap spanning two slots, the bits of the first and second slots correspond respectively to even and odd slots of a radio frame, and for a symbol level bitmap spanning one slot, the bits of the slot correspond to every slot of a radio frame. The pair can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup1 and rateMatchPatternGroup2). The rateMatchPatternToAddModList given by ServingCellConfig or ServingCellConfigCommon configuration in numerology \\mu applies only to PDSCH of the same numerology \\mu . - within a BWP, a frequency domain resource of a CORESET configured by ControlResourceSet with controlResourceSetId or ControlResourceSetZero and time domain resource determined by the higher layer parameters monitoringSlotPeriodicityAndOffset, duration and monitoringSymbols WithinSlot of all search-space-sets configured by SearchSpace and time domain resource of search-space-set zero configured by searchSpaceZero associated with the CORESET as well as CORESET duration configured by ControlResourceSet with controlResourceSetld or ControlResourceSetZero. This resource not available for PDSCH can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup 1 and rateMatchPatternGroup2).\n---\n- within a BWP, a frequency domain resource of a CORESET configured by ControlResourceSet with controlResourceSetId or ControlResourceSetZero and time domain resource determined by the higher layer parameters monitoringSlotPeriodicityAndOffset, duration and monitoringSymbols WithinSlot of all search-space-sets configured by SearchSpace and time domain resource of search-space-set zero configured by searchSpaceZero associated with the CORESET as well as CORESET duration configured by ControlResourceSet with controlResourceSetld or ControlResourceSetZero. This resource not available for PDSCH can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup 1 and rateMatchPatternGroup2).\n---\n- a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot - a duration of T_{s}<k_{s} indicating a number of slots that the search space set s exists by duration, or a number of slots in consecutive groups of slots where the search space set s can exist by duration-r 17\n---\nmonitoringSymbolsWithinSlot The first symbol(s) for PDCCH monitoring in the slots configured for (multi-slot) PDCCH monitoring (see monitoringSlotPeriodicityAndOffset and duration). The most significant (left) bit represents the first OFDM in a slot, and the second most significant (left) bit represents the second OFDM symbol in a slot and so on. The bit(s) set to one identify the first OFDM symbol(s) of the control resource set within a slot. If the cyclic prefix of the BWP is set to extended CP, the last two bits within the bit string shall be ignored by the UE or IAB-MT.",
+    "generated_at": "2025-12-11T14:25:52.126491",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not contain any explicit normative wording or mathematical relations that link the target fields 'duration' and 'monitoringSymbolsWithinSlot'. Therefore, no rule can be derived.",
+      "version_tags": []
+    }
+  }
+}

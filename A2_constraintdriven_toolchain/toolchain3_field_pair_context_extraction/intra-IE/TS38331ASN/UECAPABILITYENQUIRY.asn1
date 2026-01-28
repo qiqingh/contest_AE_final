@@ -1,0 +1,23 @@
+UECapabilityEnquiry ::=             SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        ueCapabilityEnquiry                 UECapabilityEnquiry-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UECapabilityEnquiry-IEs ::=         SEQUENCE {
+    ue-CapabilityRAT-RequestList        UE-CapabilityRAT-RequestList,
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    ue-CapabilityEnquiryExt             OCTET STRING (CONTAINING UECapabilityEnquiry-v1560-IEs)                 OPTIONAL --  Need N
+}
+
+UECapabilityEnquiry-v1560-IEs ::=   SEQUENCE {
+    capabilityRequestFilterCommon       UE-CapabilityRequestFilterCommon                                        OPTIONAL, -- Need N
+    nonCriticalExtension                UECapabilityEnquiry-v1610-IEs                                           OPTIONAL
+}
+
+UECapabilityEnquiry-v1610-IEs ::=   SEQUENCE {
+    rrc-SegAllowed-r16                  ENUMERATED {enabled}           OPTIONAL, -- Need N
+    nonCriticalExtension                SEQUENCE {}                    OPTIONAL
+}

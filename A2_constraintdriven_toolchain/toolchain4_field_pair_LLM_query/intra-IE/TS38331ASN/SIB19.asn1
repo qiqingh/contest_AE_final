@@ -1,0 +1,20 @@
+SIB19-r17 ::= SEQUENCE {
+    ntn-Config-r17                           NTN-Config-r17                                  OPTIONAL,       -- Need R
+    t-Service-r17                            INTEGER (0..549755813887)                       OPTIONAL,       -- Need R
+    referenceLocation-r17                    ReferenceLocation-r17                           OPTIONAL,       -- Need R
+    distanceThresh-r17                       INTEGER(0..65525)                               OPTIONAL,       -- Need R
+    ntn-NeighCellConfigList-r17              NTN-NeighCellConfigList-r17                     OPTIONAL,       -- Need R
+    lateNonCriticalExtension                 OCTET STRING                                    OPTIONAL,
+    ...,
+    [[
+    ntn-NeighCellConfigListExt-v1720         NTN-NeighCellConfigList-r17                     OPTIONAL        -- Need R
+    ]]
+}
+
+NTN-NeighCellConfigList-r17 ::=          SEQUENCE (SIZE(1..maxCellNTN-r17))  OF NTN-NeighCellConfig-r17
+
+NTN-NeighCellConfig-r17 ::=              SEQUENCE {
+    ntn-Config-r17                           NTN-Config-r17                                  OPTIONAL,       -- Need R
+    carrierFreq-r17                          ARFCN-ValueNR                                   OPTIONAL,       -- Need R
+    physCellId-r17                           PhysCellId                                      OPTIONAL        -- Need R
+}

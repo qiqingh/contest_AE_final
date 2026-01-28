@@ -1,0 +1,107 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      363,
+      366,
+      369,
+      372,
+      471,
+      474,
+      477,
+      480
+    ],
+    "field2_all": [
+      363,
+      366,
+      369,
+      372,
+      471,
+      474,
+      477,
+      480,
+      579,
+      582,
+      585,
+      588
+    ],
+    "actual_pairs": [
+      [
+        [
+          363,
+          366,
+          369,
+          372,
+          471,
+          474,
+          477,
+          480
+        ],
+        [
+          363,
+          366,
+          369,
+          372,
+          471,
+          474,
+          477,
+          480,
+          579,
+          582,
+          585,
+          588
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The fields 'k2' are from the same IE 'bwp-common_pusch-configcommon', violating the inter-IE constraint requirement.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pusch-configcommon",
+    "field1": "k2",
+    "ie2_name": "bwp-common_pusch-configcommon",
+    "field2": "k2",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4",
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Indicates a combination of start symbol and length and PUSCH mapping type from the TDRA table (PUSCH-TimeDomainResourceAllocationList if provided in PUSCHConfigCommon, or else the default Table 6.1.2.1.1-2 in 38.214 [19] is used if pusch-TimeDomainAllocationList is not provided in PUSCH-ConfigCommon). The parameter K2 in the table is not used for msgA PUSCH. The network configures one of msgA-PUSCH-TimeDomainAllocation and startSymbolAndLengthMisgA-PO, but not both. If the field is absent, the UE shall use the value of startSymbolAndLenghtMsgA-PO.\n---\nCorresponds to L1 parameter 'K2' (see TS 38.214 [19], clause 6.1.2.1). For k2-r17, only values \\{0..32\\} are applicable for PUSCH SCS of 120 kHz . \\\\\n---\nThe field puschAllocationList-r16 indicates one or multiple PUSCH continuous in time domain which share a common k2 (see TS 38.214 [19], clause 6.1.2.1). The field pusch-AllocationList-r17 configures one or multiple PUSCH that may be in consecutive or non-consecutive slots (see TS 38.214 [19], clause 6.1.2.1). The puschAllocationList-r16 only has one element in pusch-TimeDomainAllocationListDCI-0-1-r16 and in pusch-TimeDomainAllocationListDCI-0-2-r16. The puschAllocationList-r17 only has one element in pusch-TimeDomainAllocationListDCI-0-1-r17 and in pusch-TimeDomainAllocationListDCI-0-2-r17.\n---\nINTEGER : : 2 -- Maximum number of min. scheduling offset (KO/K2) configurations INTEGER ::=16 -- Maximum number of slots configured as min. scheduling offset (KO) INTEGER ::= 16 -- Maximum number of slots configured as min. scheduling offset (K2)\n---\nINTEGER ::= 16 -- Maximum number of slots configured as min. scheduling offset (K2) INTEGER ::= 64 -- Maximum number of slots configured as min. scheduling offset (KO) INTEGER ::= 64 -- Maximum number of slots configured as min. scheduling offset (K2)",
+    "generated_at": "2026-01-10T14:28:02.962243",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between field1 and field2 as both are from the same IE.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The fields 'k2' are from the same IE 'bwp-common_pusch-configcommon', violating the inter-IE constraint requirement.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

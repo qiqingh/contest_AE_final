@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      511,
+      512
+    ],
+    "field2_all": [
+      510
+    ],
+    "actual_pairs": [
+      [
+        [
+          511,
+          512
+        ],
+        [
+          510
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence does not establish a normative constraint between periodicityAndOffset and schedulingRequestID within the same IE. The evidence describes configurations and expected behaviors but does not provide a direct relationship between the two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_schedulingRequestResourceToAddModList_group0",
+    "field1": "periodicityAndOffset",
+    "field2": "schedulingRequestID",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.4"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "A UE can be configured by schedulingRequestIDForMTRPBFR a first configuration for LRR and, if the UE provides twoLRRcapability, a second configuration for LRR in a PUCCH transmission using either PUCCH format 0 or PUCCH format 1 . A UE can be configured by schedulingRequestID-LBT-SCell a configuration for consistent LBT failure recovery, as described in [11, TS 38.321], in a PUCCH transmission using either PUCCH format 0 or PUCCH format 1. The UE can be provided, by phy-PriorityIndex in SchedulingRequestResourceConfig, a priority index 0 or a priority index 1 for the SR. If the UE is not provided a priority index for SR, the priority index is 0 . The UE is also configured a periodicity S R_{\\text {PERIODICITY }} in symbols or slots and an offset S R_{\\text {OFFSET }} in slots by periodicityAndOffset for a PUCCH transmission conveying SR. If S R_{\\text {PERIODICITY }} is larger than one slot, the UE determines a SR transmission occasion in a PUCCH to be in a slot with number n_{s_{1} f}^{\\mu}[4 , TS 38.211] in a frame with number n_{f} if \\left(n_{f} \\cdot N_{\\text {slot }}^{\\text {frame }, \\mu}+n_{s_{f} f}^{\\mu}-S R_{\\text {OFFSET }}\\right) \\bmod S R_{\\text {PERIODICITY }}=0 . If S R_{\\text {PERIODICITY }} is one slot, the UE expects that S R_{\\text {OFFSET }}=0 and every slot is a SR transmission occasion in a PUCCH.",
+    "generated_at": "2026-01-07T19:47:08.931534",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence does not establish a normative constraint between periodicityAndOffset and schedulingRequestID within the same IE. The evidence describes configurations and expected behaviors but does not provide a direct relationship between the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

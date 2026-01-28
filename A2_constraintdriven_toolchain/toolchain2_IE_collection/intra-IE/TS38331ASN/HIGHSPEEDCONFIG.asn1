@@ -1,0 +1,19 @@
+HighSpeedConfig-r16 ::=  SEQUENCE {
+    highSpeedMeasFlag-r16    ENUMERATED {true}        OPTIONAL,   -- Cond SpCellOnly
+    highSpeedDemodFlag-r16   ENUMERATED {true}        OPTIONAL,   -- Need R
+    ...
+}
+
+HighSpeedConfig-v1700 ::=  SEQUENCE {
+    highSpeedMeasCA-Scell-r17    ENUMERATED {true}        OPTIONAL,   -- Cond SCellOnly
+    highSpeedMeasInterFreq-r17   ENUMERATED {true}        OPTIONAL,   -- Cond SpCellOnly2
+    highSpeedDemodCA-Scell-r17   ENUMERATED {true}        OPTIONAL,   -- Need R
+    ...
+}
+
+HighSpeedConfigFR2-r17 ::=  SEQUENCE {
+    highSpeedMeasFlagFR2-r17                    ENUMERATED {set1, set2}                       OPTIONAL,   -- Need R
+    highSpeedDeploymentTypeFR2-r17              ENUMERATED {unidirectional, bidirectional}    OPTIONAL,   -- Need R
+    highSpeedLargeOneStepUL-TimingFR2-r17       ENUMERATED {true}                             OPTIONAL,   -- Need R
+    ...
+}

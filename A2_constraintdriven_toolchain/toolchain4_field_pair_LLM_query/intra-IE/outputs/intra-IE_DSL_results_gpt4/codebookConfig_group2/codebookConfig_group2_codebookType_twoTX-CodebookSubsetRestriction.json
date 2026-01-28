@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'type1'), field2 present)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      914
+    ],
+    "field2_all": [
+      917,
+      918
+    ],
+    "actual_pairs": [
+      [
+        [
+          914
+        ],
+        [
+          917,
+          918
+        ]
+      ]
+    ]
+  },
+  "predicate": "field2 present",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "codebookType = 'type1', twoTX-CodebookSubsetRestriction = '101010'"
+    ],
+    "invalid": [
+      "codebookType = 'type1', twoTX-CodebookSubsetRestriction = null"
+    ]
+  },
+  "notes": "The twoTX-CodebookSubsetRestriction field is only present when the codebookType is set to 'type1'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "codebookConfig_group2",
+    "field1": "codebookType",
+    "field2": "twoTX-CodebookSubsetRestriction",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For 2 antenna ports \\{3000,3001\\} and the UE configured with higher layer parameter codebookType set to 'typelSinglePanel' each PMI value corresponds to a codebook index given in Table 5.2.2.2.1-1. The UE is configured with the higher layer parameter twoTX-CodebookSubsetRestriction. The bitmap parameter twoTX-CodebookSubsetRestriction forms the bit sequence a_{5}, \\ldots, a_{1}, a_{0} where a_{0} is the LSB and a_{5} is the MSB and where a bit value of zero indicates that PMI reporting is not allowed to correspond to the precoder associated with the bit. Bits 0 to 3 are associated respectively with the codebook indices 0 to 3 for v=1 layer, and bits 4 and 5 are associated respectively with the codebook indices 0 and 1 for v=2 layers.",
+    "generated_at": "2025-12-11T14:23:51.915735",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'type1'), field2 present)",
+      "preconditions": [],
+      "predicate": "field2 present",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "codebookType = 'type1', twoTX-CodebookSubsetRestriction = '101010'"
+        ],
+        "invalid": [
+          "codebookType = 'type1', twoTX-CodebookSubsetRestriction = null"
+        ]
+      },
+      "notes": "The twoTX-CodebookSubsetRestriction field is only present when the codebookType is set to 'type1'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

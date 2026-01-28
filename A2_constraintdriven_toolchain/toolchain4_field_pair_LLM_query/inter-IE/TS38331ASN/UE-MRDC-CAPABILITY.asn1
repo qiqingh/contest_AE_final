@@ -1,0 +1,72 @@
+UE-MRDC-Capability ::=              SEQUENCE {
+    measAndMobParametersMRDC            MeasAndMobParametersMRDC                                                        OPTIONAL,
+    phy-ParametersMRDC-v1530            Phy-ParametersMRDC                                                              OPTIONAL,
+    rf-ParametersMRDC                   RF-ParametersMRDC,
+    generalParametersMRDC               GeneralParametersMRDC-XDD-Diff                                                  OPTIONAL,
+    fdd-Add-UE-MRDC-Capabilities        UE-MRDC-CapabilityAddXDD-Mode                                                   OPTIONAL,
+    tdd-Add-UE-MRDC-Capabilities        UE-MRDC-CapabilityAddXDD-Mode                                                   OPTIONAL,
+    fr1-Add-UE-MRDC-Capabilities        UE-MRDC-CapabilityAddFRX-Mode                                                   OPTIONAL,
+    fr2-Add-UE-MRDC-Capabilities        UE-MRDC-CapabilityAddFRX-Mode                                                   OPTIONAL,
+    featureSetCombinations              SEQUENCE (SIZE (1..maxFeatureSetCombinations)) OF FeatureSetCombination         OPTIONAL,
+    pdcp-ParametersMRDC-v1530           PDCP-ParametersMRDC                                                             OPTIONAL,
+    lateNonCriticalExtension            OCTET STRING (CONTAINING UE-MRDC-Capability-v15g0)                              OPTIONAL,
+    nonCriticalExtension                UE-MRDC-Capability-v1560                                                        OPTIONAL
+}
+
+-- Regular non-critical extensions:
+UE-MRDC-Capability-v1560 ::=        SEQUENCE {
+    receivedFilters                     OCTET STRING (CONTAINING UECapabilityEnquiry-v1560-IEs)                         OPTIONAL,
+    measAndMobParametersMRDC-v1560      MeasAndMobParametersMRDC-v1560                                                  OPTIONAL,
+    fdd-Add-UE-MRDC-Capabilities-v1560  UE-MRDC-CapabilityAddXDD-Mode-v1560                                             OPTIONAL,
+    tdd-Add-UE-MRDC-Capabilities-v1560  UE-MRDC-CapabilityAddXDD-Mode-v1560                                             OPTIONAL,
+    nonCriticalExtension                UE-MRDC-Capability-v1610                                                        OPTIONAL
+}
+
+UE-MRDC-Capability-v1610 ::=        SEQUENCE {
+    measAndMobParametersMRDC-v1610      MeasAndMobParametersMRDC-v1610                                                  OPTIONAL,
+    generalParametersMRDC-v1610         GeneralParametersMRDC-v1610                                                     OPTIONAL,
+    pdcp-ParametersMRDC-v1610           PDCP-ParametersMRDC-v1610                                                       OPTIONAL,
+    nonCriticalExtension                UE-MRDC-Capability-v1700                                                        OPTIONAL
+}
+
+UE-MRDC-Capability-v1700 ::=        SEQUENCE {
+    measAndMobParametersMRDC-v1700      MeasAndMobParametersMRDC-v1700,
+    nonCriticalExtension                UE-MRDC-Capability-v1730                                                        OPTIONAL
+}
+
+UE-MRDC-Capability-v1730 ::=        SEQUENCE {
+    measAndMobParametersMRDC-v1730      MeasAndMobParametersMRDC-v1730                                                  OPTIONAL,
+    nonCriticalExtension                SEQUENCE {}                                                                     OPTIONAL
+}
+
+-- Late non-critical extensions:
+UE-MRDC-Capability-v15g0 ::=        SEQUENCE {
+    rf-ParametersMRDC-v15g0             RF-ParametersMRDC-v15g0                                                         OPTIONAL,
+    nonCriticalExtension                SEQUENCE {}                                                                     OPTIONAL
+}
+
+UE-MRDC-CapabilityAddXDD-Mode ::=   SEQUENCE {
+    measAndMobParametersMRDC-XDD-Diff       MeasAndMobParametersMRDC-XDD-Diff                                           OPTIONAL,
+    generalParametersMRDC-XDD-Diff          GeneralParametersMRDC-XDD-Diff                                              OPTIONAL
+}
+
+UE-MRDC-CapabilityAddXDD-Mode-v1560 ::=    SEQUENCE {
+    measAndMobParametersMRDC-XDD-Diff-v1560    MeasAndMobParametersMRDC-XDD-Diff-v1560                                  OPTIONAL
+}
+
+UE-MRDC-CapabilityAddFRX-Mode ::=   SEQUENCE {
+    measAndMobParametersMRDC-FRX-Diff       MeasAndMobParametersMRDC-FRX-Diff
+}
+
+
+GeneralParametersMRDC-XDD-Diff ::= SEQUENCE {
+    splitSRB-WithOneUL-Path             ENUMERATED {supported}                                                          OPTIONAL,
+    splitDRB-withUL-Both-MCG-SCG        ENUMERATED {supported}                                                          OPTIONAL,
+    srb3                                ENUMERATED {supported}                                                          OPTIONAL,
+    dummy                               ENUMERATED {supported}                                                          OPTIONAL,
+    ...
+}
+
+GeneralParametersMRDC-v1610 ::= SEQUENCE {
+    f1c-OverEUTRA-r16                   ENUMERATED {supported}                                                          OPTIONAL
+}

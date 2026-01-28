@@ -1,0 +1,29 @@
+PHR-Config ::=                      SEQUENCE {
+    phr-PeriodicTimer                   ENUMERATED {sf10, sf20, sf50, sf100, sf200,sf500, sf1000, infinity},
+    phr-ProhibitTimer                   ENUMERATED {sf0, sf10, sf20, sf50, sf100,sf200, sf500, sf1000},
+    phr-Tx-PowerFactorChange            ENUMERATED {dB1, dB3, dB6, infinity},
+    multiplePHR                         BOOLEAN,
+    dummy                               BOOLEAN,
+    phr-Type2OtherCell                  BOOLEAN,
+    phr-ModeOtherCG                     ENUMERATED {real, virtual},
+    ...,
+    [[
+    mpe-Reporting-FR2-r16               SetupRelease { MPE-Config-FR2-r16 }                     OPTIONAL     -- Need M
+    ]],
+    [[
+    mpe-Reporting-FR2-r17               SetupRelease { MPE-Config-FR2-r17 }                     OPTIONAL,    -- Need M
+    twoPHRMode-r17                      ENUMERATED {enabled}                                    OPTIONAL     -- Need R
+    ]]
+}
+
+MPE-Config-FR2-r16 ::=              SEQUENCE {
+    mpe-ProhibitTimer-r16               ENUMERATED {sf0, sf10, sf20, sf50, sf100, sf200, sf500, sf1000},
+    mpe-Threshold-r16                   ENUMERATED {dB3, dB6, dB9, dB12}
+}
+
+MPE-Config-FR2-r17 ::=              SEQUENCE {
+    mpe-ProhibitTimer-r17               ENUMERATED {sf0, sf10, sf20, sf50, sf100, sf200, sf500, sf1000},
+    mpe-Threshold-r17                   ENUMERATED {dB3, dB6, dB9, dB12},
+    numberOfN-r17                       INTEGER(1..4),
+    ...
+}

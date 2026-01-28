@@ -1,0 +1,130 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      700,
+      717,
+      734
+    ],
+    "field2_all": [
+      828,
+      852,
+      867,
+      891,
+      906,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          717,
+          734
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ],
+      [
+        [
+          700,
+          717
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ],
+      [
+        [
+          717,
+          734
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ],
+      [
+        [
+          700,
+          717
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'powercontroloffsetss' and 'uplinkbandwidthpartid'. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "powercontroloffsetss",
+    "ie2_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field2": "uplinkbandwidthpartid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1",
+      "7.1.1",
+      "5.2.2.3.1",
+      "4.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the UE may assume the sub-carrier spacing of the NZP CSI-RS resources configured by TRS-ResourceSet to be same as the sub-carrier spacing of the initial DL BWP. - powerControlOffsetSS given by a TRS-ResourceSet applies to all resources in a TRS-ResourceSet.\n---\n- powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE. - scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.\n---\nFor a CSI-RS resource configuration, powerControlOffsetSS is not applicable and a UE expects to be provided only 'noCDM' from cdm-Type, only 'one' and 'three' from density, and only '1 port' from nrofPorts [6, TS 38.214].  If a UE is configured with multiple DL BWPs for a serving cell, the UE performs RLM using the RS(s) corresponding to resource indexes provided by RadioLinkMonitoringRS for the active DL BWP or, if RadioLinkMonitoringRS is not provided for the active DL BWP, using the RS(s) provided for the active TCI state for PDCCH receptions in CORESETS on the active DL BWP.\n---\nIf the UE is not configured periodic CSI-RS reception, referenceSignalPower is provided by \\( s s-P B C H \\) BlockPower. If the UE is configured periodic CSI-RS reception, referenceSignalPower is provided either by ss-PBCH-BlockPower or by powerControlOffsetSS providing an offset of the CSI-RS transmission power relative to the SS/PBCH block transmission power [6, TS 38.214]. [f powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB . - \\( \\Delta_{\\mathrm{TF}, b, f, c}(i)=10 \\log _{10}\\left(\\left(2^{\\mathrm{BPRE} \\cdot K_{S}}-1\\right) \\cdot \\beta_{\\text {offset }}^{\\mathrm{PUSCH}}\\right) \\) for \\( K_{s}=1.25 \\) and \\( \\Delta_{\\mathrm{TF}, b, f, c}(i)=0 \\) for \\( K_{s}=0 \\) where \\( K_{s} \\) is provided by deltaMCS for each UL BWP \\( b \\) of each carrier \\( f \\) and serving cell \\( c \\). If the PUSCH transmission is over more than one layer \\( [6, \\mathrm{TS} 38.214], \\Delta_{\\mathrm{TF}, b, f, c}(i)=0 \\). BPRE and \\( \\beta_{\\mathrm{offset}}^{\\mathrm{PUSCH}} \\), for active UL BWP \\( b \\) of each carrier \\( f \\) and each serving cell \\( c \\), are computed as below",
+    "generated_at": "2026-01-10T14:25:20.422386",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'powercontroloffsetss' and 'uplinkbandwidthpartid'. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

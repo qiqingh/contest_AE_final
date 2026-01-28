@@ -1,0 +1,172 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      43,
+      108,
+      154,
+      173,
+      219,
+      238
+    ],
+    "field2_all": [
+      43,
+      89,
+      108,
+      154,
+      173,
+      219,
+      238
+    ],
+    "actual_pairs": [
+      [
+        [
+          154,
+          219
+        ],
+        [
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          173,
+          238
+        ],
+        [
+          89,
+          154
+        ]
+      ],
+      [
+        [
+          108,
+          173
+        ],
+        [
+          89,
+          154
+        ]
+      ],
+      [
+        [
+          108,
+          238
+        ],
+        [
+          154,
+          219
+        ]
+      ],
+      [
+        [
+          108,
+          173
+        ],
+        [
+          154,
+          219
+        ]
+      ],
+      [
+        [
+          108,
+          238
+        ],
+        [
+          89,
+          154
+        ]
+      ],
+      [
+        [
+          154,
+          219
+        ],
+        [
+          43,
+          108,
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          43,
+          108,
+          173,
+          238
+        ],
+        [
+          89,
+          154
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks explicit inter-IE constraints between the specified fields. All evidence pertains to single-IE behavior or lacks normative cross-reference.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "controlresourcesettoaddmodlist_controlresourcesetid",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdcch-configcommon_commonsearchspacelist",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 268,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.3.2",
+      "5.1.5",
+      "5.1.2.2.2",
+      "7.3.2.2",
+      "5.1.2.2.3",
+      "5.1.4.2",
+      "5.1.4.1",
+      "5.2.1.5.1",
+      "5.1.2.3",
+      "5.1.2.2",
+      "7.3.1.1",
+      "7.4.1.1.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "7.3.2.2 Control-resource set (CORESET) ..... 124\n---\n- the higher-layer parameter dataScramblingldentityPDSCH if the codeword is scheduled using a CORESET with CORESETPoollndex equal to 0 ;\n---\n- subcarrier 0 of the lowest-numbered resource block in CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI;\n---\n- subcarrier 0 of the lowest-numbered resource block in the CORESET if the CORESET is configured by the PBCH or by the controlResourceSetZero field in the PDCCH-ConfigCommon IE,\n---\nFor a PDSCH scheduled with a DCI format \\( 1 \\_0 \\) in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format \\( 1 \\_0 \\), the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.\n---\n- the size of CORESET 0 if CORESET 0 is configured for the cell;\n---\n- the size of CORESET 0 if CORESET 0 is configured for the cell; - the size of initial DL band width part if CORESET 0 is not configured for the cell.\n---\nFor PDSCH carrying SIB1 scheduled by PDCCH with CRC scrambled by SI-RNTI, a PRG is partitioned from the lowest numbered resource block of CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI; otherwise, a PRG is partitioned from common resource block 0 .\n---\nIf a UE monitors PDCCH candidates of aggregation levels 8 and 16 with the same starting CCE index in noninterleaved CORESET spanning one OFDM symbol:\n---\n- If the UE is configured by higher layer parameter PDCCH-Config with two different values of coresetPoollndex in ControlResourceSet and is also configured by the higher layer parameter Ite-CRS-PatternListl-r 16 and Ite-CRS-PatternList2-r16 in ServingCellConfig, the following REs are declared as not available for PDSCH: - if the UE is configured with crs-RateMatch-PerCoresetPoollndex, REs indicated by the CRS pattern(s) in Ite-CRS-PatternList 1-r16 if the PDSCH is associated with coresetPoollndex set to ' 0 ', or the CRS pattern(s) in lte-CRS-PatternList2-r16 if PDSCH is associated with coresetPoollndex set to ' 1 '; - otherwise, REs indicated by lte-CRS-PatternList1-r16 and lte-CRS-PatternList2-r16, in ServingCellConfig-\n---\nWhen tci-PresentInDCI is set as 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET, the UE with activated DLorJointTCIState or UL-TCIState receives DCI format 1_1/1_2 providing indicated DLorJointTCIState or ULTCIState for a CC or all CCs in the same CC list configured by simultaneous TCI-UpdateListl-r 17, simultaneous TCI-UpdateList2-r17, simultaneousTCI-UpdateList3-r17, simultaneousTCI-UpdateList4-r17. The DCI format 1_1/1_2 can be with or without, if applicable, DL assignment. If the DCI format \\( 1 \\_1 / 1 \\_2 / \\) is without DL assignment, the UE can assume the following:\n---\n- else if a UE is configured with sfnSchemePdcch set to 'sfnSchemeA', it is not configured with enableTwoDefaultTCI-States, and the two TCI states are activated for the CORESET by the activation command as described in clause 6.1.3.x of [10, TS 38.321]",
+    "generated_at": "2026-01-09T12:06:38.023328",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks explicit inter-IE constraints between the specified fields. All evidence pertains to single-IE behavior or lacks normative cross-reference.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

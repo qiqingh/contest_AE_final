@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      451
+    ],
+    "field2_all": [
+      455
+    ],
+    "actual_pairs": [
+      [
+        [
+          451
+        ],
+        [
+          455
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative relationship between cyclicShift-n2 and freqDomainPosition within the same IE. The evidence is definitional and lacks explicit constraints or dependencies between the two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "cyclicShift-n2",
+    "field2": "freqDomainPosition",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- Defining partial frequency sounding factor and start RB index for partial frequency sounding as defined by the higher layer parameters FreqScalingFactor \\mathrm{P}_{\\mathrm{F}} and StartRBIndex k_{\\mathrm{F}} , respectively, and described in Clause 6.4.1.4 of [4, TS 38.211]. If not configured, then P_{F}=1 and k_{F}=0 . - Defining start RB index hopping for partial frequency sounding in different SRS frequency hopping periods for aperiodic/periodic/semi-persistent SRS based on the hopping pattern k_{\\text {hopping }} as described in clause 6.4.1.4.3 in [4, TS 38.211. If not configured, then start RB hopping is not enabled and k_{\\text {hoppng }} is fixed to be 0 for all SRS symbols. - Defining frequency domain position and configurable shift, as defined by the higher layer parameters freqDomainPosition and freqDomainShift, respectively, and described in clause 6.4.1.4 of [4, TS 38.211]. If freqDomainPosition is not configured, freqDomainPosition is zero. - Cyclic shift, as defined by the higher layer parameter cyclicShift-n2, cyclicShift-n4, or cyclicShift-n8 for transmission comb value 2, 4 or 8, and described in clause 6.4.1.4 of [4, TS 38.211]. - Transmission comb value, as defined by the higher layer parameter transmission Comb described in clause 6.4.1.4 of [4, TS 38.211]. - Transmission comb offset, as defined by the higher layer parameter combOffset-n2, combOffset-n4, and combOffset-n8 for transmission comb value 2, 4, or 8, and described in clause 6.4.1.4 of [4, TS 38.211].",
+    "generated_at": "2026-01-07T19:44:35.235412",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative relationship between cyclicShift-n2 and freqDomainPosition within the same IE. The evidence is definitional and lacks explicit constraints or dependencies between the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

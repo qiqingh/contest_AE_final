@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      454
+    ],
+    "field2_all": [
+      444
+    ],
+    "actual_pairs": [
+      [
+        [
+          454
+        ],
+        [
+          444
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'repetitionFactor' and 'usage' within the same IE. The evidence discusses configurations and capabilities but does not link these two fields with a normative constraint.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "repetitionFactor",
+    "field2": "usage",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 2,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "6.2.1.1 UE SRS frequency hopping procedure For a given S R S resource, the U E is configured with repetition factor R \\in\\{1,2,4\\} or R \\in\\{1,2,3,4,5,6,7,8,10,12,14\\} by higher layer parameter resourceMapping in SRS-Resource where R <= N_{s} . When frequency hopping within an SRS resource in each slot is not configured ( R=N_{s} ), each of the antenna ports of the SRS resource in each slot is mapped in all the N_{s} symbols to the same set of subcarriers in the same set of PRBs. When frequency hopping within an SRS resource in each slot is configured without repetition ( R=1 ), according to the SRS hopping parameters B_{\\text {SRS }}, C_{\\text {SRS }} and b_{\\text {hop }} defined in clause 6.4-1.4 of [4, TS 38.211], each of the antenna ports of the SRS resource in each slot is mapped to different sets of subcarriers in each OFDM symbol, where the same transmission comb value is assumed for different sets of subcarriers. When both frequency hopping and repetition within an SRS resource in each slot are configured ( N_{s} >= 4, R >= 2 ), each of the antenna ports of the SRS resource in each slot is mapped to the same set of subcarriers within each pair of R adjacent OFDM symbols, and frequency hopping across the \\frac{N_{S}}{R} pairs is according to the SRS hopping parameters B_{S R S}, C_{S R S} and b_{\\text {hop }} , where N_{S} should be divisible by R . For operation with shared spectrum channel access, the UE does not expect that multiple hops of an SRS resource transmission are in different RB sets. A UE may be configured N_{s}=2,4,8,10,12 or 14 adjacent symbol aperiodic SRS resource with intra-slot frequency hopping within a bandwidth part, where the full hopping bandwidth is sounded with an equal-size subband across N_{s} symbols when frequency hopping is configured with R=1 . A UE may be configured N_{s} >= 4 adjacent symbols aperiodic SRS resource with intra-slot frequency hopping within a bandwidth part, where the full hopping bandwidth is sounded with an equal-size subband across \\frac{N_{S}}{R} pairs of R adjacent OFDM symbols, when frequency hopping is configured with R >= 2, N_{s} >= R and N_{s} should be divisible by R . Each of the antenna ports of the SRS resource is mapped to the same set of subcarriers within each pair of R adjacent OFDM symbols of the resource. A UE may be configured N_{s}=1 symbol periodic or semi-persistent SRS resource with inter-slot hopping within a bandwidth part, where the SRS resource occupies the same symbol location in each slot. A UE may be configured N_{s}= 2,4,8,10,12 or 14 symbol periodic or semi-persistent SRS resource with intra-slot and inter-slot hopping within a bandwidth part, where the N -symbol SRS resource occupies the same symbol location(s) in each slot. For N_{s} >= 4 , when frequency hopping is configured with R >= 2 , intra-slot and inter-slot hopping is supported with each of the antenna ports of the SRS resource mapped to different sets of subcarriers across \\frac{N_{S}}{R} pairs of R adjacent OFDM symbol(s) of the resource in each slot, where N_{s} should be divisible by R . Each of the antenna ports of the SRS resource is mapped to the same set of subcarriers within each pair of R adjacent OFDM symbols of the resource in each slot. For N_{s}=R , when frequency hopping is configured, inter-slot frequency hopping is supported with each of the antenna ports of the SRS resource mapped to the same set of subcarriers in R adjacent OFDM symbol(s) of the resource in each slot. 6.2.1.2 UE sounding procedure for DL CSI acquisition When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set as 'antennaSwitching', the UE may be configured with only one of the following configurations depending on the indicated UE capability supportedSRS-TxPortSwitch ('t1r2' for 1T2R, 't1r1-t1r2' for 1T=1R/1T2R, 't2r4' for 2T4R, 't1r4' for 1T4R, 't1r6' for 1T6R, '1t8r' for 1T8R, '2t6r' for 2T6R, '2t8r' for 2T8R, '4t8r' for 4T8R, 't1r1-t1r2-t1r4' for 1T=1R/1T2R/1T4R, 't1r4t 2 r 4 ' for 1T4R/2T4R, 't1r1-t1r2-t2r2-t2r4' for 1T=1R/1T2R/2T=2R/2T4R, 't1r1-t1r2-t2r2-t1r4-t2r4' for 1 \\mathrm{~T}=1 \\mathrm{R} / 1 \\mathrm{~T} 2 \\mathrm{R} / 2 \\mathrm{~T}=2 \\mathrm{R} / 1 \\mathrm{~T} 4 \\mathrm{R} / 2 \\mathrm{~T} 4 \\mathrm{R} , ' t 1 r 1 ' for 1 \\mathrm{~T}=1 \\mathrm{R} , ' t 2 r 2 ' for 2 \\mathrm{~T}=2 \\mathrm{R} , ' \\mathrm{t} 1 \\mathrm{r} 1-\\mathrm{t} 2 \\mathrm{r} 2 ' for 1 \\mathrm{~T}=1 \\mathrm{R} / 2 \\mathrm{~T}=2 \\mathrm{R} , ' t 4 r 4 ' for 4 \\mathrm{~T}=4 \\mathrm{R} , or ' \\mathrm{t} 1 \\mathrm{r} 1-\\mathrm{t} 2 \\mathrm{r} 2-\\mathrm{t} 4 \\mathrm{r} 4 ' for 1 \\mathrm{~T}=1 \\mathrm{R} / 2 \\mathrm{~T}=2 \\mathrm{R} / 4 \\mathrm{~T}=4 \\mathrm{R} ): - For 1T2R, if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets] and/or a capability for [extension of aperiodic antenna switching SRS configuration]: - zero or one or two SRS resource sets configured with different value of resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in",
+    "generated_at": "2026-01-07T21:55:23.829624",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'repetitionFactor' and 'usage' within the same IE. The evidence discusses configurations and capabilities but does not link these two fields with a normative constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      740,
+      742,
+      744
+    ],
+    "field2_all": [
+      778,
+      783,
+      788,
+      789,
+      793,
+      798,
+      803,
+      804,
+      808,
+      813,
+      818,
+      819
+    ],
+    "actual_pairs": [
+      [
+        [
+          740,
+          742,
+          744
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813
+        ]
+      ],
+      [
+        [
+          740,
+          742,
+          744
+        ],
+        [
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not explicitly relate the two fields across IEs. Descriptions are definitional and do not establish a normative inter-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "csi-rs-resourcesetlist",
+    "ie2_name": "nzp-csi-rs-resourcesettoaddmodlist",
+    "field2": "nzp-csi-rs-resources",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "The first entry in non-PM/-Portindication corresponds to the NZP-CSI-RS-Resource indicated by the first entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the CSI-ResourceConfig whose CSI-ResourceConfigld is indicated in a CSI-MeasId together with the above CSIReportConfig/d; the second entry in non-PMI-PortIndication corresponds to the NZP-CSI-RS-Resource indicated by the second entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig, and so on until the NZP-CSI-RS-Resource indicated by the last entry in nzp-CSI-RS-Resources in the in the NZP-CSI-RS-ResourceSet indicated in the first entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig. Then the next entry corresponds to the NZP-CSI-RS-Resource indicated by the first entry in nzp-CSI-RS-Resources in the NZP-CSI-RS-ResourceSet indicated in the second entry of nzp-CSI-RS-ResourceSetList of the same CSI-ResourceConfig and so on.\n---\nnzp-CSI-RS-ResourceSetList \\\\ List of references to NZP CSI-RS resources used for beam measurement and reporting in a CSI-RS resource set. Contains up to maxNrofNZP-CSI-RS- \\\\",
+    "generated_at": "2026-01-09T12:35:47.667466",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No explicit inter-IE constraint between csi-rs-resourcesetlist and nzp-csi-rs-resources.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not explicitly relate the two fields across IEs. Descriptions are definitional and do not establish a normative inter-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

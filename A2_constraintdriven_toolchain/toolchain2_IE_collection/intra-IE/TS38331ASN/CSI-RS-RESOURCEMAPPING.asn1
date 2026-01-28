@@ -1,0 +1,20 @@
+CSI-RS-ResourceMapping ::=          SEQUENCE {
+    frequencyDomainAllocation           CHOICE {
+        row1                                BIT STRING (SIZE (4)),
+        row2                                BIT STRING (SIZE (12)),
+        row4                                BIT STRING (SIZE (3)),
+        other                               BIT STRING (SIZE (6))
+    },
+    nrofPorts                           ENUMERATED {p1,p2,p4,p8,p12,p16,p24,p32},
+    firstOFDMSymbolInTimeDomain         INTEGER (0..13),
+    firstOFDMSymbolInTimeDomain2        INTEGER (2..12)                                                         OPTIONAL,   -- Need R
+    cdm-Type                            ENUMERATED {noCDM, fd-CDM2, cdm4-FD2-TD2, cdm8-FD2-TD4},
+    density                             CHOICE {
+        dot5                                ENUMERATED {evenPRBs, oddPRBs},
+        one                                 NULL,
+        three                               NULL,
+        spare                               NULL
+    },
+    freqBand                            CSI-FrequencyOccupation,
+    ...
+}

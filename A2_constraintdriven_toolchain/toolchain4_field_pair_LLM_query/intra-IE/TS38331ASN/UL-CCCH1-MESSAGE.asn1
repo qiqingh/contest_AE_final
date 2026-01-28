@@ -1,0 +1,14 @@
+UL-CCCH1-Message ::=            SEQUENCE {
+    message                         UL-CCCH1-MessageType
+}
+
+UL-CCCH1-MessageType ::=        CHOICE {
+    c1                              CHOICE {
+        rrcResumeRequest1               RRCResumeRequest1,
+        spare3 NULL,
+        spare2 NULL,
+        spare1 NULL
+
+    },
+    messageClassExtension SEQUENCE {}
+}

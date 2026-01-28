@@ -1,0 +1,28 @@
+NRDC-Parameters ::=                 SEQUENCE {
+    measAndMobParametersNRDC            MeasAndMobParametersMRDC                    OPTIONAL,
+    generalParametersNRDC               GeneralParametersMRDC-XDD-Diff              OPTIONAL,
+    fdd-Add-UE-NRDC-Capabilities        UE-MRDC-CapabilityAddXDD-Mode               OPTIONAL,
+    tdd-Add-UE-NRDC-Capabilities        UE-MRDC-CapabilityAddXDD-Mode               OPTIONAL,
+    fr1-Add-UE-NRDC-Capabilities        UE-MRDC-CapabilityAddFRX-Mode               OPTIONAL,
+    fr2-Add-UE-NRDC-Capabilities        UE-MRDC-CapabilityAddFRX-Mode               OPTIONAL,
+    dummy2                              OCTET STRING                                OPTIONAL,
+    dummy                               SEQUENCE {}                                 OPTIONAL
+}
+
+NRDC-Parameters-v1570 ::=           SEQUENCE {
+    sfn-SyncNRDC                        ENUMERATED {supported}                      OPTIONAL
+}
+
+NRDC-Parameters-v15c0 ::=           SEQUENCE {
+    pdcp-DuplicationSplitSRB            ENUMERATED {supported}                      OPTIONAL,
+    pdcp-DuplicationSplitDRB            ENUMERATED {supported}                      OPTIONAL
+}
+
+NRDC-Parameters-v1610 ::=           SEQUENCE {
+    measAndMobParametersNRDC-v1610      MeasAndMobParametersMRDC-v1610              OPTIONAL
+}
+
+NRDC-Parameters-v1700   ::=         SEQUENCE {
+    f1c-OverNR-RRC-r17                  ENUMERATED {supported}                      OPTIONAL,
+    measAndMobParametersNRDC-v1700      MeasAndMobParametersMRDC-v1700
+}

@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      932,
+      933
+    ],
+    "field2_all": [
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          932,
+          933
+        ],
+        [
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between 'reportQuantity' and 'uplinkBandwidthPartId'. The evidence focuses on CSI-RS resource configurations and does not mention the target fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "reportQuantity",
+    "field2": "uplinkBandwidthPartId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 7,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "ETSI TS 138214 V17.1.0 (2022-05) A UE does not expect to be configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to other than 'none' for aperiodic NZP CSI-RS resource set configured with trs-Info. A UE does not expect to be configured with a CSI-ReportConfig for periodic NZP CSI-RS resource set configured with trs-Info. A UE does not expect to be configured with a NZP-CSI-RS-ResourceSet configured both with trs-Info and repetition. Each CSI-RS resource, defined in Clause 7.4.1.5.3 of [4, TS 38.211], is configured by the higher layer parameter N Z P -CSI-RS-Resource with the following restrictions: - the time-domain locations of the two CSI-RS resources in a slot, or of the four CSI-RS resources in two consecutive slots (which are the same across two consecutive slots), as defined by higher layer parameter CSI-RS-resourceMapping, is given by one of - l \\in\\{4,8\\}, l \\in\\{5,9\\} , or l \\in\\{6,10\\} for frequency range 1 and frequency range 2 , - l \\in\\{0,4\\}, l \\in\\{1,5\\}, l \\in\\{2,6\\}, l \\in\\{3,7\\}, l \\in\\{7,11\\}, l \\in\\{8,12\\} or l \\in\\{9,13\\} for frequency range 2 . - a single port CSI-RS resource with density \\rho=3 given by Table 7.4.1.5.3-1 from [4, TS 38.211] and higher layer parameter density configured by CSI-RS-ResourceMapping. - if carrier N_{\\mathrm{grid}}^{\\mathrm{size}, \\mu}=52, N_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}}=52, \\mu=0 and the carrier is configured in paired spectrum, the band width of the CSI-RS resource, as given by the higher layer parameter freq Band configured by CSI-RS-ResourceMapping, is X resource blocks, where X >= 28 resources if the UE indicates trs-AddB W-Set I for the trs-AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 1] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation and X >= 32 if the UE indicates t r s -AddBW-Set2 for the AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 2] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation; in these cases, if the UE is configured with CSI-RS comprising \\mathrm{X}<52 resource blocks, the UE does not expect that the total number of PRBs allocated for DL transmissions but not overlapped with the PRBs carrying CSI-RS for tracking is more than 4 , where all CSI-RS resource configurations shall span the same set of resource blocks; otherwise, the bandwidth of the CSI-RS resource, as given by the higher layer parameter freqBand configured by CSI-RS-ResourceMapping, is the minimum of 52 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks. For operation with shared spectrum channel access, freqBand configured by CSI-RSResourceMapping, is the minimum of 48 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}} sizesource blocks. - the UE is not expected to be configured with the periodicity of 2^{\\mu} \\times 10 slots if the band width of CSI-RS resource is larger than 52 resource blocks. - the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211].",
+    "generated_at": "2026-01-10T21:40:08.867995",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between 'reportQuantity' and 'uplinkBandwidthPartId'. The evidence focuses on CSI-RS resource configurations and does not mention the target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

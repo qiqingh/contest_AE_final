@@ -1,0 +1,8 @@
+NeedForGapNCSG-InfoEUTRA-r17 ::=   SEQUENCE {
+    needForNCSG-EUTRA-r17              SEQUENCE (SIZE (1..maxBandsEUTRA)) OF NeedForNCSG-EUTRA-r17
+}
+
+NeedForNCSG-EUTRA-r17  ::=         SEQUENCE {
+    bandEUTRA-r17                      FreqBandIndicatorEUTRA,
+    gapIndication-r17                  ENUMERATED {gap, ncsg, nogap-noncsg}
+}

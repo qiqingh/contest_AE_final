@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      281
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          281
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE constraint between 'initialcyclicshift' from 'initialuplinkbwp_pucch-config' and 'schedulingrequestid' from 'mac-cellgroupconfig'. The evidence only discusses behavior related to PUCCH format 0 and HARQ-ACK information, without mentioning 'schedulingrequestid'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "initialcyclicshift",
+    "ie2_name": "mac-cellgroupconfig",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "shift \\( \\alpha \\) [4, TS 38.211] where \\( m_{0} \\) is provided by initialCyclicShift of PUCCH-format0, and \\( m_{\\mathrm{CS}} \\) is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.5-1 and Table 9.2.5-2, respectively.  If the UE would transmit negative SR and a PUCCH with at most two HARQ-ACK information bits in a resource using PUCCH format 0 , the UE transmits the PUCCH in the resource using PUCCH format 0 for HARQ-ACK information as described in clause 9.2.3.",
+    "generated_at": "2025-12-10T13:56:04.082653",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE constraint between 'initialcyclicshift' from 'initialuplinkbwp_pucch-config' and 'schedulingrequestid' from 'mac-cellgroupconfig'. The evidence only discusses behavior related to PUCCH format 0 and HARQ-ACK information, without mentioning 'schedulingrequestid'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,146 @@
+SearchSpace ::=                         SEQUENCE {
+    searchSpaceId                           SearchSpaceId,
+    controlResourceSetId                    ControlResourceSetId                                        OPTIONAL,   -- Cond SetupOnly
+    monitoringSlotPeriodicityAndOffset      CHOICE {
+        sl1                                     NULL,
+        sl2                                     INTEGER (0..1),
+        sl4                                     INTEGER (0..3),
+        sl5                                     INTEGER (0..4),
+        sl8                                     INTEGER (0..7),
+        sl10                                    INTEGER (0..9),
+        sl16                                    INTEGER (0..15),
+        sl20                                    INTEGER (0..19),
+        sl40                                    INTEGER (0..39),
+        sl80                                    INTEGER (0..79),
+        sl160                                   INTEGER (0..159),
+        sl320                                   INTEGER (0..319),
+        sl640                                   INTEGER (0..639),
+        sl1280                                  INTEGER (0..1279),
+        sl2560                                  INTEGER (0..2559)
+    }                                                                                                   OPTIONAL,   -- Cond Setup4
+    duration                                INTEGER (2..2559)                                           OPTIONAL,   -- Need S
+    monitoringSymbolsWithinSlot             BIT STRING (SIZE (14))                                      OPTIONAL,   -- Cond Setup
+    nrofCandidates                          SEQUENCE {
+        aggregationLevel1                       ENUMERATED {n0, n1, n2, n3, n4, n5, n6, n8},
+        aggregationLevel2                       ENUMERATED {n0, n1, n2, n3, n4, n5, n6, n8},
+        aggregationLevel4                       ENUMERATED {n0, n1, n2, n3, n4, n5, n6, n8},
+        aggregationLevel8                       ENUMERATED {n0, n1, n2, n3, n4, n5, n6, n8},
+        aggregationLevel16                      ENUMERATED {n0, n1, n2, n3, n4, n5, n6, n8}
+    }                                                                                                   OPTIONAL,   -- Cond Setup
+    searchSpaceType                         CHOICE {
+        common                                  SEQUENCE {
+            dci-Format0-0-AndFormat1-0              SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-0                           SEQUENCE {
+                nrofCandidates-SFI                      SEQUENCE {
+                    aggregationLevel1                       ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel2                       ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel4                       ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel8                       ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel16                      ENUMERATED {n1, n2}                         OPTIONAL    -- Need R
+                },
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-1                           SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-2                           SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-3                           SEQUENCE {
+                dummy1                                  ENUMERATED {sl1, sl2, sl4, sl5, sl8, sl10, sl16, sl20}  OPTIONAL,   -- Cond Setup
+                dummy2                                  ENUMERATED {n1, n2},
+                ...
+            }                                                                                           OPTIONAL    -- Need R
+        },
+        ue-Specific                                 SEQUENCE {
+            dci-Formats                                 ENUMERATED {formats0-0-And-1-0, formats0-1-And-1-1},
+            ...,
+            [[
+            dci-Formats-MT-r16                   ENUMERATED {formats2-5}                                OPTIONAL,    -- Need R
+            dci-FormatsSL-r16                    ENUMERATED {formats0-0-And-1-0, formats0-1-And-1-1, formats3-0, formats3-1,
+                                                             formats3-0-And-3-1}                        OPTIONAL,    -- Need R
+            dci-FormatsExt-r16                   ENUMERATED {formats0-2-And-1-2, formats0-1-And-1-1And-0-2-And-1-2}
+                                                                                                        OPTIONAL     -- Need R
+            ]]
+        }
+    }                                                                                                   OPTIONAL    -- Cond Setup2
+}
+
+SearchSpaceExt-r16 ::=                   SEQUENCE {
+    controlResourceSetId-r16                ControlResourceSetId-r16                                    OPTIONAL,   -- Cond SetupOnly2
+    searchSpaceType-r16                     SEQUENCE {
+        common-r16                              SEQUENCE {
+            dci-Format2-4-r16                       SEQUENCE {
+                nrofCandidates-CI-r16                   SEQUENCE {
+                    aggregationLevel1-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel2-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel4-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel8-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel16-r16                  ENUMERATED {n1, n2}                         OPTIONAL    -- Need R
+                },
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-5-r16                      SEQUENCE {
+                nrofCandidates-IAB-r16                  SEQUENCE {
+                    aggregationLevel1-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel2-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel4-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel8-r16                   ENUMERATED {n1, n2}                         OPTIONAL,   -- Need R
+                    aggregationLevel16-r16                  ENUMERATED {n1, n2}                         OPTIONAL    -- Need R
+                },
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-6-r16                       SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            ...
+        }
+    }                                                                                                   OPTIONAL,    -- Cond Setup3
+    searchSpaceGroupIdList-r16                      SEQUENCE (SIZE (1.. 2)) OF INTEGER (0..1)           OPTIONAL,    -- Need R
+    freqMonitorLocations-r16                        BIT STRING (SIZE (5))                               OPTIONAL     -- Need R
+}
+
+SearchSpaceExt-v1700 ::=            SEQUENCE {
+    monitoringSlotPeriodicityAndOffset-v1710 CHOICE {
+        sl32                                     INTEGER (0..31),
+        sl64                                     INTEGER (0..63),
+        sl128                                    INTEGER (0..127),
+        sl5120                                   INTEGER (0..5119),
+        sl10240                                  INTEGER (0..10239),
+        sl20480                                  INTEGER (0..20479)
+    }                                                                                                   OPTIONAL,   -- Cond Setup5
+    monitoringSlotsWithinSlotGroup-r17       CHOICE {
+        slotGroupLength4-r17                     BIT STRING (SIZE (4)),
+        slotGroupLength8-r17                     BIT STRING (SIZE (8))
+    }                                                                                                   OPTIONAL,   -- Need R
+    duration-r17                             INTEGER (4..20476)                                         OPTIONAL,   -- Need R
+
+    searchSpaceType-r17             SEQUENCE{
+        common-r17                      SEQUENCE {
+            dci-Format4-0-r17               SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format4-1-r17               SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format4-2-r17               SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format4-1-AndFormat4-2-r17  SEQUENCE {
+                ...
+            }                                                                                           OPTIONAL,   -- Need R
+            dci-Format2-7-r17               SEQUENCE {
+                nrofCandidates-PEI-r17          SEQUENCE {
+                    aggregationLevel4-r17       ENUMERATED {n0, n1, n2, n3, n4}                         OPTIONAL,   -- Need R
+                    aggregationLevel8-r17       ENUMERATED {n0, n1, n2}                                 OPTIONAL,   -- Need R
+                    aggregationLevel16-r17      ENUMERATED {n0, n1}                                     OPTIONAL    -- Need R
+                },
+                ...
+            }                                                                                           OPTIONAL    -- Need R
+        }
+    }                                                                                                   OPTIONAL,   -- Need R
+    searchSpaceGroupIdList-r17          SEQUENCE (SIZE (1.. 3)) OF INTEGER (0.. maxNrofSearchSpaceGroups-1-r17)  OPTIONAL,  -- Cond DedicatedOnly
+    searchSpaceLinkingId-r17            INTEGER (0..maxNrofSearchSpacesLinks-1-r17)                     OPTIONAL    -- Cond DedicatedOnly
+}

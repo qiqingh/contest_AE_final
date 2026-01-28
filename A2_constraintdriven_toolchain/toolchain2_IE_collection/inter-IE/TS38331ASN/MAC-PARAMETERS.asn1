@@ -1,0 +1,114 @@
+MAC-Parameters ::= SEQUENCE {
+    mac-ParametersCommon            MAC-ParametersCommon        OPTIONAL,
+    mac-ParametersXDD-Diff          MAC-ParametersXDD-Diff      OPTIONAL
+}
+
+MAC-Parameters-v1610 ::= SEQUENCE {
+    mac-ParametersFRX-Diff-r16      MAC-ParametersFRX-Diff-r16  OPTIONAL
+}
+
+MAC-Parameters-v1700 ::= SEQUENCE {
+    mac-ParametersFR2-2-r17         MAC-ParametersFR2-2-r17     OPTIONAL
+}
+
+MAC-ParametersCommon ::=    SEQUENCE {
+    lcp-Restriction                         ENUMERATED {supported}      OPTIONAL,
+    dummy                                   ENUMERATED {supported}      OPTIONAL,
+    lch-ToSCellRestriction                  ENUMERATED {supported}      OPTIONAL,
+    ...,
+    [[
+    recommendedBitRate                      ENUMERATED {supported}      OPTIONAL,
+    recommendedBitRateQuery                 ENUMERATED {supported}      OPTIONAL
+    ]],
+    [[
+    recommendedBitRateMultiplier-r16         ENUMERATED {supported}     OPTIONAL,
+    preEmptiveBSR-r16                        ENUMERATED {supported}     OPTIONAL,
+    autonomousTransmission-r16               ENUMERATED {supported}     OPTIONAL,
+    lch-PriorityBasedPrioritization-r16      ENUMERATED {supported}     OPTIONAL,
+    lch-ToConfiguredGrantMapping-r16         ENUMERATED {supported}     OPTIONAL,
+    lch-ToGrantPriorityRestriction-r16       ENUMERATED {supported}     OPTIONAL,
+    singlePHR-P-r16                          ENUMERATED {supported}     OPTIONAL,
+    ul-LBT-FailureDetectionRecovery-r16      ENUMERATED {supported}     OPTIONAL,
+    -- R4 8-1: MPE
+    tdd-MPE-P-MPR-Reporting-r16              ENUMERATED {supported}     OPTIONAL,
+    lcid-ExtensionIAB-r16                    ENUMERATED {supported}     OPTIONAL
+    ]],
+    [[
+    spCell-BFR-CBRA-r16                      ENUMERATED {supported}     OPTIONAL
+    ]],
+    [[
+    srs-ResourceId-Ext-r16                   ENUMERATED {supported}     OPTIONAL
+    ]],
+    [[
+    enhancedUuDRX-forSidelink-r17            ENUMERATED {supported}     OPTIONAL,
+    --27-10: Support of UL MAC CE based MG activation request for PRS measurements
+    mg-ActivationRequestPRS-Meas-r17         ENUMERATED {supported}     OPTIONAL,
+    --27-11: Support of DL MAC CE based MG activation request for PRS measurements
+    mg-ActivationCommPRS-Meas-r17            ENUMERATED {supported}     OPTIONAL,
+    intraCG-Prioritization-r17               ENUMERATED {supported}     OPTIONAL,
+    jointPrioritizationCG-Retx-Timer-r17     ENUMERATED {supported}     OPTIONAL,
+    survivalTime-r17                         ENUMERATED {supported}     OPTIONAL,
+    lcg-ExtensionIAB-r17                     ENUMERATED {supported}     OPTIONAL,
+    harq-FeedbackDisabled-r17                ENUMERATED {supported}     OPTIONAL,
+    uplink-Harq-ModeB-r17                    ENUMERATED {supported}     OPTIONAL,
+    sr-TriggeredBy-TA-Report-r17             ENUMERATED {supported}     OPTIONAL,
+    extendedDRX-CycleInactive-r17            ENUMERATED {supported}     OPTIONAL,
+    simultaneousSR-PUSCH-DiffPUCCH-groups-r17 ENUMERATED {supported}    OPTIONAL,
+    lastTransmissionUL-r17                   ENUMERATED {supported}     OPTIONAL
+    ]]
+}
+
+MAC-ParametersFRX-Diff-r16 ::=  SEQUENCE {
+    directMCG-SCellActivation-r16           ENUMERATED {supported}      OPTIONAL,
+    directMCG-SCellActivationResume-r16     ENUMERATED {supported}      OPTIONAL,
+    directSCG-SCellActivation-r16           ENUMERATED {supported}      OPTIONAL,
+    directSCG-SCellActivationResume-r16     ENUMERATED {supported}      OPTIONAL,
+    -- R1 19-1: DRX Adaptation
+    drx-Adaptation-r16          SEQUENCE {
+        non-SharedSpectrumChAccess-r16      MinTimeGap-r16              OPTIONAL,
+        sharedSpectrumChAccess-r16          MinTimeGap-r16              OPTIONAL
+    }                                                                   OPTIONAL,
+    ...
+}
+
+MAC-ParametersFR2-2-r17 ::=  SEQUENCE {
+    directMCG-SCellActivation-r17           ENUMERATED {supported}      OPTIONAL,
+    directMCG-SCellActivationResume-r17     ENUMERATED {supported}      OPTIONAL,
+    directSCG-SCellActivation-r17           ENUMERATED {supported}      OPTIONAL,
+    directSCG-SCellActivationResume-r17     ENUMERATED {supported}      OPTIONAL,
+    drx-Adaptation-r17       SEQUENCE {
+        non-SharedSpectrumChAccess-r17      MinTimeGapFR2-2-r17         OPTIONAL,
+        sharedSpectrumChAccess-r17          MinTimeGapFR2-2-r17         OPTIONAL
+    }                                                                   OPTIONAL,
+    ...
+}
+
+MAC-ParametersXDD-Diff ::=  SEQUENCE {
+    skipUplinkTxDynamic                     ENUMERATED {supported}     OPTIONAL,
+    logicalChannelSR-DelayTimer             ENUMERATED {supported}     OPTIONAL,
+    longDRX-Cycle                           ENUMERATED {supported}     OPTIONAL,
+    shortDRX-Cycle                          ENUMERATED {supported}     OPTIONAL,
+    multipleSR-Configurations               ENUMERATED {supported}     OPTIONAL,
+    multipleConfiguredGrants                ENUMERATED {supported}     OPTIONAL,
+    ...,
+    [[
+    secondaryDRX-Group-r16                  ENUMERATED {supported}     OPTIONAL
+    ]],
+    [[
+    enhancedSkipUplinkTxDynamic-r16         ENUMERATED {supported}     OPTIONAL,
+    enhancedSkipUplinkTxConfigured-r16      ENUMERATED {supported}     OPTIONAL
+    ]]
+}
+
+MinTimeGap-r16 ::=    SEQUENCE {
+    scs-15kHz-r16                         ENUMERATED {sl1, sl3}        OPTIONAL,
+    scs-30kHz-r16                         ENUMERATED {sl1, sl6}        OPTIONAL,
+    scs-60kHz-r16                         ENUMERATED {sl1, sl12}       OPTIONAL,
+    scs-120kHz-r16                        ENUMERATED {sl2, sl24}       OPTIONAL
+}
+
+MinTimeGapFR2-2-r17 ::= SEQUENCE {
+    scs-120kHz-r17                        ENUMERATED {sl2, sl24}       OPTIONAL,
+    scs-480kHz-r17                        ENUMERATED {sl8, sl96}       OPTIONAL,
+    scs-960kHz-r17                        ENUMERATED {sl16, sl192}     OPTIONAL
+}

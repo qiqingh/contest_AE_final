@@ -1,0 +1,9 @@
+AvailabilityIndicator-r16 ::=    SEQUENCE {
+    ai-RNTI-r16                      AI-RNTI-r16,
+    dci-PayloadSizeAI-r16            INTEGER (1..maxAI-DCI-PayloadSize-r16),
+    availableCombToAddModList-r16    SEQUENCE (SIZE(1..maxNrofDUCells-r16)) OF AvailabilityCombinationsPerCell-r16          OPTIONAL, -- Need N
+    availableCombToReleaseList-r16   SEQUENCE (SIZE(1..maxNrofDUCells-r16)) OF AvailabilityCombinationsPerCellIndex-r16     OPTIONAL, -- Need N
+    ...
+}
+
+AI-RNTI-r16 ::=                      RNTI-Value

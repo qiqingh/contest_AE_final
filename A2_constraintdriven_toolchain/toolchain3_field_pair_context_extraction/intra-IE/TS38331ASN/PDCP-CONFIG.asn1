@@ -1,0 +1,108 @@
+PDCP-Config ::=         SEQUENCE {
+    drb                     SEQUENCE {
+        discardTimer            ENUMERATED {ms10, ms20, ms30, ms40, ms50, ms60, ms75, ms100, ms150, ms200,
+                                            ms250, ms300, ms500, ms750, ms1500, infinity}       OPTIONAL, -- Cond Setup
+        pdcp-SN-SizeUL          ENUMERATED {len12bits, len18bits}                               OPTIONAL, -- Cond Setup1
+        pdcp-SN-SizeDL          ENUMERATED {len12bits, len18bits}                               OPTIONAL, -- Cond Setup2
+        headerCompression       CHOICE {
+            notUsed                 NULL,
+            rohc                    SEQUENCE {
+                maxCID                  INTEGER (1..16383)                                      DEFAULT 15,
+                profiles                SEQUENCE {
+                    profile0x0001           BOOLEAN,
+                    profile0x0002           BOOLEAN,
+                    profile0x0003           BOOLEAN,
+                    profile0x0004           BOOLEAN,
+                    profile0x0006           BOOLEAN,
+                    profile0x0101           BOOLEAN,
+                    profile0x0102           BOOLEAN,
+                    profile0x0103           BOOLEAN,
+                    profile0x0104           BOOLEAN
+                },
+                drb-ContinueROHC            ENUMERATED { true }                                 OPTIONAL    -- Need N
+            },
+            uplinkOnlyROHC          SEQUENCE {
+                maxCID                  INTEGER (1..16383)                                      DEFAULT 15,
+                profiles                SEQUENCE {
+                    profile0x0006           BOOLEAN
+                },
+                drb-ContinueROHC            ENUMERATED { true }                                 OPTIONAL    -- Need N
+            },
+            ...
+        },
+        integrityProtection     ENUMERATED { enabled }                                          OPTIONAL,   -- Cond ConnectedTo5GC1
+        statusReportRequired    ENUMERATED { true }                                             OPTIONAL,   -- Cond Rlc-AM-UM
+        outOfOrderDelivery      ENUMERATED { true }                                             OPTIONAL    -- Need R
+    }                                                                                           OPTIONAL,   -- Cond DRB
+    moreThanOneRLC          SEQUENCE {
+        primaryPath             SEQUENCE {
+            cellGroup               CellGroupId                                                 OPTIONAL,   -- Need R
+            logicalChannel          LogicalChannelIdentity                                      OPTIONAL    -- Need R
+        },
+        ul-DataSplitThreshold   UL-DataSplitThreshold                                           OPTIONAL,   -- Cond SplitBearer
+        pdcp-Duplication            BOOLEAN                                                     OPTIONAL    -- Need R
+    }                                                                                           OPTIONAL,   -- Cond MoreThanOneRLC
+
+    t-Reordering                ENUMERATED {
+                                    ms0, ms1, ms2, ms4, ms5, ms8, ms10, ms15, ms20, ms30, ms40,
+                                    ms50, ms60, ms80, ms100, ms120, ms140, ms160, ms180, ms200, ms220,
+                                    ms240, ms260, ms280, ms300, ms500, ms750, ms1000, ms1250,
+                                    ms1500, ms1750, ms2000, ms2250, ms2500, ms2750,
+                                    ms3000, spare28, spare27, spare26, spare25, spare24,
+                                    spare23, spare22, spare21, spare20,
+                                    spare19, spare18, spare17, spare16, spare15, spare14,
+                                    spare13, spare12, spare11, spare10, spare09,
+                                    spare08, spare07, spare06, spare05, spare04, spare03,
+                                    spare02, spare01 }                                          OPTIONAL, -- Need S
+    ...,
+    [[
+    cipheringDisabled       ENUMERATED {true}                                                   OPTIONAL    -- Cond ConnectedTo5GC
+    ]],
+    [[
+    discardTimerExt-r16     SetupRelease { DiscardTimerExt-r16 }                                OPTIONAL,    -- Cond DRB2
+    moreThanTwoRLC-DRB-r16  SEQUENCE {
+        splitSecondaryPath-r16  LogicalChannelIdentity                                          OPTIONAL,   -- Cond SplitBearer2
+        duplicationState-r16    SEQUENCE (SIZE (3)) OF BOOLEAN                                  OPTIONAL    -- Need S
+    }                                                                                           OPTIONAL,   -- Cond MoreThanTwoRLC-DRB
+    ethernetHeaderCompression-r16  SetupRelease { EthernetHeaderCompression-r16 }               OPTIONAL    -- Need M
+    ]],
+    [[
+    survivalTimeStateSupport-r17   ENUMERATED {true}                                            OPTIONAL,   -- Cond Drb-Duplication
+    uplinkDataCompression-r17      SetupRelease { UplinkDataCompression-r17 }                   OPTIONAL,   -- Cond Rlc-AM
+    discardTimerExt2-r17           SetupRelease { DiscardTimerExt2-r17 }                        OPTIONAL,   -- Need M
+    initialRX-DELIV-r17            BIT STRING (SIZE (32))                                       OPTIONAL    -- Cond MRB-Initialization
+    ]]
+}
+
+EthernetHeaderCompression-r16 ::=  SEQUENCE {
+    ehc-Common-r16                     SEQUENCE {
+        ehc-CID-Length-r16                 ENUMERATED { bits7, bits15 },
+         ...
+    },
+    ehc-Downlink-r16               SEQUENCE {
+        drb-ContinueEHC-DL-r16         ENUMERATED { true }                                      OPTIONAL,   -- Need N
+        ...
+    }                                                                                           OPTIONAL,   -- Need M
+    ehc-Uplink-r16                 SEQUENCE {
+        maxCID-EHC-UL-r16              INTEGER (1..32767),
+        drb-ContinueEHC-UL-r16         ENUMERATED { true }                                      OPTIONAL,   -- Need N
+        ...
+    }                                                                                           OPTIONAL    -- Need M
+}
+
+UL-DataSplitThreshold ::= ENUMERATED {
+                                            b0, b100, b200, b400, b800, b1600, b3200, b6400, b12800, b25600, b51200, b102400, b204800,
+                                            b409600, b819200, b1228800, b1638400, b2457600, b3276800, b4096000, b4915200, b5734400,
+                                            b6553600, infinity, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+
+DiscardTimerExt-r16 ::= ENUMERATED {ms0dot5, ms1, ms2, ms4, ms6, ms8, spare2, spare1}
+
+DiscardTimerExt2-r17 ::= ENUMERATED {ms2000, spare3, spare2, spare1}
+
+UplinkDataCompression-r17 ::= CHOICE {
+    newSetup                      SEQUENCE {
+        bufferSize-r17                ENUMERATED {kbyte2, kbyte4, kbyte8, spare1},
+        dictionary-r17                ENUMERATED {sip-SDP, operator}                            OPTIONAL    -- Need N
+    },
+    drb-ContinueUDC           NULL
+}

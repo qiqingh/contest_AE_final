@@ -1,0 +1,142 @@
+OtherConfig ::=                 SEQUENCE {
+    delayBudgetReportingConfig  CHOICE{
+        release                 NULL,
+        setup                   SEQUENCE{
+            delayBudgetReportingProhibitTimer   ENUMERATED {s0, s0dot4, s0dot8, s1dot6, s3, s6, s12, s30}
+        }
+    }                                                                                                     OPTIONAL        -- Need M
+}
+
+OtherConfig-v1540 ::=           SEQUENCE {
+    overheatingAssistanceConfig     SetupRelease {OverheatingAssistanceConfig}                            OPTIONAL, -- Need M
+    ...
+}
+
+OtherConfig-v1610 ::=                   SEQUENCE {
+    idc-AssistanceConfig-r16                SetupRelease {IDC-AssistanceConfig-r16}                       OPTIONAL, -- Need M
+    drx-PreferenceConfig-r16                SetupRelease {DRX-PreferenceConfig-r16}                       OPTIONAL, -- Need M
+    maxBW-PreferenceConfig-r16              SetupRelease {MaxBW-PreferenceConfig-r16}                     OPTIONAL, -- Need M
+    maxCC-PreferenceConfig-r16              SetupRelease {MaxCC-PreferenceConfig-r16}                     OPTIONAL, -- Need M
+    maxMIMO-LayerPreferenceConfig-r16       SetupRelease {MaxMIMO-LayerPreferenceConfig-r16}              OPTIONAL, -- Need M
+    minSchedulingOffsetPreferenceConfig-r16 SetupRelease {MinSchedulingOffsetPreferenceConfig-r16}        OPTIONAL, -- Need M
+    releasePreferenceConfig-r16             SetupRelease {ReleasePreferenceConfig-r16}                    OPTIONAL, -- Need M
+    referenceTimePreferenceReporting-r16    ENUMERATED {true}                                             OPTIONAL, -- Need R
+    btNameList-r16                          SetupRelease {BT-NameList-r16}                                OPTIONAL, -- Need M
+    wlanNameList-r16                        SetupRelease {WLAN-NameList-r16}                              OPTIONAL, -- Need M
+    sensorNameList-r16                      SetupRelease {Sensor-NameList-r16}                            OPTIONAL, -- Need M
+    obtainCommonLocation-r16                ENUMERATED {true}                                             OPTIONAL, -- Need R
+    sl-AssistanceConfigNR-r16               ENUMERATED{true}                                              OPTIONAL  -- Need R
+}
+
+OtherConfig-v1700 ::=                   SEQUENCE {
+    ul-GapFR2-PreferenceConfig-r17          ENUMERATED {true}                                             OPTIONAL, -- Need R
+    musim-GapAssistanceConfig-r17           SetupRelease {MUSIM-GapAssistanceConfig-r17}                  OPTIONAL, -- Need M
+    musim-LeaveAssistanceConfig-r17         SetupRelease {MUSIM-LeaveAssistanceConfig-r17}                OPTIONAL, -- Need M
+    successHO-Config-r17                    SetupRelease {SuccessHO-Config-r17}                           OPTIONAL, -- Need M
+    maxBW-PreferenceConfigFR2-2-r17         ENUMERATED {true}                                             OPTIONAL, -- Cond maxBW
+    maxMIMO-LayerPreferenceConfigFR2-2-r17  ENUMERATED {true}                                             OPTIONAL, -- Cond maxMIMO
+    minSchedulingOffsetPreferenceConfigExt-r17  ENUMERATED {true}                                         OPTIONAL, -- Cond minOffset
+    rlm-RelaxationReportingConfig-r17       SetupRelease {RLM-RelaxationReportingConfig-r17}              OPTIONAL, -- Need M
+    bfd-RelaxationReportingConfig-r17       SetupRelease {BFD-RelaxationReportingConfig-r17}              OPTIONAL, -- Need M
+    scg-DeactivationPreferenceConfig-r17    SetupRelease {SCG-DeactivationPreferenceConfig-r17}           OPTIONAL, -- Cond SCG
+    rrm-MeasRelaxationReportingConfig-r17   SetupRelease {RRM-MeasRelaxationReportingConfig-r17}          OPTIONAL, -- Need M
+    propDelayDiffReportConfig-r17           SetupRelease {PropDelayDiffReportConfig-r17}                  OPTIONAL  -- Need M
+}
+
+CandidateServingFreqListNR-r16 ::= SEQUENCE (SIZE (1..maxFreqIDC-r16)) OF ARFCN-ValueNR
+
+MUSIM-GapAssistanceConfig-r17 ::= SEQUENCE {
+    musim-GapProhibitTimer-r17        ENUMERATED {s0, s0dot1, s0dot2, s0dot3, s0dot4, s0dot5, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10}
+}
+
+MUSIM-LeaveAssistanceConfig-r17 ::=     SEQUENCE {
+    musim-LeaveWithoutResponseTimer-r17     ENUMERATED {ms10, ms20, ms40, ms60, ms80, ms100, spare2, spare1}
+}
+
+SuccessHO-Config-r17 ::=                SEQUENCE {
+    thresholdPercentageT304-r17             ENUMERATED {p40, p60, p80, spare5, spare4, spare3, spare2, spare1}      OPTIONAL, --Need R
+    thresholdPercentageT310-r17             ENUMERATED {p40, p60, p80, spare5, spare4, spare3, spare2, spare1}      OPTIONAL, --Need R
+    thresholdPercentageT312-r17             ENUMERATED {p20, p40, p60, p80, spare4, spare3, spare2, spare1}         OPTIONAL, --Need R
+    sourceDAPS-FailureReporting-r17         ENUMERATED {true}                                                       OPTIONAL, --Need R
+    ...
+}
+
+OverheatingAssistanceConfig ::= SEQUENCE {
+    overheatingIndicationProhibitTimer    ENUMERATED {s0, s0dot5, s1, s2, s5, s10, s20, s30,
+                                          s60, s90, s120, s300, s600, spare3, spare2, spare1}
+}
+
+IDC-AssistanceConfig-r16 ::=    SEQUENCE {
+    candidateServingFreqListNR-r16  CandidateServingFreqListNR-r16                     OPTIONAL, -- Need R
+    ...
+}
+
+DRX-PreferenceConfig-r16 ::=          SEQUENCE {
+    drx-PreferenceProhibitTimer-r16       ENUMERATED {
+                                              s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                              s8, s9, s10, s20, s30, spare2, spare1}
+}
+
+MaxBW-PreferenceConfig-r16 ::=        SEQUENCE {
+    maxBW-PreferenceProhibitTimer-r16     ENUMERATED {
+                                              s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                              s8, s9, s10, s20, s30, spare2, spare1}
+}
+
+MaxCC-PreferenceConfig-r16 ::=        SEQUENCE {
+    maxCC-PreferenceProhibitTimer-r16     ENUMERATED {
+                                              s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                              s8, s9, s10, s20, s30, spare2, spare1}
+}
+
+MaxMIMO-LayerPreferenceConfig-r16 ::= SEQUENCE {
+    maxMIMO-LayerPreferenceProhibitTimer-r16 ENUMERATED {
+                                                 s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                                 s8, s9, s10, s20, s30, spare2, spare1}
+}
+
+MinSchedulingOffsetPreferenceConfig-r16 ::=   SEQUENCE {
+    minSchedulingOffsetPreferenceProhibitTimer-r16 ENUMERATED {
+                                                       s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                                       s8, s9, s10, s20, s30, spare2, spare1}
+}
+
+ReleasePreferenceConfig-r16 ::=       SEQUENCE {
+    releasePreferenceProhibitTimer-r16    ENUMERATED {
+                                              s0, s0dot5, s1, s2, s3, s4, s5, s6, s7,
+                                              s8, s9, s10, s20, s30, infinity, spare1},
+    connectedReporting                    ENUMERATED {true}                                               OPTIONAL  -- Need R
+}
+
+RLM-RelaxationReportingConfig-r17 ::= SEQUENCE {
+    rlm-RelaxtionReportingProhibitTimer   ENUMERATED {s0, s0dot5, s1, s2, s5, s10, s20, s30,
+                                          s60, s90, s120, s300, s600, infinity, spare2, spare1}
+}
+
+BFD-RelaxationReportingConfig-r17 ::= SEQUENCE {
+    bfd-RelaxtionReportingProhibitTimer   ENUMERATED {s0, s0dot5, s1, s2, s5, s10, s20, s30,
+                                          s60, s90, s120, s300, s600, infinity, spare2, spare1}
+}
+
+SCG-DeactivationPreferenceConfig-r17 ::=       SEQUENCE {
+    scg-DeactivationPreferenceProhibitTimer-r17    ENUMERATED {
+                                                   s0, s1, s2, s4, s8, s10, s15, s30,
+                                                   s60, s120, s180, s240, s300, s600, s900, s1800}
+}
+
+RRM-MeasRelaxationReportingConfig-r17 ::= SEQUENCE {
+    s-SearchDeltaP-Stationary-r17             ENUMERATED {dB2, dB3, dB6, dB9, dB12, dB15, spare2, spare1},
+    t-SearchDeltaP-Stationary-r17             ENUMERATED {s5, s10, s20, s30, s60, s120, s180, s240, s300, spare7, spare6, spare5,
+                                                          spare4, spare3, spare2, spare1}
+}
+
+PropDelayDiffReportConfig-r17 ::= SEQUENCE {
+    threshPropDelayDiff-r17           ENUMERATED {ms0dot5, ms1, ms2, ms3, ms4, ms5, ms6 ,ms7, ms8, ms9, ms10, spare5,
+                                                          spare4, spare3, spare2, spare1}                OPTIONAL,   -- Need M
+    neighCellInfoList-r17             SEQUENCE (SIZE (1..maxCellNTN-r17)) OF NeighbourCellInfo-r17         OPTIONAL    -- Need M
+}
+
+NeighbourCellInfo-r17  ::= SEQUENCE {
+epochTime-r17                  EpochTime-r17,
+ephemerisInfo-r17              EphemerisInfo-r17
+}

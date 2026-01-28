@@ -1,0 +1,128 @@
+Attaching to process 1990584
+[New LWP 1990588]
+[New LWP 1990589]
+[New LWP 1990590]
+[New LWP 1990591]
+[New LWP 1990592]
+[New LWP 1990593]
+[New LWP 1990594]
+[New LWP 1990595]
+[New LWP 1990613]
+[New LWP 1990614]
+[New LWP 1990615]
+[New LWP 1990616]
+[New LWP 1990617]
+[New LWP 1990618]
+[New LWP 1990619]
+[New LWP 1990620]
+[New LWP 1990621]
+[New LWP 1990622]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000601c1a15d0f3 in base_sequence_36_or_larger (Msc_RS=Msc_RS@entry=52, u=u@entry=1, v=v@entry=0, scaling=scaling@entry=32767, if_dmrs_seq=if_dmrs_seq@entry=1) at /home/openairinterface5g/openair1/PHY/NR_REFSIG/ul_ref_seq_nr.c:166
+166	  for (int n = 0; n < M_ZC; n++) {
+(gdb) (gdb) Continuing.
+[New Thread 0x715567a2e640 (LWP 1990645)]
+[New Thread 0x71556722d640 (LWP 1990646)]
+[New Thread 0x715566a2c640 (LWP 1990647)]
+[New Thread 0x715566068640 (LWP 1990648)]
+44	./nptl/pthread_kill.c: No such file or directory.
+[Thread 0x715567a2e640 (LWP 1990645) exited]
+
+Thread 15 "DL__actor" received signal SIGABRT, Aborted.
+[Switching to Thread 0x715572c77640 (LWP 1990618)]
+__pthread_kill_implementation (no_tid=0, signo=6, threadid=124611811833408) at ./nptl/pthread_kill.c:44
+(gdb) #0  __pthread_kill_implementation (no_tid=0, signo=6, threadid=124611811833408) at ./nptl/pthread_kill.c:44
+        tid = <optimized out>
+        ret = 0
+        pd = 0x715572c77640
+        old_mask = {__val = {1407387768913920, 562971428651013, 2, 9223372036854775814, 0, 0, 0, 0, 0, 0, 2, 9223372036854775814, 0, 0, 0, 0}}
+        ret = <optimized out>
+        pd = <optimized out>
+        old_mask = <optimized out>
+        ret = <optimized out>
+        tid = <optimized out>
+        ret = <optimized out>
+        resultvar = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        resultvar = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+        __futex = <optimized out>
+        __private = <optimized out>
+        __oldval = <optimized out>
+        result = <optimized out>
+#1  __pthread_kill_internal (signo=6, threadid=124611811833408) at ./nptl/pthread_kill.c:78
+No locals.
+#2  __GI___pthread_kill (threadid=124611811833408, signo=signo@entry=6) at ./nptl/pthread_kill.c:89
+No locals.
+#3  0x0000715596f2d476 in __GI_raise (sig=sig@entry=6) at ../sysdeps/posix/raise.c:26
+        ret = <optimized out>
+#4  0x0000715596f137f3 in __GI_abort () at ./stdlib/abort.c:79
+        save_stage = 1
+        act = {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {124611496799592, 250, 9, 124612271230992, 124612419060819, 0, 124612418955216, 19, 4766657173880904192, 124611496799584, 18446744073709551432, 0, 7, 124612420593760, 9, 124612271230992}}, sa_flags = -1762065325, sa_restorer = 0x715572c614b0}
+        sigs = {__val = {32, 188583424341102, 3472609778985861056, 4766657173880904192, 562967133279656, 18446744073709551432, 0, 124612419050795, 124611811626224, 124611496777536, 0, 124612419060819, 206158430256, 4766657173880904192, 124611811626176, 18446744073709551432}}
+#5  0x0000601c1a0da0a7 in exit_function (file=file@entry=0x601c1a36d770 "/home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/csi_rx.c", function=function@entry=0x601c1a36daa0 <__FUNCTION__.1> "nr_ue_csi_rs_procedures", line=line@entry=1010, s=s@entry=0x601c1a345092 "_Assert_Exit_", assert=assert@entry=1) at /home/openairinterface5g/executables/nr-uesoftmodem.c:201
+        CC_id = <optimized out>
+#6  0x0000601c1a1564bd in nr_ue_csi_rs_procedures (ue=ue@entry=0x71558e295010, proc=proc@entry=0x71556003ef80, rxdataF=rxdataF@entry=0x715572c614c0, csirs_config_pdu=csirs_config_pdu@entry=0x715560041716) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/csi_rx.c:1010
+        __FUNCTION__ = "nr_ue_csi_rs_procedures"
+        frame_parms = 0x71558e295b10
+        mapping_parms = {size = 1, ports = 2, kprime = 1, lprime = 0, j = {0 <repeats 16 times>}, koverline = {0 <repeats 16 times>}, loverline = {13, 0 <repeats 15 times>}}
+        csi_info = <optimized out>
+        csi_rs_ls_estimated_channel = <optimized out>
+        csi_rs_estimated_channel_freq = <optimized out>
+        mem_offset = <optimized out>
+        CDM_group_size = <optimized out>
+        csi_rs_received_signal = <optimized out>
+        rsrp = <optimized out>
+        rsrp_dBm = <optimized out>
+        noise_power = <optimized out>
+        log2_re = <optimized out>
+        log2_maxh = <optimized out>
+        rank_indicator = 0 '\000'
+        i1 = "\000\000"
+        i2 = ""
+        cqi = 15 '\017'
+        precoded_sinr_dB = 40
+        csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}
+        dl_indication = {module_id = 0, gNB_index = 0, cc_id = 0, frame = 0, slot = 0, rx_ind = 0x0, ssb_index = 0, dci_ind = 0x0, phy_data = 0x0}
+        rx_ind = {sfn = 0, slot = 0, number_pdus = 0, rx_indication_body = {{pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}} <repeats 12 times>, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = (RLM_out_of_sync | unknown: 0x1a25dfa4)}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x42269171df3d1a00 <error: Cannot access memory at address 0x42269171df3d1a00>}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 6656, ssb_start_subcarrier = 57149, rsrp_dBm = -28303, arfcn = 0, radiolink_monitoring = (unknown: 0x6002e840)}, sib_pdu = {pdu_length = 0, pdu = 0x42269171df3d1a00 <error: Cannot access memory at address 0x42269171df3d1a00>, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 57149, i2 = 113 'q', cqi = 145 '\221', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 176 '\260', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 26 '\032', pdu_length = 1109823857, pdu = 0x1 <error: Cannot access memory at address 0x1>}, ssb_pdu = {decoded_pdu = false, pdu = "\032=\337", additional_bits = 113 'q', ssb_index = 145 '\221', ssb_length = 38 '&', cell_id = 1, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 124611496962112, radiolink_monitoring = (unknown: 0x72c614b0)}, sib_pdu = {pdu_length = 3745323520, pdu = 0x1 <error: Cannot access memory at address 0x1>, sibs_mask = 1610803264}, csirs_measurements = {rsrp = 3745323520, rsrp_dBm = 1109823857, rank_indicator = 1 '\001', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = (unknown: 0x6002e840)}}}, {pdu_type = 16 '\020', {pdsch_pdu = {harq_pid = 1 '\001', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x601c1a1cbb50 <nr_ue_dl_indication> "\363\017\036\372AWAVAUATUH\211\375SH\201\354\350\004"}, ssb_pdu = {decoded_pdu = true, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 47952, ssb_start_subcarrier = 6684, rsrp_dBm = 24604, arfcn = 105673871312672, radiolink_monitoring = (unknown: 0x1a111170)}, sib_pdu = {pdu_length = 1, pdu = 0x601c1a1cbb50 <nr_ue_dl_indication> "\363\017\036\372AWAVAUATUH\211\375SH\201\354\350\004", sibs_mask = 495961888}, csirs_measurements = {rsrp = 1, rsrp_dBm = 0, rank_indicator = 80 'P', i1 = 6684, i2 = 28 '\034', cqi = 96 '`', radiolink_monitoring = (unknown: 0x1d8fc720)}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 54 '6', ack_nack = 3 '\003', pdu_length = 24604, pdu = 0x0}, ssb_pdu = {decoded_pdu = 54, pdu = "\003\021\032", additional_bits = 28 '\034', ssb_index = 96 '`', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 124611496962112, radiolink_monitoring = RLM_out_of_sync}, sib_pdu = {pdu_length = 437322550, pdu = 0x0, sibs_mask = 1610803264}, csirs_measurements = {rsrp = 437322550, rsrp_dBm = 24604, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = (unknown: 0x6002e840)}}}, {pdu_type = 128 '\200', {pdsch_pdu = {harq_pid = 192 '\300', ack_nack = 4 '\004', pdu_length = 29013, pdu = 0x715572c604b8 "\200\n"}, ssb_pdu = {decoded_pdu = 192, pdu = "\004\306r", additional_bits = 85 'U', ssb_index = 113 'q', ssb_length = 0 '\000', cell_id = 1208, ssb_start_subcarrier = 29382, rsrp_dBm = 29013, arfcn = 124611811738832, radiolink_monitoring = RLM_out_of_sync}, sib_pdu = {pdu_length = 1925579968, pdu = 0x715572c604b8 "\200\n", sibs_mask = 1925579984}, csirs_measurements = {rsrp = 1925579968, rsrp_dBm = 29013, rank_indicator = 184 '\270', i1 = 29382, i2 = 85 'U', cqi = 113 'q', radiolink_monitoring = (unknown: 0x72c604d0)}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 144 '\220', ack_nack = 3 '\003', pdu_length = 29013, pdu = 0xc <error: Cannot access memory at address 0xc>}, ssb_pdu = {decoded_pdu = 144, pdu = "\003\306r", additional_bits = 85 'U', ssb_index = 113 'q', ssb_length = 0 '\000', cell_id = 12, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_out_of_sync}, sib_pdu = {pdu_length = 1925579664, pdu = 0xc <error: Cannot access memory at address 0xc>, sibs_mask = 0}, csirs_measurements = {rsrp = 1925579664, rsrp_dBm = 29013, rank_indicator = 12 '\f', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 128 '\200', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 584, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 72 'H', ssb_index = 2 '\002', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 584, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0xa80 <error: Cannot access memory at address 0xa80>}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 2688, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 105673885213824, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0xa80 <error: Cannot access memory at address 0xa80>, sibs_mask = 509863040}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 128 '\200', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = (unknown: 0x1e63e480)}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 2 '\002', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x8100000100 <error: Cannot access memory at address 0x8100000100>}, ssb_pdu = {decoded_pdu = 2, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 256, ssb_start_subcarrier = 0, rsrp_dBm = 129, arfcn = 105673885213824, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 2, pdu = 0x8100000100 <error: Cannot access memory at address 0x8100000100>, sibs_mask = 509863040}, csirs_measurements = {rsrp = 2, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 129 '\201', cqi = 0 '\000', radiolink_monitoring = (unknown: 0x1e63e480)}}}, {pdu_type = 0 '\000', {pdsch_pdu = {harq_pid = 0 '\000', ack_nack = 0 '\000', pdu_length = 0, pdu = 0x0}, ssb_pdu = {decoded_pdu = false, pdu = "\000\000", additional_bits = 0 '\000', ssb_index = 0 '\000', ssb_length = 0 '\000', cell_id = 0, ssb_start_subcarrier = 0, rsrp_dBm = 0, arfcn = 0, radiolink_monitoring = RLM_no_monitoring}, sib_pdu = {pdu_length = 0, pdu = 0x0, sibs_mask = 0}, csirs_measurements = {rsrp = 0, rsrp_dBm = 0, rank_indicator = 0 '\000', i1 = 0, i2 = 0 '\000', cqi = 0 '\000', radiolink_monitoring = RLM_no_monitoring}}} <repeats 74 times>}}
+#7  0x0000601c1a115262 in pdsch_processing (ue=<optimized out>, proc=<optimized out>, phy_data=0x71556003efb8) at /home/openairinterface5g/openair1/SCHED_NR_UE/phy_procedures_nr_ue.c:1032
+        frame_rx = <optimized out>
+        nr_slot_rx = <optimized out>
+        gNB_id = <optimized out>
+        dlsch = 0x715560041540
+        slot_fep_map = {false <repeats 13 times>, true}
+        rxdataF_sz = <optimized out>
+        rxdataF = <error reading variable rxdataF (Cannot access memory at address 0x1e6b4a)>
+        __FUNCTION__ = "pdsch_processing"
+#8  0x0000601c1a3433d5 in actor_thread (arg=0x71558e7fc620) at /home/openairinterface5g/common/utils/threadPool/./notified_fifo.h:92
+        elt = 0x71556003ef00
+        actor = 0x71558e7fc620
+        __FUNCTION__ = "actor_thread"
+#9  0x0000715596f7fac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, 3159907362062031274, 124611811833408, 2, 124612418992080, 140729100414304, 3159907361295522218, 3160391563673819562}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x0000715597011850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 1990584] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 1990584
+[Inferior 1 (process 1990584) detached]

@@ -1,0 +1,448 @@
+CA-ParametersNR ::=                 SEQUENCE {
+    dummy                                         ENUMERATED {supported}      OPTIONAL,
+    parallelTxSRS-PUCCH-PUSCH                     ENUMERATED {supported}      OPTIONAL,
+    parallelTxPRACH-SRS-PUCCH-PUSCH               ENUMERATED {supported}      OPTIONAL,
+    simultaneousRxTxInterBandCA                   ENUMERATED {supported}      OPTIONAL,
+    simultaneousRxTxSUL                           ENUMERATED {supported}      OPTIONAL,
+    diffNumerologyAcrossPUCCH-Group               ENUMERATED {supported}      OPTIONAL,
+    diffNumerologyWithinPUCCH-GroupSmallerSCS     ENUMERATED {supported}      OPTIONAL,
+    supportedNumberTAG                            ENUMERATED {n2, n3, n4}     OPTIONAL,
+    ...
+}
+
+CA-ParametersNR-v1540 ::=           SEQUENCE {
+    simultaneousSRS-AssocCSI-RS-AllCC                       INTEGER (5..32)         OPTIONAL,
+    csi-RS-IM-ReceptionForFeedbackPerBandComb               SEQUENCE {
+        maxNumberSimultaneousNZP-CSI-RS-ActBWP-AllCC            INTEGER (1..64)     OPTIONAL,
+        totalNumberPortsSimultaneousNZP-CSI-RS-ActBWP-AllCC     INTEGER (2..256)    OPTIONAL
+    }                                                                               OPTIONAL,
+    simultaneousCSI-ReportsAllCC                            INTEGER (5..32)         OPTIONAL,
+    dualPA-Architecture                                     ENUMERATED {supported}  OPTIONAL
+}
+
+CA-ParametersNR-v1550 ::=           SEQUENCE {
+    dummy                               ENUMERATED {supported}                      OPTIONAL
+}
+
+CA-ParametersNR-v1560 ::=           SEQUENCE {
+    diffNumerologyWithinPUCCH-GroupLargerSCS      ENUMERATED {supported}            OPTIONAL
+}
+
+CA-ParametersNR-v15g0 ::=           SEQUENCE {
+    simultaneousRxTxInterBandCAPerBandPair        SimultaneousRxTxPerBandPair       OPTIONAL,
+    simultaneousRxTxSULPerBandPair                SimultaneousRxTxPerBandPair       OPTIONAL
+}
+
+CA-ParametersNR-v1610 ::=           SEQUENCE {
+     -- R1 9-3: Parallel MsgA and SRS/PUCCH/PUSCH transmissions across CCs in inter-band CA
+    parallelTxMsgA-SRS-PUCCH-PUSCH-r16                ENUMERATED {supported}        OPTIONAL,
+     -- R1 9-4: MsgA operation in a band combination including SUL
+    msgA-SUL-r16                                      ENUMERATED {supported}        OPTIONAL,
+    -- R1 10-9c: Joint search space group switching across multiple cells
+    jointSearchSpaceSwitchAcrossCells-r16             ENUMERATED {supported}        OPTIONAL,
+    -- R1 14-5: Half-duplex UE behaviour in TDD CA for same SCS
+    half-DuplexTDD-CA-SameSCS-r16                     ENUMERATED {supported}        OPTIONAL,
+    -- R1 18-4: SCell dormancy within active time
+    scellDormancyWithinActiveTime-r16                 ENUMERATED {supported}        OPTIONAL,
+    -- R1 18-4a: SCell dormancy outside active time
+    scellDormancyOutsideActiveTime-r16                ENUMERATED {supported}        OPTIONAL,
+    -- R1 18-6: Cross-carrier A-CSI RS triggering with different SCS
+    crossCarrierA-CSI-trigDiffSCS-r16                 ENUMERATED {higherA-CSI-SCS,lowerA-CSI-SCS,both}   OPTIONAL,
+    -- R1 18-6a: Default QCL assumption for cross-carrier A-CSI-RS triggering
+    defaultQCL-CrossCarrierA-CSI-Trig-r16             ENUMERATED {diffOnly, both}   OPTIONAL,
+    -- R1 18-7: CA with non-aligned frame boundaries for inter-band CA
+    interCA-NonAlignedFrame-r16                       ENUMERATED {supported}        OPTIONAL,
+    simul-SRS-Trans-BC-r16                            ENUMERATED {n2}               OPTIONAL,
+    interFreqDAPS-r16                                 SEQUENCE {
+        interFreqAsyncDAPS-r16                            ENUMERATED {supported}    OPTIONAL,
+        interFreqDiffSCS-DAPS-r16                         ENUMERATED {supported}    OPTIONAL,
+        interFreqMultiUL-TransmissionDAPS-r16             ENUMERATED {supported}    OPTIONAL,
+        interFreqSemiStaticPowerSharingDAPS-Mode1-r16     ENUMERATED {supported}    OPTIONAL,
+        interFreqSemiStaticPowerSharingDAPS-Mode2-r16     ENUMERATED {supported}    OPTIONAL,
+        interFreqDynamicPowerSharingDAPS-r16              ENUMERATED {short, long}  OPTIONAL,
+        interFreqUL-TransCancellationDAPS-r16             ENUMERATED {supported}    OPTIONAL
+    }                                                                               OPTIONAL,
+    codebookParametersPerBC-r16                       CodebookParameters-v1610      OPTIONAL,
+    -- R1 16-2a-10 Value of R for BD/CCE
+    blindDetectFactor-r16                             INTEGER (1..2)                OPTIONAL,
+    -- R1 11-2a: Capability on the number of CCs for monitoring a maximum number of BDs and non-overlapped CCEs per span when configured
+    -- with DL CA with Rel-16 PDCCH monitoring capability on all the serving cells
+    pdcch-MonitoringCA-r16                            SEQUENCE {
+        maxNumberOfMonitoringCC-r16                       INTEGER (2..16),
+        supportedSpanArrangement-r16                      ENUMERATED {alignedOnly, alignedAndNonAligned}
+    }                                                                               OPTIONAL,
+    -- R1 11-2c: Number of carriers for CCE/BD scaling with DL CA with mix of Rel. 16 and Rel. 15 PDCCH monitoring capabilities on
+    -- different carriers
+    pdcch-BlindDetectionCA-Mixed-r16                  SEQUENCE {
+        pdcch-BlindDetectionCA1-r16                       INTEGER (1..15),
+        pdcch-BlindDetectionCA2-r16                       INTEGER (1..15),
+        supportedSpanArrangement-r16                      ENUMERATED {alignedOnly, alignedAndNonAligned}
+    }                                                                               OPTIONAL,
+    -- R1 11-2d: Capability on the number of CCs for monitoring a maximum number of BDs and non-overlapped CCEs per span for MCG and for
+    -- SCG when configured for NR-DC operation with Rel-16 PDCCH monitoring capability on all the serving cells
+    pdcch-BlindDetectionMCG-UE-r16                    INTEGER (1..14)               OPTIONAL,
+    pdcch-BlindDetectionSCG-UE-r16                    INTEGER (1..14)               OPTIONAL,
+    -- R1 11-2e: Number of carriers for CCE/BD scaling for MCG and for SCG when configured for NR-DC operation with mix of Rel. 16 and
+    -- Rel. 15 PDCCH monitoring capabilities on different carriers
+    pdcch-BlindDetectionMCG-UE-Mixed-r16              SEQUENCE {
+        pdcch-BlindDetectionMCG-UE1-r16                   INTEGER (0..15),
+        pdcch-BlindDetectionMCG-UE2-r16                   INTEGER (0..15)
+    }                                                                               OPTIONAL,
+    pdcch-BlindDetectionSCG-UE-Mixed-r16              SEQUENCE {
+        pdcch-BlindDetectionSCG-UE1-r16                   INTEGER (0..15),
+        pdcch-BlindDetectionSCG-UE2-r16                   INTEGER (0..15)
+    }                                                                               OPTIONAL,
+     -- R1 18-5 cross-carrier scheduling with different SCS in DL CA
+    crossCarrierSchedulingDL-DiffSCS-r16              ENUMERATED {low-to-high, high-to-low, both} OPTIONAL,
+    -- R1 18-5a Default QCL assumption for cross-carrier scheduling
+    crossCarrierSchedulingDefaultQCL-r16              ENUMERATED {diff-only, both}  OPTIONAL,
+    -- R1 18-5b cross-carrier scheduling with different SCS in UL CA
+    crossCarrierSchedulingUL-DiffSCS-r16              ENUMERATED {low-to-high, high-to-low, both} OPTIONAL,
+    -- R1 13.19a Simultaneous positioning SRS and MIMO SRS transmission for a given BC
+    simul-SRS-MIMO-Trans-BC-r16                       ENUMERATED {n2}               OPTIONAL,
+    -- R1 16-3a, 16-3a-1, 16-3b, 16-3b-1: New Individual Codebook
+    codebookParametersAdditionPerBC-r16               CodebookParametersAdditionPerBC-r16         OPTIONAL,
+    -- R1 16-8: Mixed codebook
+    codebookComboParametersAdditionPerBC-r16          CodebookComboParametersAdditionPerBC-r16    OPTIONAL
+}
+
+CA-ParametersNR-v1630 ::= SEQUENCE {
+    -- R1 22-5b: Simultaneous transmission of SRS for antenna switching and SRS for CB/NCB /BM for inter-band UL CA
+    -- R1 22-5d: Simultaneous transmission of SRS for antenna switching for inter-band UL CA	
+    simulTX-SRS-AntSwitchingInterBandUL-CA-r16        SimulSRS-ForAntennaSwitching-r16            OPTIONAL,
+    -- R4 8-5: supported beam management type for inter-band CA	
+    beamManagementType-r16                            ENUMERATED {ibm, dummy}                       OPTIONAL,
+    -- R4 7-3a: UL frequency separation class with aggregate BW and Gap BW
+    intraBandFreqSeparationUL-AggBW-GapBW-r16         ENUMERATED {classI, classII, classIII}      OPTIONAL,
+    -- RAN 89: Case B in case of Inter-band CA with non-aligned frame boundaries
+    interCA-NonAlignedFrame-B-r16                     ENUMERATED {supported}                      OPTIONAL
+}
+
+CA-ParametersNR-v1640 ::= SEQUENCE {
+    -- R4 7-5: Support of reporting UL Tx DC locations for uplink intra-band CA.
+    uplinkTxDC-TwoCarrierReport-r16                               ENUMERATED {supported}          OPTIONAL,
+    -- RAN 22-6: Support of up to 3 different numerologies in the same NR PUCCH group for NR part of EN-DC, NGEN-DC, NE-DC and NR-CA
+    -- where UE is not configured with two NR PUCCH groups
+    maxUpTo3Diff-NumerologiesConfigSinglePUCCH-grp-r16            PUCCH-Grp-CarrierTypes-r16      OPTIONAL,
+    -- RAN 22-6a: Support of up to 4 different numerologies in the same NR PUCCH group for NR part of EN-DC, NGEN-DC, NE-DC and NR-CA
+    -- where UE is not configured with two NR PUCCH groups
+    maxUpTo4Diff-NumerologiesConfigSinglePUCCH-grp-r16            PUCCH-Grp-CarrierTypes-r16      OPTIONAL,
+    -- RAN 22-7: Support two PUCCH groups for NR-CA with 3 or more bands with at least two carrier types
+    twoPUCCH-Grp-ConfigurationsList-r16 SEQUENCE (SIZE (1..maxTwoPUCCH-Grp-ConfigList-r16)) OF TwoPUCCH-Grp-Configurations-r16 OPTIONAL,
+    -- R1 22-7a: Different numerology across NR PUCCH groups
+    diffNumerologyAcrossPUCCH-Group-CarrierTypes-r16              ENUMERATED {supported}          OPTIONAL,
+    -- R1 22-7b: Different numerologies across NR carriers within the same NR PUCCH group, with PUCCH on a carrier of smaller SCS
+    diffNumerologyWithinPUCCH-GroupSmallerSCS-CarrierTypes-r16    ENUMERATED {supported}          OPTIONAL,
+    -- R1 22-7c: Different numerologies across NR carriers within the same NR PUCCH group, with PUCCH on a carrier of larger SCS
+    diffNumerologyWithinPUCCH-GroupLargerSCS-CarrierTypes-r16     ENUMERATED {supported}          OPTIONAL,
+    -- R1 11-2f: add the replicated FGs of 11-2a/c with restriction for non-aligned span case
+    -- with DL CA with Rel-16 PDCCH monitoring capability on all the serving cells
+    pdcch-MonitoringCA-NonAlignedSpan-r16                         INTEGER (2..16)                 OPTIONAL,
+    -- R1 11-2g: add the replicated FGs of 11-2a/c with restriction for non-aligned span case
+    pdcch-BlindDetectionCA-Mixed-NonAlignedSpan-r16               SEQUENCE {
+        pdcch-BlindDetectionCA1-r16                                   INTEGER (1..15),
+        pdcch-BlindDetectionCA2-r16                                   INTEGER (1..15)
+    }                                                                                             OPTIONAL
+}
+
+CA-ParametersNR-v1690 ::= SEQUENCE {
+    csi-ReportingCrossPUCCH-Grp-r16          SEQUENCE {
+        computationTimeForA-CSI-r16              ENUMERATED {sameAsNoCross, relaxed},
+        additionalSymbols-r16                    SEQUENCE {
+            scs-15kHz-additionalSymbols-r16          ENUMERATED {s14, s28}            OPTIONAL,
+            scs-30kHz-additionalSymbols-r16          ENUMERATED {s14, s28}            OPTIONAL,
+            scs-60kHz-additionalSymbols-r16          ENUMERATED {s14, s28, s56}       OPTIONAL,
+            scs-120kHz-additionalSymbols-r16         ENUMERATED {s14, s28, s56}       OPTIONAL
+        }                                                                             OPTIONAL,
+        sp-CSI-ReportingOnPUCCH-r16              ENUMERATED {supported}               OPTIONAL,
+        sp-CSI-ReportingOnPUSCH-r16              ENUMERATED {supported}               OPTIONAL,
+        carrierTypePairList-r16                  SEQUENCE (SIZE (1..maxCarrierTypePairList-r16)) OF CarrierTypePair-r16
+    }                                                                                 OPTIONAL
+}
+
+CA-ParametersNR-v16a0 ::= SEQUENCE {
+    pdcch-BlindDetectionMixedList-r16    SEQUENCE(SIZE(1..maxNrofPdcch-BlindDetectionMixed-1-r16)) OF PDCCH-BlindDetectionMixedList-r16
+}
+
+CA-ParametersNR-v1700 ::= SEQUENCE {
+    -- R1 23-9-1: Basic Features of Further Enhanced Port-Selection Type II Codebook (FeType-II) per band combination information
+    codebookParametersfetype2PerBC-r17               CodebookParametersfetype2PerBC-r17           OPTIONAL,
+    -- R4 18-4: Support of enhanced Demodulation requirements for CA in HST SFN FR1
+    demodulationEnhancementCA-r17                    ENUMERATED {supported}                       OPTIONAL,
+    -- R4 20-1: Maximum uplink duty cycle for NR inter-band CA power class 2
+    maxUplinkDutyCycle-interBandCA-PC2-r17           ENUMERATED {n50, n60, n70, n80, n90, n100}   OPTIONAL,
+    -- R4 20-2: Maximum uplink duty cycle for NR SUL combination power class 2
+    maxUplinkDutyCycle-SULcombination-PC2-r17        ENUMERATED {n50, n60, n70, n80, n90, n100}   OPTIONAL,
+    beamManagementType-CBM-r17                       ENUMERATED {supported}                       OPTIONAL,
+    -- R1 25-18: Parallel PUCCH and PUSCH transmission across CCs in inter-band CA
+    parallelTxPUCCH-PUSCH-r17                        ENUMERATED {supported}      OPTIONAL,
+    -- R1 23-9-5	Active CSI-RS resources and ports for mixed codebook types in any slot per band combination
+    codebookComboParameterMixedTypePerBC-r17         CodebookComboParameterMixedTypePerBC-r17     OPTIONAL,
+   -- R1 23-7-1	Basic Features of CSI Enhancement for Multi-TRP
+    mTRP-CSI-EnhancementPerBC-r17                    SEQUENCE {
+        maxNumNZP-CSI-RS-r17                             INTEGER (2..8),
+        cSI-Report-mode-r17                              ENUMERATED {mode1, mode2, both},
+        supportedComboAcrossCCs-r17                      SEQUENCE (SIZE (1..16)) OF CSI-MultiTRP-SupportedCombinations-r17,
+        codebookMode-NCJT-r17	ENUMERATED{mode1,mode1And2}
+    }                                                                                             OPTIONAL,
+     -- R1 23-7-1b	Active CSI-RS resources and ports in the presence of multi-TRP CSI
+    codebookComboParameterMultiTRP-PerBC-r17         CodebookComboParameterMultiTRP-PerBC-r17     OPTIONAL,
+    -- R1 24-8b: 32 DL HARQ processes for FR 2-2 - maximum number of component carriers
+    maxCC-32-DL-HARQ-ProcessFR2-2-r17                ENUMERATED {n1, n2, n3, n4, n6, n8, n16, n32} OPTIONAL,
+    -- R1 24-9b: 32 UL HARQ processes for FR 2-2 - maximum number of component carriers
+    maxCC-32-UL-HARQ-ProcessFR2-2-r17                ENUMERATED {n1, n2, n3, n4, n5, n8, n16, n32}  OPTIONAL,
+    -- R1 34-2: Cross-carrier scheduling from SCell to PCell/PSCell (Type B)
+    crossCarrierSchedulingSCell-SpCellTypeB-r17      CrossCarrierSchedulingSCell-SpCell-r17       OPTIONAL,
+-- R1 34-1: Cross-carrier scheduling from SCell to PCell/PSCell with search space restrictions (Type A)
+    crossCarrierSchedulingSCell-SpCellTypeA-r17      CrossCarrierSchedulingSCell-SpCell-r17       OPTIONAL,
+    -- R1 34-1a: DCI formats on PCell/PSCell USS set(s) support
+    dci-FormatsPCellPSCellUSS-Sets-r17               ENUMERATED {supported}                       OPTIONAL,
+    -- R1 34-3: Disabling scaling factor alpha when sSCell is deactivated
+    disablingScalingFactorDeactSCell-r17             ENUMERATED {supported}                       OPTIONAL,
+    -- R1 34-4: Disabling scaling factor alpha when sSCell is deactivated
+    disablingScalingFactorDormantSCell-r17           ENUMERATED {supported}                       OPTIONAL,
+    -- R1 34-5: Non-aligned frame boundaries between PCell/PSCell and sSCell
+    non-AlignedFrameBoundaries-r17 SEQUENCE {
+        scs15kHz-15kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL,
+        scs15kHz-30kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL,
+        scs15kHz-60kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL,
+        scs30kHz-30kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL,
+        scs30kHz-60kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL,
+        scs60kHz-60kHz-r17                           BIT STRING (SIZE (1..496))                   OPTIONAL
+    }                                                                                             OPTIONAL
+}
+
+CA-ParametersNR-v1720 ::= SEQUENCE {
+    -- R1 39-1: Parallel SRS and PUCCH/PUSCH transmission across CCs in intra-band non-contiguous CA
+    parallelTxSRS-PUCCH-PUSCH-intraBand-r17          ENUMERATED {supported}                       OPTIONAL,
+    -- R1 39-2: Parallel PRACH and SRS/PUCCH/PUSCH transmissions across CCs in intra-band non-contiguous CA
+    parallelTxPRACH-SRS-PUCCH-PUSCH-intraBand-r17    ENUMERATED {supported}                       OPTIONAL,
+    -- R1 25-9: Semi-static PUCCH cell switching for a single PUCCH group only
+    semiStaticPUCCH-CellSwitchSingleGroup-r17        SEQUENCE {
+        pucch-Group-r17                                ENUMERATED {primaryGroupOnly, secondaryGroupOnly, eitherPrimaryOrSecondaryGroup},
+        pucch-Group-Config-r17                           PUCCH-Group-Config-r17
+    }                                                                                             OPTIONAL,
+    -- R1 25-9a: Semi-static PUCCH cell switching for two PUCCH groups
+    semiStaticPUCCH-CellSwitchTwoGroups-r17    SEQUENCE (SIZE (1..maxTwoPUCCH-Grp-ConfigList-r17)) OF TwoPUCCH-Grp-Configurations-r17 OPTIONAL,
+    -- R1 25-10: PUCCH cell switching based on dynamic indication for same length of overlapping PUCCH slots/sub-slots for a single
+    -- PUCCH group only
+    dynamicPUCCH-CellSwitchSameLengthSingleGroup-r17 SEQUENCE {
+        pucch-Group-r17                                  ENUMERATED {primaryGroupOnly, secondaryGroupOnly, eitherPrimaryOrSecondaryGroup},
+        pucch-Group-Config-r17                       PUCCH-Group-Config-r17
+    }                                                                                             OPTIONAL,
+    -- R1 25-10a: PUCCH cell switching based on dynamic indication for different length of overlapping PUCCH slots/sub-slots
+    -- for a single PUCCH group only
+    dynamicPUCCH-CellSwitchDiffLengthSingleGroup-r17 SEQUENCE {
+        pucch-Group-r17                                  ENUMERATED {primaryGroupOnly, secondaryGroupOnly, eitherPrimaryOrSecondaryGroup},
+        pucch-Group-Config-r17                           PUCCH-Group-Config-r17
+    }                                                                                             OPTIONAL,
+    -- R1 25-10b: PUCCH cell switching based on dynamic indication for same length of overlapping PUCCH slots/sub-slots for two PUCCH
+    -- groups
+    dynamicPUCCH-CellSwitchSameLengthTwoGroups-r17   SEQUENCE (SIZE (1..maxTwoPUCCH-Grp-ConfigList-r17)) OF TwoPUCCH-Grp-Configurations-r17
+                                                                                                  OPTIONAL,
+    -- R1 25-10c: PUCCH cell switching based on dynamic indication for different length of overlapping PUCCH slots/sub-slots for two
+    -- PUCCH groups
+    dynamicPUCCH-CellSwitchDiffLengthTwoGroups-r17   SEQUENCE (SIZE (1..maxTwoPUCCH-Grp-ConfigList-r17)) OF TwoPUCCH-Grp-Configurations-r17
+                                                                                                  OPTIONAL,
+    -- R1 33-2a: ACK/NACK based HARQ-ACK feedback and RRC-based enabling/disabling ACK/NACK-based
+    -- feedback for dynamic scheduling for multicast
+    ack-NACK-FeedbackForMulticast-r17                ENUMERATED {supported}                       OPTIONAL,
+    -- R1 33-2d: PTP retransmission for multicast dynamic scheduling
+    ptp-Retx-Multicast-r17                           ENUMERATED {supported}                       OPTIONAL,
+    -- R1 33-4: NACK-only based HARQ-ACK feedback for RRC-based enabling/disabling multicast with ACK/NACK transforming
+    nack-OnlyFeedbackForMulticast-r17                ENUMERATED {supported}                       OPTIONAL,
+    -- R1 33-4a: NACK-only based HARQ-ACK feedback for multicast corresponding to a specific sequence or a PUCCH transmission
+    nack-OnlyFeedbackSpecificResourceForMulticast-r17 ENUMERATED {supported}                      OPTIONAL,
+    -- R1 33-5-1a: ACK/NACK based HARQ-ACK feedback and RRC-based enabling/disabling ACK/NACK-based feedback
+    -- for SPS group-common PDSCH for multicast
+    ack-NACK-FeedbackForSPS-Multicast-r17            ENUMERATED {supported}                       OPTIONAL,
+    -- R1 33-5-1d: PTP retransmission for SPS group-common PDSCH for multicast
+    ptp-Retx-SPS-Multicast-r17                       ENUMERATED {supported}                       OPTIONAL,
+    -- R4 26-1: Higher Power Limit CA DC
+    higherPowerLimit-r17                             ENUMERATED {supported}                       OPTIONAL,
+    -- R1 39-4: Parallel MsgA and SRS/PUCCH/PUSCH transmissions across CCs in intra-band non-contiguous CA
+    parallelTxMsgA-SRS-PUCCH-PUSCH-intraBand-r17     ENUMERATED {supported}                       OPTIONAL,
+    -- R1 24-11a: Capability on the number of CCs for monitoring a maximum number of BDs and non-overlapped CCEs per span when
+    -- configured with DL CA with Rel-17 PDCCH monitoring capability on all the serving cells
+    pdcch-MonitoringCA-r17                           INTEGER (4..16)                              OPTIONAL,
+    -- R1 24-11f: Capability on the number of CCs for monitoring a maximum number of BDs and non-overlapped CCEs for MCG and for SCG
+    -- when configured for NR-DC operation with Rel-17 PDCCH monitoring capability on all the serving cells
+    pdcch-BlindDetectionMCG-SCG-List-r17             SEQUENCE(SIZE(1..maxNrofPdcch-BlindDetection-r17)) OF PDCCH-BlindDetectionMCG-SCG-r17
+                                                                                                  OPTIONAL,
+    -- R1 24-11c: Number of carriers for CCE/BD scaling with DL CA with mix of Rel. 17 and Rel. 15 PDCCH monitoring capabilities on
+    -- different Carriers
+    -- R1 24-11g: Number of carriers for CCE/BD scaling for MCG and for SCG when configured for NR-DC operation with mix of Rel. 17 and
+    -- Rel. 15 PDCCH monitoring capabilities on different carriers
+    pdcch-BlindDetectionMixedList1-r17               SEQUENCE(SIZE(1..maxNrofPdcch-BlindDetection-r17)) OF PDCCH-BlindDetectionMixed-r17
+                                                                                                  OPTIONAL,
+    -- R1 24-11d: Number of carriers for CCE/BD scaling with DL CA with mix of Rel. 17 and Rel. 16 PDCCH monitoring capabilities on
+    -- different Carriers
+    -- R1 24-11h: Number of carriers for CCE/BD scaling for MCG and for SCG when configured for NR-DC operation with mix of Rel. 17 and
+    -- Rel. 16 PDCCH monitoring capabilities on different carriers
+    pdcch-BlindDetectionMixedList2-r17               SEQUENCE(SIZE(1..maxNrofPdcch-BlindDetection-r17)) OF PDCCH-BlindDetectionMixed-r17
+                                                                                                  OPTIONAL,
+    -- R1 24-11e: Number of carriers for CCE/BD scaling with DL CA with mix of Rel. 17, Rel. 16 and Rel. 15 PDCCH monitoring
+    -- capabilities on different carriers
+    -- R1 24-11i: Number of carriers for CCE/BD scaling for MCG and for SCG when configured for NR-DC operation with mix of Rel. 17,
+    -- Rel. 16 and Rel. 15 PDCCH monitoring capabilities on different carriers
+    pdcch-BlindDetectionMixedList3-r17               SEQUENCE(SIZE(1..maxNrofPdcch-BlindDetection-r17)) OF PDCCH-BlindDetectionMixed1-r17
+                                                                                                  OPTIONAL
+}
+
+CA-ParametersNR-v1730 ::= SEQUENCE {
+    -- R1 30-4a: DM-RS bundling for PUSCH repetition type A (per BC)
+    dmrs-BundlingPUSCH-RepTypeAPerBC-r17                   ENUMERATED {supported}                         OPTIONAL,
+    -- R1 30-4b: DM-RS bundling for PUSCH repetition type B(per BC)
+    dmrs-BundlingPUSCH-RepTypeBPerBC-r17                   ENUMERATED {supported}                         OPTIONAL,
+    -- R1 30-4c: DM-RS bundling for TB processing over multi-slot PUSCH(per BC)
+    dmrs-BundlingPUSCH-multiSlotPerBC-r17                  ENUMERATED {supported}                         OPTIONAL,
+    -- R1 30-4d: DMRS bundling for PUCCH repetitions(per BC)
+    dmrs-BundlingPUCCH-RepPerBC-r17                        ENUMERATED {supported}                         OPTIONAL,
+    -- R1 30-4g: Restart DM-RS bundling (per BC)
+    dmrs-BundlingRestartPerBC-r17                          ENUMERATED {supported}                         OPTIONAL,
+    -- R1 30-4h: DM-RS bundling for non-back-to-back transmission (per BC)
+    dmrs-BundlingNonBackToBackTX-PerBC-r17                 ENUMERATED {supported}                         OPTIONAL,
+    -- R1 39-3-1: Stay on the target CC for SRS carrier switching
+    stayOnTargetCC-SRS-CarrierSwitch-r17                   ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-3-3a: FDM-ed Type-1 and Type-2 HARQ-ACK codebooks for multiplexing HARQ-ACK for unicast and HARQ-ACK for multicast
+    fdm-CodebookForMux-UnicastMulticastHARQ-ACK-r17        ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-3-3b: Mode 2 TDM-ed Type-1 and Type-2 HARQ-ACK codebook for multiplexing HARQ-ACK for unicast and HARQ-ACK for multicast
+    mode2-TDM-CodebookForMux-UnicastMulticastHARQ-ACK-r17  ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-3-4: Mode 1 for type1 codebook generation
+    mode1-ForType1-CodebookGeneration-r17                  ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-5-1j: NACK-only based HARQ-ACK feedback for multicast corresponding to a specific sequence or a PUCCH transmission
+    -- for SPS group-commmon PDSCH for multicast
+    nack-OnlyFeedbackSpecificResourceForSPS-Multicast-r17  ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-8-2: Up to 2 PUCCH resources configuration for multicast feedback for dynamically scheduled multicast
+    multiPUCCH-ConfigForMulticast-r17                      ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-8-3: PUCCH resource configuration for multicast feedback for SPS GC-PDSCH
+    pucch-ConfigForSPS-Multicast-r17                       ENUMERATED {supported}                         OPTIONAL,
+    -- The following parameter is associated with R1 33-2a, R1 33-3-3a, and R1 33-3-3b, and is not a RAN1 FG.
+    maxNumberG-RNTI-HARQ-ACK-Codebook-r17                  INTEGER (1..4)                                 OPTIONAL,
+    -- R1 33-3-5: Feedback multiplexing for unicast PDSCH and group-common PDSCH for multicast with same priority and different codebook
+    -- type
+    mux-HARQ-ACK-UnicastMulticast-r17                      ENUMERATED {supported}                         OPTIONAL
+}
+
+CA-ParametersNR-v1740 ::= SEQUENCE {
+    -- R1 33-5-1f: NACK-only based HARQ-ACK feedback for multicast RRC-based enabling/disabling NACK-only based feedback
+    -- for SPS group-common PDSCH for multicast
+    nack-OnlyFeedbackForSPS-Multicast-r17                  ENUMERATED {supported}                         OPTIONAL,
+    -- R1 33-8-1: PUCCH resource configuration for multicast feedback for dynamically scheduled multicast
+    singlePUCCH-ConfigForMulticast-r17                     ENUMERATED {supported}                         OPTIONAL
+}
+
+CrossCarrierSchedulingSCell-SpCell-r17 ::= SEQUENCE {
+    supportedSCS-Combinations-r17              SEQUENCE {
+        scs15kHz-15kHz-r17                         ENUMERATED {supported}                         OPTIONAL,
+        scs15kHz-30kHz-r17                         ENUMERATED {supported}                         OPTIONAL,
+        scs15kHz-60kHz-r17                         ENUMERATED {supported}                         OPTIONAL,
+        scs30kHz-30kHz-r17                         BIT STRING (SIZE (1..496))                     OPTIONAL,
+        scs30kHz-60kHz-r17                         BIT STRING (SIZE (1..496))                     OPTIONAL,
+        scs60kHz-60kHz-r17                         BIT STRING (SIZE (1..496))                     OPTIONAL
+    },
+    pdcch-MonitoringOccasion-r17               ENUMERATED {val1, val2}
+}
+
+PDCCH-BlindDetectionMixedList-r16::=       SEQUENCE {
+    pdcch-BlindDetectionCA-MixedExt-r16        CHOICE {
+        pdcch-BlindDetectionCA-Mixed-v16a0                PDCCH-BlindDetectionCA-MixedExt-r16,
+        pdcch-BlindDetectionCA-Mixed-NonAlignedSpan-v16a0 PDCCH-BlindDetectionCA-MixedExt-r16
+    }                                                                                             OPTIONAL,
+    pdcch-BlindDetectionCG-UE-MixedExt-r16     SEQUENCE{
+    pdcch-BlindDetectionMCG-UE-Mixed-v16a0                PDCCH-BlindDetectionCG-UE-MixedExt-r16,
+        pdcch-BlindDetectionSCG-UE-Mixed-v16a0            PDCCH-BlindDetectionCG-UE-MixedExt-r16
+    }                                                                                             OPTIONAL
+}
+
+PDCCH-BlindDetectionCA-MixedExt-r16 ::=    SEQUENCE {
+    pdcch-BlindDetectionCA1-r16                INTEGER (1..15),
+    pdcch-BlindDetectionCA2-r16                INTEGER (1..15)
+}
+
+PDCCH-BlindDetectionCG-UE-MixedExt-r16 ::= SEQUENCE {
+    pdcch-BlindDetectionCG-UE1-r16             INTEGER (0..15),
+    pdcch-BlindDetectionCG-UE2-r16             INTEGER (0..15)
+}
+
+PDCCH-BlindDetectionMCG-SCG-r17 ::=        SEQUENCE {
+    pdcch-BlindDetectionMCG-UE-r17             INTEGER (1..15),
+    pdcch-BlindDetectionSCG-UE-r17             INTEGER (1..15)
+}
+
+PDCCH-BlindDetectionMixed-r17::=           SEQUENCE {
+    pdcch-BlindDetectionCA-Mixed-r17           PDCCH-BlindDetectionCA-Mixed-r17                   OPTIONAL,
+    pdcch-BlindDetectionCG-UE-Mixed-r17        SEQUENCE{
+        pdcch-BlindDetectionMCG-UE-Mixed-v17       PDCCH-BlindDetectionCG-UE-Mixed-r17,
+        pdcch-BlindDetectionSCG-UE-Mixed-v17       PDCCH-BlindDetectionCG-UE-Mixed-r17
+    }                                                                                             OPTIONAL
+}
+
+PDCCH-BlindDetectionCG-UE-Mixed-r17 ::=    SEQUENCE {
+    pdcch-BlindDetectionCG-UE1-r17             INTEGER (0..15),
+    pdcch-BlindDetectionCG-UE2-r17             INTEGER (0..15)
+}
+
+PDCCH-BlindDetectionCA-Mixed-r17 ::=       SEQUENCE {
+    pdcch-BlindDetectionCA1-r17                INTEGER (1..15)                                    OPTIONAL,
+    pdcch-BlindDetectionCA2-r17                INTEGER (1..15)                                    OPTIONAL
+}
+PDCCH-BlindDetectionMixed1-r17::=          SEQUENCE {
+    pdcch-BlindDetectionCA-Mixed1-r17          PDCCH-BlindDetectionCA-Mixed1-r17                  OPTIONAL,
+    pdcch-BlindDetectionCG-UE-Mixed1-r17       SEQUENCE{
+        pdcch-BlindDetectionMCG-UE-Mixed1-v17      PDCCH-BlindDetectionCG-UE-Mixed1-r17,
+        pdcch-BlindDetectionSCG-UE-Mixed1-v17      PDCCH-BlindDetectionCG-UE-Mixed1-r17
+    }                                                                                             OPTIONAL
+}
+
+PDCCH-BlindDetectionCG-UE-Mixed1-r17 ::=   SEQUENCE {
+    pdcch-BlindDetectionCG-UE1-r17             INTEGER (0..15),
+    pdcch-BlindDetectionCG-UE2-r17             INTEGER (0..15),
+    pdcch-BlindDetectionCG-UE3-r17             INTEGER (0..15)
+}
+
+PDCCH-BlindDetectionCA-Mixed1-r17 ::=      SEQUENCE {
+    pdcch-BlindDetectionCA1-r17                INTEGER (1..15)                                    OPTIONAL,
+    pdcch-BlindDetectionCA2-r17                INTEGER (1..15)                                    OPTIONAL,
+    pdcch-BlindDetectionCA3-r17                INTEGER (1..15)                                    OPTIONAL
+}
+
+SimulSRS-ForAntennaSwitching-r16 ::= SEQUENCE {
+    supportSRS-xTyR-xLessThanY-r16       ENUMERATED {supported}                     OPTIONAL,
+    supportSRS-xTyR-xEqualToY-r16        ENUMERATED {supported}                     OPTIONAL,
+    supportSRS-AntennaSwitching-r16      ENUMERATED {supported}                     OPTIONAL
+}
+
+TwoPUCCH-Grp-Configurations-r16 ::=  SEQUENCE {
+    pucch-PrimaryGroupMapping-r16        TwoPUCCH-Grp-ConfigParams-r16,
+    pucch-SecondaryGroupMapping-r16      TwoPUCCH-Grp-ConfigParams-r16
+}
+
+TwoPUCCH-Grp-Configurations-r17 ::=  SEQUENCE {
+    primaryPUCCH-GroupConfig-r17         PUCCH-Group-Config-r17,
+    secondaryPUCCH-GroupConfig-r17       PUCCH-Group-Config-r17
+}
+
+TwoPUCCH-Grp-ConfigParams-r16 ::=    SEQUENCE {
+    pucch-GroupMapping-r16               PUCCH-Grp-CarrierTypes-r16,
+    pucch-TX-r16                         PUCCH-Grp-CarrierTypes-r16
+}
+
+
+CarrierTypePair-r16 ::=             SEQUENCE {
+    carrierForCSI-Measurement-r16       PUCCH-Grp-CarrierTypes-r16,
+    carrierForCSI-Reporting-r16         PUCCH-Grp-CarrierTypes-r16
+}
+
+PUCCH-Grp-CarrierTypes-r16 ::=       SEQUENCE {
+    fr1-NonSharedTDD-r16                 ENUMERATED {supported}                     OPTIONAL,
+    fr1-SharedTDD-r16                    ENUMERATED {supported}                     OPTIONAL,
+    fr1-NonSharedFDD-r16                 ENUMERATED {supported}                     OPTIONAL,
+    fr2-r16                              ENUMERATED {supported}                     OPTIONAL
+}
+
+PUCCH-Group-Config-r17 ::=           SEQUENCE {
+    fr1-FR1-NonSharedTDD-r17             ENUMERATED {supported}                     OPTIONAL,
+    fr2-FR2-NonSharedTDD-r17             ENUMERATED {supported}                     OPTIONAL,
+    fr1-FR2-NonSharedTDD-r17             ENUMERATED {supported}                     OPTIONAL
+}

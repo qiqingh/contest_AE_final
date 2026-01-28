@@ -1,0 +1,9 @@
+MeasResultSCG-Failure ::=           SEQUENCE {
+    measResultPerMOList                 MeasResultList2NR,
+    ...,
+    [[
+    locationInfo-r16                    LocationInfo-r16            OPTIONAL
+    ]]
+}
+
+MeasResultList2NR ::=               SEQUENCE (SIZE (1..maxFreq)) OF MeasResult2NR

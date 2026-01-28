@@ -1,0 +1,79 @@
+RF-ParametersMRDC ::=                   SEQUENCE {
+    supportedBandCombinationList            BandCombinationList                             OPTIONAL,
+    appliedFreqBandListFilter               FreqBandList                                    OPTIONAL,
+    ...,
+    [[
+    srs-SwitchingTimeRequested              ENUMERATED {true}                               OPTIONAL,
+    supportedBandCombinationList-v1540      BandCombinationList-v1540                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1550      BandCombinationList-v1550                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1560      BandCombinationList-v1560                       OPTIONAL,
+    supportedBandCombinationListNEDC-Only   BandCombinationList                             OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1570      BandCombinationList-v1570                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1580      BandCombinationList-v1580                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1590      BandCombinationList-v1590                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationListNEDC-Only-v15a0    SEQUENCE {
+        supportedBandCombinationList-v1540      BandCombinationList-v1540                   OPTIONAL,
+        supportedBandCombinationList-v1560      BandCombinationList-v1560                   OPTIONAL,
+        supportedBandCombinationList-v1570      BandCombinationList-v1570                   OPTIONAL,
+        supportedBandCombinationList-v1580      BandCombinationList-v1580                   OPTIONAL,
+        supportedBandCombinationList-v1590      BandCombinationList-v1590                   OPTIONAL
+    }                                                                                       OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1610      BandCombinationList-v1610                       OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1610   BandCombinationList-v1610                 OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-r16 BandCombinationList-UplinkTxSwitch-r16  OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1630                  BandCombinationList-v1630                   OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1630         BandCombinationList-v1630                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1630   BandCombinationList-UplinkTxSwitch-v1630    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1640                  BandCombinationList-v1640                   OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1640         BandCombinationList-v1640                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1640   BandCombinationList-UplinkTxSwitch-v1640    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-UplinkTxSwitch-v1670   BandCombinationList-UplinkTxSwitch-v1670    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1700                  BandCombinationList-v1700                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1700   BandCombinationList-UplinkTxSwitch-v1700    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1720                  BandCombinationList-v1720                   OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1720         SEQUENCE {
+        supportedBandCombinationList-v1700                  BandCombinationList-v1700               OPTIONAL,
+        supportedBandCombinationList-v1720                  BandCombinationList-v1720               OPTIONAL
+    }                                                                                               OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1720   BandCombinationList-UplinkTxSwitch-v1720    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1730                  BandCombinationList-v1730                   OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1730         BandCombinationList-v1730                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1730   BandCombinationList-UplinkTxSwitch-v1730    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1740                  BandCombinationList-v1740                   OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v1740         BandCombinationList-v1740                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1740   BandCombinationList-UplinkTxSwitch-v1740    OPTIONAL
+    ]]
+}
+
+RF-ParametersMRDC-v15g0 ::=                    SEQUENCE {
+    supportedBandCombinationList-v15g0             BandCombinationList-v15g0        OPTIONAL,
+    supportedBandCombinationListNEDC-Only-v15g0    BandCombinationList-v15g0        OPTIONAL
+}

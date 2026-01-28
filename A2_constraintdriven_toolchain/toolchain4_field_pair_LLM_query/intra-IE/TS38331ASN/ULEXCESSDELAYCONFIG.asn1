@@ -1,0 +1,9 @@
+UL-ExcessDelayConfig-r17 ::=  SEQUENCE {
+    excessDelay-DRBlist-r17       SEQUENCE (SIZE(1..maxDRB)) OF ExcessDelay-DRB-IdentityInfo-r17
+}
+
+ExcessDelay-DRB-IdentityInfo-r17 ::=  SEQUENCE {
+    drb-IdentityList                      SEQUENCE (SIZE (1..maxDRB)) OF DRB-Identity,
+    delayThreshold                        ENUMERATED {ms0dot25, ms0dot5, ms1, ms2, ms4, ms5, ms10, ms20, ms30, ms40, ms50, ms60, ms70,
+                                                      ms80, ms90, ms100, ms150, ms300, ms500}
+}

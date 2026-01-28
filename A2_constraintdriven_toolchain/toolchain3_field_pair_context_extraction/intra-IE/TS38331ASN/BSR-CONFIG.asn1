@@ -1,0 +1,8 @@
+BSR-Config ::=                      SEQUENCE {
+    periodicBSR-Timer                   ENUMERATED { sf1, sf5, sf10, sf16, sf20, sf32, sf40, sf64,
+                                                        sf80, sf128, sf160, sf320, sf640, sf1280, sf2560, infinity },
+    retxBSR-Timer                       ENUMERATED { sf10, sf20, sf40, sf80, sf160, sf320, sf640, sf1280, sf2560,
+                                                        sf5120, sf10240, spare5, spare4, spare3, spare2, spare1},
+    logicalChannelSR-DelayTimer         ENUMERATED { sf20, sf40, sf64, sf128, sf512, sf1024, sf2560, spare1}                OPTIONAL, -- Need R
+    ...
+}

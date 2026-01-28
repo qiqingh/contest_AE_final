@@ -1,0 +1,195 @@
+PUCCH-Config ::=                        SEQUENCE {
+    resourceSetToAddModList                 SEQUENCE (SIZE (1..maxNrofPUCCH-ResourceSets)) OF PUCCH-ResourceSet   OPTIONAL, -- Need N
+    resourceSetToReleaseList                SEQUENCE (SIZE (1..maxNrofPUCCH-ResourceSets)) OF PUCCH-ResourceSetId OPTIONAL, -- Need N
+    resourceToAddModList                    SEQUENCE (SIZE (1..maxNrofPUCCH-Resources)) OF PUCCH-Resource         OPTIONAL, -- Need N
+    resourceToReleaseList                   SEQUENCE (SIZE (1..maxNrofPUCCH-Resources)) OF PUCCH-ResourceId       OPTIONAL, -- Need N
+    format1                                 SetupRelease { PUCCH-FormatConfig }                                   OPTIONAL, -- Need M
+    format2                                 SetupRelease { PUCCH-FormatConfig }                                   OPTIONAL, -- Need M
+    format3                                 SetupRelease { PUCCH-FormatConfig }                                   OPTIONAL, -- Need M
+    format4                                 SetupRelease { PUCCH-FormatConfig }                                   OPTIONAL, -- Need M
+    schedulingRequestResourceToAddModList   SEQUENCE (SIZE (1..maxNrofSR-Resources)) OF SchedulingRequestResourceConfig
+                                                                                                                  OPTIONAL, -- Need N
+    schedulingRequestResourceToReleaseList  SEQUENCE (SIZE (1..maxNrofSR-Resources)) OF SchedulingRequestResourceId
+                                                                                                                  OPTIONAL, -- Need N
+    multi-CSI-PUCCH-ResourceList            SEQUENCE (SIZE (1..2)) OF PUCCH-ResourceId                            OPTIONAL, -- Need M
+    dl-DataToUL-ACK                         SEQUENCE (SIZE (1..8)) OF INTEGER (0..15)                             OPTIONAL, -- Need M
+    spatialRelationInfoToAddModList         SEQUENCE (SIZE (1..maxNrofSpatialRelationInfos)) OF PUCCH-SpatialRelationInfo
+                                                                                                                  OPTIONAL, -- Need N
+    spatialRelationInfoToReleaseList        SEQUENCE (SIZE (1..maxNrofSpatialRelationInfos)) OF PUCCH-SpatialRelationInfoId
+                                                                                                                  OPTIONAL, -- Need N
+    pucch-PowerControl                      PUCCH-PowerControl                                                    OPTIONAL, -- Need M
+    ...,
+    [[
+    resourceToAddModListExt-v1610           SEQUENCE (SIZE (1..maxNrofPUCCH-Resources)) OF PUCCH-ResourceExt-v1610  OPTIONAL, -- Need N
+    dl-DataToUL-ACK-r16                     SetupRelease { DL-DataToUL-ACK-r16 }                                  OPTIONAL, -- Need M
+    ul-AccessConfigListDCI-1-1-r16          SetupRelease { UL-AccessConfigListDCI-1-1-r16 }                       OPTIONAL, -- Need M
+    subslotLengthForPUCCH-r16               CHOICE {
+            normalCP-r16                        ENUMERATED {n2,n7},
+            extendedCP-r16                      ENUMERATED {n2,n6}
+    }                                                                                                             OPTIONAL, -- Need R
+    dl-DataToUL-ACK-DCI-1-2-r16             SetupRelease { DL-DataToUL-ACK-DCI-1-2-r16}                           OPTIONAL, -- Need M
+    numberOfBitsForPUCCH-ResourceIndicatorDCI-1-2-r16  INTEGER (0..3)                                             OPTIONAL, -- Need R
+    dmrs-UplinkTransformPrecodingPUCCH-r16  ENUMERATED {enabled}                                                  OPTIONAL,  -- Cond PI2-BPSK
+    spatialRelationInfoToAddModListSizeExt-v1610    SEQUENCE (SIZE (1..maxNrofSpatialRelationInfosDiff-r16)) OF PUCCH-SpatialRelationInfo
+                                                                                                                  OPTIONAL, -- Need N
+    spatialRelationInfoToReleaseListSizeExt-v1610   SEQUENCE (SIZE (1..maxNrofSpatialRelationInfosDiff-r16)) OF PUCCH-SpatialRelationInfoId
+                                                                                                                  OPTIONAL, -- Need N
+    spatialRelationInfoToAddModListExt-v1610  SEQUENCE (SIZE (1..maxNrofSpatialRelationInfos-r16)) OF PUCCH-SpatialRelationInfoExt-r16
+                                                                                                                  OPTIONAL, -- Need N
+    spatialRelationInfoToReleaseListExt-v1610    SEQUENCE (SIZE (1..maxNrofSpatialRelationInfos-r16)) OF
+                                                                            PUCCH-SpatialRelationInfoId-r16       OPTIONAL, -- Need N
+    resourceGroupToAddModList-r16           SEQUENCE (SIZE (1..maxNrofPUCCH-ResourceGroups-r16)) OF PUCCH-ResourceGroup-r16
+                                                                                                                  OPTIONAL, -- Need N
+    resourceGroupToReleaseList-r16          SEQUENCE (SIZE (1..maxNrofPUCCH-ResourceGroups-r16)) OF PUCCH-ResourceGroupId-r16
+                                                                                                                  OPTIONAL, -- Need N
+    sps-PUCCH-AN-List-r16                   SetupRelease { SPS-PUCCH-AN-List-r16 }                                OPTIONAL,  -- Need M
+    schedulingRequestResourceToAddModListExt-v1610   SEQUENCE (SIZE (1..maxNrofSR-Resources)) OF SchedulingRequestResourceConfigExt-v1610
+                                                                                                                  OPTIONAL -- Need N
+    ]],
+    [[
+    format0-r17                             SetupRelease { PUCCH-FormatConfig }                                   OPTIONAL, -- Need M
+    format2Ext-r17                          SetupRelease { PUCCH-FormatConfigExt-r17 }                            OPTIONAL, -- Need M
+    format3Ext-r17                          SetupRelease { PUCCH-FormatConfigExt-r17 }                            OPTIONAL, -- Need M
+    format4Ext-r17                          SetupRelease { PUCCH-FormatConfigExt-r17 }                            OPTIONAL, -- Need M
+    ul-AccessConfigListDCI-1-2-r17          SetupRelease { UL-AccessConfigListDCI-1-2-r17 }                       OPTIONAL, -- Need M
+    mappingPattern-r17                      ENUMERATED {cyclicMapping, sequentialMapping}                         OPTIONAL, -- Need R
+    powerControlSetInfoToAddModList-r17     SEQUENCE (SIZE (1..maxNrofPowerControlSetInfos-r17)) OF PUCCH-PowerControlSetInfo-r17
+                                                                                                                  OPTIONAL, -- Need N
+    powerControlSetInfoToReleaseList-r17    SEQUENCE (SIZE (1..maxNrofPowerControlSetInfos-r17)) OF PUCCH-PowerControlSetInfoId-r17
+                                                                                                                  OPTIONAL, -- Need N
+    secondTPCFieldDCI-1-1-r17               ENUMERATED {enabled}                                                  OPTIONAL, -- Need R
+    secondTPCFieldDCI-1-2-r17               ENUMERATED {enabled}                                                  OPTIONAL, -- Need R
+    dl-DataToUL-ACK-r17                     SetupRelease { DL-DataToUL-ACK-r17 }                                  OPTIONAL, -- Need M
+    dl-DataToUL-ACK-DCI-1-2-r17             SetupRelease { DL-DataToUL-ACK-DCI-1-2-r17}                           OPTIONAL, -- Need M
+    ul-AccessConfigListDCI-1-1-r17          SetupRelease { UL-AccessConfigListDCI-1-1-r17 }                       OPTIONAL, -- Need M
+    schedulingRequestResourceToAddModListExt-v1700 SEQUENCE (SIZE (1..maxNrofSR-Resources)) OF SchedulingRequestResourceConfigExt-v1700
+                                                                                                                  OPTIONAL, -- Need N
+    dmrs-BundlingPUCCH-Config-r17           SetupRelease { DMRS-BundlingPUCCH-Config-r17 }                        OPTIONAL, -- Need M
+    dl-DataToUL-ACK-v1700                   SetupRelease { DL-DataToUL-ACK-v1700 }                                OPTIONAL, -- Need M
+    dl-DataToUL-ACK-MulticastDCI-Format4-1-r17 SetupRelease { DL-DataToUL-ACK-MulticastDCI-Format4-1-r17 }        OPTIONAL, -- Need M
+    sps-PUCCH-AN-ListMulticast-r17          SetupRelease { SPS-PUCCH-AN-List-r16 }                                OPTIONAL  -- Need M
+    ]]
+}
+
+PUCCH-FormatConfig ::=                  SEQUENCE {
+    interslotFrequencyHopping               ENUMERATED {enabled}                                                  OPTIONAL, -- Need R
+    additionalDMRS                          ENUMERATED {true}                                                     OPTIONAL, -- Need R
+    maxCodeRate                             PUCCH-MaxCodeRate                                                     OPTIONAL, -- Need R
+    nrofSlots                               ENUMERATED {n2,n4,n8}                                                 OPTIONAL, -- Need S
+    pi2BPSK                                 ENUMERATED {enabled}                                                  OPTIONAL, -- Need R
+    simultaneousHARQ-ACK-CSI                ENUMERATED {true}                                                     OPTIONAL  -- Need R
+}
+
+PUCCH-FormatConfigExt-r17 ::=           SEQUENCE {
+    maxCodeRateLP-r17                       PUCCH-MaxCodeRate                                                     OPTIONAL, -- Need R
+    ...
+}
+
+PUCCH-MaxCodeRate ::=                   ENUMERATED {zeroDot08, zeroDot15, zeroDot25, zeroDot35, zeroDot45, zeroDot60, zeroDot80}
+
+-- A set with one or more PUCCH resources
+PUCCH-ResourceSet ::=                   SEQUENCE {
+    pucch-ResourceSetId                     PUCCH-ResourceSetId,
+    resourceList                            SEQUENCE (SIZE (1..maxNrofPUCCH-ResourcesPerSet)) OF PUCCH-ResourceId,
+    maxPayloadSize                          INTEGER (4..256)                                                      OPTIONAL  -- Need R
+}
+
+PUCCH-ResourceSetId ::=                 INTEGER (0..maxNrofPUCCH-ResourceSets-1)
+
+PUCCH-Resource ::=                      SEQUENCE {
+    pucch-ResourceId                        PUCCH-ResourceId,
+    startingPRB                             PRB-Id,
+    intraSlotFrequencyHopping               ENUMERATED { enabled }                                                OPTIONAL, -- Need R
+    secondHopPRB                            PRB-Id                                                                OPTIONAL, -- Need R
+    format                                  CHOICE {
+        format0                                 PUCCH-format0,
+        format1                                 PUCCH-format1,
+        format2                                 PUCCH-format2,
+        format3                                 PUCCH-format3,
+        format4                                 PUCCH-format4
+    }
+}
+
+PUCCH-ResourceExt-v1610 ::=             SEQUENCE {
+    interlaceAllocation-r16                 SEQUENCE {
+        rb-SetIndex-r16                         INTEGER (0..4),
+        interlace0-r16                          CHOICE {
+            scs15                                   INTEGER (0..9),
+            scs30                                   INTEGER (0..4)
+        }
+    }                                                                                                             OPTIONAL,  --Need R
+    format-v1610                            CHOICE {
+        interlace1-v1610                            INTEGER (0..9),
+        occ-v1610                                   SEQUENCE {
+            occ-Length-v1610                                ENUMERATED {n2,n4}                                       OPTIONAL, -- Need M
+            occ-Index-v1610                                 ENUMERATED {n0,n1,n2,n3}                                 OPTIONAL  -- Need M
+        }
+    }                                                                                                            OPTIONAL,  -- Need R
+    ...,
+    [[
+    format-v1700                         SEQUENCE {
+        nrofPRBs-r17                            INTEGER (1..16)
+    }                                                                                                            OPTIONAL,  -- Need R
+    pucch-RepetitionNrofSlots-r17           ENUMERATED { n1,n2,n4,n8 }                                              OPTIONAL   -- Need R
+    ]]
+}
+
+PUCCH-ResourceId ::=                    INTEGER (0..maxNrofPUCCH-Resources-1)
+
+
+PUCCH-format0 ::=                               SEQUENCE {
+    initialCyclicShift                              INTEGER(0..11),
+    nrofSymbols                                     INTEGER (1..2),
+    startingSymbolIndex                             INTEGER(0..13)
+}
+
+PUCCH-format1 ::=                               SEQUENCE {
+    initialCyclicShift                              INTEGER(0..11),
+    nrofSymbols                                     INTEGER (4..14),
+    startingSymbolIndex                             INTEGER(0..10),
+    timeDomainOCC                                   INTEGER(0..6)
+}
+
+PUCCH-format2 ::=                               SEQUENCE {
+    nrofPRBs                                        INTEGER (1..16),
+    nrofSymbols                                     INTEGER (1..2),
+    startingSymbolIndex                             INTEGER(0..13)
+}
+
+PUCCH-format3 ::=                               SEQUENCE {
+    nrofPRBs                                        INTEGER (1..16),
+    nrofSymbols                                     INTEGER (4..14),
+    startingSymbolIndex                             INTEGER(0..10)
+}
+
+PUCCH-format4 ::=                               SEQUENCE {
+    nrofSymbols                                     INTEGER (4..14),
+    occ-Length                                      ENUMERATED {n2,n4},
+    occ-Index                                       ENUMERATED {n0,n1,n2,n3},
+    startingSymbolIndex                             INTEGER(0..10)
+}
+
+PUCCH-ResourceGroup-r16 ::=                SEQUENCE {
+    pucch-ResourceGroupId-r16                  PUCCH-ResourceGroupId-r16,
+    resourcePerGroupList-r16                   SEQUENCE (SIZE (1..maxNrofPUCCH-ResourcesPerGroup-r16)) OF PUCCH-ResourceId
+}
+
+PUCCH-ResourceGroupId-r16 ::=              INTEGER (0..maxNrofPUCCH-ResourceGroups-1-r16)
+
+DL-DataToUL-ACK-r16 ::=                    SEQUENCE (SIZE (1..8)) OF INTEGER (-1..15)
+
+DL-DataToUL-ACK-r17 ::=                    SEQUENCE (SIZE (1..8)) OF INTEGER (-1..127)
+
+DL-DataToUL-ACK-v1700 ::=                  SEQUENCE (SIZE (1..8)) OF INTEGER (16..31)
+
+DL-DataToUL-ACK-DCI-1-2-r16 ::=            SEQUENCE (SIZE (1..8)) OF INTEGER (0..15)
+
+DL-DataToUL-ACK-DCI-1-2-r17 ::=            SEQUENCE (SIZE (1..8)) OF INTEGER (0..127)
+
+UL-AccessConfigListDCI-1-1-r16 ::=         SEQUENCE (SIZE (1..16)) OF INTEGER (0..15)
+
+UL-AccessConfigListDCI-1-2-r17 ::=         SEQUENCE (SIZE (1..16)) OF INTEGER (0..15)
+
+UL-AccessConfigListDCI-1-1-r17 ::=         SEQUENCE (SIZE (1..3)) OF INTEGER (0..2)
+
+DL-DataToUL-ACK-MulticastDCI-Format4-1-r17 ::= SEQUENCE (SIZE (1..8)) OF INTEGER (0..15)

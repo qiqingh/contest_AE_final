@@ -1,0 +1,50 @@
+BWP-UplinkDedicated ::=             SEQUENCE {
+    pucch-Config                        SetupRelease { PUCCH-Config }                                           OPTIONAL,   -- Need M
+    pusch-Config                        SetupRelease { PUSCH-Config }                                           OPTIONAL,   -- Need M
+    configuredGrantConfig               SetupRelease { ConfiguredGrantConfig }                                  OPTIONAL,   -- Need M
+    srs-Config                          SetupRelease { SRS-Config }                                             OPTIONAL,   -- Need M
+    beamFailureRecoveryConfig           SetupRelease { BeamFailureRecoveryConfig }                              OPTIONAL,   -- Cond SpCellOnly
+    ...,
+    [[
+    sl-PUCCH-Config-r16                 SetupRelease { PUCCH-Config }                                           OPTIONAL,   -- Need M
+    cp-ExtensionC2-r16                  INTEGER (1..28)                                                         OPTIONAL,   -- Need R
+    cp-ExtensionC3-r16                  INTEGER (1..28)                                                         OPTIONAL,   -- Need R
+    useInterlacePUCCH-PUSCH-r16         ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    pucch-ConfigurationList-r16         SetupRelease { PUCCH-ConfigurationList-r16 }                            OPTIONAL,   -- Need M
+    lbt-FailureRecoveryConfig-r16       SetupRelease { LBT-FailureRecoveryConfig-r16 }                          OPTIONAL,   -- Need M
+    configuredGrantConfigToAddModList-r16                 ConfiguredGrantConfigToAddModList-r16                 OPTIONAL,   -- Need N
+    configuredGrantConfigToReleaseList-r16                ConfiguredGrantConfigToReleaseList-r16                OPTIONAL,   -- Need N
+    configuredGrantConfigType2DeactivationStateList-r16   ConfiguredGrantConfigType2DeactivationStateList-r16   OPTIONAL    -- Need R
+    ]],
+    [[
+    ul-TCI-StateList-r17                CHOICE {
+        explicitlist                        SEQUENCE {
+            ul-TCI-ToAddModList-r17             SEQUENCE (SIZE (1..maxUL-TCI-r17)) OF TCI-UL-State-r17          OPTIONAL,   -- Need N
+            ul-TCI-ToReleaseList-r17            SEQUENCE (SIZE (1..maxUL-TCI-r17)) OF TCI-UL-StateId-r17        OPTIONAL    -- Need N
+        },
+        unifiedTCI-StateRef-r17         ServingCellAndBWP-Id-r17
+    }                                                                                                           OPTIONAL,  -- Need R
+    ul-powerControl-r17                Uplink-powerControlId-r17                                                OPTIONAL,  -- Cond NoTCI-PC
+    pucch-ConfigurationListMulticast1-r17  SetupRelease { PUCCH-ConfigurationList-r16 }                         OPTIONAL,  -- Need M
+    pucch-ConfigurationListMulticast2-r17  SetupRelease { PUCCH-ConfigurationList-r16 }                         OPTIONAL   -- Need M
+    ]],
+    [[
+    pucch-ConfigMulticast1-r17          SetupRelease { PUCCH-Config }                                           OPTIONAL,  -- Need M
+    pucch-ConfigMulticast2-r17          SetupRelease { PUCCH-Config }                                           OPTIONAL   -- Need M
+    ]],
+    [[
+    pathlossReferenceRSToAddModList-r17     SEQUENCE (SIZE (1..maxNrofPathlossReferenceRSs-r17)) OF PathlossReferenceRS-r17
+                                                                                                                OPTIONAL, -- Need N
+    pathlossReferenceRSToReleaseList-r17    SEQUENCE (SIZE (1..maxNrofPathlossReferenceRSs-r17)) OF PathlossReferenceRS-Id-r17
+                                                                                                                OPTIONAL  -- Need N
+    ]]
+}
+
+ConfiguredGrantConfigToAddModList-r16    ::= SEQUENCE (SIZE (1..maxNrofConfiguredGrantConfig-r16)) OF ConfiguredGrantConfig
+
+ConfiguredGrantConfigToReleaseList-r16   ::= SEQUENCE (SIZE (1..maxNrofConfiguredGrantConfig-r16)) OF ConfiguredGrantConfigIndex-r16
+
+ConfiguredGrantConfigType2DeactivationState-r16 ::= SEQUENCE (SIZE (1..maxNrofConfiguredGrantConfig-r16)) OF ConfiguredGrantConfigIndex-r16
+
+ConfiguredGrantConfigType2DeactivationStateList-r16  ::=
+                             SEQUENCE (SIZE (1..maxNrofCG-Type2DeactivationState)) OF ConfiguredGrantConfigType2DeactivationState-r16

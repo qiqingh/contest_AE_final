@@ -1,0 +1,129 @@
+{
+  "dsl_rule": "ASSOCIATED(field1, field2, 'Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id')",
+  "constraint_type": "Association",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      778,
+      783,
+      788,
+      789,
+      793,
+      798,
+      803,
+      804,
+      808,
+      813,
+      818,
+      819
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813
+        ]
+      ],
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ]
+    ]
+  },
+  "predicate": "Each CSI Resource Setting in the csi-RS-ResourceSetList (field1) is associated with the DL BWP identified by the BWP-id (field2)",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "If csi-RS-ResourceSetList contains a CSI Resource Setting, then it is associated with the DL BWP identified by the BWP-id"
+    ],
+    "invalid": [
+      "If csi-RS-ResourceSetList contains a CSI Resource Setting, but it is not associated with the DL BWP identified by the BWP-id"
+    ]
+  },
+  "notes": "The evidence explicitly states that each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, which establishes an association between the two fields across different IEs.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "csi-rs-resourcesetlist",
+    "ie2_name": "pdsch-config",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.",
+    "generated_at": "2025-12-11T09:30:16.400174",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "Association",
+      "dsl": "ASSOCIATED(field1, field2, 'Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id')",
+      "preconditions": [],
+      "predicate": "Each CSI Resource Setting in the csi-RS-ResourceSetList (field1) is associated with the DL BWP identified by the BWP-id (field2)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If csi-RS-ResourceSetList contains a CSI Resource Setting, then it is associated with the DL BWP identified by the BWP-id"
+        ],
+        "invalid": [
+          "If csi-RS-ResourceSetList contains a CSI Resource Setting, but it is not associated with the DL BWP identified by the BWP-id"
+        ]
+      },
+      "notes": "The evidence explicitly states that each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, which establishes an association between the two fields across different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

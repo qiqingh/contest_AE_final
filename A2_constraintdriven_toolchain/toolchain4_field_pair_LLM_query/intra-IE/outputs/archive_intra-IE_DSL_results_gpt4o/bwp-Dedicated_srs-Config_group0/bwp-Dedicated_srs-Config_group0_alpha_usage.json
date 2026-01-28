@@ -1,0 +1,63 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      445
+    ],
+    [
+      444
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not mention the fields 'alpha' or 'usage' within the IE 'bwp-Dedicated_srs-Config_group0'. The evidence is related to SRS resource sets and PUSCH configurations, which are not directly linked to the target fields in the given IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "alpha",
+    "field2": "usage",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1",
+      "6.1.2.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For PUSCH transmissions with a Type 1 configured grant, when two SRS resource sets are configured in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, if configuredGrantConfig contains only one pathlossReferenceIndex, p0-PUSCH-Alpha, powerControlLoopToUse, srs-ResourceIndicator and precodingAndNumberOfLayers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook'), PUSCH repetitions are associated only with the first SRS resource set.\n---\n- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig.",
+    "generated_at": "2025-12-09T09:43:38.271426",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not mention the fields 'alpha' or 'usage' within the IE 'bwp-Dedicated_srs-Config_group0'. The evidence is related to SRS resource sets and PUSCH configurations, which are not directly linked to the target fields in the given IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

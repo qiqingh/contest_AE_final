@@ -1,0 +1,26 @@
+SL-SyncConfigList-r16 ::=          SEQUENCE (SIZE (1..maxSL-SyncConfig-r16)) OF SL-SyncConfig-r16
+
+SL-SyncConfig-r16 ::=              SEQUENCE {
+    sl-SyncRefMinHyst-r16              ENUMERATED {dB0, dB3, dB6, dB9, dB12}                                   OPTIONAL,    -- Need R
+    sl-SyncRefDiffHyst-r16             ENUMERATED {dB0, dB3, dB6, dB9, dB12, dBinf}                            OPTIONAL,    -- Need R
+    sl-filterCoefficient-r16           FilterCoefficient                                                       OPTIONAL,    -- Need R
+    sl-SSB-TimeAllocation1-r16         SL-SSB-TimeAllocation-r16                                               OPTIONAL,    -- Need R
+    sl-SSB-TimeAllocation2-r16         SL-SSB-TimeAllocation-r16                                               OPTIONAL,    -- Need R
+    sl-SSB-TimeAllocation3-r16         SL-SSB-TimeAllocation-r16                                               OPTIONAL,    -- Need R
+    sl-SSID-r16                        INTEGER (0..671)                                                        OPTIONAL,    -- Need R
+    txParameters-r16                   SEQUENCE {
+        syncTxThreshIC-r16                 SL-RSRP-Range-r16                                                   OPTIONAL,    -- Need R
+        syncTxThreshOoC-r16                SL-RSRP-Range-r16                                                   OPTIONAL,    -- Need R
+        syncInfoReserved-r16               BIT STRING (SIZE (2))                                               OPTIONAL     -- Need R
+    },
+    gnss-Sync-r16                      ENUMERATED {true}                                                       OPTIONAL,    -- Need R
+    ...
+}
+
+SL-RSRP-Range-r16 ::=                  INTEGER (0..13)
+
+SL-SSB-TimeAllocation-r16 ::=          SEQUENCE {
+    sl-NumSSB-WithinPeriod-r16             ENUMERATED {n1, n2, n4, n8, n16, n32, n64}                          OPTIONAL,    -- Need R
+    sl-TimeOffsetSSB-r16                   INTEGER (0..1279)                                                   OPTIONAL,    -- Need R
+    sl-TimeInterval-r16                    INTEGER (0..639)                                                    OPTIONAL     -- Need R
+}

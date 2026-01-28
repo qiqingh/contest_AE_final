@@ -1,0 +1,128 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      51,
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      80,
+      145,
+      210
+    ],
+    "actual_pairs": [
+      [
+        [
+          181,
+          246
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ],
+      [
+        [
+          51,
+          116,
+          181,
+          246
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ],
+      [
+        [
+          116,
+          181
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ],
+      [
+        [
+          116,
+          246
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE relationship between the fields controlresourcesetid and searchspaceid. All evidence snippets describe behaviors or configurations within single IEs or unrelated contexts.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "controlresourcesetid",
+    "field1": "controlresourcesetid",
+    "ie2_name": "searchspacestoaddmodlist_searchspaceid",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 144,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.3.2",
+      "9.2.1",
+      "7.2.1",
+      "7.3.2.2",
+      "4.3",
+      "8.2",
+      "7.3.1.6",
+      "9.2.5.4",
+      "8.4",
+      "7.3.1.1",
+      "7.4.1.1.2",
+      "7.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the higher-layer parameter dataScramblingldentityPDSCH if the codeword is scheduled using a CORESET with CORESETPoollndex equal to 0 ; - the higher-layer parameter dataScramblingldentityPDSCH2 if the codeword is scheduled using a CORESET with CORESETPoollndex equal to 1 ; if the higher-layer parameters dataScramblingldentityPDSCH and dataScramblingldentityPDSCH2 are configured together with the higher-layer parameter CORESETPoollndex containing two different values, and the RNTI equals the C-RNTI, MCS-C-RNTI, or CS-RNTI, and the transmission is not scheduled using DCI format 1_0 in a common search space;\n---\n- resource block bundle \\( N_{\\text {bundle }}-1 \\) consists of \\( \\left(N_{\\text {BWP }, \\text { init }}^{\\text {size }}+N_{\\text {BWP }, i}^{\\text {start }}+N_{\\text {start }}^{\\text {COREST }}\\right) \\bmod L \\) resource blocks if \\( \\left(N_{\\mathrm{BWP}, \\text { init }}^{\\text {size }}+N_{\\mathrm{BWP}, i}^{\\text {start }}+N_{\\text {start }}^{\\text {CORESET }}\\right) \\bmod L>0 \\) and \\( L \\) resource blocks otherwise, - all other resource block bundles consists of \\( L \\) resource blocks. - for all other PDSCH transmissions, the set of \\( N_{\\mathrm{BWP}, i}^{\\text {size }} \\) resource blocks in bandwidth part \\( i \\) with starting position \\( N_{\\mathrm{BWP}, i}^{\\text {start }} \\) are divided into \\( N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\mathrm{BWP}, i}^{\\text {size }}+\\left(N_{\\mathrm{BWP}, i}^{\\text {start }} \\bmod L_{i}\\right)\\right) / L_{i}\\right\\rceil \\) resource-block bundles in increasing order of the resource-block number and bundle number where \\( L_{i} \\) is the bundle size for bandwidth part \\( i \\) provided by the higher-layer parameter vrb-ToPRB-Interleaver for DCI formats \\( 1 \\_0,1 \\_1 \\), and \\( 1 \\_3 \\) in a UE-specific search space, or vrb-ToPRB-InterleaverDCI-1-2 for DCI format 1_2, and\n---\nFor CORESET 0 on a carrier where the SS/PBCH block is detected at sync raster points defined in Tables 5.4.3.1-2 or 5.4.3.1-3 of [14, TS 38.101-1] and configured by the ControlResourceSetZero IE:\n---\n- subcarrier 0 of the lowest-numbered resource block in CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI;\n---\nA UE not attempting to detect a PDCCH in a CORESET shall not make any assumptions on the presence or absence of DM-RS in the CORESET.  In absence of CSI-RS configuration, and unless otherwise configured, the UE may assume PDCCH DM-RS and SS/PBCH block to be quasi co-located with respect to Doppler shift, Doppler spread, average delay, delay spread, and, when applicable, spatial Rx parameters.\n---\nThe downlink radio link quality of the primary cell is monitored by a UE for the purpose of indicating out-of-sync/insync status to higher layers. The UE is not required to monitor the downlink radio link quality in DL BWPs other than the active DL BWP, as described in clause 12, on the primary cell. If the active DL BWP is the initial DL BWP and for SS/PBCH block and CORESET multiplexing pattern 2 or 3, as described in clause 13, the UE is expected to perform RLM using the associated SS/PBCH block when the associated SS/PBCH block index is provided by RadioLinkMonitoringRS\n---\n- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212]\n---\nwhere \\( P_{\\text {CMAX, } f c}(i) \\) is the UE configured maximum output power defined in [8-1, TS 38.101-1], [8-2, TS 38.101-2] and [8-3, TS 38.101-3] for carrier \\( f \\) of serving cell \\( \\mathcal{C} \\) within transmission occasion \\( i, P_{\\text {PRACH, largel, } 46} \\) is the PRACH target reception power PREAMBLE_RECEIVED_TARGET_POWER provided by higher layers [11, TS 38.321] for the active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( C \\), and \\( P L_{b, f, c} \\) is a pathloss for the active UL BWP \\( b \\) of carrier \\( f \\) based on the DL RS associated with the PRACH transmission on the active DL BWP of serving cell \\( C \\) and calculated by the UE in dB as referenceSignalPower - higher layer filtered RSRP in dBm , where RSRP is defined in [7, TS 38.215] and the higher layer filter configuration is defined in [12, TS 38.331]. If the active DL BWP is the initial DL BWP and for SS/PBCH block and CORESET multiplexing pattern 2 or 3, as described in clause 13, the UE determines \\( P L_{b, f, c} \\) based on the SS/PBCH block associated with the PRACH transmission.\n---\nIf the UE detects a DCI format \\( 1 \\_0 \\) with CRC scrambled by the corresponding MsgB-RNTI and receives a transport block within the window in a corresponding PDSCH, the UE may assume same DM-RS antenna port quasi co-location properties, as described in [6, TS 38.214], as for a SS/PBCH block the UE used for PRACH association, as described in clause 8.1, regardless of whether or not the UE is provided TCI-State for the CORESET where the UE receives the PDCCH with the DCI format \\( 1 \\_0 \\).\n---\nWhen detecting a DCI format in response to a PUSCH transmission scheduled by a RAR UL grant, as described in [11, TS 38.321], or corresponding PUSCH retransmission scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by a TCRNTI provided in the corresponding RAR message [11, TS 38.321], the UE may assume the PDCCH carrying the DCI format has the same DM-RS antenna port quasi co-location properties, as described in [6, TS 38.214], as for a SS/PBCH block the UE used for PRACH association, as described in clause 8.1, regardless of whether or not the UE is provided TCI-State for the CORESET where the UE receives the PDCCH with the DCI format.\n---\nIf the UE provides HARQ-ACK information in a PUCCH transmission in response to detecting a DCI format scheduling a PDSCH reception or having associated HARQ-ACK information without scheduling a PDSCH reception, the UE determines a PUCCH resource with index \\( r_{\\text {PUCCH }}, 0 \\leq r_{\\text {PUCCH }} \\leq 15 \\), as \\( r_{\\text {PUCCH }}=\\left\\lfloor\\frac{2 \\cdot n_{\\text {CCE }, 0}}{N_{\\text {CCE }}}\\right\\rfloor+2 \\cdot \\Delta_{\\text {PRI }} \\), where \\( N_{\\text {CCE }} \\) is a number of CCEs in a CORESET of a PDCCH reception with the DCI format, as described in clause 10.1, \\( n_{\\text {CCE }, 0} \\) is the index of a first CCE for the PDCCH reception, and \\( \\Delta_{\\text {PRI }} \\) is a value of the PUCCH resource indicator field in the DCI format.  When the PDCCH reception by a UE includes first and second PDCCH candidates from respective first and second search space sets, as described in clause 10.1 , the CORESET and \\( n_{\\text {CCE }, 0} \\) are associated with the search space set having the smaller index. If\n---\n- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "generated_at": "2026-01-09T12:17:05.479779",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between controlresourcesetid and searchspaceid found in the provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE relationship between the fields controlresourcesetid and searchspaceid. All evidence snippets describe behaviors or configurations within single IEs or unrelated contexts.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

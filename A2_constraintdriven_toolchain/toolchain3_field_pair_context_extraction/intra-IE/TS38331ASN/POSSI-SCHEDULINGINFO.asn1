@@ -1,0 +1,43 @@
+PosSI-SchedulingInfo-r16 ::=               SEQUENCE {
+    posSchedulingInfoList-r16                  SEQUENCE (SIZE (1..maxSI-Message)) OF PosSchedulingInfo-r16,
+    posSI-RequestConfig-r16                        SI-RequestConfig                                 OPTIONAL,  -- Cond MSG-1
+    posSI-RequestConfigSUL-r16                     SI-RequestConfig                                 OPTIONAL,  -- Cond SUL-MSG-1
+    ...,
+    [[
+    posSI-RequestConfigRedCap-r17                  SI-RequestConfig                                 OPTIONAL   -- Cond REDCAP-MSG-1
+    ]]
+}
+
+PosSchedulingInfo-r16 ::= SEQUENCE {
+    offsetToSI-Used-r16          ENUMERATED {true}                                              OPTIONAL,  -- Need R
+    posSI-Periodicity-r16        ENUMERATED {rf8, rf16, rf32, rf64, rf128, rf256, rf512},
+    posSI-BroadcastStatus-r16    ENUMERATED {broadcasting, notBroadcasting},
+    posSIB-MappingInfo-r16       PosSIB-MappingInfo-r16,
+    ...
+}
+
+PosSIB-MappingInfo-r16 ::=   SEQUENCE (SIZE (1..maxSIB)) OF PosSIB-Type-r16
+
+PosSIB-Type-r16 ::=          SEQUENCE {
+    encrypted-r16                ENUMERATED { true }                                            OPTIONAL,  -- Need R
+    gnss-id-r16                  GNSS-ID-r16                                                    OPTIONAL,  -- Need R
+    sbas-id-r16                  SBAS-ID-r16                                                    OPTIONAL,  -- Cond GNSS-ID-SBAS
+    posSibType-r16               ENUMERATED { posSibType1-1, posSibType1-2, posSibType1-3, posSibType1-4, posSibType1-5, posSibType1-6,
+                                              posSibType1-7, posSibType1-8, posSibType2-1, posSibType2-2, posSibType2-3, posSibType2-4,
+                                              posSibType2-5, posSibType2-6, posSibType2-7, posSibType2-8, posSibType2-9, posSibType2-10,
+                                              posSibType2-11, posSibType2-12, posSibType2-13, posSibType2-14, posSibType2-15,
+                                              posSibType2-16, posSibType2-17, posSibType2-18, posSibType2-19, posSibType2-20,
+                                              posSibType2-21, posSibType2-22, posSibType2-23, posSibType3-1, posSibType4-1,
+                                              posSibType5-1,posSibType6-1, posSibType6-2, posSibType6-3,... },
+    areaScope-r16                ENUMERATED {true}                                              OPTIONAL -- Need S
+}
+
+GNSS-ID-r16 ::= SEQUENCE {
+    gnss-id-r16              ENUMERATED{gps, sbas, qzss, galileo, glonass, bds, ...},
+    ...
+}
+
+SBAS-ID-r16 ::= SEQUENCE {
+    sbas-id-r16              ENUMERATED { waas, egnos, msas, gagan, ...},
+    ...
+}

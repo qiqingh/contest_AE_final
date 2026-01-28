@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "EQ(field1, field2)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      702,
+      703
+    ],
+    "field2_all": [
+      700
+    ],
+    "actual_pairs": [
+      [
+        [
+          702,
+          703
+        ],
+        [
+          700
+        ]
+      ]
+    ]
+  },
+  "predicate": "Same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = db0, field2 = db0",
+      "field1 = db3, field2 = db3"
+    ],
+    "invalid": [
+      "field1 = db0, field2 = db3",
+      "field1 = db6, field2 = db0"
+    ]
+  },
+  "notes": "The evidence explicitly states that the same powerControlOffset and powerControlOffsetSS should be used across all resources, implying equality between these fields.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "periodicityAndOffset",
+    "field2": "powerControlOffsetSS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 4,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if carrier N_{\\mathrm{grid}}^{\\mathrm{size}, \\mu}=52, N_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}}=52, \\mu=0 and the carrier is configured in paired spectrum, the band width of the CSI-RS resource, as given by the higher layer parameter freq Band configured by CSI-RS-ResourceMapping, is X resource blocks, where X >= 28 resources if the UE indicates trs-AddB W-Set I for the trs-AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 1] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation and X >= 32 if the UE indicates t r s -AddBW-Set2 for the AdditionalBandwidth capability for CSI-RS for tracking or [FG35-2, set 2] for the [FG35-2] capability for aperiodic CSI-RS for fast SCell activation; in these cases, if the UE is configured with CSI-RS comprising \\mathrm{X}<52 resource blocks, the UE does not expect that the total number of PRBs allocated for DL transmissions but not overlapped with the PRBs carrying CSI-RS for tracking is more than 4 , where all CSI-RS resource configurations shall span the same set of resource blocks; otherwise, the bandwidth of the CSI-RS resource, as given by the higher layer parameter freqBand configured by CSI-RS-ResourceMapping, is the minimum of 52 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\mathrm{size}} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks. For operation with shared spectrum channel access, freqBand configured by CSI-RSResourceMapping, is the minimum of 48 and \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}}^{\\text {size }} resource blocks, or is equal to \\mathrm{N}_{\\mathrm{BWP}, \\mathrm{i}} sizesource blocks. - the UE is not expected to be configured with the periodicity of 2^{\\mu} \\times 10 slots if the band width of CSI-RS resource is larger than 52 resource blocks. - the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211]. - same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources. A UE in RRC_IDLE or RRC_INACTIVE can receive a higher layer configuration of TRS occasions via TRSResourceSetConfig.\n---\n- the band width and the frequency location of the NZP CSI-RS resource, is given by the higher layer parameter nrofRBs, startingRB and frequencyDomainAllocation in a TRS-ResourceSet and applies to all resources in a TRSResourceSet. Band width, nrofRBs, and the initial CRB index, startingRB, of the NZP CSI-RS resource configured by TRS-ResourceSet are not restricted by initial DL BWP. - UE is not required to receive TRS occasions outside the initial DL BWP. - the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet. - the UE does not expect the TRS-ResourceSet to be configured with the periodicity of 2^{\\mu} \\times 10 slots if the band width of NZP CSI-RS resource is larger than 52 resource blocks. - the UE may assume the sub-carrier spacing of the NZP CSI-RS resources configured by TRS-ResourceSet to be same as the sub-carrier spacing of the initial DL BWP. - powerControlOffsetSS given by a TRS-ResourceSet applies to all resources in a TRS-ResourceSet. - the QCL information for periodic NZP CSI-RS resources, is given by the higher layer parameter s s b -Index configured by a TRS-ResourceSet, is a SS/PBCH block, applies to all resources in a TRS-ResourceSet. - One or more scramblingIDs where if a single scramblingID is configured, it applies to all NZP-CSI-RS resources in the resource set, otherwise, each NZP-CSI-RS resource is provided with a scramblingID.",
+    "generated_at": "2026-01-07T21:53:38.841415",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "Same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = db0, field2 = db0",
+          "field1 = db3, field2 = db3"
+        ],
+        "invalid": [
+          "field1 = db0, field2 = db3",
+          "field1 = db6, field2 = db0"
+        ]
+      },
+      "notes": "The evidence explicitly states that the same powerControlOffset and powerControlOffsetSS should be used across all resources, implying equality between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

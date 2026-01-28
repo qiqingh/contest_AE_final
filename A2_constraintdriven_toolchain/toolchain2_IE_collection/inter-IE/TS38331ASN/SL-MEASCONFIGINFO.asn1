@@ -1,0 +1,22 @@
+SL-MeasConfigInfo-r16 ::=           SEQUENCE {
+    sl-DestinationIndex-r16             SL-DestinationIndex-r16,
+    sl-MeasConfig-r16                   SL-MeasConfig-r16,
+    ...
+}
+
+SL-MeasConfig-r16 ::=               SEQUENCE {
+    sl-MeasObjectToRemoveList-r16       SL-MeasObjectToRemoveList-r16                                           OPTIONAL,   -- Need N
+    sl-MeasObjectToAddModList-r16       SL-MeasObjectList-r16                                                   OPTIONAL,   -- Need N
+    sl-ReportConfigToRemoveList-r16     SL-ReportConfigToRemoveList-r16                                         OPTIONAL,   -- Need N
+    sl-ReportConfigToAddModList-r16     SL-ReportConfigList-r16                                                 OPTIONAL,   -- Need N
+    sl-MeasIdToRemoveList-r16           SL-MeasIdToRemoveList-r16                                               OPTIONAL,   -- Need N
+    sl-MeasIdToAddModList-r16           SL-MeasIdList-r16                                                       OPTIONAL,   -- Need N
+    sl-QuantityConfig-r16               SL-QuantityConfig-r16                                                   OPTIONAL,   -- Need M
+    ...
+}
+
+SL-MeasObjectToRemoveList-r16 ::=   SEQUENCE (SIZE (1..maxNrofSL-ObjectId-r16)) OF SL-MeasObjectId-r16
+
+SL-ReportConfigToRemoveList-r16 ::= SEQUENCE (SIZE (1..maxNrofSL-ReportConfigId-r16)) OF SL-ReportConfigId-r16
+
+SL-MeasIdToRemoveList-r16 ::=       SEQUENCE (SIZE (1..maxNrofSL-MeasId-r16)) OF SL-MeasId-r16

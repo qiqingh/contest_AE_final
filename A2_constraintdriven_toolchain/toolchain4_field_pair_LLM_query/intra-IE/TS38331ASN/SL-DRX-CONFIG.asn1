@@ -1,0 +1,12 @@
+SL-DRX-Config-r17 ::=                      SEQUENCE {
+    sl-DRX-ConfigGC-BC-r17                     SL-DRX-ConfigGC-BC-r17                                                 OPTIONAL,     -- Cond HO
+    sl-DRX-ConfigUC-ToReleaseList-r17          SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-DestinationIndex-r16     OPTIONAL,     -- Need N
+    sl-DRX-ConfigUC-ToAddModList-r17           SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-DRX-ConfigUC-Info-r17    OPTIONAL,     -- Need N
+    ...
+}
+
+SL-DRX-ConfigUC-Info-r17 ::=               SEQUENCE {
+    sl-DestinationIndex-r17                    SL-DestinationIndex-r16                                                OPTIONAL,     -- Need N
+    sl-DRX-ConfigUC-r17                        SL-DRX-ConfigUC-r17                                                    OPTIONAL,     -- Need N
+    ...
+}

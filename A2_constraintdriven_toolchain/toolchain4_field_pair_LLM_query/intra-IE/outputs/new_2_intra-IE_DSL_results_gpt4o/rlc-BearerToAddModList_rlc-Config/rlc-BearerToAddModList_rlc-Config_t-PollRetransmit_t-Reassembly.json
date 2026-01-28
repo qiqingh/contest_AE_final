@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      12
+    ],
+    "field2_all": [
+      17
+    ],
+    "actual_pairs": [
+      [
+        [
+          12
+        ],
+        [
+          17
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative relationship between t-PollRetransmit and t-Reassembly within the same IE. The evidence describes their individual roles but does not relate them directly.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "rlc-BearerToAddModList_rlc-Config",
+    "field1": "t-PollRetransmit",
+    "field2": "t-Reassembly",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 4,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138322v160100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.3.4",
+      "7.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "5.2.3.2.2 Actions when an AMD PDU is received from lower layer ..... 17 5.2.3.2.3 Actions when an AMD PDU is placed in the reception buffer ..... 17 5.2.3.2.4 Actions when t -Reassembly expires ..... 18 5.3 ARQ procedures ..... 18 5.3.1 General ..... 18 5.3.2 Retransmission ..... 18 5.3.3 Polling ..... 19 5.3.3.1 General ..... 19 5.3.3.2 Transmission of a AMD PDU ..... 19 5.3.3.3 Reception of a STATUS report ..... 20 5.3.3.4 Expiry of t -PollRetransmit ..... 20 5.3.4 Status reporting ..... 20 5.4 SDU discard procedures ..... 21\n---\nThe following timers are configured by TS 38.331 [5]: a) t -PollRetransmit This timer is used by the transmitting side of an AM RLC entity in order to retransmit a poll (see sub clause 5.3.3). b) t -Reassembly This timer is used by the receiving side of an AM RLC entity and receiving UM RLC entity in order to detect loss of RLC PDUs at lower layer (see sub clauses 5.2.2.2 and 5.2.3.2). If t -Reassembly is running, t -Reassembly shall not be started additionally, i.e. only one t -Reassembly per RLC entity is running at a given time.",
+    "generated_at": "2026-01-07T19:44:53.045093",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative relationship between t-PollRetransmit and t-Reassembly within the same IE. The evidence describes their individual roles but does not relate them directly.",
+      "version_tags": [
+        "r16"
+      ]
+    }
+  }
+}

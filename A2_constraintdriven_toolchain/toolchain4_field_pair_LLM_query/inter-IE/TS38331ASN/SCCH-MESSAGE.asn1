@@ -1,0 +1,24 @@
+SCCH-Message ::=             SEQUENCE {
+    message                         SCCH-MessageType
+}
+
+SCCH-MessageType ::=         CHOICE {
+    c1                              CHOICE {
+        measurementReportSidelink                MeasurementReportSidelink,
+        rrcReconfigurationSidelink               RRCReconfigurationSidelink,
+        rrcReconfigurationCompleteSidelink       RRCReconfigurationCompleteSidelink,
+        rrcReconfigurationFailureSidelink        RRCReconfigurationFailureSidelink,
+        ueCapabilityEnquirySidelink              UECapabilityEnquirySidelink,
+        ueCapabilityInformationSidelink          UECapabilityInformationSidelink,
+        uuMessageTransferSidelink-r17            UuMessageTransferSidelink-r17,
+        remoteUEInformationSidelink-r17          RemoteUEInformationSidelink-r17
+    },
+    messageClassExtension           CHOICE {
+        c2                              CHOICE {
+            notificationMessageSidelink-r17 NotificationMessageSidelink-r17,
+            ueAssistanceInformationSidelink-r17 UEAssistanceInformationSidelink-r17,
+            spare6 NULL, spare5 NULL, spare4 NULL, spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        messageClassExtensionFuture-r17    SEQUENCE {}
+    }
+}

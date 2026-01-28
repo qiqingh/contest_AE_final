@@ -1,0 +1,166 @@
+{
+  "dsl_rule": "EQ(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      780,
+      785,
+      790,
+      795,
+      800,
+      805,
+      810,
+      815,
+      820
+    ],
+    "field2_all": [
+      823,
+      848,
+      862,
+      887,
+      901,
+      926
+    ],
+    "actual_pairs": [
+      [
+        [
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815,
+          820
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          926
+        ]
+      ],
+      [
+        [
+          780,
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          901
+        ]
+      ],
+      [
+        [
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815,
+          820
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          901
+        ]
+      ],
+      [
+        [
+          780,
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          926
+        ]
+      ]
+    ]
+  },
+  "predicate": "The bwp-id in csi-measconfig_csi-resourceconfigtoaddmodlist must be equal to the bwp-id in csi-reportconfigtoaddmodlist_resourcesforchannelmeasurement.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1 = 3, field2 = 3"
+    ],
+    "invalid": [
+      "field1 = 2, field2 = 5"
+    ]
+  },
+  "notes": "The evidence explicitly states that the bwp-id in the CSI-ResourceConfig must be the same as the bwp-id in the resourcesForChannelMeasurement, establishing a cross-reference constraint.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "bwp-id",
+    "ie2_name": "csi-reportconfigtoaddmodlist_resourcesforchannelmeasurement",
+    "field2": "resourcesforchannelmeasurement",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- \\\\ ResourceConfig indicated by resourcesForChannelMeasurement.",
+    "generated_at": "2026-01-09T12:40:02.024450",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "The bwp-id in csi-measconfig_csi-resourceconfigtoaddmodlist must be equal to the bwp-id in csi-reportconfigtoaddmodlist_resourcesforchannelmeasurement.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 3, field2 = 3"
+        ],
+        "invalid": [
+          "field1 = 2, field2 = 5"
+        ]
+      },
+      "notes": "The evidence explicitly states that the bwp-id in the CSI-ResourceConfig must be the same as the bwp-id in the resourcesForChannelMeasurement, establishing a cross-reference constraint.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

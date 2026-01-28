@@ -1,0 +1,170 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      339,
+      433,
+      445,
+      541,
+      553,
+      649,
+      661
+    ],
+    "field2_all": [
+      433,
+      445,
+      541,
+      553,
+      649,
+      661
+    ],
+    "actual_pairs": [
+      [
+        [
+          339,
+          445,
+          553,
+          661
+        ],
+        [
+          433,
+          541,
+          649
+        ]
+      ],
+      [
+        [
+          433,
+          541,
+          649
+        ],
+        [
+          445,
+          661
+        ]
+      ],
+      [
+        [
+          433,
+          541,
+          649
+        ],
+        [
+          445,
+          553
+        ]
+      ],
+      [
+        [
+          433,
+          541,
+          649
+        ],
+        [
+          553,
+          661
+        ]
+      ],
+      [
+        [
+          339
+        ],
+        [
+          433,
+          541,
+          649
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not provide any inter-IE constraint or relationship between the two fields. All evidence is either definitional or pertains to single-IE behavior.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pusch-powercontrol",
+    "field1": "alpha",
+    "ie2_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field2": "alpha",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 69,
+      "original_count": 69,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.1",
+      "9.2.5.1",
+      "6.4.1.1.1.2",
+      "6.1.2.3",
+      "6.1",
+      "10.1.1",
+      "16.2.3",
+      "6.3.2",
+      "5.2.3",
+      "16.2",
+      "6.4",
+      "6.3.2.2",
+      "9.2.3",
+      "5.4",
+      "6.4.1.3.3.1",
+      "6.3.2.2.2",
+      "8.3.4.2.1",
+      "6.4.1.4.2",
+      "4.3",
+      "7.1.1",
+      "6.4.1.3.1.1",
+      "5.2.2.2.7",
+      "16.3.0",
+      "6.3.5",
+      "6.2.1.2",
+      "6.3.2.4.1",
+      "8.3.4.2.2",
+      "5.2.2",
+      "6.3.2.3.1",
+      "16.2.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The low-PAPR sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is defined by a cyclic shift \\( \\alpha \\) of a base sequence \\( \\bar{r}_{u, v}(n) \\) according to\n---\nThe low-PAPR sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is defined by a cyclic shift \\( \\alpha \\) of a base sequence \\( \\bar{r}_{u, v}(n) \\) according to \\[ r_{u, v}^{(\\alpha, \\delta)}(n)=e^{j a n} \\bar{r}_{u, v}(n), \\quad 0 \\leq n<M_{\\mathrm{ZC}}\n---\nr_{u, v}^{(\\alpha, \\delta)}(n)=e^{j a n} \\bar{r}_{u, v}(n), \\quad 0 \\leq n<M_{\\mathrm{ZC}} \\] where \\( M_{\\mathrm{ZC}}=m N_{\\mathrm{sC}}^{\\mathrm{RB}} / 2^{\\delta} \\) is the length of the sequence. Multiple sequences are defined from a single base sequence through different values of \\( \\alpha \\) and \\( \\delta \\).\n---\nThe low-PAPR sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is defined by a base sequence \\( \\bar{r}_{u, v}(n) \\) according to\n---\nThe low-PAPR sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is defined by a base sequence \\( \\bar{r}_{u, v}(n) \\) according to \\[ r_{u, v}^{(\\alpha, \\delta)}(n)=\\bar{r}_{u, v}(n), \\quad 0 \\leq n<M\n---\nPUCCH formats \\( 0,1,3 \\), and 4 use sequences \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) given by clause 5.2 .2 with \\( \\delta=0 \\) where the sequence group \\( u \\) and the sequence number \\( v \\) depend on the sequence hopping in clause 6.3.2.2.1 and the cyclic shift \\( \\alpha \\) depends on the cyclic shift hopping in clause 6.3.2.2.2.\n---\nThe cyclic shift \\( \\alpha \\) varies as a function of the symbol and slot number according to\n---\nwhere \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 6.3.2.2 with \\( m_{\\mathrm{cs}} \\) depending on the information to be transmitted according to clause 9.2 of [5, TS 38.213]. The quantity \\( M_{\\text {RB }}^{\\text {PUCCH } 0} \\) is given by clause 9.2 .1 of [5, TS 38.213].\n---\nThe complex-valued symbol \\( d(0) \\) shall be multiplied with a sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) according to\n---\nwhere \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 6.3.2.2. The quantity \\( M_{\\text {RB }}^{\\text {PUCCH } 1} \\) is given by clause 9.2.1 of [5, TS 38.213].\n---\nwhere \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) with \\( \\delta=1 \\) depends on the configuration:\n---\nwhere \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) with \\( \\delta=1 \\) depends on the configuration: - if the higher-layer parameter dmrs-UplinkTransformPrecoding is configured, \\( \\pi / 2 \\)-BPSK modulation is used for PUSCH, and the PUSCH transmission is not a msg3 transmission, and the transmission is not scheduled using DCI format \\( 0 \\_0 \\) in a common search space, \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 5.2 .3 with \\( c_{\\text {init }} \\) given by\n---\nwhere \\( N_{\\mathrm{SF}, m^{\\prime}}^{\\mathrm{PUCC} H_{1} 1} \\) is given by Table 6.4.1.3.1.1-1, \\( M_{\\mathrm{RB}}^{\\text {PUCCH} 1} \\) by clause 9.2.1 of [5, TS 38.213], and the sequence \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 5.2.2.\n---\nwhere \\( M_{\\mathrm{sc}}^{\\mathrm{PUCCH}_{1} s} \\) is given by clause 6.3.2.6.3 and \\( r_{u, v}^{(\\alpha, \\delta)}(m) \\) depends on the configuration:\n---\nwhere \\( M_{\\mathrm{sc}}^{\\mathrm{PUCCH}_{1} s} \\) is given by clause 6.3.2.6.3 and \\( r_{u, v}^{(\\alpha, \\delta)}(m) \\) depends on the configuration: - if the higher-layer parameter dmrs-UplinkTransformPrecodingPUCCH is configured, and \\( \\pi / 2 \\)-BPSK is used for PUCCH, \\( r_{u, v}^{(\\alpha, \\delta)}(m) \\) is given by clause 5.2.3 with \\( \\delta=0 \\) and \\( c_{\\text {init }} \\) given by clause 6.4.1.3.2.1. The sequence group \\( u \\) and the sequence number \\( v \\) depend on the sequence hopping in clause 6.3.2.2.1.\n---\nwhere \\( M_{\\mathrm{sc}, b}^{\\mathrm{SRS}} \\) is given by clause 6.4.1.4.3, \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 5.2.2 with \\( \\delta=\\log _{2}\\left(K_{\\mathrm{TC}}\\right) \\) and the transmission comb number \\( K_{\\mathrm{TC}} \\in\\{2,4,8\\} \\) is contained in the higher-layer parameter transmission Comb. The quantity \\( l^{\\prime} \\in \\left\\{0,1, \\ldots, N_{\\text {symb }}^{\\text {SRS }}-1\\right\\} \\) is the OFDM symbol number within the SRS resource.\n---\nwhere \\( r_{u, v}^{(\\alpha, \\delta)}(n) \\) is given by clause 6.3.2.2 with the following exceptions:\n---\nIf the higher-layer parameter sl-PSFCH-Type is configured and set to 'type2', the mapping operation shall be repeated for each resource block assigned for transmission of the common interlace and for PSFCH transmission with HARQACK information over the assigned physical resource according to clause 16.3 of [5, TS 38.213], with the resourceblock dependent sequence generated according to clause 8.3.4.2.1, where the cyclic shift \\( \\alpha \\) on each resource block assigned for transmission of the common interlace is up to UE implementation.\n---\n- in clause 7.1.1, if \\( p 0 \\)-Alpha-CLID-PUSCH-Set is provided, the values of \\( P_{0 \\_ \\text {UE PUSCH, } b, f, c}(j), \\alpha_{b, f, c}(j) \\), and the PUSCH power control adjustment state \\( l \\) are provided by \\( p 0 \\)-Alpha-CLID-PUSCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate\n---\n- in clause 7.2.1, if \\( p 0 \\)-Alpha-CLID-PUCCHSet is provided, the values of \\( P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) \\) and the PUCCH power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-PUCCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate - in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of \\( P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) \\), and SRS power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState\n---\n- in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of \\( P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) \\), and SRS power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of \\( P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) \\), and SRS power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index \\( q_{d} \\) for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set\n---\n- If the SRS resource set indicator value is 00 , first \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) \\) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig.\n---\n- If the SRS resource set indicator value is 00 , first \\( P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) \\) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , second \\( P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) \\) value is provided by the value of p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.\n---\n- If the SRS resource set indicator value is 10 or 11 , first and second \\( P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) \\) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.\n---\n- if \\( P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} \\) and msgA-Alpha is provided, \\( \\alpha_{b_{,} f_{, c}}(0) \\) is the value of msgA-Alpha\n---\n- if \\( P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} \\) and msgA-Alpha is provided, \\( \\alpha_{b_{,} f_{, c}}(0) \\) is the value of msgA-Alpha - elseif \\( P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} \\) or msgA-Alpha is not provided, and msg3Alpha is provided, \\( \\alpha_{b, f, c}(0) \\) is the value of msg3-Alpha\n---\n- If the SRS resource set indicator value is 00 , first \\( \\alpha_{b, f, c}(1) \\) value is provided by \\( p 0-P U S C H- \\) Alpha in ConfiguredGrantConfig.\n---\n- If the SRS resource set indicator value is 00 , first \\( \\alpha_{b, f, c}(1) \\) value is provided by \\( p 0-P U S C H- \\) Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\( \\alpha_{b, f, c}(1) \\) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.\n---\n- If the SRS resource set indicator value is 01 , first \\( \\alpha_{b, f, c}(1) \\) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - If the SRS resource set indicator value is 10 or 11 , first and second \\( \\alpha_{b, f, c}(1) \\) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)\n---\n- If the SRS resource set indicator value is 10 or 11 , first and second \\( \\alpha_{b, f, c}(1) \\) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\( \\alpha_{b, f, c}(1) \\) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) - For \\( j \\in S_{J} \\), a set of \\( \\alpha_{b_{, f, c}}(j) \\) values are provided by a set of alpha in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\)\n---\n- \\( l \\) is provided by the value of powerControlLoopTo Use if \\( P_{0_{-} \\cup E_{-} \\mathrm{PuSCH}, b, f, c}(1) \\) and \\( \\alpha_{b_{1}, f, c}(1) \\) are provided by p0-PUSCH-Alpha in ConfiguredGrantConfig\n---\n- \\( \\quad \\alpha_{\\mathrm{SRS}, b, f, c}\\left(q_{s}\\right) \\) is provided by alpha for active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and SRS resource set \\( q_{s} \\)\n---\nIf a UE transmits a PUCCH with HARQ-ACK information using PUCCH format 0 , the UE determines values \\( m_{0} \\) and \\( m_{\\mathrm{CS}} \\) for computing a value of cyclic shift \\( \\alpha \\) [4, TS 38.211] where \\( m_{0} \\) is provided by mittalCyclicShift of PUCCHformat0 or, if initialCyclicShift is not provided, by the initial cyclic shift index as described in clause 9.2.1 and \\( m_{\\mathrm{CS}} \\) is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.3-3 and Table 9.2.3-4, respectively.\n---\nshift \\( \\alpha \\) [4, TS 38.211] where \\( m_{0} \\) is provided by initialCyclicShift of PUCCH-format0, and \\( m_{\\mathrm{CS}} \\) is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.5-1 and Table 9.2.5-2, respectively.\n---\nFor the remaining of this clause, either the secondary cell is activated and the active DL BWP is not a dormant DL BWP for a UE, or the UE does not indicate a capability [16, TS 36.306] for disabling \\( \\alpha \\) that is provided by ccsBlindDetectionSplit; otherwise, procedures described in the remaining of this clause are not applicable for the UE and the procedures are as described in clause 10.1.\n---\nFor scheduling on the primary cell from the primary cell, the UE is not required to monitor more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(M_{\\text {PDCCH }}^{\\max , \\text { slot }, \\mu_{P}}, M_{\\text {PDCCH }}^{\\text {total }, \\text { slot }, \\mu_{P}}\\right)\\right\\rfloor \\) PDCCH candidates per slot or more than \\( \\left\\lfloor\\alpha \\cdot \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu_{P}}, C_{\\text {PDCCH }}^{\\text {total, slot, } \\mu_{P}}\\right)\\right\\rfloor \\) nonoverlapping CCEs per slot on the active DL BWP of the primary cell, where \\( \\alpha \\) is provided by ccs-BlindDetectionSplit.\n---\nFor allocation of PDCCH candidates and non-overlapping CCEs to search space sets for scheduling on the primary cell from the primary cell, the UE applies the procedure in clause 10.1 using \\( \\left\\lfloor\\alpha \\cdot \\min \\left(M_{\\text {PDCCH }}^{\\text {max, slot, } \\mu}, M_{\\text {PDCCH }}^{\\text {total, slot, } \\mu}\\right)\\right\\rfloor \\) instead of \\( \\min \\left(M_{\\text {PDCCH }}^{\\text {max, slot }, \\mu}, M_{\\text {PDCCH }}^{\\text {total, slot }, \\mu}\\right) \\), and using \\( \\left\\lfloor\\alpha \\cdot \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu}, C_{\\text {PDCCH }}^{\\text {total, slot }, \\mu}\\right)\\right\\rfloor \\) instead of \\( \\min \\left(C_{\\text {PDCCH }}^{\\text {max, slot, } \\mu}, C_{\\text {PDCCH }}^{\\text {total, slot, } \\mu}\\right) \\) for the primary cell.\n---\n- \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}} \\) is a value of dl-Alpha-PSBCH, if provided; else, \\( \\alpha_{\\mathrm{S}-\\mathrm{SSB}}=1 \\)\n---\n- \\( \\alpha_{D} \\) is a value of dl-Alpha-PSSCH-PSCCH, if provided; else, \\( \\alpha_{D}=1 \\)\n---\n- \\( \\alpha_{S L} \\) is a value of sl-Alpha-PSSCH-PSCCH, if provided; else, \\( \\alpha_{S L}=1 \\)\n---\n- \\( \\quad \\alpha_{\\text {PSFCH }} \\) is a value of dl-Alpha-PSFCH, if provided; else, \\( \\alpha_{\\text {PFSCH }}=1 \\)\n---\nFor a PSFCH transmission with HARQ-ACK information or conflict information, a UE determines a \\( m_{0} \\) value, for computing a value of cyclic shift \\( \\alpha \\) [4, TS 38.211], from a cyclic shift pair index corresponding to a PSFCH resource index and from \\( N_{\\mathrm{CS}}^{\\mathrm{PSFCH}} \\) using Table 16.3-1.\n---\nFor a PSFCH transmission with HARQ-ACK information, a UE determines a \\( m_{\\mathrm{cs}} \\) value, for computing a value of cyclic shift \\( \\alpha \\) [4, TS 38.211], as in Table 16.3-2 if the UE detects a SCI format 2-A with Cast type indicator field value of \" 01 \" or \" 10 \" or a SCI format 2-C, or as in Table 16.3-3 if the UE detects a SCI format 2-B or a SCI format 2-A with Cast type indicator field value of \" 11 \". For a PSFCH transmission with conflict information, a UE determines a \\( m_{\\mathrm{cs}} \\) value for computing a value of cyclic shift \\( \\alpha \\) [4, TS 38.211] as in Table 16.3-4. The UE applies one cyclic shift from a cyclic shift pair to a sequence used for the PSFCH transmission [4, TS 38.211].\n---\n- The values \\( \\alpha, M \\) and \\( \\beta \\) are determined by the higher layer parameter paramCombination-r17, where the mapping is given in Table 5.2.2.2.7-1.\n---\nThe precoding matrices indicated by the PMI are determined from \\( L+M \\) vectors, where \\( L=K_{1} / 2 \\) and \\( K_{1}=\\alpha P_{\\text {CSI-RS }} \\). \\( K_{1} \\) ports are selected from \\( P_{C S I-R S} \\) ports based on \\( L \\) vectors, \\( v_{m}(i), i=0,1, \\ldots, L-1 \\), which are identified by\n---\n- If \\( \\alpha=1, m^{(i)}=i, i=0,1, \\ldots, \\frac{P C S I-R S}{2}-1 \\), and \\( i_{1,2} \\) is not reported.\n---\nWhen the UE is scheduled to transmit a transport block on PUSCH not using repetition type B multiplexed with a CSI \\( \\left[\\alpha \\cdot \\sum_{l=0}^{N_{\\mathrm{symb}, \\mathrm{all}}^{\\mathrm{PUSCH}}-1} M_{\\mathrm{sC}}^{\\mathrm{UCl}}(l)\\right]-Q_{A C K / C G-U C I}^{\\prime}-Q_{\\mathrm{CSl}-1}^{\\prime} \\), where parameters \\( O_{\\mathrm{CSI}-2}, L_{\\mathrm{CSI}-2}, \\beta_{\\mathrm{o}[\\mathrm{set}}^{\\mathrm{PUSCH}}, N_{\\mathrm{symbåll}}^{\\mathrm{PUSCH}}, M_{\\mathrm{sc}}^{\\mathrm{UCl}}(l) \\), \\( C_{\\text {ULSCH }}, K_{r}, Q_{\\text {CSI-I }}^{\\prime}, Q_{A C K / C G-U C I}^{\\prime} \\) and \\( \\alpha \\) are defined in Clause 6.3.2.4 of [5, TS 38.212].\n---\nwhere parameters \\( O_{\\mathrm{CSI}-2}, L_{\\mathrm{CSJ}-2}, \\beta_{\\text {or[set }}^{\\mathrm{PUSCH}}, N_{\\text {symb, rominal, }}^{\\text {PUSCH }}, N_{\\text {symb, actual }}^{\\text {PUSCH }}, M_{\\text {sC, nominal }}^{\\text {UCI }}(l), M_{\\text {sC, actual }}^{\\text {UCI }}(l), C_{\\mathrm{UL}-\\mathrm{SCH}}, K_{r} \\), \\( Q_{A C K / C G-U C I}^{\\prime}, Q_{\\text {CSI-I }}^{\\prime} \\), and \\( \\alpha \\) are defined in Clause 6.3.2.4 of [5, TS 38.212].\n---\nwhere \\( Z_{\\text {ref }} \\) is defined as the next uplink symbol with its CP starting \\( T_{\\text {wo.CE }}=(Z)(2048+144) \\cdot K 2^{-\\mu} \\cdot T_{\\mathrm{c}}+T_{\\text {meach }} \\) after the end of the last symbol of the PDCCH triggering the CSI report(s), and where \\( Z_{\\text {ref }}(n) \\), is defined as the next uplink symbol with its CP starting \\( T^{\\dagger}{ }_{\\sigma \\alpha \\cdot C V}=\\left(Z^{\\prime}\\right)(2048+144) \\cdot K 2^{-\\mu} \\cdot T_{\\mathrm{c}} \\) after the end of the last symbol in time of the latest of: aperiodic CSI-RS resource for channel measurements, aperiodic CSI-IM used for interference measurements, and aperiodic NZP CSI-RS for interference measurement, when aperiodic CSI-RS is used for channel measurement for the \\( n \\)-th triggered CSI report, and where \\( T_{\\text {switch }} \\) is defined in clause 6.4 and is applied only if \\( Z_{1} \\) of table 5.4-1 is applied.\n---\nFor the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI \\( =1 \\), the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3.\n---\nFor PUSCH transmissions with a Type 1 configured grant, when two SRS resource sets are configured in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, if configuredGrantConfig contains only one pathlossReferenceIndex, p0-PUSCH-Alpha, powerControlLoopToUse, srs-ResourceIndicator and precodingAndNumberOfLayers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook'), PUSCH repetitions are associated only with the first SRS resource set.\n---\n- zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or,\n---\n- zero or two SRS resource sets each configured with higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic' and with a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. The UE shall expect that the two sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srsPowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRSResourceSet is different. Or,\n---\nThe IE Alpha defines possible values of a the pathloss compensation coefficient for uplink power control. Value alpha 0 corresponds to the value 0 , Value alpha 04 corresponds to the value 0.4 , Value alpha 05 corresponds to the value 0.5 and so on. Value alphal corresponds to value 1 . See also clause 7.1 of TS 38.213 [13].\n---\nIndex of the PO-PUSCH-AlphaSet to be used for second SRS resource set. If this field is present, the p0-PUSCH-Alpha provides index for the P0-PUSCH-AlphaSet to be used for first SRS resource set.\n---\nIndicates P0 value for PUSCH for CG SDT in steps of 1dB (see TS 38.213 [13]). When this field is configured, the UE ignores the p0-PUSCH-Alpha.\n---\nIndicates alpha value for PUSCH for CG SDT. alpha 0 indicates value 0 is used alpha04 indicates value 4 is used and so on (see TS 38.213 [13]). When this field is configured, the UE ignores the p0-PUSCH-Alpha.\n---\nIndex of the p0-alpha set determining the power control for this CSI report transmission (see TS 38.214 [19], clause 6.2.1.2).\n---\nDedicated alpha value for MsgA PUSCH. If the field is absent, the UE shall use the value of msg3-Alpha if configured, else UE applies value 1 (see TS 38.213 [13], clause 7.1.1).\n---\nalpha value for PUSCH with grant (except msg3) (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 1.\n---\nDedicated alpha value for msg3 PUSCH (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 1.\n---\nconfiguration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH.\n---\nalpha value for SRS power control (see TS 38.213 [13], clause 7.3). When the field is absent the UE applies the value 1.\n---\nIndicates alpha value for DL pathloss based power control for PSBCH. When the field is not configured the UE applies the value 1\n---\nsl-Alpha-PSSCH-PSCCH \\\\ Indicates alpha value for sidelink pathloss based power control for \\( \\mathrm{PSCCH} / \\mathrm{PSSCH} \\) when si-PO-PSSCH-PSCCH is configured. When the field is absent the UE applies the value 1.\n---\ndi-Alpha-PSSCH-PSCCH \\\\ Indicates alpha value for downlink pathloss based power control for \\( \\mathrm{PSCCH} / \\mathrm{PSSCH} \\) when dl-PO-PSSCH-PSCCH is configured. When the field is absent the UE applies the value 1.\n---\nIndicates alpha value for downlink pathloss based power control for PSFCH when dl-PO-PSFCH is configured. When the field is absent the UE applies the value 1.\n---\n-- Maximum number of PO-pusch-alpha-sets (see TS 38.213 [13], clause 7.1)\n---\n-- Maximum number of PO-pusch-alpha-sets (see TS 38.213 [13], clause 7.1) -- Maximum number of PO-pusch-alpha-sets minus 1 (see TS 38.213 [13], clause 7.1)",
+    "generated_at": "2026-01-10T14:10:09.254490",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between field1 (alpha from pusch-powercontrol) and field2 (alpha from srs-config_srs-resourcesettoaddmodlist).",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not provide any inter-IE constraint or relationship between the two fields. All evidence is either definitional or pertains to single-IE behavior.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

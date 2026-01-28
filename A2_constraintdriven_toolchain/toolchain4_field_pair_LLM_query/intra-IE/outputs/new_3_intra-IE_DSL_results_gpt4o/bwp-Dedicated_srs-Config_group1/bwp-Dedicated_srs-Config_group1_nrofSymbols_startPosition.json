@@ -1,0 +1,87 @@
+{
+  "dsl_rule": "GE(field2, field1 - 1)",
+  "constraint_type": "RangeAlignment",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      561
+    ],
+    "field2_all": [
+      560
+    ],
+    "actual_pairs": [
+      [
+        [
+          561
+        ],
+        [
+          560
+        ]
+      ]
+    ]
+  },
+  "predicate": "field2 >= field1 - 1",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=4, field2=3",
+      "field1=8, field2=7"
+    ],
+    "invalid": [
+      "field1=4, field2=2",
+      "field1=8, field2=6"
+    ]
+  },
+  "notes": "The evidence provides a mathematical relationship where startPosition (field2) must be greater than or equal to nrofSymbols (field1) minus one.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "nrofSymbols",
+    "field2": "startPosition",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 3,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- \\quad N_{\\text {ap }}^{\\text {SRS }} \\in\\{1,2,4,8\\} antenna ports \\left\\{p_{i}\\right\\}_{i=0}^{N_{\\text {ap }}^{\\text {SRS }}-1} , where the number of antenna ports is given by the higher layer parameter nrofSRS-Ports or nrofSRS-Ports- n 8 if configured, otherwise N_{\\text {ap }}^{\\mathrm{SRS}}=1 , and p_{i}=1000+i when the SRS resource is in a SRS resource set with higher-layer parameter usage in SRS-ResourceSet not set to 'nonCodebook', or determined according to [6, TS 38.214] when the SRS resource is in a SRS resource set with higher-layer parameter usage in SRS-ResourceSet set to 'nonCodebook'. - \\quad N_{\\mathrm{hop}} , the number of hops for SRS Tx hopping for an SRS resource configured by SRS-PosResource given by the higher layer parameter SRShoppingNrofHops if configured, otherwise N_{\\mathrm{hop}}=1 . - \\quad N_{\\text {symb }}^{\\text {SRS }} \\in\\{1,2,4,8,10,12,14\\} consecutive OFDM symbols given by the field nrofSymbols contained in the higher layer parameter resourceMapping. If N_{\\mathrm{hop}}>1, N_{\\mathrm{symb}}^{\\mathrm{SRS}} is the number of consecutive OFDM symbol per hop. - l_{0} , the starting position in the time domain given by l_{0}=N_{\\text {symb }}^{\\text {slot }}-1-l_{\\text {offset }} where the offset l_{\\text {offset }} \\in\\{0,1, \\ldots, 13\\} counts symbols backwards from the end of the slot and is given by the field startPosition contained in the higher layer parameter resourceMapping and l_{\\text {off set }} >= N_{\\text {symb }}^{\\text {SRS }}-1 . If N_{\\text {hop }}>1 l_{0} is the starting position of each hop in the time domain, determined by the field startPosition for each SRS transmission hop. - \\quad k_{0} , the frequency-domain starting position of the sounding reference signal. 6.4.1.4.2 Sequence generation",
+    "generated_at": "2026-01-07T21:52:28.274046",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "RangeAlignment",
+      "dsl": "GE(field2, field1 - 1)",
+      "preconditions": [],
+      "predicate": "field2 >= field1 - 1",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=4, field2=3",
+          "field1=8, field2=7"
+        ],
+        "invalid": [
+          "field1=4, field2=2",
+          "field1=8, field2=6"
+        ]
+      },
+      "notes": "The evidence provides a mathematical relationship where startPosition (field2) must be greater than or equal to nrofSymbols (field1) minus one.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

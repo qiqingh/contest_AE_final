@@ -1,0 +1,16 @@
+ULInformationTransferMRDC ::=               SEQUENCE {
+    criticalExtensions                          CHOICE {
+        c1                                          CHOICE {
+            ulInformationTransferMRDC                   ULInformationTransferMRDC-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+ULInformationTransferMRDC-IEs::=           SEQUENCE {
+    ul-DCCH-MessageNR                           OCTET STRING                    OPTIONAL,
+    ul-DCCH-MessageEUTRA                        OCTET STRING                    OPTIONAL,
+    lateNonCriticalExtension                    OCTET STRING                    OPTIONAL,
+    nonCriticalExtension                        SEQUENCE {}                     OPTIONAL
+}

@@ -1,0 +1,71 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      290
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          290
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE constraint between 'format2' from 'initialuplinkbwp_pucch-config' and 'schedulingrequestid' from 'mac-cellgroupconfig'. The evidence only describes behavior related to PUCCH formats within a single IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "format2",
+    "ie2_name": "mac-cellgroupconfig",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.4",
+      "9.2.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If a UE is provided a first interlace of \\( M_{\\text {Interlace }, 0}^{\\text {PUCC }} \\) PRBs by interlacet in InterlaceAllocation and transmits a PUCCH with \\( O_{\\text {ACK }} \\) HARQ-ACK information bits and \\( O_{\\text {CRC }} \\) bits using PUCCH format 2 or PUCCH format 3 , the UE transmits the PUCCH over the first interlace if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{CRC}}\\right) \\leq M_{\\mathrm{Interlace}, 0}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sc}, \\mathrm{crl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\); otherwise, if the UE is provided a second interlace by interlacel in PUCCH-format2 or PUCCH-format3, the UE transmits the PUCCH over the first and second interlaces. 9.2.4 UE procedure for reporting SR\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace }, 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation and transmits a PUCCH with \\( O_{\\mathrm{ACK}} \\) HARQ-ACK information bits, \\( O_{\\mathrm{SR}}=\\left[\\log _{2}(K+1)\\right] \\) SR bits, and \\( O_{\\mathrm{CRC}} \\) CRC bits using PUCCH format 2 or PUCCH format 3, the UE transmits the PUCCH over the first interlace if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right) \\leq M_{\\mathrm{Interlace}, 0}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sc}, \\mathrm{crrl}}^{\\mathrm{RB}} \\). \\( N_{\\text {symb-UCI }}^{\\text {PUCCH }} \\cdot Q_{m} \\cdot r \\); otherwise, if the UE is provided a second interlace by interlacel in PUCCH-format2 or PUCCHformat3, the UE transmits the PUCCH over the first and second interlaces.",
+    "generated_at": "2026-01-09T12:51:36.808905",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE constraint between 'format2' from 'initialuplinkbwp_pucch-config' and 'schedulingrequestid' from 'mac-cellgroupconfig'. The evidence only describes behavior related to PUCCH formats within a single IE context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

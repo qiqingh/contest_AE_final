@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      498,
+      504
+    ],
+    "field2_all": [
+      495,
+      501
+    ],
+    "actual_pairs": [
+      [
+        [
+          498,
+          504
+        ],
+        [
+          495,
+          501
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between nrofSymbols and startingPRB within the same IE. The evidence discusses repetition and frequency hopping but does not link these two fields with a normative constraint.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group1",
+    "field1": "nrofSymbols",
+    "field2": "startingPRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.6"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For N_{\\text {PUCCH }}^{\\text {repeat }}>1 , - the UE repeats the PUCCH transmission with the UCI over N_{\\text {PUCCH }}^{\\text {repeat }} slots - a repetition of the PUCCH transmission in each of the N_{\\text {PUCCH }}^{\\text {repeat }} slots has a same number of consecutive symbols, as provided by nrofSymbols - a repetition of the PUCCH transmission in each of the N_{\\text {PUCCH }}^{\\text {repeat }} slots has a same first symbol, as provided by startingSymbollndex if subslotLengthForPUCCH is not provided; otherwise mod(startingSymbollndex, subslotLengthForPUCCH) - the UE is configured by interslotFrequencyHopping whether or not to perform frequency hopping for repetitions of the PUCCH transmission in different slots - if the UE is configured to perform frequency hopping for repetitions of a PUCCH transmission across slots and the UE is not provided PUCCH-DMRS-Bundling = 'enabled' - the UE performs frequency hopping per slot - the UE transmits the PUCCH starting from a first PRB, provided by starting PRB, in slots with even number and starting from a second PRB , provided by secondHopPRB, in slots with odd number. The slot indicated to the UE for the first repetition of the PUCCH transmission has number 0 and each subsequent slot until the UE transmits the PUCCH in N_{\\text {PUCCH }}^{\\text {repeat }} slots is counted regardless of whether or not the UE transmits the PUCCH in the slot - the UE does not expect to be configured to perform frequency hopping for a repetition of the PUCCH transmission within a slot - if the UE is configured to perform frequency hopping for repetitions of a PUCCH transmission across slots and the UE is provided PUCCH-DMRS-Bundling = 'enabled'",
+    "generated_at": "2026-01-10T21:43:48.548569",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between nrofSymbols and startingPRB within the same IE. The evidence discusses repetition and frequency hopping but does not link these two fields with a normative constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

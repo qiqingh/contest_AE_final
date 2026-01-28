@@ -1,0 +1,43 @@
+SIB12-r16 ::=                 SEQUENCE {
+    segmentNumber-r16             INTEGER (0..63),
+    segmentType-r16               ENUMERATED {notLastSegment, lastSegment},
+    segmentContainer-r16          OCTET STRING
+}
+
+SIB12-IEs-r16 ::=             SEQUENCE {
+    sl-ConfigCommonNR-r16         SL-ConfigCommonNR-r16,
+    lateNonCriticalExtension      OCTET STRING                   OPTIONAL,
+    ...,
+    [[
+    sl-DRX-ConfigCommonGC-BC-r17         SL-DRX-ConfigGC-BC-r17                                                 OPTIONAL,    -- Need R
+    sl-DiscConfigCommon-r17              SL-DiscConfigCommon-r17                                                OPTIONAL,    -- Need R
+    sl-L2U2N-Relay-r17                   ENUMERATED {enabled}                                                   OPTIONAL,    -- Need R
+    sl-NonRelayDiscovery-r17             ENUMERATED {enabled}                                                   OPTIONAL,    -- Need R
+    sl-L3U2N-RelayDiscovery-r17          ENUMERATED {enabled}                                                   OPTIONAL,    -- Need R
+    sl-TimersAndConstantsRemoteUE-r17    UE-TimersAndConstantsRemoteUE-r17                                      OPTIONAL     -- Need R
+    ]]
+}
+
+SL-ConfigCommonNR-r16 ::=        SEQUENCE {
+    sl-FreqInfoList-r16                  SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-FreqConfigCommon-r16      OPTIONAL,    -- Need R
+    sl-UE-SelectedConfig-r16             SL-UE-SelectedConfig-r16                                               OPTIONAL,    -- Need R
+    sl-NR-AnchorCarrierFreqList-r16      SL-NR-AnchorCarrierFreqList-r16                                        OPTIONAL,    -- Need R
+    sl-EUTRA-AnchorCarrierFreqList-r16   SL-EUTRA-AnchorCarrierFreqList-r16                                     OPTIONAL,    -- Need R
+    sl-RadioBearerConfigList-r16         SEQUENCE (SIZE (1..maxNrofSLRB-r16)) OF SL-RadioBearerConfig-r16       OPTIONAL,    -- Need R
+    sl-RLC-BearerConfigList-r16          SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-BearerConfig-r16         OPTIONAL,    -- Need R
+    sl-MeasConfigCommon-r16              SL-MeasConfigCommon-r16                                                OPTIONAL,    -- Need R
+    sl-CSI-Acquisition-r16               ENUMERATED {enabled}                                                   OPTIONAL,    -- Need R
+    sl-OffsetDFN-r16                     INTEGER (1..1000)                                                      OPTIONAL,    -- Need R
+    t400-r16                             ENUMERATED {ms100, ms200, ms300, ms400, ms600, ms1000, ms1500, ms2000} OPTIONAL,    -- Need R
+    sl-MaxNumConsecutiveDTX-r16          ENUMERATED {n1, n2, n3, n4, n6, n8, n16, n32}                          OPTIONAL,    -- Need R
+    sl-SSB-PriorityNR-r16                INTEGER (1..8)                                                         OPTIONAL     -- Need R
+}
+
+SL-NR-AnchorCarrierFreqList-r16 ::=  SEQUENCE (SIZE (1..maxFreqSL-NR-r16)) OF ARFCN-ValueNR
+
+SL-EUTRA-AnchorCarrierFreqList-r16 ::= SEQUENCE (SIZE (1..maxFreqSL-EUTRA-r16)) OF ARFCN-ValueEUTRA
+
+SL-DiscConfigCommon-r17 ::=   SEQUENCE {
+    sl-RelayUE-ConfigCommon-r17   SL-RelayUE-Config-r17,
+    sl-RemoteUE-ConfigCommon-r17  SL-RemoteUE-Config-r17
+}

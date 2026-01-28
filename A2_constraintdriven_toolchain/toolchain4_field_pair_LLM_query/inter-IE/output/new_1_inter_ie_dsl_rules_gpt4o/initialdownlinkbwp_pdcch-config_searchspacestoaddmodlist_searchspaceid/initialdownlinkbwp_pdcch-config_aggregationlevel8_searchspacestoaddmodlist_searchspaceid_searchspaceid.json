@@ -1,0 +1,112 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      60,
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      51,
+      60,
+      116,
+      181,
+      246
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181
+        ],
+        [
+          60
+        ]
+      ],
+      [
+        [
+          60
+        ],
+        [
+          51,
+          116,
+          181,
+          246
+        ]
+      ],
+      [
+        [
+          116,
+          246
+        ],
+        [
+          60
+        ]
+      ],
+      [
+        [
+          181,
+          246
+        ],
+        [
+          60
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not relate aggregationlevel8 from initialdownlinkbwp_pdcch-config to searchspaceid from searchspacestoaddmodlist_searchspaceid across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialdownlinkbwp_pdcch-config",
+    "field1": "aggregationlevel8",
+    "ie2_name": "searchspacestoaddmodlist_searchspaceid",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- a number of PDCCH candidates \\( M_{s}^{(L)} \\) per CCE aggregation level \\( L \\) by aggregationLevell, aggregationLevel2, aggregationLevel4, aggregationLevel8, and aggregationLevell6, for CCE aggregation level 1, CCE aggregation level 2, CCE aggregation level 4, CCE aggregation level 8, and CCE aggregation level 16, respectively - an indication that search space set \\( S \\) is either a CSS set or a USS set by searchSpaceType\n---\nFor an IAB-MT, the search space defines how/where to search for PDCCH candidates for an IAB-MT:each search space is associated with one ControlResearchSet; for a scheduled cell in the case of cross carrier scheduling, except for nrofCandidates, all the optional fields are absent. SearchSpaceLinkingld This parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to \\( n \\)-th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.\n---\nThis parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to \\( n \\)-th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.",
+    "generated_at": "2026-01-09T12:24:59.571560",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between aggregationlevel8 and searchspaceid.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not relate aggregationlevel8 from initialdownlinkbwp_pdcch-config to searchspaceid from searchspacestoaddmodlist_searchspaceid across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

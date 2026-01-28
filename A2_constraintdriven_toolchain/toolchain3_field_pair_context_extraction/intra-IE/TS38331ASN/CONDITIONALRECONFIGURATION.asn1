@@ -1,0 +1,8 @@
+ConditionalReconfiguration-r16 ::=   SEQUENCE {
+    attemptCondReconfig-r16              ENUMERATED {true}              OPTIONAL,   -- Cond CHO
+    condReconfigToRemoveList-r16         CondReconfigToRemoveList-r16   OPTIONAL,   -- Need N
+    condReconfigToAddModList-r16         CondReconfigToAddModList-r16   OPTIONAL,   -- Need N
+    ...
+}
+
+CondReconfigToRemoveList-r16 ::=     SEQUENCE (SIZE (1.. maxNrofCondCells-r16)) OF CondReconfigId-r16

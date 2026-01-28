@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      431
+    ],
+    "field2_all": [
+      434
+    ],
+    "actual_pairs": [
+      [
+        [
+          431
+        ],
+        [
+          434
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between the fields p0-PUSCH-AlphaSetId and pusch-PathlossReferenceRS-Id within the same IE. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pusch-Config_group0",
+    "field1": "p0-PUSCH-AlphaSetId",
+    "field2": "pusch-PathlossReferenceRS-Id",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "25 ETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission\n---\nETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission\n---\n- the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission",
+    "generated_at": "2026-01-10T21:43:44.782284",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between the fields p0-PUSCH-AlphaSetId and pusch-PathlossReferenceRS-Id within the same IE. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

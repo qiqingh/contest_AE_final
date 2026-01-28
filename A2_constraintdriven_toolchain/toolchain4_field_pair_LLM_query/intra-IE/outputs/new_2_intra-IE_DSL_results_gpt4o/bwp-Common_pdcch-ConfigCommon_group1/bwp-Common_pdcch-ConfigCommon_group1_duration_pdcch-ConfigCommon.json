@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      148
+    ],
+    "field2_all": [
+      144
+    ],
+    "actual_pairs": [
+      [
+        [
+          148
+        ],
+        [
+          144
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any normative or logical relationship between the fields 'duration' and 'pdcch-ConfigCommon' within the same IE. The evidence lacks explicit constraints or conditions linking these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Common_pdcch-ConfigCommon_group1",
+    "field1": "duration",
+    "field2": "pdcch-ConfigCommon",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "11.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If a UE is provided by bwp-InactivityTimer a timer value for the serving cell [11, TS 38.321] and the timer is running, the UE decrements the timer at the end of a subframe for FR1 or at the end of a half subframe for FR2 if the restarting conditions in [11, TS 38.321] are not met during the interval of the subframe for FR1 or of the half subframe for FR2. For a cell where a UE changes an active DL BWP due to a BWP inactivity timer expiration and for accommodating a delay in the active DL BWP change or the active UL BWP change required by the UE [10, TS 38.133], the UE is not required to receive or transmit in the cell during a time duration from the beginning of a subframe for FR1, or of half of a subframe for FR2, that is immediately after the BWP inactivity timer expires until the beginning of a slot where the UE can receive or transmit. When a UE's BWP inactivity timer for a cell within FR1 (or FR2) expires within a time duration where the UE is not required to receive or transmit for an active UL/DL BWP change in the cell or in a different cell within FR1 (or FR2), the UE delays the active UL/DL BWP change triggered by the BWP inactivity timer expiration until a subframe for FR1 or half a subframe for FR2 that is immediately after the UE completes the active UL/DL BWP change in the cell or in the different cell within FR1 (or FR2). If a UE is provided by firstActiveDownlinkBWP-Id a first active DL BWP and by firstActiveUplinkBWP-Id a first active UL BWP on a carrier of a secondary cell, the UE uses the indicated DL BWP and the indicated UL BWP as the respective first active DL BWP on the secondary cell and first active UL BWP on the carrier of the secondary cell. A UE does not expect to monitor PDCCH when the UE performs RRM measurements [10, TS 38.133] over a bandwidth that is not within the active DL BWP for the UE. 13 UE procedure for monitoring Type0-PDCCH CSS sets If during cell search a UE determines from MIB that a CORESET for Type0-PDCCH CSS set is present, as described in clause 4.1, the UE determines a number of consecutive resource blocks and a number of consecutive symbols for the CORESET of the Type0-PDCCH CSS set from controlResourceSetZero in pdcch-ConfigSIB1, as described in Tables 13-1 through 13-10, for operation without shared spectrum channel access in FR1 and FR2-1, or as described in Tables 13-1A and 13-4A for operation with shared spectrum channel access in FR1, or as described in Table 13-10A for FR22, and determines PDCCH monitoring occasions from searchSpaceZero in pdcch-ConfigSIBI, included in MIB, as described in Tables 13-11 through 13-15. SFN { }_{\\mathrm{c}} and n_{\\mathrm{c}} are the SFN and slot index within a frame of the CORESET based on SCS of the CORESET and SFN \\mathrm{SSB}_{i} and n_{\\mathrm{SSB}, i} are the SFN and slot index based on SCS of the CORESET, respectively, where the \\mathrm{SS} / \\mathrm{PBCH} block with index i overlaps in time with system frame \\mathrm{SFN}_{\\mathrm{SSB}, i} and slot n_{\\mathrm{SSB}, i} . The symbols of the CORESET associated with pdcch-ConfigSIB1 in MIB or with searchSpaceSIB1 in PDCCHConfigCommon have normal cyclic prefix. For operation with shared spectrum channel access in FR2-2 and for operation without shared spectrum channel access, a UE assumes that the offset in Tables 13-1 through 13-10A is defined with respect to the SCS of the CORESET for Type0-PDCCH CSS set from the smallest RB index of the CORESET for Type0-PDCCH CSS set to the smallest RB\n---\nFor a cell where a UE changes an active DL BWP due to a BWP inactivity timer expiration and for accommodating a delay in the active DL BWP change or the active UL BWP change required by the UE [10, TS 38.133], the UE is not required to receive or transmit in the cell during a time duration from the beginning of a subframe for FR1, or of half of a subframe for FR2, that is immediately after the BWP inactivity timer expires until the beginning of a slot where the UE can receive or transmit. When a UE's BWP inactivity timer for a cell within FR1 (or FR2) expires within a time duration where the UE is not required to receive or transmit for an active UL/DL BWP change in the cell or in a different cell within FR1 (or FR2), the UE delays the active UL/DL BWP change triggered by the BWP inactivity timer expiration until a subframe for FR1 or half a subframe for FR2 that is immediately after the UE completes the active UL/DL BWP change in the cell or in the different cell within FR1 (or FR2). If a UE is provided by firstActiveDownlinkBWP-Id a first active DL BWP and by firstActiveUplinkBWP-Id a first active UL BWP on a carrier of a secondary cell, the UE uses the indicated DL BWP and the indicated UL BWP as the respective first active DL BWP on the secondary cell and first active UL BWP on the carrier of the secondary cell. A UE does not expect to monitor PDCCH when the UE performs RRM measurements [10, TS 38.133] over a bandwidth that is not within the active DL BWP for the UE. 13 UE procedure for monitoring Type0-PDCCH CSS sets If during cell search a UE determines from MIB that a CORESET for Type0-PDCCH CSS set is present, as described in clause 4.1, the UE determines a number of consecutive resource blocks and a number of consecutive symbols for the CORESET of the Type0-PDCCH CSS set from controlResourceSetZero in pdcch-ConfigSIB1, as described in Tables 13-1 through 13-10, for operation without shared spectrum channel access in FR1 and FR2-1, or as described in Tables 13-1A and 13-4A for operation with shared spectrum channel access in FR1, or as described in Table 13-10A for FR22, and determines PDCCH monitoring occasions from searchSpaceZero in pdcch-ConfigSIBI, included in MIB, as described in Tables 13-11 through 13-15. SFN { }_{\\mathrm{c}} and n_{\\mathrm{c}} are the SFN and slot index within a frame of the CORESET based on SCS of the CORESET and SFN \\mathrm{SSB}_{i} and n_{\\mathrm{SSB}, i} are the SFN and slot index based on SCS of the CORESET, respectively, where the \\mathrm{SS} / \\mathrm{PBCH} block with index i overlaps in time with system frame \\mathrm{SFN}_{\\mathrm{SSB}, i} and slot n_{\\mathrm{SSB}, i} . The symbols of the CORESET associated with pdcch-ConfigSIB1 in MIB or with searchSpaceSIB1 in PDCCHConfigCommon have normal cyclic prefix. For operation with shared spectrum channel access in FR2-2 and for operation without shared spectrum channel access, a UE assumes that the offset in Tables 13-1 through 13-10A is defined with respect to the SCS of the CORESET for Type0-PDCCH CSS set from the smallest RB index of the CORESET for Type0-PDCCH CSS set to the smallest RB",
+    "generated_at": "2026-01-07T19:40:38.230516",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any normative or logical relationship between the fields 'duration' and 'pdcch-ConfigCommon' within the same IE. The evidence lacks explicit constraints or conditions linking these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

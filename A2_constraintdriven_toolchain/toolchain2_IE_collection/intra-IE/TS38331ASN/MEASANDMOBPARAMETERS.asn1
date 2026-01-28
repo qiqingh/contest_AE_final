@@ -1,0 +1,177 @@
+MeasAndMobParameters ::=                    SEQUENCE {
+    measAndMobParametersCommon              MeasAndMobParametersCommon              OPTIONAL,
+    measAndMobParametersXDD-Diff                MeasAndMobParametersXDD-Diff        OPTIONAL,
+    measAndMobParametersFRX-Diff                MeasAndMobParametersFRX-Diff        OPTIONAL
+}
+
+MeasAndMobParameters-v1700 ::=          SEQUENCE {
+    measAndMobParametersFR2-2-r17           MeasAndMobParametersFR2-2-r17           OPTIONAL
+}
+
+MeasAndMobParametersCommon ::=          SEQUENCE {
+    supportedGapPattern                     BIT STRING (SIZE (22))                  OPTIONAL,
+    ssb-RLM                                 ENUMERATED {supported}                  OPTIONAL,
+    ssb-AndCSI-RS-RLM                       ENUMERATED {supported}                  OPTIONAL,
+    ...,
+    [[
+    eventB-MeasAndReport                    ENUMERATED {supported}                  OPTIONAL,
+    handoverFDD-TDD                         ENUMERATED {supported}                  OPTIONAL,
+    eutra-CGI-Reporting                     ENUMERATED {supported}                  OPTIONAL,
+    nr-CGI-Reporting                        ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    independentGapConfig                    ENUMERATED {supported}                  OPTIONAL,
+    periodicEUTRA-MeasAndReport             ENUMERATED {supported}                  OPTIONAL,
+    handoverFR1-FR2                         ENUMERATED {supported}                  OPTIONAL,
+    maxNumberCSI-RS-RRM-RS-SINR             ENUMERATED {n4, n8, n16, n32, n64, n96} OPTIONAL
+    ]],
+    [[
+    nr-CGI-Reporting-ENDC                   ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    eutra-CGI-Reporting-NEDC                ENUMERATED {supported}                  OPTIONAL,
+    eutra-CGI-Reporting-NRDC                ENUMERATED {supported}                  OPTIONAL,
+    nr-CGI-Reporting-NEDC                   ENUMERATED {supported}                  OPTIONAL,
+    nr-CGI-Reporting-NRDC                   ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    reportAddNeighMeasForPeriodic-r16       ENUMERATED {supported}                  OPTIONAL,
+    condHandoverParametersCommon-r16        SEQUENCE {
+       condHandoverFDD-TDD-r16                  ENUMERATED {supported}              OPTIONAL,
+       condHandoverFR1-FR2-r16                  ENUMERATED {supported}              OPTIONAL
+    }                                                                               OPTIONAL,
+    nr-NeedForGap-Reporting-r16             ENUMERATED {supported}                  OPTIONAL,
+    supportedGapPattern-NRonly-r16          BIT STRING (SIZE (10))                  OPTIONAL,
+    supportedGapPattern-NRonly-NEDC-r16     ENUMERATED {supported}                  OPTIONAL,
+    maxNumberCLI-RSSI-r16                   ENUMERATED {n8, n16, n32, n64}          OPTIONAL,
+    maxNumberCLI-SRS-RSRP-r16               ENUMERATED {n4, n8, n16, n32}           OPTIONAL,
+    maxNumberPerSlotCLI-SRS-RSRP-r16        ENUMERATED {n2, n4, n8}                 OPTIONAL,
+    mfbi-IAB-r16                            ENUMERATED {supported}                  OPTIONAL,
+    dummy                                   ENUMERATED {supported}                  OPTIONAL,
+    nr-CGI-Reporting-NPN-r16                ENUMERATED {supported}                  OPTIONAL,
+    idleInactiveEUTRA-MeasReport-r16        ENUMERATED {supported}                  OPTIONAL,
+    idleInactive-ValidityArea-r16           ENUMERATED {supported}                  OPTIONAL,
+    eutra-AutonomousGaps-r16                ENUMERATED {supported}                  OPTIONAL,
+    eutra-AutonomousGaps-NEDC-r16           ENUMERATED {supported}                  OPTIONAL,
+    eutra-AutonomousGaps-NRDC-r16           ENUMERATED {supported}                  OPTIONAL,
+    pcellT312-r16                           ENUMERATED {supported}                  OPTIONAL,
+    supportedGapPattern-r16                 BIT STRING (SIZE (2))                   OPTIONAL
+    ]],
+    [[
+    -- R4 19-2 Concurrent measurement gaps
+    concurrentMeasGap-r17                   CHOICE {
+        concurrentPerUE-OnlyMeasGap-r17         ENUMERATED {supported},
+        concurrentPerUE-PerFRCombMeasGap-r17    ENUMERATED {supported}
+    }                                                                               OPTIONAL,
+    -- R4 19-1 Network controlled small gap (NCSG)
+    nr-NeedForGapNCSG-Reporting-r17         ENUMERATED {supported}                  OPTIONAL,
+    eutra-NeedForGapNCSG-Reporting-r17      ENUMERATED {supported}                  OPTIONAL,
+    -- R4 19-1-1 per FR Network controlled small gap (NCSG)
+    ncsg-MeasGapPerFR-r17                   ENUMERATED {supported}                  OPTIONAL,
+    -- R4 19-1-2 Network controlled small gap (NCSG) supported patterns
+    ncsg-MeasGapPatterns-r17                BIT STRING (SIZE(24))                   OPTIONAL,
+    -- R4 19-1-3 Network controlled small gap (NCSG) supported NR-only patterns
+    ncsg-MeasGapNR-Patterns-r17             BIT STRING (SIZE(24))                   OPTIONAL,
+    -- R4 19-3-2 pre-configured measurement gap
+    preconfiguredUE-AutonomousMeasGap-r17   ENUMERATED {supported}                  OPTIONAL,
+    -- R4 19-3-1 pre-configured measurement gap
+    preconfiguredNW-ControlledMeasGap-r17   ENUMERATED {supported}                  OPTIONAL,
+    handoverFR1-FR2-2-r17                   ENUMERATED {supported}                  OPTIONAL,
+    handoverFR2-1-FR2-2-r17                 ENUMERATED {supported}                  OPTIONAL,
+    -- RAN4 14-1: per-FR MG for PRS measurement
+    independentGapConfigPRS-r17             ENUMERATED {supported}                  OPTIONAL,
+    rrm-RelaxationRRC-ConnectedRedCap-r17   ENUMERATED {supported}                  OPTIONAL,
+    -- R4 25-3: Parallel measurements with multiple measurement gaps
+    parallelMeasurementGap-r17              ENUMERATED {n2}                         OPTIONAL,
+    condHandoverWithSCG-NRDC-r17            ENUMERATED {supported}                  OPTIONAL,
+    gNB-ID-LengthReporting-r17              ENUMERATED {supported}                  OPTIONAL,
+    gNB-ID-LengthReporting-ENDC-r17         ENUMERATED {supported}                  OPTIONAL,
+    gNB-ID-LengthReporting-NEDC-r17         ENUMERATED {supported}                  OPTIONAL,
+    gNB-ID-LengthReporting-NRDC-r17         ENUMERATED {supported}                  OPTIONAL,
+    gNB-ID-LengthReporting-NPN-r17          ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    -- R4 25-1: Parallel measurements on multiple SMTC-s for a single frequency carrier
+    parallelSMTC-r17                        ENUMERATED {n4}                         OPTIONAL,
+    -- R4 19-2-1 Concurrent measurement gaps for EUTRA
+    concurrentMeasGapEUTRA-r17              ENUMERATED {supported}                  OPTIONAL,
+    serviceLinkPropDelayDiffReporting-r17   ENUMERATED {supported}                  OPTIONAL,
+    -- R4 19-1-4 Network controlled small gap (NCSG) performing measurement based on flag deriveSSB-IndexFromCellInter
+    ncsg-SymbolLevelScheduleRestrictionInter-r17  ENUMERATED {supported}            OPTIONAL
+    ]],
+    [[
+    eventD1-MeasReportTrigger-r17           ENUMERATED {supported}                  OPTIONAL,
+    independentGapConfig-maxCC-r17          SEQUENCE {
+        fr1-Only-r17                            INTEGER (1..32)                     OPTIONAL,
+        fr2-Only-r17                            INTEGER (1..32)                     OPTIONAL,
+        fr1-AndFR2-r17                          INTEGER (1..32)                     OPTIONAL
+    }                                                                               OPTIONAL
+    ]],
+    [[
+    interSatMeas-r17                            ENUMERATED {supported}              OPTIONAL,
+    deriveSSB-IndexFromCellInterNon-NCSG-r17    ENUMERATED {supported}              OPTIONAL
+    ]]
+}
+
+MeasAndMobParametersXDD-Diff ::=        SEQUENCE {
+    intraAndInterF-MeasAndReport            ENUMERATED {supported}                  OPTIONAL,
+    eventA-MeasAndReport                    ENUMERATED {supported}                  OPTIONAL,
+    ...,
+    [[
+    handoverInterF                          ENUMERATED {supported}                  OPTIONAL,
+    handoverLTE-EPC                         ENUMERATED {supported}                  OPTIONAL,
+    handoverLTE-5GC                         ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    sftd-MeasNR-Neigh                       ENUMERATED {supported}                  OPTIONAL,
+    sftd-MeasNR-Neigh-DRX                   ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    dummy                                   ENUMERATED {supported}                  OPTIONAL
+    ]]
+}
+
+MeasAndMobParametersFRX-Diff ::=            SEQUENCE {
+    ss-SINR-Meas                                ENUMERATED {supported}              OPTIONAL,
+    csi-RSRP-AndRSRQ-MeasWithSSB                ENUMERATED {supported}              OPTIONAL,
+    csi-RSRP-AndRSRQ-MeasWithoutSSB             ENUMERATED {supported}              OPTIONAL,
+    csi-SINR-Meas                               ENUMERATED {supported}              OPTIONAL,
+    csi-RS-RLM                                  ENUMERATED {supported}              OPTIONAL,
+    ...,
+    [[
+    handoverInterF                              ENUMERATED {supported}              OPTIONAL,
+    handoverLTE-EPC                             ENUMERATED {supported}              OPTIONAL,
+    handoverLTE-5GC                             ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    maxNumberResource-CSI-RS-RLM                ENUMERATED {n2, n4, n6, n8}         OPTIONAL
+    ]],
+    [[
+    simultaneousRxDataSSB-DiffNumerology        ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    nr-AutonomousGaps-r16                       ENUMERATED {supported}              OPTIONAL,
+    nr-AutonomousGaps-ENDC-r16                  ENUMERATED {supported}              OPTIONAL,
+    nr-AutonomousGaps-NEDC-r16                  ENUMERATED {supported}              OPTIONAL,
+    nr-AutonomousGaps-NRDC-r16                  ENUMERATED {supported}              OPTIONAL,
+    dummy                                       ENUMERATED {supported}              OPTIONAL,
+    cli-RSSI-Meas-r16                           ENUMERATED {supported}              OPTIONAL,
+    cli-SRS-RSRP-Meas-r16                       ENUMERATED {supported}              OPTIONAL,
+    interFrequencyMeas-NoGap-r16                ENUMERATED {supported}              OPTIONAL,
+    simultaneousRxDataSSB-DiffNumerology-Inter-r16  ENUMERATED {supported}          OPTIONAL,
+    idleInactiveNR-MeasReport-r16               ENUMERATED {supported}              OPTIONAL,
+    -- R4 6-2: Support of beam level Early Measurement Reporting
+    idleInactiveNR-MeasBeamReport-r16           ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    increasedNumberofCSIRSPerMO-r16             ENUMERATED {supported}              OPTIONAL
+    ]]
+}
+
+MeasAndMobParametersFR2-2-r17 ::=           SEQUENCE {
+    handoverInterF-r17                          ENUMERATED {supported}              OPTIONAL,
+    handoverLTE-EPC-r17                         ENUMERATED {supported}              OPTIONAL,
+    handoverLTE-5GC-r17                         ENUMERATED {supported}              OPTIONAL,
+    idleInactiveNR-MeasReport-r17               ENUMERATED {supported}              OPTIONAL,
+...
+}

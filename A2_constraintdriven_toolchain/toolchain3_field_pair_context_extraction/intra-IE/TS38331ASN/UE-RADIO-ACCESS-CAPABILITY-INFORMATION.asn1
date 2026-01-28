@@ -1,0 +1,16 @@
+UERadioAccessCapabilityInformation ::= SEQUENCE {
+    criticalExtensions                  CHOICE {
+        c1                                  CHOICE{
+            ueRadioAccessCapabilityInformation    UERadioAccessCapabilityInformation-IEs,
+            spare7 NULL,
+            spare6 NULL, spare5 NULL, spare4 NULL,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UERadioAccessCapabilityInformation-IEs ::= SEQUENCE {
+    ue-RadioAccessCapabilityInfo               OCTET STRING (CONTAINING UE-CapabilityRAT-ContainerList),
+    nonCriticalExtension                       SEQUENCE {}                                                   OPTIONAL
+}

@@ -1,0 +1,13 @@
+SDAP-Config ::=                     SEQUENCE {
+    pdu-Session                         PDU-SessionID,
+    sdap-HeaderDL                       ENUMERATED {present, absent},
+    sdap-HeaderUL                       ENUMERATED {present, absent},
+    defaultDRB                          BOOLEAN,
+    mappedQoS-FlowsToAdd                SEQUENCE (SIZE (1..maxNrofQFIs)) OF QFI                                 OPTIONAL, -- Need N
+    mappedQoS-FlowsToRelease            SEQUENCE (SIZE (1..maxNrofQFIs)) OF QFI                                 OPTIONAL, -- Need N
+    ...
+}
+
+QFI ::=                             INTEGER (0..maxQFI)
+
+PDU-SessionID ::=                   INTEGER (0..255)

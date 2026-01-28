@@ -1,0 +1,11 @@
+PTRS-DownlinkConfig ::=             SEQUENCE {
+    frequencyDensity                    SEQUENCE (SIZE (2)) OF INTEGER (1..276)                                 OPTIONAL,   -- Need S
+    timeDensity                         SEQUENCE (SIZE (3)) OF INTEGER (0..29)                                  OPTIONAL,   -- Need S
+    epre-Ratio                          INTEGER (0..3)                                                          OPTIONAL,   -- Need S
+    resourceElementOffset               ENUMERATED { offset01, offset10, offset11 }                             OPTIONAL,   -- Need S
+    ...,
+    [[
+    maxNrofPorts-r16                    ENUMERATED {n1, n2}                                                     OPTIONAL    -- Need R
+    ]]
+
+}

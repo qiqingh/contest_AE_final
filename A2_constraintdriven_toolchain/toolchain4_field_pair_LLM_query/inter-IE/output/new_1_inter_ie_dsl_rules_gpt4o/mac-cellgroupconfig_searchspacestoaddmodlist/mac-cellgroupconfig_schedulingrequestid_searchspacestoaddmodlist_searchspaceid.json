@@ -1,0 +1,78 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      26
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          26
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE relationship between the fields schedulingrequestid and searchspaceid.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "searchspacestoaddmodlist",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 6,
+      "original_count": 6,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "19.2",
+      "9.2.6",
+      "4.3",
+      "11.4",
+      "9.2.5.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "A UE can be provided, by schedulingRequestID-BFR-SCell, a configuration for PUCCH transmission with a link recovery request (LRR) as described in clause 9.24 for the UE to transmit PUCCH [11, TS 38.321]. If the PCell or the PSCell is associated with sets \\( \\bar{q}_{0,0} \\) and \\( \\bar{q}_{1,0} \\), and with sets \\( \\bar{q}_{0,1} \\) and \\( \\bar{q}_{1,1} \\), the UE can be provided by schedulingRequestIDForMTRPBFR a first configuration for PUCCH transmission with a LRR and, if the UE provides twoLRRcapability, a second configuration for PUCCH transmission with a LRR. If the UE is provided only the first configuration, the UE transmits a PUCCH with LRR for either set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\). If the UE is provided both the first and second configurations, the UE uses the first configuration to transmt a PUCCH with LRR associated with set \\( \\bar{q}_{0,0} \\) and the second configuration to transmit a PUCCH with LRR associated with set \\( \\bar{q}_{0,1}[11 \\), TS 38.321].  The UE can provide in a first PUSCH MAC CE index(es) for at least corresponding SCell(s) with radio link quality worse than \\( \\mathrm{Q}_{\\text {out }, \\mathrm{LR}} \\), indication(s) of presence of \\( q_{\\text {new }} \\) for corresponding SCell(s), and index(es) \\( q_{\\text {new }} \\) for a periodic CSIRS configuration or for a SS/PBCH block provided by higher layers, as described in [11, TS 38.321], if any, for corresponding SCell(s). After 28 symbols from a last symbol of a PDCCH reception with a DCI format scheduling a PUSCH transmission with a same HARQ process number as for the transmission of the first PUSCH and having a toggled NDI field value, the UE\n---\n- if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST} \\text {-part 1 }}+O_{\\mathrm{CRC}, \\mathrm{CST} \\text {-part 1 }}\\right) \\leq M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{SS}, \\mathrm{crtl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), the UE transmits the HARQ-ACK, SR , and CSI reports bits by selecting the minimum number \\( M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\) of the \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs satisfying \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST}-\\text { part } 1}+O_{\\mathrm{CRC}, \\mathrm{CSI}-\\text { part } 1}\\right) \\leq M_{\\mathrm{RB}, \\text { min }}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sC}, \\mathrm{ctr} 1}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\) as described in clauses 9.2.3 and 9.2.5.1;\n---\nA SS/PBCH block symbol is a symbol of an SS/PBCH block with candidate SS/PBCH block index corresponding to the SS/PBCH block index indicated to a UE by ssb-PositionsInBurst in SIBl or ssb-PositionsInBurst in ServingCellConfigCommon or, if the UE is not provided DLorJoint-TCIState or followUnifiedTCIstate, by ssbPositionsInBurst in SSB-MTCAdditionalPCI associated to physical cell ID with active TCI states.  For unpaired spectrum, the UE determines the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) slots for a PUCCH transmission starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting and having\n---\nFor unpaired spectrum, the UE determines the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) slots for a PUCCH transmission starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting and having - an UL symbol, as described in clause 11.1, or flexible symbol that is not SS/PBCH block symbol provided by startingSymbollndex as a first symbol, and - consecutive UL symbols, as described in clause 11.1, or flexible symbols that are not SS/PBCH block symbols, starting from the first symbol, equal to or larger than a number of symbols provided by nrofsymbols\n---\nA symbol of a slot is equivalent to being configured as hard if an [AB-DU would transmit a SS/PBCH block, PDCCH for Type0-PDCCH CSS sets configured by pdcchConfigSIB1, or a periodic CSI-RS in the symbol of the slot, or would receive a PRACH or a SR in the symbol of the slot.\n---\n\\hline 2021-06 & RAN\\#92-e & RP-211235 & 0220 & - & F & Correction of search space configuration for DCl formats 3_0 and 3_1 & 16.6 .0 \\\\ \\hline 2021-06 & RAN\\#92-e & RP-211234 & 0221 & - & F & Correction on SR reporting due to consistent LBT failure recovery & 16.6.0 \\\\",
+    "generated_at": "2026-01-09T12:44:43.624949",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between schedulingrequestid and searchspaceid.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE relationship between the fields schedulingrequestid and searchspaceid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

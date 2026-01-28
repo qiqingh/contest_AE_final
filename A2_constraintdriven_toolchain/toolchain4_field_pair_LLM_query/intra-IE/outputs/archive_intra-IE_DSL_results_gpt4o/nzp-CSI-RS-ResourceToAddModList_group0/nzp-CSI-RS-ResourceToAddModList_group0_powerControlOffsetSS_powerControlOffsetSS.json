@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      700
+    ],
+    [
+      700
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any explicit normative constraint or relation between the fields 'powerControlOffsetSS' and 'powerControlOffsetSS' within the same IE. The evidence discusses 'powerControlOffsetSS' in isolation without linking it to another field.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "powerControlOffsetSS",
+    "field2": "powerControlOffsetSS",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4",
+      "7.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "ETSI TS 138213 V17.1.0 (2022-05) If the UE is not configured periodic CSI-RS reception, referenceSignalPower is provided by s s-P B C H BlockPower. If the UE is configured periodic CSI-RS reception, referenceSignalPower is provided either by ss-PBCH-BlockPower or by powerControlOffsetSS providing an offset of the CSI-RS transmission power relative to the SS/PBCH block transmission power [6, TS 38.214]. [f powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB . - \\Delta_{\\mathrm{TF}, b, f, c}(i)=10 \\log _{10}\\left(\\left(2^{\\mathrm{BPRE} \\cdot K_{S}}-1\\right) \\cdot \\beta_{\\text {offset }}^{\\mathrm{PUSCH}}\\right) for K_{s}=1.25 and \\Delta_{\\mathrm{TF}, b, f, c}(i)=0 for K_{s}=0 where K_{s} is provided by deltaMCS for each UL BWP b of each carrier f and serving cell c . If the PUSCH transmission is over more than one layer [6, \\mathrm{TS} 38.214], \\Delta_{\\mathrm{TF}, b, f, c}(i)=0 . BPRE and \\beta_{\\mathrm{offset}}^{\\mathrm{PUSCH}} , for active UL BWP b of each carrier f and each serving cell c , are computed as below - BPRE =\\sum_{r=0}^{C-1} K_{r} / N_{R E} for PUSCH with UL-SCH data and BPRE =Q_{m} \\cdot R / \\beta_{\\text {offset }}^{\\text {PUSCH }} for CSI transmission in a PUSCH without UL-SCH data, where\n---\nIf a PRACH transmission from a UE is not in response to a detection of a PDCCH order by the UE, or is in response to a detection of a PDCCH order by the UE that triggers a contention based random access procedure, or is associated with a link recovery procedure where a corresponding index q_{\\text {new }} is associated with a SS/PBCH block, as described in clause 6, referenceSignalPower is provided by ss-PBCH-BlockPower. If a PRACH transmission from a UE is in response to a detection of a PDCCH order by the UE that triggers a contention-free random access procedure and depending on the DL RS that the DM-RS of the PDCCH order is quasicollocated with as described in clause 10.1, referenceSignalPower is provided by ss-PBCH-BlockPower or, if the UE is configured resources for a periodic CSI-RS reception or the PRACH transmission is associated with a link recovery procedure where a corresponding index q_{\\text {new }} is associated with a periodic CSI-RS configuration as described in clause 6, referenceSignalPower is obtained by ss-PBCH-BlockPower and powerControlOffsetSS where powerControlOffsetSS provides an offset of CSI-RS transmission power relative to SS/PBCH block transmission power [6, TS 38.214]. If powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB . If the active TCI state for the PDCCH that provides the PDCCH order includes two RS, the UE expects that one RS is configured with qcl-Type set to 'typeD' and the UE uses the one RS when applying a value provided by power ControlOffsetSS. If within a random access response window, as described in clause 8.2, the UE does not receive a random access response that contains a preamble identifier corresponding to the preamble sequence transmitted by the UE, the UE determines a transmission power for a subsequent PRACH transmission, if any, as described in [11, TS 38.321].",
+    "generated_at": "2025-12-09T09:44:33.481649",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any explicit normative constraint or relation between the fields 'powerControlOffsetSS' and 'powerControlOffsetSS' within the same IE. The evidence discusses 'powerControlOffsetSS' in isolation without linking it to another field.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

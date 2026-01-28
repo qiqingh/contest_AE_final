@@ -1,0 +1,16 @@
+CSI-IM-Resource ::=                 SEQUENCE {
+    csi-IM-ResourceId                   CSI-IM-ResourceId,
+    csi-IM-ResourceElementPattern           CHOICE {
+        pattern0                                SEQUENCE {
+            subcarrierLocation-p0                   ENUMERATED { s0, s2, s4, s6, s8, s10 },
+            symbolLocation-p0                       INTEGER (0..12)
+        },
+        pattern1                                SEQUENCE {
+            subcarrierLocation-p1                   ENUMERATED { s0, s4, s8 },
+            symbolLocation-p1                       INTEGER (0..13)
+        }
+    }                                                                                   OPTIONAL,   -- Need M
+    freqBand                            CSI-FrequencyOccupation                         OPTIONAL,   -- Need M
+    periodicityAndOffset                CSI-ResourcePeriodicityAndOffset                OPTIONAL,   -- Cond PeriodicOrSemiPersistent
+    ...
+}

@@ -1,0 +1,155 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      100,
+      165,
+      230
+    ],
+    "field2_all": [
+      43,
+      108,
+      173,
+      238
+    ],
+    "actual_pairs": [
+      [
+        [
+          100,
+          165
+        ],
+        [
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          100,
+          165
+        ],
+        [
+          108,
+          173
+        ]
+      ],
+      [
+        [
+          100,
+          165,
+          230
+        ],
+        [
+          108,
+          173
+        ]
+      ],
+      [
+        [
+          100,
+          165,
+          230
+        ],
+        [
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          100,
+          165,
+          230
+        ],
+        [
+          43,
+          108,
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          100,
+          165
+        ],
+        [
+          108,
+          238
+        ]
+      ],
+      [
+        [
+          100,
+          165
+        ],
+        [
+          43,
+          108,
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          100,
+          165,
+          230
+        ],
+        [
+          108,
+          238
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the fields from different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pdsch-configcommon",
+    "field1": "pdsch-configcommon",
+    "ie2_name": "controlresourcesettoaddmodlist_controlresourcesetid",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "17.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "A UE can be configured by cfr-Config-MCCH-MTCH an MBS frequency resource for PDCCH and PDSCH receptions providing MCCH and MTCH [12, TS 38.331]; otherwise, the MBS frequency resource is same as for the CORESET with index 0 that is associated with the Type0-PDCCH CSS set for PDCCH and PDSCH receptions providing MCCH and MTCH. A UE monitors PDCCH for scheduling PDSCH receptions for MCCH or MTCH as described in clause 10.1.  In clauses referring to a higher layer parameter value provided by PDCCH-ConfigCommon or PDSCH-ConfigCommon, when applicable a corresponding higher layer parameter value for MCCH/MTCH PDCCH receptions or PDSCH receptions, respectively, is provided as described in [12, TS 38.331].",
+    "generated_at": "2026-01-10T14:27:05.151636",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between pdsch-configcommon and controlresourcesetid is evident.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the fields from different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

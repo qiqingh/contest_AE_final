@@ -1,0 +1,11 @@
+ProcessingParameters ::=        SEQUENCE {
+    fallback                        ENUMERATED {sc, cap1-only},
+    differentTB-PerSlot              SEQUENCE {
+        upto1                          NumberOfCarriers                    OPTIONAL,
+        upto2                          NumberOfCarriers                    OPTIONAL,
+        upto4                          NumberOfCarriers                    OPTIONAL,
+        upto7                          NumberOfCarriers                    OPTIONAL
+    }                                                                 OPTIONAL
+}
+
+NumberOfCarriers ::=    INTEGER (1..16)

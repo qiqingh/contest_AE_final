@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      780,
+      785,
+      790,
+      795,
+      800,
+      805
+    ],
+    "field2_all": [
+      777,
+      782,
+      787,
+      792,
+      797,
+      802
+    ],
+    "actual_pairs": [
+      [
+        [
+          780,
+          785,
+          790,
+          795,
+          800,
+          805
+        ],
+        [
+          777,
+          782,
+          787,
+          792,
+          797,
+          802
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence suggests that the bwp-Id in a CSI-ResourceConfig is the same as the bwp-Id in another related configuration, implying equality.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ResourceConfigToAddModList_group0",
+    "field1": "bwp-Id",
+    "field2": "csi-ResourceConfigId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} csi-IM-ResourcesForinterference CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- ResourceConfig indicated by resourcesForChannelMeasurement. \\end{tabular}",
+    "generated_at": "2026-01-07T21:55:47.573056",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL | NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "field1 == field2",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "bwp-Id = 780, csi-ResourceConfigId = 780"
+        ],
+        "invalid": [
+          "bwp-Id = 780, csi-ResourceConfigId = 785"
+        ]
+      },
+      "notes": "The evidence suggests that the bwp-Id in a CSI-ResourceConfig is the same as the bwp-Id in another related configuration, implying equality.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

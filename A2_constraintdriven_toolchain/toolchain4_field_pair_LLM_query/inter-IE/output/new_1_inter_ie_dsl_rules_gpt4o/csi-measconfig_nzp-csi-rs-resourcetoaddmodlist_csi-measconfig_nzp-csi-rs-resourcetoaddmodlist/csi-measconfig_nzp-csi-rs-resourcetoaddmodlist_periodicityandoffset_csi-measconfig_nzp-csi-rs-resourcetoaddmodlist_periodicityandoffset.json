@@ -1,0 +1,101 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      702,
+      703,
+      719,
+      720
+    ],
+    "field2_all": [
+      719,
+      720,
+      736,
+      737
+    ],
+    "actual_pairs": [
+      [
+        [
+          702,
+          703,
+          719,
+          720
+        ],
+        [
+          719,
+          720,
+          736,
+          737
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the periodicityandoffset fields across different IEs. All evidence pertains to single-IE behavior.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    },
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "periodicityandoffset",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "periodicityandoffset",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 18,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1",
+      "5.1.6.1.1",
+      "6.3.2",
+      "7.4.1.5.3",
+      "9.2.4",
+      "5.5.2.10",
+      "6.2.1",
+      "6.4.1.4.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of \\( 2^{\\mu} X_{p} \\) slots where \\( X_{F}=10,20,40 \\), or 80 and where \\( \\mu \\) is defined in Clause 4.3 of [4, TS 38.211].\n---\nThe UE shall setup the first SS/PBCH block measurement timing configuration (SMTC) in accordance with the received periodicityAndOffset parameter (providing Periodicity and Offset value for the following condition) in the smtcl configuration. The first subframe of each SMTC occasion occurs at an SFN and subframe of the NR SpCell meeting the following condition:\n---\nFor an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, a periodicity \\( T_{\\text {SRS }} \\) (in slots) and slot offset \\( T_{\\text {offset }} \\) are configured according to the higher-layer parameter periodicityAndOffset- \\( p \\) or periodicityAndOffset-sp in the SRS-Resource [E, or periodicityAndOffset-p or periodicityAndOffset-sp in the SRSPosResource IE. Candidate slots in which the configured SRS resource may be used for SRS transmission are the slots satisfying\n---\nwhere the periodicity \\( T_{\\text {CSI-RS }} \\) (in slots) and slot offset \\( T_{\\text {offset }} \\) are obtained from the higher-layer parameter CSIResourcePeriodicityAndOffset, slotConfig or periodicityAndOffset-r17. The UE shall assume that CSI-RS is transmitted in a candidate slot as described in clause 11.1 of [5, TS 38.213], clause 10.4B of [5, TS 38.213].\n---\n- periodicityAndOffset defines the CSI-RS periodicity and slot offset for periodic/semi-persistent CSI-RS. All the CSI-RS resources within one set are configured with the same periodicity, while the slot offset can be same or different for different CSI-RS resources.\n---\n- Slot level periodicity and slot level offset as defined by the higher layer parameters periodicityAndOffset- \\( p \\) or periodicityAndOffset-sp for an SRS resource of type periodic or semi-persistent. The UE is not expected to be configured with SRS resources in the same SRS resource set SRS-ResourceSet or SRS-PosResourceSet with different slot level periodicities. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a slot level offset is defined by the higher layer parameter slotOffset. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a list of zero up to four different available slot offset values from the reference slot \\( n+k \\) to the slot where the aperiodic SRS resource set is transmitted where \\( n \\) is the slot with triggering DCI and \\( k \\) is SlotOffset is defined by the higher layer parameter AvailableSlotOffset. The parameter AvailableSlotOffset can be configured up to 4 different values. For an SRSPosResourceSet configured with higher layer parameter resourceType set to 'aperiodic', the slot level offset is defined by the higher layer parameter slotOffset for each SRS resource.\n---\nThe UE is also configured a periodicity \\( S R_{\\text {PERIODICITY }} \\) in symbols or slots and an offset \\( S R_{\\text {OFFSET }} \\) in slots by periodicityAndOffset for a PUCCH transmission conveying SR. If \\( S R_{\\text {PERIODICITY }} \\) is larger than one slot, the UE determines a SR transmission occasion in a PUCCH to be in a slot with number \\( n_{s_{1} f}^{\\mu}[4 \\), TS 38.211] in a frame with number \\( n_{f} \\) if \\( \\left(n_{f} \\cdot N_{\\text {slot }}^{\\text {frame }, \\mu}+n_{s_{f} f}^{\\mu}-S R_{\\text {OFFSET }}\\right) \\bmod S R_{\\text {PERIODICITY }}=0 \\).\n---\nThe SSB periodicity/offset/duration configuration of target cell for NR PSCell change and NR PCell change. The network sets the periodicityAndOffset to indicate the same periodicity as ssb-periodicityServingCell in spCellConfigCommon. \\\\\n---\n- the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of \\( 2^{\\mu} X_{p} \\) slots where \\( X_{F}=10,20,40 \\), or 80 and where \\( \\mu \\) is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet.\n---\nIf \\( \\operatorname{smtc} 2 \\) is present, for cells indicated in the pci-List parameter in smtc2 in the same MeasObjectNR, the UE shall setup an additional SS/PBCH block measurement timing configuration (SMTC) in accordance with the received periodicity parameter in the smtc 2 configuration and use the Offset (derived from parameter periodicityAndOffset) and duration parameter from the smtcl configuration. The first subframe of each SMTC occasion occurs at an SFN and subframe of the NR SpCell meeting the above condition.\n---\nIf \\( s m t c 2-L P \\) is present, for cells indicated in the pci-List parameter in \\( s m t c 2-L P \\) in the same frequency (for intra frequency cell reselection) or different frequency (for inter frequency cell reselection), the UE shall setup an additional SS/PBCH block measurement timing configuration (SMTC) in accordance with the received periodicity parameter in the smtc2-LP configuration and use the Offset (derived from parameter periodicityAndOffset) and duration parameter from the smtc configuration for that frequency. The first subframe of each SMTC occasion occurs at an SFN and subframe of the NR SpCell or serving cell (for cell reselection) meeting the above condition.  If smtc3list is present, for cells indicated in the pci-List parameter in each SSB-MTC3 element of the list in the same MeasObjectNR, the IAB-MT shall setup an additional SS block measurement timing configuration in accordance with the received periodicityAndOffset parameter (using same condition as smtcl to identify the SFN and the subframe for SMTC occasion) in each SSB-MTC3 configuration and use the duration and ssb-ToMeasure parameters from each SSB-MTC3 configuration.\n---\nThe SSB periodicity/offset/duration configuration of target cell for NR SCell addition. The network sets the periodicityAndOffset to indicate the same periodicity as ssbperiodicityServingCell in sCellConfigCommon. The smtc is based on the timing of the SpCell of associated cell group. In case of inter-RAT handover to NR, the timing reference is the NR PCell. In case of intra-NR PCell change (standalone NR) or NR PSCell change (EN-DC), the timing reference is the target SpCell. If the field is absent, the UE uses the SMTC in the measObjectNR having the same SSB frequency and subcarrier spacing, as configured before the reception of the RRC message.",
+    "generated_at": "2026-01-09T12:50:47.555382",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between periodicityandoffset fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the periodicityandoffset fields across different IEs. All evidence pertains to single-IE behavior.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

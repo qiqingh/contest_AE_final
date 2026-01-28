@@ -1,0 +1,17 @@
+FeatureCombinationPreambles-r17 ::=   SEQUENCE {
+    featureCombination-r17                FeatureCombination-r17,
+    startPreambleForThisPartition-r17     INTEGER (0..63),
+    numberOfPreamblesPerSSB-ForThisPartition-r17 INTEGER (1..64),
+    ssb-SharedRO-MaskIndex-r17            INTEGER (1..15)                                           OPTIONAL, -- Need S
+    groupBconfigured-r17                  SEQUENCE {
+        ra-SizeGroupA-r17                     ENUMERATED {b56, b144, b208, b256, b282, b480, b640,
+                                                        b800, b1000, b72, spare6, spare5,spare4, spare3, spare2, spare1},
+        messagePowerOffsetGroupB-r17          ENUMERATED { minusinfinity, dB0, dB5, dB8, dB10, dB12, dB15, dB18},
+        numberOfRA-PreamblesGroupA-r17        INTEGER (1..64)
+    }                                                                                               OPTIONAL, -- Need R
+    separateMsgA-PUSCH-Config-r17         MsgA-PUSCH-Config-r16                                     OPTIONAL, -- Cond MsgAConfigCommon
+    msgA-RSRP-Threshold-r17               RSRP-Range                                                OPTIONAL, -- Need R
+    rsrp-ThresholdSSB-r17                 RSRP-Range                                                OPTIONAL, -- Need R
+    deltaPreamble-r17                     INTEGER (-1..6)                                           OPTIONAL, -- Need R
+    ...
+}

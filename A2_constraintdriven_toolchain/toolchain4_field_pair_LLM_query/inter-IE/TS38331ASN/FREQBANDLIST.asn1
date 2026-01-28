@@ -1,0 +1,23 @@
+FreqBandList ::=                SEQUENCE (SIZE (1..maxBandsMRDC)) OF FreqBandInformation
+
+FreqBandInformation ::=         CHOICE {
+    bandInformationEUTRA            FreqBandInformationEUTRA,
+    bandInformationNR               FreqBandInformationNR
+}
+
+FreqBandInformationEUTRA ::=    SEQUENCE {
+    bandEUTRA                       FreqBandIndicatorEUTRA,
+    ca-BandwidthClassDL-EUTRA       CA-BandwidthClassEUTRA                  OPTIONAL,   -- Need N
+    ca-BandwidthClassUL-EUTRA       CA-BandwidthClassEUTRA                  OPTIONAL    -- Need N
+}
+
+FreqBandInformationNR ::=       SEQUENCE {
+    bandNR                          FreqBandIndicatorNR,
+    maxBandwidthRequestedDL         AggregatedBandwidth                     OPTIONAL,   -- Need N
+    maxBandwidthRequestedUL         AggregatedBandwidth                     OPTIONAL,   -- Need N
+    maxCarriersRequestedDL          INTEGER (1..maxNrofServingCells)        OPTIONAL,   -- Need N
+    maxCarriersRequestedUL          INTEGER (1..maxNrofServingCells)        OPTIONAL    -- Need N
+}
+
+AggregatedBandwidth ::=         ENUMERATED {mhz50, mhz100, mhz150, mhz200, mhz250, mhz300, mhz350,
+                                            mhz400, mhz450, mhz500, mhz550, mhz600, mhz650, mhz700, mhz750, mhz800}

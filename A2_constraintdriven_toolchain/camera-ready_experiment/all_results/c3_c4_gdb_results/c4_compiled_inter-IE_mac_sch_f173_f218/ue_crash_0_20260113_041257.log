@@ -1,0 +1,57 @@
+Attaching to process 272155
+[New LWP 272171]
+[New LWP 272172]
+[New LWP 272173]
+[New LWP 272174]
+[New LWP 272175]
+[New LWP 272176]
+[New LWP 272177]
+[New LWP 272178]
+[New LWP 272219]
+[New LWP 272220]
+[New LWP 272221]
+[New LWP 272222]
+[New LWP 272223]
+[New LWP 272224]
+[New LWP 272225]
+[New LWP 272226]
+[New LWP 272227]
+[New LWP 272228]
+[New LWP 272229]
+[New LWP 272230]
+[New LWP 272231]
+[New LWP 272232]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000713973df27f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe0c5cf1c0, rem=rem@entry=0x7ffe0c5cf1c0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+(gdb) (gdb) Continuing.
+
+Thread 1 "nr-uesoftmodem" received signal SIGQUIT, Quit.
+0x0000713973df27f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe0c5cf1c0, rem=rem@entry=0x7ffe0c5cf1c0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	in ../sysdeps/unix/sysv/linux/clock_nanosleep.c
+(gdb) #0  0x0000713973df27f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe0c5cf1c0, rem=rem@entry=0x7ffe0c5cf1c0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        r = <optimized out>
+#1  0x0000713973df7677 in __GI___nanosleep (req=req@entry=0x7ffe0c5cf1c0, rem=rem@entry=0x7ffe0c5cf1c0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+        ret = <optimized out>
+#2  0x0000713973df75ae in __sleep (seconds=0, seconds@entry=2) at ../sysdeps/posix/sleep.c:55
+        save_errno = 2
+        max = 4294967295
+        ts = {tv_sec = 0, tv_nsec = 204633299}
+#3  0x0000598907629a5c in main (argc=<optimized out>, argv=<optimized out>) at /home/openairinterface5g/executables/nr-uesoftmodem.c:820
+        __FUNCTION__ = "main"
+        ret_loader = <optimized out>
+        pckg = 0x59890ed5b210 "Branch:  Abrev. Hash:  Date: "
+        mode_offset = <optimized out>
+        node_number = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 272155] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 272155
+[Inferior 1 (process 272155) detached]

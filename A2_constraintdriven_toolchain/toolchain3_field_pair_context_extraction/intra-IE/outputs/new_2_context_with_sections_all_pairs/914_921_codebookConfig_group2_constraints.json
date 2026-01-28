@@ -1,0 +1,169 @@
+[
+  {
+    "fields": [
+      "codebookMode",
+      "codebookType"
+    ],
+    "field_ids": [
+      [
+        921
+      ],
+      [
+        914
+      ]
+    ],
+    "matched_fields": [
+      "codebookMode",
+      "codebookType"
+    ],
+    "original_sentence": "\\begin{tabular}{|l|l|l|l|l|} \\multicolumn{5}{|c|}{codebookMode = 2, N_{g}=2 } i_{1,1} & i_{1,2} & i_{1,4,9}, q=1,2 & i_{2, q}, q=0,1,2 & 0, \\ldots, N_{1} O_{1}-1 & 0, \\ldots, \\mathrm{~N}_{2} \\mathrm{O}_{2}-1 & 0,1,2,3 & 0,1 & W_{i_{1}, i_{11}+k_{1}, i_{2 .}, i_{2 .}+k_{2}, i_{4 .}, i_{2}}^{(4)} \\multicolumn{5}{|c|}{where W_{l, l^{\\prime}, m, m^{\\prime}, p, n}^{(4)}=\\frac{1}{\\sqrt{4}}\\left[\\begin{array}{llll}W_{l, m, p, n}^{1, N_{z}, 2} & W_{l^{\\prime}, m^{\\prime}, p, n}^{1, N_{z}, 2} & W_{l, m, p, n}^{2, N_{z}, 2} & W_{l^{\\prime}, m^{\\prime}, p, n}^{2, N_{z}, 2}\\end{array}\\right] and the mapping from i_{1,3} to k_{1} and k_{2} is given in Table 5.2.2.2.2-2.} \\end{tabular} 5.2.2.2.3 Type II Codebook For 4 antenna ports \\{3000,3001, \\ldots, 3003\\}, 8 antenna ports \\{3000,3001, \\ldots, 3007\\}, 12 antenna ports \\{3000,3001, \\ldots , 3011\\}, 16 antenna ports \\{3000,3001, \\ldots, 3015\\}, 24 antenna ports \\{3000,3001, \\ldots, 3023\\} , and 32 antenna ports \\{3000 , 3001, \\ldots, 3031 , and the UE configured with higher layer parameter codebookType set to 'typell' - The values of N_{1} and N_{2} are configured with the higher layer parameter n 1 -n2-codebookSubsetRestriction. The supported configurations of ( N_{1}, N_{2} ) for a given number of CSI-RS ports and the corresponding values of \\left(O_{1}, O_{2}\\right) are given in Table 5.2.2.2.1-2. The number of CSI-RS ports, P_{\\text {CSJ-RS }} , is 2 N_{1} N_{2} . - The value of L is configured with the higher layer parameter numberOfBeams, where L=2 when P_{\\text {CSI-RS }}=4 and L \\in\\{2,3,4\\} when P_{\\text {CSI-RS }}>4 .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "5.2.2.2.2",
+    "section_title": "Type I Multi",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookType",
+      "twoTX-CodebookSubsetRestriction"
+    ],
+    "field_ids": [
+      [
+        914
+      ],
+      [
+        917,
+        918
+      ]
+    ],
+    "matched_fields": [
+      "codebookType",
+      "twoTX-CodebookSubsetRestriction"
+    ],
+    "original_sentence": "5.2.2.2.1 Type I Single-Panel Codebook For 2 antenna ports \\{3000,3001\\} and the UE configured with higher layer parameter codebookType set to 'typelSinglePanel' each PMI value corresponds to a codebook index given in Table 5.2.2.2.1-1. The UE is configured with the higher layer parameter twoTX-CodebookSubsetRestriction. The bitmap parameter twoTX-CodebookSubsetRestriction forms the bit sequence a_{5}, \\ldots, a_{1}, a_{0} where a_{0} is the LSB and a_{5} is the MSB and where a bit value of zero indicates that PMI reporting is not allowed to correspond to the precoder associated with the bit. Bits 0 to 3 are associated respectively with the codebook indices 0 to 3 for v=1 layer, and bits 4 and 5 are associated respectively with the codebook indices 0 and 1 for v=2 layers. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "5.2.2.2.1",
+    "section_title": "Type I Single",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookType",
+      "typeI-SinglePanel-ri-Restriction"
+    ],
+    "field_ids": [
+      [
+        914
+      ],
+      [
+        919,
+        920
+      ]
+    ],
+    "matched_fields": [
+      "codebookType",
+      "typeI-SinglePanel"
+    ],
+    "original_sentence": "A CSI Reporting Setting is said to have a wideband frequency-granularity if - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', cqi-FormatIndicator is set to 'widebandCQI' and pmi-FormatIndicator is set to 'widebandPMI', or - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', codebookType is set to 'type[I-PortSelectionr17' with M=1 and cqi-FormatIndicator is set to 'widebandCQI', or - reportQuantity is set to 'cri-RI-i1' or - reportQuantity is set to 'cri-RI-CQI' or 'cri-RI-i1-CQI' and cqi-FormatIndicator is set to 'widebandCQI', or - reportQuantity is set to 'cri-RSRP' or 'ssb-Index-RSRP' or 'cri-SINR', or 'ssb-Index-SINR' or 'cri-RSRPCapability[Set]Index' or 'ssb-Index-RSRP-Capability[Set]Index' or 'cri-SINR-Capability[Set]Index', or 'ssb-Index-SINR-Capability[Set]Index' otherwise, the CSI Reporting Setting is said to have a subband frequency-granularity. A CSI Reporting Setting with codebookType set to 'typeI-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, can be configured with wideband frequency-granularity only if csi-ReportMode is set to 'Model' and numberOfSingleTRP-CSI-Model is set to X=0 , as described in clause 5.2.1.4.2. If the UE is configured with a CSI Reporting Setting for a bandwidth part with fewer than 24 PRBs, the CSI reporting setting is expected to have a wideband frequency-granularity, and, if applicable, the higher layer parameter codebookType is set to 'typel-SinglePanel'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.2.1.4",
+    "section_title": "Reporting configurations",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookType",
+      "typeI-SinglePanel-ri-Restriction"
+    ],
+    "field_ids": [
+      [
+        914
+      ],
+      [
+        919,
+        920
+      ]
+    ],
+    "matched_fields": [
+      "codebookType",
+      "typeI-SinglePanel"
+    ],
+    "original_sentence": "- reportQuantity is set to 'cri-RSRP' or 'ssb-Index-RSRP' or 'cri-SINR', or 'ssb-Index-SINR' or 'cri-RSRPCapability[Set]Index' or 'ssb-Index-RSRP-Capability[Set]Index' or 'cri-SINR-Capability[Set]Index', or 'ssb-Index-SINR-Capability[Set]Index' otherwise, the CSI Reporting Setting is said to have a subband frequency-granularity. A CSI Reporting Setting with codebookType set to 'typeI-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, can be configured with wideband frequency-granularity only if csi-ReportMode is set to 'Model' and numberOfSingleTRP-CSI-Model is set to X=0 , as described in clause 5.2.1.4.2. If the UE is configured with a CSI Reporting Setting for a bandwidth part with fewer than 24 PRBs, the CSI reporting setting is expected to have a wideband frequency-granularity, and, if applicable, the higher layer parameter codebookType is set to 'typel-SinglePanel'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "5.2.1.4",
+    "section_title": "Reporting configurations",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookType",
+      "typeI-SinglePanel-ri-Restriction"
+    ],
+    "field_ids": [
+      [
+        914
+      ],
+      [
+        919,
+        920
+      ]
+    ],
+    "matched_fields": [
+      "codebookType",
+      "typeI-SinglePanel"
+    ],
+    "original_sentence": "A UE shall perform semi-persistent CSI reporting on the PUCCH applied starting from the first slot that is after slot n+ 3 N_{\\text {slot }}^{\\text {subrame }}{ }^{\\mu} when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the activation command described in clause 6.1.3.16 of [10, TS 38.321] where \\mu is the SCS configuration for the PUCCH. The activation command will contain one or more Reporting Settings where the associated CSI Resource Settings are configured. Semi-persistent CSI reporting on the PUCCH supports Type I CSI. Semi-persistent CSI reporting on the PUCCH format 2 supports Type I CSI with wideband frequency granularity. Semipersistent CSI reporting on PUCCH formats 3 or 4 supports Type I CSI with wideband and sub-band frequency granularities and Type [] CSI Part 1. When the PUCCH carry Type I CSI with wideband frequency granularity, the CSI payload carried by the PUCCH format 2 and PUCCH formats 3, or 4 are identical and the same irrespective of RI (if reported), CRI (if reported). A CSI-ReportConfig with codebookType set to 'typeI-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs can be configured with wideband frequency granularity only with csi-ReportMode set to 'Mode1' and numberOfSingleTRP-CSI-Model set to X=0 . For type I CSI sub-band reporting on PUCCH formats 3, or 4, the payload is split into two parts. The first part contains RI (if reported), CRI (if reported), CQI for the first codeword. The second part contains PMI (if reported), LI (if reported) and contains the CQI for the second codeword (if reported) when RI >4 . For a CSI-ReportConfig configured with subband reporting, codebookType set to 'typel-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, Part 1 contains RI(s), CRI(s), CQI(s) for the first codeword and is zero padded to a fixed payload size (if needed). Part 2 contains the CQI(s) for the second codeword (if reported) when RI is larger than 4, Lis (if reported) and PMI(s). A semi-persistent report carried on the PUCCH formats 3 or 4 supports Type II CSI feedback, but only Part 1 of Type II CSI feedback (See Clause 5.2.2 and 5.2.3). Supporting Type II CSI reporting on the PUCCH formats 3 or 4 is a UE capability type2-SP-CSI-Feedback-LongPUCCH. A Type II CSI report (Part 1 only) carried on PUCCH formats 3 or 4 shall be calculated independently of any Type II CSI reports carried on the PUSCH (see Clause 5.2.3).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "5.2.4",
+    "section_title": "CSI reporting using PUCCH",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookType",
+      "typeI-SinglePanel-ri-Restriction"
+    ],
+    "field_ids": [
+      [
+        914
+      ],
+      [
+        919,
+        920
+      ]
+    ],
+    "matched_fields": [
+      "CodebookType",
+      "typeI-SinglePanel"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) corresponds to at most 4 CSI-RS ports in a single resource without CRI report and where CodebookType is set to 'typeI-SinglePanel' or where reportQuantity is set to 'cri-RI-CQI', or - \\left(Z_{1}, Z_{1}^{\\prime}\\right) of the table 5-4-2 if the CSI to be transmitted corresponds to wideband frequency-granularity where the CSI corresponds to at most 4 CSI-RS ports in a single resource without CRI report and where CodebookType is set to 'typel-SinglePanel' or where reportQuantity is set to 'cri-RI-CQI', or - \\left(Z_{1}, Z_{1}^{\\prime}\\right) of the table 5.4-2 if the CSI to be transmitted corresponds to wideband frequency-granularity where the reportQuantity is set to 'ssb-Index-SINR', 'cri-SINR', 'ssb-Index-SINR-Capability[Set]Index', or 'cri-SINRCapability[Set]Index ', or",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "5.4",
+    "section_title": "UE CSI computation time",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

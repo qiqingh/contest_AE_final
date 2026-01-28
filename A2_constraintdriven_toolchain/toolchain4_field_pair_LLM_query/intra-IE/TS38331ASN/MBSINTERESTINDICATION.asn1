@@ -1,0 +1,14 @@
+MBSInterestIndication-r17 ::= SEQUENCE {
+    criticalExtensions            CHOICE {
+        mbsInterestIndication-r17     MBSInterestIndication-r17-IEs,
+        criticalExtensionsFuture      SEQUENCE {}
+    }
+}
+
+MBSInterestIndication-r17-IEs ::= SEQUENCE {
+    mbs-FreqList-r17                  CarrierFreqListMBS-r17              OPTIONAL,
+    mbs-Priority-r17                  ENUMERATED {true}                   OPTIONAL,
+    mbs-ServiceList-r17               MBS-ServiceList-r17                 OPTIONAL,
+    lateNonCriticalExtension          OCTET STRING                        OPTIONAL,
+    nonCriticalExtension              SEQUENCE {}                         OPTIONAL
+}

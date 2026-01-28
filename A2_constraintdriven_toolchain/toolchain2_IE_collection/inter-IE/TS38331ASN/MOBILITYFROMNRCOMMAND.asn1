@@ -1,0 +1,20 @@
+MobilityFromNRCommand ::=           SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+            mobilityFromNRCommand           MobilityFromNRCommand-IEs,
+            criticalExtensionsFuture        SEQUENCE {}
+    }
+}
+
+MobilityFromNRCommand-IEs ::=       SEQUENCE {
+    targetRAT-Type                      ENUMERATED { eutra, utra-fdd-v1610, spare2, spare1, ...},
+    targetRAT-MessageContainer          OCTET STRING,
+    nas-SecurityParamFromNR             OCTET STRING                                                OPTIONAL,   -- Cond HO-ToEPCUTRAN
+    lateNonCriticalExtension            OCTET STRING                                                OPTIONAL,
+    nonCriticalExtension                MobilityFromNRCommand-v1610-IEs                             OPTIONAL
+}
+
+MobilityFromNRCommand-v1610-IEs ::=     SEQUENCE {
+    voiceFallbackIndication-r16             ENUMERATED {true}                                       OPTIONAL,   -- Need N
+    nonCriticalExtension                    SEQUENCE {}                                             OPTIONAL
+}

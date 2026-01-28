@@ -1,0 +1,13 @@
+ReferenceTimeInfo-r16 ::= SEQUENCE {
+    time-r16                            ReferenceTime-r16,
+    uncertainty-r16                     INTEGER (0..32767)          OPTIONAL,   -- Need S
+    timeInfoType-r16                    ENUMERATED {localClock}     OPTIONAL,   -- Need S
+    referenceSFN-r16                    INTEGER (0..1023)           OPTIONAL    -- Cond RefTime
+}
+
+ReferenceTime-r16 ::=           SEQUENCE {
+    refDays-r16                         INTEGER (0..72999),
+    refSeconds-r16                      INTEGER (0..86399),
+    refMilliSeconds-r16                 INTEGER (0..999),
+    refTenNanoSeconds-r16               INTEGER (0..99999)
+}

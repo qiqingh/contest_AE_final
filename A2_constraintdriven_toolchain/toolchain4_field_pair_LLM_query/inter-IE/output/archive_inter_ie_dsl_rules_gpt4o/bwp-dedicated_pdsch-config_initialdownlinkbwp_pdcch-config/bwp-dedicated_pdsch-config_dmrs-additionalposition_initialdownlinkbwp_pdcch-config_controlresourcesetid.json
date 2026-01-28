@@ -1,0 +1,86 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      131,
+      196,
+      261
+    ],
+    "field2_all": [
+      43,
+      52
+    ],
+    "actual_pairs": [
+      [
+        [
+          131,
+          196,
+          261
+        ],
+        [
+          43,
+          52
+        ]
+      ],
+      [
+        [
+          131,
+          196
+        ],
+        [
+          43,
+          52
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks both target fields or doesn't relate them across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdsch-config",
+    "field1": "dmrs-additionalposition",
+    "ie2_name": "initialdownlinkbwp_pdcch-config",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.1.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- the higher-layer parameter lte-CRS-ToMatchAround, lte-CRS-PatternList 1, lte-CRS-PatternList2, lte-CRSPatternList3, or Ite-CRS-PatternList4 is configured; and - the higher-layer parameter dmrs-AdditionalPosition is equal to 'pos1' and \\( l_{0}=3 \\); and",
+    "generated_at": "2025-12-10T13:44:39.479066",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks both target fields or doesn't relate them across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

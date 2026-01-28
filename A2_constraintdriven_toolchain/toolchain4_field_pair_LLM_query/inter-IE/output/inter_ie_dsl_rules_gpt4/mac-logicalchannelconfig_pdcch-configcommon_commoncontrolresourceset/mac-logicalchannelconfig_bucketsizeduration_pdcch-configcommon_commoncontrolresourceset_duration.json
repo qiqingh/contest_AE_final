@@ -1,0 +1,82 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      21,
+      148,
+      213
+    ],
+    "field2_all": [
+      21,
+      83,
+      148
+    ],
+    "actual_pairs": [
+      [
+        [
+          148,
+          213
+        ],
+        [
+          21
+        ]
+      ],
+      [
+        [
+          21
+        ],
+        [
+          83,
+          148
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a semantic constraint between the two fields from different IEs. Each snippet only describes the behavior of a single field, not a relationship between them.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-logicalchannelconfig",
+    "field1": "bucketsizeduration",
+    "ie2_name": "pdcch-configcommon_commoncontrolresourceset",
+    "field2": "duration",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.3.1.1",
+      "5.22.1.4.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- bucketSizeDuration which sets the Bucket Size Duration (BSD).\n---\n- sl-BucketSizeDuration which sets the sidelink Bucket Size Duration (sBSD).",
+    "generated_at": "2025-12-11T09:27:41.178321",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not establish a semantic constraint between the two fields from different IEs. Each snippet only describes the behavior of a single field, not a relationship between them.",
+      "version_tags": []
+    }
+  }
+}

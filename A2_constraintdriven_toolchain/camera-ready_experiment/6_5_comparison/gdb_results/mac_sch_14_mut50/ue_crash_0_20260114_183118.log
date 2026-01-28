@@ -1,0 +1,101 @@
+Attaching to process 2716042
+[New LWP 2716075]
+[New LWP 2716076]
+[New LWP 2716077]
+[New LWP 2716078]
+[New LWP 2716079]
+[New LWP 2716080]
+[New LWP 2716081]
+[New LWP 2716082]
+[New LWP 2716106]
+[New LWP 2716107]
+[New LWP 2716108]
+[New LWP 2716109]
+[New LWP 2716110]
+[New LWP 2716111]
+[New LWP 2716112]
+[New LWP 2716113]
+[New LWP 2716114]
+[New LWP 2716115]
+[New LWP 2716116]
+[New LWP 2716117]
+[New LWP 2716118]
+[New LWP 2716119]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000078d335d067f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffc9939ea80, rem=rem@entry=0x7ffc9939ea80) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+(gdb) (gdb) Continuing.
+Cannot find user-level thread for LWP 2716116: generic error
+(gdb) (gdb) Selected thread is running.
+[Thread 0x78d3057ab640 (LWP 2716119) exited]
+[Thread 0x78d305fac640 (LWP 2716118) exited]
+[Thread 0x78d2fddff640 (LWP 2716117) exited]
+[Thread 0x78d3067ad640 (LWP 2716116) exited]
+[Thread 0x78d30b7f6640 (LWP 2716115) exited]
+[Thread 0x78d30bff7640 (LWP 2716114) exited]
+[Thread 0x78d30c7f8640 (LWP 2716113) exited]
+[Thread 0x78d30cff9640 (LWP 2716112) exited]
+[Thread 0x78d30d7fa640 (LWP 2716111) exited]
+[Thread 0x78d30dffb640 (LWP 2716110) exited]
+[Thread 0x78d30effd640 (LWP 2716108) exited]
+[Thread 0x78d30f7fe640 (LWP 2716107) exited]
+[Thread 0x78d30ffff640 (LWP 2716106) exited]
+[Thread 0x78d32cff9640 (LWP 2716082) exited]
+[Thread 0x78d32d7fa640 (LWP 2716081) exited]
+[Thread 0x78d32dffb640 (LWP 2716080) exited]
+[Thread 0x78d32e7fc640 (LWP 2716079) exited]
+[Thread 0x78d32effd640 (LWP 2716078) exited]
+[Thread 0x78d32f7fe640 (LWP 2716077) exited]
+[Thread 0x78d32ffff640 (LWP 2716076) exited]
+[Thread 0x78d334f86640 (LWP 2716075) exited]
+[Thread 0x78d33502ca00 (LWP 2716042) exited]
+/build/gdb-Dh0pdX/gdb-12.1/gdb/linux-nat.c:1406: internal-error: detach: Assertion `num_lwps (pid) == 1' failed.
+A problem internal to GDB has been detected,
+further debugging may prove unreliable.
+----- Backtrace -----
+A debugging session is active.
+
+	Inferior 1 [process 2716042] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread 0x78d30e7fc640 (LWP 2716109) exited]
+0x5b7fa6df6ff7 ???
+0x5b7fa715ba44 ???
+0x5b7fa715bc80 ???
+0x5b7fa72ab0f4 ???
+0x5b7fa6f94c2e ???
+0x5b7fa6fa3ac7 ???
+0x5b7fa7110c5f ???
+0x5b7fa7124231 ???
+0x5b7fa6e23eaf ???
+0x5b7fa6e2c644 ???
+0x5b7fa7122364 ???
+0x5b7fa6efa8c4 ???
+0x5b7fa6efac63 ???
+0x5b7fa6ef91b3 ???
+0x5b7fa6ef95ab ???
+0x5b7fa72ab825 ???
+0x5b7fa72abd09 ???
+0x5b7fa6fb72fc ???
+0x5b7fa6fb8fe4 ???
+0x5b7fa6d4f10f ???
+/build/gdb-Dh0pdX/gdb-12.1/gdb/linux-nat.c:1406: internal-error: detach: Assertion `num_lwps (pid) == 1' failed.
+A problem internal to GDB has been detected,
+further debugging may prove unreliable.
+Quit this debugging session? (y or n) [answered Y; input not from terminal]
+0x7e67873fad8f __libc_start_call_main
+	../sysdeps/nptl/libc_start_call_main.h:58
+0x7e67873fae3f __libc_start_main_impl
+	../csu/libc-start.c:392
+0x5b7fa6d54ba4 ???
+0xffffffffffffffff ???
+---------------------
+
+This is a bug, please report it.  For instructions, see:
+<https://www.gnu.org/software/gdb/bugs/>.
+
+/build/gdb-Dh0pdX/gdb-12.1/gdb/linux-nat.c:1406: internal-error: detach: Assertion `num_lwps (pid) == 1' failed.
+A problem internal to GDB has been detected,
+further debugging may prove unreliable.
+Unable to dump core, use `ulimit -c unlimited' before executing GDB next time.

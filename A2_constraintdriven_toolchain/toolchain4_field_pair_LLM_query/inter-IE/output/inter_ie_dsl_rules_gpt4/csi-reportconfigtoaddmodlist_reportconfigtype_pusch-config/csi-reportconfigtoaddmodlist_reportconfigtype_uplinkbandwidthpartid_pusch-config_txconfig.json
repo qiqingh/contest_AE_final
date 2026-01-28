@@ -1,0 +1,100 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      428,
+      536,
+      644
+    ],
+    "field2_all": [
+      828,
+      852,
+      867,
+      891,
+      906,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          428,
+          536,
+          644
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ],
+      [
+        [
+          428,
+          536,
+          644
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear semantic constraint between the fields 'uplinkbandwidthpartid' and 'txconfig' from different IEs. The snippets discuss the behavior of 'txconfig' in the context of PUSCH transmission, but do not mention or relate to 'uplinkbandwidthpartid'. Therefore, no rule can be derived.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field1": "uplinkbandwidthpartid",
+    "ie2_name": "pusch-config",
+    "field2": "txconfig",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.1",
+      "7.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "For a PUSCH transmission on active UL BWP \\( b \\), as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\), a UE first calculates a linear value \\( \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) \\) of the transmit power \\( P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) \\), with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format \\( 0 \\_0 \\), or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook',\n---\nTwo transmission schemes are supported for PUSCH: codebook based transmission and non-codebook based transmission. The UE is configured with codebook based transmission when the higher layer parameter txConfig in pusch-Config is set to 'codebook', the UE is configured non-codebook based transmission when the higher layer parameter txConfig is set to 'nonCodebook'. If the higher layer parameter txConfig is not configured, the UE is not expected to be scheduled by DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\). If PUSCH is scheduled by DCI format \\( 0 \\_0 \\), the PUSCH transmission is based on a single antenna port. Except if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE shall not expect PUSCH scheduled by DCI format \\( 0 \\_0 \\) in a BWP without configured PUCCH resource with PUCCH-SpatialRelationInfo in frequency range 2 in RRC connected mode.",
+    "generated_at": "2025-12-11T09:38:17.439149",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not establish a clear semantic constraint between the fields 'uplinkbandwidthpartid' and 'txconfig' from different IEs. The snippets discuss the behavior of 'txconfig' in the context of PUSCH transmission, but do not mention or relate to 'uplinkbandwidthpartid'. Therefore, no rule can be derived.",
+      "version_tags": []
+    }
+  }
+}

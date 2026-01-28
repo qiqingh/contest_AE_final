@@ -1,0 +1,33 @@
+Paging ::=                          SEQUENCE {
+    pagingRecordList                    PagingRecordList                                                        OPTIONAL, -- Need N
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                Paging-v1700-IEs                                                        OPTIONAL
+}
+
+Paging-v1700-IEs ::=                SEQUENCE {
+    pagingRecordList-v1700              PagingRecordList-v1700                                                  OPTIONAL, -- Need N
+    pagingGroupList-r17                 PagingGroupList-r17                                                     OPTIONAL, -- Need N
+    nonCriticalExtension                SEQUENCE {}                                                             OPTIONAL
+}
+
+PagingRecordList ::=                SEQUENCE (SIZE(1..maxNrofPageRec)) OF PagingRecord
+
+PagingRecordList-v1700 ::=          SEQUENCE (SIZE(1..maxNrofPageRec)) OF PagingRecord-v1700
+
+PagingGroupList-r17 ::=             SEQUENCE (SIZE(1..maxNrofPageGroup-r17)) OF TMGI-r17
+
+PagingRecord ::=                    SEQUENCE {
+    ue-Identity                         PagingUE-Identity,
+    accessType                          ENUMERATED {non3GPP}    OPTIONAL,   -- Need N
+    ...
+}
+
+PagingRecord-v1700 ::=              SEQUENCE {
+    pagingCause-r17                     ENUMERATED {voice}      OPTIONAL    -- Need N
+}
+
+PagingUE-Identity ::=               CHOICE {
+    ng-5G-S-TMSI                        NG-5G-S-TMSI,
+    fullI-RNTI                          I-RNTI-Value,
+    ...
+}

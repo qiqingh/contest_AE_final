@@ -1,0 +1,80 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      42
+    ],
+    "field2_all": [
+      51
+    ],
+    "actual_pairs": [
+      [
+        [
+          42
+        ],
+        [
+          51
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence does not establish a direct inter-IE constraint between pdcch-config and searchspaceid.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "42_63_initialdownlinkbwp_pdcch-config",
+    "field1": "pdcch-config",
+    "ie2_name": "51_searchspacestoaddmodlist_searchspaceid",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 9,
+      "original_count": 9,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.3",
+      "5.1.5",
+      "10.1",
+      "5.1",
+      "11.4",
+      "6.1",
+      "5.2.1.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "HARQ-ACK for the two PDSCHs are associated with the HARQ-ACK codebook of the same priority. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH, and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH if the HARQ-ACK for the two PDSCHs are associated with HARQ-ACK codebooks of different priorities. For any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start receiving a first PDSCH starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell, the UE is not expected to be scheduled to receive a PDSCH starting earlier than the end of the first PDSCH with a PDCCH that ends later than symbol \\( i \\) of a scheduling cell,. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH ending in symbol \\( i \\) is determined based on the PDCCH candidate that ends later in time. In a given scheduled cell, for any PDSCH corresponding to SI-RNTI, the UE is not expected to decode a re-transmission of an earlier PDSCH with a starting symbol less than \\( N \\) symbols after the last symbol of that PDSCH, where the value of \\( N \\) depends on the PDSCH subcarrier spacing configuration \\( \\mu \\) with \\( N=13 \\) for \\( \\mu=0, N=13 \\) for \\( \\mu=1, N=20 \\) for \\( \\mu=2, N=24 \\) for \\( \\mu=3, N=96 \\) for \\( \\mu=5 \\), and \\( N=192 \\) for \\( \\mu=6 \\).\n---\n- the UE may assume that the DM-RS ports of \\( \\operatorname{PDSCH}(s) \\) of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) used for PDCCH quasi co-location indication of the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored by the UE. In this case, if the qcl-Type is set to 'typeD' of the PDSCH DM-RS is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers). - If a UE is configured with enableDefaultTCI-StatePerCoresetPoollndex and the UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in different ControlResourceSets,\n---\nIf at least one TCI codepoint indicates two TCI states and the UE receives the DM-RS for PDSCH and an SS/PBCH block in the same OFDM symbol(s), then the UE may assume that at least one DM-RS port for the PDSCH and SS/PBCH block are quasi co-located with 'QCL-TypeD', if 'QCL-TypeD' is applicable.  If the UE is configured by higher layer parameter PDCCH-Config that contains two different values of CORESETPoolIndex in different ControlResourceSets, and the UE receives the DM-RS for \\( \\mathrm{PDSCH}(\\mathrm{s}) \\) and an SS/PBCH block in the same OFDM symbol(s), then the UE may assume that at least one DM-RS port for the PDSCH(s) and SS/PBCH block are quasi co-located with 'QCL-TypeD', if 'QCL-TypeD' is applicable.\n---\nIf the UE is configured by higher layer parameter PDCCH-Config that contains two different values of CORESETPoolIndex in different ControlResourceSets, and the UE receives the DM-RS for \\( \\mathrm{PDSCH}(\\mathrm{s}) \\) and an SS/PBCH block in the same OFDM symbol(s), then the UE may assume that at least one DM-RS port for the PDSCH(s) and SS/PBCH block are quasi co-located with 'QCL-TypeD', if 'QCL-TypeD' is applicable.  If a UE is configured by the higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet, the UE may be scheduled with fully or partially overlapping PDSCHs in the time and frequency domain by multiple PDCCHs with the following restrictions,\n---\n- For each aperiodic CSI-RS resource in a CSI-RS resource set associated with each CSI triggering state, the UE is indicated the quasi co-location configuration of quasi co-location RS source(s) and quasi co-location type(s), as described in clause 5.1.5, through higher layer signaling of qcl-info which contains a list of references to TCIState's for the aperiodic CSI-RS resources associated with the CSI triggering state. If a State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic or semipersistent located in the same or different CC/DL BWP. - If the scheduling offset between the last symbol of the PDCCH carrying the triggering DCI and the first symbol of the aperiodic CSI-RS resources in a NZP-CSI-RS-ResourceSet configured without higher layer parameter trs-Info is smaller than the UE reported threshold beamSwitchTiming, as defined in [13, TS 38.306], when the reported value is one of the values of \\( \\{14,28,48\\} \\cdot 2^{\\max \\left(0, \\mu_{\\text {CSIRS }}-3\\right)} \\) and enableBeamSwitchTiming is not provided, or is smaller than \\( 48 \\cdot 2^{\\max \\left(0, \\mu \\text { CSIRS }^{-3}\\right)} \\) when the UE provides beamSwitchTiming-r16, enableBeamSwitchTiming is provided and the NZP-CSI-RS-ResourceSet is configured with the higher layer parameter repetition set to 'off' or configured without the higher layer parameter repetition, or is smaller than the UE reported threshold beamSwitchTiming-r 16, when enableBeamSwitchTiming is provided and the NZP-CSI-RS-ResourceSet is configured with the higher layer parameter repetition set to 'on'. - If a UE is configured with enableDefaultTCI-StatePerCoresetPoollndex and the UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet\n---\nA UE shall upon detection of a PDCCH with a configured DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\) with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\), the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\). When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol \\( i \\) of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol \\( i \\), the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI.\n---\nIf a UE monitors PDCCH candidates for DCI formats with CRC scrambled by a C-RNTI and the UE is provided a nonzero value for searchSpacelD in PDCCH-ConfigCommon for a Type0/0A/2-PDCCH CSS set, or monitors PDCCH candidates for DCI formats with CRC scrambled by a MCCH-RNTI or a G-RNTI and the UE is provided a non-zero value for searchSpaceBroadcast in pdcch-Config-MCCH and pdcch-Config-MTCH for a Type0/0B-PDCCH CSS set, the UE determines monitoring occasions for PDCCH candidates of the Type0/0A/2-PDCCH CSS set, or of the Type0/0B-PDCCH set, respectively, based on the search space set associated with the value of searchSpaceID.\n---\n- one or more search space sets by corresponding one or more of searchSpaceZero, searchSpaceSIB1, searchSpaceOtherSystemInformation, pagingSearchSpace, peiSearchSpace, ra-SearchSpace, or a CSS set by PDCCH-Config, and\n---\nIf a PDCCH monitoring periodicity for DCI format \\( 2 \\_5 \\) is smaller than a duration of an availability combination of soft symbols over a number of slots that the [AB-MT obtains at a PDCCH monitoring occasion for DCI format 2 _ 5 by a corresponding AI index field value, and the IAB-MT detects more than one DCI formats \\( 2-5 \\) indicating an availability combination of soft symbols or of soft RB sets in RB set groups in a slot, the IAB-MT expects that each of the more than one DCI formats 2_5 indicates a same value for the availability combination of the soft symbols or of soft RB sets in an RB set group in the slot. An [AB-MT monitors PDCCH candidates for a DCI format 2 _ 5 with CRC scrambled by AI-RNTI in one or both of the following search space sets: - a Type3-PDCCH CSS set configured by SearchSpace in PDCCH-Config with searchSpaceType \\( = \\) common;",
+    "generated_at": "2026-01-10T14:35:28.639482",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence does not establish a direct inter-IE constraint between pdcch-config and searchspaceid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

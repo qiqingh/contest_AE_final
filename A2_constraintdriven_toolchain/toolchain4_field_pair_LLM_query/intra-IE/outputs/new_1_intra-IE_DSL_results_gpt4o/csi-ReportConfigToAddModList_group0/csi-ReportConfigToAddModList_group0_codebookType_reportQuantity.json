@@ -1,0 +1,73 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      836
+    ],
+    "field2_all": [
+      830,
+      831
+    ],
+    "actual_pairs": [
+      [
+        [
+          836
+        ],
+        [
+          830,
+          831
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'codebookType' and 'reportQuantity' within the same IE. The evidence mentions these fields in different contexts without a normative cross-field dependency.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "codebookType",
+    "field2": "reportQuantity",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 7,
+      "original_count": 7,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.2",
+      "5.2.2.2.1",
+      "5.4",
+      "5.2.1.4",
+      "5.2.3",
+      "5.2.1.6",
+      "5.2.1.4.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "A CSI Reporting Setting is said to have a wideband frequency-granularity if - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', cqi-FormatIndicator is set to 'widebandCQI' and pmi-FormatIndicator is set to 'widebandPMI', or - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', codebookType is set to 'type[I-PortSelectionr17' with M=1 and cqi-FormatIndicator is set to 'widebandCQI', or - reportQuantity is set to 'cri-RI-i1' or - reportQuantity is set to 'cri-RI-CQI' or 'cri-RI-i1-CQI' and cqi-FormatIndicator is set to 'widebandCQI', or\n---\n- When two Resource Settings are configured, the first Resource Setting (given by higher layer parameter resourcesForChannelMeasurement) is for channel measurement and the second Resource Setting (given by higher layer parameter csi-IM-ResourcesForInterference) is used for interference measurement performed on CSI-[M. For L1-SINR computation, the second Resource Setting (given by higher layer parameter csi-IMResourcesForInterference or higher layer parameter nzp-CSI-RS-ResourceForInterference) is used for interference measurement performed on CSI-IM or on NZP CSI-RS. A UE is not expected to be configured with more than one CSI-RS resource in resource set for channel measurement for a CSI-ReportConfig with the higher layer parameter codebookType set to 'type[I', 'type[I-PortSelection', 'type[I-r16', 'type[I-PortSelection-r16', or 'type[I-PortSelection-r17'. A UE is not expected to be configured with more than 64 NZP CSI-RS resources and/or SS/PBCH block resources in resource setting for channel measurement for a CSIReportConfig with the higher layer parameter reportQuantity set to 'none', 'cri-RI-CQI', 'cri-RSRP', 'ssb-Index-RSRP', 'cri-SINR' or 'ssb-Index-SINR', 'cri-RSRP-Capability[Set][ndex', 'ssb-Index-RSRP-Capability[Set][ndex', 'cri-SINRCapability[Set]Index' or 'ssb-Index-SINR-Capability[Set]Index'. If interference measurement is performed on CSI-IM, each CSI-RS resource for channel measurement is resource-wise associated with a CSI-IM resource by the ordering of the CSI-RS resource and CSI-IM resource in the corresponding resource sets. The number of CSI-RS resources for channel measurement equals to the number of CSI-[M resources. An NZP CSI-RS Resource Set for channel measurement with 2 <= K_{s} <= 8 resources can be configured with two Resource Groups, with K_{1} >= 1 resources in Group 1 and K_{2} >= 1 resources in Group 2, such that K_{1}+K_{2}=K_{s} , and with N \\in\\{1,2\\} Resource Pairs. Each Resource Pair consists of one resource from Group 1 and one resource from Group 2. The same resource can be associated with two Resource Pairs in frequency range 1 but not in frequency range 2.\n---\n'cri-RI-LI-PMI-CQI', 'cri-RSRP-Capability[Set]Index', 'ssb-Index-RSRP-Capability[Set]Index', 'cri-SINRCapability[Set]Index' or 'ssb-Index-SINR-Capability[Set]Index'. If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'none', then the UE shall not report any quantity for the CSI-ReportConfig- If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RI-PMICQI', or 'cri-RI-LI-PMI-CQI', the UE shall report a preferred precoder matrix for the entire reporting band, or a preferred precoder matrix per subband, according to Clause 5.2.2.2. If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RI-i1', - the UE expects, for that CSI-ReportConfig, to be configured with higher layer parameter codebookType set to 'typel-SinglePanel' and pmi-FormatIndicator set to 'widebandPMI' and, - the UE shall report a PMI consisting of a single wideband indication ( i_{1} in Clause 5.2.2.2.1) for the entire CSI reporting band.\n---\nA UE is not expected to be configured with an aperiodic CSI trigger state containing more than N_{C P U} Reporting Settings. Processing of a CSI report occupies a number of CPUs for a number of symbols as follows: - O_{C P U}=0 for a CSI report with CSI-ReportConfig with higher layer parameter reportQuantity set to 'none' and CSI-RS-ResourceSet with higher layer parameter trs-Info configured - O_{C P U}=1 for a CSI report with CSI-ReportConfig with higher layer parameter reportQuantity set to 'cri-RSRP', 'ssb-Index-RSRP', 'cri-SINR', 'ssb-Index-SINR', 'cri-RSRP-Capability[Set][ndex', 'ssb-Index-RSRPCapability[Set]Index', 'cri-S[NR-Capability[Set]Index', 'ssb-Index-SINR-Capability[Set]Index 'or 'none' (and CSI-RS-ResourceSet with higher layer parameter trs-Info not configured) - for a CSI report with CSI-ReportConfig with higher layer parameter reportQuantity set to 'cri-RI-PMI-CQI', 'cri-RI-i1', 'cri-RI-i1-CQI', 'cri-RI-CQI', or 'cri-RI-LI-PMI-CQI', - if \\max \\left\\{\\mu_{P O C C H}, \\mu_{C S I-R S}, \\mu_{U L}\\right\\} <= slant 3 , and if a CSI report is aperiodically triggered without transmitting a PUSCH with either transport block or HARQ-ACK or both when L=0 CPUs are occupied, where the CSI corresponds to a single CSI with wideband frequency-granularity and to at most 4 CSI-RS ports in a single resource without CRI report and where codebookType is set to 'typel-SinglePanel' or where reportQuantity is set to 'cri-RI-CQI', O_{C P U}=N_{C P U} , - [If a CSI-ReportConfig is configured with codebookType set to 'typel-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement is configured with two Resource Groups and N Resource Pairs, O_{C P U}=2 N+M , where M is defined in clause 5.2.1.4.2.] - otherwise, O_{C P U}=K_{S} , where K_{s} is the number of CSI-RS resources in the CSI-RS resource set for channel measurement.\n---\n- if one or more of the associated bits is zero, then PMI reporting is not allowed to correspond to any precoder based on \\tilde{v}_{r, m} For UE configured with higher layer parameter codebookType set to 'typel-SinglePanel', the bitmap parameter typel-SinglePanel-ri-Restriction forms the bit sequence r_{7}, \\ldots, r_{1}, r_{0} where r_{0} is the LSB and r_{7} is the MSB. When r_{i} is zero, i \\in\\{0,1, \\ldots, 7\\} , PMI and RI reporting are not allowed to correspond to any precoder associated with v=i+1 layers. For UE configured with higher layer parameter reportQuantity set to 'cri-RI-il-CQI', the bitmap parameter typel-SinglePanel-codebookSubsetRestriction-i2 forms the bit sequence b_{15}, \\ldots, b_{1}, b_{0} where b_{0} is the \\operatorname{LSB} and b_{15} is the MSB. The bit b_{i} is associated with precoders corresponding to codebook index i_{2}=i . When b_{i} is zero, the randomly selected precoder for CQI calculation is not allowed to correspond to any precoder associated with the bit b_{i} . \\begin{table}\n---\nFor Type I, Type II, Enhanced Type II and Further Enhanced Type II Port Selection CSI feedback on PUSCH, a CSI report comprises of two parts. Part 1 has a fixed payload size and is used to identify the number of information bits in Part 2. Part 1 shall be transmitted in its entirety before Part 2. - For Type I CSI feedback, Part 1 contains RI (if reported), CRI (if reported), CQI for the first codeword (if reported). Part 2 contains PMI (if reported), LI (if reported) and contains the CQI for the second codeword (if reported) when RI is larger than 4. For a CSI-ReportConfig configured with codebookType set to 'typelSinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, Part 1 contains RI(s), CRI(s), CQI(s) for the first codeword and is zero padded to a fixed payload size (if needed). Part 2 contains the CQI(s) for the second codeword (if reported) when RI is larger than 4, LIs (if reported) and PMI(s). - For Type II CSI feedback, Part 1 contains RI (if reported), CQI, and an indication of the number of non-zero wideband amplitude coefficients per layer for the Type [I CSI (see Clause 5.2.2.2.3). The fields of Part 1 - RI (if reported), CQI, and the indication of the number of non-zero wideband amplitude coefficients for each layer are separately encoded. Part 2 contains the PMI and LI (if reported) of the Type [[] CSI. The elements of i_{1,4, l} , i_{2,1, l} (if reported) and i_{2,2, l} (if reported) are reported in the increasing order of their indices, i=0,1, \\ldots, 2 L-1 , where the element of the lowest index is mapped to the most significant bits and the element of the highest index is mapped to the least significant bits. Part 1 and 2 are separately encoded. - For Enhanced Type [I CSI feedback (see Clause 5.2.2.2.5) and Further Enhanced Type [I Port Selection CSI feedback (see Clause 5.2.2.2.5), Part 1 contains RI (if reported), CQI, and an indication of the overall number of non-zero amplitude coefficients across layers. The fields of Part 1-\\mathrm{RI} (if reported), CQI, and the indication of the overall number of non-zero amplitude coefficients across layers - are separately encoded. Part 2 contains the PMI of the Enhanced Type [I or Further Enhanced Type [I Port Selection CSI. Part 1 and 2 are separately encoded. A Type [] CSI report that is carried on the PUSCH shall be computed independently from any Type [] CSI report that is carried on the PUCCH formats 3 or 4 (see Clause 5.2.4 and 5.2.2). When the higher layer parameter reportQuantity is configured with one of the values 'cri-RSRP', 'ssb-Index-RSRP', 'criS[NR' or 'ssb-Index-S[NR', or 'cri-RSRP-Capability[Set]Index', 'ssb-[ndex-RSRP-Capability[Set][ndex', 'cri-S[NRCapability[Set]Index ', 'ssb-Index-SINR-Capability[Set]Index ',the CSI feedback consists of a single part. For both Type I and Type II reports configured for PUCCH but transmitted on PUSCH, the determination of the payload for CSI part 1 and CSI part 2 follows that of PUCCH as described in Clause 5.2.4.\n---\nETSI TS 138214 V17.1.0 (2022-05) corresponds to at most 4 CSI-RS ports in a single resource without CRI report and where CodebookType is set to 'typeI-SinglePanel' or where reportQuantity is set to 'cri-RI-CQI', or - \\left(Z_{1}, Z_{1}^{\\prime}\\right) of the table 5-4-2 if the CSI to be transmitted corresponds to wideband frequency-granularity where the CSI corresponds to at most 4 CSI-RS ports in a single resource without CRI report and where CodebookType is set to 'typel-SinglePanel' or where reportQuantity is set to 'cri-RI-CQI', or - \\left(Z_{1}, Z_{1}^{\\prime}\\right) of the table 5.4-2 if the CSI to be transmitted corresponds to wideband frequency-granularity where the reportQuantity is set to 'ssb-Index-SINR', 'cri-SINR', 'ssb-Index-SINR-Capability[Set]Index', or 'cri-SINRCapability[Set]Index ', or",
+    "generated_at": "2026-01-07T16:35:00.510660",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'codebookType' and 'reportQuantity' within the same IE. The evidence mentions these fields in different contexts without a normative cross-field dependency.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

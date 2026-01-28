@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES( EQ(field1, 'configured'), EQ(field2, 'most recent'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      824
+    ],
+    "field2_all": [
+      835
+    ],
+    "actual_pairs": [
+      [
+        [
+          824
+        ],
+        [
+          835
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'configured')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "If field1 is set to 'configured', field2 should be set to 'most recent'"
+    ],
+    "invalid": [
+      "If field1 is set to 'configured', field2 is set to 'notConfigured'"
+    ]
+  },
+  "notes": "The rule is derived from the evidence provided where it is stated that if the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig (field1) is set to 'configured', the UE shall derive the interference measurements based on the most recent (field2).",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "csi-IM-ResourcesForInterference",
+    "field2": "timeRestrictionForInterferenceMeasurements",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.1",
+      "5.2.1.4.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- If the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig is set to 'notConfigured', the UE shall derive the interference measurements for computing L1-SINR reported in uplink slot n based on only the CSI-IM or NZP CSI-RS for interference measurement (defined in [4, TS 38.211]) or NZP CSI-RS for channel and interference measurement no later than the CSI reference resource associated with the CSI resource setting.\n---\n- If the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig is set to 'configured', the UE shall derive the interference measurements for computing the L1-SINR reported in uplink slot n based on the most recent, no later than the CSI reference resource, occasion of CSI-IM or NZP CSI-RS for interference measurement (defined in [4, TS 38.211]) or NZP CS[-RS for channel and interference measurement associated with the CSI resource setting.\n---\nIf the higher layer parameter timeRestrictionForInterferenceMeasurements is set to \"notConfigured\", the UE shall derive the interference measurements for computing CSI value reported in uplink slot n based on only the CSI-IM and/or NZP CSI-RS for interference measurement no later than the CSI reference resource associated with the CSI resource setting.\n---\nIf the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig is set to \"Configured\", the UE shall derive the interference measurements for computing the CSI value reported in uplink slot n based on the most recent, no later than the CSI reference resource, occasion of CSI-IM and/or NZP CSI-RS for interference measurement (defined in [4, TS 38.211]) associated with the CSI resource setting.",
+    "generated_at": "2025-12-11T14:19:45.039163",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES( EQ(field1, 'configured'), EQ(field2, 'most recent'))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'configured')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If field1 is set to 'configured', field2 should be set to 'most recent'"
+        ],
+        "invalid": [
+          "If field1 is set to 'configured', field2 is set to 'notConfigured'"
+        ]
+      },
+      "notes": "The rule is derived from the evidence provided where it is stated that if the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig (field1) is set to 'configured', the UE shall derive the interference measurements based on the most recent (field2).",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

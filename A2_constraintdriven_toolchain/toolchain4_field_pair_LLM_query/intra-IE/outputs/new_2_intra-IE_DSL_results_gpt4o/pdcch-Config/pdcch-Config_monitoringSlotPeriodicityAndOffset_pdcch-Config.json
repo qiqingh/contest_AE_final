@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      53,
+      54
+    ],
+    "field2_all": [
+      42
+    ],
+    "actual_pairs": [
+      [
+        [
+          53,
+          54
+        ],
+        [
+          42
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative constraint between the fields 'monitoringSlotPeriodicityAndOffset' and 'pdcch-Config'. The evidence lacks explicit normative wording or logical relations directly linking these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pdcch-Config",
+    "field1": "monitoringSlotPeriodicityAndOffset",
+    "field2": "pdcch-Config",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "Setup2 & This field is mandatory present when a new SearchSpace is set up, if the same SearchSpace ID is not included in searchSpaces ToAddModListExt-r16 of the parent IE with the field searchSpaceType-r16 or searchSpaceType-r17 included. Otherwise it is optionally present, Need M. Setup3 & This field is mandatory present when a new SearchSpace is set up, if the same SearchSpace ID is not included in searchSpaces ToAddModListExt (without suffix) of the parent IE with the field searchSpaceType (without suffix) included. Otherwise it is optionally present, Need M. Setup4 & This field is mandatory present upon creation of a new SearchSpace if monitoringSlotPeriodicityAndOffset-r17 is not included. It is optionally present, Need M, otherwise. Setup5 & This field is mandatory present upon creation of a new SearchSpace if monitoringSlotPeriodicityAndOffset (without suffix) is not included. It is optionally present, Need M, otherwise. SetupOnly & This field is mandatory present upon creation of a new SearchSpace. It is absent, Need M, otherwise. SetupOnly2 & \\begin{tabular}{l} In PDCCH-Config, the field is optionally present upon creation of a new SearchSpace and absent, Need M upon reconfiguration of an existing SearchSpace. In PDCCH-ConfigCommon, the field is absent. \\end{tabular}\n---\nSetup3 & This field is mandatory present when a new SearchSpace is set up, if the same SearchSpace ID is not included in searchSpaces ToAddModListExt (without suffix) of the parent IE with the field searchSpaceType (without suffix) included. Otherwise it is optionally present, Need M. Setup4 & This field is mandatory present upon creation of a new SearchSpace if monitoringSlotPeriodicityAndOffset-r17 is not included. It is optionally present, Need M, otherwise. Setup5 & This field is mandatory present upon creation of a new SearchSpace if monitoringSlotPeriodicityAndOffset (without suffix) is not included. It is optionally present, Need M, otherwise. SetupOnly & This field is mandatory present upon creation of a new SearchSpace. It is absent, Need M, otherwise. SetupOnly2 & \\begin{tabular}{l} In PDCCH-Config, the field is optionally present upon creation of a new SearchSpace and absent, Need M upon reconfiguration of an existing SearchSpace. In PDCCH-ConfigCommon, the field is absent. \\end{tabular}",
+    "generated_at": "2026-01-07T19:38:38.047037",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative constraint between the fields 'monitoringSlotPeriodicityAndOffset' and 'pdcch-Config'. The evidence lacks explicit normative wording or logical relations directly linking these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

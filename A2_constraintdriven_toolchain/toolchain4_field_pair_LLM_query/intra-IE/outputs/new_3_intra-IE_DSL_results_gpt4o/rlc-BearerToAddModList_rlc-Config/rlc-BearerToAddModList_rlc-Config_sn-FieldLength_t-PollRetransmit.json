@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      11,
+      16
+    ],
+    "field2_all": [
+      12
+    ],
+    "actual_pairs": [
+      [
+        [
+          11,
+          16
+        ],
+        [
+          12
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "No explicit normative relationship or constraint between sn-FieldLength and t-PollRetransmit found in the provided evidence.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "rlc-BearerToAddModList_rlc-Config",
+    "field1": "sn-FieldLength",
+    "field2": "t-PollRetransmit",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 2,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} sn-FieldLength Indicates the RLC SN field size, see TS 38.322 [4], in bits. Value size 6 means 6 bits, value size 12 means 12 bits, value size 18 means 18 bits. The value of sn-FieldLength for a DRB/multicast MRB shall be changed only using reconfiguration with sync. The network configures only value size 12 in SN-FieldLengthAM for SRB. \\end{tabular} \\begin{tabular}{l} t-PollRetransmit Timer for RLC AM in TS 38.322 [4], in milliseconds. Value m s 5 means 5 ms , value m s 10 means 10 ms and so on. \\end{tabular}",
+    "generated_at": "2026-01-07T21:55:38.719555",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "No explicit normative relationship or constraint between sn-FieldLength and t-PollRetransmit found in the provided evidence.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

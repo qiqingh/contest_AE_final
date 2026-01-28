@@ -1,0 +1,275 @@
+[
+  {
+    "fields": [
+      "nrofHARQ-ProcessesForPDSCH",
+      "nrofHARQ-ProcessesForPDSCH"
+    ],
+    "field_ids": [
+      [
+        685
+      ],
+      [
+        685
+      ]
+    ],
+    "matched_fields": [
+      "nrofHARQ-ProcessesForPDSCH",
+      "nrofHARQ-ProcessesForPDSCH"
+    ],
+    "original_sentence": "5.1 UE procedure for receiving the physical downlink shared channel For downlink, a maximum of 16 HARQ processes per cell are supported by the UE, or subject to UE capability, a maximum of 32 HARQ processes per cell as defined in [13, TS 38.306]. The number of processes the UE may assume will at most be used for the downlink is configured to the UE for each cell separately by higher layer parameter nrofHARQ-ProcessesForPDSCH, and when no configuration is provided the UE may assume a default number of 8 processes. A UE shall upon detection of a PDCCH with a configured DCI format 1 \\_0,1 \\_1,4 \\_0,4 \\_1,4 \\_2 or 1 \\_2 decode the corresponding PDSCHs as indicated by that DCI. When the UE is scheduled with multiple PDSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PDSCH not overlapping with a UL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, HARQ process ID is then incremented by 1 for each subsequent PDSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPDSCH applied if nrofHARQ-ProcessesForPDSCH is provided, or with modulo operation of 8 applied, otherwise. HARQ process ID is not incremented for \\operatorname{PDSCH}(s) not received if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a UL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to receive a PDSCH that overlaps in time with another PDSCH. When HARQ feedback for the HARQ process ID is not disabled, or for the HARQ process associated with the first SPS PDSCH when HARQfeedbackEnablingforSPSactive is provided, the UE is not expected to receive another PDSCH for a given HARQ process until after the end of the expected transmission of HARQ-ACK for that HARQ process, where the timing is given by Clause 9.2.3 of [6, TS 38.213]. For HARQ-ACK subject to HARQ-ACK deferral described in Clause 9.2.5.4 of [6 TS 38.213], the expected transmission of HARQ-ACK corresponds to the expected transmission HARQ-ACK in a first slot. When HARQ feedback for the HARQ process ID is disabled, the UE is not expected to receive another PDCCH carrying a DCI scheduling a PDSCH or set of slot-aggregated PDSCH scheduled for the given HARQ process or to receive another PDSCH without corresponding PDCCH for the given HARQ process that starts until \\mathrm{T}_{\\text {proc, } 1} after the end of the reception of the last PDSCH or slot-aggregated PDSCH for that HARQ process. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH, where the two resources are in different slots for the associated HARQ-ACK transmissions, each slot is composed of N_{\\text {sym }}^{\\text {slot }} symbols [4] or a number of symbols indicated by subslotLengthForPUCCH if provided, and the",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "subject to",
+    "is_self_reference": true,
+    "section_number": "5.1",
+    "section_title": "UE procedure for receiving the physical downlink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nrofHARQ-ProcessesForPDSCH",
+      "nrofHARQ-ProcessesForPDSCH"
+    ],
+    "field_ids": [
+      [
+        685
+      ],
+      [
+        685
+      ]
+    ],
+    "matched_fields": [
+      "nrofHARQ-ProcessesForPDSCH",
+      "nrofHARQ-ProcessesForPDSCH"
+    ],
+    "original_sentence": "For downlink, a maximum of 16 HARQ processes per cell are supported by the UE, or subject to UE capability, a maximum of 32 HARQ processes per cell as defined in [13, TS 38.306]. The number of processes the UE may assume will at most be used for the downlink is configured to the UE for each cell separately by higher layer parameter nrofHARQ-ProcessesForPDSCH, and when no configuration is provided the UE may assume a default number of 8 processes. A UE shall upon detection of a PDCCH with a configured DCI format 1 \\_0,1 \\_1,4 \\_0,4 \\_1,4 \\_2 or 1 \\_2 decode the corresponding PDSCHs as indicated by that DCI. When the UE is scheduled with multiple PDSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PDSCH not overlapping with a UL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, HARQ process ID is then incremented by 1 for each subsequent PDSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPDSCH applied if nrofHARQ-ProcessesForPDSCH is provided, or with modulo operation of 8 applied, otherwise. HARQ process ID is not incremented for \\operatorname{PDSCH}(s) not received if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a UL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to receive a PDSCH that overlaps in time with another PDSCH. When HARQ feedback for the HARQ process ID is not disabled, or for the HARQ process associated with the first SPS PDSCH when HARQfeedbackEnablingforSPSactive is provided, the UE is not expected to receive another PDSCH for a given HARQ process until after the end of the expected transmission of HARQ-ACK for that HARQ process, where the timing is given by Clause 9.2.3 of [6, TS 38.213]. For HARQ-ACK subject to HARQ-ACK deferral described in Clause 9.2.5.4 of [6 TS 38.213], the expected transmission of HARQ-ACK corresponds to the expected transmission HARQ-ACK in a first slot. When HARQ feedback for the HARQ process ID is disabled, the UE is not expected to receive another PDCCH carrying a DCI scheduling a PDSCH or set of slot-aggregated PDSCH scheduled for the given HARQ process or to receive another PDSCH without corresponding PDCCH for the given HARQ process that starts until \\mathrm{T}_{\\text {proc, } 1} after the end of the reception of the last PDSCH or slot-aggregated PDSCH for that HARQ process. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH, where the two resources are in different slots for the associated HARQ-ACK transmissions, each slot is composed of N_{\\text {sym }}^{\\text {slot }} symbols [4] or a number of symbols indicated by subslotLengthForPUCCH if provided, and the ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": true,
+    "section_number": "5.1",
+    "section_title": "UE procedure for receiving the physical downlink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-ServingCellConfig",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        684
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-ServingCellconfig",
+      "PDSCH-ServingCellconfig"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) and N_{\\text {on }}^{\\text {PRS }} is the overhead configured by higher layer parameter x Overhead in PDSCH-ServingCellConfigIf the xOverhead in PDSCH-ServingCellconfig is not configured (a value from 6, 12, or 18), the N_{\\text {oh }}^{P R B} is set to 0 . If the PDSCH is scheduled by PDCCH with a CRC scrambled by SI-RNTI, RA-RNTI, MSGB-RNTI or P-RNTI, N_{\\text {oh }}^{P R B} is assumed to be 0 . If the PDSCH is scheduled by PDCCH with a CRC scrambled by G-RNTI or G-CS-RNTI or PDSCH without PDCCH is activated by PDCCH with a CRC scrambled by G-CS-RNTI, N_{o h}^{P R B} is the overhead configured by higher layer parameter xOverhead-Multicast in PDSCH-ConfigMulticast. If the xOverhead-Multicast in PDSCH-Config-Multicast is not configured, the N_{\\text {oh }}^{P R B} is set to 0 . - A UE determines the total number of REs allocated for PDSCH ( N_{R E} ) by N_{R E}=\\min \\left(156, N_{R E}^{\\prime}\\right) \\cdot n_{P R B} , where n_{P R B} is the total number of allocated PRBs for the UE. 2) Unquantized intermediate variable ( N_{\\text {mfo }} ) is obtained by N_{\\text {info }}=N_{R E} \\cdot R \\cdot Q_{m} \\cdot v .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "5.1.3.2",
+    "section_title": "Transport block size determination",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-ServingCellConfig",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        684
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-ServingCellConfig",
+      "PDSCH-ServingCellConfig"
+    ],
+    "original_sentence": "- T_{\\text {proc }, 2} is based on a value of \\mu corresponding to the smallest SCS configuration of the first PDCCH, the second PDCCHs, the first PUCCH or the first PUSCH, and the second PUCCHs or the second PUSCHs - if the overlapping group includes the first PUCCH - if processingType2Enabled of PDSCH-ServingCellConfig is set to enable for the serving cell where the UE receives the first PDCCH and for all serving cells where the UE receives the PDSCHs corresponding to the second PUCCHs, and if processingType2Enabled of PUSCH-ServingCellConfig is set to enable for the serving cells with the second PUSCHs, N_{2} is 5 for \\mu=0,5.5 for \\mu=1 and 11 for \\mu=2 - else, N_{2} is 10 for \\mu=0,12 for \\mu=1,23 for \\mu=2,36 for \\mu=3,144 for \\mu=5 , and 288 for \\mu=6 ;",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": true,
+    "section_number": "8.4",
+    "section_title": "PDSCH with UE contention resolution identity",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "PDSCH",
+      "pdsch"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "pdsch-ServingCellConfig",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        684
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-ServingCellConfig",
+      "PDSCH-ServingCellConfig"
+    ],
+    "original_sentence": "\\end{table} A UE is expected to provide HARQ-ACK information in response to a SPS PDSCH release after N symbols from the last symbol of a PDCCH providing the SPS PDSCH release. If processingType2Enabled of PDSCH-ServingCellConfig is set to enable for the serving cell with the PDCCH providing the SPS PDSCH release, N=5 for \\mu=0, N=5.5 for \\mu=1 , and N=11 for \\mu=2 , otherwise, N=10 for \\mu=0, N=12 for \\mu=1, N=22 for \\mu=2, N=25 for \\mu=3 , N=100 for \\mu=5 , and N=200 for \\mu=6 , wherein \\mu corresponds to the smallest SCS configuration between the SCS configuration of the PDCCH providing the SPS PDSCH release and the SCS configuration of a PUCCH carrying the HARQ-ACK information in response to a SPS PDSCH release. 10.2A PDCCH validation for SL configured grant Type 2",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "10.2",
+    "section_title": "PDCCH validation for DL SPS and UL grant Type 2",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-ServingCellConfig",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        684
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-ServingCellConfig",
+      "PDSCH-ServingCellConfig"
+    ],
+    "original_sentence": "If an active DL BWP provided by dormantBWP-Id for a UE on an activated SCell is not a default DL BWP for the UE on the activated SCell, as described in clause 12, the BWP inactivity timer is not used for transitioning from the active DL BWP provided by dormantBWP-Id to the default DL BWP on the activated SCell. A UE is expected to provide HARQ-ACK information in response to a detection of a DCI format 1 \\_1 indicating SCell dormancy after N symbols from the last symbol of a PDCCH providing the DCI format 1_1. If processingType2Enabled of PDSCH-ServingCellConfig is set to enable for the serving cell with the PDCCH providing the DCI format 1_1, N=7 for \\mu=0, N=7.5 for \\mu=1 , and N=15 for \\mu=2 ; otherwise, N=14 for \\mu=0, N= 16 for \\mu=1, N=27 for \\mu=2, N=31 for \\mu=3, N=124 for \\mu=5 , and =248 for \\mu=6 , where \\mu is the smallest SCS configuration between the SCS configuration of the PDCCH providing the DCI format 1 _ 1 and the SCS configuration of a PUCCH with the HARQ-ACK information in response to the detection of the DCI format 1 _ ETSI",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "10.3",
+    "section_title": "PDCCH monitoring indication and dormancy/non",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxMIMO-Layers",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        686
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "maxMIMO-Layers",
+      "PDSCHServingCellConfig"
+    ],
+    "original_sentence": "Indicates the maximum number of MIMO layers to be used for PDSCH in this DL BWP. If not configured, the UE uses the maxMIMO-Layers configuration in IE PDSCHServingCellConfig of the serving cell to which this BWP belongs, when the UE operates in this BWP. The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxMIMO-Layers",
+      "maxMIMO-Layers"
+    ],
+    "field_ids": [
+      [
+        686
+      ],
+      [
+        686
+      ]
+    ],
+    "matched_fields": [
+      "maxMIMO-Layers",
+      "maxMIMO-Layers"
+    ],
+    "original_sentence": "Configure the number of bits for the field \"HARQ process number\" in DCI format 1_2 (see TS 38.212 [17], clause 7.3.1). maxMMMO-Layers Indicates the maximum number of MIMO layers to be used for PDSCH in this DL BWP. If not configured, the UE uses the maxMIMO-Layers configuration in IE PDSCHServingCellConfig of the serving cell to which this BWP belongs, when the UE operates in this BWP. The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs. For MBS multicast, indicates the maximum number of MIMO layers to be used for group-common PDSCH of MBS multicast in this CFR. If not configured for CFR, the UE applies value 1. The value of maxMIMO-Layers for a CFR shall be smaller than or equal to the value of maxMIMO-Layers configured in PDSCH-ServingCellConfig IE of the serving cell to which this CFR belongs.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxMIMO-Layers",
+      "maxMIMO-Layers"
+    ],
+    "field_ids": [
+      [
+        686
+      ],
+      [
+        686
+      ]
+    ],
+    "matched_fields": [
+      "maxMIMO-Layers",
+      "maxMIMO-Layers"
+    ],
+    "original_sentence": "maxMMMO-Layers Indicates the maximum number of MIMO layers to be used for PDSCH in this DL BWP. If not configured, the UE uses the maxMIMO-Layers configuration in IE PDSCHServingCellConfig of the serving cell to which this BWP belongs, when the UE operates in this BWP. The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs. For MBS multicast, indicates the maximum number of MIMO layers to be used for group-common PDSCH of MBS multicast in this CFR. If not configured for CFR, the UE applies value 1. The value of maxMIMO-Layers for a CFR shall be smaller than or equal to the value of maxMIMO-Layers configured in PDSCH-ServingCellConfig IE of the serving cell to which this CFR belongs. ETSI",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdsch-ServingCellConfig",
+      "pdsch-ServingCellConfig"
+    ],
+    "field_ids": [
+      [
+        684
+      ],
+      [
+        684
+      ]
+    ],
+    "matched_fields": [
+      "PDSCHServingCellConfig",
+      "PDSCHServingCellConfig"
+    ],
+    "original_sentence": "Configure the number of bits for the field \"HARQ process number\" in DCI format 1_2 (see TS 38.212 [17], clause 7.3.1). maxMMMO-Layers Indicates the maximum number of MIMO layers to be used for PDSCH in this DL BWP. If not configured, the UE uses the maxMIMO-Layers configuration in IE PDSCHServingCellConfig of the serving cell to which this BWP belongs, when the UE operates in this BWP. The value of maxMIMO-Layers for a DL BWP shall be smaller than or equal to the value of maxMIMO-Layers configured in IE PDSCH-ServingCellConfig of the serving cell to which this BWP belongs. For MBS multicast, indicates the maximum number of MIMO layers to be used for group-common PDSCH of MBS multicast in this CFR. If not configured for CFR, the UE applies value 1. The value of maxMIMO-Layers for a CFR shall be smaller than or equal to the value of maxMIMO-Layers configured in PDSCH-ServingCellConfig IE of the serving cell to which this CFR belongs.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

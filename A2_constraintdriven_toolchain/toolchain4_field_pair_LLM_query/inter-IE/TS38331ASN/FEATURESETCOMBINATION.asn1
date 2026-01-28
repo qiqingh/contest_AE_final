@@ -1,0 +1,14 @@
+FeatureSetCombination ::=       SEQUENCE (SIZE (1..maxSimultaneousBands)) OF FeatureSetsPerBand
+
+FeatureSetsPerBand ::=          SEQUENCE (SIZE (1..maxFeatureSetsPerBand)) OF FeatureSet
+
+FeatureSet ::=                  CHOICE {
+    eutra                           SEQUENCE {
+        downlinkSetEUTRA                FeatureSetEUTRA-DownlinkId,
+        uplinkSetEUTRA                  FeatureSetEUTRA-UplinkId
+    },
+    nr                              SEQUENCE {
+        downlinkSetNR                   FeatureSetDownlinkId,
+        uplinkSetNR                     FeatureSetUplinkId
+    }
+}

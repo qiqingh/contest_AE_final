@@ -1,0 +1,28 @@
+NZP-CSI-RS-ResourceSet ::=          SEQUENCE {
+    nzp-CSI-ResourceSetId               NZP-CSI-RS-ResourceSetId,
+    nzp-CSI-RS-Resources                SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-ResourcesPerSet)) OF NZP-CSI-RS-ResourceId,
+    repetition                          ENUMERATED { on, off }                                                  OPTIONAL,   -- Need S
+    aperiodicTriggeringOffset           INTEGER(0..6)                                                           OPTIONAL,   -- Need S
+    trs-Info                            ENUMERATED {true}                                                       OPTIONAL,   -- Need R
+    ...,
+    [[
+    aperiodicTriggeringOffset-r16       INTEGER(0..31)                                                          OPTIONAL   -- Need S
+    ]],
+    [[
+    pdc-Info-r17                        ENUMERATED {true}                                                       OPTIONAL,  -- Need R
+    cmrGroupingAndPairing-r17           CMRGroupingAndPairing-r17                                               OPTIONAL,  -- Need R
+    aperiodicTriggeringOffset-r17       INTEGER (0..124)                                                        OPTIONAL,  -- Need S
+    aperiodicTriggeringOffsetL2-r17     INTEGER(0..31)                                                          OPTIONAL   -- Need R
+    ]]
+}
+
+CMRGroupingAndPairing-r17 ::=        SEQUENCE {
+    nrofResourcesGroup1-r17              INTEGER (1..7),
+    pair1OfNZP-CSI-RS-r17                NZP-CSI-RS-Pairing-r17                                                 OPTIONAL,  -- Need R
+    pair2OfNZP-CSI-RS-r17                NZP-CSI-RS-Pairing-r17                                                 OPTIONAL   -- Need R
+}
+
+NZP-CSI-RS-Pairing-r17  ::=          SEQUENCE {
+    nzp-CSI-RS-ResourceId1-r17           INTEGER (1..7),
+    nzp-CSI-RS-ResourceId2-r17           INTEGER (1..7)
+}

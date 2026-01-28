@@ -1,0 +1,37 @@
+SystemInformation ::=               SEQUENCE {
+    criticalExtensions                  CHOICE {
+        systemInformation                   SystemInformation-IEs,
+        criticalExtensionsFuture-r16    CHOICE {
+            posSystemInformation-r16        PosSystemInformation-r16-IEs,
+            criticalExtensionsFuture        SEQUENCE {}
+        }
+    }
+}
+
+SystemInformation-IEs ::=           SEQUENCE {
+    sib-TypeAndInfo                     SEQUENCE (SIZE (1..maxSIB)) OF CHOICE {
+        sib2                                SIB2,
+        sib3                                SIB3,
+        sib4                                SIB4,
+        sib5                                SIB5,
+        sib6                                SIB6,
+        sib7                                SIB7,
+        sib8                                SIB8,
+        sib9                                SIB9,
+        ...,
+        sib10-v1610                         SIB10-r16,
+        sib11-v1610                         SIB11-r16,
+        sib12-v1610                         SIB12-r16,
+        sib13-v1610                         SIB13-r16,
+        sib14-v1610                         SIB14-r16,
+        sib15-v1700                         SIB15-r17,
+        sib16-v1700                         SIB16-r17,
+        sib17-v1700                         SIB17-r17,
+        sib18-v1700                         SIB18-r17,
+        sib19-v1700                         SIB19-r17,
+        sib20-v1700                         SIB20-r17,
+        sib21-v1700                         SIB21-r17
+    },
+    lateNonCriticalExtension            OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                SEQUENCE {}                         OPTIONAL
+}

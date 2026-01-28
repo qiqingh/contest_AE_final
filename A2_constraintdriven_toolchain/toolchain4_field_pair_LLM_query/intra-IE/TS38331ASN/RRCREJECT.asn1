@@ -1,0 +1,12 @@
+RRCReject ::=                       SEQUENCE {
+    criticalExtensions                  CHOICE {
+        rrcReject                           RRCReject-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCReject-IEs ::=                   SEQUENCE {
+    waitTime                            RejectWaitTime                                                          OPTIONAL,   -- Need N
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                SEQUENCE{}                                                              OPTIONAL
+}

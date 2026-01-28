@@ -1,0 +1,195 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      136,
+      201,
+      266,
+      359,
+      467,
+      575
+    ],
+    "field2_all": [
+      71,
+      136,
+      201,
+      266,
+      359,
+      467,
+      575
+    ],
+    "actual_pairs": [
+      [
+        [
+          359,
+          467
+        ],
+        [
+          71
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          71
+        ]
+      ],
+      [
+        [
+          467,
+          575
+        ],
+        [
+          71
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          71,
+          136,
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          201,
+          266
+        ],
+        [
+          359,
+          467
+        ]
+      ],
+      [
+        [
+          467,
+          575
+        ],
+        [
+          71,
+          136,
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          359,
+          575
+        ]
+      ],
+      [
+        [
+          201,
+          266
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          359,
+          467
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          71,
+          136,
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          201,
+          266
+        ],
+        [
+          359,
+          575
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between qcl-type from pdsch-config_tci-statestoaddmodlist and bwp-id from uplinkbwp-toaddmodlist_bwp-id across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdsch-config_tci-statestoaddmodlist",
+    "field1": "qcl-type",
+    "ie2_name": "uplinkbwp-toaddmodlist_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
+    "generated_at": "2026-01-10T14:04:16.175483",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between qcl-type and bwp-id based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between qcl-type from pdsch-config_tci-statestoaddmodlist and bwp-id from uplinkbwp-toaddmodlist_bwp-id across different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

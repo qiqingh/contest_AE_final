@@ -1,0 +1,13 @@
+SIB15-r17 ::=                          SEQUENCE {
+    commonPLMNsWithDisasterCondition-r17   SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-Identity                   OPTIONAL,  -- Need R
+    applicableDisasterInfoList-r17         SEQUENCE (SIZE (1..maxPLMN)) OF ApplicableDisasterInfo-r17      OPTIONAL,  -- Need R
+    lateNonCriticalExtension               OCTET STRING                                                    OPTIONAL,
+    ...
+}
+
+ApplicableDisasterInfo-r17    ::= CHOICE {
+    noDisasterRoaming-r17             NULL,
+    disasterRelatedIndication-r17     NULL,
+    commonPLMNs-r17                   NULL,
+    dedicatedPLMNs-r17                SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-Identity
+}

@@ -1,0 +1,148 @@
+PUSCH-Config ::=                        SEQUENCE {
+    dataScramblingIdentityPUSCH             INTEGER (0..1023)                                                   OPTIONAL,   -- Need S
+    txConfig                                ENUMERATED {codebook, nonCodebook}                                  OPTIONAL,   -- Need S
+    dmrs-UplinkForPUSCH-MappingTypeA        SetupRelease { DMRS-UplinkConfig }                                  OPTIONAL,   -- Need M
+    dmrs-UplinkForPUSCH-MappingTypeB        SetupRelease { DMRS-UplinkConfig }                                  OPTIONAL,   -- Need M
+    pusch-PowerControl                      PUSCH-PowerControl                                                  OPTIONAL,   -- Need M
+    frequencyHopping                        ENUMERATED {intraSlot, interSlot}                                   OPTIONAL,   -- Need S
+    frequencyHoppingOffsetLists             SEQUENCE (SIZE (1..4)) OF INTEGER (1.. maxNrofPhysicalResourceBlocks-1)
+                                                                                                                OPTIONAL,   -- Need M
+    resourceAllocation                      ENUMERATED { resourceAllocationType0, resourceAllocationType1, dynamicSwitch},
+    pusch-TimeDomainAllocationList          SetupRelease { PUSCH-TimeDomainResourceAllocationList }             OPTIONAL,   -- Need M
+    pusch-AggregationFactor                 ENUMERATED { n2, n4, n8 }                                           OPTIONAL,   -- Need S
+    mcs-Table                               ENUMERATED {qam256, qam64LowSE}                                     OPTIONAL,   -- Need S
+    mcs-TableTransformPrecoder              ENUMERATED {qam256, qam64LowSE}                                     OPTIONAL,   -- Need S
+    transformPrecoder                       ENUMERATED {enabled, disabled}                                      OPTIONAL,   -- Need S
+    codebookSubset                          ENUMERATED {fullyAndPartialAndNonCoherent, partialAndNonCoherent,nonCoherent}
+                                                                                                          OPTIONAL, -- Cond codebookBased
+    maxRank                                 INTEGER (1..4)                                                OPTIONAL, -- Cond codebookBased
+    rbg-Size                                ENUMERATED { config2}                                         OPTIONAL, -- Need S
+    uci-OnPUSCH                             SetupRelease { UCI-OnPUSCH}                                   OPTIONAL, -- Need M
+    tp-pi2BPSK                              ENUMERATED {enabled}                                          OPTIONAL, -- Need S
+    ...,
+    [[
+    minimumSchedulingOffsetK2-r16           SetupRelease { MinSchedulingOffsetK2-Values-r16 }             OPTIONAL,  -- Need M
+    ul-AccessConfigListDCI-0-1-r16          SetupRelease { UL-AccessConfigListDCI-0-1-r16 }               OPTIONAL,  -- Need M
+    -- Start of the parameters for DCI format 0_2 introduced in V16.1.0
+    harq-ProcessNumberSizeDCI-0-2-r16                       INTEGER (0..4)                                OPTIONAL,   -- Need R
+    dmrs-SequenceInitializationDCI-0-2-r16                  ENUMERATED {enabled}                          OPTIONAL,   -- Need S
+    numberOfBitsForRV-DCI-0-2-r16                           INTEGER (0..2)                                OPTIONAL,   -- Need R
+    antennaPortsFieldPresenceDCI-0-2-r16                    ENUMERATED {enabled}                          OPTIONAL,   -- Need S
+    dmrs-UplinkForPUSCH-MappingTypeA-DCI-0-2-r16            SetupRelease { DMRS-UplinkConfig }            OPTIONAL,   -- Need M
+    dmrs-UplinkForPUSCH-MappingTypeB-DCI-0-2-r16            SetupRelease { DMRS-UplinkConfig }            OPTIONAL,   -- Need M
+    frequencyHoppingDCI-0-2-r16                             CHOICE {
+        pusch-RepTypeA                                          ENUMERATED {intraSlot, interSlot},
+        pusch-RepTypeB                                          ENUMERATED {interRepetition, interSlot}
+    }                                                                                                     OPTIONAL,   -- Need S
+    frequencyHoppingOffsetListsDCI-0-2-r16  SetupRelease { FrequencyHoppingOffsetListsDCI-0-2-r16}        OPTIONAL,  -- Need M
+    codebookSubsetDCI-0-2-r16               ENUMERATED {fullyAndPartialAndNonCoherent, partialAndNonCoherent,nonCoherent}
+                                                                                                          OPTIONAL,   -- Cond codebookBased
+    invalidSymbolPatternIndicatorDCI-0-2-r16                ENUMERATED {enabled}                          OPTIONAL,   -- Need S
+    maxRankDCI-0-2-r16                                      INTEGER (1..4)                                OPTIONAL,   -- Cond codebookBased
+    mcs-TableDCI-0-2-r16                                    ENUMERATED {qam256, qam64LowSE}               OPTIONAL,   -- Need S
+    mcs-TableTransformPrecoderDCI-0-2-r16                   ENUMERATED {qam256, qam64LowSE}               OPTIONAL,   -- Need S
+    priorityIndicatorDCI-0-2-r16                            ENUMERATED {enabled}                          OPTIONAL,   -- Need S
+    pusch-RepTypeIndicatorDCI-0-2-r16                       ENUMERATED { pusch-RepTypeA, pusch-RepTypeB}  OPTIONAL,  -- Need R
+    resourceAllocationDCI-0-2-r16                           ENUMERATED { resourceAllocationType0, resourceAllocationType1, dynamicSwitch}
+                                                                                                          OPTIONAL,   -- Need M
+    resourceAllocationType1GranularityDCI-0-2-r16           ENUMERATED { n2,n4,n8,n16 }                   OPTIONAL,   -- Need S
+    uci-OnPUSCH-ListDCI-0-2-r16                             SetupRelease { UCI-OnPUSCH-ListDCI-0-2-r16}   OPTIONAL,   -- Need M
+    pusch-TimeDomainAllocationListDCI-0-2-r16               SetupRelease { PUSCH-TimeDomainResourceAllocationList-r16 }
+                                                                                                          OPTIONAL,   -- Need M
+    -- End of the parameters for DCI format 0_2 introduced in V16.1.0
+    -- Start of the parameters for DCI format 0_1 introduced in V16.1.0
+    pusch-TimeDomainAllocationListDCI-0-1-r16               SetupRelease { PUSCH-TimeDomainResourceAllocationList-r16 }
+                                                                                                          OPTIONAL,   -- Need M
+    invalidSymbolPatternIndicatorDCI-0-1-r16          ENUMERATED {enabled}                                OPTIONAL,   -- Need S
+    priorityIndicatorDCI-0-1-r16                      ENUMERATED {enabled}                                OPTIONAL,   -- Need S
+    pusch-RepTypeIndicatorDCI-0-1-r16                 ENUMERATED { pusch-RepTypeA, pusch-RepTypeB}        OPTIONAL,   -- Need R
+    frequencyHoppingDCI-0-1-r16                 ENUMERATED {interRepetition, interSlot}                   OPTIONAL,   -- Cond RepTypeB
+    uci-OnPUSCH-ListDCI-0-1-r16                 SetupRelease { UCI-OnPUSCH-ListDCI-0-1-r16  }             OPTIONAL,  -- Need M
+    -- End of the parameters for DCI format 0_1 introduced in V16.1.0
+    invalidSymbolPattern-r16                    InvalidSymbolPattern-r16                                  OPTIONAL,   -- Need S
+    pusch-PowerControl-v1610                SetupRelease {PUSCH-PowerControl-v1610}                       OPTIONAL,   -- Need M
+    ul-FullPowerTransmission-r16            ENUMERATED {fullpower, fullpowerMode1, fullpowerMode2}         OPTIONAL,   -- Need R
+    pusch-TimeDomainAllocationListForMultiPUSCH-r16  SetupRelease { PUSCH-TimeDomainResourceAllocationList-r16 }
+                                                                                                          OPTIONAL,  --  Need M
+    numberOfInvalidSymbolsForDL-UL-Switching-r16        INTEGER (1..4)                                    OPTIONAL    -- Cond RepTypeB2
+    ]],
+    [[
+    ul-AccessConfigListDCI-0-2-r17          SetupRelease { UL-AccessConfigListDCI-0-2-r17 }               OPTIONAL,  -- Need M
+    betaOffsetsCrossPri0-r17                SetupRelease { BetaOffsetsCrossPriSel-r17 }                   OPTIONAL,  -- Need M
+    betaOffsetsCrossPri1-r17                SetupRelease { BetaOffsetsCrossPriSel-r17 }                   OPTIONAL,  -- Need M
+    betaOffsetsCrossPri0DCI-0-2-r17         SetupRelease { BetaOffsetsCrossPriSelDCI-0-2-r17 }            OPTIONAL,  -- Need M
+    betaOffsetsCrossPri1DCI-0-2-r17         SetupRelease { BetaOffsetsCrossPriSelDCI-0-2-r17 }            OPTIONAL,  -- Need M
+    mappingPattern-r17                      ENUMERATED {cyclicMapping, sequentialMapping}                 OPTIONAL,  -- Cond SRSsets
+    secondTPCFieldDCI-0-1-r17               ENUMERATED {enabled}                                          OPTIONAL,  -- Need R
+    secondTPCFieldDCI-0-2-r17               ENUMERATED {enabled}                                          OPTIONAL,  -- Need R
+    sequenceOffsetForRV-r17                 INTEGER (0..3)                                                OPTIONAL,  -- Need R
+    ul-AccessConfigListDCI-0-1-r17          SetupRelease { UL-AccessConfigListDCI-0-1-r17 }                OPTIONAL,  -- Need M
+    minimumSchedulingOffsetK2-r17           SetupRelease { MinSchedulingOffsetK2-Values-r17 }              OPTIONAL,  -- Need M
+    availableSlotCounting-r17               ENUMERATED { enabled }                                         OPTIONAL,  -- Need S
+    dmrs-BundlingPUSCH-Config-r17           SetupRelease { DMRS-BundlingPUSCH-Config-r17 }                 OPTIONAL,  -- Need M
+    harq-ProcessNumberSizeDCI-0-2-v1700     INTEGER (5)                                                    OPTIONAL,  -- Need R
+    harq-ProcessNumberSizeDCI-0-1-r17       INTEGER (5)                                                    OPTIONAL,  -- Need R
+    mpe-ResourcePoolToAddModList-r17       SEQUENCE (SIZE(1..maxMPE-Resources-r17)) OF MPE-Resource-r17    OPTIONAL,  -- Need N
+    mpe-ResourcePoolToReleaseList-r17      SEQUENCE (SIZE(1..maxMPE-Resources-r17)) OF MPE-ResourceId-r17  OPTIONAL   -- Need N
+    ]]
+}
+
+UCI-OnPUSCH ::=                         SEQUENCE {
+    betaOffsets                             CHOICE {
+        dynamic                             SEQUENCE (SIZE (4)) OF BetaOffsets,
+        semiStatic                          BetaOffsets
+    }                                                                                                 OPTIONAL, -- Need M
+    scaling                                 ENUMERATED { f0p5, f0p65, f0p8, f1 }
+}
+
+MinSchedulingOffsetK2-Values-r16 ::=    SEQUENCE (SIZE (1..maxNrOfMinSchedulingOffsetValues-r16)) OF INTEGER (0..maxK2-SchedulingOffset-r16)
+
+MinSchedulingOffsetK2-Values-r17 ::=    SEQUENCE (SIZE (1..maxNrOfMinSchedulingOffsetValues-r16)) OF INTEGER (0..maxK2-SchedulingOffset-r17)
+
+UCI-OnPUSCH-DCI-0-2-r16 ::=             SEQUENCE {
+    betaOffsetsDCI-0-2-r16                  CHOICE {
+        dynamicDCI-0-2-r16                      CHOICE {
+            oneBit-r16                              SEQUENCE (SIZE (2)) OF BetaOffsets,
+            twoBits-r16                             SEQUENCE (SIZE (4)) OF BetaOffsets
+        },
+        semiStaticDCI-0-2-r16          BetaOffsets
+    }                                                                                                 OPTIONAL,   -- Need M
+    scalingDCI-0-2-r16                 ENUMERATED { f0p5, f0p65, f0p8, f1 }
+}
+
+FrequencyHoppingOffsetListsDCI-0-2-r16 ::=  SEQUENCE (SIZE (1..4)) OF INTEGER (1.. maxNrofPhysicalResourceBlocks-1)
+
+UCI-OnPUSCH-ListDCI-0-2-r16 ::=  SEQUENCE (SIZE (1..2)) OF UCI-OnPUSCH-DCI-0-2-r16
+
+UCI-OnPUSCH-ListDCI-0-1-r16 ::=  SEQUENCE (SIZE (1..2)) OF UCI-OnPUSCH
+
+UL-AccessConfigListDCI-0-1-r16 ::= SEQUENCE (SIZE (1..64)) OF INTEGER (0..63)
+
+UL-AccessConfigListDCI-0-1-r17 ::= SEQUENCE (SIZE (1..3)) OF INTEGER (0..2)
+
+UL-AccessConfigListDCI-0-2-r17 ::= SEQUENCE (SIZE (1..64)) OF INTEGER (0..63)
+
+BetaOffsetsCrossPriSel-r17 ::= CHOICE {
+    dynamic-r17         SEQUENCE (SIZE (4)) OF BetaOffsetsCrossPri-r17,
+    semiStatic-r17          BetaOffsetsCrossPri-r17
+}
+
+BetaOffsetsCrossPriSelDCI-0-2-r17 ::= CHOICE {
+    dynamicDCI-0-2-r17      CHOICE {
+        oneBit-r17              SEQUENCE (SIZE (2)) OF BetaOffsetsCrossPri-r17,
+        twoBits-r17             SEQUENCE (SIZE (4)) OF BetaOffsetsCrossPri-r17
+    },
+    semiStaticDCI-0-2-r17   BetaOffsetsCrossPri-r17
+}
+
+MPE-Resource-r17 ::=        SEQUENCE {
+    mpe-ResourceId-r17          MPE-ResourceId-r17,
+    cell-r17                    ServCellIndex                                                         OPTIONAL,    -- Need R
+    additionalPCI-r17           AdditionalPCIIndex-r17                                                OPTIONAL,    -- Need R
+    mpe-ReferenceSignal-r17     CHOICE {
+        csi-RS-Resource-r17         NZP-CSI-RS-ResourceId,
+        ssb-Resource-r17            SSB-Index
+    }
+}
+
+MPE-ResourceId-r17 ::=      INTEGER (1..maxMPE-Resources-r17)

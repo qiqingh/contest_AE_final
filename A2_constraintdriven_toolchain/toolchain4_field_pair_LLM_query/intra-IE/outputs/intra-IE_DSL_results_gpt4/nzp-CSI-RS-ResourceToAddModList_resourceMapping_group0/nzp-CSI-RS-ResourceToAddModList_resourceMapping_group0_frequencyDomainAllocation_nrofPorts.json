@@ -1,0 +1,90 @@
+{
+  "dsl_rule": "IMPLIES(TRUE, EQ(COUNT_BITS(field1), field2))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      706,
+      707,
+      708
+    ],
+    "field2_all": [
+      709
+    ],
+    "actual_pairs": [
+      [
+        [
+          706,
+          707,
+          708
+        ],
+        [
+          709
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(COUNT_BITS(field1), field2)",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = '101', field2 = 2",
+      "field1 = '1111', field2 = 4"
+    ],
+    "invalid": [
+      "field1 = '101', field2 = 1",
+      "field1 = '1111', field2 = 3"
+    ]
+  },
+  "notes": "The number of bits set to 1 in field1 (frequencyDomainAllocation) must be equal to the value of field2 (nrofPorts). This is derived from the evidence where n is the number of bits set to 1 in frequencyDomainAllocation.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_resourceMapping_group0",
+    "field1": "frequencyDomainAllocation",
+    "field2": "nrofPorts",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "frequencyDomainAllocation Frequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation.\n---\nFrequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation.",
+    "generated_at": "2025-12-11T14:23:50.063226",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(TRUE, EQ(COUNT_BITS(field1), field2))",
+      "preconditions": [],
+      "predicate": "EQ(COUNT_BITS(field1), field2)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = '101', field2 = 2",
+          "field1 = '1111', field2 = 4"
+        ],
+        "invalid": [
+          "field1 = '101', field2 = 1",
+          "field1 = '1111', field2 = 3"
+        ]
+      },
+      "notes": "The number of bits set to 1 in field1 (frequencyDomainAllocation) must be equal to the value of field2 (nrofPorts). This is derived from the evidence where n is the number of bits set to 1 in frequencyDomainAllocation.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

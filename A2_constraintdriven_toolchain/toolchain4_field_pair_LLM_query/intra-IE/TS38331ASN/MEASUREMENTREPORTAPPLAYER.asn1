@@ -1,0 +1,30 @@
+MeasurementReportAppLayer-r17 ::=     SEQUENCE {
+    criticalExtensions                    CHOICE {
+        measurementReportAppLayer-r17     MeasurementReportAppLayer-r17-IEs,
+        criticalExtensionsFuture              SEQUENCE {}
+    }
+}
+
+MeasurementReportAppLayer-r17-IEs ::=   SEQUENCE {
+    measurementReportAppLayerList-r17       MeasurementReportAppLayerList-r17,
+    lateNonCriticalExtension                OCTET STRING                                                           OPTIONAL,
+    nonCriticalExtension                    SEQUENCE{}                                                             OPTIONAL
+}
+
+MeasurementReportAppLayerList-r17 ::= SEQUENCE (SIZE (1..maxNrofAppLayerMeas-r17)) OF MeasReportAppLayer-r17
+
+MeasReportAppLayer-r17 ::=        SEQUENCE {
+    measConfigAppLayerId-r17              MeasConfigAppLayerId-r17,
+    measReportAppLayerContainer-r17       OCTET STRING                                                             OPTIONAL,
+    appLayerSessionStatus-r17             ENUMERATED {started, stopped}                                            OPTIONAL,
+    ran-VisibleMeasurements-r17           RAN-VisibleMeasurements-r17                                              OPTIONAL
+}
+
+RAN-VisibleMeasurements-r17 ::=       SEQUENCE {
+    appLayerBufferLevelList-r17           SEQUENCE (SIZE (1..8)) OF AppLayerBufferLevel-r17                        OPTIONAL,
+    playoutDelayForMediaStartup-r17       INTEGER (0..30000)                                                       OPTIONAL,
+    pdu-SessionIdList-r17                 SEQUENCE (SIZE (1..maxNrofPDU-Sessions-r17)) OF PDU-SessionID            OPTIONAL,
+    ...
+}
+
+AppLayerBufferLevel-r17 ::= INTEGER (0..30000)

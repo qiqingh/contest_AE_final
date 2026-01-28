@@ -1,0 +1,10 @@
+CSI-SSB-ResourceSet ::=             SEQUENCE {
+    csi-SSB-ResourceSetId               CSI-SSB-ResourceSetId,
+    csi-SSB-ResourceList                SEQUENCE (SIZE(1..maxNrofCSI-SSB-ResourcePerSet)) OF SSB-Index,
+    ...,
+    [[
+    servingAdditionalPCIList-r17        SEQUENCE (SIZE(1..maxNrofCSI-SSB-ResourcePerSet)) OF ServingAdditionalPCIIndex-r17  OPTIONAL  -- Need R
+    ]]
+}
+
+ServingAdditionalPCIIndex-r17  ::=  INTEGER(0..maxNrofAdditionalPCI-r17)

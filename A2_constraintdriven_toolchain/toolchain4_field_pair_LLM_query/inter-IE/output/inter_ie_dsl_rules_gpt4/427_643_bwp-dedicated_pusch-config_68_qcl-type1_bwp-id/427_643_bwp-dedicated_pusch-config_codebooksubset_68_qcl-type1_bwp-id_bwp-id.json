@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "ASSOCIATED(field1, field2, 'Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP')",
+  "constraint_type": "Association",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      438,
+      546
+    ],
+    "field2_all": [
+      68
+    ],
+    "actual_pairs": [
+      [
+        [
+          438,
+          546
+        ],
+        [
+          68
+        ]
+      ]
+    ]
+  },
+  "predicate": "The codebook subset restriction in the BWP dedicated PUSCH configuration is associated with the BWP ID in the QCL Type1 BWP ID.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "codebooksubset from 427_643_bwp-dedicated_pusch-config is associated with bwp-id from 68_qcl-type1_bwp-id"
+    ],
+    "invalid": [
+      "codebooksubset from 427_643_bwp-dedicated_pusch-config is not associated with bwp-id from 68_qcl-type1_bwp-id"
+    ]
+  },
+  "notes": "The evidence explicitly states that each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP, which implies an association between the codebook subset restriction in the BWP dedicated PUSCH configuration and the BWP ID in the QCL Type1 BWP ID.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "427_643_bwp-dedicated_pusch-config",
+    "field1": "codebooksubset",
+    "ie2_name": "68_qcl-type1_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
+    "generated_at": "2025-12-11T10:12:02.573407",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "Association",
+      "dsl": "ASSOCIATED(field1, field2, 'Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP')",
+      "preconditions": [],
+      "predicate": "The codebook subset restriction in the BWP dedicated PUSCH configuration is associated with the BWP ID in the QCL Type1 BWP ID.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "codebooksubset from 427_643_bwp-dedicated_pusch-config is associated with bwp-id from 68_qcl-type1_bwp-id"
+        ],
+        "invalid": [
+          "codebooksubset from 427_643_bwp-dedicated_pusch-config is not associated with bwp-id from 68_qcl-type1_bwp-id"
+        ]
+      },
+      "notes": "The evidence explicitly states that each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP, which implies an association between the codebook subset restriction in the BWP dedicated PUSCH configuration and the BWP ID in the QCL Type1 BWP ID.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+RateMatchPatternLTE-CRS ::=         SEQUENCE {
+    carrierFreqDL                       INTEGER (0..16383),
+    carrierBandwidthDL                  ENUMERATED {n6, n15, n25, n50, n75, n100, spare2, spare1},
+    mbsfn-SubframeConfigList            EUTRA-MBSFN-SubframeConfigList                                          OPTIONAL,   -- Need M
+    nrofCRS-Ports                       ENUMERATED {n1, n2, n4},
+    v-Shift                             ENUMERATED {n0, n1, n2, n3, n4, n5}
+}
+
+LTE-CRS-PatternList-r16 ::=         SEQUENCE (SIZE (1..maxLTE-CRS-Patterns-r16)) OF RateMatchPatternLTE-CRS

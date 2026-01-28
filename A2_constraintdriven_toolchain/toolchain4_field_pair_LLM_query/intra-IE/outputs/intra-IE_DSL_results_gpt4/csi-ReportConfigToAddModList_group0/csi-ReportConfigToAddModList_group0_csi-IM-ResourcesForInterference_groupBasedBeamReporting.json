@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      824
+    ],
+    "field2_all": [
+      844
+    ],
+    "actual_pairs": [
+      [
+        [
+          824
+        ],
+        [
+          844
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear semantic constraint or relationship between the two fields within the same IE. The evidence discusses the behavior of CSI-RS resources and the configuration of CSI-ResourceConfigs, but does not explicitly relate 'csi-IM-ResourcesForInterference' and 'groupBasedBeamReporting'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "csi-IM-ResourcesForInterference",
+    "field2": "groupBasedBeamReporting",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is S=2 , otherwise the number of CSI-RS Resource Sets configured is limited to S=1 . For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.",
+    "generated_at": "2025-12-11T14:19:42.052985",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear semantic constraint or relationship between the two fields within the same IE. The evidence discusses the behavior of CSI-RS resources and the configuration of CSI-ResourceConfigs, but does not explicitly relate 'csi-IM-ResourcesForInterference' and 'groupBasedBeamReporting'.",
+      "version_tags": []
+    }
+  }
+}

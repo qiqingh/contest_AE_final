@@ -1,0 +1,1987 @@
+[
+  {
+    "fields": [
+      "alpha",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "reference-signal"
+    ],
+    "original_sentence": "6.4.1.1.1.2 Sequence generation when transform precoding is enabled If transform precoding for PUSCH is enabled, the reference-signal sequence r(n) shall be generated according to \\[ \\begin{aligned} r(n) & =r_{u, v}^{(\\alpha, \\delta)}(n) n & =0,1, \\ldots, M_{x c}^{\\mathrm{PUSCH}} / 2^{\\delta}-1 \\end{aligned}",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "when",
+    "is_self_reference": false,
+    "section_number": "6.4.1.1.1.2",
+    "section_title": "Sequence generation when transform precoding is enabled",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "reference signal"
+    ],
+    "original_sentence": "\\end{tabular} \\end{table} 6.4.1.3 Demodulation reference signal for PUCCH 6.4.1.3.1 Demodulation reference signal for PUCCH format 1 6.4.1.3.1.1 Sequence generation The reference signal sequence is defined by \\[ \\begin{aligned} z\\left(m^{\\prime} N_{\\mathrm{SF}, 0}^{\\mathrm{PUCC}, \\mid} M_{\\mathrm{RB}}^{\\mathrm{PUCC} H_{1} 1} N_{\\mathrm{sC}}^{\\mathrm{RB}}+m M_{\\mathrm{RB}}^{\\mathrm{PUCC}}{ }_{1}^{\\mathrm{PU} 1} N_{\\mathrm{sc}}^{\\mathrm{RB}}+n\\right) & =w_{i}(m) r_{u, v}^{(\\alpha, \\delta)}(n) n & =0,1, \\ldots, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1} N_{\\mathrm{sc}}^{\\mathrm{RB}}-1 m & =0,1, \\ldots, N_{\\mathrm{SF}, m^{\\prime}}^{\\mathrm{PUCCC}, \\mid}-1",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "defined by",
+    "is_self_reference": false,
+    "section_number": "6.4.1.3.1.1",
+    "section_title": "Sequence generation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "reference signal"
+    ],
+    "original_sentence": "\\] where k is defined relative to subcarrier 0 of common resource block 0 and (k, l)_{p, \\mu} shall be within the resource blocks assigned for PUCCH transmission according to clause 9.2.1 of [5, TS 38.213]. 6.4.1.3.3 Demodulation reference signal for PUCCH formats 3 and 4 6.4.1.3.3.1 Sequence generation The reference-signal sequence r_{l}(m) shall be generated according to \\[ \\begin{array}{l} r_{l}(m)=r_{u, v}^{(\\alpha, \\delta)}(m) m=0,1, \\ldots, M_{\\mathrm{sc}}^{\\text {PUCCH,s }}-1 \\end{array}",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "6.4.1.3.3.1",
+    "section_title": "Sequence generation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "reference-signal"
+    ],
+    "original_sentence": "6.4.1.3.3.1 Sequence generation The reference-signal sequence r_{l}(m) shall be generated according to \\[ \\begin{array}{l} r_{l}(m)=r_{u, v}^{(\\alpha, \\delta)}(m) m=0,1, \\ldots, M_{\\mathrm{sc}}^{\\text {PUCCH,s }}-1 \\end{array} \\] where M_{\\mathrm{sc}}^{\\mathrm{PUCCH}_{1} s} is given by clause 6.3.2.6.3 and r_{u, v}^{(\\alpha, \\delta)}(m) depends on the configuration: - if the higher-layer parameter dmrs-UplinkTransformPrecodingPUCCH is configured, and \\pi / 2 -BPSK is used for PUCCH, r_{u, v}^{(\\alpha, \\delta)}(m) is given by clause 5.2.3 with \\delta=0 and c_{\\text {init }} given by clause 6.4.1.3.2.1. The sequence group u and the sequence number v depend on the sequence hopping in clause 6.3.2.2.1. - otherwise, for PUCCH format 3, PUCCH format 4 with M_{\\text {RB }}^{\\text {PUCCH } 4}=1 , and PUCCH format 4 with M_{\\text {RB }}^{\\text {PUCCH } 4}>1 when \\pi / 2-\\mathrm{BPSK} is not used for \\mathrm{PUCCH}, r_{u, v}^{(\\alpha, \\delta)}(m) is given by clause 6.3.2.2 and the cyclic shift \\alpha varies with the symbol number and slot number according to clause 6.3-2.2.2 with - m_{0}=0 for PUCCH format 3 without interlaced mapping;",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.4.1.3.3.1",
+    "section_title": "Sequence generation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For PUSCH transmissions with a Type 1 configured grant, when two SRS resource sets are configured in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, if configuredGrantConfig contains only one pathlossReferenceIndex, p0-PUSCH-Alpha, powerControlLoopToUse, srs-ResourceIndicator and precodingAndNumberOfLayers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook'), PUSCH repetitions are associated only with the first SRS resource set. If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with usage set to 'codebook' or 'nonCodebook', and the UE is not provided p0-PUSCH-Alpha2 and powerControlLoopToUse2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, the UE expects the value of the SRS resource set indicator field to be set to ' 00 ', and PUSCH repetitions are associated only with the first SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "when",
+    "is_self_reference": false,
+    "section_number": "6.1.2.3",
+    "section_title": "Resource allocation for uplink transmission with configured grant",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "pusch-Config"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "resource allocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB. A UE shall upon detection of a PDCCH with a configured DCI format 0 \\_0,0 \\_1 or 0 \\_2 transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format 0 \\_1 or 0 \\_2 with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format 0 \\_1 or 0 \\_2 , the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format 0 \\_1 or 0 \\_2 . When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH ending in symbol i on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol i of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol i , the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format 0 \\_0,0 \\_1 or 0 \\_2 scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI. If a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoolIndex, for any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH associated with a value of coresetPoollndex ending in symbol i , the UE can be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH associated with a different value of coresetPoollndex that ends later than symbol i .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "maxRank"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        547
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "maxRank"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "maxRank"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        547
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "maxRank"
+    ],
+    "original_sentence": "When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "pusch-Config"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "pusch-Config"
+    ],
+    "original_sentence": "When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "reference signal"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "according to",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "original_sentence": "configured in srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook'. When only one SRS resource set is configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', SRI and TPMI are given by the DCI fields of one SRS resource indicator and one Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2 or given by srs-ResourceIndicator and precodingAndNumberOfLayers according to clause 6.1.2.3. The TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the SRI when multiple SRS resources are configured, or if a single SRS resource is configured TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. The transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to higher layer parameter nrofSRS-Ports in SRS-Config, as defined in Clause 6.3-1.5 of [4, TS 38.211]. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. The indicated SRI in slot n is associated with the most recent transmission of SRS resource identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', one or two SRI(s), and one or two TPMI(s) are given by the DCI fields of two SRS resource indicator and two Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2. The UE applies the indicated SRI(s) and TPMI(s) to one or more PUSCH repetitions according to the associated SRS resource set of a PUSCH repetition according to clause 6-1.2.1. Each TPMI, based on indicated codepoint of SRS Resource Set indicator, is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the corresponding SRI when multiple SRS resources are configured for the applicable SRS resource set, or if a single SRS resource is configured for the applicable SRS resource set TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. For one or two TPMI(s), the transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to the higher layer parameter nrofSRS-Ports in SRS-Config for the indicated SRI(s), as defined in Clause 6.3.1.5 of [4, TS 38.211]. When two SRIs are indicated, the UE shall expect the nrofSRS-Ports for the two indicated SRS resources to be the same. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. Each of the indicated one or two SRI(s) in slot n is associated with the most recent transmission of SRS resource of associated SRS resource set identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', the UE is not expected to be configured with different number of SRS resources in the two SRS resource sets. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        546
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "codebookSubset",
+      "txConfig"
+    ],
+    "original_sentence": "When only one SRS resource set is configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', SRI and TPMI are given by the DCI fields of one SRS resource indicator and one Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2 or given by srs-ResourceIndicator and precodingAndNumberOfLayers according to clause 6.1.2.3. The TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the SRI when multiple SRS resources are configured, or if a single SRS resource is configured TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. The transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to higher layer parameter nrofSRS-Ports in SRS-Config, as defined in Clause 6.3-1.5 of [4, TS 38.211]. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. The indicated SRI in slot n is associated with the most recent transmission of SRS resource identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', one or two SRI(s), and one or two TPMI(s) are given by the DCI fields of two SRS resource indicator and two Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2. The UE applies the indicated SRI(s) and TPMI(s) to one or more PUSCH repetitions according to the associated SRS resource set of a PUSCH repetition according to clause 6-1.2.1. Each TPMI, based on indicated codepoint of SRS Resource Set indicator, is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the corresponding SRI when multiple SRS resources are configured for the applicable SRS resource set, or if a single SRS resource is configured for the applicable SRS resource set TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. For one or two TPMI(s), the transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to the higher layer parameter nrofSRS-Ports in SRS-Config for the indicated SRI(s), as defined in Clause 6.3.1.5 of [4, TS 38.211]. When two SRIs are indicated, the UE shall expect the nrofSRS-Ports for the two indicated SRS resources to be the same. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. Each of the indicated one or two SRI(s) in slot n is associated with the most recent transmission of SRS resource of associated SRS resource set identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', the UE is not expected to be configured with different number of SRS resources in the two SRS resource sets. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'. A UE reporting its UE capability of 'nonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent' or with 'partialAndNonCoherent'. A UE shall not expect to be configured with the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 set to 'partialAndNonCoherent' when higher layer parameter nrofSRS-Ports in an SRSResourceSet with usage set to 'codebook' indicates that the maximum number of the configured SRS antenna ports in the SRS-ResourceSet is two. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxRank",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        547
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "maxRank",
+      "pusch-Config"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxRank",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        547
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "maxRank",
+      "pusch-Config"
+    ],
+    "original_sentence": "When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxRank",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        547
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "maxRank",
+      "reference signal"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "according to",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxRank",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        547
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "maxRank",
+      "txConfig"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "maxRank",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        547
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "maxRank",
+      "txConfig"
+    ],
+    "original_sentence": "configured in srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook'. When only one SRS resource set is configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', SRI and TPMI are given by the DCI fields of one SRS resource indicator and one Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2 or given by srs-ResourceIndicator and precodingAndNumberOfLayers according to clause 6.1.2.3. The TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the SRI when multiple SRS resources are configured, or if a single SRS resource is configured TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. The transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to higher layer parameter nrofSRS-Ports in SRS-Config, as defined in Clause 6.3-1.5 of [4, TS 38.211]. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. The indicated SRI in slot n is associated with the most recent transmission of SRS resource identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', one or two SRI(s), and one or two TPMI(s) are given by the DCI fields of two SRS resource indicator and two Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2. The UE applies the indicated SRI(s) and TPMI(s) to one or more PUSCH repetitions according to the associated SRS resource set of a PUSCH repetition according to clause 6-1.2.1. Each TPMI, based on indicated codepoint of SRS Resource Set indicator, is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the corresponding SRI when multiple SRS resources are configured for the applicable SRS resource set, or if a single SRS resource is configured for the applicable SRS resource set TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. For one or two TPMI(s), the transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to the higher layer parameter nrofSRS-Ports in SRS-Config for the indicated SRI(s), as defined in Clause 6.3.1.5 of [4, TS 38.211]. When two SRIs are indicated, the UE shall expect the nrofSRS-Ports for the two indicated SRS resources to be the same. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. Each of the indicated one or two SRI(s) in slot n is associated with the most recent transmission of SRS resource of associated SRS resource set identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', the UE is not expected to be configured with different number of SRS resources in the two SRS resource sets. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "pusch-Config"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "resource allocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB. A UE shall upon detection of a PDCCH with a configured DCI format 0 \\_0,0 \\_1 or 0 \\_2 transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format 0 \\_1 or 0 \\_2 with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format 0 \\_1 or 0 \\_2 , the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format 0 \\_1 or 0 \\_2 . When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH ending in symbol i on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol i of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol i , the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format 0 \\_0,0 \\_1 or 0 \\_2 scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI. If a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoolIndex, for any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH associated with a value of coresetPoollndex ending in symbol i , the UE can be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH associated with a different value of coresetPoollndex that ends later than symbol i .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "reference signal"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "according to",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) For the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI =1 , the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3. For a UE configured with two uplinks in a serving cell, PUSCH retransmission for a TB on the serving cell is not expected to be on a different uplink than the uplink used for the PUSCH initial transmission of that TB. A UE shall upon detection of a PDCCH with a configured DCI format 0 \\_0,0 \\_1 or 0 \\_2 transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format 0 \\_1 or 0 \\_2 with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format 0 \\_1 or 0 \\_2 , the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format 0 \\_1 or 0 \\_2 . When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH ending in symbol i on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol i of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol i , the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format 0 \\_0 with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format 0 \\_0,0 \\_1 or 0 \\_2 scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI. If a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoolIndex, for any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol j by a PDCCH associated with a value of coresetPoollndex ending in symbol i , the UE can be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH associated with a different value of coresetPoollndex that ends later than symbol i .",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "For PUSCH repetition Type B, when a UE is scheduled to transmit a transport block and aperiodic CSI report(s) on PUSCH by a 'CSI request' field on a DCI, the CSI report(s) is multiplexed only on the first actual repetition. The UE does not expect that the first actual repetition has a single symbol duration. If pusch-TimeDomainAllocationListForMultiPUSCH in pusch-Config contains row indicating resource allocation for two to eight contiguous PUSCHs, K_{2} indicates the slot where UE shall transmit the first PUSCH of the multiple PUSCHs. Each PUSCH has a separate SLIV and mapping type. The number of scheduled PUSCHs is signalled by the number of indicated valid SLIVs in the row of the pusch-TimeDomainAllocationListForMultiPUSCH signalled in DCI format 0 \\_1 . ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "when",
+    "is_self_reference": false,
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "ETSI TS 138214 V17.1.0 (2022-05) Table 6.1.2.1.1-1: Applicable PUSCH time domain resource allocation for common search space and DCI format 0 \\_0 in UE specific search space \\begin{table} \\captionsetup{labelformat=empty} \\caption{Table 6.1.2.1.1-5 defines the additional subcarrier spacing specific slot delay value for the first transmission of PUSCH scheduled by the RAR or by the fallbackRAR. When the UE transmits a PUSCH scheduled by RAR or by the fallbackRAR, the \\Delta value specific to the PUSCH subcarrier spacing \\mu PUSCH is applied in addition to the K_{2} value.} \\begin{tabular}{|l|l|l|l|l|} RNTI & PDCCH search space & pusch-ConfigCommon includes puschTimeDomainAllocationList & pusch-Config includes puschTimeDomainAllocationList & PUSCH time domain resource allocation to apply \\multicolumn{2}{|c|}{\\multirow{2}{*}{PUSCH scheduled by MAC RAR as described in clause 8.2 of [6, TS 38.213] or MAC fallbackRAR as described in clause 8.2A of [6, 38.213] or for MsgA PUSCH transmission}} & No & - & Default A & & Yes & & puschTimeDomainAllocationList provided in puschConfigCommon",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PUSCH",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "\\caption{Table 6.1.2.1.1-5 defines the additional subcarrier spacing specific slot delay value for the first transmission of PUSCH scheduled by the RAR or by the fallbackRAR. When the UE transmits a PUSCH scheduled by RAR or by the fallbackRAR, the \\Delta value specific to the PUSCH subcarrier spacing \\mu PUSCH is applied in addition to the K_{2} value.} \\begin{tabular}{|l|l|l|l|l|} RNTI & PDCCH search space & pusch-ConfigCommon includes puschTimeDomainAllocationList & pusch-Config includes puschTimeDomainAllocationList & PUSCH time domain resource allocation to apply \\multicolumn{2}{|c|}{\\multirow{2}{*}{PUSCH scheduled by MAC RAR as described in clause 8.2 of [6, TS 38.213] or MAC fallbackRAR as described in clause 8.2A of [6, 38.213] or for MsgA PUSCH transmission}} & No & - & Default A & & Yes & & puschTimeDomainAllocationList provided in puschConfigCommon & & No & - & Default A C-RNTI, MCS-CRNTI, TCRNTI, CS-RNTI & Any common search space associated with CORESET 0 & Yes & & puschTimeDomainAllocationList provided in puschConfigCommon \\multirow[t]{3}{*}{C-RNTI, MCS-CRNTI, TCRNTI, CS-RNTI} & \\multirow{3}{*}{Any common search space not associated with CORESET 0, DCI format 0_0 in UE specific search space} & No & No & Default A & & Yes & No & puschTimeDomainAllocationList provided in puschConfigCommon & & No/Yes & Yes & puschTime DomainAllocationList provided in pusch-Config \\end{tabular}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PUSCH",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "Resource allocation"
+    ],
+    "original_sentence": "153 ETSI TS 138214 V17.1.0 (2022-05) 6.1.2.2 Resource allocation in frequency domain The UE shall determine the resource block assignment in frequency domain using the resource allocation field in the detected PDCCH DCI except for a PUSCH transmission scheduled by a RAR UL grant or fallbackRAR UL grant, in which case the frequency domain resource allocation is determined according to clause 8.3 of [6,38.213] or a MsgA PUSCH transmission with frequency domain resource allocation determined according to clause 8.1A of [6,38.213]. Three uplink resource allocation schemes type 0 , type 1 and type 2 are supported. Uplink resource allocation scheme type 0 is supported for PUSCH only when transform precoding is disabled. Uplink resource allocation scheme type 1 and type 2 are supported for PUSCH for both cases when transform precoding is enabled or disabled. If the scheduling DCI is configured to indicate the uplink resource allocation type as part of the 'Frequency domain resource' assignment field by setting a higher layer parameter resourceAllocation in pusch-Config to 'dynamicSwitch', for DCI format 0 \\_1 or setting a higher layer parameter resourceAllocationDCI-0-2 in pusch-Config to 'dynamicSwitch' for DCI format 0_2, the UE shall use uplink resource allocation type 0 or type 1 as defined by this DCI field. Otherwise the UE shall use the uplink frequency resource allocation type as defined by the higher layer parameter resourceAllocation for DCI format 0 \\_1 or the higher layer parameter resourceAllocationDCI-0-2 for DCI format 0 \\_2 . The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_1 and useInterlacePUCCHPUSCH in BWP-UplinkDedicated is configured, uplink type 2 resource allocation is used. The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_0 , then uplink resource allocation type 1 is used, except when any of the higher layer parameters useInterlacePUCCH-PUSCH in BWPUplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured in which case uplink resource allocation type 2 is used.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.2.2",
+    "section_title": "Resource allocation in frequency domain",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "The UE shall determine the resource block assignment in frequency domain using the resource allocation field in the detected PDCCH DCI except for a PUSCH transmission scheduled by a RAR UL grant or fallbackRAR UL grant, in which case the frequency domain resource allocation is determined according to clause 8.3 of [6,38.213] or a MsgA PUSCH transmission with frequency domain resource allocation determined according to clause 8.1A of [6,38.213]. Three uplink resource allocation schemes type 0 , type 1 and type 2 are supported. Uplink resource allocation scheme type 0 is supported for PUSCH only when transform precoding is disabled. Uplink resource allocation scheme type 1 and type 2 are supported for PUSCH for both cases when transform precoding is enabled or disabled. If the scheduling DCI is configured to indicate the uplink resource allocation type as part of the 'Frequency domain resource' assignment field by setting a higher layer parameter resourceAllocation in pusch-Config to 'dynamicSwitch', for DCI format 0 \\_1 or setting a higher layer parameter resourceAllocationDCI-0-2 in pusch-Config to 'dynamicSwitch' for DCI format 0_2, the UE shall use uplink resource allocation type 0 or type 1 as defined by this DCI field. Otherwise the UE shall use the uplink frequency resource allocation type as defined by the higher layer parameter resourceAllocation for DCI format 0 \\_1 or the higher layer parameter resourceAllocationDCI-0-2 for DCI format 0 \\_2 . The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_1 and useInterlacePUCCHPUSCH in BWP-UplinkDedicated is configured, uplink type 2 resource allocation is used. The UE shall assume that when the scheduling PDCCH is received with DCI format 0 \\_0 , then uplink resource allocation type 1 is used, except when any of the higher layer parameters useInterlacePUCCH-PUSCH in BWPUplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured in which case uplink resource allocation type 2 is used. The UE expects that either none or both of uselnterlacePUCCH-PUSCH in BWP-UplinkCommon and useInterlacePUCCH-PUSCH in BWP-UplinkDedicated is configured. If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active bandwidth part change via DCI, the RB indexing for uplink type 0 , type 1 and type 2 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active bandwidh part change via DCI, the RB indexing for uplink type 0 , type 1 , type 2 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the uplink bandwidth part and then the resource allocation within the bandwidth part. RB numbering starts from the lowest RB in the determined uplink bandwidth part. 6.1.2.2.1 Uplink resource allocation type 0 In uplink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured in pusch-Config and the size of the bandwidth part as defined in Table 6.1.2.2.1-1. \\begin{table}",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.2.2.1",
+    "section_title": "Uplink resource allocation type 0",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "Resource allocation"
+    ],
+    "original_sentence": "where N_{\\text {RB-set,UL }}^{\\text {start }}=0,1, \\cdots N_{\\text {RB-set,UL }}^{\\text {BWP }}-1, L_{\\text {RB-set }} >= 1 and shall not exceed N_{\\text {RB-set,UL }}^{\\text {BWP }}-N_{\\text {RB-set,UL }}^{\\text {start }} If transform precoding is enabled according to the procedure in Clause 6.1.3, then the UE transmits PUSCH on the lowest-indexed M_{\\text {RB }}^{\\text {PUSCH }} PRBs amongst the PRBs indicated by the frequency domain resource assignment information. M_{\\mathrm{RB}}^{\\mathrm{PUSCH}} is the largest integer not greater than the number of RBs indicated by the frequency domain resource assignment information that fulfils the conditions in Clause 6.3.1.4 of [4, TS 38.211]. 6.1.2.3 Resource allocation for uplink transmission with configured grant When PUSCH resource allocation is semi-statically configured by higher layer parameter configuredGrantConfig in BWP-UplinkDedicated information element, and the PUSCH transmission corresponding to a configured grant, the following higher layer parameters are applied in the transmission: - For Type 1 PUSCH transmissions with a configured grant, the following parameters are given in configuredGrantConfig unless mentioned otherwise: - For the determination of the PUSCH repetition type, if the higher layer parameter pusch-RepTypeIndicator in rrc-ConfiguredUplinkGrant is configured and set to 'pusch-RepTypeB', PUSCH repetition type B is applied; otherwise, PUSCH repetition type A is applied; - For PUSCH repetition type A, the selection of the time domain resource allocation table follows the rules for DCI format 0 \\_0 on UE specific search space, as defined in Clause 6.1.2.1.1. - For PUSCH repetition type B, the selection of the time domain resource allocation table is as follows: - If pusch-RepTypeIndicatorDCI-0-1 in pusch-Config is configured and set to 'pusch-RepTypeB', pusch-TimeDomainResourceAllocationListDCI-0-1 in pusch-Config is used; - Otherwise, pusch-TimeDomainResourceAllocationListDCI-0-2 in pusch-Config is used. - It is not expected that pusch-RepTypeIndicator in rrc-ConfiguredUplinkGrant is configured with 'puschRepTypeB' when none of pusch-RepTypeIndicatorDCI-0-1 and pusch-RepTypeIndicatorDCI-0-2 in pusch-Config is set to 'pusch-RepTypeB'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "6.1.2.3",
+    "section_title": "Resource allocation for uplink transmission with configured grant",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "For operation with shared spectrum channel access, the UE does not expect that two hops of a PUSCH transmission are in different RB sets. In case of resource allocation type 2, the UE transmits PUSCH without frequency hopping. In case of resource allocation type 1, whether or not transform precoding is enabled for PUSCH transmission, the UE may perform PUSCH frequency hopping, if the frequency hopping field in a corresponding detected DCI format or in a random access response UL grant is set to 1 , or if for a Type 1 PUSCH transmission with a configured grant the higher layer parameter frequencyHoppingOffset is provided, otherwise no PUSCH frequency hopping is performed. When frequency hopping is enabled for PUSCH, the RE mapping is defined in clause 6.3.1.6 of [4, TS 38.211]. For a PUSCH scheduled by RAR UL grant, fallbackRAR UL grant, or by DCI format 0 \\_0 with CRC scrambled by TCRNTI, frequency offsets are obtained as described in clause 8.3 of [6, TS 38.213]. Otherwise, for a PUSCH scheduled by DCI format 0 \\_0 / 0 \\_1 or a PUSCH based on a Type2 configured UL grant activated by DCI format 0 \\_0 / 0 \\_1 and for resource allocation type 1, frequency offsets are configured by higher layer parameter frequencyHoppingOffsetLists in pusch-Config. For a PUSCH scheduled by DCI format 0 \\_2 or a PUSCH based on a Type2 configured UL grant activated by DCI format 0 \\_2 and for resource allocation type 1 , frequency offsets are configured by higher layer parameter frequencyHoppingOffsetListsDCI-0-2 in pusch-Config. - When the size of the active BWP is less than 50 PRBs, one of two higher layer configured offsets is indicated in the UL grant. - When the size of the active BWP is equal to or greater than 50 PRBs, one of four higher layer configured offsets is indicated in the UL grant.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "In case",
+    "is_self_reference": false,
+    "section_number": "6.3.1",
+    "section_title": "Frequency hopping for PUSCH repetition Type A and for TB processing over multiple slots",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "\\end{array}\\right]\\right. \\] where n_{s_{f},}^{\\mu} is the current slot number within a system radio frame, n_{f} is the number of the system radio frame containing the current slot, \\mathrm{N}_{\\text {slot }}^{\\text {frame } \\mu} is the number of slots per frame for subcarrier spacing configuration \\mu of the UL BWP that the PUSCH is transmitted on, N_{F H} is the value of the higher layer parameter PUSCH-FrequencyhoppingInterval, \\mathrm{RB}_{\\text {start }} is the starting RB within the UL BWP, as calculated from the resource block assignment information of resource allocation type 1 (described in Clause 6.1.2.2.2) and \\mathrm{RB}_{\\text {offset }} is the frequency offset in RBs between the two frequency hops. 6.3.2 Frequency hopping for PUSCH repetition Type B For PUSCH repetition Type B (as determined according to procedures defined in Clause 6.1.2.1 for scheduled PUSCH, or Clause 6.1.2.3 for configured PUSCH), a UE is configured for frequency hopping by the higher layer parameter frequencyHoppingDCI-0-2 in pusch-Config for PUSCH transmission scheduled by DCI format 0 \\_2 , by frequencyHoppingDCI-0-1 provided in pusch-Config for PUSCH transmission scheduled by DCI format 0 \\_1 , and by frequencyHoppingPUSCH-RepTypeB provided in rrc-ConfiguredUplinkGrant for Type 1 configured PUSCH transmission. The frequency hopping mode for Type 2 configured PUSCH transmission follows the configuration of the activating DCI format. One of two frequency hopping modes can be configured: - Inter-repetition frequency hopping - Inter-slot frequency hopping",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Frequency hopping for PUSCH repetition Type B",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "resourceAllocation"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        545
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "resource allocation"
+    ],
+    "original_sentence": "For operation with shared spectrum channel access, the UE does not expect that two hops of a PUSCH transmission are in different RB sets. In case of resource allocation type 1, whether or not transform precoding is enabled for PUSCH transmission, the UE may perform PUSCH frequency hopping, if the frequency hopping field in a corresponding detected DCI format is set to 1 , or if for a Type 1 PUSCH transmission with a configured grant the higher layer parameter frequencyHoppingPUSCH-RepTypeB is provided, otherwise no PUSCH frequency hopping is performed. When frequency hopping is enabled for PUSCH, the RE mapping is defined in clause 6.3.1.6 of [4, TS 38.211]. For a PUSCH scheduled by DCI format 0 \\_1 or a PUSCH based on a Type 2 configured UL grant activated by DCI format 0 \\_1 and for resource allocation type 1 , frequency offsets are configured by higher layer parameter frequencyHoppingOffsetLists in pusch-Config. For a PUSCH scheduled by DCI format 0 \\_2 or a PUSCH based on a Type 2 configured UL grant activated by DCI format 0 \\_2 and for resource allocation type 1 , frequency offsets are configured by higher layer parameter frequencyHoppingOffsetListsDCI-0-2 in pusch-Config- - When the size of the active BWP is less than 50 PRBs, one of two higher layer configured offsets is indicated in the UL grant. - When the size of the active BWP is equal to or greater than 50 PRBs , one of four higher layer configured offsets is indicated in the UL grant.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "In case",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Frequency hopping for PUSCH repetition Type B",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "original_sentence": "6.1.1 Transmission schemes Two transmission schemes are supported for PUSCH: codebook based transmission and non-codebook based transmission. The UE is configured with codebook based transmission when the higher layer parameter txConfig in pusch-Config is set to 'codebook', the UE is configured non-codebook based transmission when the higher layer parameter txConfig is set to 'nonCodebook'. If the higher layer parameter txConfig is not configured, the UE is not expected to be scheduled by DCI format 0 \\_1 or 0 \\_2 . If PUSCH is scheduled by DCI format 0 \\_0 , the PUSCH transmission is based on a single antenna port. Except if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE shall not expect PUSCH scheduled by DCI format 0 \\_0 in a BWP without configured PUCCH resource with PUCCH-SpatialRelationInfo in frequency range 2 in RRC connected mode. 6.1.1.1 Codebook based UL transmission",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "configured with",
+    "is_self_reference": false,
+    "section_number": "6.1.1",
+    "section_title": "Transmission schemes",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "original_sentence": "configured in srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook'. When only one SRS resource set is configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', SRI and TPMI are given by the DCI fields of one SRS resource indicator and one Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2 or given by srs-ResourceIndicator and precodingAndNumberOfLayers according to clause 6.1.2.3. The TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the SRI when multiple SRS resources are configured, or if a single SRS resource is configured TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. The transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to higher layer parameter nrofSRS-Ports in SRS-Config, as defined in Clause 6.3-1.5 of [4, TS 38.211]. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. The indicated SRI in slot n is associated with the most recent transmission of SRS resource identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-02 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', one or two SRI(s), and one or two TPMI(s) are given by the DCI fields of two SRS resource indicator and two Precoding information and number of layers in clause 7.3.1.1.2 and 7.3.1.1.3 of [5, TS 38.212] for DCI format 0_1 and 0_2. The UE applies the indicated SRI(s) and TPMI(s) to one or more PUSCH repetitions according to the associated SRS resource set of a PUSCH repetition according to clause 6-1.2.1. Each TPMI, based on indicated codepoint of SRS Resource Set indicator, is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource selected by the corresponding SRI when multiple SRS resources are configured for the applicable SRS resource set, or if a single SRS resource is configured for the applicable SRS resource set TPMI is used to indicate the precoder to be applied over the layers \\{0 \\ldots v-1\\} and that corresponds to the SRS resource. For one or two TPMI(s), the transmission precoder is selected from the uplink codebook that has a number of antenna ports equal to the higher layer parameter nrofSRS-Ports in SRS-Config for the indicated SRI(s), as defined in Clause 6.3.1.5 of [4, TS 38.211]. When two SRIs are indicated, the UE shall expect the nrofSRS-Ports for the two indicated SRS resources to be the same. When the UE is configured with the higher layer parameter txConfig set to 'codebook', the UE is configured with at least one SRS resource. Each of the indicated one or two SRI(s) in slot n is associated with the most recent transmission of SRS resource of associated SRS resource set identified by the SRI, where the SRS resource is prior to the PDCCH carrying the SRI. When two SRS resource sets are configured in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with higher layer parameter usage in SRS-ResourceSet set to 'codebook', the UE is not expected to be configured with different number of SRS resources in the two SRS resource sets. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the most recent transmission of SRS resource identified by the SRI, the PDCCH candidate that starts earlier in time is used. For codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format 0 \\_1 and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2. A UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.1.1",
+    "section_title": "Codebook based UL transmission",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        543,
+        544
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "txConfig"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell. The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS. For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format 0 \\_0 or 0 \\_1 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format 0 \\_2 , the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell. ETSI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "constraint_keyword": "according to",
+    "is_self_reference": false,
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        538
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "msg3Alpha"
+    ],
+    "original_sentence": "- For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 ,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        538
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "msg3Alpha"
+    ],
+    "original_sentence": "- For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 ,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "P0-PUSCH"
+    ],
+    "original_sentence": "\\] where P_{0 \\_ \\text {PRE }} is provided by preambleReceivedTargetPower [11, TS 38.321] and \\triangle_{\\text {PREAMBLE_Msg }} is provided by m s g 3 -DeltaPreamble, or \\Delta_{\\text {PREAMBLE,Msg3 }}=0 \\mathrm{~dB} if m s g 3 -DeltaPreamble is not provided, for carrier f of serving cell c - If a UE established dedicated RRC connection using a Type-2 random access procedure, as described in clause 8, and is not provided P0-PUSCH-AlphaSet, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, \\[ j=0, P_{\\mathrm{O}_{-} \\mathrm{UE} \\_\\mathrm{PUSCH}, b, f_{1}, c}(0)=0, \\text { and } P_{\\mathrm{O}_{-} \\mathrm{NOMINAL} \\mathrm{PUSCH}, f_{1} c}(0)=P_{\\mathrm{O}_{-} \\mathrm{PRE}}+\\Delta_{\\mathrm{MsgA}_{-} P U S C H}, \\] where P_{0 \\_ \\text {PRE }} is provided by msgA-preambleReceivedTargetPower, or by preambleReceivedTargetPower if msgA-preambleReceivedTargetPower is not provided and \\Delta_{\\text {Msga_PUSCH }} is provided by msgA-DeltaPreamble, or \\Delta_{\\text {Msga_PUSCH }}=\\Delta_{\\text {PREAMBLE_Msg3 }} \\mathrm{dB} if msgA-DeltaPreamble is not provided, for carrier f of serving cell c - For a PUSCH (re)transmission configured by ConfiguredGrantConfig, j=1, P_{0 \\_ \\text {NOMINAL,PUSCH, } f, c}(1) is provided by p 0 -NominalWithoutGrant, or P_{0 \\_ \\text {NOMINAL }} PUSCH _{1} f_{1} c ~(1)=P_{0 \\_ \\text {NOMINAL PUSCH } f_{1} c}(0) if p 0 NominalWithoutGrant is not provided. - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) value is provided by the value of p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "22 ETSI TS 138213 V17.1.0 (2022-05) - If the SRS resource set indicator value is 10 or 11 , first and second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) is provided by p 0 obtained from p 0 -PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by p 0- PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in\\{2, \\ldots, J-1\\}=S_{J} , a P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) value, applicable for all j \\in S_{J} , is provided by p 0 provided, for each carrier f of serving cell c and a set of P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) values are provided by a set of p 0 in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "P0-PUSCH"
+    ],
+    "original_sentence": "24 ETSI TS 138213 V17.1.0 (2022-05) - second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID value in p0-PUSCH-SetList and second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID in p0-PUSCH-SetList2, respectively, if the open-loop power control parameter set indication value is ' 10 ' or ' 11 ' - else, the UE determines first and second values P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) from the value of the first and second P0-PUSCH-AlphaSet in p0-AlphaSets, respectively - For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "P0-PUSCH"
+    ],
+    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID value in p0-PUSCH-SetList and second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID in p0-PUSCH-SetList2, respectively, if the open-loop power control parameter set indication value is ' 10 ' or ' 11 ' - else, the UE determines first and second values P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) from the value of the first and second P0-PUSCH-AlphaSet in p0-AlphaSets, respectively - For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - If the SRS resource set indicator value is 10 or 11 , first and second \\alpha_{b, f, c}(1) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\alpha_{b, f, c}(1) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in S_{J} , a set of \\alpha_{b_{, f, c}}(j) values are provided by a set of alpha in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "- else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - If the SRS resource set indicator value is 10 or 11 , first and second \\alpha_{b, f, c}(1) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig- - else \\alpha_{b, f, c}(1) is provided by alpha obtained from p0-PUSCH-Alpha in ConfiguredGrantConfig providing an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by alpha for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in S_{J} , a set of \\alpha_{b_{, f, c}}(j) values are provided by a set of alpha in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c - If the UE is provided SRI-PUSCH-PowerControl and more than one values of p0-PUSCH-AlphaSetld in p0-AlphaSets,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "- If j>1 and the UE is not provided SRI-PUSCH-PowerControl or j=0, l=1 if P_{0 \\_ \\text {UE_PusCH }, b, f, c}(j) and \\alpha_{b, f, c}(j) are provided by the second P 0-P U S C H- AlphaSet in p 0- AlphaSets ; otherwise, l=0 - \\quad If j=1 , - l is provided by the value of powerControlLoopTo Use if P_{0_{-} \\cup E_{-} \\mathrm{PuSCH}, b, f, c}(1) and \\alpha_{b_{1}, f, c}(1) are provided by p0-PUSCH-Alpha in ConfiguredGrantConfig - l is provided by the value of powerControlLoopToUse 2 if P_{\\mathrm{O}_{-} \\mathrm{UE} \\_ \\text {PusCH }, b, f, c}(1) and \\alpha_{b_{1}, f, c}(1) are provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig - f_{b, f, c}(i, l)=\\delta_{\\text {PUSCH }, b, f, c}(i, l) is the PUSCH power control adjustment state for active UL BWP b of carrier f of serving cell c and PUSCH transmission occasion i if the UE is provided tpc-Accumulation, where",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "PUSCH-Config"
+    ],
+    "original_sentence": "- in clause 7.2.1, if p 0 -Alpha-CLID-PUCCHSet is provided, the values of P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) and the PUCCH power control adjustment state l are provided by p0-Alpha-CLID-PUCCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate - in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "PUSCH-Config"
+    ],
+    "original_sentence": "- in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "txConfig"
+    ],
+    "original_sentence": "- in clause 7.2.1, if p 0 -Alpha-CLID-PUCCHSet is provided, the values of P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) and the PUCCH power control adjustment state l are provided by p0-Alpha-CLID-PUCCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate - in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "txConfig"
+    ],
+    "original_sentence": "- in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "msg3-Alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        538
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "msg3Alpha",
+      "P0-PUSCH"
+    ],
+    "original_sentence": "24 ETSI TS 138213 V17.1.0 (2022-05) - second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID value in p0-PUSCH-SetList and second value in P0-PUSCH-Set with the lowest p0-PUSCH-SetID in p0-PUSCH-SetList2, respectively, if the open-loop power control parameter set indication value is ' 10 ' or ' 11 ' - else, the UE determines first and second values P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) from the value of the first and second P0-PUSCH-AlphaSet in p0-AlphaSets, respectively - For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 ,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "pusch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        542
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "PUSCH-PathlossReferenceRS"
+    ],
+    "original_sentence": "25 ETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "pusch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        542
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "PUSCH-PathlossReferenceRS"
+    ],
+    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "pusch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        542
+      ]
+    ],
+    "matched_fields": [
+      "P0-PUSCH",
+      "PUSCH-PathlossReferenceRS"
+    ],
+    "original_sentence": "- the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "reference signal"
+    ],
+    "original_sentence": "25 ETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "reference signal"
+    ],
+    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "P0-PUSCH",
+      "reference signal"
+    ],
+    "original_sentence": "- the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "pusch-PathlossReferenceRS-Id"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        542
+      ]
+    ],
+    "matched_fields": [
+      "pusch-Config",
+      "pusch-PathlossReferenceRS-Id"
+    ],
+    "original_sentence": "P H_{\\text {type } 1 b, f, c}\\left(i, j, q_{d}, l\\right)=\\widetilde{P}_{\\mathrm{CMAX}, f, c}(i)-\\left\\{P_{\\mathrm{O} >= \\mathrm{PUSCH} b, f, c}(j)+\\alpha_{b, f, c}(j) \\cdot P L_{b, f, c}\\left(q_{d}\\right)+f_{b, f, c}(i, l)\\right\\} \\] where \\tilde{P}_{\\mathrm{CMAX}, f_{,} c}(i) is computed assuming \\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{~A}-\\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{P}-\\mathrm{MPR}=0 \\mathrm{~dB} . \\triangle \\mathrm{T}_{\\mathrm{C}}=0 \\mathrm{~dB} . MPR, A-MPR, PMPR and \\Delta \\mathrm{T}_{\\mathrm{C}} are defined in [8-1, TS 38.101-1], [8-2, TS38.101-2] and [8-3, TS 38.101-3]. The remaining parameters are defined in clause 7.1.1 where P_{0 \\_ \\text {PUSCH }, b, f, c}(j) and \\alpha_{b_{1}, c, c}(j) are obtained using P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f, c}(0) and p 0 -PUSCH-AlphaSetld =0, P L_{b_{1} f_{1} c}\\left(q_{d}\\right) is obtained using pusch-PathlossReferenceRS-Id =0 , and l=0 . If a UE is configured with two UL carriers for a serving cell and the UE determines a Type 1 power headroom report for the serving cell based on a reference PUSCH transmission, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the UL carrier provided by pusch-Config. If the UE is provided pusch-Config for both UL carriers, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the UL carrier provided by pucch-Config. If pucch-Config is not provided to the UE for any of the two UL carriers, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the non-supplementary UL carrier. If a UE transmits a PUSCH associated with a RS resource index q_{d} , as described in clause 7.1.1, on active UL BWP b of carrier f of serving cell c in slot n and provides a Type 1 power headroom report for an actual PUSCH repetition associated with the RS resource index q_{d} , the Type 1 power headroom report is for the first PUSCH repetition associated with the RS resource index q_{d} that overlaps with slot n .",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "7.7.1",
+    "section_title": "Type 1 PH report",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-Config",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        535
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "PUSCH-Config",
+      "txConfig"
+    ],
+    "original_sentence": "7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1",
+    "section_title": "Physical uplink shared channel",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pusch-PathlossReferenceRS-Id",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        542
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "PUSCH-PathlossReferenceRS",
+      "reference signal"
+    ],
+    "original_sentence": "- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index q_{d} as for a corresponding PRACH transmission",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        538
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "original_sentence": "\\begin{tabular}{l} msgA-Alpha Dedicated alpha value for MsgA PUSCH. If the field is absent, the UE shall use the value of msg3-Alpha if configured, else UE applies value 1 (see TS 38.213 [13], clause 7.1.1). \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        538
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "original_sentence": "\\begin{tabular}{l} msg3-Alpha Dedicated alpha value for msg3 PUSCH (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 1. \\end{tabular} \\begin{tabular}{l} olpc-ParameterSetDCI-0-1, olpc-ParameterSetDCI-0-2 Configures the number of bits for Open-loop power control parameter set indication for DCI format 0_1/0_2 in case SRI is not configured in the DCI. 2 bits is applicable only if SRI is not present in the DCI format 0 \\_1 . The field olpc-ParameterSetDCI-0-1 applies to DCI format 0 \\_1 and the field olpc-ParameterSetDCI-0-2 applies to DCI format 0 \\_2 (see TS 38.212 [17], clause 7.3.1 and TS 38.213 [13], clause 11). \\end{tabular} \\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        538
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "msg3-Alpha"
+    ],
+    "original_sentence": "\\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "\\begin{tabular}{l} p0-PUSCH-Alpha2 Index of the PO-PUSCH-AlphaSet to be used for second SRS resource set. If this field is present, the p0-PUSCH-Alpha provides index for the P0-PUSCH-AlphaSet to be used for first SRS resource set. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "p0-PUSCH"
+    ],
+    "original_sentence": "\\begin{tabular}{l} sdt-P0-PUSCH Indicates P0 value for PUSCH for CG SDT in steps of 1dB (see TS 38.213 [13]). When this field is configured, the UE ignores the p0-PUSCH-Alpha. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "P0-PUSCH"
+    ],
+    "original_sentence": "\\begin{tabular}{|l|} P0-PUSCH-AlphaSet field descriptions \\begin{tabular}{l} alpha alpha value for PUSCH with grant (except msg3) (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 1. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "p0-pusch"
+    ],
+    "original_sentence": "\\begin{tabular}{l} msg3-Alpha Dedicated alpha value for msg3 PUSCH (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 1. \\end{tabular} \\begin{tabular}{l} olpc-ParameterSetDCI-0-1, olpc-ParameterSetDCI-0-2 Configures the number of bits for Open-loop power control parameter set indication for DCI format 0_1/0_2 in case SRI is not configured in the DCI. 2 bits is applicable only if SRI is not present in the DCI format 0 \\_1 . The field olpc-ParameterSetDCI-0-1 applies to DCI format 0 \\_1 and the field olpc-ParameterSetDCI-0-2 applies to DCI format 0 \\_2 (see TS 38.212 [17], clause 7.3.1 and TS 38.213 [13], clause 11). \\end{tabular} \\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "p0-pusch"
+    ],
+    "original_sentence": "\\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "reference signal"
+    ],
+    "original_sentence": "\\begin{tabular}{l} pathlossReferenceindex2 Indicates the reference signal used as PUSCH pathloss reference for the second SRS resource set. When this field is present, pathlossReferencelndex indicates the reference signal used as PUSCH pathloss reference for the first SRS resource set \\end{tabular} \\begin{tabular}{l} p0-PUSCH-Alpha Index of the PO-PUSCH-AlphaSet to be used for this configuration. \\end{tabular} \\begin{tabular}{l} p0-PUSCH-Alpha2 Index of the PO-PUSCH-AlphaSet to be used for second SRS resource set. If this field is present, the p0-PUSCH-Alpha provides index for the P0-PUSCH-AlphaSet to be used for first SRS resource set. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "txConfig"
+    ],
+    "field_ids": [
+      [
+        541
+      ],
+      [
+        536
+      ]
+    ],
+    "matched_fields": [
+      "alpha",
+      "TxConfig"
+    ],
+    "original_sentence": "\\begin{tabular}{l} di-Alpha-PSBCH Indicates alpha value for DL pathloss based power control for PSBCH. When the field is not configured the UE applies the value 1 \\end{tabular} \\begin{tabular}{l} dI-P0-PSBCH Indicates P0 value for DL pathloss based power control for PSBCH. If not configured, DL pathloss based power control is disabled for PSBCH. \\end{tabular} \\end{tabular} - SL-PSSCH-TxConfigList The IE SL-PSSCH-TxConfigList indicates PSSCH transmission parameters. When lower layers select parameters from the range indicated in IE SL-PSSCH-TxConfigList, the UE considers both configurations in IE SL-PSSCH-TxConfigList and the CBR-dependent configurations represented in IE SL-CBR-PriorityTxConfigList. Only one IE SL-PSSCH-TxConfig is provided per SL-TypeTxSync. SL-PSSCH-TxConfigList information element",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.5",
+    "section_title": "Sidelink information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "dmrs-UplinkForPUSCH-MappingTypeB",
+      "pusch-Config"
+    ],
+    "field_ids": [
+      [
+        537
+      ],
+      [
+        535
+      ]
+    ],
+    "matched_fields": [
+      "dmrs-UplinkForPUSCH",
+      "PUSCH-Config"
+    ],
+    "original_sentence": "\\begin{tabular}{|l|} PUSCH-Config field descriptions \\begin{tabular}{l} antennaPortsFieldPresenceDCI-0-2 Configure the presence of \"Antenna ports\" field in DCI format 0_2. When the field is configured, then the \"Antenna ports\" field is present in DCI format 0_2. Otherwise, the field size is set to 0 for DCI format 0 \\_2 (See TS 38.212 [17], clause 7.3.1.1.3). If neither dmrs-UplinkForPUSCH-MappingTypeA-DCI-0-2 nor dmrs-UplinkForPUSCH- MappingTypeB-DCI-O-2 is configured, this field is absent. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "msg3-Alpha",
+      "p0-PUSCH-AlphaSetId"
+    ],
+    "field_ids": [
+      [
+        538
+      ],
+      [
+        539
+      ]
+    ],
+    "matched_fields": [
+      "msg3-Alpha",
+      "p0-pusch"
+    ],
+    "original_sentence": "\\begin{tabular}{l} p0-AlphaSets configuration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH. \\end{tabular} \\begin{tabular}{l}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "p0-PUSCH-AlphaSetId",
+      "referenceSignal"
+    ],
+    "field_ids": [
+      [
+        539
+      ],
+      [
+        543,
+        544
+      ]
+    ],
+    "matched_fields": [
+      "p0-PUSCH",
+      "reference signal"
+    ],
+    "original_sentence": "\\begin{tabular}{l} pathlossReferenceindex2 Indicates the reference signal used as PUSCH pathloss reference for the second SRS resource set. When this field is present, pathlossReferencelndex indicates the reference signal used as PUSCH pathloss reference for the first SRS resource set \\end{tabular} \\begin{tabular}{l} p0-PUSCH-Alpha Index of the PO-PUSCH-AlphaSet to be used for this configuration. \\end{tabular} \\begin{tabular}{l} p0-PUSCH-Alpha2 Index of the PO-PUSCH-AlphaSet to be used for second SRS resource set. If this field is present, the p0-PUSCH-Alpha provides index for the P0-PUSCH-AlphaSet to be used for first SRS resource set. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

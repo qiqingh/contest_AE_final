@@ -1,0 +1,157 @@
+ServingCellConfig ::=               SEQUENCE {
+    tdd-UL-DL-ConfigurationDedicated    TDD-UL-DL-ConfigDedicated                                                OPTIONAL,   -- Cond TDD
+    initialDownlinkBWP                  BWP-DownlinkDedicated                                                    OPTIONAL,   -- Need M
+    downlinkBWP-ToReleaseList           SEQUENCE (SIZE (1..maxNrofBWPs)) OF BWP-Id                               OPTIONAL,   -- Need N
+    downlinkBWP-ToAddModList            SEQUENCE (SIZE (1..maxNrofBWPs)) OF BWP-Downlink                         OPTIONAL,   -- Need N
+    firstActiveDownlinkBWP-Id           BWP-Id                                                                   OPTIONAL,   -- Cond SyncAndCellAdd
+    bwp-InactivityTimer                 ENUMERATED {ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30,
+                                                    ms40,ms50, ms60, ms80,ms100, ms200,ms300, ms500,
+                                                    ms750, ms1280, ms1920, ms2560, spare10, spare9, spare8,
+                                                    spare7, spare6, spare5, spare4, spare3, spare2, spare1 }    OPTIONAL,   --Need R
+    defaultDownlinkBWP-Id               BWP-Id                                                                  OPTIONAL,   -- Need S
+    uplinkConfig                        UplinkConfig                                                            OPTIONAL,   -- Need M
+    supplementaryUplink                 UplinkConfig                                                            OPTIONAL,   -- Need M
+    pdcch-ServingCellConfig             SetupRelease { PDCCH-ServingCellConfig }                                OPTIONAL,   -- Need M
+    pdsch-ServingCellConfig             SetupRelease { PDSCH-ServingCellConfig }                                OPTIONAL,   -- Need M
+    csi-MeasConfig                      SetupRelease { CSI-MeasConfig }                                         OPTIONAL,   -- Need M
+    sCellDeactivationTimer              ENUMERATED {ms20, ms40, ms80, ms160, ms200, ms240,
+                                                    ms320, ms400, ms480, ms520, ms640, ms720,
+                                                    ms840, ms1280, spare2,spare1}       OPTIONAL,   -- Cond ServingCellWithoutPUCCH
+    crossCarrierSchedulingConfig        CrossCarrierSchedulingConfig                                            OPTIONAL,   -- Need M
+    tag-Id                              TAG-Id,
+    dummy1                              ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    pathlossReferenceLinking            ENUMERATED {spCell, sCell}                                              OPTIONAL,   -- Cond SCellOnly
+    servingCellMO                       MeasObjectId                                                            OPTIONAL,   -- Cond MeasObject
+    ...,
+    [[
+    lte-CRS-ToMatchAround               SetupRelease { RateMatchPatternLTE-CRS }                                OPTIONAL,   -- Need M
+    rateMatchPatternToAddModList        SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPattern       OPTIONAL,   -- Need N
+    rateMatchPatternToReleaseList       SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPatternId     OPTIONAL,   -- Need N
+    downlinkChannelBW-PerSCS-List       SEQUENCE (SIZE (1..maxSCSs)) OF SCS-SpecificCarrier                     OPTIONAL    -- Need S
+    ]],
+    [[
+    supplementaryUplinkRelease-r16      ENUMERATED {true}                                                       OPTIONAL,   -- Need N
+    tdd-UL-DL-ConfigurationDedicated-IAB-MT-r16    TDD-UL-DL-ConfigDedicated-IAB-MT-r16                         OPTIONAL,   -- Cond TDD_IAB
+    dormantBWP-Config-r16               SetupRelease { DormantBWP-Config-r16 }                                  OPTIONAL,   -- Need M
+    ca-SlotOffset-r16                   CHOICE {
+        refSCS15kHz                         INTEGER (-2..2),
+        refSCS30KHz                         INTEGER (-5..5),
+        refSCS60KHz                         INTEGER (-10..10),
+        refSCS120KHz                        INTEGER (-20..20)
+    }                                                                                                           OPTIONAL,   -- Cond AsyncCA
+    dummy2                              SetupRelease { DummyJ }                                                 OPTIONAL,   -- Need M
+    intraCellGuardBandsDL-List-r16      SEQUENCE (SIZE (1..maxSCSs)) OF IntraCellGuardBandsPerSCS-r16           OPTIONAL,   -- Need S
+    intraCellGuardBandsUL-List-r16      SEQUENCE (SIZE (1..maxSCSs)) OF IntraCellGuardBandsPerSCS-r16           OPTIONAL,   -- Need S
+    csi-RS-ValidationWithDCI-r16        ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    lte-CRS-PatternList1-r16            SetupRelease { LTE-CRS-PatternList-r16 }                                OPTIONAL,   -- Need M
+    lte-CRS-PatternList2-r16            SetupRelease { LTE-CRS-PatternList-r16 }                                OPTIONAL,   -- Need M
+    crs-RateMatch-PerCORESETPoolIndex-r16  ENUMERATED {enabled}                                                 OPTIONAL,   -- Need R
+    enableTwoDefaultTCI-States-r16      ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    enableDefaultTCI-StatePerCoresetPoolIndex-r16 ENUMERATED {enabled}                                          OPTIONAL,   -- Need R
+    enableBeamSwitchTiming-r16          ENUMERATED {true}                                                       OPTIONAL,   -- Need R
+    cbg-TxDiffTBsProcessingType1-r16    ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    cbg-TxDiffTBsProcessingType2-r16    ENUMERATED {enabled}                                                    OPTIONAL    -- Need R
+    ]],
+    [[
+    directionalCollisionHandling-r16    ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    channelAccessConfig-r16             SetupRelease { ChannelAccessConfig-r16 }                                OPTIONAL    -- Need M
+    ]],
+    [[
+    nr-dl-PRS-PDC-Info-r17                 SetupRelease {NR-DL-PRS-PDC-Info-r17}                                OPTIONAL,   -- Need M
+    semiStaticChannelAccessConfigUE-r17    SetupRelease {SemiStaticChannelAccessConfigUE-r17}                   OPTIONAL,   -- Need M
+    mimoParam-r17                       SetupRelease {MIMOParam-r17}                                            OPTIONAL,   -- Need M
+    channelAccessMode2-r17              ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    timeDomainHARQ-BundlingType1-r17    ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    nrofHARQ-BundlingGroups-r17         ENUMERATED {n1, n2, n4}                                                 OPTIONAL,   -- Need R
+    fdmed-ReceptionMulticast-r17        ENUMERATED {true}                                                       OPTIONAL,   -- Need R
+    moreThanOneNackOnlyMode-r17         ENUMERATED {mode2}                                                      OPTIONAL,   -- Need S
+    tci-ActivatedConfig-r17             TCI-ActivatedConfig-r17                                                 OPTIONAL,   -- Cond TCI_ActivatedConfig
+    directionalCollisionHandling-DC-r17 ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    lte-NeighCellsCRS-AssistInfoList-r17  SetupRelease { LTE-NeighCellsCRS-AssistInfoList-r17 }                 OPTIONAL    -- Need M
+    ]],
+    [[
+    lte-NeighCellsCRS-Assumptions-r17   ENUMERATED {false}                                                      OPTIONAL    -- Need R
+    ]]
+}
+
+UplinkConfig ::=                    SEQUENCE {
+    initialUplinkBWP                    BWP-UplinkDedicated                                                     OPTIONAL,   -- Need M
+    uplinkBWP-ToReleaseList             SEQUENCE (SIZE (1..maxNrofBWPs)) OF BWP-Id                              OPTIONAL,   -- Need N
+    uplinkBWP-ToAddModList              SEQUENCE (SIZE (1..maxNrofBWPs)) OF BWP-Uplink                          OPTIONAL,   -- Need N
+    firstActiveUplinkBWP-Id             BWP-Id                                                                  OPTIONAL,   -- Cond SyncAndCellAdd
+    pusch-ServingCellConfig             SetupRelease { PUSCH-ServingCellConfig }                                OPTIONAL,   -- Need M
+    carrierSwitching                    SetupRelease { SRS-CarrierSwitching }                                   OPTIONAL,   -- Need M
+    ...,
+    [[
+    powerBoostPi2BPSK                   BOOLEAN                                                                 OPTIONAL,   -- Need M
+    uplinkChannelBW-PerSCS-List         SEQUENCE (SIZE (1..maxSCSs)) OF SCS-SpecificCarrier                     OPTIONAL    -- Need S
+    ]],
+    [[
+    enablePL-RS-UpdateForPUSCH-SRS-r16  ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    enableDefaultBeamPL-ForPUSCH0-0-r16 ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    enableDefaultBeamPL-ForPUCCH-r16    ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    enableDefaultBeamPL-ForSRS-r16      ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    uplinkTxSwitching-r16               SetupRelease { UplinkTxSwitching-r16 }                                  OPTIONAL,   -- Need M
+    mpr-PowerBoost-FR2-r16              ENUMERATED {true}                                                       OPTIONAL    -- Need R
+    ]]
+}
+
+DummyJ ::=                          SEQUENCE {
+    maxEnergyDetectionThreshold-r16         INTEGER(-85..-52),
+    energyDetectionThresholdOffset-r16      INTEGER (-20..-13),
+    ul-toDL-COT-SharingED-Threshold-r16     INTEGER (-85..-52)                                                  OPTIONAL,   -- Need R
+    absenceOfAnyOtherTechnology-r16         ENUMERATED {true}                                                   OPTIONAL    -- Need R
+}
+
+ChannelAccessConfig-r16 ::=         SEQUENCE {
+    energyDetectionConfig-r16           CHOICE {
+        maxEnergyDetectionThreshold-r16         INTEGER (-85..-52),
+        energyDetectionThresholdOffset-r16      INTEGER (-13..20)
+    }                                                                                                           OPTIONAL,   -- Need R
+    ul-toDL-COT-SharingED-Threshold-r16         INTEGER (-85..-52)                                              OPTIONAL,   -- Need R
+    absenceOfAnyOtherTechnology-r16             ENUMERATED {true}                                               OPTIONAL    -- Need R
+}
+
+IntraCellGuardBandsPerSCS-r16 ::=      SEQUENCE {
+    guardBandSCS-r16                       SubcarrierSpacing,
+    intraCellGuardBands-r16                SEQUENCE (SIZE (1..4)) OF GuardBand-r16
+}
+
+GuardBand-r16 ::=                      SEQUENCE {
+     startCRB-r16                          INTEGER (0..274),
+     nrofCRBs-r16                          INTEGER (0..15)
+}
+
+DormancyGroupID-r16 ::=         INTEGER (0..4)
+
+DormantBWP-Config-r16::=               SEQUENCE {
+    dormantBWP-Id-r16                      BWP-Id                                                           OPTIONAL,   -- Need M
+    withinActiveTimeConfig-r16             SetupRelease { WithinActiveTimeConfig-r16 }                      OPTIONAL,   -- Need M
+    outsideActiveTimeConfig-r16            SetupRelease { OutsideActiveTimeConfig-r16 }                     OPTIONAL    -- Need M
+}
+
+WithinActiveTimeConfig-r16 ::=         SEQUENCE {
+   firstWithinActiveTimeBWP-Id-r16         BWP-Id                                                           OPTIONAL,   -- Need M
+   dormancyGroupWithinActiveTime-r16       DormancyGroupID-r16                                              OPTIONAL    -- Need R
+}
+
+OutsideActiveTimeConfig-r16 ::=        SEQUENCE {
+   firstOutsideActiveTimeBWP-Id-r16        BWP-Id                                                           OPTIONAL,   -- Need M
+   dormancyGroupOutsideActiveTime-r16      DormancyGroupID-r16                                              OPTIONAL    -- Need R
+}
+
+UplinkTxSwitching-r16 ::=              SEQUENCE {
+    uplinkTxSwitchingPeriodLocation-r16    BOOLEAN,
+    uplinkTxSwitchingCarrier-r16           ENUMERATED {carrier1, carrier2}
+}
+
+MIMOParam-r17 ::= SEQUENCE {
+    additionalPCI-ToAddModList-r17     SEQUENCE (SIZE(1..maxNrofAdditionalPCI-r17)) OF SSB-MTC-AdditionalPCI-r17  OPTIONAL,   -- Need N
+    additionalPCI-ToReleaseList-r17    SEQUENCE (SIZE(1..maxNrofAdditionalPCI-r17)) OF AdditionalPCIIndex-r17     OPTIONAL,   -- Need N
+    unifiedTCI-StateType-r17           ENUMERATED {separate, joint}                                         OPTIONAL,   -- Need R
+    uplink-PowerControlToAddModList-r17  SEQUENCE (SIZE (1..maxUL-TCI-r17)) OF Uplink-powerControl-r17      OPTIONAL,   -- Need N
+    uplink-PowerControlToReleaseList-r17 SEQUENCE (SIZE (1..maxUL-TCI-r17)) OF Uplink-powerControlId-r17    OPTIONAL,   -- Need N
+    sfnSchemePDCCH-r17                 ENUMERATED {sfnSchemeA,sfnSchemeB}                                   OPTIONAL,   -- Need R
+    sfnSchemePDSCH-r17                 ENUMERATED {sfnSchemeA,sfnSchemeB}                                   OPTIONAL    -- Need R
+
+}

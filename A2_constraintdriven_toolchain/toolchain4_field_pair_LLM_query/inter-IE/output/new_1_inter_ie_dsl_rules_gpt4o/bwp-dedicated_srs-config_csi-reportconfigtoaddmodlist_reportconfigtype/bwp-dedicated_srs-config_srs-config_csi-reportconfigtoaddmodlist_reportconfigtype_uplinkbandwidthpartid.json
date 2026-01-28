@@ -1,0 +1,97 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      440,
+      548,
+      656
+    ],
+    "field2_all": [
+      828,
+      852,
+      867,
+      891,
+      906,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          440,
+          548,
+          656
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ],
+      [
+        [
+          440,
+          548,
+          656
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the fields 'srs-config' and 'uplinkbandwidthpartid' across different IEs. The evidence only describes single-IE behavior.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_srs-config",
+    "field1": "srs-config",
+    "ie2_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field2": "uplinkbandwidthpartid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "The ID of this resource set. It is unique in the context of the BWP in which the parent SRS-Config is defined.",
+    "generated_at": "2026-01-09T12:03:07.251086",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the fields 'srs-config' and 'uplinkbandwidthpartid' across different IEs. The evidence only describes single-IE behavior.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

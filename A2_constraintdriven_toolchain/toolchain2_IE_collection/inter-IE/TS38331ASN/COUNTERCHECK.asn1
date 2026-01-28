@@ -1,0 +1,21 @@
+CounterCheck ::=                SEQUENCE {
+    rrc-TransactionIdentifier       RRC-TransactionIdentifier,
+    criticalExtensions              CHOICE {
+        counterCheck                    CounterCheck-IEs,
+        criticalExtensionsFuture        SEQUENCE {}
+    }
+}
+
+CounterCheck-IEs ::=            SEQUENCE {
+    drb-CountMSB-InfoList           DRB-CountMSB-InfoList,
+    lateNonCriticalExtension        OCTET STRING                        OPTIONAL,
+    nonCriticalExtension            SEQUENCE {}                         OPTIONAL
+}
+
+DRB-CountMSB-InfoList ::=       SEQUENCE (SIZE (1..maxDRB)) OF DRB-CountMSB-Info
+
+DRB-CountMSB-Info ::=           SEQUENCE {
+    drb-Identity                    DRB-Identity,
+    countMSB-Uplink                 INTEGER(0..33554431),
+    countMSB-Downlink               INTEGER(0..33554431)
+}

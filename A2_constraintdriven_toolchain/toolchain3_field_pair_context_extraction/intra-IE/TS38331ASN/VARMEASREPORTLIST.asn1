@@ -1,0 +1,28 @@
+VarMeasReportList ::=               SEQUENCE (SIZE (1..maxNrofMeasId)) OF VarMeasReport
+
+VarMeasReport ::=                   SEQUENCE {
+    -- List of measurement that have been triggered
+    measId                              MeasId,
+    cellsTriggeredList                  CellsTriggeredList              OPTIONAL,
+    numberOfReportsSent                 INTEGER,
+    cli-TriggeredList-r16               CLI-TriggeredList-r16           OPTIONAL,
+    tx-PoolMeasToAddModListNR-r16       Tx-PoolMeasList-r16             OPTIONAL,
+    relaysTriggeredList-r17             RelaysTriggeredList-r17         OPTIONAL
+}
+
+CellsTriggeredList ::=              SEQUENCE (SIZE (1..maxNrofCellMeas)) OF CHOICE {
+    physCellId                          PhysCellId,
+    physCellIdEUTRA                     EUTRA-PhysCellId,
+    physCellIdUTRA-FDD-r16              PhysCellIdUTRA-FDD-r16
+    }
+
+CLI-TriggeredList-r16 ::=           CHOICE {
+    srs-RSRP-TriggeredList-r16          SRS-RSRP-TriggeredList-r16,
+    cli-RSSI-TriggeredList-r16          CLI-RSSI-TriggeredList-r16
+    }
+
+SRS-RSRP-TriggeredList-r16 ::=      SEQUENCE (SIZE (1.. maxNrofCLI-SRS-Resources-r16)) OF SRS-ResourceId
+
+CLI-RSSI-TriggeredList-r16 ::=      SEQUENCE (SIZE (1.. maxNrofCLI-RSSI-Resources-r16)) OF RSSI-ResourceId-r16
+
+RelaysTriggeredList-r17 ::=         SEQUENCE (SIZE (1.. maxNrofRelayMeas-r17)) OF SL-SourceIdentity-r17

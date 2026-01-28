@@ -1,0 +1,72 @@
+MeasAndMobParametersMRDC ::=            SEQUENCE {
+    measAndMobParametersMRDC-Common         MeasAndMobParametersMRDC-Common                 OPTIONAL,
+    measAndMobParametersMRDC-XDD-Diff       MeasAndMobParametersMRDC-XDD-Diff               OPTIONAL,
+    measAndMobParametersMRDC-FRX-Diff       MeasAndMobParametersMRDC-FRX-Diff               OPTIONAL
+}
+
+MeasAndMobParametersMRDC-v1560 ::=      SEQUENCE {
+    measAndMobParametersMRDC-XDD-Diff-v1560    MeasAndMobParametersMRDC-XDD-Diff-v1560      OPTIONAL
+}
+
+MeasAndMobParametersMRDC-v1610 ::=      SEQUENCE {
+    measAndMobParametersMRDC-Common-v1610      MeasAndMobParametersMRDC-Common-v1610        OPTIONAL,
+    interNR-MeasEUTRA-IAB-r16                  ENUMERATED {supported}                       OPTIONAL
+}
+
+MeasAndMobParametersMRDC-v1700 ::=      SEQUENCE {
+    measAndMobParametersMRDC-Common-v1700      MeasAndMobParametersMRDC-Common-v1700        OPTIONAL
+}
+
+MeasAndMobParametersMRDC-v1730 ::=      SEQUENCE {
+    measAndMobParametersMRDC-Common-v1730   MeasAndMobParametersMRDC-Common-v1730           OPTIONAL
+}
+
+MeasAndMobParametersMRDC-Common ::=     SEQUENCE {
+    independentGapConfig                    ENUMERATED {supported}                          OPTIONAL
+}
+
+MeasAndMobParametersMRDC-Common-v1610 ::=   SEQUENCE {
+    condPSCellChangeParametersCommon-r16        SEQUENCE {
+        condPSCellChangeFDD-TDD-r16                 ENUMERATED {supported}                  OPTIONAL,
+        condPSCellChangeFR1-FR2-r16                 ENUMERATED {supported}                  OPTIONAL
+    }                                                                                       OPTIONAL,
+    pscellT312-r16                              ENUMERATED {supported}                      OPTIONAL
+}
+
+MeasAndMobParametersMRDC-Common-v1700 ::=   SEQUENCE {
+    condPSCellChangeParameters-r17              SEQUENCE {
+        inter-SN-condPSCellChangeFDD-TDD-NRDC-r17       ENUMERATED {supported}              OPTIONAL,
+        inter-SN-condPSCellChangeFR1-FR2-NRDC-r17       ENUMERATED {supported}              OPTIONAL,
+        inter-SN-condPSCellChangeFDD-TDD-ENDC-r17       ENUMERATED {supported}              OPTIONAL,
+        inter-SN-condPSCellChangeFR1-FR2-ENDC-r17       ENUMERATED {supported}              OPTIONAL,
+        mn-InitiatedCondPSCellChange-FR1FDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL,
+        mn-InitiatedCondPSCellChange-FR1TDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL,
+        mn-InitiatedCondPSCellChange-FR2TDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL,
+        sn-InitiatedCondPSCellChange-FR1FDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL,
+        sn-InitiatedCondPSCellChange-FR1TDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL,
+        sn-InitiatedCondPSCellChange-FR2TDD-ENDC-r17    ENUMERATED {supported}              OPTIONAL
+    }                                                                                       OPTIONAL,
+    condHandoverWithSCG-ENDC-r17                        ENUMERATED {supported}              OPTIONAL,
+    condHandoverWithSCG-NEDC-r17                        ENUMERATED {supported}              OPTIONAL
+}
+
+MeasAndMobParametersMRDC-Common-v1730 ::= SEQUENCE {
+    independentGapConfig-maxCC-r17          SEQUENCE {
+        fr1-Only-r17                            INTEGER (1..32)                             OPTIONAL,
+        fr2-Only-r17                            INTEGER (1..32)                             OPTIONAL,
+        fr1-AndFR2-r17                          INTEGER (1..32)                             OPTIONAL
+    }
+}
+
+MeasAndMobParametersMRDC-XDD-Diff ::=   SEQUENCE {
+    sftd-MeasPSCell                         ENUMERATED {supported}                          OPTIONAL,
+    sftd-MeasNR-Cell                        ENUMERATED {supported}                          OPTIONAL
+}
+
+MeasAndMobParametersMRDC-XDD-Diff-v1560 ::=    SEQUENCE {
+    sftd-MeasPSCell-NEDC                           ENUMERATED {supported}                   OPTIONAL
+}
+
+MeasAndMobParametersMRDC-FRX-Diff ::=          SEQUENCE {
+    simultaneousRxDataSSB-DiffNumerology           ENUMERATED {supported}                   OPTIONAL
+}

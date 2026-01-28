@@ -1,0 +1,15 @@
+ULInformationTransferIRAT-r16 ::=              SEQUENCE {
+    criticalExtensions                                CHOICE {
+        c1                                                   CHOICE {
+            ulInformationTransferIRAT-r16                    ULInformationTransferIRAT-r16-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture                     SEQUENCE {}
+    }
+}
+
+ULInformationTransferIRAT-r16-IEs ::=        SEQUENCE {
+    ul-DCCH-MessageEUTRA-r16                           OCTET STRING             OPTIONAL,
+    lateNonCriticalExtension                           OCTET STRING              OPTIONAL,
+    nonCriticalExtension                                SEQUENCE {}               OPTIONAL
+}

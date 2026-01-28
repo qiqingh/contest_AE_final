@@ -1,0 +1,83 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      271
+    ],
+    "field2_all": [
+      69,
+      70,
+      134,
+      135,
+      199,
+      200,
+      264,
+      265
+    ],
+    "actual_pairs": [
+      [
+        [
+          271
+        ],
+        [
+          69,
+          70,
+          134,
+          135,
+          199,
+          200,
+          264,
+          265
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'firstactivedownlinkbwp-id' and 'referencesignal'. The evidence describes behavior related to radio link monitoring but does not explicitly relate the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "271_firstactivedownlinkbwp-id",
+    "field1": "firstactivedownlinkbwp-id",
+    "ie2_name": "67_266_pdsch-config_tci-statestoaddmodlist",
+    "field2": "referencesignal",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.5.5.7"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "\\( 3> \\) consider the bandwidth part indicated in firstActiveDownlinkBWP-Id if configured to be the active downlink bandwidth part or the bandwidth part for Radio Link Monitoring, Beam Failure Detection and measurements if the SpCellConfig is included in an RRCReconfiguration message contained in an NR or E-UTRA RRC message indicating that the SCG is deactivated;  3> if any of the reference signal(s) that are used for radio link monitoring are reconfigured by the received spCellConfigDedicated:",
+    "generated_at": "2025-12-10T13:51:53.790464",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'firstactivedownlinkbwp-id' and 'referencesignal'. The evidence describes behavior related to radio link monitoring but does not explicitly relate the two fields across different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

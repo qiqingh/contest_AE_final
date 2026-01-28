@@ -1,0 +1,43 @@
+BeamFailureRecoveryConfig ::=       SEQUENCE {
+    rootSequenceIndex-BFR               INTEGER (0..137)                                                          OPTIONAL, -- Need M
+    rach-ConfigBFR                      RACH-ConfigGeneric                                                        OPTIONAL, -- Need M
+    rsrp-ThresholdSSB                   RSRP-Range                                                                OPTIONAL, -- Need M
+    candidateBeamRSList                 SEQUENCE (SIZE(1..maxNrofCandidateBeams)) OF PRACH-ResourceDedicatedBFR   OPTIONAL, -- Need M
+    ssb-perRACH-Occasion                ENUMERATED {oneEighth, oneFourth, oneHalf, one, two,
+                                                       four, eight, sixteen}                                      OPTIONAL, -- Need M
+    ra-ssb-OccasionMaskIndex            INTEGER (0..15)                                                           OPTIONAL, -- Need M
+    recoverySearchSpaceId               SearchSpaceId                                                             OPTIONAL, -- Need R
+    ra-Prioritization                   RA-Prioritization                                                         OPTIONAL, -- Need R
+    beamFailureRecoveryTimer            ENUMERATED {ms10, ms20, ms40, ms60, ms80, ms100, ms150, ms200}            OPTIONAL, -- Need M
+    ...,
+    [[
+    msg1-SubcarrierSpacing              SubcarrierSpacing                                                         OPTIONAL  -- Need M
+    ]],
+    [[
+    ra-PrioritizationTwoStep-r16        RA-Prioritization                                                         OPTIONAL, -- Need R
+    candidateBeamRSListExt-v1610        SetupRelease{ CandidateBeamRSListExt-r16 }                                OPTIONAL  -- Need M
+    ]],
+    [[
+    spCell-BFR-CBRA-r16                 ENUMERATED {true}                                                         OPTIONAL  -- Need R
+    ]]
+}
+
+PRACH-ResourceDedicatedBFR ::=      CHOICE {
+    ssb                                 BFR-SSB-Resource,
+    csi-RS                              BFR-CSIRS-Resource
+}
+
+BFR-SSB-Resource ::=                SEQUENCE {
+    ssb                                 SSB-Index,
+    ra-PreambleIndex                    INTEGER (0..63),
+    ...
+}
+
+BFR-CSIRS-Resource ::=              SEQUENCE {
+    csi-RS                              NZP-CSI-RS-ResourceId,
+    ra-OccasionList                     SEQUENCE (SIZE(1..maxRA-OccasionsPerCSIRS)) OF INTEGER (0..maxRA-Occasions-1)   OPTIONAL,   -- Need R
+    ra-PreambleIndex                    INTEGER (0..63)                                                                 OPTIONAL,   -- Need R
+    ...
+}
+
+CandidateBeamRSListExt-r16::=       SEQUENCE (SIZE(1.. maxNrofCandidateBeamsExt-r16)) OF PRACH-ResourceDedicatedBFR

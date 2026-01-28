@@ -1,0 +1,14 @@
+Uplink-powerControl-r17  ::= SEQUENCE {
+    ul-powercontrolId-r17        Uplink-powerControlId-r17,
+    p0AlphaSetforPUSCH-r17       P0AlphaSet-r17                                                               OPTIONAL, -- Need R
+    p0AlphaSetforPUCCH-r17       P0AlphaSet-r17                                                               OPTIONAL, -- Need R
+    p0AlphaSetforSRS-r17         P0AlphaSet-r17                                                               OPTIONAL  -- Need R
+}
+
+P0AlphaSet-r17 ::=           SEQUENCE {
+    p0-r17                       INTEGER (-16..15)                                                            OPTIONAL, -- Need R
+    alpha-r17                    Alpha                                                                        OPTIONAL, -- Need S
+    closedLoopIndex-r17          ENUMERATED { i0, i1 }
+}
+
+Uplink-powerControlId-r17 ::= INTEGER(1.. maxUL-TCI-r17)

@@ -1,0 +1,64 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      650
+    ],
+    "field2_all": [
+      651,
+      652
+    ],
+    "actual_pairs": [
+      [
+        [
+          650
+        ],
+        [
+          651,
+          652
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not contain any explicit normative wording or mathematical relation that connects the two target fields within the same IE. The evidence discusses the calculation of a downlink pathloss estimate, but does not provide a clear rule or constraint between the fields 'pusch-PathlossReferenceRS-Id' and 'referenceSignal'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pusch-Config_group2",
+    "field1": "pusch-PathlossReferenceRS-Id",
+    "field2": "referenceSignal",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB",
+    "generated_at": "2025-12-11T14:18:39.897503",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not contain any explicit normative wording or mathematical relation that connects the two target fields within the same IE. The evidence discusses the calculation of a downlink pathloss estimate, but does not provide a clear rule or constraint between the fields 'pusch-PathlossReferenceRS-Id' and 'referenceSignal'.",
+      "version_tags": []
+    }
+  }
+}

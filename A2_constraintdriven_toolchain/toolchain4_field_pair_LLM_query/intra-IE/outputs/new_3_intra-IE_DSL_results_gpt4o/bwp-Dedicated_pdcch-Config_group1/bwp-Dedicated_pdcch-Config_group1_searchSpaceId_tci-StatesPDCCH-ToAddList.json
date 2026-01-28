@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      181
+    ],
+    "field2_all": [
+      180
+    ],
+    "actual_pairs": [
+      [
+        [
+          181
+        ],
+        [
+          180
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between field1 and field2 within the same IE. The evidence primarily discusses search space and TCI state activation without linking the two fields semantically.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "searchSpaceId",
+    "field2": "tci-StatesPDCCH-ToAddList",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For the SCell, upon request from higher layers, the UE indicates to higher layers whether there is at least one periodic CSI-RS configuration index or SS/PBCH block index from the set \\bar{q}_{1} , or \\bar{q}_{1,0} , or \\bar{q}_{1,1} with corresponding L1-RSRP measurements that is larger than or equal to the \\mathrm{Q}_{\\mathrm{m}, \\mathrm{LR}} threshold, and provides the periodic CSI-RS configuration indexes and/or SS/PBCH block indexes from the set \\bar{q}_{1} , or \\bar{q}_{1,0} , or \\bar{q}_{1,1} and the corresponding L1-RSRP measurements that are larger than or equal to the \\mathrm{Q}_{\\mathrm{m}, L \\mathrm{R}} threshold, if any. For the PCell or the PSCell, a UE can be provided a CORESET through a link to a search space set provided by recoverySearchSpaceld, as described in clause 10.1, for monitoring PDCCH in the CORESET. If the UE is provided recoverySearchSpaceld, the UE does not expect to be provided another search space set for monitoring PDCCH in the CORESET associated with the search space set provided by recoverySearchSpaceld. For the PCell or the PSCell, the UE can be provided, by PRACH-ResourceDedicatedBFR, a configuration for PRACH transmission as described in clause 8.1. For PRACH transmission in slot n and according to antenna port quasi colocation parameters associated with periodic CSI-RS resource configuration or with SS/PBCH block associated with index q_{\\text {new }} provided by higher layers [11, TS 38.321], the UE monitors PDCCH in a search space set provided by recoverySearchSpaceld for detection of a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI starting from slot n+4+2^{\\mu} \\cdot k_{\\text {mac }} , where \\mu is the SCS configuration for the PRACH transmission and k_{\\text {mac }} is a number of slots provided by K-M a c[12, T S 38.331] or k_{\\mathrm{mac}}=0 if K-M a c is not provided, within a window configured by BeamFailureRecoveryConfig. For PDCCH monitoring in a search space set provided by recoverySearchSpaceld and for corresponding PDSCH reception, the UE assumes the same antenna port quasi-collocation parameters as the ones associated with index q_{\\text {new }} until the UE receives by higher layers an activation for a TCI state or any of the parameters tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList. After the UE detects a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI in the search space set provided by recoverySearchSpaceld, the UE continues to monitor PDCCH candidates in the search space set provided by recoverySearchSpaceld until the UE receives a MAC CE activation command for a TCI state or tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList. For the PCell or the PSCell, after 28 symbols from a last symbol of a first PDCCH reception in a search space set provided by recoverySearchSpaceld for which the UE detects a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI and until the UE receives an activation command for PUCCH-SpatialRelationInfo [11, TS 38.321] or is provided PUCCH-SpatialRelationInfo for PUCCH resource(s), the UE transmits a PUCCH on a same cell as the PRACH transmission using\n---\nFor the PCell or the PSCell, a UE can be provided a CORESET through a link to a search space set provided by recoverySearchSpaceld, as described in clause 10.1, for monitoring PDCCH in the CORESET. If the UE is provided recoverySearchSpaceld, the UE does not expect to be provided another search space set for monitoring PDCCH in the CORESET associated with the search space set provided by recoverySearchSpaceld. For the PCell or the PSCell, the UE can be provided, by PRACH-ResourceDedicatedBFR, a configuration for PRACH transmission as described in clause 8.1. For PRACH transmission in slot n and according to antenna port quasi colocation parameters associated with periodic CSI-RS resource configuration or with SS/PBCH block associated with index q_{\\text {new }} provided by higher layers [11, TS 38.321], the UE monitors PDCCH in a search space set provided by recoverySearchSpaceld for detection of a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI starting from slot n+4+2^{\\mu} \\cdot k_{\\text {mac }} , where \\mu is the SCS configuration for the PRACH transmission and k_{\\text {mac }} is a number of slots provided by K-M a c[12, T S 38.331] or k_{\\mathrm{mac}}=0 if K-M a c is not provided, within a window configured by BeamFailureRecoveryConfig. For PDCCH monitoring in a search space set provided by recoverySearchSpaceld and for corresponding PDSCH reception, the UE assumes the same antenna port quasi-collocation parameters as the ones associated with index q_{\\text {new }} until the UE receives by higher layers an activation for a TCI state or any of the parameters tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList. After the UE detects a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI in the search space set provided by recoverySearchSpaceld, the UE continues to monitor PDCCH candidates in the search space set provided by recoverySearchSpaceld until the UE receives a MAC CE activation command for a TCI state or tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList. For the PCell or the PSCell, after 28 symbols from a last symbol of a first PDCCH reception in a search space set provided by recoverySearchSpaceld for which the UE detects a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI and until the UE receives an activation command for PUCCH-SpatialRelationInfo [11, TS 38.321] or is provided PUCCH-SpatialRelationInfo for PUCCH resource(s), the UE transmits a PUCCH on a same cell as the PRACH transmission using",
+    "generated_at": "2026-01-07T21:48:15.611646",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between field1 and field2 within the same IE. The evidence primarily discusses search space and TCI state activation without linking the two fields semantically.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

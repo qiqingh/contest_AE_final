@@ -1,0 +1,834 @@
+[
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "- if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST} \\text {-part 1 }}+O_{\\mathrm{CRC}, \\mathrm{CST} \\text {-part 1 }}\\right) \\leq M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{SS}, \\mathrm{crtl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), the UE transmits the HARQ-ACK, SR , and CSI reports bits by selecting the minimum number \\( M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\) of the \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs satisfying \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST}-\\text { part } 1}+O_{\\mathrm{CRC}, \\mathrm{CSI}-\\text { part } 1}\\right) \\leq M_{\\mathrm{RB}, \\text { min }}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sC}, \\mathrm{ctr} 1}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\) as described in clauses 9.2.3 and 9.2.5.1; - else, the UE selects \\( N_{\\mathrm{CS} 1}^{\\text {reported }} \\mathrm{CSI} \\) report(s), from the \\( N_{\\mathrm{CS} 1}^{\\text {btal }} \\mathrm{CSI} \\) reports, for transmission together with HARQACK and SR in ascending priority value [6, TS 38.214], where the value of \\( N_{\\text {CS] }}^{\\text {eported }} \\) satisfies",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.2",
+    "section_title": "UE procedure for multiplexing HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "- is not cancelled by an overlapping PUCCH or PUSCH transmission of larger priority index - overlaps with a symbol indicated as downlink by tdd-UL-DL-ConfigurationCommon or tdd-UL-DLConfigDedicated, or indicated for a SS/PBCH block by ssb-PositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, of smaller priority index and the UE drops the first PUCCH transmission due to an overlapping with a second PUSCH or PUCCH transmission of larger priority index, the UE stops the procedure to determine the earliest second slot in the slot - the second HARQ-ACK information bits correspond to SPS PDSCH configurations with spsHARQdeferral values that are larger than or equal to a time difference, with reference to slots for PUCCH transmissions on the primary cell, between the second slot and the slot of the SPS PDSCH reception, if any - if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "A priority of a PSSCH according to NR radio access or according to E-UTRA radio access is indicated by a priority field in a respective scheduling SCI format. A priority of a PSSS/SSSS/PSBCH according to E-UTRA radio access is provided by \\( s l \\)-SSB-PriorityEUTRA [13, TS 36.213]. A priority of an S-SS/PSBCH block is provided by \\( s l \\)-SSBPriorityNR. A priority of a PSFCH is determined as described in clause 16.2.4.2.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "11.4",
+    "section_title": "SRS switching",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "If a UE would transmit or receive an S-SS/PSBCH block, and the transmission or reception would overlap in time with transmissions or receptions on the sidelink using E-UTRA radio access, the UE transmits or receives the signal/channel with the higher priority.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.1",
+    "section_title": "Synchronization procedures",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "the UE transmits only the channels/signals of the radio access technology with the highest priority - as determined by the SCI formats scheduling the transmissions, or - as indicated by higher layers in case of a S-SS/PSBCH block or a sidelink synchronization signal using E-UTRA radio access, or",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.1",
+    "section_title": "Simultaneous NR and E",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "the UE transmits or receives the channels/signals of the radio access technology with the highest priority - as determined by the SCI formats scheduling the transmissions, or - as indicated by higher layers in case of a S-SS/PSBCH block or a sidelink synchronization signal using E-UTRA radio access, or",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.1",
+    "section_title": "Simultaneous NR and E",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "PSFCH receptions in a slot, as determined in clause 16.2.4.2, have a same priority value as the smallest priority value among PSSCH transmissions with corresponding HARQ-ACK information provided by the PSFCH receptions in the slot, if any, and among PSFCH receptions with conflict information in the slot, if any, where each priority value is equal to the priority value determined by corresponding SCI format 1-A as described in clause 16.3.  A priority of S-SS/PSBCH block transmission or reception is provided by sl-SSB-PriorityNR.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.3.1",
+    "section_title": "Prioritizations for sidelink and uplink transmissions/receptions",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "For prioritization between SL transmission or PSFCH/S-SS/PSBCH block reception and UL transmission other than a PRACH, or a PUSCH scheduled by an UL grant in a RAR and its retransmission, or a PUSCH corresponding to Type-2 random access procedure and its retransmission, or a PUCCH with sidelink HARQ-ACK information report - if the UL transmission is for a PUSCH or for a PUCCH with priority index 1,",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.3.1",
+    "section_title": "Prioritizations for sidelink and uplink transmissions/receptions",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "A PUCCH transmission with a sidelink HARQ-ACK information report has higher priority than a SL transmission if a priority value of the PUCCH is smaller than a priority value of the SL transmission. The priority value of the PUCCH transmission is as described in clause 16.5. If the priority value of the PUCCH transmission is larger than the priority value of the SL transmission, the SL transmission has higher priority.  A PUCCH transmission with a sidelink HARQ-ACK information report has higher priority than a PSFCH/SSS/PSBCH block reception if a priority value of the PUCCH is smaller than a priority value of the SL reception. If the priority value of the PUCCH transmission is larger than the priority value of the PSFCH/S-SS/PSBCH block reception, the SL reception has higher priority.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.3.1",
+    "section_title": "Prioritizations for sidelink and uplink transmissions/receptions",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "SS"
+    ],
+    "original_sentence": "A PUCCH transmission with a sidelink HARQ-ACK information report has higher priority than a PSFCH/SSS/PSBCH block reception if a priority value of the PUCCH is smaller than a priority value of the SL reception. If the priority value of the PUCCH transmission is larger than the priority value of the PSFCH/S-SS/PSBCH block reception, the SL reception has higher priority.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "16.2.4.3.1",
+    "section_title": "Prioritizations for sidelink and uplink transmissions/receptions",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "search space"
+    ],
+    "original_sentence": "\\hline 2021-03 & RAN\\#91-e & RP-210054 & 0202 & - & F & CR to 38.213 on HARQ-ACK priority determination for SCell dormancy indication & 16.5.0 \\\\ \\hline 2021-03 & RAN\\#91-e & RP-210055 & 0203 & - & F & 38.213 CR on DCI ordering in a search space set & 16.5.0 \\\\",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "19.2",
+    "section_title": "Random",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "schedulingRequestID",
+      "SS"
+    ],
+    "original_sentence": "A UE can be provided, by schedulingRequestID-BFR-SCell, a configuration for PUCCH transmission with a link recovery request (LRR) as described in clause 9.24 for the UE to transmit PUCCH [11, TS 38.321]. If the PCell or the PSCell is associated with sets \\( \\bar{q}_{0,0} \\) and \\( \\bar{q}_{1,0} \\), and with sets \\( \\bar{q}_{0,1} \\) and \\( \\bar{q}_{1,1} \\), the UE can be provided by schedulingRequestIDForMTRPBFR a first configuration for PUCCH transmission with a LRR and, if the UE provides twoLRRcapability, a second configuration for PUCCH transmission with a LRR. If the UE is provided only the first configuration, the UE transmits a PUCCH with LRR for either set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\). If the UE is provided both the first and second configurations, the UE uses the first configuration to transmt a PUCCH with LRR associated with set \\( \\bar{q}_{0,0} \\) and the second configuration to transmit a PUCCH with LRR associated with set \\( \\bar{q}_{0,1}[11 \\), TS 38.321].  The UE can provide in a first PUSCH MAC CE index(es) for at least corresponding SCell(s) with radio link quality worse than \\( \\mathrm{Q}_{\\text {out }, \\mathrm{LR}} \\), indication(s) of presence of \\( q_{\\text {new }} \\) for corresponding SCell(s), and index(es) \\( q_{\\text {new }} \\) for a periodic CSIRS configuration or for a SS/PBCH block provided by higher layers, as described in [11, TS 38.321], if any, for corresponding SCell(s). After 28 symbols from a last symbol of a PDCCH reception with a DCI format scheduling a PUSCH transmission with a same HARQ process number as for the transmission of the first PUSCH and having a toggled NDI field value, the UE",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "SS"
+    ],
+    "original_sentence": "- if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST} \\text {-part 1 }}+O_{\\mathrm{CRC}, \\mathrm{CST} \\text {-part 1 }}\\right) \\leq M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{SS}, \\mathrm{crtl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), the UE transmits the HARQ-ACK, SR , and CSI reports bits by selecting the minimum number \\( M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\) of the \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs satisfying \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CST}-\\text { part } 1}+O_{\\mathrm{CRC}, \\mathrm{CSI}-\\text { part } 1}\\right) \\leq M_{\\mathrm{RB}, \\text { min }}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sC}, \\mathrm{ctr} 1}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCT}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\) as described in clauses 9.2.3 and 9.2.5.1;",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.2",
+    "section_title": "UE procedure for multiplexing HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "SS"
+    ],
+    "original_sentence": "A SS/PBCH block symbol is a symbol of an SS/PBCH block with candidate SS/PBCH block index corresponding to the SS/PBCH block index indicated to a UE by ssb-PositionsInBurst in SIBl or ssb-PositionsInBurst in ServingCellConfigCommon or, if the UE is not provided DLorJoint-TCIState or followUnifiedTCIstate, by ssbPositionsInBurst in SSB-MTCAdditionalPCI associated to physical cell ID with active TCI states.  For unpaired spectrum, the UE determines the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) slots for a PUCCH transmission starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting and having",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.6",
+    "section_title": "PUCCH repetition procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "SS"
+    ],
+    "original_sentence": "- consecutive UL symbols, as described in clause 11.1, or flexible symbols that are not SS/PBCH block symbols, starting from the first symbol, equal to or larger than a number of symbols provided by nrofsymbols  For paired spectrum or supplementary uplink band, the UE determines the \\( N_{\\mathrm{PUCCH}}^{\\text {repeat }} \\) slots for a PUCCH transmission as the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) consecutive slots starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.6",
+    "section_title": "PUCCH repetition procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "SS"
+    ],
+    "original_sentence": "A symbol of a slot is equivalent to being configured as hard if an [AB-DU would transmit a SS/PBCH block, PDCCH for Type0-PDCCH CSS sets configured by pdcchConfigSIB1, or a periodic CSI-RS in the symbol of the slot, or would receive a PRACH or a SR in the symbol of the slot.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "11.4",
+    "section_title": "SRS switching",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "search space"
+    ],
+    "original_sentence": "\\hline 2021-06 & RAN\\#92-e & RP-211235 & 0220 & - & F & Correction of search space configuration for DCl formats 3_0 and 3_1 & 16.6 .0 \\\\ \\hline 2021-06 & RAN\\#92-e & RP-211234 & 0221 & - & F & Correction on SR reporting due to consistent LBT failure recovery & 16.6.0 \\\\",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "19.2",
+    "section_title": "Random",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "51_246_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        51,
+        116,
+        181,
+        246
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "search space"
+    ],
+    "original_sentence": "HARQ-ACK for the two PDSCHs are associated with the HARQ-ACK codebook of the same priority. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH, and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH if the HARQ-ACK for the two PDSCHs are associated with HARQ-ACK codebooks of different priorities. For any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start receiving a first PDSCH starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell, the UE is not expected to be scheduled to receive a PDSCH starting earlier than the end of the first PDSCH with a PDCCH that ends later than symbol \\( i \\) of a scheduling cell,. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH ending in symbol \\( i \\) is determined based on the PDCCH candidate that ends later in time. In a given scheduled cell, for any PDSCH corresponding to SI-RNTI, the UE is not expected to decode a re-transmission of an earlier PDSCH with a starting symbol less than \\( N \\) symbols after the last symbol of that PDSCH, where the value of \\( N \\) depends on the PDSCH subcarrier spacing configuration \\( \\mu \\) with \\( N=13 \\) for \\( \\mu=0, N=13 \\) for \\( \\mu=1, N=20 \\) for \\( \\mu=2, N=24 \\) for \\( \\mu=3, N=96 \\) for \\( \\mu=5 \\), and \\( N=192 \\) for \\( \\mu=6 \\).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1",
+    "section_title": "UE procedure for receiving the physical downlink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  }
+]

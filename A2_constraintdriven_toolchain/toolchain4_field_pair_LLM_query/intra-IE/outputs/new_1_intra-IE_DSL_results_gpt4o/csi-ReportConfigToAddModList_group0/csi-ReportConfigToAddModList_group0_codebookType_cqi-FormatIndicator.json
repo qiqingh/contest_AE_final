@@ -1,0 +1,65 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      836
+    ],
+    "field2_all": [
+      832
+    ],
+    "actual_pairs": [
+      [
+        [
+          836
+        ],
+        [
+          832
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields 'codebookType' and 'cqi-FormatIndicator' within the same IE. The constraints mentioned are either advisory or involve other fields not specified in the target fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "codebookType",
+    "field2": "cqi-FormatIndicator",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- A UE is not expected to be configured with csi-ReportingBand which contains a subband where a CSI-RS resource linked to the CSI Report setting has the frequency density of each CSI-RS port per PRB in the subband less than the configured density of the CSI-RS resource. - If a CSI-[M resource is linked to the CSI Report Setting, a UE is not expected to be configured with csiReportingBand which contains a subband where not all PRBs in the subband have the CSI-[M REs present. - wideband CQI or subband CQI reporting, as configured by the higher layer parameter cqi-FormatIndicator. When wideband CQI reporting is configured, a wideband CQI is reported for each codeword for the entire CSI reporting band. When subband CQI reporting is configured, one CQI for each codeword is reported for each subband in the CSI reporting band. - wideband PMI or subband PMI reporting as configured by the higher layer parameter pmi-FormatIndicator. When wideband PMI reporting is configured, a wideband PMI is reported for the entire CSI reporting band. When subband PMI reporting is configured, except with 2 antenna ports, a single wideband indication (i) in Clause 5.2.2.2) is reported for the entire CSI reporting band and one subband indication ( i_{2} in clause 5.2.2.2) is reported for each subband in the CSI reporting band. When subband PMIs are configured with 2 antenna ports, a PMI is reported for each subband in the CSI reporting band. - a UE is not expected to be configured with pmi-FormatIndicator if codebookType is set to 'type[I-r16' or 'type[I-PortSelection-r16' or 'type[I-PortSelection-r17'. ETSI\n---\nA CSI Reporting Setting is said to have a wideband frequency-granularity if - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', cqi-FormatIndicator is set to 'widebandCQI' and pmi-FormatIndicator is set to 'widebandPMI', or - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', codebookType is set to 'type[I-PortSelectionr17' with M=1 and cqi-FormatIndicator is set to 'widebandCQI', or - reportQuantity is set to 'cri-RI-i1' or - reportQuantity is set to 'cri-RI-CQI' or 'cri-RI-i1-CQI' and cqi-FormatIndicator is set to 'widebandCQI', or",
+    "generated_at": "2026-01-07T16:34:59.962983",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields 'codebookType' and 'cqi-FormatIndicator' within the same IE. The constraints mentioned are either advisory or involve other fields not specified in the target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      248,
+      249
+    ],
+    "field2_all": [
+      257
+    ],
+    "actual_pairs": [
+      [
+        [
+          248,
+          249
+        ],
+        [
+          257
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not provide a clear, explicit normative relationship between the fields 'monitoringSlotPeriodicityAndOffset' and 'searchSpaceType' within the same IE 'bwp-Dedicated_pdcch-Config_group2'. The evidence is either advisory or lacks the necessary specificity to establish a rule.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group2",
+    "field1": "monitoringSlotPeriodicityAndOffset",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "11.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If a PDCCH monitoring periodicity for DCI format 2 \\_0 , provided to a UE for the search space set S by monitoringSlotPeriodicityAndOffset, is smaller than a duration of a slot format combination the UE obtains at a PDCCH monitoring occasion for DCI format 2 \\_0 by a corresponding SFI-index field value, and the UE detects more than one DCI formats 2_0 indicating a slot format for a slot, the UE expects each of the more than one DCI formats 2_0 to indicate a same format for the slot.\n---\nThis parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to n -th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.\n---\nSetup3 & This field is mandatory present when a new SearchSpace is set up, if the same SearchSpace ID is not included in searchSpaces ToAddModListExt (without suffix) of the parent IE with the field searchSpaceType (without suffix) included. Otherwise it is optionally present, Need M. Setup4 & This field is mandatory present upon creation of a new SearchSpace if monitoringSlotPeriodicityAndOffset-r17 is not included. It is optionally present, Need M, otherwise.",
+    "generated_at": "2025-12-11T14:28:31.071900",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not provide a clear, explicit normative relationship between the fields 'monitoringSlotPeriodicityAndOffset' and 'searchSpaceType' within the same IE 'bwp-Dedicated_pdcch-Config_group2'. The evidence is either advisory or lacks the necessary specificity to establish a rule.",
+      "version_tags": []
+    }
+  }
+}

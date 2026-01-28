@@ -1,0 +1,19 @@
+SL-BWP-Config-r16 ::=                    SEQUENCE {
+    sl-BWP-Id                                BWP-Id,
+    sl-BWP-Generic-r16                       SL-BWP-Generic-r16                                   OPTIONAL,    -- Need M
+    sl-BWP-PoolConfig-r16                    SL-BWP-PoolConfig-r16                                OPTIONAL,    -- Need M
+    ...,
+    [[
+    sl-BWP-PoolConfigPS-r17              SetupRelease {SL-BWP-PoolConfig-r16}                     OPTIONAL,    -- Need M
+    sl-BWP-DiscPoolConfig-r17            SetupRelease {SL-BWP-DiscPoolConfig-r17}                 OPTIONAL     -- Need M
+    ]]
+}
+
+SL-BWP-Generic-r16 ::=                   SEQUENCE {
+    sl-BWP-r16                               BWP                                                                OPTIONAL,    -- Need M
+    sl-LengthSymbols-r16                     ENUMERATED {sym7, sym8, sym9, sym10, sym11, sym12, sym13, sym14}   OPTIONAL,    -- Need M
+    sl-StartSymbol-r16                       ENUMERATED {sym0, sym1, sym2, sym3, sym4, sym5, sym6, sym7}        OPTIONAL,    -- Need M
+    sl-PSBCH-Config-r16                      SetupRelease {SL-PSBCH-Config-r16}                                 OPTIONAL,    -- Need M
+    sl-TxDirectCurrentLocation-r16           INTEGER (0..3301)                                                  OPTIONAL,    -- Need M
+    ...
+}

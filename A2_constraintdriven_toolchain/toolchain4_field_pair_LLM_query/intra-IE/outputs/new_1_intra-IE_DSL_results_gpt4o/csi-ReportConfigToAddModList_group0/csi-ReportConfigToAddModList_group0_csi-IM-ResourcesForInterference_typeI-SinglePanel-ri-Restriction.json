@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      824
+    ],
+    "field2_all": [
+      841,
+      842
+    ],
+    "actual_pairs": [
+      [
+        [
+          824
+        ],
+        [
+          841,
+          842
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields 'csi-IM-ResourcesForInterference' and 'typeI-SinglePanel-ri-Restriction' within the same IE. The evidence lacks normative constraints directly linking these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "csi-IM-ResourcesForInterference",
+    "field2": "typeI-SinglePanel-ri-Restriction",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- reportQuantity is set to 'cri-RSRP' or 'ssb-Index-RSRP' or 'cri-SINR', or 'ssb-Index-SINR' or 'cri-RSRPCapability[Set]Index' or 'ssb-Index-RSRP-Capability[Set]Index' or 'cri-SINR-Capability[Set]Index', or 'ssb-Index-SINR-Capability[Set]Index' otherwise, the CSI Reporting Setting is said to have a subband frequency-granularity. A CSI Reporting Setting with codebookType set to 'typeI-SinglePanel' and the corresponding CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, can be configured with wideband frequency-granularity only if csi-ReportMode is set to 'Model' and numberOfSingleTRP-CSI-Model is set to X=0 , as described in clause 5.2.1.4.2. If the UE is configured with a CSI Reporting Setting for a bandwidth part with fewer than 24 PRBs, the CSI reporting setting is expected to have a wideband frequency-granularity, and, if applicable, the higher layer parameter codebookType is set to 'typel-SinglePanel'. The first subband size is given by N_{P R B}^{S B}-\\left(N_{B I T P_{j}}^{S^{\\text {stor }}} \\bmod N_{P R B}^{S B}\\right) and the last subband size given by \\left(N_{B I T P_{j},}^{\\text {start }}+N_{B I R P_{j},}^{\\text {size }}\\right) \\bmod N_{P R B}^{S B} if If a UE is configured with semi-persistent CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic or semi-persistent. If a UE is configured with aperiodic CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic, semi-persistent or aperiodic. A UE configured with DCI format 0_1 or 0_2 does not expect to be triggered with multiple CSI reports with the same CSI-ReportConfigld.",
+    "generated_at": "2026-01-07T16:35:13.004296",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields 'csi-IM-ResourcesForInterference' and 'typeI-SinglePanel-ri-Restriction' within the same IE. The evidence lacks normative constraints directly linking these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

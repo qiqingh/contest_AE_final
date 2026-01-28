@@ -1,0 +1,95 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'periodic'), IN(field2, {'cri-RSRP', 'ssb-Index-RSRP'}))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      825
+    ],
+    "field2_all": [
+      830,
+      831
+    ],
+    "actual_pairs": [
+      [
+        [
+          825
+        ],
+        [
+          830,
+          831
+        ]
+      ]
+    ]
+  },
+  "predicate": "When reportConfigType is 'periodic', reportQuantity must be 'cri-RSRP' or 'ssb-Index-RSRP' if drx-onDurationTimer is not started.",
+  "preconditions": [
+    "drx-onDurationTimer not started"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1='periodic', field2='cri-RSRP'",
+      "field1='periodic', field2='ssb-Index-RSRP'"
+    ],
+    "invalid": [
+      "field1='periodic', field2='otherQuantity'",
+      "field1='aperiodic', field2='cri-RSRP'"
+    ]
+  },
+  "notes": "The evidence specifies a mandatory relationship between reportConfigType and reportQuantity when drx-onDurationTimer is not started.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "reportConfigType",
+    "field2": "reportQuantity",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 5,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.5",
+      "5.1.6.1",
+      "5.2.1.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If the UE is configured with DRX, - if the UE is configured to monitor DCI format 2 _ 6 and configured by higher layer parameter p s TransmitOtherPeriodic CSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP' and 'ssb-Index-RSRP' when drx-onDurationTimer in DRXConfig is not started, the most recent CSI measurement occasion occurs in DRX active time or during the time duration indicated by drx-onDurationTimer in DRX-Config also outside DRX active time for CSI to be reported; - if the UE is configured to monitor DCI format 26 and configured by higher layer parameter p s -TransmitPeriodicL1-RSRP to report L1-RSRP with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to cri-RSRP when drx-onDurationTimer in DRX-Config is not started, the most recent CSI measurement occasion occurs in DRX active time or during the time duration indicated by d r x onDurationTimer in DRX-Config also outside DRX active time for CSI to be reported; - otherwise, the most recent CSI measurement occasion occurs in DRX active time for CSI to be reported.\n---\n- If the higher layer parameter timeRestrictionForInterferenceMeasurements in CSI-ReportConfig is set to 'configured', the UE shall derive the interference measurements for computing the L1-SINR reported in uplink slot n based on the most recent, no later than the CSI reference resource, occasion of CSI-IM or NZP CSI-RS for interference measurement (defined in [4, TS 38.211]) or NZP CS[-RS for channel and interference measurement associated with the CSI resource setting. When the UE is configured a CSI-ReportConfig with the higher layer parameter reportQuantity set to ' cri-SINRCapability[Set]Index' or 'ssb-Index-SINR-Capability[Set]Index' an index of UE capability value, indicating the maximum supported number of SRS antenna ports, is reported along with the pair of SSBRI/CRI and L1-SINR. 5.2.1.5 Triggering/activation of CSI Reports and CSI-RS 5.2.1.5.1 Aperiodic CSI Reporting/Aperiodic CSI-RS when the triggering PDCCH and the CSI-RS have the same numerology For CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI , - the last symbol of the PDCCH span of the DCI carrying the BWP switching shall be no later than the last symbol of the PDCCH span of the DCI carrying the CSI trigger, irrespective of whether they are in the same carrier of a serving cell or not and irrespective of whether they are in the same SCS or not; - the UE is not expected to have any other BWP switching in that carrier after the last symbol of the PDCCH span covering the DCI carrying the CSI trigger and before the first symbol of the triggered NZP CSI-RS or CSI-IM.\n---\nAfter the CSI report (re)configuration, serving cell activation, BWP change, or activation of SP-CSI, the UE reports a CSI report only after receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-IM occasion for interference measurement no later than CSI reference resource and drops the report otherwise. When DRX is configured, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-[M occasion for interference measurement in DRX Active Time no later than CSI reference resource and drops the report otherwise. When DRX is configured and the CSI-RS Resource Set for channel measurement corresponding to a CSI report is configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for each CSI-RS resource in a Resource Pair within the same DRX Active Time no later than CSI reference resource and drops the report otherwise. When the UE is configured to monitor DCI format 2 _ 6 and if the UE configured by higher layer parameter ps-TransmitOtherPeriodicCSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP- Capability[Set]Index', and 'ssb-Index-RSRP-Capability[Set]Index ' when drx-onDurationTimer is not started, the UE shall report CSI during the time duration indicated by drx-onDurationTimer in DRX-Config also outside active time according to the procedure described in Clause 5-2-1.4 if receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-[M occasion for interference measurement during the time duration indicated by drx-onDurationTimer in DRX-Config outside DRX active time or in DRX Active Time no later than CSI reference resource and drops the report otherwise. When the UE is configured to monitor DCI format 2 _ 6 and if the UE configured by higher layer parameter ps-TransmitPeriodicL 1 -RSRP to report L1-RSRP with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP- Capability[Set]Index', or 'ssb-Index-RSRP-Capability[Set]Index' when drx-onDurationTimer is not started, the UE shall report L1-RSRP during the time duration indicated by drx-onDurationTimer in DRX-Config also outside active time according to the procedure described in clause 5-2.1-4 and when reportQuantity set to 'cri-RSRP' or 'cri-RSRPCapability[Set]Index' if receiving at least one CSI-RS transmission occasion for channel measurement during the time duration indicated by drx-onDurationTimer in DRX-Config outside DRX active time or in DRX Active Time no later than CSI reference resource and drops the report otherwise.",
+    "generated_at": "2026-01-07T19:46:31.331225",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'periodic'), IN(field2, {'cri-RSRP', 'ssb-Index-RSRP'}))",
+      "preconditions": [
+        "drx-onDurationTimer not started"
+      ],
+      "predicate": "When reportConfigType is 'periodic', reportQuantity must be 'cri-RSRP' or 'ssb-Index-RSRP' if drx-onDurationTimer is not started.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1='periodic', field2='cri-RSRP'",
+          "field1='periodic', field2='ssb-Index-RSRP'"
+        ],
+        "invalid": [
+          "field1='periodic', field2='otherQuantity'",
+          "field1='aperiodic', field2='cri-RSRP'"
+        ]
+      },
+      "notes": "The evidence specifies a mandatory relationship between reportConfigType and reportQuantity when drx-onDurationTimer is not started.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      22
+    ],
+    "field2_all": [
+      23
+    ],
+    "actual_pairs": [
+      [
+        [
+          22
+        ],
+        [
+          23
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any normative or logical relationship between 'logicalChannelGroup' and 'schedulingRequestID'. The evidence lacks explicit constraints or dependencies between these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-LogicalChannelConfig",
+    "field1": "logicalChannelGroup",
+    "field2": "schedulingRequestID",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "6.3.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} priority Logical channel priority, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} prioritisedBitRate Value in kiloBytes/s. Value k B p s 0 corresponds to 0 kiloBytes/s, value k B p s 8 corresponds to 8 kiloBytes/s, value k B p s 16 corresponds to 16 kiloBytes/s, and so on. For SRBs, the value can only be set to infinity. \\end{tabular} \\begin{tabular}{l} scheduling Requestid If present, it indicates the scheduling request configuration applicable for this logical channel, as specified in TS 38.321 [3]. \\end{tabular}\n---\n\\begin{tabular}{l} sl-Priority Sidelink logical channel priority, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} si-Scheduling Requestid If present, it indicates the scheduling request configuration applicable for this sidelink logical channel, as specified in TS 38.321 [3]. \\end{tabular}\n---\n\\end{tabular} \\begin{tabular}{l} scheduling Requestid If present, it indicates the scheduling request configuration applicable for this logical channel, as specified in TS 38.321 [3]. \\end{tabular}\n---\n\\end{tabular} \\begin{tabular}{l} scheduling Requestid If present, it indicates the scheduling request configuration applicable for this logical channel, as specified in TS 38.321 [3]. \\end{tabular} \\end{tabular} \\begin{tabular}{|l|l|} Conditional Presence & Explanation PDCP-CADuplication & The field is mandatory present if the DRB/SRB associated with this logical channel is configured with PDCP CA duplication in UL in the cell group in which this IE is included (i.e. the PDCP entity is associated with multiple RLC entities belonging to this cell group). Otherwise the field is optionally present, need R . UL & The field is mandatory present for a logical channel with uplink if it serves DRB. It is optionally present, Need R, for a logical channel with uplink if it serves an SRB. Otherwise it is absent.\n---\n\\end{tabular} \\begin{tabular}{l} si-Scheduling Requestid If present, it indicates the scheduling request configuration applicable for this sidelink logical channel, as specified in TS 38.321 [3]. \\end{tabular}",
+    "generated_at": "2026-01-07T19:40:48.314404",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any normative or logical relationship between 'logicalChannelGroup' and 'schedulingRequestID'. The evidence lacks explicit constraints or dependencies between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

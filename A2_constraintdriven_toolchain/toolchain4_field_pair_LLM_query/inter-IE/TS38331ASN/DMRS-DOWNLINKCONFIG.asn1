@@ -1,0 +1,13 @@
+DMRS-DownlinkConfig ::=             SEQUENCE {
+    dmrs-Type                           ENUMERATED {type2}                                                      OPTIONAL,   -- Need S
+    dmrs-AdditionalPosition             ENUMERATED {pos0, pos1, pos3}                                           OPTIONAL,   -- Need S
+    maxLength                           ENUMERATED {len2}                                                       OPTIONAL,   -- Need S
+    scramblingID0                       INTEGER (0..65535)                                                      OPTIONAL,   -- Need S
+    scramblingID1                       INTEGER (0..65535)                                                      OPTIONAL,   -- Need S
+    phaseTrackingRS                     SetupRelease { PTRS-DownlinkConfig  }                                   OPTIONAL,   -- Need M
+    ...,
+    [[
+    dmrs-Downlink-r16               ENUMERATED {enabled}                                                        OPTIONAL    -- Need R
+    ]]
+
+}

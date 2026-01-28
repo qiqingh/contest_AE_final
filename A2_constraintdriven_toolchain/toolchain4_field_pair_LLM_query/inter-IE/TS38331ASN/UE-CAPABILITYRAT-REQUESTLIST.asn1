@@ -1,0 +1,7 @@
+UE-CapabilityRAT-RequestList ::=        SEQUENCE (SIZE (1..maxRAT-CapabilityContainers)) OF UE-CapabilityRAT-Request
+
+UE-CapabilityRAT-Request ::=            SEQUENCE {
+    rat-Type                                RAT-Type,
+    capabilityRequestFilter                 OCTET STRING                    OPTIONAL,   -- Need N
+    ...
+}

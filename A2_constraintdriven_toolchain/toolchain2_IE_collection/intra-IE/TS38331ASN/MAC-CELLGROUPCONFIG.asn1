@@ -1,0 +1,61 @@
+MAC-CellGroupConfig ::=             SEQUENCE {
+    drx-Config                          SetupRelease { DRX-Config }                                     OPTIONAL,   -- Need M
+    schedulingRequestConfig             SchedulingRequestConfig                                         OPTIONAL,   -- Need M
+    bsr-Config                          BSR-Config                                                      OPTIONAL,   -- Need M
+    tag-Config                          TAG-Config                                                      OPTIONAL,   -- Need M
+    phr-Config                          SetupRelease { PHR-Config }                                     OPTIONAL,   -- Need M
+    skipUplinkTxDynamic                 BOOLEAN,
+    ...,
+    [[
+    csi-Mask                            BOOLEAN                                                         OPTIONAL,   -- Need M
+    dataInactivityTimer                 SetupRelease { DataInactivityTimer }                            OPTIONAL    -- Cond MCG-Only
+    ]],
+    [[
+    usePreBSR-r16                       ENUMERATED {true}                                               OPTIONAL,   -- Need R
+    schedulingRequestID-LBT-SCell-r16   SchedulingRequestId                                             OPTIONAL,   -- Need R
+    lch-BasedPrioritization-r16         ENUMERATED {enabled}                                            OPTIONAL,   -- Need R
+    schedulingRequestID-BFR-SCell-r16   SchedulingRequestId                                             OPTIONAL,   -- Need R
+    drx-ConfigSecondaryGroup-r16        SetupRelease { DRX-ConfigSecondaryGroup-r16 }                   OPTIONAL    -- Need M
+    ]],
+    [[
+    enhancedSkipUplinkTxDynamic-r16     ENUMERATED {true}                                               OPTIONAL,   -- Need R
+    enhancedSkipUplinkTxConfigured-r16  ENUMERATED {true}                                               OPTIONAL    -- Need R
+    ]],
+    [[
+    intraCG-Prioritization-r17          ENUMERATED {enabled}                        OPTIONAL,    -- Cond LCH-PrioWithReTxTimer
+    drx-ConfigSL-r17                    SetupRelease { DRX-ConfigSL-r17 }           OPTIONAL,    -- Need M
+    drx-ConfigExt-v1700                 SetupRelease { DRX-ConfigExt-v1700 }        OPTIONAL,    -- Need M
+    schedulingRequestID-BFR-r17         SchedulingRequestId                         OPTIONAL,    -- Need R
+    schedulingRequestID-BFR2-r17        SchedulingRequestId                         OPTIONAL,    -- Need R
+    schedulingRequestConfig-v1700       SchedulingRequestConfig-v1700               OPTIONAL,    -- Need M
+    tar-Config-r17                      SetupRelease { TAR-Config-r17  }                                OPTIONAL,    -- Need M
+    g-RNTI-ConfigToAddModList-r17       SEQUENCE (SIZE (1..maxG-RNTI-r17)) OF MBS-RNTI-SpecificConfig-r17       OPTIONAL,    -- Need N
+    g-RNTI-ConfigToReleaseList-r17      SEQUENCE (SIZE (1..maxG-RNTI-r17)) OF MBS-RNTI-SpecificConfigId-r17     OPTIONAL,    -- Need N
+    g-CS-RNTI-ConfigToAddModList-r17    SEQUENCE (SIZE (1..maxG-CS-RNTI-r17)) OF MBS-RNTI-SpecificConfig-r17    OPTIONAL,    -- Need N
+    g-CS-RNTI-ConfigToReleaseList-r17   SEQUENCE (SIZE (1..maxG-CS-RNTI-r17)) OF MBS-RNTI-SpecificConfigId-r17  OPTIONAL,    -- Need N
+    allowCSI-SRS-Tx-MulticastDRX-Active-r17   BOOLEAN                                                           OPTIONAL     -- Need M
+    ]],
+    [[
+    schedulingRequestID-PosMG-Request-r17 SchedulingRequestId                                                   OPTIONAL,    -- Need R
+    drx-LastTransmissionUL-r17          ENUMERATED {enabled}                                                    OPTIONAL     -- Need R
+    ]],
+    [[
+    posMG-Request-r17                   ENUMERATED {enabled}                                                    OPTIONAL     -- Need R
+    ]]
+}
+
+DataInactivityTimer ::=         ENUMERATED {s1, s2, s3, s5, s7, s10, s15, s20, s40, s50, s60, s80, s100, s120, s150, s180}
+
+MBS-RNTI-SpecificConfig-r17 ::=        SEQUENCE {
+    mbs-RNTI-SpecificConfigId-r17          MBS-RNTI-SpecificConfigId-r17,
+    groupCommon-RNTI-r17                   CHOICE {
+        g-RNTI                                 RNTI-Value,
+        g-CS-RNTI                              RNTI-Value
+    },
+    drx-ConfigPTM-r17                      SetupRelease { DRX-ConfigPTM-r17 }                          OPTIONAL,   -- Need M
+    harq-FeedbackEnablerMulticast-r17      ENUMERATED {dci-enabler, enabled}                           OPTIONAL,   -- Need S
+    harq-FeedbackOptionMulticast-r17       ENUMERATED {ack-nack, nack-only}                            OPTIONAL,   -- Cond HARQFeedback
+    pdsch-AggregationFactor-r17            ENUMERATED {n2, n4, n8}                                     OPTIONAL    -- Cond G-RNTI
+}
+
+MBS-RNTI-SpecificConfigId-r17 ::= INTEGER (0..maxG-RNTI-1-r17)

@@ -1,0 +1,92 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      346
+    ],
+    "field2_all": [
+      828,
+      852,
+      867,
+      891,
+      906,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          346
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ],
+      [
+        [
+          346
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a relationship between the fields 'uplinkbandwidthpartid' and 'startposition' across different IEs. The evidence only describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field1": "uplinkbandwidthpartid",
+    "ie2_name": "initialuplinkbwp_srs-config",
+    "field2": "startposition",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Within a slot that is configured for CLI-RSSI measurement (see slotConfiguration), the UE measures the RSSI from startPosition to startPosition + nrofSymbols -1 . The configured CLI-RSSI resource does not exceed the slot boundary of the reference SCS. If the SCS of configured DL BWP(s) is larger than the reference SCS, network configures startPosition and nrofSymbols such that the configured CLI-RSSI resource not to exceed the slot boundary corresponding to the configured BWP SCS. If the reference SCS is larger than SCS of configured DL BWP(s), network ensures startPosition and nrofSymbols are integer multiple of reference SCS divided by configured BWP SCS.",
+    "generated_at": "2026-01-10T14:23:24.090584",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a relationship between the fields 'uplinkbandwidthpartid' and 'startposition' across different IEs. The evidence only describes behavior within a single IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

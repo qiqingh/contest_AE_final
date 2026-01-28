@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total_dsl_files": 9523,
+    "processed": 9523,
+    "successful": 40,
+    "skipped": 9483,
+    "skipped_no_rule": 9372,
+    "skipped_unsupported_op": 0,
+    "skipped_all_pairs_generated": 111,
+    "failed": 0,
+    "test_cases_generated": 585,
+    "transformed_dsls": 112
+  },
+  "transformation": {
+    "enabled": true,
+    "total_transformed": 112,
+    "by_type": {
+      "ASSOCIATED\u2192EQ": 50,
+      "MATCH\u2192EQ": 62
+    }
+  },
+  "field_pair_dedup": {
+    "enabled": true,
+    "mode": "single",
+    "unique_pairs_generated": 585,
+    "pairs_skipped_duplicate": 1393
+  },
+  "constraint_type_stats": {
+    "Association": {
+      "dsl_count": 19,
+      "testcase_count": 0
+    },
+    "CrossReference": {
+      "dsl_count": 17,
+      "testcase_count": 0
+    },
+    "ValueDependency": {
+      "dsl_count": 1,
+      "testcase_count": 0
+    },
+    "CrossReference | ValueDependency | RangeAlignment | Association | Conditional": {
+      "dsl_count": 3,
+      "testcase_count": 0
+    }
+  },
+  "unsupported_operators": {},
+  "config": {
+    "ENABLE_FIELD_PAIR_DEDUP": true,
+    "ENABLE_DSL_TRANSFORMATION": true,
+    "TEST_CASES_PER_PAIR_MODE": "single",
+    "TEST_CASES_PER_PAIR_BY_TYPE": {
+      "CrossReference": 1,
+      "ValueDependency": 2,
+      "Association": 2,
+      "Conditional": 2,
+      "RangeConstraint": 2,
+      "default": 1
+    }
+  }
+}

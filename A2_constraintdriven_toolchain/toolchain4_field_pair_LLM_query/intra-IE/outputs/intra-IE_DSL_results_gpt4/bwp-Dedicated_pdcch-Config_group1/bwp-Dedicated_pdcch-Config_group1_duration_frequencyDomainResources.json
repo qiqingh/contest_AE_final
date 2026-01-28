@@ -1,0 +1,54 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      176
+    ],
+    "field2_all": [
+      174,
+      175
+    ],
+    "actual_pairs": [
+      [
+        [
+          176
+        ],
+        [
+          174,
+          175
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided ASN.1 definition does not contain the target fields 'duration' and 'frequencyDomainResources'. Also, the evidence does not provide a clear relationship between these two fields. Therefore, no valid rule can be derived.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "duration",
+    "field2": "frequencyDomainResources",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} is given by the higher-layer parameter frequencyDomainResources; - \\quad N_{\\text {symb }}^{\\text {CORESET }} is given by the higher-layer parameter duration, where N_{\\text {symb }}^{\\text {CORESET }}=3 is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;",
+    "generated_at": "2025-12-11T14:25:40.703570",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided ASN.1 definition does not contain the target fields 'duration' and 'frequencyDomainResources'. Also, the evidence does not provide a clear relationship between these two fields. Therefore, no valid rule can be derived."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+MeasObjectToAddModList ::=                  SEQUENCE (SIZE (1..maxNrofObjectId)) OF MeasObjectToAddMod
+
+MeasObjectToAddMod ::=                      SEQUENCE {
+    measObjectId                                MeasObjectId,
+    measObject                                  CHOICE {
+        measObjectNR                                MeasObjectNR,
+        ...,
+        measObjectEUTRA                             MeasObjectEUTRA,
+        measObjectUTRA-FDD-r16                      MeasObjectUTRA-FDD-r16,
+        measObjectNR-SL-r16                         MeasObjectNR-SL-r16,
+        measObjectCLI-r16                           MeasObjectCLI-r16,
+        measObjectRxTxDiff-r17                      MeasObjectRxTxDiff-r17,
+        measObjectRelay-r17                         SL-MeasObject-r16
+    }
+}

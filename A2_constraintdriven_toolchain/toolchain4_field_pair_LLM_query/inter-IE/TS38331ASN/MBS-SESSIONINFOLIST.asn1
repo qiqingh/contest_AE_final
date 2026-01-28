@@ -1,0 +1,47 @@
+MBS-SessionInfoList-r17 ::=      SEQUENCE (SIZE (1..maxNrofMBS-Session-r17)) OF MBS-SessionInfo-r17
+
+MBS-SessionInfo-r17 ::=          SEQUENCE {
+    mbs-SessionId-r17                TMGI-r17,
+    g-RNTI-r17                       RNTI-Value,
+    mrb-ListBroadcast-r17            MRB-ListBroadcast-r17,
+    mtch-SchedulingInfo-r17          DRX-ConfigPTM-Index-r17                      OPTIONAL, -- Need S
+    mtch-NeighbourCell-r17           BIT STRING (SIZE(maxNeighCellMBS-r17))       OPTIONAL, -- Need S
+    pdsch-ConfigIndex-r17            PDSCH-ConfigIndex-r17                        OPTIONAL, -- Need S
+    mtch-SSB-MappingWindowIndex-r17  MTCH-SSB-MappingWindowIndex-r17              OPTIONAL  -- Cond MTCH-Mapping
+}
+
+DRX-ConfigPTM-Index-r17 ::=          INTEGER (0..maxNrofDRX-ConfigPTM-1-r17)
+
+PDSCH-ConfigIndex-r17  ::=           INTEGER (0..maxNrofPDSCH-ConfigPTM-1-r17)
+
+MTCH-SSB-MappingWindowIndex-r17  ::= INTEGER (0..maxNrofMTCH-SSB-MappingWindow-1-r17)
+
+MRB-ListBroadcast-r17 ::=            SEQUENCE (SIZE (1..maxNrofMRB-Broadcast-r17)) OF MRB-InfoBroadcast-r17
+
+MRB-InfoBroadcast-r17 ::=            SEQUENCE {
+    pdcp-Config-r17                      MRB-PDCP-ConfigBroadcast-r17,
+    rlc-Config-r17                       MRB-RLC-ConfigBroadcast-r17,
+    ...
+}
+
+MRB-PDCP-ConfigBroadcast-r17 ::=     SEQUENCE {
+    pdcp-SN-SizeDL-r17                   ENUMERATED {len12bits}                   OPTIONAL, -- Need S
+    headerCompression-r17                CHOICE {
+        notUsed                              NULL,
+        rohc                                 SEQUENCE {
+            maxCID-r17                           INTEGER (1..16)               DEFAULT 15,
+            profiles-r17                         SEQUENCE {
+                profile0x0000-r17                    BOOLEAN,
+                profile0x0001-r17                    BOOLEAN,
+                profile0x0002-r17                    BOOLEAN
+           }
+        }
+    },
+    t-Reordering-r17                     ENUMERATED {ms1, ms10, ms40, ms160, ms500, ms1000, ms1250, ms2750}    OPTIONAL -- Need S
+}
+
+MRB-RLC-ConfigBroadcast-r17 ::=      SEQUENCE {
+    logicalChannelIdentity-r17           LogicalChannelIdentity,
+    sn-FieldLength-r17                   ENUMERATED {size6}                       OPTIONAL, -- Need S
+    t-Reassembly-r17                     T-Reassembly                             OPTIONAL  -- Need S
+}

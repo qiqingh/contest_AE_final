@@ -1,0 +1,359 @@
+UEInformationResponse-r16 ::=        SEQUENCE {
+    rrc-TransactionIdentifier            RRC-TransactionIdentifier,
+    criticalExtensions                   CHOICE {
+        ueInformationResponse-r16            UEInformationResponse-r16-IEs,
+        criticalExtensionsFuture             SEQUENCE {}
+    }
+}
+
+UEInformationResponse-r16-IEs ::=    SEQUENCE {
+    measResultIdleEUTRA-r16              MeasResultIdleEUTRA-r16             OPTIONAL,
+    measResultIdleNR-r16                 MeasResultIdleNR-r16                OPTIONAL,
+    logMeasReport-r16                    LogMeasReport-r16                   OPTIONAL,
+    connEstFailReport-r16                ConnEstFailReport-r16               OPTIONAL,
+    ra-ReportList-r16                    RA-ReportList-r16                   OPTIONAL,
+    rlf-Report-r16                       RLF-Report-r16                      OPTIONAL,
+    mobilityHistoryReport-r16            MobilityHistoryReport-r16           OPTIONAL,
+    lateNonCriticalExtension             OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                 UEInformationResponse-v1700-IEs     OPTIONAL
+}
+
+UEInformationResponse-v1700-IEs ::=    SEQUENCE {
+    successHO-Report-r17                 SuccessHO-Report-r17                OPTIONAL,
+    connEstFailReportList-r17            ConnEstFailReportList-r17           OPTIONAL,
+    coarseLocationInfo-r17               OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                 SEQUENCE {}                         OPTIONAL
+}
+
+LogMeasReport-r16 ::=                SEQUENCE {
+    absoluteTimeStamp-r16                AbsoluteTimeInfo-r16,
+    traceReference-r16                   TraceReference-r16,
+    traceRecordingSessionRef-r16         OCTET STRING (SIZE (2)),
+    tce-Id-r16                           OCTET STRING (SIZE (1)),
+    logMeasInfoList-r16                  LogMeasInfoList-r16,
+    logMeasAvailable-r16                 ENUMERATED {true}                   OPTIONAL,
+    logMeasAvailableBT-r16               ENUMERATED {true}                   OPTIONAL,
+    logMeasAvailableWLAN-r16             ENUMERATED {true}                   OPTIONAL,
+    ...
+}
+
+LogMeasInfoList-r16 ::=              SEQUENCE (SIZE (1..maxLogMeasReport-r16)) OF LogMeasInfo-r16
+
+LogMeasInfo-r16 ::=                  SEQUENCE {
+    locationInfo-r16                     LocationInfo-r16                    OPTIONAL,
+    relativeTimeStamp-r16                INTEGER (0..7200),
+    servCellIdentity-r16                 CGI-Info-Logging-r16                OPTIONAL,
+    measResultServingCell-r16            MeasResultServingCell-r16           OPTIONAL,
+    measResultNeighCells-r16             SEQUENCE {
+        measResultNeighCellListNR            MeasResultListLogging2NR-r16    OPTIONAL,
+        measResultNeighCellListEUTRA         MeasResultList2EUTRA-r16        OPTIONAL
+    },
+    anyCellSelectionDetected-r16         ENUMERATED {true}                   OPTIONAL,
+    ...,
+    [[
+    inDeviceCoexDetected-r17             ENUMERATED {true}                   OPTIONAL
+    ]]
+}
+
+ConnEstFailReport-r16 ::=            SEQUENCE {
+    measResultFailedCell-r16             MeasResultFailedCell-r16,
+    locationInfo-r16                     LocationInfo-r16                    OPTIONAL,
+    measResultNeighCells-r16             SEQUENCE {
+        measResultNeighCellListNR            MeasResultList2NR-r16               OPTIONAL,
+        measResultNeighCellListEUTRA         MeasResultList2EUTRA-r16            OPTIONAL
+    },
+    numberOfConnFail-r16                 INTEGER (1..8),
+    perRAInfoList-r16                            PerRAInfoList-r16,
+    timeSinceFailure-r16                 TimeSinceFailure-r16,
+    ...
+}
+
+ConnEstFailReportList-r17 ::= SEQUENCE (SIZE (1..maxCEFReport-r17)) OF ConnEstFailReport-r16
+
+MeasResultServingCell-r16 ::=        SEQUENCE {
+    resultsSSB-Cell                      MeasQuantityResults,
+    resultsSSB                           SEQUENCE{
+        best-ssb-Index                       SSB-Index,
+        best-ssb-Results                     MeasQuantityResults,
+        numberOfGoodSSB                      INTEGER (1..maxNrofSSBs-r16)
+    }                                                                        OPTIONAL
+}
+
+MeasResultFailedCell-r16 ::=         SEQUENCE {
+    cgi-Info                             CGI-Info-Logging-r16,
+    measResult-r16                       SEQUENCE {
+        cellResults-r16                      SEQUENCE{
+            resultsSSB-Cell-r16                  MeasQuantityResults
+        },
+        rsIndexResults-r16                   SEQUENCE{
+            resultsSSB-Indexes-r16               ResultsPerSSB-IndexList
+        }
+    }
+}
+
+RA-ReportList-r16 ::= SEQUENCE (SIZE (1..maxRAReport-r16)) OF RA-Report-r16
+
+RA-Report-r16 ::=                    SEQUENCE {
+    cellId-r16                           CHOICE {
+        cellGlobalId-r16                     CGI-Info-Logging-r16,
+        pci-arfcn-r16                        PCI-ARFCN-NR-r16
+    },
+    ra-InformationCommon-r16             RA-InformationCommon-r16                         OPTIONAL,
+    raPurpose-r16                        ENUMERATED {accessRelated, beamFailureRecovery, reconfigurationWithSync, ulUnSynchronized,
+                                                    schedulingRequestFailure, noPUCCHResourceAvailable, requestForOtherSI,
+                                                    msg3RequestForOtherSI-r17, spare8, spare7, spare6, spare5, spare4, spare3,
+                                                    spare2, spare1},
+    ...,
+    [[
+    spCellID-r17                         CGI-Info-Logging-r16                             OPTIONAL
+    ]]
+}
+
+RA-InformationCommon-r16 ::=         SEQUENCE {
+    absoluteFrequencyPointA-r16          ARFCN-ValueNR,
+    locationAndBandwidth-r16             INTEGER (0..37949),
+    subcarrierSpacing-r16                SubcarrierSpacing,
+    msg1-FrequencyStart-r16              INTEGER (0..maxNrofPhysicalResourceBlocks-1)     OPTIONAL,
+    msg1-FrequencyStartCFRA-r16          INTEGER (0..maxNrofPhysicalResourceBlocks-1)     OPTIONAL,
+    msg1-SubcarrierSpacing-r16           SubcarrierSpacing                                OPTIONAL,
+    msg1-SubcarrierSpacingCFRA-r16       SubcarrierSpacing                                OPTIONAL,
+    msg1-FDM-r16                         ENUMERATED {one, two, four, eight}               OPTIONAL,
+    msg1-FDMCFRA-r16                     ENUMERATED {one, two, four, eight}               OPTIONAL,
+    perRAInfoList-r16                    PerRAInfoList-r16,
+    ...,
+    [[
+    perRAInfoList-v1660               PerRAInfoList-v1660                           OPTIONAL
+    ]],
+    [[
+    msg1-SCS-From-prach-ConfigurationIndex-r16  ENUMERATED {kHz1dot25, kHz5, spare2, spare1}  OPTIONAL
+    ]],
+    [[
+    msg1-SCS-From-prach-ConfigurationIndexCFRA-r16  ENUMERATED {kHz1dot25, kHz5, spare2, spare1} OPTIONAL
+    ]],
+    [[
+    msgA-RO-FrequencyStart-r17           INTEGER (0..maxNrofPhysicalResourceBlocks-1)     OPTIONAL,
+    msgA-RO-FrequencyStartCFRA-r17       INTEGER (0..maxNrofPhysicalResourceBlocks-1)     OPTIONAL,
+    msgA-SubcarrierSpacing-r17           SubcarrierSpacing                                OPTIONAL,
+    msgA-RO-FDM-r17                      ENUMERATED {one, two, four, eight}               OPTIONAL,
+    msgA-RO-FDMCFRA-r17                  ENUMERATED {one, two, four, eight}               OPTIONAL,
+    msgA-SCS-From-prach-ConfigurationIndex-r17  ENUMERATED {kHz1dot25, kHz5, spare2, spare1}  OPTIONAL,
+    msgA-TransMax-r17                    ENUMERATED {n1, n2, n4, n6, n8, n10, n20, n50, n100, n200}  OPTIONAL,
+    msgA-MCS-r17                         INTEGER (0..15)                                   OPTIONAL,
+    nrofPRBs-PerMsgA-PO-r17              INTEGER (1..32)                                  OPTIONAL,
+    msgA-PUSCH-TimeDomainAllocation-r17  INTEGER (1..maxNrofUL-Allocations)               OPTIONAL,
+    frequencyStartMsgA-PUSCH-r17         INTEGER (0..maxNrofPhysicalResourceBlocks-1)     OPTIONAL,
+    nrofMsgA-PO-FDM-r17                  ENUMERATED {one, two, four, eight}               OPTIONAL,
+    dlPathlossRSRP-r17                   RSRP-Range                                       OPTIONAL,
+    intendedSIBs-r17                     SEQUENCE (SIZE (1..maxSIB)) OF SIB-Type-r17      OPTIONAL,
+    ssbsForSI-Acquisition-r17            SEQUENCE (SIZE (1..maxNrofSSBs-r16)) OF SSB-Index    OPTIONAL,
+    msgA-PUSCH-PayloadSize-r17           BIT STRING (SIZE (5))                            OPTIONAL,
+    onDemandSISuccess-r17                ENUMERATED {true}                                OPTIONAL
+    ]]
+}
+
+PerRAInfoList-r16 ::= SEQUENCE (SIZE (1..200)) OF PerRAInfo-r16
+
+PerRAInfoList-v1660 ::= SEQUENCE (SIZE (1..200)) OF PerRACSI-RSInfo-v1660
+
+PerRAInfo-r16 ::=                    CHOICE {
+    perRASSBInfoList-r16                 PerRASSBInfo-r16,
+    perRACSI-RSInfoList-r16              PerRACSI-RSInfo-r16
+}
+
+PerRASSBInfo-r16 ::=                 SEQUENCE {
+    ssb-Index-r16                        SSB-Index,
+    numberOfPreamblesSentOnSSB-r16       INTEGER (1..200),
+    perRAAttemptInfoList-r16             PerRAAttemptInfoList-r16
+}
+
+PerRACSI-RSInfo-r16 ::=              SEQUENCE {
+    csi-RS-Index-r16                     CSI-RS-Index,
+    numberOfPreamblesSentOnCSI-RS-r16    INTEGER (1..200)
+}
+
+PerRACSI-RSInfo-v1660 ::=         SEQUENCE {
+    csi-RS-Index-v1660                   INTEGER (1..96)                     OPTIONAL
+}
+
+PerRAAttemptInfoList-r16 ::=         SEQUENCE (SIZE (1..200)) OF PerRAAttemptInfo-r16
+
+PerRAAttemptInfo-r16 ::=             SEQUENCE {
+    contentionDetected-r16               BOOLEAN                OPTIONAL,
+    dlRSRPAboveThreshold-r16             BOOLEAN                OPTIONAL,
+    ...,
+    [[
+    fallbackToFourStepRA-r17             ENUMERATED {true}      OPTIONAL
+    ]]
+}
+
+SIB-Type-r17 ::= ENUMERATED {sibType2, sibType3, sibType4, sibType5, sibType9, sibType10-v1610, sibType11-v1610, sibType12-v1610,
+                             sibType13-v1610, sibType14-v1610, spare6, spare5, spare4, spare3, spare2, spare1}
+
+RLF-Report-r16 ::=                   CHOICE {
+    nr-RLF-Report-r16                    SEQUENCE {
+        measResultLastServCell-r16           MeasResultRLFNR-r16,
+        measResultNeighCells-r16             SEQUENCE {
+            measResultListNR-r16                 MeasResultList2NR-r16       OPTIONAL,
+            measResultListEUTRA-r16              MeasResultList2EUTRA-r16    OPTIONAL
+        }                                                OPTIONAL,
+        c-RNTI-r16                           RNTI-Value,
+        previousPCellId-r16                  CHOICE {
+            nrPreviousCell-r16                   CGI-Info-Logging-r16,
+            eutraPreviousCell-r16                CGI-InfoEUTRALogging
+        }                                                                    OPTIONAL,
+        failedPCellId-r16                    CHOICE {
+            nrFailedPCellId-r16                  CHOICE {
+                cellGlobalId-r16                     CGI-Info-Logging-r16,
+                pci-arfcn-r16                        PCI-ARFCN-NR-r16
+            },
+            eutraFailedPCellId-r16           CHOICE {
+                cellGlobalId-r16                 CGI-InfoEUTRALogging,
+                pci-arfcn-r16                    PCI-ARFCN-EUTRA-r16
+            }
+        },
+        reconnectCellId-r16                  CHOICE {
+            nrReconnectCellId-r16                CGI-Info-Logging-r16,
+            eutraReconnectCellId-r16             CGI-InfoEUTRALogging
+        }                                                                                        OPTIONAL,
+        timeUntilReconnection-r16            TimeUntilReconnection-r16                           OPTIONAL,
+        reestablishmentCellId-r16            CGI-Info-Logging-r16                                OPTIONAL,
+        timeConnFailure-r16                  INTEGER (0..1023)                                   OPTIONAL,
+        timeSinceFailure-r16                 TimeSinceFailure-r16,
+        connectionFailureType-r16            ENUMERATED {rlf, hof},
+        rlf-Cause-r16                        ENUMERATED {t310-Expiry, randomAccessProblem, rlc-MaxNumRetx,
+                                                         beamFailureRecoveryFailure, lbtFailure-r16,
+                                                         bh-rlfRecoveryFailure, t312-expiry-r17, spare1},
+        locationInfo-r16                     LocationInfo-r16                                    OPTIONAL,
+        noSuitableCellFound-r16              ENUMERATED {true}                                   OPTIONAL,
+        ra-InformationCommon-r16             RA-InformationCommon-r16                            OPTIONAL,
+        ...,
+        [[
+        csi-rsRLMConfigBitmap-v1650          BIT STRING (SIZE (96))                              OPTIONAL
+        ]],
+        [[
+        lastHO-Type-r17                      ENUMERATED {cho, daps, spare2, spare1}              OPTIONAL,
+        timeConnSourceDAPS-Failure-r17       TimeConnSourceDAPS-Failure-r17                      OPTIONAL,
+        timeSinceCHO-Reconfig-r17            TimeSinceCHO-Reconfig-r17                           OPTIONAL,
+        choCellId-r17                        CHOICE {
+            cellGlobalId-r17                     CGI-Info-Logging-r16,
+            pci-arfcn-r17                        PCI-ARFCN-NR-r16
+        }                                                                                        OPTIONAL,
+        choCandidateCellList-r17             ChoCandidateCellList-r17                            OPTIONAL
+        ]]
+    },
+    eutra-RLF-Report-r16                 SEQUENCE {
+        failedPCellId-EUTRA                  CGI-InfoEUTRALogging,
+        measResult-RLF-Report-EUTRA-r16      OCTET STRING,
+        ...,
+        [[
+        measResult-RLF-Report-EUTRA-v1690    OCTET STRING                                        OPTIONAL
+        ]]
+    }
+}
+
+SuccessHO-Report-r17 ::=                 SEQUENCE {
+    sourceCellInfo-r17                       SEQUENCE {
+        sourcePCellId-r17                        CGI-Info-Logging-r16,
+        sourceCellMeas-r17                       MeasResultSuccessHONR-r17                       OPTIONAL,
+        rlf-InSourceDAPS-r17                     ENUMERATED {true}                               OPTIONAL
+    },
+    targetCellInfo-r17                       SEQUENCE {
+        targetPCellId-r17                        CGI-Info-Logging-r16,
+        targetCellMeas-r17                       MeasResultSuccessHONR-r17                       OPTIONAL
+    },
+    measResultNeighCells-r17                 SEQUENCE {
+        measResultListNR-r17                     MeasResultList2NR-r16                           OPTIONAL,
+        measResultListEUTRA-r17                  MeasResultList2EUTRA-r16                        OPTIONAL
+    }                                                                                            OPTIONAL,
+    locationInfo-r17                         LocationInfo-r16                                    OPTIONAL,
+    timeSinceCHO-Reconfig-r17                TimeSinceCHO-Reconfig-r17                           OPTIONAL,
+    shr-Cause-r17                            SHR-Cause-r17                                       OPTIONAL,
+    ra-InformationCommon-r17                 RA-InformationCommon-r16                            OPTIONAL,
+    upInterruptionTimeAtHO-r17               UPInterruptionTimeAtHO-r17                          OPTIONAL,
+    c-RNTI-r17                               RNTI-Value                                          OPTIONAL,
+    ...
+}
+
+MeasResultList2NR-r16 ::=            SEQUENCE(SIZE (1..maxFreq)) OF MeasResult2NR-r16
+MeasResultList2EUTRA-r16 ::=         SEQUENCE(SIZE (1..maxFreq)) OF MeasResult2EUTRA-r16
+
+MeasResult2NR-r16 ::=                SEQUENCE {
+    ssbFrequency-r16                     ARFCN-ValueNR                                           OPTIONAL,
+    refFreqCSI-RS-r16                    ARFCN-ValueNR                                           OPTIONAL,
+    measResultList-r16                   MeasResultListNR
+}
+
+MeasResultListLogging2NR-r16 ::=     SEQUENCE(SIZE (1..maxFreq)) OF MeasResultLogging2NR-r16
+
+MeasResultLogging2NR-r16 ::=         SEQUENCE {
+    carrierFreq-r16                      ARFCN-ValueNR,
+    measResultListLoggingNR-r16          MeasResultListLoggingNR-r16
+}
+
+MeasResultListLoggingNR-r16 ::=      SEQUENCE (SIZE (1..maxCellReport)) OF MeasResultLoggingNR-r16
+
+MeasResultLoggingNR-r16 ::=          SEQUENCE {
+    physCellId-r16                       PhysCellId,
+    resultsSSB-Cell-r16                  MeasQuantityResults,
+    numberOfGoodSSB-r16                  INTEGER (1..maxNrofSSBs-r16) OPTIONAL
+}
+
+MeasResult2EUTRA-r16 ::=             SEQUENCE {
+    carrierFreq-r16                      ARFCN-ValueEUTRA,
+    measResultList-r16                   MeasResultListEUTRA
+}
+
+MeasResultRLFNR-r16 ::=              SEQUENCE {
+    measResult-r16                       SEQUENCE {
+        cellResults-r16                      SEQUENCE{
+            resultsSSB-Cell-r16                  MeasQuantityResults                             OPTIONAL,
+            resultsCSI-RS-Cell-r16               MeasQuantityResults                             OPTIONAL
+        },
+        rsIndexResults-r16                   SEQUENCE{
+            resultsSSB-Indexes-r16               ResultsPerSSB-IndexList                         OPTIONAL,
+            ssbRLMConfigBitmap-r16               BIT STRING (SIZE (64))                          OPTIONAL,
+            resultsCSI-RS-Indexes-r16            ResultsPerCSI-RS-IndexList                      OPTIONAL,
+            csi-rsRLMConfigBitmap-r16            BIT STRING (SIZE (96))                          OPTIONAL
+        }                                                                                    OPTIONAL
+    }
+}
+
+MeasResultSuccessHONR-r17::=         SEQUENCE {
+    measResult-r17                       SEQUENCE {
+        cellResults-r17                      SEQUENCE{
+            resultsSSB-Cell-r17                  MeasQuantityResults                             OPTIONAL,
+            resultsCSI-RS-Cell-r17               MeasQuantityResults                             OPTIONAL
+        },
+        rsIndexResults-r17                   SEQUENCE{
+            resultsSSB-Indexes-r17               ResultsPerSSB-IndexList                         OPTIONAL,
+            resultsCSI-RS-Indexes-r17            ResultsPerCSI-RS-IndexList                      OPTIONAL
+        }
+    }
+}
+
+ChoCandidateCellList-r17 ::=         SEQUENCE(SIZE (1..maxNrofCondCells-r16)) OF ChoCandidateCell-r17
+
+ChoCandidateCell-r17 ::=             CHOICE {
+    cellGlobalId-r17                     CGI-Info-Logging-r16,
+    pci-arfcn-r17                        PCI-ARFCN-NR-r16
+}
+
+SHR-Cause-r17 ::=                    SEQUENCE {
+    t304-cause-r17                       ENUMERATED {true}                                       OPTIONAL,
+    t310-cause-r17                       ENUMERATED {true}                                       OPTIONAL,
+    t312-cause-r17                       ENUMERATED {true}                                       OPTIONAL,
+    sourceDAPS-Failure-r17               ENUMERATED {true}                                       OPTIONAL,
+    ...
+}
+
+TimeSinceFailure-r16 ::= INTEGER (0..172800)
+
+MobilityHistoryReport-r16 ::= VisitedCellInfoList-r16
+
+TimeUntilReconnection-r16 ::= INTEGER (0..172800)
+
+TimeSinceCHO-Reconfig-r17 ::= INTEGER (0..1023)
+
+TimeConnSourceDAPS-Failure-r17 ::= INTEGER (0..1023)
+
+UPInterruptionTimeAtHO-r17 ::= INTEGER (0..1023)

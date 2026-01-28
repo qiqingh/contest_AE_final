@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      34
+    ],
+    [
+      34
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not mention the fields 'phr-ProhibitTimer' or establish any relation between fields within the 'mac-CellGroupConfig' IE. The evidence is about conditions for triggering a Power Headroom Report, which does not involve the target fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ProhibitTimer",
+    "field2": "phr-ProhibitTimer",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "A Power Headroom Report (PHR) shall be triggered if any of the following events occur: - phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB for at least one RS used as pathloss reference for one activated Serving Cell of any MAC entity of which the active DL BWP is not dormant BWP since the last transmission of a PHR in this MAC entity when the MAC entity has UL resources for new transmission; ETSI\n---\n- activation of an SCG; - addition of the PSCell except if the SCG is deactivated (i.e. PSCell is newly added or changed); - phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell. - Upon switching of activated BWP from dormant BWP to non-dormant DL BWP of an SCell of any MAC entity with configured uplink;",
+    "generated_at": "2025-12-09T09:45:34.146730",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not mention the fields 'phr-ProhibitTimer' or establish any relation between fields within the 'mac-CellGroupConfig' IE. The evidence is about conditions for triggering a Power Headroom Report, which does not involve the target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

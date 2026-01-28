@@ -1,0 +1,57 @@
+PDCCH-ConfigCommon ::=              SEQUENCE {
+    controlResourceSetZero              ControlResourceSetZero                                  OPTIONAL,   -- Cond InitialBWP-Only
+    commonControlResourceSet            ControlResourceSet                                      OPTIONAL,   -- Need R
+    searchSpaceZero                     SearchSpaceZero                                         OPTIONAL,   -- Cond InitialBWP-Only
+    commonSearchSpaceList               SEQUENCE (SIZE(1..4)) OF SearchSpace                    OPTIONAL,   -- Need R
+    searchSpaceSIB1                     SearchSpaceId                                           OPTIONAL,   -- Need S
+    searchSpaceOtherSystemInformation   SearchSpaceId                                           OPTIONAL,   -- Need S
+    pagingSearchSpace                   SearchSpaceId                                           OPTIONAL,   -- Need S
+    ra-SearchSpace                      SearchSpaceId                                           OPTIONAL,   -- Need S
+    ...,
+    [[
+    firstPDCCH-MonitoringOccasionOfPO   CHOICE {
+        sCS15KHZoneT                                                             SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..139),
+        sCS30KHZoneT-SCS15KHZhalfT                                               SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..279),
+        sCS60KHZoneT-SCS30KHZhalfT-SCS15KHZquarterT                              SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..559),
+        sCS120KHZoneT-SCS60KHZhalfT-SCS30KHZquarterT-SCS15KHZoneEighthT          SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..1119),
+        sCS120KHZhalfT-SCS60KHZquarterT-SCS30KHZoneEighthT-SCS15KHZoneSixteenthT SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..2239),
+        sCS120KHZquarterT-SCS60KHZoneEighthT-SCS30KHZoneSixteenthT               SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..4479),
+        sCS120KHZoneEighthT-SCS60KHZoneSixteenthT                                SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..8959),
+        sCS120KHZoneSixteenthT                                                   SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..17919)
+    }                                                                                           OPTIONAL    -- Cond OtherBWP
+    ]],
+    [[
+    commonSearchSpaceListExt-r16                                             SEQUENCE (SIZE(1..4)) OF SearchSpaceExt-r16     OPTIONAL  -- Need R
+    ]],
+    [[
+    sdt-SearchSpace-r17                 CHOICE {
+        newSearchSpace                      SearchSpace,
+        existingSearchSpace                 SearchSpaceId
+    }                                                                                           OPTIONAL,   -- Need R
+    searchSpaceMCCH-r17                 SearchSpaceId                                           OPTIONAL,   -- Need R
+    searchSpaceMTCH-r17                 SearchSpaceId                                           OPTIONAL,   -- Need S
+    commonSearchSpaceListExt2-r17       SEQUENCE (SIZE(1..4)) OF SearchSpaceExt-v1700           OPTIONAL,   -- Need R
+    firstPDCCH-MonitoringOccasionOfPO-v1710 CHOICE {
+       sCS480KHZoneEighthT                      SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..35839),
+       sCS480KHZoneSixteenthT                   SEQUENCE (SIZE (1..maxPO-perPF)) OF INTEGER (0..71679)
+    }                                                                                           OPTIONAL,   -- Need R
+    pei-ConfigBWP-r17      SEQUENCE {
+        pei-SearchSpace-r17                 SearchSpaceId,
+        firstPDCCH-MonitoringOccasionOfPEI-O-r17  CHOICE {
+            sCS15KHZoneT                                                     SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..139),
+            sCS30KHZoneT-SCS15KHZhalfT                                       SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..279),
+            sCS60KHZoneT-SCS30KHZhalfT-SCS15KHZquarterT                      SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..559),
+            sCS120KHZoneT-SCS60KHZhalfT-SCS30KHZquarterT-SCS15KHZoneEighthT  SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..1119),
+            sCS120KHZhalfT-SCS60KHZquarterT-SCS30KHZoneEighthT-SCS15KHZoneSixteenthT SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..2239),
+            sCS480KHZoneT-SCS120KHZquarterT-SCS60KHZoneEighthT-SCS30KHZoneSixteenthT SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..4479),
+            sCS480KHZhalfT-SCS120KHZoneEighthT-SCS60KHZoneSixteenthT         SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..8959),
+            sCS480KHZquarterT-SCS120KHZoneSixteenthT                         SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..17919),
+            sCS480KHZoneEighthT                                           SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..35839),
+            sCS480KHZoneSixteenthT                                        SEQUENCE (SIZE (1..maxPEI-perPF-r17)) OF INTEGER (0..71679)
+        }
+    }                                                                                           OPTIONAL     -- Cond InitialBWP-Paging
+    ]],
+    [[
+    followUnifiedTCI-State-v1720           ENUMERATED {enabled}                                  OPTIONAL     -- Need R
+    ]]
+}

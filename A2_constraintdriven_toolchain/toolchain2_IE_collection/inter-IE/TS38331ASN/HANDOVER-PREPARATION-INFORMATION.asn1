@@ -1,0 +1,107 @@
+HandoverPreparationInformation ::=      SEQUENCE {
+    criticalExtensions                      CHOICE {
+        c1                                      CHOICE{
+            handoverPreparationInformation          HandoverPreparationInformation-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+HandoverPreparationInformation-IEs ::=  SEQUENCE {
+    ue-CapabilityRAT-List                   UE-CapabilityRAT-ContainerList,
+    sourceConfig                            AS-Config                                       OPTIONAL, -- Cond HO
+    rrm-Config                              RRM-Config                                      OPTIONAL,
+    as-Context                              AS-Context                                      OPTIONAL,
+    nonCriticalExtension                    SEQUENCE {}                                     OPTIONAL
+}
+
+AS-Config ::=                           SEQUENCE {
+    rrcReconfiguration                      OCTET STRING (CONTAINING RRCReconfiguration),
+    ...,
+    [[
+    sourceRB-SN-Config                      OCTET STRING (CONTAINING RadioBearerConfig)     OPTIONAL,
+    sourceSCG-NR-Config                     OCTET STRING (CONTAINING RRCReconfiguration)    OPTIONAL,
+    sourceSCG-EUTRA-Config                  OCTET STRING                                    OPTIONAL
+    ]],
+    [[
+    sourceSCG-Configured                    ENUMERATED {true}                               OPTIONAL
+    ]],
+    [[
+    sdt-Config-r17                          SDT-Config-r17                                  OPTIONAL
+    ]]
+}
+
+AS-Context ::=                          SEQUENCE {
+    reestablishmentInfo                     ReestablishmentInfo                                 OPTIONAL,
+    configRestrictInfo                      ConfigRestrictInfoSCG                               OPTIONAL,
+    ...,
+    [[  ran-NotificationAreaInfo            RAN-NotificationAreaInfo                            OPTIONAL
+    ]],
+    [[  ueAssistanceInformation             OCTET STRING (CONTAINING UEAssistanceInformation)   OPTIONAL   -- Cond HO2
+    ]],
+    [[
+    selectedBandCombinationSN               BandCombinationInfoSN                               OPTIONAL
+    ]],
+    [[
+    configRestrictInfoDAPS-r16              ConfigRestrictInfoDAPS-r16                          OPTIONAL,
+    sidelinkUEInformationNR-r16             OCTET STRING                                        OPTIONAL,
+    sidelinkUEInformationEUTRA-r16          OCTET STRING                                        OPTIONAL,
+    ueAssistanceInformationEUTRA-r16        OCTET STRING                                        OPTIONAL,
+    ueAssistanceInformationSCG-r16          OCTET STRING (CONTAINING UEAssistanceInformation)   OPTIONAL,   -- Cond HO2
+    needForGapsInfoNR-r16                   NeedForGapsInfoNR-r16                               OPTIONAL
+    ]],
+    [[
+    configRestrictInfoDAPS-v1640            ConfigRestrictInfoDAPS-v1640                        OPTIONAL
+    ]],
+    [[
+    needForGapNCSG-InfoNR-r17               NeedForGapNCSG-InfoNR-r17                           OPTIONAL,
+    needForGapNCSG-InfoEUTRA-r17            NeedForGapNCSG-InfoEUTRA-r17                        OPTIONAL,
+    mbsInterestIndication-r17               OCTET STRING (CONTAINING MBSInterestIndication-r17) OPTIONAL
+    ]]
+}
+
+ConfigRestrictInfoDAPS-r16 ::=          SEQUENCE {
+    powerCoordination-r16                   SEQUENCE {
+        p-DAPS-Source-r16                       P-Max,
+        p-DAPS-Target-r16                       P-Max,
+        uplinkPowerSharingDAPS-Mode-r16          ENUMERATED {semi-static-mode1, semi-static-mode2, dynamic }
+    }                                                                                                       OPTIONAL
+}
+
+ConfigRestrictInfoDAPS-v1640 ::=    SEQUENCE {
+    sourceFeatureSetPerDownlinkCC-r16   FeatureSetDownlinkPerCC-Id,
+    sourceFeatureSetPerUplinkCC-r16     FeatureSetUplinkPerCC-Id
+}
+
+ReestablishmentInfo ::=             SEQUENCE {
+    sourcePhysCellId                        PhysCellId,
+    targetCellShortMAC-I                    ShortMAC-I,
+    additionalReestabInfoList               ReestabNCellInfoList                            OPTIONAL
+}
+
+ReestabNCellInfoList ::=             SEQUENCE ( SIZE (1..maxCellPrep) ) OF ReestabNCellInfo
+
+ReestabNCellInfo::= SEQUENCE{
+    cellIdentity                            CellIdentity,
+    key-gNodeB-Star                         BIT STRING (SIZE (256)),
+    shortMAC-I                              ShortMAC-I
+}
+
+RRM-Config ::=              SEQUENCE {
+    ue-InactiveTime             ENUMERATED {
+                                    s1, s2, s3, s5, s7, s10, s15, s20,
+                                    s25, s30, s40, s50, min1, min1s20, min1s40,
+                                    min2, min2s30, min3, min3s30, min4, min5, min6,
+                                    min7, min8, min9, min10, min12, min14, min17, min20,
+                                    min24, min28, min33, min38, min44, min50, hr1,
+                                    hr1min30, hr2, hr2min30, hr3, hr3min30, hr4, hr5, hr6,
+                                    hr8, hr10, hr13, hr16, hr20, day1, day1hr12, day2,
+                                    day2hr12, day3, day4, day5, day7, day10, day14, day19,
+                                    day24, day30, dayMoreThan30}                            OPTIONAL,
+    candidateCellInfoList       MeasResultList2NR                                           OPTIONAL,
+    ...,
+    [[
+    candidateCellInfoListSN-EUTRA      MeasResultServFreqListEUTRA-SCG                      OPTIONAL
+    ]]
+}

@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      611
+    ],
+    [
+      603,
+      609
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative constraint between 'nrofPRBs' and 'startingPRB' within the same IE. The evidence is descriptive and lacks explicit normative wording or mathematical relations.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group2",
+    "field1": "nrofPRBs",
+    "field2": "startingPRB",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "Starting PRB index of the measurement bandwidth. For the case where the reference subcarrier spacing is smaller than subcarrier spacing of active DL BWP(s), network configures startPRB and nrofPRBs are as a multiple of active BW SCS divided by reference SCS.",
+    "generated_at": "2025-12-09T09:44:55.976874",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative constraint between 'nrofPRBs' and 'startingPRB' within the same IE. The evidence is descriptive and lacks explicit normative wording or mathematical relations.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

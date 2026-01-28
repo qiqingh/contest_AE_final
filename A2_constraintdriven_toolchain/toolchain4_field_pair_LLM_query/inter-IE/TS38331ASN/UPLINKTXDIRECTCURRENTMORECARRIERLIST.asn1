@@ -1,0 +1,25 @@
+UplinkTxDirectCurrentMoreCarrierList-r17 ::=   SEQUENCE (SIZE (1..maxNrofCC-Group-r17)) OF CC-Group-r17
+
+CC-Group-r17 ::=           SEQUENCE {
+    servCellIndexLower-r17     ServCellIndex,
+    servCellIndexHigher-r17    ServCellIndex              OPTIONAL,
+    defaultDC-Location-r17     DefaultDC-Location-r17,
+    offsetToDefault-r17        CHOICE{
+        offsetValue                OffsetValue-r17,
+        offsetlist                 SEQUENCE (SIZE(1..maxNrofReqComDC-Location-r17)) OF OffsetValue-r17
+    }                                                     OPTIONAL
+}
+
+
+OffsetValue-r17::=         SEQUENCE {
+    offsetValue-r17            INTEGER (-20000.. 20000),
+    shift7dot5kHz-r17          BOOLEAN
+}
+
+DefaultDC-Location-r17 ::= CHOICE {
+    ul                         FrequencyComponent-r17,
+    dl                         FrequencyComponent-r17,
+    ulAndDL                    FrequencyComponent-r17
+}
+
+FrequencyComponent-r17 ::=  ENUMERATED {activeCarrier,configuredCarrier,activeBWP,configuredBWP}

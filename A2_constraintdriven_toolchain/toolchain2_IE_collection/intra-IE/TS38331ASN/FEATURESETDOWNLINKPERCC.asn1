@@ -1,0 +1,65 @@
+FeatureSetDownlinkPerCC ::=         SEQUENCE {
+    supportedSubcarrierSpacingDL        SubcarrierSpacing,
+    supportedBandwidthDL                SupportedBandwidth,
+    channelBW-90mhz                     ENUMERATED {supported}                                                  OPTIONAL,
+    maxNumberMIMO-LayersPDSCH           MIMO-LayersDL                                                           OPTIONAL,
+    supportedModulationOrderDL          ModulationOrder                                                         OPTIONAL
+}
+
+FeatureSetDownlinkPerCC-v1620 ::=   SEQUENCE {
+    -- R1 16-2a: Mulit-DCI based multi-TRP
+    multiDCI-MultiTRP-r16               MultiDCI-MultiTRP-r16                                                   OPTIONAL,
+    -- R1 16-2b-3: Support of single-DCI based FDMSchemeB
+    supportFDM-SchemeB-r16              ENUMERATED {supported}                                                  OPTIONAL
+}
+
+FeatureSetDownlinkPerCC-v1700 ::=   SEQUENCE {
+    supportedMinBandwidthDL-r17             SupportedBandwidth-v1700                                                OPTIONAL,
+    broadcastSCell-r17                     ENUMERATED {supported}                                                  OPTIONAL,
+    -- R1 33-2g: MIMO layers for multicast PDSCH
+    maxNumberMIMO-LayersMulticastPDSCH-r17  ENUMERATED {n2, n4, n8}                                                 OPTIONAL,
+    -- R1 33-2h: Dynamic scheduling for multicast for SCell
+    dynamicMulticastSCell-r17               ENUMERATED {supported}                                                  OPTIONAL,
+    supportedBandwidthDL-v1710              SupportedBandwidth-v1700                                                OPTIONAL,
+    -- R4 24-1/24-2/24-3/24-4/24-5
+    supportedCRS-InterfMitigation-r17       CRS-InterfMitigation-r17                                                OPTIONAL
+}
+
+FeatureSetDownlinkPerCC-v1720 ::=   SEQUENCE {
+    -- R1 33-2j: Supported maximum modulation order used for maximum data rate calculation for multicast PDSCH
+    maxModulationOrderForMulticastDataRateCalculation-r17  ENUMERATED {qam64, qam256, qam1024}                  OPTIONAL,
+    -- R1 33-1-2: FDM-ed unicast PDSCH and group-common PDSCH for broadcast
+    fdm-BroadcastUnicast-r17            ENUMERATED {supported}                                                  OPTIONAL,
+    -- R1 33-3-2: FDM-ed unicast PDSCH and one group-common PDSCH for multicast
+    fdm-MulticastUnicast-r17            ENUMERATED {supported}                                                  OPTIONAL
+}
+
+FeatureSetDownlinkPerCC-v1730 ::=           SEQUENCE {
+    -- R1 33-3-3: Intra-slot TDM-ed unicast PDSCH and group-common PDSCH
+    intraSlotTDM-UnicastGroupCommonPDSCH-r17    ENUMERATED {yes, no}                    OPTIONAL,
+    -- R1 33-5-3: One SPS group-common PDSCH configuration for multicast for SCell
+    sps-MulticastSCell-r17                      ENUMERATED {supported}                  OPTIONAL,
+    -- R1 33-5-4: Up to 8 SPS group-common PDSCH configurations per CFR for multicast for SCell
+    sps-MulticastSCellMultiConfig-r17           INTEGER (1..8)                          OPTIONAL,
+    -- R1 33-1-1: Dynamic slot-level repetition for broadcast MTCH
+    dci-BroadcastWith16Repetitions-r17          ENUMERATED {supported}                  OPTIONAL
+}
+
+MultiDCI-MultiTRP-r16 ::=           SEQUENCE {
+    maxNumberCORESET-r16                ENUMERATED {n2, n3, n4, n5},
+    maxNumberCORESETPerPoolIndex-r16    INTEGER (1..3),
+    maxNumberUnicastPDSCH-PerPool-r16   ENUMERATED {n1, n2, n3, n4, n7}
+}
+
+CRS-InterfMitigation-r17 ::=        SEQUENCE {
+    -- R4 24-1 CRS-IM (Interference Mitigation) in DSS scenario
+    crs-IM-DSS-15kHzSCS-r17             ENUMERATED {supported}                                                  OPTIONAL,
+    -- R4 24-2 CRS-IM in non-DSS and 15 kHz NR SCS scenario, without the assistance of network signaling on LTE channel bandwidth
+    crs-IM-nonDSS-15kHzSCS-r17          ENUMERATED {supported}                                                  OPTIONAL,
+    -- R4 24-3 CRS-IM in non-DSS and 15 kHz NR SCS scenario, with the assistance of network signaling on LTE channel bandwidth
+    crs-IM-nonDSS-NWA-15kHzSCS-r17      ENUMERATED {supported}                                                  OPTIONAL,
+    -- R4 24-4 CRS-IM in non-DSS and 30 kHz NR SCS scenario, without the assistance of network signaling on LTE channel bandwidth
+    crs-IM-nonDSS-30kHzSCS-r17          ENUMERATED {supported}                                                  OPTIONAL,
+    -- R4 24-5 CRS-IM in non-DSS and 30 kHz NR SCS scenario, with the assistance of network signaling on LTE channel bandwidth
+    crs-IM-nonDSS-NWA-30kHzSCS-r17      ENUMERATED {supported}                                                  OPTIONAL
+}

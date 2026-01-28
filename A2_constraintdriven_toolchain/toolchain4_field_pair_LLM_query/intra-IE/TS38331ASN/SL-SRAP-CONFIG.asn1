@@ -1,0 +1,19 @@
+SL-SRAP-Config-r17 ::=                  SEQUENCE {
+    sl-LocalIdentity-r17                    INTEGER (0..255)                                                 OPTIONAL, -- Need M
+    sl-MappingToAddModList-r17              SEQUENCE (SIZE (1..maxLC-ID)) OF SL-MappingToAddMod-r17          OPTIONAL, -- Need N
+    sl-MappingToReleaseList-r17             SEQUENCE (SIZE (1..maxLC-ID)) OF SL-RemoteUE-RB-Identity-r17     OPTIONAL, -- Need N
+    ...
+}
+
+SL-MappingToAddMod-r17 ::=              SEQUENCE {
+    sl-RemoteUE-RB-Identity-r17             SL-RemoteUE-RB-Identity-r17,
+    sl-EgressRLC-ChannelUu-r17              Uu-RelayRLC-ChannelID-r17                                        OPTIONAL, -- Cond L2RelayUE
+    sl-EgressRLC-ChannelPC5-r17             SL-RLC-ChannelID-r17                                             OPTIONAL, -- Need N
+    ...
+}
+
+SL-RemoteUE-RB-Identity-r17 ::=         CHOICE {
+    srb-Identity-r17                        INTEGER (0..3),
+    drb-Identity-r17                        DRB-Identity,
+    ...
+}

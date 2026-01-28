@@ -1,0 +1,74 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      273
+    ],
+    "field2_all": [
+      434,
+      542,
+      650
+    ],
+    "actual_pairs": [
+      [
+        [
+          273
+        ],
+        [
+          434,
+          542,
+          650
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'pucch-config' and 'pusch-pathlossreferencers-id'. The evidence primarily describes behavior within a single IE or lacks explicit normative wording to establish a cross-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "pucch-config",
+    "ie2_name": "pusch-powercontrol",
+    "field2": "pusch-pathlossreferencers-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.7.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "where \\( \\tilde{P}_{\\mathrm{CMAX}, f_{,} c}(i) \\) is computed assuming \\( \\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{~A}-\\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{P}-\\mathrm{MPR}=0 \\mathrm{~dB} . \\triangle \\mathrm{T}_{\\mathrm{C}}=0 \\mathrm{~dB} \\). MPR, A-MPR, PMPR and \\( \\Delta \\mathrm{T}_{\\mathrm{C}} \\) are defined in [8-1, TS 38.101-1], [8-2, TS38.101-2] and [8-3, TS 38.101-3]. The remaining parameters are defined in clause 7.1.1 where \\( P_{0 \\_ \\text {PUSCH }, b, f, c}(j) \\) and \\( \\alpha_{b_{1}, c, c}(j) \\) are obtained using \\( P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f, c}(0) \\) and \\( p 0 \\) -PUSCH-AlphaSetld \\( =0, P L_{b_{1} f_{1} c}\\left(q_{d}\\right) \\) is obtained using pusch-PathlossReferenceRS-Id \\( =0 \\), and \\( l=0 \\).  If a UE is configured with two UL carriers for a serving cell and the UE determines a Type 1 power headroom report for the serving cell based on a reference PUSCH transmission, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the UL carrier provided by pusch-Config. If the UE is provided pusch-Config for both UL carriers, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the UL carrier provided by pucch-Config. If pucch-Config is not provided to the UE for any of the two UL carriers, the UE computes a Type 1 power headroom report for the serving cell assuming a reference PUSCH transmission on the non-supplementary UL carrier.",
+    "generated_at": "2025-12-10T13:56:08.818172",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'pucch-config' and 'pusch-pathlossreferencers-id'. The evidence primarily describes behavior within a single IE or lacks explicit normative wording to establish a cross-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

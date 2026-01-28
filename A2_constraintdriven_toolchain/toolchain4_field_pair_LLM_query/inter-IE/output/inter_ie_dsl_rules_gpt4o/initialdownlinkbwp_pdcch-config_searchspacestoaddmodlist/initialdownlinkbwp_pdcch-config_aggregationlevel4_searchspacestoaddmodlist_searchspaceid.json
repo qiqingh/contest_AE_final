@@ -1,0 +1,74 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      59
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          59
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not relate aggregationlevel4 and searchspaceid across IEs. It describes linking within search spaces, not between the specified fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialdownlinkbwp_pdcch-config",
+    "field1": "aggregationlevel4",
+    "ie2_name": "searchspacestoaddmodlist",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "This parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to \\( n \\)-th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.",
+    "generated_at": "2026-01-10T14:16:39.666837",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between aggregationlevel4 and searchspaceid based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not relate aggregationlevel4 and searchspaceid across IEs. It describes linking within search spaces, not between the specified fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

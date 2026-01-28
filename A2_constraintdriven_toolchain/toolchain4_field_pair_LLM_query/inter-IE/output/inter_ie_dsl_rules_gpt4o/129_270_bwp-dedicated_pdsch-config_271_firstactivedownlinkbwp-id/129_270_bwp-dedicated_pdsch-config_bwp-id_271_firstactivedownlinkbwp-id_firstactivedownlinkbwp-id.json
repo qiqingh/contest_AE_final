@@ -1,0 +1,73 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      271
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          271
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields bwp-id and firstactivedownlinkbwp-id. The evidence describes behavior within a single IE or lacks explicit normative wording for a cross-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "129_270_bwp-dedicated_pdsch-config",
+    "field1": "bwp-id",
+    "ie2_name": "271_firstactivedownlinkbwp-id",
+    "field2": "firstactivedownlinkbwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If configured for an SCell, this field contains the ID of the downlink bandwidth part to be used upon activation of an SCell. The initial bandwidth part is referred to by BWP-Id = 0. \\\\ Upon reconfiguration with reconfigurationWithSync, the network sets the firstActiveDownlinkBWP-Id and firstActiveUplinkBWP-Id to the same value.",
+    "generated_at": "2026-01-10T14:48:11.866244",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between bwp-id and firstactivedownlinkbwp-id.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields bwp-id and firstactivedownlinkbwp-id. The evidence describes behavior within a single IE or lacks explicit normative wording for a cross-IE constraint.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

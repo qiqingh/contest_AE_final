@@ -1,0 +1,35 @@
+MeasResultIdleNR-r16 ::=  SEQUENCE {
+    measResultServingCell-r16 SEQUENCE {
+        rsrp-Result-r16           RSRP-Range                                                                        OPTIONAL,
+        rsrq-Result-r16           RSRQ-Range                                                                        OPTIONAL,
+        resultsSSB-Indexes-r16    ResultsPerSSB-IndexList-r16                                                       OPTIONAL
+    },
+    measResultsPerCarrierListIdleNR-r16 SEQUENCE (SIZE (1.. maxFreqIdle-r16)) OF MeasResultsPerCarrierIdleNR-r16    OPTIONAL,
+    ...
+}
+
+MeasResultsPerCarrierIdleNR-r16 ::=   SEQUENCE {
+    carrierFreq-r16                       ARFCN-ValueNR,
+    measResultsPerCellListIdleNR-r16      SEQUENCE (SIZE (1..maxCellMeasIdle-r16)) OF MeasResultsPerCellIdleNR-r16,
+    ...
+}
+
+MeasResultsPerCellIdleNR-r16 ::=  SEQUENCE {
+    physCellId-r16                    PhysCellId,
+    measIdleResultNR-r16              SEQUENCE {
+        rsrp-Result-r16                   RSRP-Range                                                              OPTIONAL,
+        rsrq-Result-r16                   RSRQ-Range                                                              OPTIONAL,
+        resultsSSB-Indexes-r16            ResultsPerSSB-IndexList-r16                                             OPTIONAL
+    },
+    ...
+}
+
+ResultsPerSSB-IndexList-r16 ::=   SEQUENCE (SIZE (1.. maxNrofIndexesToReport)) OF ResultsPerSSB-IndexIdle-r16
+
+ResultsPerSSB-IndexIdle-r16 ::=   SEQUENCE {
+    ssb-Index-r16                     SSB-Index,
+    ssb-Results-r16                   SEQUENCE {
+        ssb-RSRP-Result-r16               RSRP-Range                                                              OPTIONAL,
+        ssb-RSRQ-Result-r16               RSRQ-Range                                                              OPTIONAL
+    }                                                                                                     OPTIONAL
+}

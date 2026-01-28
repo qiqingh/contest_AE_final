@@ -1,0 +1,168 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      23
+    ],
+    "field2_all": [
+      275,
+      277,
+      383,
+      385,
+      491,
+      493,
+      599,
+      601
+    ],
+    "actual_pairs": [
+      [
+        [
+          23
+        ],
+        [
+          383,
+          385,
+          491,
+          493,
+          601
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          385,
+          491,
+          493,
+          599,
+          601
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          383,
+          385,
+          491,
+          493,
+          599
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          275,
+          277,
+          383,
+          385,
+          491,
+          493,
+          599,
+          601
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          277,
+          385,
+          493,
+          601
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          277
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          275,
+          277
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          275,
+          383,
+          491,
+          599
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          275
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'schedulingrequestid' from 'mac-logicalchannelconfig' and 'resourcelist' from 'pucch-config_resourcesettoaddmodlist'. The evidence primarily discusses PUCCH resource allocation and multiplexing within the same IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-logicalchannelconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "pucch-config_resourcesettoaddmodlist",
+    "field2": "resourcelist",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5",
+      "9.2.5.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if the UE is provided multi-CSI-PUCCH-ResourceList and if any of the multiple PUCCH resources overlap, the UE multiplexes all CSI reports in a resource from the resources provided by multi-CSI-PUCCH-ResourceList, as described in clause 9.2.5.2.  A UE multiplexes DL HARQ-ACK information, with or without SR, and CSI report(s) in a same PUCCH if the UE is provided simultaneousHARQ-ACK-CSI; otherwise, the UE drops the CSI report(s) and includes only DL HARQ-ACK information, with or without SR, in the PUCCH. If the UE would transmit multiple PUCCHs in a slot that include DL\n---\n9.2.5.2 UE procedure for multiplexing HARQ-ACK/SR/CSI in a PUCCH  For a transmission occasion of a single CSI report, a PUCCH resource is provided by pucch-CSI-ResourceList. For a transmission occasion of multiple CSI reports, corresponding PUCCH resources can be provided by multi-CSI-PUCCHResourceList. If a UE is provided first and second PUCCH-Config, multi-CSI-PUCCH-ResourceList is provided by the first PUCCH-Config, and PUCCH-Resourceld in pucch-CSI-ResourceList or multi-CSI-PUCCH-ResourceList indicates a corresponding PUCCH resource in PUCCH-Resource provided by the first PUCCH-Config-\n---\nIf a UE has one or more CSI reports and zero or more HARQ-ACK/SR information bits to transmit in a PUCCH where the HARQ-ACK, if any, is in response to a PDSCH reception without a corresponding PDCCH - if any of the CSI reports are overlapping and the UE is provided by multi-CSI-PUCCH-ResourceList with \\( J \\leq 2 \\) PUCCH resources in a slot, for PUCCH format 2 and/or PUCCH format 3 and/or PUCCH format 4, as described in clause 9.2.1, where the resources are indexed according to an ascending order for the product of a number of corresponding REs, modulation order \\( Q_{m} \\), and configured code rate \\( r \\);\n---\n- if any of the CSI reports are overlapping and the UE is provided by multi-CSI-PUCCH-ResourceList with \\( J \\leq 2 \\) PUCCH resources in a slot, for PUCCH format 2 and/or PUCCH format 3 and/or PUCCH format 4, as described in clause 9.2.1, where the resources are indexed according to an ascending order for the product of a number of corresponding REs, modulation order \\( Q_{m} \\), and configured code rate \\( r \\); - if \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CSI}}+O_{\\mathrm{CRC}}\\right) \\leq\\left(M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{SC}, \\mathrm{Ctrl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r\\right)_{0} \\), the UE uses PUCCH format 2 resource 0 , or the PUCCH format 3 resource 0 , or the PUCCH format 4 resource 0",
+    "generated_at": "2026-01-10T14:25:21.029729",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'schedulingrequestid' from 'mac-logicalchannelconfig' and 'resourcelist' from 'pucch-config_resourcesettoaddmodlist'. The evidence primarily discusses PUCCH resource allocation and multiplexing within the same IE context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

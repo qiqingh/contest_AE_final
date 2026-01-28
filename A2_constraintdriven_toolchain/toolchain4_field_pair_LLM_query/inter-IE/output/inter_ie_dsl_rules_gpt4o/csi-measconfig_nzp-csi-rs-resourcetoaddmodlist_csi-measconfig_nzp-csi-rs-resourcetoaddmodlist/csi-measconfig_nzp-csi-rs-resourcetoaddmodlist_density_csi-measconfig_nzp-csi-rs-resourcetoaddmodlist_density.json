@@ -1,0 +1,104 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      695,
+      696,
+      712,
+      713
+    ],
+    "field2_all": [
+      712,
+      713,
+      729,
+      730
+    ],
+    "actual_pairs": [
+      [
+        [
+          695,
+          696,
+          712,
+          713
+        ],
+        [
+          712,
+          713,
+          729,
+          730
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE constraint between the density fields of the two IEs. All evidence snippets describe behavior within a single IE or do not relate the two fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "density",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "density",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 25,
+      "original_count": 25,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "7.4.1.5.3",
+      "5.1.6.1.1",
+      "5.1.6.1.3",
+      "6.2.3.2",
+      "5.2.1.2",
+      "6.3.5",
+      "5.2.2.3.1",
+      "6.2.3.1",
+      "4.3",
+      "5.2.1.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The value of \\( \\rho \\) is given by the higher-layer parameter density in the CSI-RS-ResourceMapping [E or the CSI-RSCellMobility I \\( E \\) and the number of ports \\( X \\) is given by the higher-layer parameter nrofPorts. For NZP CSI-RS configured by the TRS-ResourceSet [E, the density \\( \\rho=3 \\) and number of ports \\( X=1 \\).\n---\nwhere \\( f(i) \\) is the bit number of the \\( i^{\\text {th }} \\) bit in the bitmap set to one, repeated across every \\( [1 / \\rho] \\) of the resource blocks configured for CSI-RS reception by the UE. The starting position and number of the resource blocks in which the UE shall assume that CSI-RS is transmitted are given by the higher-layer parameters freqBand and density in the CSI-RSResourceMapping [E for the bandwidth part given by the higher-layer parameter BWP-Id in the CSI-ResourceConfig IE or given by the higher-layer parameters nrofPRBs in the CSI-RS-CellMobility [E where the the startPRB given by csi\\( r s \\)-Measurement \\( B W \\) is relative to common resource block 0 . For NZP CSI-RS configured by TRS-ResourceSet [E, the starting position and number of the resource blocks in which the CSI-RS can be transmitted are given by the higherlayer parameters nrofRBs, and startingRB in the TRS-ResourceSet [E, where startingRB is relative to common resource block 0 and the density \\( \\rho=3 \\).\n---\n- a single port CSI-RS resource with density \\( \\rho=3 \\) given by Table 7.4.1.5.3-1 from [4, TS 38.211] and higher layer parameter density configured by CSI-RS-ResourceMapping.\n---\nIf the higher layer parameter PTRS-DownlinkConfig indicates that the time density thresholds ptrs \\( -M C S_{i}=p t r s-M C S_{i+1} \\), then the time density \\( L_{P T-R S} \\) of the associated row where both these thresholds appear in Table 5.1.6.3-1 is disabled. If the higher layer parameter PTRS-DownlinkConfig indicates that the frequency density thresholds \\( N_{R B i}=N_{R B i+1} \\), then the frequency density \\( K_{P I R S} \\) of the associated row where both these thresholds appear in Table 5.1.6.3-2 is disabled.\n---\nWhen a UE is receiving PDSCH for retransmission, if the UE is scheduled with an MCS index greater than V, where \\( \\mathrm{V}=28 \\) for MCS Table 5.1.3.1-1 and Table 5.1.3.1-3, and \\( \\mathrm{V}=27 \\) for MCS Table 5.1.3.1-2, and \\( \\mathrm{V}=26 \\) for MCS Table 5.1.3.1-4 respectively, the MCS for the PT-RS time-density determination is obtained from the DCI received for the same transport block in the initial transmission, which is smaller than or equal to V .\n---\nWhen a UE configured by the higher layer parameter repetitionScheme set to 'fdmSchemeA' or 'fdmSchemeB', and the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DMRS port(s) within one CDM group in the DCI field 'Antenna Port(s)', the UE shall receive a single PT-RS port which is associated with the lowest indexed DM-RS antenna port among the DM-RS antenna ports assigned for the PDSCH, a PT-RS frequency density is determined by the number of PRBs associated to each TCI state, and a PT-RS resource element mapping is associated to the allocated PRBs for each TCI state.\n---\n- When one Resource Setting is configured, the Resource Setting (given by higher layer parameter resourcesForChannelMeasurement) is for channel and interference measurement on NZP CSI-RS for L1-SINR computation. UE may assume that same 1 port NZP CSI-RS resource(s) with density 3 REs/RB is used for both channel and interference measurements.\n---\n- A UE is not expected to be configured with csi-ReportingBand which contains a subband where a CSI-RS resource linked to the CSI Report setting has the frequency density of each CSI-RS port per PRB in the subband less than the configured density of the CSI-RS resource.\n---\n- density in resourceMapping defines CSI-RS frequency density of each CSI-RS port per PRB, and CSI-RS PRB offset in case of the density value of \\( 1 / 2 \\), where the allowable values are given in Clause 7.4 - 1.5 of [4, TS 38.211]. For density 1/2, the odd/even PRB allocation indicated in density is with respect to the common resource block grid.\n---\nAll CSI-RS resources within one set are configured with same density and same nrofPorts, except for the NZP CSI-RS resources used for interference measurement.\n---\nIf the higher layer parameter PTRS-UplinkConfig indicates that the time density thresholds ptrs-MCS: ptrs-MCS \\( S_{i+1} \\), then the time density \\( L_{P T R S} \\) of the associated row where both these thresholds appear in Table 6.2.3.1-1 is disabled. If the higher layer parameter frequencyDensity in PTRS-UplinkConfig indicates that the frequency density thresholds \\( N_{R B, i}= N_{R B, i+1} \\), then the frequency density \\( K_{P T R S} \\) of the associated row where both these thresholds appear in Table 6.2.3.1-2 is disabled.\n---\nWhen a UE is scheduled to transmit PUSCH for retransmission, if the UE is scheduled with \\( I_{M C S}>V \\), where \\( V=28 \\) for MCS Table 5.1.3.1-1 and MCS Table 5.1.3.1-3 and \\( V=27 \\) for MCS Table 5.1.3.1-2, respectively, the MCS for PT-RS time-density determination is obtained from the DCI for the same transport block in the initial transmission, which is smaller than or equal to V .\n---\n- and the UE may be configured PT-RS time density \\( L_{P I-R S}=2 \\) with the higher layer parameter timeDensityTransformPrecoding. Otherwise, the UE shall assume \\( L_{P T-R S}=1 \\).\n---\n- and the UE may be configured PT-RS time density \\( L_{P I-R S}=2 \\) with the higher layer parameter timeDensityTransformPrecoding. Otherwise, the UE shall assume \\( L_{P T-R S}=1 \\). - if the higher layer parameter sampleDensity indicates that the sample density thresholds \\( N_{R B, i}=N_{R B, i+} \\), then the associated row where both these thresholds appear in Table 6.2.3.2-1 is disabled.\n---\nThe UE expects single port RS in the set \\( \\bar{q}_{0} \\), or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\). The UE expects single-port or two-port CSI-RS with frequency density equal to 1 or 3 REs per RB in the set \\( \\bar{q}_{1} \\), or \\( \\bar{q}_{1,0} \\), or \\( \\bar{q}_{1,1} \\). The thresholds \\( \\mathrm{Q}_{\\text {out }, \\mathrm{LR}} \\) and \\( \\mathrm{Q}_{\\mathrm{m}, \\mathrm{LR}} \\) correspond to the default value of rimInSyncOutOfSyncThreshold, as described in [10, TS 38.133] for \\( \\mathrm{Q}_{\\text {out }} \\), and to the value provided by rsrp-ThresholdSSB or rsrp-ThresholdBFR, respectively.\n---\nDensity of CSI-RS resource measured in RE/port/PRB (see TS 38.211 [16], clause 7.4.1.5.3). \\\\ Values 0.5 (dot5), 1 (one) and 3 (three) are allowed for \\( \\mathrm{X}=1 \\), values 0.5 (dot5) and 1 (one) are allowed for \\( \\mathrm{X}=2,16,24 \\) and 32 , value 1 (one) is allowed for \\( \\mathrm{X}=4,8,12 \\). \\\\ For density = 1/2, includes 1-bit indication for RB level comb offset indicating whether odd or even RBs are occupied by CSI-RS.\n---\nFrequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to \\( 2^{*} \\mathrm{n}-1 \\) where n is the number of bits set to 1 in frequencyDomainAllocation.\n---\nPresence and frequency density of DL PT-RS as a function of Scheduled BW. If the field is absent, the UE uses K_PT-RS = 2 (see TS 38.214 [19], clause 5.1.6.3, table 5.1.6.3-2).\n---\nPresence and time density of DL PT-RS as a function of MCS. The value 29 is only applicable for MCS Table 5.1.3.1-1 (TS 38.214 [19]). If the field is absent, the UE uses L_PT-RS = 1 (see TS 38.214 [19], clause 5.1.6.3, table 5.1.6.3-1).\n---\nPresence and frequency density of UL PT-RS for CP-OFDM waveform as a function of scheduled BW If the field is absent, the UE uses K_PT-RS = 2 (see TS 38.214 [19], clause 6.1).\n---\nSample density of PT-RS for DFT-s-OFDM, pre-DFT, indicating a set of thresholds \\( \\mathrm{T}=\\{\\mathrm{NRBn}, \\mathrm{n}=0,1,2,3,4\\} \\), that indicates dependency between presence of PT-RS and scheduled BW and the values of X and K the UE should use depending on the scheduled BW, see TS 38.214 [19], clause 6.1, table 6.2.3.2-1.\n---\nPresence and time density of UL PT-RS for CP-OFDM waveform as a function of MCS If the field is absent, the UE uses L_PT-RS = 1 (see TS 38.214 [19], clause 6.1).\n---\nTime density (OFDM symbol level) of PT-RS for DFT-s-OFDM. If the field is absent, the UE applies value d1 (see TS 38.214 [19], clause 6.1).\n---\nPresence and frequency density of SL PT-RS as a function of scheduled BW. If the field is not configured, the UE uses K_PT-RS \\( =2 \\)\n---\nPresence and time density of SLPT-RS as a function of MCS. If the field is not configured, the UE uses L_PT-RS \\( =1 \\)",
+    "generated_at": "2026-01-10T14:47:13.845951",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between the density fields of the two IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE constraint between the density fields of the two IEs. All evidence snippets describe behavior within a single IE or do not relate the two fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

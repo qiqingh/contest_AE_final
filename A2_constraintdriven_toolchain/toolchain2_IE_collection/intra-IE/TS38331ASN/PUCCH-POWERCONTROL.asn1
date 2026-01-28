@@ -1,0 +1,49 @@
+PUCCH-PowerControl ::=              SEQUENCE {
+    deltaF-PUCCH-f0                     INTEGER (-16..15)                                                       OPTIONAL, -- Need R
+    deltaF-PUCCH-f1                     INTEGER (-16..15)                                                       OPTIONAL, -- Need R
+    deltaF-PUCCH-f2                     INTEGER (-16..15)                                                       OPTIONAL, -- Need R
+    deltaF-PUCCH-f3                     INTEGER (-16..15)                                                       OPTIONAL, -- Need R
+    deltaF-PUCCH-f4                     INTEGER (-16..15)                                                       OPTIONAL, -- Need R
+    p0-Set                              SEQUENCE (SIZE (1..maxNrofPUCCH-P0-PerSet)) OF P0-PUCCH                 OPTIONAL, -- Need M
+    pathlossReferenceRSs                SEQUENCE (SIZE (1..maxNrofPUCCH-PathlossReferenceRSs)) OF PUCCH-PathlossReferenceRS
+                                                                                                                OPTIONAL, -- Need M
+    twoPUCCH-PC-AdjustmentStates        ENUMERATED {twoStates}                                                  OPTIONAL, -- Need S
+    ...,
+    [[
+    pathlossReferenceRSs-v1610          SetupRelease { PathlossReferenceRSs-v1610 }                             OPTIONAL -- Need M
+    ]]
+}
+
+P0-PUCCH ::=                            SEQUENCE {
+    p0-PUCCH-Id                             P0-PUCCH-Id,
+    p0-PUCCH-Value                          INTEGER (-16..15)
+}
+
+P0-PUCCH-Id ::=                         INTEGER (1..8)
+
+PathlossReferenceRSs-v1610 ::=          SEQUENCE (SIZE (1..maxNrofPUCCH-PathlossReferenceRSsDiff-r16)) OF PUCCH-PathlossReferenceRS-r16
+
+PUCCH-PathlossReferenceRS ::=                   SEQUENCE {
+    pucch-PathlossReferenceRS-Id                PUCCH-PathlossReferenceRS-Id,
+    referenceSignal                             CHOICE {
+        ssb-Index                                   SSB-Index,
+        csi-RS-Index                                NZP-CSI-RS-ResourceId
+    }
+}
+
+PUCCH-PathlossReferenceRS-r16 ::=                   SEQUENCE {
+    pucch-PathlossReferenceRS-Id-r16                    PUCCH-PathlossReferenceRS-Id-v1610,
+    referenceSignal-r16                                 CHOICE {
+        ssb-Index-r16                                       SSB-Index,
+        csi-RS-Index-r16                                    NZP-CSI-RS-ResourceId
+    }
+}
+
+PUCCH-PowerControlSetInfo-r17 ::=       SEQUENCE {
+    pucch-PowerControlSetInfoId-r17         PUCCH-PowerControlSetInfoId-r17,
+    p0-PUCCH-Id-r17                         P0-PUCCH-Id,
+    pucch-ClosedLoopIndex-r17               ENUMERATED { i0, i1 },
+    pucch-PathlossReferenceRS-Id-r17        PUCCH-PathlossReferenceRS-Id-r17
+}
+
+PUCCH-PowerControlSetInfoId-r17 ::=     INTEGER (1.. maxNrofPowerControlSetInfos-r17)

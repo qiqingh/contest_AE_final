@@ -1,0 +1,409 @@
+Attaching to process 916403
+[New LWP 916407]
+[New LWP 916408]
+[New LWP 916409]
+[New LWP 916410]
+[New LWP 916411]
+[New LWP 916412]
+[New LWP 916413]
+[New LWP 916414]
+[New LWP 916415]
+[New LWP 916416]
+[New LWP 916417]
+[New LWP 916418]
+[New LWP 916419]
+[New LWP 916420]
+[New LWP 916421]
+[New LWP 916422]
+[New LWP 916423]
+[New LWP 916424]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f930757214b in do_sin (dx=6.1515563813794681e-18, x=-0.0019382839357571791) at ../sysdeps/ieee754/dbl-64/s_sin.c:140
+140	../sysdeps/ieee754/dbl-64/s_sin.c: No such file or directory.
+(gdb) (gdb) Continuing.
+[New Thread 0x7f92d7e79640 (LWP 916464)]
+[New Thread 0x7f92d7678640 (LWP 916465)]
+[New Thread 0x7f92d6e77640 (LWP 916466)]
+[New Thread 0x7f92d64b3640 (LWP 916467)]
+
+Thread 19 "UL__actor" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7f92dcff9640 (LWP 916424)]
+0x0000599932fcccb5 in generate_srs_nr (srs_config_pdu=<optimized out>, frame_parms=<optimized out>, txdataF=<optimized out>, symbol_offset=<optimized out>, nr_srs_info=<optimized out>, amp=<optimized out>, frame_number=<optimized out>, slot_number=<optimized out>) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/srs_modulation_nr.c:383
+383	        c16_t r_amp = {(((int32_t)round((double)amp * r.r / sqrt_N_ap)) >> 15),
+(gdb) #0  0x0000599932fcccb5 in generate_srs_nr (srs_config_pdu=<optimized out>, frame_parms=<optimized out>, txdataF=<optimized out>, symbol_offset=<optimized out>, nr_srs_info=<optimized out>, amp=<optimized out>, frame_number=<optimized out>, slot_number=<optimized out>) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/srs_modulation_nr.c:383
+        tmp = <optimized out>
+        r_amp = {r = 511, i = 0}
+        shift = <optimized out>
+        r_overbar = <optimized out>
+        r = {r = <optimized out>, i = 0}
+        k = 0
+        u = <optimized out>
+        sum_n_b = <optimized out>
+        K_TC_p = <optimized out>
+        k_l_offset = 0 '\000'
+        k_0_overbar_p = <optimized out>
+        k_0_p = <optimized out>
+        subcarrier = <optimized out>
+        l_line_offset = <optimized out>
+        v = <optimized out>
+        l_line = <optimized out>
+        n_SRS_cs_i = <optimized out>
+        alpha_i = <optimized out>
+        p_index = <optimized out>
+        B_SRS = <optimized out>
+        C_SRS = <optimized out>
+        b_hop = <optimized out>
+        K_TC = <optimized out>
+        K_TC_overbar = <optimized out>
+        n_SRS_cs = <optimized out>
+        n_ID_SRS = <optimized out>
+        n_shift = <optimized out>
+        n_RRC = <optimized out>
+        groupOrSequenceHopping = <optimized out>
+        l_offset = <optimized out>
+        T_SRS = <optimized out>
+        T_offset = <optimized out>
+        R = <optimized out>
+        num_ant_ports = <optimized out>
+        N_ap = <optimized out>
+        N_symb_SRS = <optimized out>
+        l0 = <optimized out>
+        n_SRS_cs_max = <optimized out>
+        m_SRS_b = <optimized out>
+        M_sc_b_SRS = <optimized out>
+        __FUNCTION__ = "generate_srs_nr"
+        subcarrier_offset = <optimized out>
+        sqrt_N_ap = <optimized out>
+        n_b = 0x7f92dcfe2ab0
+        M_sc_b_SRS_index = <optimized out>
+#1  0x0000599932fccffd in ue_srs_procedures_nr (ue=ue@entry=0x7f92fda94010, proc=proc@entry=0x7f92d0041800, txdataF=txdataF@entry=0x7f92dcfe2c90) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/srs_modulation_nr.c:465
+        srs_config_pdu = <optimized out>
+        frame_parms = 0x7f92fda94b10
+        symbol_offset = <optimized out>
+#2  0x0000599932fc09ff in phy_procedures_nrUE_TX (ue=0x7f92fda94010, proc=0x7f92d0041800, phy_data=0x7f92dcff81e0) at /home/openairinterface5g/openair1/SCHED_NR_UE/phy_procedures_nr_ue.c:292
+        slot_tx = <optimized out>
+        frame_tx = <optimized out>
+        __FUNCTION__ = "phy_procedures_nrUE_TX"
+        samplesF_per_slot = <optimized out>
+        txdataF_buf = <optimized out>
+        txdataF = 0x7f92dcfe2c90
+#3  0x0000599901fbffbb in ?? ()
+No symbol table info available.
+#4  0x0000000001fb0047 in ?? ()
+No symbol table info available.
+#5  0x00000000fe3d00f3 in ?? ()
+No symbol table info available.
+#6  0x00007f9200e601c9 in ?? ()
+No symbol table info available.
+#7  0x00005a00ff8e01f3 in ?? ()
+No symbol table info available.
+#8  0x000000000002fe00 in ?? ()
+No symbol table info available.
+#9  0x00000000fe32ff21 in ?? ()
+No symbol table info available.
+#10 0x00000000fff8fe00 in ?? ()
+No symbol table info available.
+#11 0x00000000ffa201f7 in ?? ()
+No symbol table info available.
+#12 0x00007f92010101ba in ?? ()
+No symbol table info available.
+#13 0x00000000fe520116 in ?? ()
+No symbol table info available.
+#14 0x0000000001ff0013 in ?? ()
+No symbol table info available.
+#15 0x0000000001efff7e in ?? ()
+No symbol table info available.
+#16 0x00007f92ffc601fc in ?? ()
+No symbol table info available.
+#17 0x0000000001d1ff2b in ?? ()
+No symbol table info available.
+#18 0x0000000001e8ff65 in ?? ()
+No symbol table info available.
+#19 0x00000000ff1401c6 in ?? ()
+No symbol table info available.
+#20 0x0000000001e000b0 in ?? ()
+No symbol table info available.
+#21 0x000000000141018e in ?? ()
+No symbol table info available.
+#22 0x00000000fe43ff01 in ?? ()
+No symbol table info available.
+#23 0x00000000fe8c0160 in ?? ()
+No symbol table info available.
+#24 0x00000000fe09ff9c in ?? ()
+No symbol table info available.
+#25 0x0000000001f1007a in ?? ()
+No symbol table info available.
+#26 0x0000000001a0fed5 in ?? ()
+No symbol table info available.
+#27 0x000000000177015c in ?? ()
+No symbol table info available.
+#28 0x00000000ff4bfe20 in ?? ()
+No symbol table info available.
+#29 0x00000000fe8efe9d in ?? ()
+No symbol table info available.
+#30 0x0000000001a9fee2 in ?? ()
+No symbol table info available.
+#31 0x00000000fe14ff6f in ?? ()
+No symbol table info available.
+#32 0x00000000fe10ff7e in ?? ()
+No symbol table info available.
+#33 0x00000000018dfebd in ?? ()
+No symbol table info available.
+#34 0x00000000fe5cfeda in ?? ()
+No symbol table info available.
+#35 0x00000000feeafe51 in ?? ()
+No symbol table info available.
+#36 0x0000000001c700e9 in ?? ()
+No symbol table info available.
+#37 0x000000000127fe5d in ?? ()
+No symbol table info available.
+#38 0x0000000001f9ffb1 in ?? ()
+No symbol table info available.
+#39 0x00000000fe110084 in ?? ()
+No symbol table info available.
+#40 0x00000000ff6b01e9 in ?? ()
+No symbol table info available.
+#41 0x00000000fe00001d in ?? ()
+No symbol table info available.
+#42 0x0000000001ef007f in ?? ()
+No symbol table info available.
+#43 0x0000000001e1ff51 in ?? ()
+No symbol table info available.
+#44 0x00000000008f01eb in ?? ()
+No symbol table info available.
+#45 0x0000000000dafe31 in ?? ()
+No symbol table info available.
+#46 0x000000000083fe11 in ?? ()
+No symbol table info available.
+#47 0x00000000017a0158 in ?? ()
+No symbol table info available.
+#48 0x00000000009cfe18 in ?? ()
+No symbol table info available.
+#49 0x000000000108fe49 in ?? ()
+No symbol table info available.
+#50 0x00000000004301fb in ?? ()
+No symbol table info available.
+#51 0x0000000001faffb6 in ?? ()
+No symbol table info available.
+#52 0x0d02000001c000f7 in ?? ()
+No symbol table info available.
+#53 0x00000003fe0fff83 in ?? ()
+No symbol table info available.
+#54 0x00000000feca0197 in ?? ()
+No symbol table info available.
+#55 0x00000000fe05ffb6 in ?? ()
+No symbol table info available.
+#56 0x0000000001e80098 in ?? ()
+No symbol table info available.
+#57 0x0000000701cdff21 in ?? ()
+No symbol table info available.
+#58 0x00000000010601b7 in ?? ()
+No symbol table info available.
+#59 0x000000000012fe00 in ?? ()
+No symbol table info available.
+#60 0x00000000ff68fe16 in ?? ()
+No symbol table info available.
+#61 0x0000000001ff000e in ?? ()
+No symbol table info available.
+#62 0x00000000fef3fe4c in ?? ()
+No symbol table info available.
+#63 0x00000000ff17fe37 in ?? ()
+No symbol table info available.
+#64 0x0000000001ed0089 in ?? ()
+No symbol table info available.
+#65 0x000000000036fe02 in ?? ()
+No symbol table info available.
+#66 0x000000000122fe5a in ?? ()
+No symbol table info available.
+#67 0x00000000ff9d01f6 in ?? ()
+No symbol table info available.
+#68 0x00007ffd01ce00db in ?? ()
+No symbol table info available.
+#69 0x00005999006c01f4 in ?? ()
+No symbol table info available.
+#70 0x00000000ff96fe0b in ?? ()
+No symbol table info available.
+#71 0x00000000fe35ff1d in ?? ()
+No symbol table info available.
+#72 0x00000000006efe0c in ?? ()
+No symbol table info available.
+#73 0x00000000fece019a in ?? ()
+No symbol table info available.
+#74 0x00000000ffb201fa in ?? ()
+No symbol table info available.
+#75 0x00000000fe1bff5b in ?? ()
+No symbol table info available.
+#76 0x0000000000ca01d6 in ?? ()
+No symbol table info available.
+#77 0x0000000000eb01c6 in ?? ()
+No symbol table info available.
+#78 0x00000000fe03ffc5 in ?? ()
+No symbol table info available.
+#79 0x00000000006701f5 in ?? ()
+No symbol table info available.
+#80 0x00000000ffb701fa in ?? ()
+No symbol table info available.
+#81 0x00000000ff2efe2c in ?? ()
+No symbol table info available.
+#82 0x00000000fe1a00a2 in ?? ()
+No symbol table info available.
+#83 0x00000000fe30ff26 in ?? ()
+No symbol table info available.
+#84 0x0000000001ea0093 in ?? ()
+No symbol table info available.
+#85 0x000000000171fe9d in ?? ()
+No symbol table info available.
+#86 0x0000000001d400cd in ?? ()
+No symbol table info available.
+#87 0x00000000fe72febd in ?? ()
+No symbol table info available.
+#88 0x00000000fe00ffe9 in ?? ()
+No symbol table info available.
+#89 0x000000000021fe01 in ?? ()
+No symbol table info available.
+#90 0x00000000fea20176 in ?? ()
+No symbol table info available.
+#91 0x00000000fefe01ba in ?? ()
+No symbol table info available.
+#92 0x00000000feddfe5a in ?? ()
+No symbol table info available.
+#93 0x00000000ff0b01c1 in ?? ()
+No symbol table info available.
+#94 0x00000000feba018a in ?? ()
+No symbol table info available.
+#95 0x00000000fff3fe00 in ?? ()
+No symbol table info available.
+#96 0x00000000fe010028 in ?? ()
+No symbol table info available.
+#97 0x00000000fe46fefd in ?? ()
+No symbol table info available.
+#98 0x0000000001f20075 in ?? ()
+No symbol table info available.
+#99 0x00000000011efe57 in ?? ()
+No symbol table info available.
+#100 0x0000000001ff0018 in ?? ()
+No symbol table info available.
+#101 0x00000000fe06ffab in ?? ()
+No symbol table info available.
+#102 0x00000000fe61012c in ?? ()
+No symbol table info available.
+#103 0x00000000fea0fe8b in ?? ()
+No symbol table info available.
+#104 0x00000000007101f3 in ?? ()
+No symbol table info available.
+#105 0x00000000012001a6 in ?? ()
+No symbol table info available.
+#106 0x00000000fe18009d in ?? ()
+No symbol table info available.
+#107 0x00000000019b0130 in ?? ()
+No symbol table info available.
+#108 0x00000000018e0140 in ?? ()
+No symbol table info available.
+#109 0x00000000fe090060 in ?? ()
+No symbol table info available.
+#110 0x0000000000c501d8 in ?? ()
+No symbol table info available.
+#111 0x00000000ffe001ff in ?? ()
+No symbol table info available.
+#112 0x00000000ff3cfe26 in ?? ()
+No symbol table info available.
+#113 0x00000000fe08005b in ?? ()
+No symbol table info available.
+#114 0x00000000fe76feb9 in ?? ()
+No symbol table info available.
+#115 0x0000000001950138 in ?? ()
+No symbol table info available.
+#116 0x0000000001ebff6f in ?? ()
+No symbol table info available.
+#117 0x00000000011301af in ?? ()
+No symbol table info available.
+#118 0x00000000ffa0fe09 in ?? ()
+No symbol table info available.
+#119 0x00000000feb0fe7d in ?? ()
+No symbol table info available.
+#120 0x0000000001abfee6 in ?? ()
+No symbol table info available.
+#121 0x00000000fe0bff92 in ?? ()
+No symbol table info available.
+#122 0x00000000fe02ffca in ?? ()
+No symbol table info available.
+#123 0x000000000137fe69 in ?? ()
+No symbol table info available.
+#124 0x00000000fe16ff6a in ?? ()
+No symbol table info available.
+#125 0x00000000fe59fede in ?? ()
+No symbol table info available.
+#126 0x0000000001fffffe in ?? ()
+No symbol table info available.
+#127 0x00000000001cfe00 in ?? ()
+No symbol table info available.
+#128 0x000000000166fe92 in ?? ()
+No symbol table info available.
+#129 0x00000000fee301a9 in ?? ()
+No symbol table info available.
+#130 0x0000000000f801bf in ?? ()
+No symbol table info available.
+#131 0x00000000fed2019d in ?? ()
+No symbol table info available.
+#132 0x000000000183feb1 in ?? ()
+No symbol table info available.
+#133 0x00000000005afe08 in ?? ()
+No symbol table info available.
+#134 0x0000000001f90051 in ?? ()
+No symbol table info available.
+#135 0x00000000fe9cfe8f in ?? ()
+No symbol table info available.
+#136 0x00000000fe49fef8 in ?? ()
+No symbol table info available.
+#137 0x00000000019dfed1 in ?? ()
+No symbol table info available.
+#138 0x00000000fe2eff2b in ?? ()
+No symbol table info available.
+#139 0x00000000fe54fee6 in ?? ()
+No symbol table info available.
+#140 0x0000000001f8ffa6 in ?? ()
+No symbol table info available.
+#141 0x00000000ff77fe12 in ?? ()
+No symbol table info available.
+#142 0x000000000097fe16 in ?? ()
+No symbol table info available.
+#143 0x00000000001401ff in ?? ()
+No symbol table info available.
+#144 0x0000000001eb008e in ?? ()
+No symbol table info available.
+#145 0x00000000009901e8 in ?? ()
+No symbol table info available.
+#146 0x00000000ff8cfe0d in ?? ()
+No symbol table info available.
+#147 0x00000000fe41ff06 in ?? ()
+No symbol table info available.
+#148 0x0000000000aafe1d in ?? ()
+No symbol table info available.
+#149 0x00000000fe850158 in ?? ()
+No symbol table info available.
+#150 0x00000000ff3101d4 in ?? ()
+No symbol table info available.
+#151 0x00000000fe6cfec5 in ?? ()
+No symbol table info available.
+#152 0x00000000000001ff in ?? ()
+No symbol table info available.
+#153 0x00000000000001ff in ?? ()
+No symbol table info available.
+#154 0x00000000fe6cfec5 in ?? ()
+No symbol table info available.
+#155 0x00000000ff3101d4 in ?? ()
+No symbol table info available.
+#156 0x00000000fe850158 in ?? ()
+No symbol table info available.
+#157 0x0000000000aafe1d in ?? ()
+No symbol table info available.
+#158 0x0000000000000000 in ?? ()
+No symbol table info available.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 916403] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 916403
+[Inferior 1 (process 916403) detached]

@@ -1,0 +1,9 @@
+FrequencyInfoUL ::=                 SEQUENCE {
+    frequencyBandList                   MultiFrequencyBandListNR                                OPTIONAL,   -- Cond FDD-OrSUL
+    absoluteFrequencyPointA             ARFCN-ValueNR                                           OPTIONAL,   -- Cond FDD-OrSUL
+    scs-SpecificCarrierList             SEQUENCE (SIZE (1..maxSCSs)) OF SCS-SpecificCarrier,
+    additionalSpectrumEmission          AdditionalSpectrumEmission                              OPTIONAL,   -- Need S
+    p-Max                               P-Max                                                   OPTIONAL,   -- Need S
+    frequencyShift7p5khz                ENUMERATED {true}                                       OPTIONAL,   -- Cond FDD-TDD-OrSUL-Optional
+    ...
+}

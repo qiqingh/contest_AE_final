@@ -1,0 +1,23 @@
+TCI-State ::=                       SEQUENCE {
+    tci-StateId                         TCI-StateId,
+    qcl-Type1                           QCL-Info,
+    qcl-Type2                           QCL-Info                                                    OPTIONAL,   -- Need R
+    ...,
+    [[
+    additionalPCI-r17                   AdditionalPCIIndex-r17                                      OPTIONAL,   -- Need R
+    pathlossReferenceRS-Id-r17          PathlossReferenceRS-Id-r17                                  OPTIONAL,   -- Cond JointTCI1
+    ul-powerControl-r17                 Uplink-powerControlId-r17                                   OPTIONAL    -- Cond JointTCI
+    ]]
+
+}
+
+QCL-Info ::=                        SEQUENCE {
+    cell                                ServCellIndex                                               OPTIONAL,   -- Need R
+    bwp-Id                              BWP-Id                                                      OPTIONAL, -- Cond CSI-RS-Indicated
+    referenceSignal                     CHOICE {
+        csi-rs                              NZP-CSI-RS-ResourceId,
+        ssb                                 SSB-Index
+    },
+    qcl-Type                            ENUMERATED {typeA, typeB, typeC, typeD},
+    ...
+}

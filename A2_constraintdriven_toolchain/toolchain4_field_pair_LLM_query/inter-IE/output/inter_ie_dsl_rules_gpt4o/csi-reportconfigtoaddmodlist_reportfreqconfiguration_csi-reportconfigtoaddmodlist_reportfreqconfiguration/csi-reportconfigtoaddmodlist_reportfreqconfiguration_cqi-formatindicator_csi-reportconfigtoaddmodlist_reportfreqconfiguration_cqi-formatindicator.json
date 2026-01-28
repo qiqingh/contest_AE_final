@@ -1,0 +1,79 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      832,
+      871
+    ],
+    "field2_all": [
+      832,
+      910
+    ],
+    "actual_pairs": [
+      [
+        [
+          832,
+          871
+        ],
+        [
+          832,
+          910
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior or lacks inter-IE relation.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportfreqconfiguration",
+    "field1": "cqi-formatindicator",
+    "ie2_name": "csi-reportconfigtoaddmodlist_reportfreqconfiguration",
+    "field2": "cqi-formatindicator",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.2.1.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- wideband CQI or subband CQI reporting, as configured by the higher layer parameter cqi-FormatIndicator. When wideband CQI reporting is configured, a wideband CQI is reported for each codeword for the entire CSI reporting band. When subband CQI reporting is configured, one CQI for each codeword is reported for each subband in the CSI reporting band.\n---\n- reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', cqi-FormatIndicator is set to 'widebandCQI' and pmi-FormatIndicator is set to 'widebandPMI', or\n---\n- reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', cqi-FormatIndicator is set to 'widebandCQI' and pmi-FormatIndicator is set to 'widebandPMI', or - reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', codebookType is set to 'type[I-PortSelectionr17' with \\( M=1 \\) and cqi-FormatIndicator is set to 'widebandCQI', or\n---\n- reportQuantity is set to 'cri-RI-PMI-CQI', or 'cri-RI-LI-PMI-CQI', codebookType is set to 'type[I-PortSelectionr17' with \\( M=1 \\) and cqi-FormatIndicator is set to 'widebandCQI', or - reportQuantity is set to 'cri-RI-i1' or - reportQuantity is set to 'cri-RI-CQI' or 'cri-RI-i1-CQI' and cqi-FormatIndicator is set to 'widebandCQI', or\n---\nThis field can only be present if cqi-Formatindicator is set to subbandCQI. If the field is configured with bits4, the UE uses 4-bit sub-band CQI. If the field is not present and cqiFormatindicator is set to subbandCQI, the UE uses 2-bit sub-band differential CQI.",
+    "generated_at": "2026-01-10T14:22:34.622464",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between cqi-formatindicator fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior or lacks inter-IE relation.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

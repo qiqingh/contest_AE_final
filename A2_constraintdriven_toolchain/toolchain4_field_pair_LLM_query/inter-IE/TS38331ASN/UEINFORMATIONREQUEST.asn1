@@ -1,0 +1,24 @@
+UEInformationRequest-r16 ::=     SEQUENCE {
+    rrc-TransactionIdentifier        RRC-TransactionIdentifier,
+    criticalExtensions               CHOICE {
+        ueInformationRequest-r16         UEInformationRequest-r16-IEs,
+        criticalExtensionsFuture         SEQUENCE {}
+    }
+}
+
+UEInformationRequest-r16-IEs ::= SEQUENCE {
+    idleModeMeasurementReq-r16       ENUMERATED{true}                         OPTIONAL, -- Need N
+    logMeasReportReq-r16             ENUMERATED {true}                        OPTIONAL, -- Need N
+    connEstFailReportReq-r16         ENUMERATED {true}                        OPTIONAL, -- Need N
+    ra-ReportReq-r16                 ENUMERATED {true}                        OPTIONAL, -- Need N
+    rlf-ReportReq-r16                ENUMERATED {true}                        OPTIONAL, -- Need N
+    mobilityHistoryReportReq-r16       ENUMERATED {true}                        OPTIONAL, -- Need N
+    lateNonCriticalExtension         OCTET STRING                             OPTIONAL,
+    nonCriticalExtension             UEInformationRequest-v1700-IEs           OPTIONAL
+}
+
+UEInformationRequest-v1700-IEs ::= SEQUENCE {
+    successHO-ReportReq-r17          ENUMERATED {true}                        OPTIONAL, -- Need N
+    coarseLocationRequest-r17        ENUMERATED {true}                        OPTIONAL, -- Need N
+    nonCriticalExtension             SEQUENCE {}                              OPTIONAL
+}

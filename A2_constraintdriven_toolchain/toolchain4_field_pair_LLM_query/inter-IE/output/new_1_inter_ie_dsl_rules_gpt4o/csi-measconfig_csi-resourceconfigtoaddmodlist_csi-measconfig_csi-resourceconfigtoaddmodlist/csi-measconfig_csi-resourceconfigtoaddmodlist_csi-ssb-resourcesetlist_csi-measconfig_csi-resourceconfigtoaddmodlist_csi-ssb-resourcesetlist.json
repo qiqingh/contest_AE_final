@@ -1,0 +1,76 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      779,
+      794,
+      809
+    ],
+    "field2_all": [
+      794,
+      809
+    ],
+    "actual_pairs": [
+      [
+        [
+          779,
+          794,
+          809
+        ],
+        [
+          794,
+          809
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior or lacks inter-IE relation.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "csi-ssb-resourcesetlist",
+    "ie2_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field2": "csi-ssb-resourcesetlist",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "CSI-SSB-ResourceSet for channel measurements. Entry number in csi-SSB-ResourceSetList in the CSI-ResourceConfig indicated by resourcesForChannelMeasurement in the CSI-ReportConfig indicated by reportConfig/d above (value 1 corresponds to the first entry, value 2 to the second entry, and so on).\n---\nAdds an element to csi-SSB-ResourceSetList when nrofReportedGroups-r17 is configured in IE CSI-ReportConfig (see TS 38.214 [19], clause 5.2.1.2).\n---\nTime domain behavior of resource configuration (see TS 38.214 [19], clause 5.2.1.2). It does not apply to resources provided in the csi-SSB-ResourceSetList.",
+    "generated_at": "2026-01-09T12:12:41.625150",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between csi-ssb-resourcesetlist fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior or lacks inter-IE relation.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

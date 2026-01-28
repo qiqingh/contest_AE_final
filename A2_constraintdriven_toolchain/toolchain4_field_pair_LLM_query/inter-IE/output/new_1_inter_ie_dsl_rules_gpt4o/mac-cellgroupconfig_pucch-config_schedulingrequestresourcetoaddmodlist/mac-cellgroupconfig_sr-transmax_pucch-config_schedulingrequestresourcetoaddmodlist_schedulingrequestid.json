@@ -1,0 +1,111 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      27
+    ],
+    "field2_all": [
+      294,
+      402,
+      510,
+      618
+    ],
+    "actual_pairs": [
+      [
+        [
+          27
+        ],
+        [
+          294
+        ]
+      ],
+      [
+        [
+          27
+        ],
+        [
+          510,
+          618
+        ]
+      ],
+      [
+        [
+          27
+        ],
+        [
+          402,
+          618
+        ]
+      ],
+      [
+        [
+          27
+        ],
+        [
+          294,
+          402,
+          510,
+          618
+        ]
+      ],
+      [
+        [
+          27
+        ],
+        [
+          402,
+          510
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not relate sr-transmax and schedulingrequestid across IEs. It only describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "sr-transmax",
+    "ie2_name": "pucch-config_schedulingrequestresourcetoaddmodlist",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "\\( 4> \\) if SR_COUNTER<sr-TransMax:",
+    "generated_at": "2026-01-09T12:42:04.019846",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between sr-transmax and schedulingrequestid based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not relate sr-transmax and schedulingrequestid across IEs. It only describes behavior within a single IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

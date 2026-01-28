@@ -1,0 +1,14 @@
+FreqPriorityListDedicatedSlicing-r17 ::= SEQUENCE (SIZE (1.. maxFreq)) OF FreqPriorityDedicatedSlicing-r17
+
+FreqPriorityDedicatedSlicing-r17 ::=     SEQUENCE {
+     dl-ExplicitCarrierFreq-r17               ARFCN-ValueNR,
+    sliceInfoListDedicated-r17               SliceInfoListDedicated-r17                                    OPTIONAL  -- Cond Mandatory
+}
+
+SliceInfoListDedicated-r17 ::=           SEQUENCE (SIZE (1..maxSliceInfo-r17)) OF SliceInfoDedicated-r17
+
+SliceInfoDedicated-r17 ::=               SEQUENCE {
+    nsag-IdentityInfo-r17                    NSAG-IdentityInfo-r17,
+    nsag-CellReselectionPriority-r17         CellReselectionPriority                                       OPTIONAL,  -- Need R
+    nsag-CellReselectionSubPriority-r17      CellReselectionSubPriority                                    OPTIONAL   -- Need R
+}

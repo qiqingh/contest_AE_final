@@ -1,0 +1,8 @@
+BH-RLC-ChannelConfig-r16::=      SEQUENCE {
+    bh-LogicalChannelIdentity-r16    BH-LogicalChannelIdentity-r16     OPTIONAL,   -- Cond LCH-SetupOnly
+    bh-RLC-ChannelID-r16             BH-RLC-ChannelID-r16,
+    reestablishRLC-r16               ENUMERATED {true}                 OPTIONAL,   -- Need N
+    rlc-Config-r16                   RLC-Config                        OPTIONAL,   -- Cond LCH-Setup
+    mac-LogicalChannelConfig-r16     LogicalChannelConfig              OPTIONAL,   -- Cond LCH-Setup
+    ...
+}

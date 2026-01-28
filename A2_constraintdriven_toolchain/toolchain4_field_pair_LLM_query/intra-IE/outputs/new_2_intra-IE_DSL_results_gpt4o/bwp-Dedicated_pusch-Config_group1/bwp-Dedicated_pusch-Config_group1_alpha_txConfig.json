@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      541
+    ],
+    "field2_all": [
+      536
+    ],
+    "actual_pairs": [
+      [
+        [
+          541
+        ],
+        [
+          536
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative relationship between the fields 'alpha' and 'txConfig' within the same IE. The evidence lacks explicit normative wording or mathematical/logical relations that directly relate these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pusch-Config_group1",
+    "field1": "alpha",
+    "field2": "txConfig",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "4.3",
+      "6.3.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- in clause 7.2.1, if p 0 -Alpha-CLID-PUCCHSet is provided, the values of P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) and the PUCCH power control adjustment state l are provided by p0-Alpha-CLID-PUCCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate - in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource\n---\n\\begin{tabular}{l} di-Alpha-PSBCH Indicates alpha value for DL pathloss based power control for PSBCH. When the field is not configured the UE applies the value 1 \\end{tabular} \\begin{tabular}{l} dI-P0-PSBCH Indicates P0 value for DL pathloss based power control for PSBCH. If not configured, DL pathloss based power control is disabled for PSBCH. \\end{tabular} \\end{tabular} - SL-PSSCH-TxConfigList The IE SL-PSSCH-TxConfigList indicates PSSCH transmission parameters. When lower layers select parameters from the range indicated in IE SL-PSSCH-TxConfigList, the UE considers both configurations in IE SL-PSSCH-TxConfigList and the CBR-dependent configurations represented in IE SL-CBR-PriorityTxConfigList. Only one IE SL-PSSCH-TxConfig is provided per SL-TypeTxSync. SL-PSSCH-TxConfigList information element\n---\n- in clause 7.3.1, if p0-Alpha-CLID-SRS-Set is provided, - if useIndicatedTCIState is provided for a SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with the indicated DLorJoint-TCIState or UL-TCIState - else, if uselndicatedTCIState is not provided for a SRS resource set and for a first SRS resource from the SRS resource set, the values of P_{0 \\_ \\text {SRS }, b, f, c}\\left(q_{s}\\right), \\alpha_{\\text {SRS }, b, f, c}\\left(q_{s}\\right) , and SRS power control adjustment state l are provided by p0-Alpha-CLID-SRS-Set associated with DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set and a RS index q_{d} for obtaining a pathloss estimate for the SRS transmission is provided by PL-RS associated with or included in the indicated DLorJoint-TCIState or UL-TCIState of an SRS resource with lowest SRS-Resourceld in the SRS resource set In the remaining of this clause, if a PDCCH reception by a UE includes two PDCCH candidates from corresponding search space sets, as described in clause 10.1 - a PDCCH monitoring occasion is the union of the PDCCH monitoring occasions for the two PDCCH candidates - the end of the PDCCH reception is the end of the PDCCH candidate that ends later The PDCCH reception includes the two PDCCH candidates also when the UE is not required to monitor one of the two PDCCH candidates as described in clauses 10,11.1, and 11.1.1. 7.1 Physical uplink shared channel For a PUSCH transmission on active UL BWP b , as described in clause 12 , of carrier f of serving cell c , a UE first calculates a linear value \\hat{P}_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) of the transmit power P_{\\text {PUSCH }, b, f, c}\\left(i, j, q_{d}, l\\right) , with parameters as defined in clause 7.1.1. For a PUSCH transmission scheduled by a DCI format other than DCI format 0 \\_0 , or configured by ConfiguredGrantConfig or semiPersistentOnPUSCH, if txConfig in PUSCH-Config is set to 'codebook', - if ul-FullPowerTransmission in PUSCH-Config is provided, the UE scales \\hat{P}_{\\mathrm{PUSCH}, b, f, c}\\left(i, j, q_{d}, l\\right) by s where: - if ul-FullPowerTransmission in PUSCH-Config is set to fullpowerModel, and each SRS resource in the SRSResourceSet with usage set to 'codebook' has more than one SRS port, s is the ratio of a number of antenna ports with non-zero PUSCH transmission power over the maximum number of SRS ports supported by the UE in one SRS resource",
+    "generated_at": "2026-01-07T19:46:53.902445",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative relationship between the fields 'alpha' and 'txConfig' within the same IE. The evidence lacks explicit normative wording or mathematical/logical relations that directly relate these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

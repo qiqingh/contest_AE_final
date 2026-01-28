@@ -1,0 +1,17 @@
+ULInformationTransfer ::=           SEQUENCE {
+    criticalExtensions                  CHOICE {
+        ulInformationTransfer               ULInformationTransfer-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+ULInformationTransfer-IEs ::=       SEQUENCE {
+    dedicatedNAS-Message                DedicatedNAS-Message                OPTIONAL,
+    lateNonCriticalExtension            OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                ULInformationTransfer-v1700-IEs     OPTIONAL
+}
+
+ULInformationTransfer-v1700-IEs ::=       SEQUENCE {
+    dedicatedInfoF1c-r17                      DedicatedInfoF1c-r17                OPTIONAL,
+    nonCriticalExtension                      SEQUENCE {}                         OPTIONAL
+}

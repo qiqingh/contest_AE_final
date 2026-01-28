@@ -1,0 +1,76 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      699,
+      716
+    ],
+    "field2_all": [
+      716,
+      733
+    ],
+    "actual_pairs": [
+      [
+        [
+          699,
+          716
+        ],
+        [
+          716,
+          733
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a cross-field relation between the powercontroloffset fields from different IEs. All evidence pertains to single-IE behavior or lacks explicit inter-IE constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "powercontroloffset",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "powercontroloffset",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1",
+      "5.2.2.5",
+      "5.2.1.4.2",
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources.\n---\nFor L1-SINR reporting, if the higher layer parameter nrofReportedRS in CSI-ReportConfig is configured to be one, the reported L1-SINR value is defined by a 7-bit value in the range [-23,40] dB with 0.5 dB step size, and if the higher layer parameter nrofReportedRS is configured to be larger than one, or if the higher layer parameter groupBasedBeamReporting is configured as 'enabled', the UE shall use differential L1-SINR based reporting, where the largest measured value of L1-SINR is quantized to a 7-bit value in the range [ \\( -23,40 \\) ] dB with 0.5 dB step size, and the differential L1-SINR is quantized to a 4 -bit value. The differential L1-SINR is computed with 1 dB step size with a reference to the largest measured L1-SINR value which is part of the same L1-SINR reporting instance. When NZP CSI-RS is configured for channel measurement and/or interference measurement, the reported L1-SINR values should not be compensated by the power offset(s) given by higher layer parameter powerControOffsetSS or powerControlOffset.\n---\n- powerControlOffset: which is the assumed ratio of PDSCH EPRE to NZP CSI-RS EPRE when UE derives CSI feedback and takes values in the range of \\( [-8,15] \\mathrm{dB} \\) with 1 dB step size. For CQI calculation based on a pair of NZP CSI-RS resources, powerControlOffset of each NZP CSI-RS resource in the pair of NZP CSI-RS resources for channel measurement is the assumed ratio of EPRE when UE derives CSI feedback and takes values in the range of \\( [-8,15] \\mathrm{dB} \\) with 1 dB step size.\n---\n- The UE shall assume that the corresponding PDSCH signals for \\( v_{j} \\) layers transmitted on the \\( P \\) antenna ports of the CSI-RS resource in Group \\( j \\) would have a ratio of EPRE to CSI-RS EPRE equal to the powerControlOffset of the respective CSI-RS resource, for \\( j=1,2 \\).",
+    "generated_at": "2026-01-10T14:47:17.417827",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between powercontroloffset fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a cross-field relation between the powercontroloffset fields from different IEs. All evidence pertains to single-IE behavior or lacks explicit inter-IE constraints.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

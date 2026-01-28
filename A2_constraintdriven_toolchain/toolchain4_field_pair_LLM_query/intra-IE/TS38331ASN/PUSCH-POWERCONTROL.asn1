@@ -1,0 +1,90 @@
+PUSCH-PowerControl ::=              SEQUENCE {
+    tpc-Accumulation                    ENUMERATED { disabled }                                                 OPTIONAL, -- Need S
+    msg3-Alpha                          Alpha                                                                   OPTIONAL, -- Need S
+    p0-NominalWithoutGrant              INTEGER (-202..24)                                                      OPTIONAL, -- Need M
+    p0-AlphaSets                        SEQUENCE (SIZE (1..maxNrofP0-PUSCH-AlphaSets)) OF P0-PUSCH-AlphaSet     OPTIONAL, -- Need M
+    pathlossReferenceRSToAddModList     SEQUENCE (SIZE (1..maxNrofPUSCH-PathlossReferenceRSs)) OF PUSCH-PathlossReferenceRS
+                                                                                                                OPTIONAL, -- Need N
+    pathlossReferenceRSToReleaseList    SEQUENCE (SIZE (1..maxNrofPUSCH-PathlossReferenceRSs)) OF PUSCH-PathlossReferenceRS-Id
+                                                                                                                OPTIONAL,  -- Need N
+    twoPUSCH-PC-AdjustmentStates        ENUMERATED {twoStates}                                                  OPTIONAL, -- Need S
+    deltaMCS                            ENUMERATED {enabled}                                                    OPTIONAL, -- Need S
+    sri-PUSCH-MappingToAddModList       SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF SRI-PUSCH-PowerControl
+                                                                                                                OPTIONAL, -- Need N
+    sri-PUSCH-MappingToReleaseList      SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF SRI-PUSCH-PowerControlId
+                                                                                                                OPTIONAL  -- Need N
+}
+
+P0-PUSCH-AlphaSet ::=               SEQUENCE {
+    p0-PUSCH-AlphaSetId                 P0-PUSCH-AlphaSetId,
+    p0                                  INTEGER (-16..15)                                                       OPTIONAL, -- Need S
+    alpha                               Alpha                                                                   OPTIONAL  -- Need S
+}
+
+P0-PUSCH-AlphaSetId ::=             INTEGER (0..maxNrofP0-PUSCH-AlphaSets-1)
+
+PUSCH-PathlossReferenceRS ::=       SEQUENCE {
+    pusch-PathlossReferenceRS-Id        PUSCH-PathlossReferenceRS-Id,
+    referenceSignal                     CHOICE {
+        ssb-Index                           SSB-Index,
+        csi-RS-Index                        NZP-CSI-RS-ResourceId
+    }
+}
+
+PUSCH-PathlossReferenceRS-r16 ::=   SEQUENCE {
+    pusch-PathlossReferenceRS-Id-r16    PUSCH-PathlossReferenceRS-Id-v1610,
+    referenceSignal-r16                 CHOICE {
+        ssb-Index-r16                       SSB-Index,
+        csi-RS-Index-r16                    NZP-CSI-RS-ResourceId
+    }
+}
+
+DummyPathlossReferenceRS-v1710 ::= SEQUENCE {
+    pusch-PathlossReferenceRS-Id-r17    PUSCH-PathlossReferenceRS-Id-r17,
+    additionalPCI-r17                   AdditionalPCIIndex-r17                                         OPTIONAL  -- Need R
+}
+
+PUSCH-PathlossReferenceRS-Id ::=    INTEGER (0..maxNrofPUSCH-PathlossReferenceRSs-1)
+
+PUSCH-PathlossReferenceRS-Id-v1610 ::= INTEGER (maxNrofPUSCH-PathlossReferenceRSs..maxNrofPUSCH-PathlossReferenceRSs-1-r16)
+
+PUSCH-PathlossReferenceRS-Id-r17 ::= INTEGER (0..maxNrofPUSCH-PathlossReferenceRSs-1-r16)
+
+SRI-PUSCH-PowerControl ::=          SEQUENCE {
+    sri-PUSCH-PowerControlId            SRI-PUSCH-PowerControlId,
+    sri-PUSCH-PathlossReferenceRS-Id    PUSCH-PathlossReferenceRS-Id,
+    sri-P0-PUSCH-AlphaSetId             P0-PUSCH-AlphaSetId,
+    sri-PUSCH-ClosedLoopIndex           ENUMERATED { i0, i1 }
+}
+
+SRI-PUSCH-PowerControlId ::=        INTEGER (0..maxNrofSRI-PUSCH-Mappings-1)
+
+PUSCH-PowerControl-v1610 ::=        SEQUENCE {
+    pathlossReferenceRSToAddModListSizeExt-v1610   SEQUENCE (SIZE (1..maxNrofPUSCH-PathlossReferenceRSsDiff-r16)) OF PUSCH-PathlossReferenceRS-r16
+                                                                                                                OPTIONAL, -- Need N
+    pathlossReferenceRSToReleaseListSizeExt-v1610  SEQUENCE (SIZE (1..maxNrofPUSCH-PathlossReferenceRSsDiff-r16)) OF PUSCH-PathlossReferenceRS-Id-v1610
+                                                                                                                OPTIONAL, -- Need N
+    p0-PUSCH-SetList-r16                SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF P0-PUSCH-Set-r16      OPTIONAL, -- Need R
+    olpc-ParameterSet                   SEQUENCE {
+        olpc-ParameterSetDCI-0-1-r16        INTEGER (1..2)                                                      OPTIONAL, -- Need R
+        olpc-ParameterSetDCI-0-2-r16        INTEGER (1..2)                                                      OPTIONAL  -- Need R
+    }                                                                                                           OPTIONAL, -- Need M
+    ...,
+    [[
+    sri-PUSCH-MappingToAddModList2-r17  SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF SRI-PUSCH-PowerControl
+                                                                                                                OPTIONAL, -- Need N
+    sri-PUSCH-MappingToReleaseList2-r17 SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF SRI-PUSCH-PowerControlId OPTIONAL, -- Need N
+    p0-PUSCH-SetList2-r17               SEQUENCE (SIZE (1..maxNrofSRI-PUSCH-Mappings)) OF P0-PUSCH-Set-r16      OPTIONAL, -- Need R
+    dummy SEQUENCE (SIZE (1..maxNrofPUSCH-PathlossReferenceRSs-r16)) OF DummyPathlossReferenceRS-v1710          OPTIONAL  -- Need N
+    ]]
+}
+
+P0-PUSCH-Set-r16 ::=                SEQUENCE {
+    p0-PUSCH-SetId-r16                  P0-PUSCH-SetId-r16,
+    p0-List-r16                         SEQUENCE (SIZE (1..maxNrofP0-PUSCH-Set-r16)) OF P0-PUSCH-r16            OPTIONAL, -- Need R
+    ...
+}
+
+P0-PUSCH-SetId-r16 ::=              INTEGER (0..maxNrofSRI-PUSCH-Mappings-1)
+
+P0-PUSCH-r16 ::=                    INTEGER (-16..15)

@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field2, 'resourceAllocationType1'), EQ(field1, 'absent'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      73
+    ],
+    "field2_all": [
+      72
+    ],
+    "actual_pairs": [
+      [
+        [
+          73
+        ],
+        [
+          72
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'absent')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field2='resourceAllocationType1', field1='absent'"
+    ],
+    "invalid": [
+      "field2='resourceAllocationType1', field1='config1'"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that the UE ignores field1 (rbg-Size) if field2 (resourceAllocation) is set to resourceAllocationType1.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "pdsch-Config",
+    "field1": "rbg-Size",
+    "field2": "resourceAllocation",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 12,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.2.2.1",
+      "5.1.2.2.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1.\n---\nIn downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast.\n---\nIn uplink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured in pusch-Config and the size of the bandwidth part as defined in Table 6.1.2.2.1-1.\n---\nSelection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1.\n---\nSelection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent. Note: rbg-Size is used when the transformPrecoder parameter is disabled.\n---\nSelection between config 1 and config 2 for RBG size for PDSCH. The UE ignores this field if resourceAllocation is set to resourceAllocation Type 1 (see TS 38.214 [19], clause 5.1.2.2.1).\n---\nIn downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1.\n---\nIn downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast.\n---\nIn uplink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured in pusch-Config and the size of the bandwidth part as defined in Table 6.1.2.2.1-1.\n---\nSelection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1.\n---\nSelection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent. Note: rbg-Size is used when the transformPrecoder parameter is disabled.\n---\nSelection between config 1 and config 2 for RBG size for PDSCH. The UE ignores this field if resourceAllocation is set to resourceAllocation Type 1 (see TS 38.214 [19], clause 5.1.2.2.1).",
+    "generated_at": "2025-12-11T14:14:04.519185",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field2, 'resourceAllocationType1'), EQ(field1, 'absent'))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'absent')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field2='resourceAllocationType1', field1='absent'"
+        ],
+        "invalid": [
+          "field2='resourceAllocationType1', field1='config1'"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that the UE ignores field1 (rbg-Size) if field2 (resourceAllocation) is set to resourceAllocationType1.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

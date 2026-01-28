@@ -1,0 +1,168 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      282,
+      288,
+      390,
+      396,
+      498,
+      504,
+      606,
+      612
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          288
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          390,
+          396,
+          498,
+          504,
+          612
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          390,
+          396,
+          498,
+          504,
+          606
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          282
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          396,
+          498,
+          504,
+          606,
+          612
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          282,
+          390,
+          498,
+          606
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          282,
+          288,
+          390,
+          396,
+          498,
+          504,
+          606,
+          612
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          282,
+          288
+        ]
+      ],
+      [
+        [
+          26
+        ],
+        [
+          288,
+          396,
+          504,
+          612
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not establish a direct inter-IE constraint between the fields from mac-cellgroupconfig and pucch-config_resourcetoaddmodlist.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "pucch-config_resourcetoaddmodlist",
+    "field2": "nrofsymbols",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.6",
+      "9.2.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If \\( S R_{\\text {PERIODICITY }} \\) is smaller than one slot, the UE determines a SR transmission occasion in a PUCCH to start in a symbol with index \\( l[4, \\mathrm{TS} 38.211] \\) if \\( \\left(l-l_{0} \\bmod S R_{\\text {PERIODICITY }}\\right) \\bmod S R_{\\text {PERIODICITY }}=0 \\) where \\( l_{0} \\) is the value of startingSymbollndex.  If the UE determines that, for a SR transmission occasion in a PUCCH, the number of symbols available for the PUCCH transmission in a slot is smaller than the value provided by nrofSymbols, the UE does not transmit the PUCCH in the slot.\n---\nIf the UE determines that, for a SR transmission occasion in a PUCCH, the number of symbols available for the PUCCH transmission in a slot is smaller than the value provided by nrofSymbols, the UE does not transmit the PUCCH in the slot.\n---\nFor unpaired spectrum, the UE determines the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) slots for a PUCCH transmission starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting and having - an UL symbol, as described in clause 11.1, or flexible symbol that is not SS/PBCH block symbol provided by startingSymbollndex as a first symbol, and - consecutive UL symbols, as described in clause 11.1, or flexible symbols that are not SS/PBCH block symbols, starting from the first symbol, equal to or larger than a number of symbols provided by nrofsymbols\n---\n- consecutive UL symbols, as described in clause 11.1, or flexible symbols that are not SS/PBCH block symbols, starting from the first symbol, equal to or larger than a number of symbols provided by nrofsymbols  For paired spectrum or supplementary uplink band, the UE determines the \\( N_{\\mathrm{PUCCH}}^{\\text {repeat }} \\) slots for a PUCCH transmission as the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) consecutive slots starting from a slot indicated to the UE as described in clause 9.2.3 for HARQ-ACK reporting, or a slot determined as described in clause 9.2.4 for SR reporting or in clause 5.2.1.4 of [6, TS 38.214] for CSI reporting.",
+    "generated_at": "2025-12-10T13:44:17.766932",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "Association",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No explicit inter-IE constraint between schedulingrequestid and nrofsymbols",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not establish a direct inter-IE constraint between the fields from mac-cellgroupconfig and pucch-config_resourcetoaddmodlist.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

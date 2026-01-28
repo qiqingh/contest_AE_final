@@ -1,0 +1,37 @@
+MeasurementReportSidelink ::=                   SEQUENCE {
+    criticalExtensions                              CHOICE {
+        measurementReportSidelink-r16                   MeasurementReportSidelink-r16-IEs,
+        criticalExtensionsFuture                        SEQUENCE {}
+    }
+}
+
+MeasurementReportSidelink-r16-IEs ::=           SEQUENCE {
+    sl-measResults-r16                              SL-MeasResults-r16,
+    lateNonCriticalExtension                        OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                            SEQUENCE{}                                                              OPTIONAL
+}
+
+SL-MeasResults-r16 ::=                          SEQUENCE {
+    sl-MeasId-r16                                   SL-MeasId-r16,
+    sl-MeasResult-r16                               SL-MeasResult-r16,
+    ...
+}
+
+SL-MeasResult-r16 ::=                           SEQUENCE {
+    sl-ResultDMRS-r16                               SL-MeasQuantityResult-r16                                               OPTIONAL,
+    ...
+}
+
+SL-MeasQuantityResult-r16 ::=                   SEQUENCE {
+    sl-RSRP-r16                                     RSRP-Range                                                              OPTIONAL,
+    ...
+}
+
+SL-MeasResultListRelay-r17 ::=                  SEQUENCE (SIZE (1..maxNrofRelayMeas-r17)) OF SL-MeasResultRelay-r17
+
+SL-MeasResultRelay-r17 ::=                      SEQUENCE {
+    cellIdentity-r17                                CellAccessRelatedInfo,
+    sl-RelayUE-Identity-r17                         SL-SourceIdentity-r17,
+    sl-MeasResult-r17                               SL-MeasResult-r16,
+    ...
+}

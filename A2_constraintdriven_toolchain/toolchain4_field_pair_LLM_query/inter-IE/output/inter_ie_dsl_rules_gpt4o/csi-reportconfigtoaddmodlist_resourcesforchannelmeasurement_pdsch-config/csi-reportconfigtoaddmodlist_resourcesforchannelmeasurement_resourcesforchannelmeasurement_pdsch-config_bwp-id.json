@@ -1,0 +1,96 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      823,
+      848,
+      862,
+      887,
+      901,
+      926
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          926
+        ]
+      ],
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          823,
+          848,
+          862,
+          887,
+          901
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided only describes behavior within a single IE and does not establish a cross-IE constraint between the specified fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_resourcesforchannelmeasurement",
+    "field1": "resourcesforchannelmeasurement",
+    "ie2_name": "pdsch-config",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- \\\\ ResourceConfig indicated by resourcesForChannelMeasurement.",
+    "generated_at": "2026-01-10T14:54:28.496501",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between resourcesforchannelmeasurement and bwp-id.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided only describes behavior within a single IE and does not establish a cross-IE constraint between the specified fields.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

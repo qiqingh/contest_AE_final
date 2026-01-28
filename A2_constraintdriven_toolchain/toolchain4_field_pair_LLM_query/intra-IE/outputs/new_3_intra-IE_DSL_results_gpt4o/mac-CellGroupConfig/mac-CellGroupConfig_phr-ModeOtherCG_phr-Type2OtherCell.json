@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      39
+    ],
+    "field2_all": [
+      38
+    ],
+    "actual_pairs": [
+      [
+        [
+          39
+        ],
+        [
+          38
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct or conditional relationship between field1 and field2 within the same IE. The evidence discusses conditions for each field separately without linking them in a normative manner.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ModeOtherCG",
+    "field2": "phr-Type2OtherCell",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "5> else: 6> if this MAC entity has UL resources allocated for transmission on this Serving Cell; or 6> if the other MAC entity, if configured, has UL resources allocated for transmission on this Serving Cell and phr-ModeOtherCG is set to real by upper layers: 7> obtain the value for the corresponding \\mathrm{P}_{\\mathrm{CMAX}, \\mathrm{C}, \\mathrm{C}} field from the physical layer. 7> if mpe-Reporting-FR2 is configured and this Serving Cell operates on FR2 and this Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding MPE field from the physical layer. 7> if mpe-Reporting-FR2-r17 is configured and this Serving Cell operates on FR2 and this Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding MPE, field from the physical layer; 8> obtain the value for the corresponding Resource, field from the physical layer. 7> if dpc-Reporting-FRI is configured and \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} ENDC/ \\Delta \\mathrm{P}_{\\text {PowerClass, } \\mathrm{NR} \\text {-DC reporting is triggered and this Serving Cell operates on FR1 and this }} Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding DPC field(s) from the physical layer. 3> if phr-Type2OtherCell with value true is configured: 4> if the other MAC entity is E-UTRA MAC entity: 5> obtain the value of the Type 2 power headroom for the SpCell of the other MAC entity (i.e. EUTRA MAC entity);\n---\n7> if dpc-Reporting-FRI is configured and \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} ENDC/ \\Delta \\mathrm{P}_{\\text {PowerClass, } \\mathrm{NR} \\text {-DC reporting is triggered and this Serving Cell operates on FR1 and this }} Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding DPC field(s) from the physical layer. 3> if phr-Type2OtherCell with value true is configured: 4> if the other MAC entity is E-UTRA MAC entity: 5> obtain the value of the Type 2 power headroom for the SpCell of the other MAC entity (i.e. EUTRA MAC entity); 5> if phr-ModeOther C G is set to real by upper layers: 6> obtain the value for the corresponding \\mathrm{P}_{\\mathrm{CMAX}, \\mathrm{J}, \\mathrm{C}} field for the SpCell of the other MAC entity (i.e. E-UTRA MAC entity) from the physical layer. 3> if this MAC entity is configured with mpe-Reporting-FR2-r17:",
+    "generated_at": "2026-01-07T21:49:48.456067",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct or conditional relationship between field1 and field2 within the same IE. The evidence discusses conditions for each field separately without linking them in a normative manner.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

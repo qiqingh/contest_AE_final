@@ -1,0 +1,12 @@
+LocationMeasurementIndication ::=           SEQUENCE {
+    criticalExtensions                          CHOICE {
+        locationMeasurementIndication               LocationMeasurementIndication-IEs,
+        criticalExtensionsFuture                    SEQUENCE {}
+    }
+}
+
+LocationMeasurementIndication-IEs ::=       SEQUENCE {
+    measurementIndication                       SetupRelease {LocationMeasurementInfo},
+    lateNonCriticalExtension                    OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                        SEQUENCE{}                                                              OPTIONAL
+}

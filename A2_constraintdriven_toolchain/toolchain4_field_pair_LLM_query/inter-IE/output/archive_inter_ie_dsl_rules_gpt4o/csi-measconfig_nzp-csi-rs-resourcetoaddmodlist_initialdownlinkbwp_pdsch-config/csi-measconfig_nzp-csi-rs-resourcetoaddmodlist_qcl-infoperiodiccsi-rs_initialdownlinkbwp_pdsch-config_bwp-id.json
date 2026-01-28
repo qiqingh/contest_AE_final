@@ -1,0 +1,81 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      68
+    ],
+    "field2_all": [
+      704,
+      721,
+      738
+    ],
+    "actual_pairs": [
+      [
+        [
+          68
+        ],
+        [
+          704,
+          721
+        ]
+      ],
+      [
+        [
+          68
+        ],
+        [
+          721,
+          738
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'qcl-infoperiodiccsi-rs' and 'bwp-id'. The evidence describes behaviors and configurations within individual IEs without explicitly linking these fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "qcl-infoperiodiccsi-rs",
+    "ie2_name": "initialdownlinkbwp_pdsch-config",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
+    "generated_at": "2025-12-10T13:49:22.003239",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'qcl-infoperiodiccsi-rs' and 'bwp-id'. The evidence describes behaviors and configurations within individual IEs without explicitly linking these fields across IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

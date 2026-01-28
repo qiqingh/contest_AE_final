@@ -1,0 +1,82 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      319
+    ],
+    "field2_all": [
+      362,
+      470,
+      578
+    ],
+    "actual_pairs": [
+      [
+        [
+          319
+        ],
+        [
+          362,
+          470,
+          578
+        ]
+      ],
+      [
+        [
+          319
+        ],
+        [
+          362,
+          470
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields 'pusch-configcommon' and 'pusch-config'. The snippets describe behavior within individual IEs without explicitly linking the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pusch-configcommon",
+    "field1": "pusch-configcommon",
+    "ie2_name": "initialuplinkbwp_pusch-config",
+    "field2": "pusch-config",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "\\hline RNTI & PDCCH search space & pusch-ConfigCommon includes puschTimeDomainAllocationList & pusch-Config includes puschTimeDomainAllocationList & PUSCH time domain resource allocation to apply \\\\\n---\n\\hline puschConfigCommon includes puschTimeDomainAll ocationList & pusch-Config includes puschTimeDomainAll ocationList & pusch-Config includes puschTimeDomainAlloc ationListDCI-0-1 & pusch-Config includes puschTimeDomainAllocationLi st-ForMultiPUSCH or pusch-Config includes puschTimeDomainAllocationLi stForMultiPUSCH-17 & PUSCH time domain resource allocation to apply \\\\\n---\n\\hline pusch-ConfigCommon includes puschTimeDomainAllocation L ist & pusch-Config includes puschTimeDomainAllocationL ist & pusch-Config includes puschTimeDomainAllocationListD Cl-0-2 & PUSCH time domain resource allocation to apply \\\\",
+    "generated_at": "2026-01-10T14:46:03.893389",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields 'pusch-configcommon' and 'pusch-config'. The snippets describe behavior within individual IEs without explicitly linking the two fields across different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      271
+    ],
+    "field2_all": [
+      51
+    ],
+    "actual_pairs": [
+      [
+        [
+          271
+        ],
+        [
+          51
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear, explicit relationship between the two fields across the different IEs. The evidence mentions both fields but does not specify how they interact or depend on each other.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "271_firstactivedownlinkbwp-id",
+    "field1": "firstactivedownlinkbwp-id",
+    "ie2_name": "42_63_initialdownlinkbwp_pdcch-config",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.5.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "\\( 3> \\) if the active downlink BWP, which is indicated by the firstActiveDownlinkBWP-Id for the target SpCell of the MCG, has a common search space configured by searchSpaceSIB1:",
+    "generated_at": "2025-12-11T10:13:20.088159",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear, explicit relationship between the two fields across the different IEs. The evidence mentions both fields but does not specify how they interact or depend on each other.",
+      "version_tags": []
+    }
+  }
+}

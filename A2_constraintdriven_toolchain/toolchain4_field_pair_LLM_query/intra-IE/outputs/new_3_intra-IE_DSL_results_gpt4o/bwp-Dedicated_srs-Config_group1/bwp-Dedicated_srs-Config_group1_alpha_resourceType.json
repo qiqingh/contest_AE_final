@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      553
+    ],
+    "field2_all": [
+      551,
+      569
+    ],
+    "actual_pairs": [
+      [
+        [
+          553
+        ],
+        [
+          551,
+          569
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'alpha' and 'resourceType' within the same IE. The evidence snippets focus on other aspects of SRS configuration without linking these specific fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "alpha",
+    "field2": "resourceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1.2",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "time. Each SRS resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or, - otherwise, for 1T4R, - zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and\n---\n\\begin{tabular}{l} alpha alpha value for SRS power control (see TS 38.213 [13], clause 7.3). When the field is absent the UE applies the value 1. \\end{tabular} \\begin{tabular}{l} aperiodicSRS-ResourceTriggerList An additional list of DCI \"code points\" upon which the UE shall transmit SRS according to this SRS resource set configuration (see TS 38.214 [19], clause 6). When the field is not included during a reconfiguration of SRS-ResourceSet of resourceType set to aperiodic, UE maintains this value based on the Need M; that is, this list is not considered as an extension of aperiodicSRS-Resource Trigger for purpose of applying the general rule for extended list in clause 6.1.3. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T21:52:34.001935",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between the fields 'alpha' and 'resourceType' within the same IE. The evidence snippets focus on other aspects of SRS configuration without linking these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

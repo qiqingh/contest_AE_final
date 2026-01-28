@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      25
+    ],
+    "field2_all": [
+      20
+    ],
+    "actual_pairs": [
+      [
+        [
+          25
+        ],
+        [
+          20
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between 'logicalChannelSR-DelayTimerApplied' and 'prioritisedBitRate'. The evidence focuses on logical channel prioritization without linking these specific fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-LogicalChannelConfig",
+    "field1": "logicalChannelSR-DelayTimerApplied",
+    "field2": "prioritisedBitRate",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 16,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.3.1",
+      "5.22.1.4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "NOTE 4: If there is configured grant(s) for transmission of V2X sidelink communication on SL-SCH as determined in clause 5.14.1.2.2 of TS 36.321 [22] at the time of the transmission, and the MAC entity is not able to perform this UL transmission simultaneously with the transmission(s) of V2X sidelink communication, and prioritization-related information is not available prior to the time of the transmission due to processing time restriction, it is up to UE implementation whether this UL transmission is performed. 5.4.3 Multiplexing and assembly 5.4.3.1 Logical Channel Prioritization 5.4.3.1.1 General The Logical Channel Prioritization (LCP) procedure is applied whenever a new transmission is performed. RRC controls the scheduling of uplink data by signalling for each logical channel per MAC entity: - priority where an increasing priority value indicates a lower priority level; - prioritisedBitRate which sets the Prioritized Bit Rate (PBR); - bucketSizeDuration which sets the Bucket Size Duration (BSD).\n---\nNOTE: Sidelink data for discovery and sidelink data for non-discovery transmitted by a UE cannot be multiplexed into the same TB because they are always associated with different destination L2 IDs (see TS 23.304 [26]). 5.22.1.4.1 Logical channel prioritization 5.22.1.4.1.1 General The sidelink Logical Channel Prioritization procedure is applied whenever a new transmission is performed. RRC controls the scheduling of sidelink data by signalling for each logical channel: - sl-Priority where an increasing priority value indicates a lower priority level; - sl-PrioritisedBitRate which sets the sidelink Prioritized Bit Rate (SPBR); - sl-BucketSizeDuration which sets the sidelink Bucket Size Duration (sBSD).",
+    "generated_at": "2026-01-07T21:50:27.490176",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between 'logicalChannelSR-DelayTimerApplied' and 'prioritisedBitRate'. The evidence focuses on logical channel prioritization without linking these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

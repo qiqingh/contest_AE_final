@@ -1,0 +1,202 @@
+RRCRelease ::=                      SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        rrcRelease                          RRCRelease-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCRelease-IEs ::=                  SEQUENCE {
+    redirectedCarrierInfo               RedirectedCarrierInfo                                                       OPTIONAL,   -- Need N
+    cellReselectionPriorities           CellReselectionPriorities                                                   OPTIONAL,   -- Need R
+    suspendConfig                       SuspendConfig                                                               OPTIONAL,   -- Need R
+    deprioritisationReq                 SEQUENCE {
+        deprioritisationType                ENUMERATED {frequency, nr},
+        deprioritisationTimer               ENUMERATED {min5, min10, min15, min30}
+    }                                                                                                               OPTIONAL,   -- Need N
+    lateNonCriticalExtension                OCTET STRING                                                        OPTIONAL,
+    nonCriticalExtension                    RRCRelease-v1540-IEs                                                OPTIONAL
+}
+
+RRCRelease-v1540-IEs ::=            SEQUENCE {
+    waitTime                           RejectWaitTime                OPTIONAL, -- Need N
+    nonCriticalExtension               RRCRelease-v1610-IEs          OPTIONAL
+}
+
+RRCRelease-v1610-IEs ::=            SEQUENCE {
+    voiceFallbackIndication-r16        ENUMERATED {true}                             OPTIONAL, -- Need N
+    measIdleConfig-r16                 SetupRelease {MeasIdleConfigDedicated-r16}    OPTIONAL, -- Need M
+    nonCriticalExtension               RRCRelease-v1650-IEs                          OPTIONAL
+}
+
+RRCRelease-v1650-IEs ::=            SEQUENCE {
+    mpsPriorityIndication-r16          ENUMERATED {true}                             OPTIONAL, -- Cond Redirection2
+    nonCriticalExtension               RRCRelease-v1710-IEs                          OPTIONAL
+}
+
+RRCRelease-v1710-IEs ::=            SEQUENCE {
+    noLastCellUpdate-r17                ENUMERATED {true}                            OPTIONAL,   -- Need S
+    nonCriticalExtension                SEQUENCE {}                                  OPTIONAL
+}
+
+RedirectedCarrierInfo ::=           CHOICE {
+    nr                                  CarrierInfoNR,
+    eutra                               RedirectedCarrierInfo-EUTRA,
+    ...
+}
+
+RedirectedCarrierInfo-EUTRA ::=     SEQUENCE {
+    eutraFrequency                      ARFCN-ValueEUTRA,
+    cnType                              ENUMERATED {epc,fiveGC}                                             OPTIONAL    -- Need N
+}
+
+CarrierInfoNR ::=                   SEQUENCE {
+    carrierFreq                         ARFCN-ValueNR,
+    ssbSubcarrierSpacing                SubcarrierSpacing,
+    smtc                                SSB-MTC                                                             OPTIONAL,      -- Need S
+    ...
+}
+
+SuspendConfig ::=                   SEQUENCE {
+    fullI-RNTI                          I-RNTI-Value,
+    shortI-RNTI                         ShortI-RNTI-Value,
+    ran-PagingCycle                     PagingCycle,
+    ran-NotificationAreaInfo            RAN-NotificationAreaInfo                                            OPTIONAL,   -- Need M
+    t380                                PeriodicRNAU-TimerValue                                             OPTIONAL,   -- Need R
+    nextHopChainingCount                NextHopChainingCount,
+    ...,
+    [[
+    sl-UEIdentityRemote-r17             RNTI-Value                                                          OPTIONAL, -- Cond L2RemoteUE
+    sdt-Config-r17                      SetupRelease { SDT-Config-r17 }                                     OPTIONAL,   -- Need M
+    srs-PosRRC-Inactive-r17             SetupRelease { SRS-PosRRC-Inactive-r17 }                            OPTIONAL,   -- Need M
+    ran-ExtendedPagingCycle-r17         ExtendedPagingCycle-r17                                             OPTIONAL    -- Cond RANPaging
+    ]],
+    [[
+    ncd-SSB-RedCapInitialBWP-SDT-r17    SetupRelease {NonCellDefiningSSB-r17}                               OPTIONAL    -- Need M
+    ]]
+}
+
+PeriodicRNAU-TimerValue ::=         ENUMERATED { min5, min10, min20, min30, min60, min120, min360, min720}
+
+CellReselectionPriorities ::=       SEQUENCE {
+    freqPriorityListEUTRA               FreqPriorityListEUTRA                                               OPTIONAL,       -- Need M
+    freqPriorityListNR                  FreqPriorityListNR                                                  OPTIONAL,       -- Need M
+    t320                                ENUMERATED {min5, min10, min20, min30, min60, min120, min180, spare1} OPTIONAL,     -- Need R
+    ...,
+    [[
+    freqPriorityListDedicatedSlicing-r17 FreqPriorityListDedicatedSlicing-r17                               OPTIONAL        -- Need M
+    ]]
+}
+
+PagingCycle ::=                     ENUMERATED {rf32, rf64, rf128, rf256}
+
+ExtendedPagingCycle-r17 ::=         ENUMERATED {rf256, rf512, rf1024, spare1}
+
+FreqPriorityListEUTRA ::=           SEQUENCE (SIZE (1..maxFreq)) OF FreqPriorityEUTRA
+
+FreqPriorityListNR ::=              SEQUENCE (SIZE (1..maxFreq)) OF FreqPriorityNR
+
+FreqPriorityEUTRA ::=               SEQUENCE {
+    carrierFreq                         ARFCN-ValueEUTRA,
+    cellReselectionPriority             CellReselectionPriority,
+    cellReselectionSubPriority          CellReselectionSubPriority                                          OPTIONAL        -- Need R
+}
+
+FreqPriorityNR ::=                  SEQUENCE {
+    carrierFreq                         ARFCN-ValueNR,
+    cellReselectionPriority             CellReselectionPriority,
+    cellReselectionSubPriority          CellReselectionSubPriority                                          OPTIONAL        -- Need R
+}
+
+RAN-NotificationAreaInfo ::=        CHOICE {
+    cellList                            PLMN-RAN-AreaCellList,
+    ran-AreaConfigList                  PLMN-RAN-AreaConfigList,
+    ...
+}
+
+PLMN-RAN-AreaCellList ::=           SEQUENCE (SIZE (1.. maxPLMNIdentities)) OF PLMN-RAN-AreaCell
+
+PLMN-RAN-AreaCell ::=               SEQUENCE {
+    plmn-Identity                       PLMN-Identity                                                       OPTIONAL,   -- Need S
+    ran-AreaCells                       SEQUENCE (SIZE (1..32)) OF  CellIdentity
+}
+
+PLMN-RAN-AreaConfigList ::=         SEQUENCE (SIZE (1..maxPLMNIdentities)) OF PLMN-RAN-AreaConfig
+
+PLMN-RAN-AreaConfig ::=             SEQUENCE {
+    plmn-Identity                       PLMN-Identity                                                       OPTIONAL,   -- Need S
+    ran-Area                            SEQUENCE (SIZE (1..16)) OF  RAN-AreaConfig
+}
+
+RAN-AreaConfig ::=                  SEQUENCE {
+    trackingAreaCode                    TrackingAreaCode,
+    ran-AreaCodeList                    SEQUENCE (SIZE (1..32)) OF  RAN-AreaCode                            OPTIONAL    -- Need R
+}
+
+SDT-Config-r17 ::=                  SEQUENCE {
+    sdt-DRB-List-r17                    SEQUENCE (SIZE (0..maxDRB)) OF DRB-Identity                         OPTIONAL,   -- Need M
+    sdt-SRB2-Indication-r17             ENUMERATED {allowed}                                                OPTIONAL,   -- Need R
+    sdt-MAC-PHY-CG-Config-r17           SetupRelease {SDT-CG-Config-r17}                                    OPTIONAL,   -- Need M
+    sdt-DRB-ContinueROHC-r17            ENUMERATED { cell, rna }                                            OPTIONAL    -- Need S
+}
+
+SDT-CG-Config-r17 ::= OCTET STRING (CONTAINING SDT-MAC-PHY-CG-Config-r17)
+
+SDT-MAC-PHY-CG-Config-r17 ::=       SEQUENCE {
+    -- CG-SDT specific configuration
+    cg-SDT-ConfigLCH-RestrictionToAddModList-r17 SEQUENCE (SIZE(1..maxLC-ID)) OF  CG-SDT-ConfigLCH-Restriction-r17 OPTIONAL,   -- Need N
+    cg-SDT-ConfigLCH-RestrictionToReleaseList-r17 SEQUENCE (SIZE(1..maxLC-ID)) OF  LogicalChannelIdentity  OPTIONAL,   -- Need N
+    cg-SDT-ConfigInitialBWP-NUL-r17       SetupRelease {BWP-UplinkDedicatedSDT-r17}                     OPTIONAL,   -- Need M
+    cg-SDT-ConfigInitialBWP-SUL-r17       SetupRelease {BWP-UplinkDedicatedSDT-r17}                     OPTIONAL,   -- Need M
+    cg-SDT-ConfigInitialBWP-DL-r17        BWP-DownlinkDedicatedSDT-r17                                  OPTIONAL,   -- Need M
+    cg-SDT-TimeAlignmentTimer-r17           TimeAlignmentTimer                                              OPTIONAL,   -- Need M
+    cg-SDT-RSRP-ThresholdSSB-r17            RSRP-Range                                                      OPTIONAL,   -- Need M
+    cg-SDT-TA-ValidationConfig-r17          SetupRelease { CG-SDT-TA-ValidationConfig-r17 }                 OPTIONAL,   -- Need M
+    cg-SDT-CS-RNTI-r17                      RNTI-Value                                                      OPTIONAL,   -- Need M
+    ...
+}
+
+CG-SDT-TA-ValidationConfig-r17 ::=  SEQUENCE {
+    cg-SDT-RSRP-ChangeThreshold-r17     ENUMERATED { dB2, dB4, dB6, dB8, dB10, dB14, dB18, dB22,
+                                            dB26, dB30, dB34, spare5, spare4, spare3, spare2, spare1}
+}
+
+BWP-DownlinkDedicatedSDT-r17 ::=    SEQUENCE {
+    pdcch-Config-r17                    SetupRelease { PDCCH-Config }                                       OPTIONAL,   -- Need M
+    pdsch-Config-r17                    SetupRelease { PDSCH-Config }                                       OPTIONAL,   -- Need M
+   ...
+}
+
+BWP-UplinkDedicatedSDT-r17 ::=      SEQUENCE {
+    pusch-Config-r17                    SetupRelease { PUSCH-Config }                                       OPTIONAL,   -- Need M
+    configuredGrantConfigToAddModList-r17                 ConfiguredGrantConfigToAddModList-r16             OPTIONAL,   -- Need N
+    configuredGrantConfigToReleaseList-r17                ConfiguredGrantConfigToReleaseList-r16            OPTIONAL,   -- Need N
+   ...
+}
+
+CG-SDT-ConfigLCH-Restriction-r17 ::= SEQUENCE {
+    logicalChannelIdentity-r17          LogicalChannelIdentity,
+    configuredGrantType1Allowed-r17     ENUMERATED {true}                                                   OPTIONAL,   -- Need R
+    allowedCG-List-r17                  SEQUENCE (SIZE (0.. maxNrofConfiguredGrantConfigMAC-1-r16)) OF ConfiguredGrantConfigIndexMAC-r16
+                                                                                                            OPTIONAL    -- Need R
+}
+
+SRS-PosRRC-Inactive-r17 ::= OCTET STRING (CONTAINING SRS-PosRRC-InactiveConfig-r17)
+
+SRS-PosRRC-InactiveConfig-r17 ::=       SEQUENCE {
+    srs-PosConfigNUL-r17                    SRS-PosConfig-r17                                                   OPTIONAL,    -- Need R
+    srs-PosConfigSUL-r17                    SRS-PosConfig-r17                                                   OPTIONAL,    -- Need R
+    bwp-NUL-r17                             BWP                                                                 OPTIONAL,    -- Need S
+    bwp-SUL-r17                             BWP                                                                 OPTIONAL,    -- Need S
+    inactivePosSRS-TimeAlignmentTimer-r17   TimeAlignmentTimer                                                  OPTIONAL,    -- Need M
+    inactivePosSRS-RSRP-ChangeThreshold-r17 RSRP-ChangeThreshold-r17                                            OPTIONAL     -- Need M
+}
+
+RSRP-ChangeThreshold-r17 ::= ENUMERATED {dB4, dB6, dB8, dB10, dB14, dB18, dB22, dB26, dB30, dB34, spare6, spare5, spare4, spare3, spare2, spare1}
+
+SRS-PosConfig-r17 ::=               SEQUENCE {
+    srs-PosResourceSetToReleaseList-r17 SEQUENCE (SIZE(1..maxNrofSRS-PosResourceSets-r16)) OF SRS-PosResourceSetId-r16 OPTIONAL,-- Need N
+    srs-PosResourceSetToAddModList-r17  SEQUENCE (SIZE(1..maxNrofSRS-PosResourceSets-r16)) OF SRS-PosResourceSet-r16  OPTIONAL,-- Need N
+    srs-PosResourceToReleaseList-r17    SEQUENCE (SIZE(1..maxNrofSRS-PosResources-r16)) OF SRS-PosResourceId-r16      OPTIONAL,-- Need N
+    srs-PosResourceToAddModList-r17     SEQUENCE (SIZE(1..maxNrofSRS-PosResources-r16)) OF SRS-PosResource-r16        OPTIONAL -- Need N
+}

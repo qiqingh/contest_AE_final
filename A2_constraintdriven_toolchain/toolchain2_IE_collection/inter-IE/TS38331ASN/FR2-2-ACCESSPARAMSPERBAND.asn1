@@ -1,0 +1,63 @@
+FR2-2-AccessParamsPerBand-r17 ::=       SEQUENCE {
+    -- R1 24-1: Basic FR2-2 DL support
+    dl-FR2-2-SCS-120kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-1a: Basic FR2-2 UL support
+    ul-FR2-2-SCS-120kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-2: 120KHz SSB support for initial access in FR2-2
+    initialAccessSSB-120kHz-r17             ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-1b: Wideband PRACH for 120 kHz in FR2-2
+    widebandPRACH-SCS-120kHz-r17            ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-1c: Multi-RB support PUCCH format 0/1/4 for 120 kHz in FR2-2
+    multiRB-PUCCH-SCS-120kHz-r17            ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-1d: Multiple PDSCH scheduling by single DCI for 120kHz in FR2-2
+    multiPDSCH-SingleDCI-FR2-2-SCS-120kHz-r17 ENUMERATED {supported}          OPTIONAL,
+    -- R1 24-1e: Multiple PUSCH scheduling by single DCI for 120kHz in FR2-2
+    multiPUSCH-SingleDCI-FR2-2-SCS-120kHz-r17 ENUMERATED {supported}          OPTIONAL,
+    -- R1 24-4: 480KHz SCS support for DL
+    dl-FR2-2-SCS-480kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-4a: 480KHz SCS support for UL
+    ul-FR2-2-SCS-480kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-3: 480KHz SSB support for initial access in FR2-2
+    initialAccessSSB-480kHz-r17             ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-4b: Wideband PRACH for 480 kHz in FR2-2
+    widebandPRACH-SCS-480kHz-r17            ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-4c: Multi-RB support PUCCH format 0/1/4 for 480 kHz in FR2-2
+    multiRB-PUCCH-SCS-480kHz-r17            ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-4f: Enhanced PDCCH monitoring for 480KHz in FR2-2
+    enhancedPDCCH-monitoringSCS-480kHz-r17  ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-5: 960KHz SCS support for DL
+    dl-FR2-2-SCS-960kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-5a: 960KHz SCS support for UL
+    ul-FR2-2-SCS-960kHz-r17                 ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-5c: Multi-RB support PUCCH format 0/1/4 for 960 kHz in FR2-2
+    multiRB-PUCCH-SCS-960kHz-r17            ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-5f: Enhanced PDCCH monitoring for 960KHz in FR2-2
+    enhancedPDCCH-monitoringSCS-960kHz-r17  SEQUENCE {
+        pdcch-monitoring4-1-r17                 ENUMERATED {supported}        OPTIONAL,
+        pdcch-monitoring4-2-r17                 ENUMERATED {supported}        OPTIONAL,
+        pdcch-monitoring8-4-r17                 ENUMERATED {supported}        OPTIONAL
+    }                                                                         OPTIONAL,
+    -- R1 24-6: Type 1 channel access procedure in uplink for FR2-2 with shared spectrum channel access
+    type1-ChannelAccess-FR2-2-r17           ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-7: Type 2 channel access procedure in uplink for FR2-2 with shared spectrum channel access
+    type2-ChannelAccess-FR2-2-r17           ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-10: Reduced beam switching time delay
+    reduced-BeamSwitchTiming-FR2-2-r17      ENUMERATED {supported}            OPTIONAL,
+    -- R1 24-8: 32 DL HARQ processes for FR 2-2
+    support32-DL-HARQ-ProcessPerSCS-r17     SEQUENCE {
+        scs-120kHz-r17                          ENUMERATED {supported}        OPTIONAL,
+        scs-480kHz-r17                          ENUMERATED {supported}        OPTIONAL,
+        scs-960kHz-r17                          ENUMERATED {supported}        OPTIONAL
+    }                                                                         OPTIONAL,
+    -- R1 24-9: 32 UL HARQ processes for FR 2-2
+    support32-UL-HARQ-ProcessPerSCS-r17		SEQUENCE {
+        scs-120kHz-r17                          ENUMERATED {supported}        OPTIONAL,
+        scs-480kHz-r17                          ENUMERATED {supported}        OPTIONAL,
+        scs-960kHz-r17                          ENUMERATED {supported}        OPTIONAL
+    }                                                                         OPTIONAL,
+    ...,
+    [[
+    -- R4 15-1: 64QAM for PUSCH for FR2-2
+    modulation64-QAM-PUSCH-FR2-2-r17            ENUMERATED {supported}        OPTIONAL
+    ]]
+}

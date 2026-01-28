@@ -1,0 +1,106 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      701,
+      718,
+      735
+    ],
+    "field2_all": [
+      780,
+      785,
+      790,
+      795,
+      800,
+      805,
+      810,
+      815,
+      820
+    ],
+    "actual_pairs": [
+      [
+        [
+          701,
+          718,
+          735
+        ],
+        [
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815,
+          820
+        ]
+      ],
+      [
+        [
+          701,
+          718,
+          735
+        ],
+        [
+          780,
+          785,
+          790,
+          795,
+          800,
+          805,
+          810,
+          815
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence only describes the individual roles of bwp-id and scramblingid without establishing a cross-IE relationship.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "bwp-id",
+    "ie2_name": "nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "scramblingid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "generated_at": "2026-01-09T12:31:36.321853",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between bwp-id and scramblingid is defined in the provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence only describes the individual roles of bwp-id and scramblingid without establishing a cross-IE relationship.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

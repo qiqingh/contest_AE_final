@@ -1,0 +1,11 @@
+CFR-ConfigMulticast-r17::= SEQUENCE {
+    locationAndBandwidthMulticast-r17              INTEGER (0..37949)                       OPTIONAL,    -- Need S
+    pdcch-ConfigMulticast-r17                      PDCCH-Config                             OPTIONAL,    -- Need M
+    pdsch-ConfigMulticast-r17                      PDSCH-Config                             OPTIONAL,    -- Need M
+    sps-ConfigMulticastToAddModList-r17            SPS-ConfigMulticastToAddModList-r17      OPTIONAL,    -- Need N
+    sps-ConfigMulticastToReleaseList-r17           SPS-ConfigMulticastToReleaseList-r17     OPTIONAL     -- Need N
+}
+
+SPS-ConfigMulticastToAddModList-r17 ::=	SEQUENCE (SIZE (1..8)) OF SPS-Config
+
+SPS-ConfigMulticastToReleaseList-r17 ::= SEQUENCE (SIZE (1..8)) OF SPS-ConfigIndex-r16

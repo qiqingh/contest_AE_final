@@ -1,0 +1,6 @@
+EUTRA-NS-PmaxList ::=               SEQUENCE (SIZE (1..maxEUTRA-NS-Pmax)) OF EUTRA-NS-PmaxValue
+
+EUTRA-NS-PmaxValue ::=              SEQUENCE {
+    additionalPmax                      INTEGER (-30..33)                       OPTIONAL,   -- Need R
+    additionalSpectrumEmission          INTEGER (1..288)                        OPTIONAL    -- Need R
+}

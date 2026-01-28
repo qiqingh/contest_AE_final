@@ -1,0 +1,86 @@
+{
+  "dsl_rule": "IMPLIES(AND(EQ(reportConfigType, 'periodic'), NE(reportQuantity, 'cri-RSRP'), NE(reportQuantity, 'ssb-Index-RSRP')), TRUE)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": [
+    [
+      825
+    ],
+    [
+      830,
+      831
+    ]
+  ],
+  "predicate": "TRUE",
+  "preconditions": [
+    "reportConfigType == 'periodic'",
+    "reportQuantity != 'cri-RSRP'",
+    "reportQuantity != 'ssb-Index-RSRP'"
+  ],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "reportConfigType='periodic', reportQuantity='cri-RI-PMI-CQI'"
+    ],
+    "invalid": [
+      "reportConfigType='periodic', reportQuantity='cri-RSRP'"
+    ]
+  },
+  "notes": "Evidence #1 provides a normative constraint linking 'periodic' reportConfigType with reportQuantity not being 'cri-RSRP' or 'ssb-Index-RSRP'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "reportConfigType",
+    "field2": "reportQuantity",
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.5",
+      "5.2.1.1",
+      "5.1.6.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if the UE is configured to monitor DCI format 2 _ 6 and configured by higher layer parameter p s TransmitOtherPeriodic CSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP' and 'ssb-Index-RSRP' when drx-onDurationTimer in DRXConfig is not started, the most recent CSI measurement occasion occurs in DRX active time or during the time duration indicated by drx-onDurationTimer in DRX-Config also outside DRX active time for CSI to be reported;\n---\nThe time domain behavior of the CSI-ReportConfig is indicated by the higher layer parameter reportConfigType and can be set to 'aperiodic', 'semiPersistentOnPUCCH', 'semiPersistentOnPUSCH', or 'periodic'. For 'periodic' and 'semiPersistentOnPUCCH/'semiPersistentOnPUSCH' CSI reporting, the configured periodicity and slot offset applies in the numerology of the UL BWP in which the CSI report is configured to be transmitted on. The higher layer parameter reportQuantity indicates the CSI-related, L1-RSRP-related, L1-SINR-related or Capability[Set][ndex-related quantities to report. The reportFreqConfiguration indicates the reporting granularity in the frequency domain, including the CSI reporting band and if PMI/CQI reporting is wideband or sub-band. The timeRestrictionForChannelMeasurements parameter in CSI-ReportConfig can be configured to enable time domain restriction for channel measurements and timeRestrictionForInterferenceMeasurements can be configured to enable time domain restriction for interference measurements. The CSI-ReportConfig can also contain CodebookConfig, which contains configuration parameters for Type-I, Type II, Enhanced Type II CSI, or Further Enhanced Type II Port Selection including codebook subset restriction when applicable, and configurations of group-based reporting.\n---\nWhen DRX is configured, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for channel measurement and CSI-RS and/or CSI-[M occasion for interference measurement in DRX Active Time no later than CSI reference resource and drops the report otherwise. When DRX is configured and the CSI-RS Resource Set for channel measurement corresponding to a CSI report is configured with two Resource Groups and N Resource Pairs, as described in clause 5.2.1.4.1, the UE reports a CSI report only if receiving at least one CSI-RS transmission occasion for each CSI-RS resource in a Resource Pair within the same DRX Active Time no later than CSI reference resource and drops the report otherwise. When the UE is configured to monitor DCI format 2 _ 6 and if the UE configured by higher layer parameter ps-TransmitOtherPeriodicCSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP-",
+    "generated_at": "2025-12-09T09:45:44.608095",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(AND(EQ(reportConfigType, 'periodic'), NE(reportQuantity, 'cri-RSRP'), NE(reportQuantity, 'ssb-Index-RSRP')), TRUE)",
+      "preconditions": [
+        "reportConfigType == 'periodic'",
+        "reportQuantity != 'cri-RSRP'",
+        "reportQuantity != 'ssb-Index-RSRP'"
+      ],
+      "predicate": "TRUE",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "reportConfigType='periodic', reportQuantity='cri-RI-PMI-CQI'"
+        ],
+        "invalid": [
+          "reportConfigType='periodic', reportQuantity='cri-RSRP'"
+        ]
+      },
+      "notes": "Evidence #1 provides a normative constraint linking 'periodic' reportConfigType with reportQuantity not being 'cri-RSRP' or 'ssb-Index-RSRP'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

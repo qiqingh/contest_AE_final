@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      936
+    ],
+    [
+      926
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative constraint between 'groupBasedBeamReporting' and 'resourcesForChannelMeasurement'. The evidence discusses resource settings in a general context without linking these specific fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "groupBasedBeamReporting",
+    "field2": "resourcesForChannelMeasurement",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For aperiodic CSI, if groupBasedBeamReporting-r 17 is not configured, each trigger state configured using the higher layer parameter CSI-AperiodicTriggerState is associated with one or multiple CSI-ReportConfig where each CSIReportConfig is linked to periodic, or semi-persistent, or aperiodic resource setting(s): - When one Resource Setting is configured, the Resource Setting (given by higher layer parameter resourcesForChannelMeasurement) is for channel measurement for L1-RSRP or for channel and interference measurement for L1-SINR computation.",
+    "generated_at": "2025-12-09T09:45:18.193265",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative constraint between 'groupBasedBeamReporting' and 'resourcesForChannelMeasurement'. The evidence discusses resource settings in a general context without linking these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

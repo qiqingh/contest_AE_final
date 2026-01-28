@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      34
+    ],
+    "field2_all": [
+      35
+    ],
+    "actual_pairs": [
+      [
+        [
+          34
+        ],
+        [
+          35
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear, normative, and machine-checkable relationship between the two fields within the same IE. The evidence discusses the conditions under which the fields are used, but does not provide a rule that directly relates the values of the two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ProhibitTimer",
+    "field2": "phr-Tx-PowerFactorChange",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB for at least one RS used as pathloss reference for one activated Serving Cell of any MAC entity of which the active DL BWP is not dormant BWP since the last transmission of a PHR in this MAC entity when the MAC entity has UL resources for new transmission;\n---\n- phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell.",
+    "generated_at": "2025-12-11T14:19:22.423745",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a clear, normative, and machine-checkable relationship between the two fields within the same IE. The evidence discusses the conditions under which the fields are used, but does not provide a rule that directly relates the values of the two fields.",
+      "version_tags": []
+    }
+  }
+}

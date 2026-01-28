@@ -1,0 +1,191 @@
+[
+  {
+    "fields": [
+      "pollByte",
+      "pollPDU"
+    ],
+    "field_ids": [
+      [
+        14
+      ],
+      [
+        13
+      ]
+    ],
+    "matched_fields": [
+      "pollByte",
+      "pollPDU"
+    ],
+    "original_sentence": "- if PDU_WITHOUT_POLL >= pollPDU; or - if BYTE_WITHOUT_POLL>= pollByte:",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.3.3.2",
+    "section_title": "Transmission of a AMD PDU",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-Reassembly",
+      "t-StatusProhibit"
+    ],
+    "field_ids": [
+      [
+        17
+      ],
+      [
+        18
+      ]
+    ],
+    "matched_fields": [
+      "t -Reassembly",
+      "t -StatusProhibit"
+    ],
+    "original_sentence": "This timer is used by the receiving side of an AM RLC entity and receiving UM RLC entity in order to detect loss of RLC PDUs at lower layer (see sub clauses 5.2.2.2 and 5.2.3.2). If t -Reassembly is running, t -Reassembly shall not be started additionally, i.e. only one t -Reassembly per RLC entity is running at a given time. c) t -StatusProhibit",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.3",
+    "section_title": "Timers",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-Reassembly",
+      "t-Reassembly"
+    ],
+    "field_ids": [
+      [
+        17
+      ],
+      [
+        17
+      ]
+    ],
+    "matched_fields": [
+      "t -Reassembly",
+      "t -Reassembly"
+    ],
+    "original_sentence": "- if RX_Next_Highest = RX_Next_Reassembly +1 and there is no missing byte segment of the RLC SDU associated with \\mathrm{SN}=\\mathrm{RX} _Next_Reassembly before the last byte of all received segments of this RLC SDU: - stop and reset t -Reassembly. - if t -Reassembly is not running (includes the case when t -Reassembly is stopped due to actions above): - if RX_Next_Highest >\\mathrm{RX} _Next_Reassembly +1 ; or - if RX_Next_Highest =\\mathrm{RX} _Next_Reassembly +1 and there is at least one missing byte segment of the RLC SDU associated with SN = RX_Next_Reassembly before the last byte of all received segments of this RLC SDU:",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": true,
+    "section_number": "5.2.2.2.3",
+    "section_title": "Actions when an UMD PDU is placed in the reception buffer",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-Reassembly",
+      "t-Reassembly"
+    ],
+    "field_ids": [
+      [
+        17
+      ],
+      [
+        17
+      ]
+    ],
+    "matched_fields": [
+      "t -Reassembly",
+      "t -Reassembly"
+    ],
+    "original_sentence": "- if RX_Next_Status_Trigger falls outside of the receiving window and RX_Next_Status_Trigger is not equal to RX_Next + AM_Window_Size: - stop and reset t -Reassembly. - if t -Reassembly is not running (includes the case t -Reassembly is stopped due to actions above): - if RX_Next_Highest > RX_Next +1 ; or - if RX_Next_Highest =\\mathrm{RX} \\_\\mathrm{Next}+1 and there is at least one missing byte segment of the SDU associated with \\mathrm{SN}=\\mathrm{RX} _Next before the last byte of all received segments of this SDU:",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": true,
+    "section_number": "5.2.3.2.3",
+    "section_title": "Actions when an AMD PDU is placed in the reception buffer",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-Reassembly",
+      "t-Reassembly"
+    ],
+    "field_ids": [
+      [
+        17
+      ],
+      [
+        17
+      ]
+    ],
+    "matched_fields": [
+      "t -Reassembly",
+      "t -Reassembly"
+    ],
+    "original_sentence": "b) t -Reassembly This timer is used by the receiving side of an AM RLC entity and receiving UM RLC entity in order to detect loss of RLC PDUs at lower layer (see sub clauses 5.2.2.2 and 5.2.3.2). If t -Reassembly is running, t -Reassembly shall not be started additionally, i.e. only one t -Reassembly per RLC entity is running at a given time. c) t -StatusProhibit",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "7.3",
+    "section_title": "Timers",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-StatusProhibit",
+      "t-StatusProhibit"
+    ],
+    "field_ids": [
+      [
+        18
+      ],
+      [
+        18
+      ]
+    ],
+    "matched_fields": [
+      "t -StatusProhibit",
+      "t -StatusProhibit"
+    ],
+    "original_sentence": "- at the first transmission opportunity indicated by lower layer, construct a STATUS PDU and submit it to lower layer. - else: - at the first transmission opportunity indicated by lower layer after t -StatusProhibit expires, construct a single STATUS PDU even if status reporting was triggered several times while t -StatusProhibit was running and submit it to lower layer. When a STATUS PDU has been submitted to lower layer, the receiving side of an AM RLC entity shall:",
+    "source_file": "ts_138322v160100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": true,
+    "section_number": "5.3.4",
+    "section_title": "Status reporting",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "t-StatusProhibit",
+      "t-StatusProhibit"
+    ],
+    "field_ids": [
+      [
+        18
+      ],
+      [
+        18
+      ]
+    ],
+    "matched_fields": [
+      "t -StatusProhibit",
+      "t -StatusProhibit"
+    ],
+    "original_sentence": "\\begin{tabular}{l} \\boldsymbol{t} -StatusProhibit Timer for status reporting in TS 38.322 [4], in milliseconds. Value m s 0 means 0 ms , value m s 5 means 5 ms and so on. If t -StatusProhibit-v 1610 is present, the UE shall ignore t -StatusProhibit (without suffix). \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": true,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

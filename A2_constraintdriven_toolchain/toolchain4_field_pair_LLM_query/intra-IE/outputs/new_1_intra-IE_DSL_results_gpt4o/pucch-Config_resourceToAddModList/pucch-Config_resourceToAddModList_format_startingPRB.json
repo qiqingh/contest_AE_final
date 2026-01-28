@@ -1,0 +1,72 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      280,
+      286
+    ],
+    "field2_all": [
+      279,
+      285
+    ],
+    "actual_pairs": [
+      [
+        [
+          280,
+          286
+        ],
+        [
+          279,
+          285
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative constraint between 'format' and 'startingPRB' within the same IE. The evidence lacks explicit normative wording or mathematical relations connecting these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList",
+    "field1": "format",
+    "field2": "startingPRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.2.2.2",
+      "5.1.2.3",
+      "9.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "A PUCCH resource includes the following parameters: - a PUCCH resource index provided by pucch-Resourceld - an index of the first PRB prior to frequency hopping or for no frequency hopping by startingPRB, if a UE is not provided useInterlacePUCCH-PUSCH in BWP-UplinkDedicated - an index of the first PRB after frequency hopping by secondHopPRB, if a UE is not provided useInterlacePUCCH-PUSCH in BWP-UplinkDedicated - an indication for intra-slot frequency hopping by intraSlotFrequencyHopping, if a UE is not provided useInterlacePUCCH-PUSCH in BWP-UplinkDedicated - an index of a first interlace by interlacet, if a UE is provided uselnterlacePUCCH-PUSCH in BWPUplinkDedicated - if provided, an index of a second interlace by interlacel, if a UE is provided uselnterlacePUCCH-PUSCH in BWP-UplinkDedicated - an index of an RB set by rb-SetIndex, if a UE is provided useInterlacePUCCH-PUSCH in BWPUplinkDedicated - a configuration for a PUCCH format provided by format ETSI\n---\n- the size of all other RBGs is P . In downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast. The bitmap is of size N_{\\text {RBG }} bits with one bitmap bit per RBG such that each RBG is addressable. The RBGs shall be indexed in the order of increasing frequency and starting at the lowest frequency of the bandwidth part. The order of RBG bitmap is such that RBG 0 to RBG N_{\\text {RBG }}-1 are mapped from MSB to LSB. The RBG is allocated to the UE if the corresponding bit value in the bitmap is 1 , the RBG is not allocated to the UE otherwise. 5.1.2.2.2 Downlink resource allocation type 1 In downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size N_{\\text {BWP }}^{\\text {size }} PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell. ETSI\n---\n5.1.2.3 Physical resource block (PRB) bundling The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 1_2, by applying the parameters of prb-BundlingTypeDCI-1-2 instead of prb-BundingType as well as vrb-ToPRB-InterleaverDCI-1-2 instead of vrb-ToPRB-Interleaver. The PRB bundling procedures for PDSCH scheduled by PDCCH with DCI format 1 _ 1 described in this clause equally apply to PDSCH scheduled by PDCCH with DCI format 4_2, by applying the parameters of prb-BundlingType given by PDSCH-Config-Multicast as well as vrb-ToPRB-Interleaver given by PDSCH-Config-Multicast. A UE may assume that precoding granularity is P_{B W P, i}^{\\prime} consecutive resource blocks in the frequency domain. P_{B W P, i}^{\\prime} can be equal to one of the values among \\{2,4 , wideband \\} . If P_{B W P, i}^{\\prime} is determined as \"wideband\", the UE is not expected to be scheduled with non-contiguous PRBs and the UE may assume that the same precoding is applied to the allocated resource associated with a same TCI state or a same QCL assumption. If P_{B W P, i}^{\\prime} is determined as one of the values among \\{2,4\\} , Precoding Resource Block Group (PRGs) partitions the band width part i with P_{B W P, i}^{\\prime} consecutive PRBs. Actual number of consecutive PRBs in each PRG could be one or more. The first PRG size is given by P_{S W P, 1}^{\\prime}-N_{B W P, 1}^{s \\operatorname{sars}} \\bmod P_{S W P, 1}^{\\prime} and the last PRG size given by \\left(N_{B W P, i}^{s t a r t}+N_{B W P, i}^{s i z e}\\right) \\bmod P_{B W P, i}^{\\prime} if \\left(N_{B W P, i}^{s t a r t}+N_{B W P, i}^{s i z e}\\right) \\bmod P_{B W P, i}^{\\prime} != 0 , and the last PRG size is P_{B W P, i}^{\\prime} if \\left(N_{B W P, i}^{s t a r t}+N_{B W P, i}^{s i z e}\\right) \\bmod P_{B W P, i}^{\\prime}=0 . For PDSCH scheduled by PDCCH with DCI scrambled using G-RNTI or G-CS-RNTI, N_{B W P, i}^{s t a r t} is the starting PRB of the CFR and N_{B W P, i}^{\\text {size }} is the CFR. The UE may assume the same precoding is applied for any downlink contiguous allocation of PRBs in a PRG.",
+    "generated_at": "2026-01-07T16:35:32.456007",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative constraint between 'format' and 'startingPRB' within the same IE. The evidence lacks explicit normative wording or mathematical relations connecting these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

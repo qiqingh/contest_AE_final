@@ -1,0 +1,129 @@
+Attaching to process 919515
+[New LWP 919531]
+[New LWP 919532]
+[New LWP 919533]
+[New LWP 919534]
+[New LWP 919535]
+[New LWP 919536]
+[New LWP 919537]
+[New LWP 919538]
+[New LWP 919579]
+[New LWP 919580]
+[New LWP 919581]
+[New LWP 919582]
+[New LWP 919583]
+[New LWP 919584]
+[New LWP 919585]
+[New LWP 919586]
+[New LWP 919587]
+[New LWP 919588]
+[New LWP 919589]
+[New LWP 919590]
+[New LWP 919591]
+[New LWP 919592]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000741d64f8e7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe2d78b360, rem=rem@entry=0x7ffe2d78b360) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+57	./nptl/futex-internal.c: No such file or directory.
+
+Thread 2 "Tpool0_-1" received signal SIGQUIT, Quit.
+[Switching to Thread 0x741d6420e640 (LWP 919531)]
+__futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x597703fa8a80) at ./nptl/futex-internal.c:57
+(gdb) #0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x597703fa8a80) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x597703fa8a80) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x597703fa8a80, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x0000741d64f3ca41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x597703fa8a30, cond=0x597703fa8a58) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x741d64f3c720 <__condvar_cleanup_waiting>, __arg = 0x741d6420d6b0, __canceltype = 0, __prev = 0x0}
+        cbuffer = {wseq = 80, cond = 0x597703fa8a58, mutex = 0x597703fa8a30, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 80
+        seq = 40
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=cond@entry=0x597703fa8a58, mutex=mutex@entry=0x597703fa8a30) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005976fd017f1b in pop_not_q (out=0x741d6420d750, q=0x597703fa8a30) at /home/openairinterface5g/common/utils/threadPool/bounded_notified_fifo.h:235
+        ret = <optimized out>
+        __FUNCTION__ = "pop_not_q"
+        tmp = <optimized out>
+        dummy = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+        ret = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+        ret = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+        ret = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+#6  worker_thread (arg=<optimized out>) at /home/openairinterface5g/common/utils/threadPool/thread-pool.c:85
+        ret = <optimized out>
+        __FUNCTION__ = "worker_thread"
+        args = <optimized out>
+        idx = <optimized out>
+        tpool = <optimized out>
+        len = <optimized out>
+        num_it = <optimized out>
+        q_arr = 0x597703fa8a30
+#7  0x0000741d64f3dac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, 3031203444542159338, 127669582751296, 0, 127669596575696, 140729661302528, 3031203446088808938, 3031202784575896042}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#8  0x0000741d64fcf850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 919515] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 919515
+[Inferior 1 (process 919515) detached]

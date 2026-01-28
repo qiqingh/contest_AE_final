@@ -1,0 +1,29 @@
+BWP-UplinkCommon ::=                SEQUENCE {
+    genericParameters                   BWP,
+    rach-ConfigCommon                   SetupRelease { RACH-ConfigCommon }                                      OPTIONAL,   -- Need M
+    pusch-ConfigCommon                  SetupRelease { PUSCH-ConfigCommon }                                     OPTIONAL,   -- Need M
+    pucch-ConfigCommon                  SetupRelease { PUCCH-ConfigCommon }                                     OPTIONAL,   -- Need M
+    ...,
+    [[
+    rach-ConfigCommonIAB-r16            SetupRelease { RACH-ConfigCommon }                                      OPTIONAL,   -- Need M
+    useInterlacePUCCH-PUSCH-r16         ENUMERATED {enabled}                                                    OPTIONAL,   -- Need R
+    msgA-ConfigCommon-r16               SetupRelease { MsgA-ConfigCommon-r16 }                                  OPTIONAL    -- Cond SpCellOnly2
+    ]],
+    [[
+    enableRA-PrioritizationForSlicing-r17 BOOLEAN                                                    OPTIONAL, -- Cond RA-PrioSliceAI
+    additionalRACH-ConfigList-r17       SetupRelease { AdditionalRACH-ConfigList-r17 }               OPTIONAL, -- Cond SpCellOnly2
+    rsrp-ThresholdMsg3-r17              RSRP-Range                                                   OPTIONAL, -- Need R
+    numberOfMsg3-RepetitionsList-r17    SEQUENCE (SIZE (4)) OF NumberOfMsg3-Repetitions-r17                  OPTIONAL,  -- Cond Msg3Rep
+    mcs-Msg3-Repetitions-r17            SEQUENCE (SIZE (8)) OF INTEGER (0..31)                               OPTIONAL   -- Cond Msg3Rep
+    ]]
+}
+
+AdditionalRACH-ConfigList-r17 ::=       SEQUENCE (SIZE(1..maxAdditionalRACH-r17)) OF AdditionalRACH-Config-r17
+
+AdditionalRACH-Config-r17 ::=       SEQUENCE {
+    rach-ConfigCommon-r17               RACH-ConfigCommon                                                   OPTIONAL,  -- Need R
+    msgA-ConfigCommon-r17               MsgA-ConfigCommon-r16                                               OPTIONAL,  -- Need R
+    ...
+}
+
+NumberOfMsg3-Repetitions-r17::=         ENUMERATED {n1, n2, n3, n4, n7, n8, n12, n16}

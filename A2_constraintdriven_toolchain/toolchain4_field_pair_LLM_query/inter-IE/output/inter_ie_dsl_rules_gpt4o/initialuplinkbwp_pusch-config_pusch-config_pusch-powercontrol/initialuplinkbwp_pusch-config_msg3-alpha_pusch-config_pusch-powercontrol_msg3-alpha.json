@@ -1,0 +1,102 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      322
+    ],
+    "field2_all": [
+      322,
+      430,
+      538,
+      646
+    ],
+    "actual_pairs": [
+      [
+        [
+          322
+        ],
+        [
+          322,
+          430,
+          538,
+          646
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          322
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          430,
+          538
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          538,
+          646
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between the two fields 'msg3-alpha' from 'initialuplinkbwp_pusch-config' and 'msg3-alpha' from 'pusch-config_pusch-powercontrol'. The evidence describes behavior within individual IEs without relating the fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pusch-config",
+    "field1": "msg3-alpha",
+    "ie2_name": "pusch-config_pusch-powercontrol",
+    "field2": "msg3-alpha",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "Dedicated alpha value for MsgA PUSCH. If the field is absent, the UE shall use the value of msg3-Alpha if configured, else UE applies value 1 (see TS 38.213 [13], clause 7.1.1).\n---\nconfiguration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH.",
+    "generated_at": "2026-01-10T14:26:39.543285",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between the two fields 'msg3-alpha' from 'initialuplinkbwp_pusch-config' and 'msg3-alpha' from 'pusch-config_pusch-powercontrol'. The evidence describes behavior within individual IEs without relating the fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

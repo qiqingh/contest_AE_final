@@ -1,0 +1,10 @@
+CFR-ConfigMCCH-MTCH-r17 ::= SEQUENCE {
+    locationAndBandwidthBroadcast-r17          LocationAndBandwidthBroadcast-r17  OPTIONAL,  -- Need S
+    pdsch-ConfigMCCH-r17                       PDSCH-ConfigBroadcast-r17          OPTIONAL,  -- Need S
+    commonControlResourceSetExt-r17            ControlResourceSet                 OPTIONAL   -- Cond NotSIB1CommonControlResource
+}
+
+LocationAndBandwidthBroadcast-r17 ::= CHOICE {
+    sameAsSib1ConfiguredLocationAndBW          NULL,
+    locationAndBandwidth                       INTEGER (0..37949)
+}

@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      441,
+      549
+    ],
+    "field2_all": [
+      688,
+      705,
+      722
+    ],
+    "actual_pairs": [
+      [
+        [
+          441,
+          549
+        ],
+        [
+          688,
+          705
+        ]
+      ],
+      [
+        [
+          441,
+          549
+        ],
+        [
+          705,
+          722
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between the specified fields. The evidence discusses associations and configurations within individual IEs but does not explicitly relate the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_srs-config",
+    "field1": "srs-resourcesetid",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "nzp-csi-rs-resourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.1.2",
+      "6.1.3.36"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission.\n---\n- \\( F_{0} \\) : This field indicates the type of a resource used as a spatial relation for the \\( i^{\\text {th }} \\) Positioning SRS resource within the Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID. The field is set to 00 to indicate NZP CSI-RS resource index is used; it is set to 01 to indicate SSB index is used; it is set to 10 to indicate SRS resource index is used; it is set to 11 to indicate DL-PRS index is used. The length of the field is 2 bits; - \\( F_{1} \\) : This field indicates the type of SRS resource used as spatial relation for the \\( i^{\\text {th }} \\) Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\( \\mathrm{F}_{0} \\) is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits;\n---\n- \\( F_{1} \\) : This field indicates the type of SRS resource used as spatial relation for the \\( i^{\\text {th }} \\) Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\( \\mathrm{F}_{0} \\) is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits;",
+    "generated_at": "2026-01-10T14:23:32.642099",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No explicit inter-IE constraint between srs-resourcesetid and nzp-csi-rs-resourceid found in the evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between the specified fields. The evidence discusses associations and configurations within individual IEs but does not explicitly relate the two fields across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

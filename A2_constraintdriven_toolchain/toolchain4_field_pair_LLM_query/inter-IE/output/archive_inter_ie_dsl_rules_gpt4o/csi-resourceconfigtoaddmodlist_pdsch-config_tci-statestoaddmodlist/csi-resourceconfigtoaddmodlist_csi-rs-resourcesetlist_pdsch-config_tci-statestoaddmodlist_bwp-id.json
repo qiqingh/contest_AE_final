@@ -1,0 +1,156 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      68,
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      778,
+      783,
+      788,
+      789,
+      793,
+      798,
+      803,
+      804,
+      808,
+      813,
+      818,
+      819
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ],
+      [
+        [
+          68,
+          133,
+          198,
+          263
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ],
+      [
+        [
+          68
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804,
+          808,
+          813,
+          818,
+          819
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields 'csi-rs-resourcesetlist' and 'bwp-id' across the different IEs. The evidence describes behavior within a single IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-resourceconfigtoaddmodlist",
+    "field1": "csi-rs-resourcesetlist",
+    "ie2_name": "pdsch-config_tci-statestoaddmodlist",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.",
+    "generated_at": "2025-12-10T13:39:44.392038",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields 'csi-rs-resourcesetlist' and 'bwp-id' across the different IEs. The evidence describes behavior within a single IE context.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

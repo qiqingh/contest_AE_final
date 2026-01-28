@@ -1,0 +1,86 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'nonCodebook'), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      711
+    ],
+    "field2_all": [
+      706,
+      707,
+      708
+    ],
+    "actual_pairs": [
+      [
+        [
+          711
+        ],
+        [
+          706,
+          707,
+          708
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'nonCodebook')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = 'nonCodebook', field2 = 1"
+    ],
+    "invalid": [
+      "field1 = 'nonCodebook', field2 = 0"
+    ]
+  },
+  "notes": "The rule is derived from the evidence provided. When field1 (cdm-Type) is 'nonCodebook', field2 (frequencyDomainAllocation) must be 1.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_resourceMapping_group0",
+    "field1": "cdm-Type",
+    "field2": "frequencyDomainAllocation",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "frequencyDomainAllocation Frequency domain allocation within a physical resource block in accordance with TS 38.211 [16], clause 7.4.1.5.3. The applicable row number in table 7.4.1.5.3-1 is determined by the frequencyDomainAllocation for rows 1, 2 and 4, and for other rows by matching the values in the column Ports, Density and CDMtype in table 7.4.1.5.3-1 with the values of nrofPorts, cdim-Type and density below and, when more than one row has the 3 values matching, by selecting the row where the column ( k bar, I bar) in table 7.4.1.5.3-1 has indexes for k ranging from 0 to 2^{*} \\mathrm{n}-1 where n is the number of bits set to 1 in frequencyDomainAllocation.",
+    "generated_at": "2025-12-11T14:23:40.558692",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'nonCodebook'), EQ(field2, 1))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'nonCodebook')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 'nonCodebook', field2 = 1"
+        ],
+        "invalid": [
+          "field1 = 'nonCodebook', field2 = 0"
+        ]
+      },
+      "notes": "The rule is derived from the evidence provided. When field1 (cdm-Type) is 'nonCodebook', field2 (frequencyDomainAllocation) must be 1.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+RRCSystemInfoRequest ::=            SEQUENCE {
+    criticalExtensions                  CHOICE {
+        rrcSystemInfoRequest                RRCSystemInfoRequest-IEs,
+        criticalExtensionsFuture-r16        CHOICE {
+            rrcPosSystemInfoRequest-r16         RRC-PosSystemInfoRequest-r16-IEs,
+            criticalExtensionsFuture            SEQUENCE {}
+        }
+    }
+}
+
+RRCSystemInfoRequest-IEs ::=    SEQUENCE {
+    requested-SI-List                   BIT STRING (SIZE (maxSI-Message)),  --32bits
+    spare                               BIT STRING (SIZE (12))
+}
+
+RRC-PosSystemInfoRequest-r16-IEs ::=  SEQUENCE {
+    requestedPosSI-List                   BIT STRING (SIZE (maxSI-Message)),  --32bits
+    spare                                 BIT STRING (SIZE (11))
+}

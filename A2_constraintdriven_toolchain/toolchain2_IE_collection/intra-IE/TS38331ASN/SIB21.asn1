@@ -1,0 +1,17 @@
+SIB21-r17 ::= SEQUENCE {
+    mbs-FSAI-IntraFreq-r17                   MBS-FSAI-List-r17                OPTIONAL,  -- Need R
+    mbs-FSAI-InterFreqList-r17               MBS-FSAI-InterFreqList-r17       OPTIONAL,  -- Need R
+    lateNonCriticalExtension                 OCTET STRING                     OPTIONAL,
+    ...
+}
+
+MBS-FSAI-List-r17 ::= SEQUENCE (SIZE (1..maxFSAI-MBS-r17)) OF MBS-FSAI-r17
+
+MBS-FSAI-InterFreqList-r17 ::= SEQUENCE (SIZE (1..maxFreq)) OF MBS-FSAI-InterFreq-r17
+
+MBS-FSAI-InterFreq-r17 ::= SEQUENCE {
+    dl-CarrierFreq-r17         ARFCN-ValueNR,
+    mbs-FSAI-List-r17          MBS-FSAI-List-r17
+}
+
+MBS-FSAI-r17 ::= OCTET STRING (SIZE (3))

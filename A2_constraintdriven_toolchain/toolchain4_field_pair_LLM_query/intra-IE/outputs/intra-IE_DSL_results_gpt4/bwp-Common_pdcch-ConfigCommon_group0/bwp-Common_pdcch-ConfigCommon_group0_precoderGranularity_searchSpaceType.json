@@ -1,0 +1,52 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      86
+    ],
+    "field2_all": [
+      99
+    ],
+    "actual_pairs": [
+      [
+        [
+          86
+        ],
+        [
+          99
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear, normative relationship between the fields 'precoderGranularity' and 'searchSpaceType'. The evidence discusses the behavior of PDSCH and PDCCH in relation to 'precoderGranularity', but does not mention or imply a constraint with 'searchSpaceType'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Common_pdcch-ConfigCommon_group0",
+    "field1": "precoderGranularity",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.4.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If a PDSCH scheduled by a PDCCH would overlap with resources in the CORESET containing the PDCCH, the resources corresponding to a union of the detected PDCCH that scheduled the PDSCH and associated PDCCH DM-RS are not available for the PDSCH . When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the resources corresponding to a union of the two PDCCH candidates scheduling the PDSCH and the associated PDCCH DM-RS are not available for the PDSCH. When precoderGranularity configured in a CORESET where the PDCCH was detected is set to 'allContiguousRBs', the associated PDCCH DM-RS are DM-RS in all REGs of the CORESET. Otherwise, the associated DM-RS are the DMRS in REGs of the PDCCH.",
+    "generated_at": "2025-12-11T14:18:06.920759",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence does not establish a clear, normative relationship between the fields 'precoderGranularity' and 'searchSpaceType'. The evidence discusses the behavior of PDSCH and PDCCH in relation to 'precoderGranularity', but does not mention or imply a constraint with 'searchSpaceType'."
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      844
+    ],
+    "field2_all": [
+      823
+    ],
+    "actual_pairs": [
+      [
+        [
+          844
+        ],
+        [
+          823
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear, normative relationship between the two fields within the same IE. The evidence does not contain explicit normative wording (shall/shall not/only/only if/must) or explicit math/table relations that would establish a semantic constraint between the two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "groupBasedBeamReporting",
+    "field2": "resourcesForChannelMeasurement",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For aperiodic CSI, if groupBasedBeamReporting-r 17 is not configured, each trigger state configured using the higher layer parameter CSI-AperiodicTriggerState is associated with one or multiple CSI-ReportConfig where each CSIReportConfig is linked to periodic, or semi-persistent, or aperiodic resource setting(s): - When one Resource Setting is configured, the Resource Setting (given by higher layer parameter resourcesForChannelMeasurement) is for channel measurement for L1-RSRP or for channel and interference measurement for L1-SINR computation.",
+    "generated_at": "2025-12-11T14:19:45.829507",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The evidence provided does not establish a clear, normative relationship between the two fields within the same IE. The evidence does not contain explicit normative wording (shall/shall not/only/only if/must) or explicit math/table relations that would establish a semantic constraint between the two fields."
+    }
+  }
+}

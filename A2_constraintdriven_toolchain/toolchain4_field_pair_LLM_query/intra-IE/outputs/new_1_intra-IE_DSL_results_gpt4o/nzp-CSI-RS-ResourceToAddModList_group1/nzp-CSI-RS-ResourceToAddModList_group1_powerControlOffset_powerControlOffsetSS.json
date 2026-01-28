@@ -1,0 +1,87 @@
+{
+  "dsl_rule": "EQ(field1, field2)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      733
+    ],
+    "field2_all": [
+      734
+    ],
+    "actual_pairs": [
+      [
+        [
+          733
+        ],
+        [
+          734
+        ]
+      ]
+    ]
+  },
+  "predicate": "same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=5, field2=5",
+      "field1=-3, field2=-3"
+    ],
+    "invalid": [
+      "field1=5, field2=3",
+      "field1=-3, field2=0"
+    ]
+  },
+  "notes": "The evidence explicitly states that the same values for powerControlOffset and powerControlOffsetSS should be used across all resources.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group1",
+    "field1": "powerControlOffset",
+    "field2": "powerControlOffsetSS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1",
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the UE is not expected to be configured with the periodicity of 2^{\\mu} \\times 10 slots if the band width of CSI-RS resource is larger than 52 resource blocks. - the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211]. - same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources. A UE in RRC_IDLE or RRC_INACTIVE can receive a higher layer configuration of TRS occasions via TRSResourceSetConfig.\n---\n- density in resourceMapping defines CSI-RS frequency density of each CSI-RS port per PRB, and CSI-RS PRB offset in case of the density value of 1 / 2 , where the allowable values are given in Clause 7.4 - 1.5 of [4, TS 38.211]. For density 1/2, the odd/even PRB allocation indicated in density is with respect to the common resource block grid. - cdm-Type in resourceMapping defines CDM values and pattern, where the allowable values are given in Clause 7.4.1.5 of [4, TS 38.211]. - powerControlOffset: which is the assumed ratio of PDSCH EPRE to NZP CSI-RS EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. For CQI calculation based on a pair of NZP CSI-RS resources, powerControlOffset of each NZP CSI-RS resource in the pair of NZP CSI-RS resources for channel measurement is the assumed ratio of EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. - powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE. - scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "generated_at": "2026-01-07T16:32:22.506243",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=5, field2=5",
+          "field1=-3, field2=-3"
+        ],
+        "invalid": [
+          "field1=5, field2=3",
+          "field1=-3, field2=0"
+        ]
+      },
+      "notes": "The evidence explicitly states that the same values for powerControlOffset and powerControlOffsetSS should be used across all resources.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

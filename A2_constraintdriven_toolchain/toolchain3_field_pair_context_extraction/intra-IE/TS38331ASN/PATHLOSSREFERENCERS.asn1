@@ -1,0 +1,8 @@
+PathlossReferenceRS-r17 ::=   SEQUENCE {
+    pathlossReferenceRS-Id-r17          PathlossReferenceRS-Id-r17,
+    referenceSignal-r17                 CHOICE {
+        ssb-Index                           SSB-Index,
+        csi-RS-Index                        NZP-CSI-RS-ResourceId
+    },
+    additionalPCI-r17                   AdditionalPCIIndex-r17                                         OPTIONAL  -- Cond RS-SSB
+}

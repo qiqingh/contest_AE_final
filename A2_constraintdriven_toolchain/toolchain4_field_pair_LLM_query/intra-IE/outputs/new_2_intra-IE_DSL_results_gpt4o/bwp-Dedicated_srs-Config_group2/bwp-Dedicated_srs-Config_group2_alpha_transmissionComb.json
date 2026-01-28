@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      661
+    ],
+    "field2_all": [
+      665
+    ],
+    "actual_pairs": [
+      [
+        [
+          661
+        ],
+        [
+          665
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'alpha' and 'transmissionComb' within the same IE. The evidence snippet discusses transmission comb numbers but does not relate them to 'alpha' in a normative way.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group2",
+    "field1": "alpha",
+    "field2": "transmissionComb",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{array} \\] where M_{\\mathrm{sc}, b}^{\\mathrm{SRS}} is given by clause 6.4.1.4.3, r_{u, v}^{(\\alpha, \\delta)}(n) is given by clause 5.2.2 with \\delta=\\log _{2}\\left(K_{\\mathrm{TC}}\\right) and the transmission comb number K_{\\mathrm{TC}} \\in\\{2,4,8\\} is contained in the higher-layer parameter transmission Comb. The quantity l^{\\prime} \\in \\left\\{0,1, \\ldots, N_{\\text {symb }}^{\\text {SRS }}-1\\right\\} is the OFDM symbol number within the SRS resource. The quantity \\mathrm{w}_{\\mathrm{TDM}}^{\\left(p_{i}\\right)}\\left(l^{\\prime}\\right) is given by",
+    "generated_at": "2026-01-07T19:43:41.364271",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'alpha' and 'transmissionComb' within the same IE. The evidence snippet discusses transmission comb numbers but does not relate them to 'alpha' in a normative way.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

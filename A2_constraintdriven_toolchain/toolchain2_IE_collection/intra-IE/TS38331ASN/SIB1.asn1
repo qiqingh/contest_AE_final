@@ -1,0 +1,93 @@
+SIB1 ::=        SEQUENCE {
+    cellSelectionInfo                   SEQUENCE {
+        q-RxLevMin                          Q-RxLevMin,
+        q-RxLevMinOffset                    INTEGER (1..8)                                              OPTIONAL,   -- Need S
+        q-RxLevMinSUL                       Q-RxLevMin                                                  OPTIONAL,   -- Need R
+        q-QualMin                           Q-QualMin                                                   OPTIONAL,   -- Need S
+        q-QualMinOffset                     INTEGER (1..8)                                              OPTIONAL    -- Need S
+    }                                                                                                   OPTIONAL,   -- Cond Standalone
+    cellAccessRelatedInfo               CellAccessRelatedInfo,
+    connEstFailureControl               ConnEstFailureControl                                           OPTIONAL,   -- Need R
+    si-SchedulingInfo                   SI-SchedulingInfo                                               OPTIONAL,   -- Need R
+    servingCellConfigCommon             ServingCellConfigCommonSIB                                      OPTIONAL,   -- Need R
+    ims-EmergencySupport                ENUMERATED {true}                                               OPTIONAL,   -- Need R
+    eCallOverIMS-Support                ENUMERATED {true}                                               OPTIONAL,   -- Need R
+    ue-TimersAndConstants               UE-TimersAndConstants                                           OPTIONAL,   -- Need R
+    uac-BarringInfo                     SEQUENCE {
+        uac-BarringForCommon                UAC-BarringPerCatList                                           OPTIONAL,   -- Need S
+        uac-BarringPerPLMN-List             UAC-BarringPerPLMN-List                                         OPTIONAL,   -- Need S
+        uac-BarringInfoSetList              UAC-BarringInfoSetList,
+        uac-AccessCategory1-SelectionAssistanceInfo CHOICE {
+            plmnCommon                           UAC-AccessCategory1-SelectionAssistanceInfo,
+            individualPLMNList                   SEQUENCE (SIZE (2..maxPLMN)) OF UAC-AccessCategory1-SelectionAssistanceInfo
+        }                                                                                                   OPTIONAL    -- Need S
+    }                                                                                                   OPTIONAL,   -- Need R
+    useFullResumeID                     ENUMERATED {true}                                               OPTIONAL,   -- Need R
+    lateNonCriticalExtension            OCTET STRING                                                    OPTIONAL,
+    nonCriticalExtension                SIB1-v1610-IEs                                                  OPTIONAL
+}
+
+SIB1-v1610-IEs ::=               SEQUENCE {
+    idleModeMeasurementsEUTRA-r16    ENUMERATED{true}                                                   OPTIONAL,  -- Need R
+    idleModeMeasurementsNR-r16       ENUMERATED{true}                                                   OPTIONAL,  -- Need R
+    posSI-SchedulingInfo-r16         PosSI-SchedulingInfo-r16                                           OPTIONAL,  -- Need R
+    nonCriticalExtension             SIB1-v1630-IEs                                                     OPTIONAL
+}
+
+SIB1-v1630-IEs ::=               SEQUENCE {
+    uac-BarringInfo-v1630            SEQUENCE {
+        uac-AC1-SelectAssistInfo-r16     SEQUENCE (SIZE (2..maxPLMN)) OF UAC-AC1-SelectAssistInfo-r16
+    }                                                                                                   OPTIONAL,  -- Need R
+    nonCriticalExtension             SIB1-v1700-IEs                                                     OPTIONAL
+}
+
+SIB1-v1700-IEs ::=               SEQUENCE {
+    hsdn-Cell-r17                        ENUMERATED {true}                                              OPTIONAL,  -- Need R
+    uac-BarringInfo-v1700                SEQUENCE {
+        uac-BarringInfoSetList-v1700         UAC-BarringInfoSetList-v1700
+    }                                                                                                   OPTIONAL,  -- Cond MINT
+    sdt-ConfigCommon-r17                 SDT-ConfigCommonSIB-r17                                        OPTIONAL,  -- Need R
+    redCap-ConfigCommon-r17              RedCap-ConfigCommonSIB-r17                                     OPTIONAL,  -- Need R
+    featurePriorities-r17        SEQUENCE {
+        redCapPriority-r17           FeaturePriority-r17                                                OPTIONAL,  -- Need R
+        slicingPriority-r17          FeaturePriority-r17                                                OPTIONAL,  -- Need R
+        msg3-Repetitions-Priority-r17 FeaturePriority-r17                                               OPTIONAL,  -- Need R
+        sdt-Priority-r17             FeaturePriority-r17                                                OPTIONAL   -- Need R
+    }                                                                                                   OPTIONAL,  -- Need R
+    si-SchedulingInfo-v1700      SI-SchedulingInfo-v1700                                                OPTIONAL,  -- Need R
+    hyperSFN-r17                 BIT STRING (SIZE (10))                                                 OPTIONAL,  -- Need R
+    eDRX-AllowedIdle-r17         ENUMERATED {true}                                                      OPTIONAL,  -- Need R
+    eDRX-AllowedInactive-r17     ENUMERATED {true}                                                      OPTIONAL,  -- Cond EDRX-RC
+    intraFreqReselectionRedCap-r17 ENUMERATED {allowed, notAllowed}                                     OPTIONAL,  -- Need S
+    cellBarredNTN-r17            ENUMERATED {barred, notBarred}                                         OPTIONAL,  -- Need S
+    nonCriticalExtension         SIB1-v1740-IEs                                                         OPTIONAL
+}
+
+SIB1-v1740-IEs ::=               SEQUENCE {
+    si-SchedulingInfo-v1740          SI-SchedulingInfo-v1740                                            OPTIONAL,  -- Need R
+    nonCriticalExtension             SEQUENCE {}                                                        OPTIONAL
+}
+
+UAC-AccessCategory1-SelectionAssistanceInfo ::=    ENUMERATED {a, b, c}
+
+UAC-AC1-SelectAssistInfo-r16 ::=     ENUMERATED {a, b, c, notConfigured}
+
+SDT-ConfigCommonSIB-r17 ::=          SEQUENCE {
+    sdt-RSRP-Threshold-r17               RSRP-Range                                                            OPTIONAL, -- Need R
+    sdt-LogicalChannelSR-DelayTimer-r17  ENUMERATED { sf20, sf40, sf64, sf128, sf512, sf1024, sf2560, spare1}  OPTIONAL, -- Need R
+    sdt-DataVolumeThreshold-r17          ENUMERATED {byte32, byte100, byte200, byte400, byte600, byte800, byte1000, byte2000, byte4000,
+                                                     byte8000, byte9000, byte10000, byte12000, byte24000, byte48000, byte96000},
+    t319a-r17                            ENUMERATED { ms100, ms200, ms300, ms400, ms600, ms1000, ms2000,
+                                                      ms3000, ms4000, spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+}
+
+RedCap-ConfigCommonSIB-r17 ::= SEQUENCE {
+    halfDuplexRedCapAllowed-r17    ENUMERATED {true}                                                    OPTIONAL,  -- Need R
+    cellBarredRedCap-r17           SEQUENCE {
+        cellBarredRedCap1Rx-r17        ENUMERATED {barred, notBarred},
+        cellBarredRedCap2Rx-r17        ENUMERATED {barred, notBarred}
+    }                                                                                                   OPTIONAL,  -- Need R
+    ...
+}
+
+FeaturePriority-r17 ::= INTEGER (0..7)

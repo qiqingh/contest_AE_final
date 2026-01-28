@@ -1,0 +1,86 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      434,
+      542,
+      650
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          434,
+          542,
+          650
+        ]
+      ],
+      [
+        [
+          116,
+          181
+        ],
+        [
+          434,
+          542,
+          650
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear semantic constraint between the fields 'searchspaceid' from 'bwp-dedicated_pdcch-config' and 'pusch-pathlossreferencers-id' from 'pusch-powercontrol'. The evidence discusses the behavior of the UE in relation to PUSCH-PathlossReferenceRS and SS/PBCH block indexes, but does not mention or imply a relationship with 'searchspaceid'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdcch-config",
+    "field1": "searchspaceid",
+    "ie2_name": "pusch-powercontrol",
+    "field2": "pusch-pathlossreferencers-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS\n---\n- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "generated_at": "2025-12-11T09:42:41.684701",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear semantic constraint between the fields 'searchspaceid' from 'bwp-dedicated_pdcch-config' and 'pusch-pathlossreferencers-id' from 'pusch-powercontrol'. The evidence discusses the behavior of the UE in relation to PUSCH-PathlossReferenceRS and SS/PBCH block indexes, but does not mention or imply a relationship with 'searchspaceid'.",
+      "version_tags": []
+    }
+  }
+}

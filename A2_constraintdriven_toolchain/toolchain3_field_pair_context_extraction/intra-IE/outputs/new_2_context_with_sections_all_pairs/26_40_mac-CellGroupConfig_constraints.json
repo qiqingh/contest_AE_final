@@ -1,0 +1,609 @@
+[
+  {
+    "fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "field_ids": [
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "matched_fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "original_sentence": "in which case the BSR is referred below to as 'Regular BSR'; - UL resources are allocated and number of padding bits is equal to or larger than the size of the Buffer Status Report MAC CE plus its subheader, in which case the BSR is referred below to as 'Padding BSR'; - retxBSR-Timer expires, and at least one of the logical channels which belong to an LCG contains UL data, in which case the BSR is referred below to as 'Regular BSR'; - periodicBSR-Timer expires, in which case the BSR is referred below to as 'Periodic BSR'. NOTE 1: When Regular BSR triggering events occur for multiple logical channels simultaneously, each logical channel triggers one separate Regular BSR.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "When",
+    "is_self_reference": false,
+    "section_number": "5.4.5",
+    "section_title": "Buffer Status Reporting",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "field_ids": [
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "matched_fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "original_sentence": "1> else if the number of padding bits is equal to or larger than the size of the Extended Long BSR plus its subheader: 2> report Extended Long BSR for all LCGs which have data available for transmission. For BSR triggered by retxBSR-Timer expiry, the MAC entity considers that the logical channel that triggered the BSR is the highest priority logical channel that has data available for transmission at the time the BSR is triggered. The MAC entity shall: 1> if the Buffer Status reporting procedure determines that at least one BSR has been triggered and not cancelled: 2> if UL-SCH resources are available for a new transmission and the UL-SCH resources can accommodate the BSR MAC CE plus its subheader as a result of logical channel prioritization: 3> instruct the Multiplexing and Assembly procedure to generate the BSR MAC CE(s) as defined in clause 6.1.3.1; 3> start or restart periodicBSR-Timer except when all the generated BSRs are long or short Truncated or Extended long or short Truncated BSRs; 3> start or restart retxBSR-Timer.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.4.5",
+    "section_title": "Buffer Status Reporting",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "field_ids": [
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "matched_fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "original_sentence": "2> report Truncated SL-BSR containing buffer status for as many LCGs having data available for transmission as possible, taking the number of bits in the UL grant into consideration. For SL-BSR triggered by sl-retxBSR-Timer expiry, the MAC entity considers that the logical channel that triggered the SL-BSR is the highest priority logical channel that has data available for transmission at the time the SL-BSR is triggered. The MAC entity shall: 1> if the sidelink Buffer Status reporting procedure determines that at least one SL-BSR has been triggered and not cancelled: 2> if UL-SCH resources are available for a new transmission and the UL-SCH resources can accommodate the SL-BSR MAC CE plus its subheader as a result of logical channel prioritization according to clause 5.4.3.1: 3> instruct the Multiplexing and Assembly procedure in clause 5.4 .3 to generate the SL-BSR MAC CE(s); 3> start or restart sl-periodicBSR-Timer except when all the generated SL-BSRs are Truncated SL-BSRs; 3> start or restart sl-retxBSR-Timer. 2> if a Regular SL-BSR has been triggered and sl-logicalChannelSR-DelayTimer is not running:",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "5.22.1.6",
+    "section_title": "Buffer Status Reporting",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "periodicBSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "field_ids": [
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "matched_fields": [
+      "periodic-BSR-Timer",
+      "retxBSR-Timer"
+    ],
+    "original_sentence": "A MAC PDU shall contain at most one SL-BSR MAC CE, even when multiple events have triggered an SL-BSR. The Regular SL-BSR and the Periodic SL-BSR shall have precedence over the padding SL-BSR. The MAC entity shall restart sl-retxBSR-Timer upon reception of an SL grant for transmission of new data on any SLSCH. All triggered SL-BSRs may be cancelled when the SL grant(s) can accommodate all pending data available for transmission. All BSRs triggered prior to MAC PDU assembly shall be cancelled when a MAC PDU is transmitted and this PDU includes an SL-BSR MAC CE which contains buffer status up to (and including) the last event that triggered an SL-BSR prior to the MAC PDU assembly. All triggered SL-BSRs shall be cancelled, and s l -retx-BSR-Timer and s l -periodic-BSR-Timer shall be stopped, when RRC configures Sidelink resource allocation mode 2. NOTE 2: MAC PDU assembly can happen at any point in time between uplink grant reception and actual transmission of the corresponding MAC PDU. SL-BSR and SR can be triggered after the assembly of a MAC PDU which contains an SL-BSR MAC CE, but before the transmission of this MAC PDU. In addition, SL-BSR and SR can be triggered during MAC PDU assembly.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "5.22.1.6",
+    "section_title": "Buffer Status Reporting",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "phr-ModeOtherCG",
+      "phr-Type2OtherCell"
+    ],
+    "field_ids": [
+      [
+        39
+      ],
+      [
+        38
+      ]
+    ],
+    "matched_fields": [
+      "phr-ModeOtherCG",
+      "phr-Type2OtherCell"
+    ],
+    "original_sentence": "5> else: 6> if this MAC entity has UL resources allocated for transmission on this Serving Cell; or 6> if the other MAC entity, if configured, has UL resources allocated for transmission on this Serving Cell and phr-ModeOtherCG is set to real by upper layers: 7> obtain the value for the corresponding \\mathrm{P}_{\\mathrm{CMAX}, \\mathrm{C}, \\mathrm{C}} field from the physical layer. 7> if mpe-Reporting-FR2 is configured and this Serving Cell operates on FR2 and this Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding MPE field from the physical layer. 7> if mpe-Reporting-FR2-r17 is configured and this Serving Cell operates on FR2 and this Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding MPE, field from the physical layer; 8> obtain the value for the corresponding Resource, field from the physical layer. 7> if dpc-Reporting-FRI is configured and \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} ENDC/ \\Delta \\mathrm{P}_{\\text {PowerClass, } \\mathrm{NR} \\text {-DC reporting is triggered and this Serving Cell operates on FR1 and this }} Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding DPC field(s) from the physical layer. 3> if phr-Type2OtherCell with value true is configured: 4> if the other MAC entity is E-UTRA MAC entity: 5> obtain the value of the Type 2 power headroom for the SpCell of the other MAC entity (i.e. EUTRA MAC entity);",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-ModeOtherCG",
+      "phr-Type2OtherCell"
+    ],
+    "field_ids": [
+      [
+        39
+      ],
+      [
+        38
+      ]
+    ],
+    "matched_fields": [
+      "phr-ModeOther C G",
+      "phr-Type2OtherCell"
+    ],
+    "original_sentence": "7> if dpc-Reporting-FRI is configured and \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} ENDC/ \\Delta \\mathrm{P}_{\\text {PowerClass, } \\mathrm{NR} \\text {-DC reporting is triggered and this Serving Cell operates on FR1 and this }} Serving Cell is associated to this MAC entity: 8> obtain the value for the corresponding DPC field(s) from the physical layer. 3> if phr-Type2OtherCell with value true is configured: 4> if the other MAC entity is E-UTRA MAC entity: 5> obtain the value of the Type 2 power headroom for the SpCell of the other MAC entity (i.e. EUTRA MAC entity); 5> if phr-ModeOther C G is set to real by upper layers: 6> obtain the value for the corresponding \\mathrm{P}_{\\mathrm{CMAX}, \\mathrm{J}, \\mathrm{C}} field for the SpCell of the other MAC entity (i.e. E-UTRA MAC entity) from the physical layer. 3> if this MAC entity is configured with mpe-Reporting-FR2-r17:",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        34
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "original_sentence": "NOTE 1: The path loss variation for one cell assessed above is between the pathloss measured at present time on the current pathloss reference and the pathloss measured at the transmission time of the last transmission of PHR on the pathloss reference in use at that time, irrespective of whether the pathloss reference has changed in between. The current pathloss reference for this purpose does not include any pathloss reference configured using pathlossReferenceRS-Pos in TS 38.331 [5]. - phr-PeriodicTimer expires; - upon configuration or reconfiguration of the power headroom reporting functionality by upper layers, which is not used to disable the function; - activation of an SCell of any MAC entity with configured uplink of which firstActiveDownlinkBWP-Id is not set to dormant BWP; - activation of an SCG; - addition of the PSCell except if the SCG is deactivated (i.e. PSCell is newly added or changed); - phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell. - Upon switching of activated BWP from dormant BWP to non-dormant DL BWP of an SCell of any MAC entity with configured uplink;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        34
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "original_sentence": "3> start or restart the mpe-ProhibitTimer; 3> cancel triggered MPE P-MPR reporting for Serving Cells included in the PHR MAC CE. 2> start or restart phr-PeriodicTimer; 2> start or restart phr-ProhibitTimer; 2> cancel all triggered PHR(s). All triggered PHRs shall be cancelled when there is an ongoing SDT procedure as in clause 5.27 and the UL grant(s) can accommodate all pending data available for transmission but is not sufficient to additionally accommodate the PHR MAC CE plus its subheader.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "NOTE 1: The path loss variation for one cell assessed above is between the pathloss measured at present time on the current pathloss reference and the pathloss measured at the transmission time of the last transmission of PHR on the pathloss reference in use at that time, irrespective of whether the pathloss reference has changed in between. The current pathloss reference for this purpose does not include any pathloss reference configured using pathlossReferenceRS-Pos in TS 38.331 [5]. - phr-PeriodicTimer expires; - upon configuration or reconfiguration of the power headroom reporting functionality by upper layers, which is not used to disable the function; - activation of an SCell of any MAC entity with configured uplink of which firstActiveDownlinkBWP-Id is not set to dormant BWP; - activation of an SCG; - addition of the PSCell except if the SCG is deactivated (i.e. PSCell is newly added or changed); - phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell. - Upon switching of activated BWP from dormant BWP to non-dormant DL BWP of an SCell of any MAC entity with configured uplink; - if dpc-Reporting-FRI is configured, \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{EN}-\\mathrm{DC} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{NR}-\\mathrm{DC} reporting is triggered upon uplink duty cycle exceedance or upon return to the power class after the duty cycle exceedance, as specified in TS 38.101-1 [14] and TS 38.101-3 [16]).",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "- if mpe-Reporting-FR2 is configured, and mpe-ProhibitTimer is not running: - the measured P-MPR applied to meet FR2 MPE requirements as specified in TS 38.101-2 [15] is equal to or larger than mpe-Threshold for at least one activated FR2 Serving Cell since the last transmission of a PHR in this MAC entity; or - the measured P-MPR applied to meet FR2 MPE requirements as specified in TS 38.101-2 [15] has changed more than phr-Tx-PowerFactorChange dB for at least one activated FR2 Serving Cell since the last transmission of a PHR due to the measured P-MPR applied to meet MPE requirements being equal to or larger than mpe-Threshold in this MAC entity. in which case the PHR is referred below to as 'MPE P-MPR report'. NOTE 2: The MAC entity should avoid triggering a PHR when the required power backoff due to power management decreases only temporarily (e.g. for up to a few tens of milliseconds) and it should avoid reflecting such temporary decrease in the values of \\mathrm{P}_{\\text {CMAX, } 5, \\mathrm{C}} / \\mathrm{PH} when a PHR is triggered by other triggering conditions. NOTE 3: If a HARQ process is configured with cg-RetransmissionTimer and if the PHR is already included in a MAC PDU for transmission on configured grant by this HARQ process, but not yet transmitted by lower layers, it is up to UE implementation how to handle the PHR content. If the MAC entity has UL resources allocated for a new transmission the MAC entity shall: 1> if it is the first UL resource allocated for a new transmission since the last MAC reset: 2> start phr-PeriodicTimer. 1> if the Power Headroom reporting procedure determines that at least one PHR has been triggered and not cancelled; and",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        34
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "A Power Headroom Report (PHR) shall be triggered if any of the following events occur: - phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB for at least one RS used as pathloss reference for one activated Serving Cell of any MAC entity of which the active DL BWP is not dormant BWP since the last transmission of a PHR in this MAC entity when the MAC entity has UL resources for new transmission; ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        34
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "- activation of an SCG; - addition of the PSCell except if the SCG is deactivated (i.e. PSCell is newly added or changed); - phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell. - Upon switching of activated BWP from dormant BWP to non-dormant DL BWP of an SCell of any MAC entity with configured uplink; - if dpc-Reporting-FRI is configured, \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{EN}-\\mathrm{DC} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{NR}-\\mathrm{DC} reporting is triggered upon uplink duty cycle exceedance or upon return to the power class after the duty cycle exceedance, as specified in TS 38.101-1 [14] and TS 38.101-3 [16]).",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "except if",
+    "is_self_reference": false,
+    "section_number": "5.4.6",
+    "section_title": "Power Headroom Reporting",
+    "ie_relevance_score": 160.0,
+    "matched_ie_variants": [
+      "power headroom reporting",
+      "power headroom",
+      "Power Headroom",
+      "Power Headroom Reporting"
+    ],
+    "confidence": "HIGH"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        34
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-ProhibitTimer"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} phr-PeriodicTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-ProhibitTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sfO corresponds to 0 subframe, value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        33
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-PeriodicTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} phr-PeriodicTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-ProhibitTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sfO corresponds to 0 subframe, value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-Tx-PowerFactorChange Value in dB for PHR reporting as specified in TS 38.321 [3]. Value d B 1 corresponds to 1 \\mathrm{~dB}, d B 3 corresponds to 3 dB and so on. The same value applies for each serving cell (although the associated functionality is performed independently for each cell). \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "field_ids": [
+      [
+        34
+      ],
+      [
+        35
+      ]
+    ],
+    "matched_fields": [
+      "phr-ProhibitTimer",
+      "phr-Tx-PowerFactorChange"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} phr-ProhibitTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sfO corresponds to 0 subframe, value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-Tx-PowerFactorChange Value in dB for PHR reporting as specified in TS 38.321 [3]. Value d B 1 corresponds to 1 \\mathrm{~dB}, d B 3 corresponds to 3 dB and so on. The same value applies for each serving cell (although the associated functionality is performed independently for each cell). \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "phr-ProhibitTimer",
+      "phr-Type2OtherCell"
+    ],
+    "field_ids": [
+      [
+        34
+      ],
+      [
+        38
+      ]
+    ],
+    "matched_fields": [
+      "phr-ProhibitTimer",
+      "phr-Type2OtherCell"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} phr-ProhibitTimer Value in number of subframes for PHR reporting as specified in TS 38.321 [3]. Value sfO corresponds to 0 subframe, value sf10 corresponds to 10 subframes, value sf20 corresponds to 20 subframes, and so on. \\end{tabular} \\begin{tabular}{l} phr-Tx-PowerFactorChange Value in dB for PHR reporting as specified in TS 38.321 [3]. Value d B 1 corresponds to 1 \\mathrm{~dB}, d B 3 corresponds to 3 dB and so on. The same value applies for each serving cell (although the associated functionality is performed independently for each cell). \\end{tabular} \\begin{tabular}{l} phr-Type2OtherCell If set to true, the UE shall report a PHR type 2 for the SpCell of the other MAC entity. See TS 38.321 [3], clause 5.4.6. Network sets this field to false if the UE is not configured with an E-UTRA MAC entity. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "phr-Tx-PowerFactorChange",
+      "phr-Type2OtherCell"
+    ],
+    "field_ids": [
+      [
+        35
+      ],
+      [
+        38
+      ]
+    ],
+    "matched_fields": [
+      "phr-Tx-PowerFactorChange",
+      "phr-Type2OtherCell"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} phr-Tx-PowerFactorChange Value in dB for PHR reporting as specified in TS 38.321 [3]. Value d B 1 corresponds to 1 \\mathrm{~dB}, d B 3 corresponds to 3 dB and so on. The same value applies for each serving cell (although the associated functionality is performed independently for each cell). \\end{tabular} \\begin{tabular}{l} phr-Type2OtherCell If set to true, the UE shall report a PHR type 2 for the SpCell of the other MAC entity. See TS 38.321 [3], clause 5.4.6. Network sets this field to false if the UE is not configured with an E-UTRA MAC entity. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "schedulingRequestId",
+      "skipUplinkTxDynamic"
+    ],
+    "field_ids": [
+      [
+        26
+      ],
+      [
+        40
+      ]
+    ],
+    "matched_fields": [
+      "schedulingRequestID",
+      "skipUplinkTxDynamic"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} schedulingRequestID-BFR2-r17 Indicates the scheduling request configuration (SchedulingRequestConfig) that the UE shall use upon detecting a beam failure on the detection resources configured in BFDset2 of a serving cell but not on resources configured in BFDset of the same serving cell. Editor's note: BFDset and BFDset2 configuration is pending on LS response from RAN1. \\end{tabular} \\begin{tabular}{l} scheduling RequestiD-LBT-SCell Indicates the scheduling request configuration applicable for consistent uplink LBT recovery on SCell, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} skipUplinkTxDynamic, enhancedSkipUplinkTxDynamic, enhancedSkipUplinkTxConfigured If set to true, the UE skips UL transmissions as described in TS 38.321 [3]. If the UE is configured with enhancedSkipUplinkTxDynamic or enhancedSkipUplinkTxConfigured with value true, REPETITION_NUMBER (as specified in TS 38.321 [3], clause 5.4.2.1) of the corresponding PUSCH transmission of the uplink grant shall be equal to 1. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "schedulingRequestId",
+      "skipUplinkTxDynamic"
+    ],
+    "field_ids": [
+      [
+        26
+      ],
+      [
+        40
+      ]
+    ],
+    "matched_fields": [
+      "scheduling RequestiD",
+      "skipUplinkTxDynamic"
+    ],
+    "original_sentence": "\\end{tabular} \\begin{tabular}{l} scheduling RequestiD-LBT-SCell Indicates the scheduling request configuration applicable for consistent uplink LBT recovery on SCell, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} skipUplinkTxDynamic, enhancedSkipUplinkTxDynamic, enhancedSkipUplinkTxConfigured If set to true, the UE skips UL transmissions as described in TS 38.321 [3]. If the UE is configured with enhancedSkipUplinkTxDynamic or enhancedSkipUplinkTxConfigured with value true, REPETITION_NUMBER (as specified in TS 38.321 [3], clause 5.4.2.1) of the corresponding PUSCH transmission of the uplink grant shall be equal to 1. \\end{tabular}",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "tag-Id",
+      "timeAlignmentTimer"
+    ],
+    "field_ids": [
+      [
+        30
+      ],
+      [
+        31
+      ]
+    ],
+    "matched_fields": [
+      "TAG-Id",
+      "timeAlignmentTimer"
+    ],
+    "original_sentence": "1> if the received mac-CellGroupConfig includes the tag-ToReleaseList: 2> for each T A G-I d value included in the tag-ToReleaseList that is part of the current UE configuration: 3> release the TAG indicated by TAG-Id; 1> if the received mac-CellGroupConfig includes the tag-ToAddModList: ⇒ for each tag-Id value included in tag-ToAddModList that is not part of the current UE configuration (TAG addition): 3> add the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer; 2> for each t a g -Id value included in tag-ToAddModList that is part of the current UE configuration (TAG modification): 3> reconfigure the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.3.5.5.5",
+    "section_title": "MAC entity configuration",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "tag-Id",
+      "timeAlignmentTimer"
+    ],
+    "field_ids": [
+      [
+        30
+      ],
+      [
+        31
+      ]
+    ],
+    "matched_fields": [
+      "tag-Id",
+      "timeAlignmentTimer"
+    ],
+    "original_sentence": "3> release the TAG indicated by TAG-Id; 1> if the received mac-CellGroupConfig includes the tag-ToAddModList: ⇒ for each tag-Id value included in tag-ToAddModList that is not part of the current UE configuration (TAG addition): 3> add the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer; 2> for each t a g -Id value included in tag-ToAddModList that is part of the current UE configuration (TAG modification): 3> reconfigure the TAG, corresponding to the t a g-I d , in accordance with the received timeAlignmentTimer.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "5.3.5.5.5",
+    "section_title": "MAC entity configuration",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  }
+]

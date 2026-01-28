@@ -1,0 +1,14 @@
+SL-FreqConfig-r16 ::=              SEQUENCE {
+    sl-Freq-Id-r16                     SL-Freq-Id-r16,
+    sl-SCS-SpecificCarrierList-r16     SEQUENCE (SIZE (1..maxSCSs)) OF SCS-SpecificCarrier,
+    sl-AbsoluteFrequencyPointA-r16     ARFCN-ValueNR                                                   OPTIONAL,  -- Need M
+    sl-AbsoluteFrequencySSB-r16        ARFCN-ValueNR                                                   OPTIONAL,  -- Need R
+    frequencyShift7p5khzSL-r16         ENUMERATED {true}                                               OPTIONAL,  -- Cond V2X-SL-Shared
+    valueN-r16                         INTEGER (-1..1),
+    sl-BWP-ToReleaseList-r16           SEQUENCE (SIZE (1..maxNrofSL-BWPs-r16)) OF BWP-Id               OPTIONAL,  -- Need N
+    sl-BWP-ToAddModList-r16            SEQUENCE (SIZE (1..maxNrofSL-BWPs-r16)) OF SL-BWP-Config-r16    OPTIONAL,  -- Need N
+    sl-SyncConfigList-r16              SL-SyncConfigList-r16                                           OPTIONAL,  -- Need M
+    sl-SyncPriority-r16                ENUMERATED {gnss, gnbEnb}                                       OPTIONAL   -- Need M
+}
+
+SL-Freq-Id-r16 ::=                     INTEGER (1.. maxNrofFreqSL-r16)

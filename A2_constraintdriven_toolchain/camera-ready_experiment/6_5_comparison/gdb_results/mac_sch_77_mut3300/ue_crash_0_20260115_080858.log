@@ -1,0 +1,125 @@
+Attaching to process 1603354
+[New LWP 1603387]
+[New LWP 1603388]
+[New LWP 1603389]
+[New LWP 1603390]
+[New LWP 1603391]
+[New LWP 1603392]
+[New LWP 1603393]
+[New LWP 1603394]
+[New LWP 1603418]
+[New LWP 1603419]
+[New LWP 1603420]
+[New LWP 1603421]
+[New LWP 1603422]
+[New LWP 1603423]
+[New LWP 1603424]
+[New LWP 1603425]
+[New LWP 1603426]
+[New LWP 1603427]
+[New LWP 1603428]
+[New LWP 1603429]
+[New LWP 1603430]
+[New LWP 1603431]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007179321167f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffc8e86ad30, rem=rem@entry=0x7ffc8e86ad30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+
+Thread 20 "UEthread_0" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x717902b45640 (LWP 1603428)]
+0x0000717930010cd0 in rfsimulator_read (device=<optimized out>, ptimestamp=0x717902b41bd8, samplesVoid=0x717902b416b0, nsamps=23040, nbAnt=1) at /home/openairinterface5g/radio/rfsimulator/simulator.c:1052
+1052	                out[i].r += (short)(ptr->circularBuf[((firstIndex + i) * nbAnt_tx + a_tx) % CirSize].r * H_awgn_mimo[a][a_tx]);
+(gdb) #0  0x0000717930010cd0 in rfsimulator_read (device=<optimized out>, ptimestamp=0x717902b41bd8, samplesVoid=0x717902b416b0, nsamps=23040, nbAnt=1) at /home/openairinterface5g/radio/rfsimulator/simulator.c:1052
+        a_tx = 1
+        i = <optimized out>
+        H_awgn_mimo = {{1, 0.20000000000000001, 0.10000000000000001, 0.050000000000000003}, {0.20000000000000001, 1, 0.20000000000000001, 0.10000000000000001}, {0.10000000000000001, 0.20000000000000001, 1, 0.20000000000000001}, {0.050000000000000003, 0.10000000000000001, 0.20000000000000001, 1}}
+        nbAnt_tx = 2
+        firstIndex = <optimized out>
+        out = <optimized out>
+        a = 0
+        reGenerateChannel = false
+        ptr = <optimized out>
+        sock = <optimized out>
+        t = 0x7178fc001740
+        __FUNCTION__ = "rfsimulator_read"
+        first_sock = <optimized out>
+#1  0x00005729fb4360e7 in readFrame (UE=UE@entry=0x717929293010, timestamp=timestamp@entry=0x717902b41bd8, toTrash=toTrash@entry=true) at /home/openairinterface5g/executables/nr-ue.c:756
+        read_block_size = 23040
+        tmp = <optimized out>
+        slot = 0
+        x = <optimized out>
+        fp = 0x717929293b10
+        num_frames = <optimized out>
+        rxp = {0x7178fc03c660, 0x7179297fa5a0, 0x7178fc007b80, 0x7179297fa5b0}
+        __FUNCTION__ = "readFrame"
+#2  0x00005729fb437009 in UE_thread (arg=0x717929293010) at /home/openairinterface5g/executables/nr-ue.c:923
+        res = <optimized out>
+        firstSymSamp = <optimized out>
+        readBlockSize = <optimized out>
+        newRx = <optimized out>
+        slot = <optimized out>
+        curMsg = <optimized out>
+        next_frame_tx = <optimized out>
+        next_tx_slot_and_frame = <optimized out>
+        slot_nr = <optimized out>
+        iq_shift_to_apply = <optimized out>
+        tmp = <optimized out>
+        writeTimestamp = <optimized out>
+        ret = <optimized out>
+        curMsgTx = <optimized out>
+        wait_for_prev_slot = <optimized out>
+        next_duration_rx_to_tx = <optimized out>
+        next_nr_slot_tx = <optimized out>
+        next_barrier = <optimized out>
+        tmp = <optimized out>
+        rx_timestamp = 151766148
+        writeBlockSize = <optimized out>
+        curMsgRx = <optimized out>
+        newTx = <optimized out>
+        slot_and_frame = <optimized out>
+        dummy = <optimized out>
+        UE = 0x717929293010
+        rxp = {0x717906d17250, 0x0, 0x0, 0x0}
+        stream_status = STREAM_STATUS_SYNCED
+        cfg = 0x71792953fb38
+        tmp = <optimized out>
+        __FUNCTION__ = "UE_thread"
+        fp = 0x717929293b10
+        sl_cfg = 0x0
+        tmp2 = <optimized out>
+        nf = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 0, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 39 times>, __align = 0}, notifF = {__data = {__wseq = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g1_start = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g_refs = {0, 0}, __g_size = {0, 0}, __g1_orig_size = 0, __wrefs = 0, __g_signals = {0, 0}}, __size = '\000' <repeats 47 times>, __align = 0}, abortFIFO = false}
+        freeBlocks = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = <optimized out>, __count = <optimized out>, __owner = <optimized out>, __nusers = <optimized out>, __kind = <optimized out>, __spins = <optimized out>, __elision = <optimized out>, __list = {__prev = <optimized out>, __next = <optimized out>}}, __size = {<optimized out> <repeats 40 times>}, __align = <optimized out>}, notifF = {__data = {__wseq = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g1_start = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g_refs = {<optimized out>, <optimized out>}, __g_size = {<optimized out>, <optimized out>}, __g1_orig_size = <optimized out>, __wrefs = <optimized out>, __g_signals = {<optimized out>, <optimized out>}}, __size = {<optimized out> <repeats 48 times>}, __align = <optimized out>}, abortFIFO = <optimized out>}
+        timing_advance = 0
+        mac = 0x717922278010
+        syncRunning = true
+        nb_slot_frame = 20
+        absolute_slot = 6587
+        decoded_frame_rx = 172
+        trashed_frames = <optimized out>
+        tx_wait_for_dlsch = {0 <repeats 160 times>}
+        shiftForNextFrame = 0
+        intialSyncOffset = 0
+        sync_timestamp = 155037828
+        stats_printed = false
+        ntn_ta_common = 0
+        ntn_koffset = <optimized out>
+        duration_rx_to_tx = 3
+        nr_slot_tx_offset = 0
+        update_ntn_system_information = false
+#3  0x00007179320c5ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, -3905128104509760763, 124764550354496, 2, 124765344651216, 140722699675392, -3905128104787633403, -3905091614313342203}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#4  0x0000717932157850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 1603354] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 1603354
+[Inferior 1 (process 1603354) detached]

@@ -1,0 +1,63 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      697
+    ],
+    [
+      697
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields 'startingRB' and 'startingRB' within the same IE. The evidence discusses 'startingRB' in a broader context but does not establish a direct relationship between two instances of 'startingRB' within the same IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "startingRB",
+    "field2": "startingRB",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1",
+      "7.4.1.5.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\left[b_{2} \\cdots b_{0}\\right], k_{i-1}=4 f(i) for row 4 of Table 7.4.1.5.3-1 - \\left[b_{5} \\cdots b_{0}\\right], k_{i-1}=2 f(i) for all other cases where f(i) is the bit number of the i^{\\text {th }} bit in the bitmap set to one, repeated across every [1 / \\rho] of the resource blocks configured for CSI-RS reception by the UE. The starting position and number of the resource blocks in which the UE shall assume that CSI-RS is transmitted are given by the higher-layer parameters freqBand and density in the CSI-RSResourceMapping [E for the bandwidth part given by the higher-layer parameter BWP-Id in the CSI-ResourceConfig IE or given by the higher-layer parameters nrofPRBs in the CSI-RS-CellMobility [E where the the startPRB given by csi r s -Measurement B W is relative to common resource block 0 . For NZP CSI-RS configured by TRS-ResourceSet [E, the starting position and number of the resource blocks in which the CSI-RS can be transmitted are given by the higherlayer parameters nrofRBs, and startingRB in the TRS-ResourceSet [E, where startingRB is relative to common resource block 0 and the density \\rho=3 . The UE shall assume that a CSI-RS is transmitted using antenna ports p numbered according to\n---\nFor a CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, the slot offsets of the two resources in a Resource Pair are configured within X \\in\\{1,[2]\\} slots, without DL/UL switching in between the two resources, where X=1 implies that the two resources are configured in the same slot, and X=2 implies that the two resources are configured within two adjacent slots. The band width and initial common resource block (CRB) index of a CSI-RS resource within a BWP, as defined in Clause 7.4.1.5 of [4, TS 38.211], are determined based on the higher layer parameters nrofRBs and startingRB, respectively, within the CSI-FrequencyOccupation IE configured by the higher layer parameter freqBand within the CSI-RS-ResourceMapping [E. Both nrofRBs and startingRB are configured as integer multiples of 4 RBs , and the reference point for starting R B is CRB 0 on the common resource block grid. If starting R B<N_{B W P}^{\\text {start }} , the UE shall assume that the initial CRB index of the CSI-RS resource is N_{\\text {initial } R B}=N_{B W P}^{\\text {start }} , otherwise N_{\\text {initial } R B}= startingRB. If nrofRBs >N_{B W P}^{\\text {size }}+N_{B W P}^{\\text {start }}-N_{\\text {initial RB }} , the UE shall assume that the bandwidth of the CSI-RS resource is N_{C S I-R S}^{B W}=N_{B W P}^{\\text {size }}+N_{B W P}^{\\text {start }}-N_{\\text {initial } R B} , otherwise N_{C S I-R S}^{B W}=n r o f R B s . In all cases, the UE shall expect that N_{\\text {CSI-RS }}^{B W} \\geq \\min \\left(24, N_{B W P}^{\\text {size }}\\right) . ETSI",
+    "generated_at": "2025-12-09T09:44:27.054021",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain any explicit normative constraints or relations between the fields 'startingRB' and 'startingRB' within the same IE. The evidence discusses 'startingRB' in a broader context but does not establish a direct relationship between two instances of 'startingRB' within the same IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

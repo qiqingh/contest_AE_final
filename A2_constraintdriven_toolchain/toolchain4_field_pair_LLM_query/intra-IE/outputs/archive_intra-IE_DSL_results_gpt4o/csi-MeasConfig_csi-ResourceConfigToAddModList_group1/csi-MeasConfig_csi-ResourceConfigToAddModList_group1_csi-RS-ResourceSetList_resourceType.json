@@ -1,0 +1,78 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      808,
+      813,
+      818,
+      819
+    ],
+    [
+      811,
+      816,
+      821
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct semantic constraint between 'csi-RS-ResourceSetList' and 'resourceType' within the same IE. The evidence discusses behaviors and configurations related to 'resourceType', but does not explicitly link it to 'csi-RS-ResourceSetList' in a normative manner.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ResourceConfigToAddModList_group1",
+    "field1": "csi-RS-ResourceSetList",
+    "field2": "resourceType",
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 12,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2",
+      "7.4.1.5.3",
+      "5.2.1.5.2",
+      "5.2.1.5.1",
+      "6.3.2",
+      "6.2.1",
+      "5.2.1.4.2",
+      "7.4.1.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- resource element (k, l)_{p, \\mu} is not used for DM-RS, non-zero-power CSI-RS (except for those configured for mobility measurements or with resourceType in corresponding CSI-ResourceConfig configured as 'aperiodic'), zero-power CSI-RS, SS/PBCH block, a detected PDCCH according to clause 5.1.4.1 of [6, TS38.214], or is declared as 'not available' by clause 5.1 . 4 of [6, TS 38.214]\n---\nFor a CSI-RS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, configured by the higher-layer parameter CSI-RS-CellMobility or configured by the higher-layer parameter TRS-ResourceSet-r17, the UE shall assume that the CSI-RS is transmitted in slots satisfying\n---\nThe time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is S=2 , otherwise the number of CSI-RS Resource Sets configured is limited to S=1 . For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.\n---\nIf the UE is configured with a CSI-ReportConfig with higher layer parameter reportQuantity set to 'cri-RSRP', 'criSINR', 'none', 'cri-RSRP-Capability[Set]Index' or 'cri-SINR-Capability[Set]Index and the CSI-ReportConfig is linked to a resource setting configured with the higher layer parameter resourceType set to 'aperiodic', then the UE is not expected to be configured with more than 16 CSI-RS resources in a CSI-RS resource set contained within the resource setting.\n---\nFor CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI ,\n---\nFor a UE configured with CSI resource setting(s) where the higher layer parameter resourceType set to 'semiPersistent'. - when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot n corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} where \\mu is the SCS configuration for the PUCCH and \\mu_{K_{\\text {mac }}} is the subcarrier spacing configuration for k_{\\text {mac }} with a value of 0 for frequency range 1 , and k_{\\text {mac }} is provided by K-M a c or k_{\\mathrm{mac}}=0 if K-M a c is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP.\n---\nFor a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'periodic': - if the UE is configured with the higher layer parameter spatialRelationInfo, spatialRelationInfo-PDC or spatialRelationInfoPos containing the ID of a reference 'ssb-Index', 'ssb-IndexServing', or 'ssb-IndexNcell', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference SS/PBCH block, if the higher layer parameter spatialRelationInfo, spatialRelationInfo-PDC or spatialRelationInfoPos contains the ID of a reference 'csi-RS-Index' or 'csi-RS-IndexServing', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference periodic CSI-RS or of the reference semi-persistent CSI-RS, if the higher layer parameter spatialRelationInfo, spatialRelationInfo-PDC or spatialRelationInfoPos containing the ID of a reference 'srs' or 'srs-spatialRelation', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the transmission of the reference periodic SRS. When the SRS is configured by the higher layer parameter SRS-PosResource and if the higher layer parameter spatialRelationInfoPos contains the ID of a reference 'dl-PRS', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS. When the SRS is configured by the higher layer parameter SRSResource and if the higher layer parameter spatialRelationInfo-PDC contains the ID of a reference 'dl-PRSPDC', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS for RTT-based propagation delay compensation according to clause 9 .\n---\nFor a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'semi-persistent': - when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot n corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} where \\mu is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a d l- PRS-ID indicated by DL-PRS ID field in the activation command.\n---\nAperiodic & The field is mandatory present if the NZP-CSI-RS-Resources in the associated resourceSet have the resourceType aperiodic and unifiedtci-StateType is not configured. The field is optional Need R if the NZP-CSI-RS-Resources in the associated resourceSethave the resourceType aperiodic and unifiedtci-StateType is configured. The field is absent otherwise.\n---\nList of references to CSI-IM resources used for CSI measurement and reporting in a CSI-RS resource set. Contains up to maxNrofCSI-M-ResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise (see TS 38.214 [19], clause 5.2.1.2).\n---\nList of references to NZP CSI-RS resources used for beam measurement and reporting in a CSI-RS resource set. Contains up to maxNrofNZP-CSI-RS- ResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise when nrofReportedGroups-r17 is not configured in IE CS/-ReportConfig. If nrofReportedGroups-r17 is configured and resourceType is set to 'periodic' or 'semipersistent', then the network configures 2 resource sets (see TS 38.214 [19], clause 5.2.1.2 and 5.2.1.4.2).\n---\nConfiguration of the spatial relation between a reference RS and the target SRS. Reference RS can be SSB/CSI-RS/SRS/DL-PRS-PDC (see TS 38.214 [19], clause 6.2.1). The field is present in case of resource Type=periodic and usagePDC-r17=true in the SRS-ResourceSet, otherwise the field is absent.",
+    "generated_at": "2025-12-09T09:48:35.211840",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct semantic constraint between 'csi-RS-ResourceSetList' and 'resourceType' within the same IE. The evidence discusses behaviors and configurations related to 'resourceType', but does not explicitly link it to 'csi-RS-ResourceSetList' in a normative manner.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

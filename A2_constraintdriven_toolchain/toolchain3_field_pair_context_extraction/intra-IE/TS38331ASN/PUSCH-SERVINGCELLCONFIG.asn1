@@ -1,0 +1,26 @@
+PUSCH-ServingCellConfig ::=             SEQUENCE {
+    codeBlockGroupTransmission              SetupRelease { PUSCH-CodeBlockGroupTransmission }       OPTIONAL,   -- Need M
+    rateMatching                            ENUMERATED {limitedBufferRM}                            OPTIONAL,   -- Need S
+    xOverhead                               ENUMERATED {xoh6, xoh12, xoh18}                         OPTIONAL,   -- Need S
+    ...,
+    [[
+    maxMIMO-Layers                          INTEGER (1..4)                                          OPTIONAL,   -- Need M
+    processingType2Enabled                  BOOLEAN                                                 OPTIONAL    -- Need M
+    ]],
+    [[
+    maxMIMO-LayersDCI-0-2-r16               SetupRelease { MaxMIMO-LayersDCI-0-2-r16}               OPTIONAL    -- Need M
+    ]],
+    [[
+    nrofHARQ-ProcessesForPUSCH-r17          ENUMERATED {n32}                                   OPTIONAL,   -- Need R
+    uplinkHARQ-mode-r17                     SetupRelease { UplinkHARQ-mode-r17}                     OPTIONAL    -- Need M
+    ]]
+}
+
+PUSCH-CodeBlockGroupTransmission ::=    SEQUENCE {
+    maxCodeBlockGroupsPerTransportBlock     ENUMERATED {n2, n4, n6, n8},
+    ...
+}
+
+MaxMIMO-LayersDCI-0-2-r16 ::=           INTEGER (1..4)
+
+UplinkHARQ-mode-r17 ::=                 BIT STRING (SIZE (32))

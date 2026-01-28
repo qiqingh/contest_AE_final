@@ -1,0 +1,6 @@
+MeasObjectNR-SL-r16 ::=      SEQUENCE {
+    tx-PoolMeasToRemoveList-r16  Tx-PoolMeasList-r16                           OPTIONAL,       -- Need N
+    tx-PoolMeasToAddModList-r16  Tx-PoolMeasList-r16                           OPTIONAL        -- Need N
+}
+
+Tx-PoolMeasList-r16 ::= SEQUENCE (SIZE (1..maxNrofSL-PoolToMeasureNR-r16)) OF SL-ResourcePoolID-r16

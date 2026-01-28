@@ -1,0 +1,63 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      18
+    ],
+    [
+      18
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain any explicit normative wording or mathematical relation between the two fields 't-StatusProhibit'. The evidence is either definitional or lacks both target fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.322"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "rlc-Config",
+    "field1": "t-StatusProhibit",
+    "field2": "t-StatusProhibit",
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138322v160100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.4",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- at the first transmission opportunity indicated by lower layer, construct a STATUS PDU and submit it to lower layer. - else: - at the first transmission opportunity indicated by lower layer after t -StatusProhibit expires, construct a single STATUS PDU even if status reporting was triggered several times while t -StatusProhibit was running and submit it to lower layer. When a STATUS PDU has been submitted to lower layer, the receiving side of an AM RLC entity shall:\n---\n\\begin{tabular}{l} \\boldsymbol{t} -StatusProhibit Timer for status reporting in TS 38.322 [4], in milliseconds. Value m s 0 means 0 ms , value m s 5 means 5 ms and so on. If t -StatusProhibit-v 1610 is present, the UE shall ignore t -StatusProhibit (without suffix). \\end{tabular}\n---\n- at the first transmission opportunity indicated by lower layer, construct a STATUS PDU and submit it to lower layer. - else: - at the first transmission opportunity indicated by lower layer after t -StatusProhibit expires, construct a single STATUS PDU even if status reporting was triggered several times while t -StatusProhibit was running and submit it to lower layer. When a STATUS PDU has been submitted to lower layer, the receiving side of an AM RLC entity shall:\n---\n\\begin{tabular}{l} \\boldsymbol{t} -StatusProhibit Timer for status reporting in TS 38.322 [4], in milliseconds. Value m s 0 means 0 ms , value m s 5 means 5 ms and so on. If t -StatusProhibit-v 1610 is present, the UE shall ignore t -StatusProhibit (without suffix). \\end{tabular}",
+    "generated_at": "2025-12-09T09:44:36.168019",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain any explicit normative wording or mathematical relation between the two fields 't-StatusProhibit'. The evidence is either definitional or lacks both target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

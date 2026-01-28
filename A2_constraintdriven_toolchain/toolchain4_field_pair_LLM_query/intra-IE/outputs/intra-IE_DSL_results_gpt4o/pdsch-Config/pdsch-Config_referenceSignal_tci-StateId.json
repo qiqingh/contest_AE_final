@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      69,
+      70
+    ],
+    "field2_all": [
+      67
+    ],
+    "actual_pairs": [
+      [
+        [
+          69,
+          70
+        ],
+        [
+          67
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between the fields 'referenceSignal' and 'tci-StateId' within the same IE. The evidence is primarily definitional and lacks normative constraints involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pdsch-Config",
+    "field1": "referenceSignal",
+    "field2": "tci-StateId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 2,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} pdsch-TCI Indicates TCI states for PDSCH reception at SCell addition/activation or of the PSCell at SCG activation. This field includes exactly one bit for each configured TCI state in this BWP ordered by increasing values of TC/-State/d, i.e. the first bit indicates the activation state of the TCI state with the lowest TC/-State/d value, the second value indicates the activation status of the TCI state with the second lowest TCI-State-Id value, and so on. A bit set to 0 indicates that the corresponding TCI state is deactivated, a bit set to 1 indicates that the TCl state is activated. \\end{tabular} \\end{tabular} - TCI-State The IE TCI-State associates one or two DL reference signals with a corresponding quasi-colocation (QCL) type. If additionalPCI is configured for the reference signal, same value is configured for both DL reference signals. TCI-State information element",
+    "generated_at": "2026-01-10T21:41:33.793238",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between the fields 'referenceSignal' and 'tci-StateId' within the same IE. The evidence is primarily definitional and lacks normative constraints involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

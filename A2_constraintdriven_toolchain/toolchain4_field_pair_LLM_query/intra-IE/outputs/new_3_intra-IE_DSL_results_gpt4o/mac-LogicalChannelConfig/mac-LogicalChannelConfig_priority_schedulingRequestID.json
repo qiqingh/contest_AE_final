@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      19
+    ],
+    "field2_all": [
+      23
+    ],
+    "actual_pairs": [
+      [
+        [
+          19
+        ],
+        [
+          23
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between 'priority' and 'schedulingRequestID' within the same IE. The evidence lacks explicit normative constraints or logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-LogicalChannelConfig",
+    "field1": "priority",
+    "field2": "schedulingRequestID",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 8,
+      "original_count": 8,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.5",
+      "9.2.4",
+      "6.3.2",
+      "9.2.5.0"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "A UE can be configured by schedulingRequestIDForMTRPBFR a first configuration for LRR and, if the UE provides twoLRRcapability, a second configuration for LRR in a PUCCH transmission using either PUCCH format 0 or PUCCH format 1 . A UE can be configured by schedulingRequestID-LBT-SCell a configuration for consistent LBT failure recovery, as described in [11, TS 38.321], in a PUCCH transmission using either PUCCH format 0 or PUCCH format 1. The UE can be provided, by phy-PriorityIndex in SchedulingRequestResourceConfig, a priority index 0 or a priority index 1 for the SR. If the UE is not provided a priority index for SR, the priority index is 0 . The UE is also configured a periodicity S R_{\\text {PERIODICITY }} in symbols or slots and an offset S R_{\\text {OFFSET }} in slots by periodicityAndOffset for a PUCCH transmission conveying SR. If S R_{\\text {PERIODICITY }} is larger than one slot, the UE determines a SR transmission occasion in a PUCCH to be in a slot with number n_{s_{1} f}^{\\mu}[4 , TS 38.211] in a frame with number n_{f} if \\left(n_{f} \\cdot N_{\\text {slot }}^{\\text {frame }, \\mu}+n_{s_{f} f}^{\\mu}-S R_{\\text {OFFSET }}\\right) \\bmod S R_{\\text {PERIODICITY }}=0 .\n---\n- if the second PUCCH has priority index 1 , - if sl-PriorityThreshold-UL-URLLC is provided - the UE transmits the first PUCCH if a smallest priority value of the first PUCCH is smaller than s l -PriorityThreshold-UL-URLLC; otherwise, the UE transmits the second PUCCH - else - the UE transmits the second PUCCH - else - the UE transmits the first PUCCH if the smallest priority value of the first PUCCH is smaller than slPriorityThreshold; otherwise, the UE transmits the second PUCCH When the UE determines to transmit the second PUCCH, the UE determines a single resource for multiplexing UCI in the second PUCCH as described in clauses 9.2.5.1 and 9.2.5.2. 9.2.5.1 UE procedure for multiplexing HARQ-ACK or CSI and SR in a PUCCH In the following, a UE is configured to transmit K PUCCHs for respective K SRs in a slot, as determined by a set of schedulingRequestResourceld, a schedulingRequestResourceld associated with schedulingRequestID-BFR-SCell, and a schedulingRequestResourceld associated with schedulingRequestID-LBT-SCell, with SR transmission occasions that would overlap with a transmission of a PUCCH with HARQ-ACK information from the UE in the slot or with a transmission of a PUCCH with CSI report(s) from the UE in the slot. If a UE would transmit a PUCCH with positive SR and at most two HARQ-ACK information bits in a resource using PUCCH format 0 , the UE transmits the PUCCH in the resource using PUCCH format 0 in PRB(s) for HARQ-ACK information as described in clause 9.2.3. The UE determines a value of m_{0} and m_{\\mathrm{CS}} for computing a value of cyclic\n---\n\\begin{tabular}{l} priority Logical channel priority, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} prioritisedBitRate Value in kiloBytes/s. Value k B p s 0 corresponds to 0 kiloBytes/s, value k B p s 8 corresponds to 8 kiloBytes/s, value k B p s 16 corresponds to 16 kiloBytes/s, and so on. For SRBs, the value can only be set to infinity. \\end{tabular} \\begin{tabular}{l} scheduling Requestid If present, it indicates the scheduling request configuration applicable for this logical channel, as specified in TS 38.321 [3]. \\end{tabular}\n---\n\\end{tabular} \\begin{tabular}{l} si-CSI-SchedulingRequestid If present, it indicates the scheduling request configuration applicable for sidelink CSI report MAC CE, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} si-SSB-PriorityNR This field indicates the priority of NR sidelink SSB transmission and reception. \\end{tabular}\n---\n- the UE transmits the second PUCCH - else - the UE transmits the first PUCCH if the smallest priority value of the first PUCCH is smaller than slPriorityThreshold; otherwise, the UE transmits the second PUCCH When the UE determines to transmit the second PUCCH, the UE determines a single resource for multiplexing UCI in the second PUCCH as described in clauses 9.2.5.1 and 9.2.5.2. 9.2.5.1 UE procedure for multiplexing HARQ-ACK or CSI and SR in a PUCCH In the following, a UE is configured to transmit K PUCCHs for respective K SRs in a slot, as determined by a set of schedulingRequestResourceld, a schedulingRequestResourceld associated with schedulingRequestID-BFR-SCell, and a schedulingRequestResourceld associated with schedulingRequestID-LBT-SCell, with SR transmission occasions that would overlap with a transmission of a PUCCH with HARQ-ACK information from the UE in the slot or with a transmission of a PUCCH with CSI report(s) from the UE in the slot. If a UE would transmit a PUCCH with positive SR and at most two HARQ-ACK information bits in a resource using PUCCH format 0 , the UE transmits the PUCCH in the resource using PUCCH format 0 in PRB(s) for HARQ-ACK information as described in clause 9.2.3. The UE determines a value of m_{0} and m_{\\mathrm{CS}} for computing a value of cyclic\n---\n\\begin{tabular}{l} Ich-BasedPrioritization If this field is present, the corresponding MAC entity of the UE is configured with prioritization between overlapping grants and between scheduling request and overlapping grants based on LCH priority, see TS 38.321 [3]. The network does not configure ich-BasedPrioritization with enhancedSkipUplinkTxDynamic simultaneously nor khBasedPrioritization with enhancedSkipUplinkTxConfigured simultaneously. \\end{tabular} \\begin{tabular}{l} offsetThresholdTA Offset for TA reporting as specified in TS 38.321. \\end{tabular} \\begin{tabular}{l} scheduling RequestiD-BFR-SCell Indicates the scheduling request configuration applicable for BFR on SCell, as specified in TS 38.321 [3]. \\end{tabular}\n---\n\\begin{tabular}{l} phy-Prioritylndex Indicates whether this scheduling request resource is high or low priority in PHY prioritization/multiplexing handling (see TS 38.213 [13], clause 9.2.4). Value pO indicates low priority and value p 1 indicates high priority. \\end{tabular} \\begin{tabular}{l} resource ID of the PUCCH resource in which the UE shall send the scheduling request. The actual PUCCH-Resource is configured in PUCCH-Config of the same UL BWP and serving cell as this SchedulingRequestResourceConfig. The network configures a PUCCH-Resource of PUCCH-formatO or PUCCH-format 1 (other formats not supported) (see TS 38.213 [13], clause 9.2.4) \\end{tabular} \\begin{tabular}{l} scheduling RequestID The ID of the SchedulingRequestConfig that uses this scheduling request resource. \\end{tabular}\n---\n\\begin{tabular}{l} sl-Priority Sidelink logical channel priority, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} si-Scheduling Requestid If present, it indicates the scheduling request configuration applicable for this sidelink logical channel, as specified in TS 38.321 [3]. \\end{tabular}",
+    "generated_at": "2026-01-07T21:50:25.746818",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between 'priority' and 'schedulingRequestID' within the same IE. The evidence lacks explicit normative constraints or logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

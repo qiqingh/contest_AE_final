@@ -1,0 +1,59 @@
+SI-SchedulingInfo ::=               SEQUENCE {
+    schedulingInfoList                  SEQUENCE (SIZE (1..maxSI-Message)) OF SchedulingInfo,
+    si-WindowLength                     ENUMERATED {s5, s10, s20, s40, s80, s160, s320, s640, s1280, s2560-v1710, s5120-v1710 },
+    si-RequestConfig                    SI-RequestConfig                                                OPTIONAL,  -- Cond MSG-1
+    si-RequestConfigSUL                 SI-RequestConfig                                                OPTIONAL,  -- Cond SUL-MSG-1
+    systemInformationAreaID             BIT STRING (SIZE (24))                                          OPTIONAL,  -- Need R
+    ...
+}
+
+SchedulingInfo ::=                  SEQUENCE {
+    si-BroadcastStatus                  ENUMERATED {broadcasting, notBroadcasting},
+    si-Periodicity                      ENUMERATED {rf8, rf16, rf32, rf64, rf128, rf256, rf512},
+    sib-MappingInfo                     SIB-Mapping
+}
+
+SI-SchedulingInfo-v1700 ::=         SEQUENCE {
+    schedulingInfoList2-r17             SEQUENCE (SIZE (1..maxSI-Message)) OF SchedulingInfo2-r17,
+    dummy                              SI-RequestConfig                                                OPTIONAL
+}
+
+SI-SchedulingInfo-v1740 ::=         SEQUENCE {
+    si-RequestConfigRedCap-r17          SI-RequestConfig                                                OPTIONAL   -- Cond REDCAP-MSG-1
+}
+
+SchedulingInfo2-r17 ::=             SEQUENCE {
+    si-BroadcastStatus-r17              ENUMERATED {broadcasting, notBroadcasting},
+    si-WindowPosition-r17               INTEGER (1..256),
+    si-Periodicity-r17                  ENUMERATED {rf8, rf16, rf32, rf64, rf128, rf256, rf512},
+    sib-MappingInfo-r17                 SIB-Mapping-v1700
+}
+
+SIB-Mapping ::=                     SEQUENCE (SIZE (1..maxSIB)) OF SIB-TypeInfo
+
+SIB-Mapping-v1700  ::=              SEQUENCE (SIZE (1..maxSIB)) OF SIB-TypeInfo-v1700
+
+SIB-TypeInfo ::=                    SEQUENCE {
+    type                                ENUMERATED {sibType2, sibType3, sibType4, sibType5, sibType6, sibType7, sibType8, sibType9,
+                                                     sibType10-v1610, sibType11-v1610, sibType12-v1610, sibType13-v1610,
+                                                     sibType14-v1610, spare3, spare2, spare1,... },
+    valueTag                            INTEGER (0..31)                                                 OPTIONAL, -- Cond SIB-TYPE
+    areaScope                           ENUMERATED {true}                                               OPTIONAL -- Need S
+}
+
+SIB-TypeInfo-v1700 ::=              SEQUENCE {
+    sibType-r17                         CHOICE {
+        type1-r17                           ENUMERATED {sibType15, sibType16, sibType17, sibType18, sibType19, sibType20, sibType21,
+                                                        spare9, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1,...},
+        type2-r17                           SEQUENCE {
+            posSibType-r17                      ENUMERATED {posSibType1-9, posSibType1-10, posSibType2-24, posSibType2-25,
+                                                            posSibType6-4, posSibType6-5, posSibType6-6, spare9, spare8, spare7, spare6,
+                                                            spare5, spare4, spare3, spare2, spare1,...},
+            encrypted-r17                       ENUMERATED { true }                                     OPTIONAL, -- Need R
+            gnss-id-r17                         GNSS-ID-r16                                             OPTIONAL, -- Need R
+            sbas-id-r17                         SBAS-ID-r16                                             OPTIONAL  -- Need R
+        }
+    },
+    valueTag-r17                            INTEGER (0..31)                                             OPTIONAL, -- Cond NonPosSIB
+    areaScope-r17                           ENUMERATED {true}                                           OPTIONAL  -- Need S
+}

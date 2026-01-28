@@ -1,0 +1,9 @@
+SL-RadioBearerConfig-r16 ::=     SEQUENCE {
+    slrb-Uu-ConfigIndex-r16           SLRB-Uu-ConfigIndex-r16,
+    sl-SDAP-Config-r16                SL-SDAP-Config-r16                                                 OPTIONAL,    -- Cond SLRBSetup
+    sl-PDCP-Config-r16                SL-PDCP-Config-r16                                                 OPTIONAL,    -- Cond SLRBSetup
+    sl-TransRange-r16                 ENUMERATED {m20, m50, m80, m100, m120, m150, m180, m200, m220, m250, m270, m300, m350, m370,
+                                                 m400, m420, m450, m480, m500, m550, m600, m700, m1000, spare9, spare8, spare7, spare6,
+                                                 spare5, spare4, spare3, spare2, spare1}                OPTIONAL,    -- Need R
+    ...
+}

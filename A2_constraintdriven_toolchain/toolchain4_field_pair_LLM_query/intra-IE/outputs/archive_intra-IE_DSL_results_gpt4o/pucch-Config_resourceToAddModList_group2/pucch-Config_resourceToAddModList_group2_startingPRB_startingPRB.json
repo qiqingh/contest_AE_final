@@ -1,0 +1,60 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      603,
+      609
+    ],
+    [
+      603,
+      609
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not mention the fields 'startingPRB' or relate them within the same IE. The evidence is about DL PRS parameters, which are unrelated to the target fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group2",
+    "field1": "startingPRB",
+    "field2": "startingPRB",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- dl-PRS-CombSizeN defines the comb size of a DL PRS resource where the allowable values are given in Clause 7.4.1.7.3 of [TS38.211]. All DL PRS resource sets belonging to the same positioning frequency layer have the same value of dl-PRS-CombSizeN. - dl-PRS-ResourceBandwidth defines the number of resource blocks configured for DL PRS transmission. The parameter has a granularity of 4 PRBs with a minimum of 24 PRBs and a maximum of 272 PRBs. All DL. PRS resources sets within a positioning frequency layer have the same value of d l -PRS-ResourceBandwidth. - dl-PRS-StartPRB defines the starting PRB index of the DL PRS resource with respect to reference Point A, where reference Point A is given by the higher-layer parameter d l -PRS-PointA. The starting PRB index has a granularity of one PRB with a minimum value of 0 and a maximum value of 2176 PRBs. All DL PRS resource sets belonging to the same positioning frequency layer have the same value of d l -PRS-StartPRB. - dl-PRS-NumSymbols defines the number of symbols of the DL PRS resource within a slot where the allowable values are given in Clause 7.4.1.7.3 of [4, TS38.211].",
+    "generated_at": "2025-12-09T09:44:53.467157",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not mention the fields 'startingPRB' or relate them within the same IE. The evidence is about DL PRS parameters, which are unrelated to the target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

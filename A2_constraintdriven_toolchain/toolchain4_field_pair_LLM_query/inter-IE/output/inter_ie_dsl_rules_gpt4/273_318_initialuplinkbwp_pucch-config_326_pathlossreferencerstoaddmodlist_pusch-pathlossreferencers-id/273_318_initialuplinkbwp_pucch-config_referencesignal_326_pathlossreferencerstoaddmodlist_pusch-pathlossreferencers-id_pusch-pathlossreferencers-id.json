@@ -1,0 +1,93 @@
+{
+  "dsl_rule": "MATCH(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      307,
+      308,
+      317,
+      318
+    ],
+    "field2_all": [
+      326
+    ],
+    "actual_pairs": [
+      [
+        [
+          307,
+          308,
+          317,
+          318
+        ],
+        [
+          326
+        ]
+      ]
+    ]
+  },
+  "predicate": "The reference signal (RS) index from the initial uplink BWP PUCCH config must match the PUSCH pathloss reference RS ID from the pathloss reference RS to add mod list.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "If field1 (referencesignal) is 'rs1', field2 (pusch-pathlossreferencers-id) should also be 'rs1'."
+    ],
+    "invalid": [
+      "If field1 (referencesignal) is 'rs1', field2 (pusch-pathlossreferencers-id) cannot be 'rs2'."
+    ]
+  },
+  "notes": "The evidence explicitly states that the RS resource index in the set of RS resource indexes corresponds to the value provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS, which implies a match between the two fields.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "273_318_initialuplinkbwp_pucch-config",
+    "field1": "referencesignal",
+    "ie2_name": "326_pathlossreferencerstoaddmodlist_pusch-pathlossreferencers-id",
+    "field2": "pusch-pathlossreferencers-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "generated_at": "2025-12-11T09:27:39.414800",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "MATCH(field1, field2)",
+      "preconditions": [],
+      "predicate": "The reference signal (RS) index from the initial uplink BWP PUCCH config must match the PUSCH pathloss reference RS ID from the pathloss reference RS to add mod list.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If field1 (referencesignal) is 'rs1', field2 (pusch-pathlossreferencers-id) should also be 'rs1'."
+        ],
+        "invalid": [
+          "If field1 (referencesignal) is 'rs1', field2 (pusch-pathlossreferencers-id) cannot be 'rs2'."
+        ]
+      },
+      "notes": "The evidence explicitly states that the RS resource index in the set of RS resource indexes corresponds to the value provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS, which implies a match between the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

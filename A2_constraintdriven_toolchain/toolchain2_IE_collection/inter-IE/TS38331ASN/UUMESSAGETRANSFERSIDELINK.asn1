@@ -1,0 +1,14 @@
+UuMessageTransferSidelink-r17 ::=           SEQUENCE {
+    criticalExtensions                          CHOICE {
+        uuMessageTransferSidelink-r17               UuMessageTransferSidelink-r17-IEs,
+        criticalExtensionsFuture                    SEQUENCE {}
+    }
+}
+
+UuMessageTransferSidelink-r17-IEs ::=       SEQUENCE {
+    sl-PagingDelivery-r17                       OCTET STRING (CONTAINING PagingRecord)                   OPTIONAL,   -- Need N
+    sl-SIB1-Delivery-r17                        OCTET STRING (CONTAINING SIB1)                           OPTIONAL,   -- Need N
+    sl-SystemInformationDelivery-r17            OCTET STRING (CONTAINING SystemInformation)              OPTIONAL,   -- Need N
+    lateNonCriticalExtension                    OCTET STRING                                             OPTIONAL,
+    nonCriticalExtension                        SEQUENCE {}                                              OPTIONAL
+}

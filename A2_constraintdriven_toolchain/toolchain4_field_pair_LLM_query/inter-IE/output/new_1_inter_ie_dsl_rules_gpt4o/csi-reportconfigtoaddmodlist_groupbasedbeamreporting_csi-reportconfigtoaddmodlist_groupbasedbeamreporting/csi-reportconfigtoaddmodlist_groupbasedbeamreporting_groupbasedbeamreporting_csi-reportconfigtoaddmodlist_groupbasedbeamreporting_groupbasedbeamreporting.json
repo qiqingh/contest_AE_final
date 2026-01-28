@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      844,
+      858,
+      883,
+      897,
+      922,
+      936
+    ],
+    "field2_all": [
+      844,
+      858,
+      883,
+      897,
+      922
+    ],
+    "actual_pairs": [
+      [
+        [
+          844,
+          858,
+          883,
+          897,
+          922,
+          936
+        ],
+        [
+          844,
+          858,
+          883,
+          897,
+          922
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish an inter-IE constraint between the two fields from different IEs. The evidence primarily discusses behavior within a single IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_groupbasedbeamreporting",
+    "field1": "groupbasedbeamreporting",
+    "ie2_name": "csi-reportconfigtoaddmodlist_groupbasedbeamreporting",
+    "field2": "groupbasedbeamreporting",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 10,
+      "original_count": 10,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2",
+      "5.2.1.4.1",
+      "5.2.1.4.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.\n---\nFor aperiodic CSI, if groupBasedBeamReporting-r 17 is not configured, each trigger state configured using the higher layer parameter CSI-AperiodicTriggerState is associated with one or multiple CSI-ReportConfig where each CSIReportConfig is linked to periodic, or semi-persistent, or aperiodic resource setting(s):\n---\nFor aperiodic CSI, and for periodic and semi-persistent CSI resource settings, if groupBasedBeamReporting-r 17 is configured, each trigger state configured using the higher layer parameter CSI-AperiodicTriggerState is associated with one or multiple CSI-ReportConfig where each CSI-ReportConfig is linked to periodic or semi-persistent, setting(s):\n---\nFor aperiodic CSI, and for aperiodic CSI resource settings, if groupBasedBeamReporting-r 17 is configured, each trigger state configured using the higher layer parameter CSI-AperiodicTriggerState is associated with resourcesForChannel and resourcesForChannel2, which correspond to first and second resource sets, respectively, for L1-RSRP measurement.\n---\n- if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting.\n---\n- if the UE is configured with the higher layer parameter groupBasedBeamReporting-r 17 , the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single reporting instance nrofReportedRSgroup, if configured, group(s) of two CRIs or SSBRIs selecting one CSI-RS or SSB from each of the two CSI Resource Sets for the report setting, where CSI-RS and/or SSB resources of each group can be received simultaneously by the UE.\n---\n- if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting.\n---\nFor L1-RSRP reporting, if the higher layer parameter nrofReportedRS in CSI-ReportConfig is configured to be one, the reported L1-RSRP value is defined by a 7 -bit value in the range \\( [-140,-44] \\mathrm{dBm} \\) with 1 dB step size, if the higher layer parameter nrofReportedRS is configured to be larger than one, or if the higher layer parameter groupBasedBeamReporting is configured as 'enabled', or if the higher layer parameter groupBasedBeamReporting-r 17 is configured, the UE shall use differential L1-RSRP based reporting, where the largest measured value of L1-RSRP is quantized to a 7 -bit value in the range \\( [-140,-44] \\mathrm{dBm} \\) with 1 dB step size, and the differential L 1 -RSRP is quantized to\n---\nWhen the higher layer parameter groupBasedBeamReporting-r I 7in CSI-ReportConfig is configured, the UE shall indicate the CSI Resource Set associated with the largest measured value of L1-RSRP, and for each group, CRI or SSBRI of the indicated CSI Resource Set is present first.\n---\nFor L1-SINR reporting, if the higher layer parameter nrofReportedRS in CSI-ReportConfig is configured to be one, the reported L1-SINR value is defined by a 7-bit value in the range [-23,40] dB with 0.5 dB step size, and if the higher layer parameter nrofReportedRS is configured to be larger than one, or if the higher layer parameter groupBasedBeamReporting is configured as 'enabled', the UE shall use differential L1-SINR based reporting, where the largest measured value of L1-SINR is quantized to a 7-bit value in the range [ \\( -23,40 \\) ] dB with 0.5 dB step size, and the differential L1-SINR is quantized to a 4 -bit value. The differential L1-SINR is computed with 1 dB step size with a reference to the largest measured L1-SINR value which is part of the same L1-SINR reporting instance. When NZP CSI-RS is configured for channel measurement and/or interference measurement, the reported L1-SINR values should not be compensated by the power offset(s) given by higher layer parameter powerControOffsetSS or powerControlOffset.",
+    "generated_at": "2026-01-09T12:48:08.935660",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish an inter-IE constraint between the two fields from different IEs. The evidence primarily discusses behavior within a single IE context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

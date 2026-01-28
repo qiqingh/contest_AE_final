@@ -1,0 +1,19 @@
+MeasResultIdleEUTRA-r16 ::= SEQUENCE {
+    measResultsPerCarrierListIdleEUTRA-r16   SEQUENCE (SIZE (1.. maxFreqIdle-r16)) OF MeasResultsPerCarrierIdleEUTRA-r16,
+    ...
+}
+
+MeasResultsPerCarrierIdleEUTRA-r16 ::=  SEQUENCE {
+    carrierFreqEUTRA-r16                    ARFCN-ValueEUTRA,
+    measResultsPerCellListIdleEUTRA-r16     SEQUENCE (SIZE (1..maxCellMeasIdle-r16)) OF MeasResultsPerCellIdleEUTRA-r16,
+    ...
+}
+
+MeasResultsPerCellIdleEUTRA-r16 ::=     SEQUENCE {
+    eutra-PhysCellId-r16                    EUTRA-PhysCellId,
+    measIdleResultEUTRA-r16                 SEQUENCE {
+       rsrp-ResultEUTRA-r16                     RSRP-RangeEUTRA                                                     OPTIONAL,
+       rsrq-ResultEUTRA-r16                     RSRQ-RangeEUTRA-r16                                                 OPTIONAL
+    },
+    ...
+}

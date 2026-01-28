@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(IS_NULL(field1), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      649
+    ],
+    "field2_all": [
+      646
+    ],
+    "actual_pairs": [
+      [
+        [
+          649
+        ],
+        [
+          646
+        ]
+      ]
+    ]
+  },
+  "predicate": "IS_NULL(field1)",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 is null, field2 is 1"
+    ],
+    "invalid": [
+      "field1 is null, field2 is not 1"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that if field1 (alpha) is absent, the UE shall use the value of field2 (msg3-Alpha) if configured, else UE applies value 1.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pusch-Config_group2",
+    "field1": "alpha",
+    "field2": "msg3-Alpha",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha\n---\nDedicated alpha value for MsgA PUSCH. If the field is absent, the UE shall use the value of msg3-Alpha if configured, else UE applies value 1 (see TS 38.213 [13], clause 7.1.1).\n---\nconfiguration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH.",
+    "generated_at": "2025-12-11T14:18:39.896248",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(IS_NULL(field1), EQ(field2, 1))",
+      "preconditions": [],
+      "predicate": "IS_NULL(field1)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 is null, field2 is 1"
+        ],
+        "invalid": [
+          "field1 is null, field2 is not 1"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that if field1 (alpha) is absent, the UE shall use the value of field2 (msg3-Alpha) if configured, else UE applies value 1.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

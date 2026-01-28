@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "EQ(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      198,
+      263
+    ],
+    "field2_all": [
+      271
+    ],
+    "actual_pairs": [
+      [
+        [
+          198,
+          263
+        ],
+        [
+          271
+        ]
+      ]
+    ]
+  },
+  "predicate": "The BWP-Id in the TCI StatesToAddModList must be equal to the firstActiveDownlinkBWP-Id",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "bwp-id: 0, firstactivedownlinkbwp-id: 0"
+    ],
+    "invalid": [
+      "bwp-id: 0, firstactivedownlinkbwp-id: 1"
+    ]
+  },
+  "notes": "The evidence explicitly states that the network sets the firstActiveDownlinkBWP-Id and firstActiveUplinkBWP-Id to the same value, implying a cross-reference constraint between these two fields.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "197_266_pdsch-config_tci-statestoaddmodlist",
+    "field1": "bwp-id",
+    "ie2_name": "271_firstactivedownlinkbwp-id",
+    "field2": "firstactivedownlinkbwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If configured for an SCell, this field contains the ID of the downlink bandwidth part to be used upon activation of an SCell. The initial bandwidth part is referred to by BWP-Id = 0. \\\\ Upon reconfiguration with reconfigurationWithSync, the network sets the firstActiveDownlinkBWP-Id and firstActiveUplinkBWP-Id to the same value.",
+    "generated_at": "2025-12-11T10:02:51.858662",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "The BWP-Id in the TCI StatesToAddModList must be equal to the firstActiveDownlinkBWP-Id",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "bwp-id: 0, firstactivedownlinkbwp-id: 0"
+        ],
+        "invalid": [
+          "bwp-id: 0, firstactivedownlinkbwp-id: 1"
+        ]
+      },
+      "notes": "The evidence explicitly states that the network sets the firstActiveDownlinkBWP-Id and firstActiveUplinkBWP-Id to the same value, implying a cross-reference constraint between these two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

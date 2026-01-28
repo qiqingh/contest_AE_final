@@ -1,0 +1,12 @@
+TAG-Config ::=                      SEQUENCE {
+    tag-ToReleaseList                   SEQUENCE (SIZE (1..maxNrofTAGs)) OF TAG-Id                          OPTIONAL,   -- Need N
+    tag-ToAddModList                    SEQUENCE (SIZE (1..maxNrofTAGs)) OF TAG                             OPTIONAL    -- Need N
+}
+
+TAG ::=                             SEQUENCE {
+    tag-Id                              TAG-Id,
+    timeAlignmentTimer                  TimeAlignmentTimer,
+    ...
+}
+
+TAG-Id ::=                          INTEGER (0..maxNrofTAGs-1)

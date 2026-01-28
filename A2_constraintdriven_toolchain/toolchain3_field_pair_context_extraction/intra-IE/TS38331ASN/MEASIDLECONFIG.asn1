@@ -1,0 +1,68 @@
+MeasIdleConfigSIB-r16 ::= SEQUENCE {
+    measIdleCarrierListNR-r16       SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierNR-r16          OPTIONAL,     -- Need S
+    measIdleCarrierListEUTRA-r16    SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierEUTRA-r16       OPTIONAL,     -- Need S
+    ...
+}
+
+MeasIdleConfigDedicated-r16 ::= SEQUENCE {
+    measIdleCarrierListNR-r16       SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierNR-r16          OPTIONAL,     -- Need N
+    measIdleCarrierListEUTRA-r16    SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF MeasIdleCarrierEUTRA-r16       OPTIONAL,     -- Need N
+    measIdleDuration-r16            ENUMERATED{sec10, sec30, sec60, sec120, sec180, sec240, sec300, spare},
+    validityAreaList-r16            ValidityAreaList-r16                                                   OPTIONAL,     -- Need N
+    ...
+}
+
+ValidityAreaList-r16 ::= SEQUENCE (SIZE (1..maxFreqIdle-r16)) OF ValidityArea-r16
+
+ValidityArea-r16 ::=             SEQUENCE {
+    carrierFreq-r16                  ARFCN-ValueNR,
+    validityCellList-r16             ValidityCellList                                                     OPTIONAL   -- Need N
+}
+
+ValidityCellList ::= SEQUENCE (SIZE (1.. maxCellMeasIdle-r16)) OF PCI-Range
+
+MeasIdleCarrierNR-r16 ::=        SEQUENCE {
+    carrierFreq-r16                  ARFCN-ValueNR,
+    ssbSubcarrierSpacing-r16         SubcarrierSpacing,
+    frequencyBandList                MultiFrequencyBandListNR                                             OPTIONAL,  -- Need R
+    measCellListNR-r16               CellListNR-r16                                                       OPTIONAL,  -- Need R
+    reportQuantities-r16             ENUMERATED {rsrp, rsrq, both},
+    qualityThreshold-r16             SEQUENCE {
+        idleRSRP-Threshold-NR-r16        RSRP-Range                                                           OPTIONAL,  -- Need R
+        idleRSRQ-Threshold-NR-r16        RSRQ-Range                                                           OPTIONAL   -- Need R
+    }                                                                                                     OPTIONAL,  -- Need R
+    ssb-MeasConfig-r16               SEQUENCE {
+        nrofSS-BlocksToAverage-r16          INTEGER (2..maxNrofSS-BlocksToAverage)                            OPTIONAL,   -- Need S
+        absThreshSS-BlocksConsolidation-r16 ThresholdNR                                                       OPTIONAL,   -- Need S
+        smtc-r16                            SSB-MTC                                                           OPTIONAL,   -- Need S
+        ssb-ToMeasure-r16                   SSB-ToMeasure                                                     OPTIONAL,   -- Need S
+        deriveSSB-IndexFromCell-r16         BOOLEAN,
+        ss-RSSI-Measurement-r16             SS-RSSI-Measurement                                               OPTIONAL    -- Need S
+    }                                                                                                     OPTIONAL,  -- Need S
+    beamMeasConfigIdle-r16           BeamMeasConfigIdle-NR-r16                                            OPTIONAL,  -- Need R
+    ...
+}
+
+MeasIdleCarrierEUTRA-r16 ::=     SEQUENCE {
+    carrierFreqEUTRA-r16             ARFCN-ValueEUTRA,
+    allowedMeasBandwidth-r16         EUTRA-AllowedMeasBandwidth,
+    measCellListEUTRA-r16            CellListEUTRA-r16                                                    OPTIONAL,  -- Need R
+    reportQuantitiesEUTRA-r16        ENUMERATED {rsrp, rsrq, both},
+    qualityThresholdEUTRA-r16        SEQUENCE {
+        idleRSRP-Threshold-EUTRA-r16     RSRP-RangeEUTRA                                                      OPTIONAL,  -- Need R
+        idleRSRQ-Threshold-EUTRA-r16     RSRQ-RangeEUTRA-r16                                                  OPTIONAL   -- Need R
+    }                                                                                                     OPTIONAL,  -- Need S
+    ...
+}
+
+CellListNR-r16  ::=       SEQUENCE (SIZE (1..maxCellMeasIdle-r16)) OF PCI-Range
+
+CellListEUTRA-r16  ::=    SEQUENCE (SIZE (1..maxCellMeasIdle-r16)) OF EUTRA-PhysCellIdRange
+
+BeamMeasConfigIdle-NR-r16  ::=   SEQUENCE {
+    reportQuantityRS-Indexes-r16     ENUMERATED {rsrp, rsrq, both},
+    maxNrofRS-IndexesToReport-r16    INTEGER (1.. maxNrofIndexesToReport),
+    includeBeamMeasurements-r16      BOOLEAN
+}
+
+RSRQ-RangeEUTRA-r16 ::=   INTEGER (-30..46)

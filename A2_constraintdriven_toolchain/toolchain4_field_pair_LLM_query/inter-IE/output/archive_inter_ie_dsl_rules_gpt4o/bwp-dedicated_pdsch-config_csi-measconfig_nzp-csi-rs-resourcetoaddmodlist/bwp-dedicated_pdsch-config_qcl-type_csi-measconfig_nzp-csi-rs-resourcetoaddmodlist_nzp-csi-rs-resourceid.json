@@ -1,0 +1,107 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      136,
+      201,
+      266
+    ],
+    "field2_all": [
+      688,
+      705,
+      722
+    ],
+    "actual_pairs": [
+      [
+        [
+          136,
+          201,
+          266
+        ],
+        [
+          705,
+          722
+        ]
+      ],
+      [
+        [
+          136,
+          201,
+          266
+        ],
+        [
+          688,
+          705
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          688,
+          705
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          705,
+          722
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence does not explicitly relate qcl-type from bwp-dedicated_pdsch-config to nzp-csi-rs-resourceid from csi-measconfig_nzp-csi-rs-resourcetoaddmodlist across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdsch-config",
+    "field1": "qcl-type",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "nzp-csi-rs-resourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.1.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission. - If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
+    "generated_at": "2025-12-10T13:53:25.304901",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "Association",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint found between qcl-type and nzp-csi-rs-resourceid.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence does not explicitly relate qcl-type from bwp-dedicated_pdsch-config to nzp-csi-rs-resourceid from csi-measconfig_nzp-csi-rs-resourcetoaddmodlist across IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

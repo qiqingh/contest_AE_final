@@ -1,0 +1,118 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      108,
+      140,
+      173,
+      205,
+      270
+    ],
+    "field2_all": [
+      43,
+      108,
+      140,
+      173,
+      205,
+      238,
+      270
+    ],
+    "actual_pairs": [
+      [
+        [
+          108,
+          173
+        ],
+        [
+          140,
+          205,
+          270
+        ]
+      ],
+      [
+        [
+          140,
+          205,
+          270
+        ],
+        [
+          43,
+          108,
+          173,
+          238
+        ]
+      ],
+      [
+        [
+          140,
+          205,
+          270
+        ],
+        [
+          43
+        ]
+      ],
+      [
+        [
+          140,
+          205,
+          270
+        ],
+        [
+          173,
+          238
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not establish a relationship between controlresourcesetid and bundlesize across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config_controlresourcesettoaddmodlist",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdsch-config",
+    "field2": "bundlesize",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.2",
+      "7.3.1.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "divided into \\( N_{\\text {bundle }}=\\left[N_{\\text {BWP, init }}^{\\text {size }} / L\\right] \\) resource-block bundles in increasing order of the resource-block number and bundle number where \\( L=2 \\) is the bundle size and \\( N_{\\text {BWP, init }}^{\\text {size }} \\) is the size of CORESET 0 .\n---\n- for PDSCH transmissions scheduled with DCI format \\( 1 \\_0 \\) in any common search space in bandwidth part \\( i \\) with starting position \\( N_{\\text {BWP, } i}^{\\text {statt }} \\), other than Type0-PDCCH common search space in CORESET 0, the set of \\( N_{\\text {BWP, init }}^{\\text {size }} \\) virtual resource blocks \\( \\left\\{0,1, \\ldots, N_{\\text {BWP, init }}^{\\text {size }}-1\\right\\} \\), where \\( N_{\\text {BWP, init }}^{\\text {size }} \\) is the size of CORESET 0 if CORESET 0 is configured for the cell and the size of initial downlink bandwidth part if CORESET 0 is not configured for the cell, are divided into \\( N_{\\text {bundle }} \\) virtual resource-block bundles in increasing order of the virtual resource-block number and virtual bundle number and the set of \\( N_{\\text {BWP, nit }}^{\\text {size }} \\) physical resource blocks \\( \\left\\{N_{\\text {start }}^{\\text {CORESET }}, N_{\\text {start }}^{\\text {CORESET }}+1, \\ldots, N_{\\text {start }}^{\\text {CORESET }}+N_{\\text {BWP, init }}^{\\text {size }}-1\\right\\} \\) are divided into \\( N_{\\text {bundle }} \\) physical resource-block bundles in increasing order of the physical resource-block number and physical bundle number, where \\( N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\text {BWP, init }}^{\\text {size }}+\\left(N_{\\text {BWP, }, i}^{\\text {start }}+N_{\\text {start }}^{\\text {CORESET }}\\right) \\bmod L\\right) / L\\right\\rceil, L=2 \\) is the bundle size, and \\( N_{\\text {start }}^{\\text {CORESET }} \\) is the lowest-numbered physical resource block in the control resource set where the corresponding DCI was received. When two PDCCH candidates from two linked search space sets as indicated by the higher-layer parameter searchSpaceLinking are detected, and the two linked search space sets are associated with different control resource sets, the control resource set with the lowest number among the two linked control resource sets is used to determine \\( N_{\\text {start }}^{\\text {CORESET }} \\).\n---\n- REG bundle \\( i \\) is defined as REGs \\( \\{i L, i L+1, \\ldots, i L+L-1\\} \\) where \\( L \\) is the REG bundle size, \\( i= 0,1, \\ldots, N_{\\mathrm{REG}}^{\\text {CORESET }} / L-1 \\), and \\( N_{\\mathrm{REG}}^{\\text {CORESET }}=N_{\\mathrm{RB}}^{\\text {CORESET }} N_{\\mathrm{symb}}^{\\text {CORESET }} \\) is the number of REGs in the CORESET\n---\n- \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3; - interleaved or non-interleaved mapping is given by the higher-layer parameter cce-REG-MappingType; - \\( L \\) equals 6 for non-interleaved mapping and is given by the higher-layer parameter reg-BundleSize for interleaved mapping;\n---\n- resource block bundle \\( N_{\\text {bundle }}-1 \\) consists of \\( \\left(N_{\\text {BWP }, \\text { init }}^{\\text {size }}+N_{\\text {BWP }, i}^{\\text {start }}+N_{\\text {start }}^{\\text {COREST }}\\right) \\bmod L \\) resource blocks if \\( \\left(N_{\\mathrm{BWP}, \\text { init }}^{\\text {size }}+N_{\\mathrm{BWP}, i}^{\\text {start }}+N_{\\text {start }}^{\\text {CORESET }}\\right) \\bmod L>0 \\) and \\( L \\) resource blocks otherwise, - all other resource block bundles consists of \\( L \\) resource blocks. - for all other PDSCH transmissions, the set of \\( N_{\\mathrm{BWP}, i}^{\\text {size }} \\) resource blocks in bandwidth part \\( i \\) with starting position \\( N_{\\mathrm{BWP}, i}^{\\text {start }} \\) are divided into \\( N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\mathrm{BWP}, i}^{\\text {size }}+\\left(N_{\\mathrm{BWP}, i}^{\\text {start }} \\bmod L_{i}\\right)\\right) / L_{i}\\right\\rceil \\) resource-block bundles in increasing order of the resource-block number and bundle number where \\( L_{i} \\) is the bundle size for bandwidth part \\( i \\) provided by the higher-layer parameter vrb-ToPRB-Interleaver for DCI formats \\( 1 \\_0,1 \\_1 \\), and \\( 1 \\_3 \\) in a UE-specific search space, or vrb-ToPRB-InterleaverDCI-1-2 for DCI format 1_2, and",
+    "generated_at": "2026-01-10T14:46:37.659016",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between controlresourcesetid and bundlesize.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not establish a relationship between controlresourcesetid and bundlesize across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

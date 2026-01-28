@@ -1,0 +1,14 @@
+SL-MeasObjectList-r16 ::=               SEQUENCE (SIZE (1..maxNrofSL-ObjectId-r16)) OF SL-MeasObjectInfo-r16
+
+SL-MeasObjectInfo-r16 ::=               SEQUENCE {
+    sl-MeasObjectId-r16                     SL-MeasObjectId-r16,
+    sl-MeasObject-r16                       SL-MeasObject-r16,
+    ...
+}
+
+SL-MeasObjectId-r16 ::=                 INTEGER (1..maxNrofSL-ObjectId-r16)
+
+SL-MeasObject-r16 ::=                   SEQUENCE {
+    frequencyInfoSL-r16                     ARFCN-ValueNR,
+    ...
+}

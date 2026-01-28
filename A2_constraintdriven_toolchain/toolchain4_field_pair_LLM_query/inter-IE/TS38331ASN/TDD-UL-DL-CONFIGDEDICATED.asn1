@@ -1,0 +1,41 @@
+TDD-UL-DL-ConfigDedicated ::=       SEQUENCE {
+    slotSpecificConfigurationsToAddModList      SEQUENCE (SIZE (1..maxNrofSlots)) OF TDD-UL-DL-SlotConfig       OPTIONAL, -- Need N
+    slotSpecificConfigurationsToReleaseList     SEQUENCE (SIZE (1..maxNrofSlots)) OF TDD-UL-DL-SlotIndex        OPTIONAL, -- Need N
+    ...
+}
+
+TDD-UL-DL-ConfigDedicated-IAB-MT-r16::=         SEQUENCE {
+    slotSpecificConfigurationsToAddModList-IAB-MT-r16  SEQUENCE (SIZE (1..maxNrofSlots)) OF TDD-UL-DL-SlotConfig-IAB-MT-r16      OPTIONAL, -- Need N
+    slotSpecificConfigurationsToReleaseList-IAB-MT-r16 SEQUENCE (SIZE (1..maxNrofSlots)) OF TDD-UL-DL-SlotIndex                  OPTIONAL, -- Need N
+    ...
+}
+
+TDD-UL-DL-SlotConfig ::=            SEQUENCE {
+    slotIndex                           TDD-UL-DL-SlotIndex,
+    symbols                             CHOICE {
+        allDownlink                         NULL,
+        allUplink                           NULL,
+        explicit                            SEQUENCE {
+            nrofDownlinkSymbols                 INTEGER (1..maxNrofSymbols-1)                                   OPTIONAL, -- Need S
+            nrofUplinkSymbols                   INTEGER (1..maxNrofSymbols-1)                                   OPTIONAL  -- Need S
+        }
+    }
+}
+
+TDD-UL-DL-SlotConfig-IAB-MT-r16::=    SEQUENCE {
+    slotIndex-r16                           TDD-UL-DL-SlotIndex,
+    symbols-IAB-MT-r16                      CHOICE {
+        allDownlink-r16                         NULL,
+        allUplink-r16                           NULL,
+        explicit-r16                            SEQUENCE {
+            nrofDownlinkSymbols-r16                 INTEGER (1..maxNrofSymbols-1)                               OPTIONAL, -- Need S
+            nrofUplinkSymbols-r16                   INTEGER (1..maxNrofSymbols-1)                               OPTIONAL  -- Need S
+        },
+        explicit-IAB-MT-r16                     SEQUENCE {
+            nrofDownlinkSymbols-r16                 INTEGER (1..maxNrofSymbols-1)                               OPTIONAL, -- Need S
+            nrofUplinkSymbols-r16                   INTEGER (1..maxNrofSymbols-1)                               OPTIONAL  -- Need S
+        }
+    }
+}
+
+TDD-UL-DL-SlotIndex ::=             INTEGER (0..maxNrofSlots-1)

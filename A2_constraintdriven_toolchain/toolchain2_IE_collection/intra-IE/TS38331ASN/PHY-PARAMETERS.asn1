@@ -1,0 +1,364 @@
+Phy-Parameters ::=                  SEQUENCE {
+    phy-ParametersCommon                Phy-ParametersCommon                        OPTIONAL,
+    phy-ParametersXDD-Diff              Phy-ParametersXDD-Diff                      OPTIONAL,
+    phy-ParametersFRX-Diff              Phy-ParametersFRX-Diff                      OPTIONAL,
+    phy-ParametersFR1                   Phy-ParametersFR1                           OPTIONAL,
+    phy-ParametersFR2                   Phy-ParametersFR2                           OPTIONAL
+}
+
+Phy-Parameters-v16a0 ::=            SEQUENCE {
+    phy-ParametersCommon-v16a0          Phy-ParametersCommon-v16a0                  OPTIONAL
+}
+
+Phy-ParametersCommon ::=            SEQUENCE {
+    csi-RS-CFRA-ForHO                   ENUMERATED {supported}                      OPTIONAL,
+    dynamicPRB-BundlingDL               ENUMERATED {supported}                      OPTIONAL,
+    sp-CSI-ReportPUCCH                  ENUMERATED {supported}                      OPTIONAL,
+    sp-CSI-ReportPUSCH                  ENUMERATED {supported}                      OPTIONAL,
+    nzp-CSI-RS-IntefMgmt                ENUMERATED {supported}                      OPTIONAL,
+    type2-SP-CSI-Feedback-LongPUCCH     ENUMERATED {supported}                      OPTIONAL,
+    precoderGranularityCORESET          ENUMERATED {supported}                      OPTIONAL,
+    dynamicHARQ-ACK-Codebook            ENUMERATED {supported}                      OPTIONAL,
+    semiStaticHARQ-ACK-Codebook         ENUMERATED {supported}                      OPTIONAL,
+    spatialBundlingHARQ-ACK             ENUMERATED {supported}                      OPTIONAL,
+    dynamicBetaOffsetInd-HARQ-ACK-CSI   ENUMERATED {supported}                      OPTIONAL,
+    pucch-Repetition-F1-3-4             ENUMERATED {supported}                      OPTIONAL,
+    ra-Type0-PUSCH                      ENUMERATED {supported}                      OPTIONAL,
+    dynamicSwitchRA-Type0-1-PDSCH       ENUMERATED {supported}                      OPTIONAL,
+    dynamicSwitchRA-Type0-1-PUSCH       ENUMERATED {supported}                      OPTIONAL,
+    pdsch-MappingTypeA                  ENUMERATED {supported}                      OPTIONAL,
+    pdsch-MappingTypeB                  ENUMERATED {supported}                      OPTIONAL,
+    interleavingVRB-ToPRB-PDSCH         ENUMERATED {supported}                      OPTIONAL,
+    interSlotFreqHopping-PUSCH          ENUMERATED {supported}                      OPTIONAL,
+    type1-PUSCH-RepetitionMultiSlots    ENUMERATED {supported}                      OPTIONAL,
+    type2-PUSCH-RepetitionMultiSlots    ENUMERATED {supported}                      OPTIONAL,
+    pusch-RepetitionMultiSlots          ENUMERATED {supported}                      OPTIONAL,
+    pdsch-RepetitionMultiSlots          ENUMERATED {supported}                      OPTIONAL,
+    downlinkSPS                         ENUMERATED {supported}                      OPTIONAL,
+    configuredUL-GrantType1             ENUMERATED {supported}                      OPTIONAL,
+    configuredUL-GrantType2             ENUMERATED {supported}                      OPTIONAL,
+    pre-EmptIndication-DL               ENUMERATED {supported}                      OPTIONAL,
+    cbg-TransIndication-DL              ENUMERATED {supported}                      OPTIONAL,
+    cbg-TransIndication-UL              ENUMERATED {supported}                      OPTIONAL,
+    cbg-FlushIndication-DL              ENUMERATED {supported}                      OPTIONAL,
+    dynamicHARQ-ACK-CodeB-CBG-Retx-DL   ENUMERATED {supported}                      OPTIONAL,
+    rateMatchingResrcSetSemi-Static     ENUMERATED {supported}                      OPTIONAL,
+    rateMatchingResrcSetDynamic         ENUMERATED {supported}                      OPTIONAL,
+    bwp-SwitchingDelay                  ENUMERATED {type1, type2}                   OPTIONAL,
+    ...,
+    [[
+    dummy                               ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    maxNumberSearchSpaces               ENUMERATED {n10}                            OPTIONAL,
+    rateMatchingCtrlResrcSetDynamic     ENUMERATED {supported}                      OPTIONAL,
+    maxLayersMIMO-Indication            ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    spCellPlacement                             CarrierAggregationVariant           OPTIONAL
+    ]],
+    [[
+    -- R1 9-1: Basic channel structure and procedure of 2-step RACH
+    twoStepRACH-r16                             ENUMERATED {supported}              OPTIONAL,
+    -- R1 11-1: Monitoring DCI format 1_2 and DCI format 0_2
+    dci-Format1-2And0-2-r16                     ENUMERATED {supported}              OPTIONAL,
+    -- R1 11-1a: Monitoring both DCI format 0_1/1_1 and DCI format 0_2/1_2 in the same search space
+    monitoringDCI-SameSearchSpace-r16           ENUMERATED {supported}              OPTIONAL,
+    -- R1 11-10: Type 2 configured grant release by DCI format 0_1
+    type2-CG-ReleaseDCI-0-1-r16                 ENUMERATED {supported}              OPTIONAL,
+    -- R1 11-11: Type 2 configured grant release by DCI format 0_2
+    type2-CG-ReleaseDCI-0-2-r16                 ENUMERATED {supported}              OPTIONAL,
+    -- R1 12-3: SPS release by DCI format 1_1
+    sps-ReleaseDCI-1-1-r16                      ENUMERATED {supported}              OPTIONAL,
+    -- R1 12-3a: SPS release by DCI format 1_2
+    sps-ReleaseDCI-1-2-r16                      ENUMERATED {supported}              OPTIONAL,
+    -- R1 14-8: CSI trigger states containing non-active BWP
+    csi-TriggerStateNon-ActiveBWP-r16           ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-2: Support up to 4 SMTCs configured for an IAB node MT per frequency location, including IAB-specific SMTC window periodicities
+    separateSMTC-InterIAB-Support-r16           ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-3: Support RACH configuration separately from the RACH configuration for UE access, including new IAB-specific offset and scaling factors
+    separateRACH-IAB-Support-r16                ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-5a: Support semi-static configuration/indication of UL-Flexible-DL slot formats for IAB-MT resources
+    ul-flexibleDL-SlotFormatSemiStatic-IAB-r16  ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-5b: Support dynamic indication of UL-Flexible-DL slot formats for IAB-MT resources
+    ul-flexibleDL-SlotFormatDynamics-IAB-r16    ENUMERATED {supported}              OPTIONAL,
+    dft-S-OFDM-WaveformUL-IAB-r16               ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-6: Support DCI Format 2_5 based indication of soft resource availability to an IAB node
+    dci-25-AI-RNTI-Support-IAB-r16              ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-7: Support T_delta reception.
+    t-DeltaReceptionSupport-IAB-r16             ENUMERATED {supported}              OPTIONAL,
+    -- R1 20-8: Support of Desired guard symbol reporting and provided guard symbok reception.
+    guardSymbolReportReception-IAB-r16          ENUMERATED {supported}              OPTIONAL,
+    -- R1 18-8 HARQ-ACK codebook type and spatial bundling per PUCCH group
+    harqACK-CB-SpatialBundlingPUCCH-Group-r16   ENUMERATED {supported}              OPTIONAL,
+    -- R1 19-2: Cross Slot Scheduling
+    crossSlotScheduling-r16                     SEQUENCE {
+        non-SharedSpectrumChAccess-r16              ENUMERATED {supported}          OPTIONAL,
+        sharedSpectrumChAccess-r16                  ENUMERATED {supported}          OPTIONAL
+    }                                                                               OPTIONAL,
+    maxNumberSRS-PosPathLossEstimateAllServingCells-r16  ENUMERATED {n1, n4, n8, n16}         OPTIONAL,
+    extendedCG-Periodicities-r16                ENUMERATED {supported}              OPTIONAL,
+    extendedSPS-Periodicities-r16               ENUMERATED {supported}              OPTIONAL,
+    codebookVariantsList-r16                    CodebookVariantsList-r16            OPTIONAL,
+    -- R1 11-6: PUSCH repetition Type A
+    pusch-RepetitionTypeA-r16                   SEQUENCE {
+        sharedSpectrumChAccess-r16                  ENUMERATED {supported}          OPTIONAL,
+        non-SharedSpectrumChAccess-r16              ENUMERATED {supported}          OPTIONAL
+    }                                                                               OPTIONAL,
+    -- R1 11-4b: DL priority indication in DCI with mixed DCI formats
+    dci-DL-PriorityIndicator-r16                ENUMERATED {supported}              OPTIONAL,
+    -- R1 12-1a: UL priority indication in DCI with mixed DCI formats
+    dci-UL-PriorityIndicator-r16                ENUMERATED {supported}              OPTIONAL,
+    -- R1 16-1e: Maximum number of configured pathloss reference RSs for PUSCH/PUCCH/SRS by RRC for MAC-CE based pathloss reference RS update
+    maxNumberPathlossRS-Update-r16              ENUMERATED {n4, n8, n16, n32, n64}  OPTIONAL,
+
+    -- R1 18-9: Usage of the PDSCH starting time for HARQ-ACK type 2 codebook
+    type2-HARQ-ACK-Codebook-r16                 ENUMERATED {supported}              OPTIONAL,
+    -- R1 16-1g-1: Resources for beam management, pathloss measurement, BFD, RLM and new beam identification across frequency ranges
+    maxTotalResourcesForAcrossFreqRanges-r16    SEQUENCE {
+        maxNumberResWithinSlotAcrossCC-AcrossFR-r16 ENUMERATED {n2, n4, n8, n12, n16, n32, n64, n128}        OPTIONAL,
+        maxNumberResAcrossCC-AcrossFR-r16           ENUMERATED {n2, n4, n8, n12, n16, n32, n40, n48, n64, n72, n80, n96, n128, n256}
+                                                                                    OPTIONAL
+    }                                                                               OPTIONAL,
+    -- R1 16-2a-4: HARQ-ACK for multi-DCI based multi-TRP - separate
+    harqACK-separateMultiDCI-MultiTRP-r16       SEQUENCE {
+    maxNumberLongPUCCHs-r16                         ENUMERATED {longAndLong, longAndShort, shortAndShort}    OPTIONAL
+    }                                                                               OPTIONAL,
+    -- R1 16-2a-4: HARQ-ACK for multi-DCI based multi-TRP - joint
+    harqACK-jointMultiDCI-MultiTRP-r16          ENUMERATED {supported}              OPTIONAL,
+    -- R4 9-1: BWP switching on multiple CCs RRM requirements
+    bwp-SwitchingMultiCCs-r16                   CHOICE {
+        type1-r16                                   ENUMERATED {us100, us200},
+        type2-r16                                   ENUMERATED {us200, us400, us800, us1000}
+    }                                                                               OPTIONAL
+    ]],
+    [[
+    targetSMTC-SCG-r16                          ENUMERATED {supported}              OPTIONAL,
+    supportRepetitionZeroOffsetRV-r16           ENUMERATED {supported}              OPTIONAL,
+    -- R1 11-12: in-order CBG-based re-transmission
+    cbg-TransInOrderPUSCH-UL-r16                ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    -- R4 6-3: Dormant BWP switching on multiple CCs RRM requirements
+    bwp-SwitchingMultiDormancyCCs-r16           CHOICE {
+        type1-r16                                   ENUMERATED {us100, us200},
+        type2-r16                                   ENUMERATED {us200, us400, us800, us1000}
+    }                                                                               OPTIONAL,
+    -- R1 16-2a-8: Indicates that retransmission scheduled by a different CORESETPoolIndex for multi-DCI multi-TRP is not supported.
+    supportRetx-Diff-CoresetPool-Multi-DCI-TRP-r16               ENUMERATED {notSupported}          OPTIONAL,
+    -- R1 22-10: Support of pdcch-MonitoringAnyOccasionsWithSpanGap in case of cross-carrier scheduling with different SCSs
+    pdcch-MonitoringAnyOccasionsWithSpanGapCrossCarrierSch-r16   ENUMERATED {mode2, mode3}          OPTIONAL
+    ]],
+    [[
+    -- R1 16-1j-1: Support of 2 port CSI-RS for new beam identification
+    newBeamIdentifications2PortCSI-RS-r16       ENUMERATED {supported}              OPTIONAL,
+    -- R1 16-1j-2: Support of 2 port CSI-RS for pathloss estimation
+    pathlossEstimation2PortCSI-RS-r16           ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    mux-HARQ-ACK-withoutPUCCH-onPUSCH-r16       ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    -- R1 31-1: Support of Desired Guard Symbol reporting and provided guard symbol reception.
+    guardSymbolReportReception-IAB-r17          ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-2: support of restricted IAB-DU beam reception
+    restricted-IAB-DU-BeamReception-r17         ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-3: support of recommended IAB-MT beam transmission for DL and UL beam
+    recommended-IAB-MT-BeamTransmission-r17     ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-4: support of case 6 timing alignment indication reception
+    case6-TimingAlignmentReception-IAB-r17      ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-5: support of case 7 timing offset indication reception and case 7 timing at parent-node indication reception
+    case7-TimingAlignmentReception-IAB-r17      ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-6: support of desired DL Tx power adjustment reporting and DL Tx power adjustment reception
+    dl-tx-PowerAdjustment-IAB-r17               ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-7: support of desired IAB-MT PSD range reporting
+    desired-ul-tx-PowerAdjustment-r17           ENUMERATED {supported}              OPTIONAL,
+    -- R1 31-8: support of monitoring DCI Format 2_5 scrambled by AI-RNTI for indication of FDM soft resource availability to an IAB node
+    fdm-SoftResourceAvailability-DynamicIndication-r17  ENUMERATED{supported}       OPTIONAL,
+    -- R1 31-10: Support of updated T_delta range reception
+    updated-T-DeltaRangeRecption-r17            ENUMERATED{supported}               OPTIONAL,
+    -- R1 30-5: Support slot based dynamic PUCCH repetition indication for PUCCH formats 0/1/2/3/4
+    slotBasedDynamicPUCCH-Rep-r17               ENUMERATED {supported}              OPTIONAL,
+    -- R1 25-1: Support of HARQ-ACK deferral in case of TDD collision
+    sps-HARQ-ACK-Deferral-r17                   SEQUENCE {
+        non-SharedSpectrumChAccess-r17              ENUMERATED {supported}          OPTIONAL,
+        sharedSpectrumChAccess-r17                  ENUMERATED {supported}          OPTIONAL
+    }                                                                               OPTIONAL,
+    -- R1 23-1-1k Maximum number of configured CC lists (per UE)
+    unifiedJointTCI-commonUpdate-r17            INTEGER (1..4)                      OPTIONAL,
+    -- R1 23-2-1c PDCCH repetition with a single span of three contiguous OFDM symbols that is within the first four OFDM symbols in a slot
+    mTRP-PDCCH-singleSpan-r17                   ENUMERATED {supported}              OPTIONAL,
+    -- R1 27-23: Support of more than one activated PRS processing windows across all active DL BWPs
+    supportedActivatedPRS-ProcessingWindow-r17  ENUMERATED {n2, n3, n4}             OPTIONAL,
+    cg-TimeDomainAllocationExtension-r17        ENUMERATED {supported}              OPTIONAL
+    ]],
+     [[
+    -- R1 25-20: Propagation delay compensation based on legacy TA procedure for TN and licensed
+    ta-BasedPDC-TN-NonSharedSpectrumChAccess-r17 ENUMERATED {supported}             OPTIONAL,
+    -- R1 31-11: Directional Collision Handling in DC operation
+    directionalCollisionDC-IAB-r17              ENUMERATED {supported}              OPTIONAL
+    ]],
+    [[
+    dummy1                                      ENUMERATED {supported}              OPTIONAL,
+    dummy2                                      ENUMERATED {supported}              OPTIONAL,
+    dummy3                                      ENUMERATED {supported}              OPTIONAL,
+    dummy4                                      ENUMERATED {supported}              OPTIONAL,
+    srs-AdditionalRepetition-r17                ENUMERATED {supported}              OPTIONAL,
+    pusch-Repetition-CG-SDT-r17                 ENUMERATED {supported}              OPTIONAL
+    ]]
+}
+
+Phy-ParametersCommon-v16a0 ::=                  SEQUENCE {
+    srs-PeriodicityAndOffsetExt-r16                 ENUMERATED {supported}          OPTIONAL
+}
+
+Phy-ParametersXDD-Diff ::=          SEQUENCE {
+    dynamicSFI                          ENUMERATED {supported}                      OPTIONAL,
+    twoPUCCH-F0-2-ConsecSymbols         ENUMERATED {supported}                      OPTIONAL,
+    twoDifferentTPC-Loop-PUSCH          ENUMERATED {supported}                      OPTIONAL,
+    twoDifferentTPC-Loop-PUCCH          ENUMERATED {supported}                      OPTIONAL,
+    ...,
+    [[
+    dl-SchedulingOffset-PDSCH-TypeA     ENUMERATED {supported}                      OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeB     ENUMERATED {supported}                      OPTIONAL,
+    ul-SchedulingOffset                 ENUMERATED {supported}                      OPTIONAL
+    ]]
+}
+
+Phy-ParametersFRX-Diff ::=                  SEQUENCE {
+    dynamicSFI                                  ENUMERATED {supported}                      OPTIONAL,
+    dummy1                                      BIT STRING (SIZE (2))                       OPTIONAL,
+    twoFL-DMRS                                  BIT STRING (SIZE (2))                       OPTIONAL,
+    dummy2                                      BIT STRING (SIZE (2))                       OPTIONAL,
+    dummy3                                      BIT STRING (SIZE (2))                       OPTIONAL,
+    supportedDMRS-TypeDL                        ENUMERATED {type1, type1And2}               OPTIONAL,
+    supportedDMRS-TypeUL                        ENUMERATED {type1, type1And2}               OPTIONAL,
+    semiOpenLoopCSI                             ENUMERATED {supported}                      OPTIONAL,
+    csi-ReportWithoutPMI                        ENUMERATED {supported}                      OPTIONAL,
+    csi-ReportWithoutCQI                        ENUMERATED {supported}                      OPTIONAL,
+    onePortsPTRS                                BIT STRING (SIZE (2))                       OPTIONAL,
+    twoPUCCH-F0-2-ConsecSymbols                 ENUMERATED {supported}                      OPTIONAL,
+    pucch-F2-WithFH                             ENUMERATED {supported}                      OPTIONAL,
+    pucch-F3-WithFH                             ENUMERATED {supported}                      OPTIONAL,
+    pucch-F4-WithFH                             ENUMERATED {supported}                      OPTIONAL,
+    pucch-F0-2WithoutFH                         ENUMERATED {notSupported}                   OPTIONAL,
+    pucch-F1-3-4WithoutFH                       ENUMERATED {notSupported}                   OPTIONAL,
+    mux-SR-HARQ-ACK-CSI-PUCCH-MultiPerSlot      ENUMERATED {supported}                      OPTIONAL,
+    uci-CodeBlockSegmentation                   ENUMERATED {supported}                      OPTIONAL,
+    onePUCCH-LongAndShortFormat                 ENUMERATED {supported}                      OPTIONAL,
+    twoPUCCH-AnyOthersInSlot                    ENUMERATED {supported}                      OPTIONAL,
+    intraSlotFreqHopping-PUSCH                  ENUMERATED {supported}                      OPTIONAL,
+    pusch-LBRM                                  ENUMERATED {supported}                      OPTIONAL,
+    pdcch-BlindDetectionCA                      INTEGER (4..16)                             OPTIONAL,
+    tpc-PUSCH-RNTI                              ENUMERATED {supported}                      OPTIONAL,
+    tpc-PUCCH-RNTI                              ENUMERATED {supported}                      OPTIONAL,
+    tpc-SRS-RNTI                                ENUMERATED {supported}                      OPTIONAL,
+    absoluteTPC-Command                         ENUMERATED {supported}                      OPTIONAL,
+    twoDifferentTPC-Loop-PUSCH                  ENUMERATED {supported}                      OPTIONAL,
+    twoDifferentTPC-Loop-PUCCH                  ENUMERATED {supported}                      OPTIONAL,
+    pusch-HalfPi-BPSK                           ENUMERATED {supported}                      OPTIONAL,
+    pucch-F3-4-HalfPi-BPSK                      ENUMERATED {supported}                      OPTIONAL,
+    almostContiguousCP-OFDM-UL                  ENUMERATED {supported}                      OPTIONAL,
+    sp-CSI-RS                                   ENUMERATED {supported}                      OPTIONAL,
+    sp-CSI-IM                                   ENUMERATED {supported}                      OPTIONAL,
+    tdd-MultiDL-UL-SwitchPerSlot                ENUMERATED {supported}                      OPTIONAL,
+    multipleCORESET                             ENUMERATED {supported}                      OPTIONAL,
+    ...,
+    [[
+    csi-RS-IM-ReceptionForFeedback              CSI-RS-IM-ReceptionForFeedback              OPTIONAL,
+    csi-RS-ProcFrameworkForSRS                  CSI-RS-ProcFrameworkForSRS                  OPTIONAL,
+    csi-ReportFramework                         CSI-ReportFramework                         OPTIONAL,
+    mux-SR-HARQ-ACK-CSI-PUCCH-OncePerSlot       SEQUENCE {
+        sameSymbol                                  ENUMERATED {supported}                      OPTIONAL,
+        diffSymbol                                  ENUMERATED {supported}                      OPTIONAL
+    }                                                                                       OPTIONAL,
+    mux-SR-HARQ-ACK-PUCCH                       ENUMERATED {supported}                      OPTIONAL,
+    mux-MultipleGroupCtrlCH-Overlap             ENUMERATED {supported}                      OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeA             ENUMERATED {supported}                      OPTIONAL,
+    dl-SchedulingOffset-PDSCH-TypeB             ENUMERATED {supported}                      OPTIONAL,
+    ul-SchedulingOffset                         ENUMERATED {supported}                      OPTIONAL,
+    dl-64QAM-MCS-TableAlt                       ENUMERATED {supported}                      OPTIONAL,
+    ul-64QAM-MCS-TableAlt                       ENUMERATED {supported}                      OPTIONAL,
+    cqi-TableAlt                                ENUMERATED {supported}                      OPTIONAL,
+    oneFL-DMRS-TwoAdditionalDMRS-UL             ENUMERATED {supported}                      OPTIONAL,
+    twoFL-DMRS-TwoAdditionalDMRS-UL             ENUMERATED {supported}                      OPTIONAL,
+    oneFL-DMRS-ThreeAdditionalDMRS-UL           ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    pdcch-BlindDetectionNRDC                SEQUENCE {
+        pdcch-BlindDetectionMCG-UE              INTEGER (1..15),
+        pdcch-BlindDetectionSCG-UE              INTEGER (1..15)
+    }                                                                                       OPTIONAL,
+    mux-HARQ-ACK-PUSCH-DiffSymbol               ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    -- R1 11-1b: Type 1 HARQ-ACK codebook support for relative TDRA for DL
+    type1-HARQ-ACK-Codebook-r16                 ENUMERATED {supported}                      OPTIONAL,
+    -- R1 11-8: Enhanced UL power control scheme
+    enhancedPowerControl-r16                    ENUMERATED {supported}                      OPTIONAL,
+    -- R1 16-1b-1: TCI state activation across multiple CCs
+    simultaneousTCI-ActMultipleCC-r16           ENUMERATED {supported}                      OPTIONAL,
+    -- R1 16-1b-2: Spatial relation update across multiple CCs
+    simultaneousSpatialRelationMultipleCC-r16   ENUMERATED {supported}                      OPTIONAL,
+    cli-RSSI-FDM-DL-r16                         ENUMERATED {supported}                      OPTIONAL,
+    cli-SRS-RSRP-FDM-DL-r16                     ENUMERATED {supported}                      OPTIONAL,
+    -- R1 19-3: Maximum MIMO Layer Adaptation
+    maxLayersMIMO-Adaptation-r16                ENUMERATED {supported}                      OPTIONAL,
+    -- R1 12-5: Configuration of aggregation factor per SPS configuration
+    aggregationFactorSPS-DL-r16                 ENUMERATED {supported}                      OPTIONAL,
+    -- R1 16-1g: Resources for beam management, pathloss measurement, BFD, RLM and new beam identification
+    maxTotalResourcesForOneFreqRange-r16        SEQUENCE {
+        maxNumberResWithinSlotAcrossCC-OneFR-r16    ENUMERATED {n2, n4, n8, n12, n16, n32, n64, n128}    OPTIONAL,
+        maxNumberResAcrossCC-OneFR-r16              ENUMERATED {n2, n4, n8, n12, n16, n32, n40, n48, n64, n72, n80, n96, n128, n256}
+                                                                                            OPTIONAL
+    }                                           OPTIONAL,
+    -- R1 16-7: Extension of the maximum number of configured aperiodic CSI report settings
+    csi-ReportFrameworkExt-r16                  CSI-ReportFrameworkExt-r16                  OPTIONAL
+    ]],
+    [[
+    twoTCI-Act-servingCellInCC-List-r16         ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    -- R1 22-11: Support of 'cri-RI-CQI' report without non-PMI-PortIndication
+    cri-RI-CQI-WithoutNon-PMI-PortInd-r16       ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    -- R1 25-11: 4-bits subband CQI for TN and licensed
+    cqi-4-BitsSubbandTN-NonSharedSpectrumChAccess-r17  ENUMERATED {supported}               OPTIONAL
+    ]]
+}
+
+Phy-ParametersFR1 ::=                       SEQUENCE {
+    pdcch-MonitoringSingleOccasion              ENUMERATED {supported}                      OPTIONAL,
+    scs-60kHz                                   ENUMERATED {supported}                      OPTIONAL,
+    pdsch-256QAM-FR1                            ENUMERATED {supported}                      OPTIONAL,
+    pdsch-RE-MappingFR1-PerSymbol               ENUMERATED {n10, n20}                       OPTIONAL,
+    ...,
+    [[
+    pdsch-RE-MappingFR1-PerSlot                 ENUMERATED {n16, n32, n48, n64, n80, n96, n112, n128,
+                                                n144, n160, n176, n192, n208, n224, n240, n256}         OPTIONAL
+    ]],
+    [[
+    -- R1 22-12: PDCCH monitoring with a single span of three contiguous OFDM symbols that is within the first four OFDM symbols in a
+    -- slot
+    pdcch-MonitoringSingleSpanFirst4Sym-r16     ENUMERATED {supported}                      OPTIONAL
+    ]]
+}
+
+Phy-ParametersFR2 ::=                       SEQUENCE {
+    dummy                                       ENUMERATED {supported}                                  OPTIONAL,
+    pdsch-RE-MappingFR2-PerSymbol               ENUMERATED {n6, n20}                                    OPTIONAL,
+    ...,
+    [[
+    pCell-FR2                                   ENUMERATED {supported}                                  OPTIONAL,
+    pdsch-RE-MappingFR2-PerSlot                 ENUMERATED {n16, n32, n48, n64, n80, n96, n112, n128,
+                                                    n144, n160, n176, n192, n208, n224, n240, n256}     OPTIONAL
+    ]],
+    [[
+    -- R1 16-1c: Support of default spatial relation and pathloss reference RS for dedicated-PUCCH/SRS and PUSCH
+    defaultSpatialRelationPathlossRS-r16        ENUMERATED {supported}                                  OPTIONAL,
+    -- R1 16-1d: Support of spatial relation update for AP-SRS via MAC CE
+    spatialRelationUpdateAP-SRS-r16             ENUMERATED {supported}                                  OPTIONAL,
+    maxNumberSRS-PosSpatialRelationsAllServingCells-r16  ENUMERATED {n0, n1, n2, n4, n8, n16}           OPTIONAL
+    ]]
+}

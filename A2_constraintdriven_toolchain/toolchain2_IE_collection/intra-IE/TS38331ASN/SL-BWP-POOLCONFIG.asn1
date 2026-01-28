@@ -1,0 +1,18 @@
+SL-BWP-PoolConfig-r16 ::=        SEQUENCE {
+    sl-RxPool-r16                    SEQUENCE (SIZE (1..maxNrofRXPool-r16)) OF SL-ResourcePool-r16        OPTIONAL,    -- Cond HO
+    sl-TxPoolSelectedNormal-r16      SL-TxPoolDedicated-r16                                               OPTIONAL,    -- Need M
+    sl-TxPoolScheduling-r16          SL-TxPoolDedicated-r16                                               OPTIONAL,    -- Need N
+    sl-TxPoolExceptional-r16         SL-ResourcePoolConfig-r16                                            OPTIONAL     -- Need M
+}
+
+SL-TxPoolDedicated-r16 ::=       SEQUENCE {
+    sl-PoolToReleaseList-r16         SEQUENCE (SIZE (1..maxNrofTXPool-r16)) OF SL-ResourcePoolID-r16      OPTIONAL,    -- Need N
+    sl-PoolToAddModList-r16          SEQUENCE (SIZE (1..maxNrofTXPool-r16)) OF SL-ResourcePoolConfig-r16  OPTIONAL     -- Need N
+}
+
+SL-ResourcePoolConfig-r16 ::=    SEQUENCE {
+    sl-ResourcePoolID-r16            SL-ResourcePoolID-r16,
+    sl-ResourcePool-r16              SL-ResourcePool-r16                                                  OPTIONAL    -- Need M
+}
+
+SL-ResourcePoolID-r16 ::=        INTEGER (1..maxNrofPoolID-r16)

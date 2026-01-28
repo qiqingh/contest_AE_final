@@ -1,0 +1,93 @@
+SIB2 ::=                            SEQUENCE {
+    cellReselectionInfoCommon           SEQUENCE {
+        nrofSS-BlocksToAverage              INTEGER (2..maxNrofSS-BlocksToAverage)          OPTIONAL,       -- Need S
+        absThreshSS-BlocksConsolidation     ThresholdNR                                     OPTIONAL,       -- Need S
+        rangeToBestCell                     RangeToBestCell                                 OPTIONAL,       -- Need R
+        q-Hyst                              ENUMERATED {
+                                                dB0, dB1, dB2, dB3, dB4, dB5, dB6, dB8, dB10,
+                                                dB12, dB14, dB16, dB18, dB20, dB22, dB24},
+        speedStateReselectionPars           SEQUENCE {
+            mobilityStateParameters             MobilityStateParameters,
+            q-HystSF                        SEQUENCE {
+                sf-Medium                       ENUMERATED {dB-6, dB-4, dB-2, dB0},
+                sf-High                         ENUMERATED {dB-6, dB-4, dB-2, dB0}
+            }
+        }                                                                                   OPTIONAL,       -- Need R
+    ...
+    },
+    cellReselectionServingFreqInfo      SEQUENCE {
+        s-NonIntraSearchP                   ReselectionThreshold                            OPTIONAL,       -- Need S
+        s-NonIntraSearchQ                   ReselectionThresholdQ                           OPTIONAL,       -- Need S
+        threshServingLowP                   ReselectionThreshold,
+        threshServingLowQ                   ReselectionThresholdQ                           OPTIONAL,       -- Need R
+        cellReselectionPriority             CellReselectionPriority,
+        cellReselectionSubPriority          CellReselectionSubPriority                      OPTIONAL,       -- Need R
+        ...
+    },
+    intraFreqCellReselectionInfo        SEQUENCE {
+        q-RxLevMin                          Q-RxLevMin,
+        q-RxLevMinSUL                       Q-RxLevMin                                      OPTIONAL,       -- Need R
+        q-QualMin                           Q-QualMin                                       OPTIONAL,       -- Need S
+        s-IntraSearchP                      ReselectionThreshold,
+        s-IntraSearchQ                      ReselectionThresholdQ                           OPTIONAL,       -- Need S
+        t-ReselectionNR                     T-Reselection,
+        frequencyBandList                   MultiFrequencyBandListNR-SIB                    OPTIONAL,       -- Need S
+        frequencyBandListSUL                MultiFrequencyBandListNR-SIB                    OPTIONAL,       -- Need R
+        p-Max                               P-Max                                           OPTIONAL,       -- Need S
+        smtc                                SSB-MTC                                         OPTIONAL,       -- Need S
+        ss-RSSI-Measurement                 SS-RSSI-Measurement                             OPTIONAL,       -- Need R
+        ssb-ToMeasure                       SSB-ToMeasure                                   OPTIONAL,       -- Need S
+        deriveSSB-IndexFromCell             BOOLEAN,
+        ...,
+        [[
+        t-ReselectionNR-SF                  SpeedStateScaleFactors                          OPTIONAL        -- Need N
+        ]],
+        [[
+        smtc2-LP-r16                        SSB-MTC2-LP-r16                                 OPTIONAL,        -- Need R
+        ssb-PositionQCL-Common-r16          SSB-PositionQCL-Relation-r16                    OPTIONAL         -- Cond SharedSpectrum
+        ]],
+        [[
+        ssb-PositionQCL-Common-r17          SSB-PositionQCL-Relation-r17                    OPTIONAL         -- Cond SharedSpectrum2
+        ]],
+        [[
+        smtc4list-r17                       SSB-MTC4List-r17                                OPTIONAL         -- Need R
+        ]]
+    },
+    ...,
+    [[
+    relaxedMeasurement-r16              SEQUENCE {
+        lowMobilityEvaluation-r16           SEQUENCE {
+            s-SearchDeltaP-r16                  ENUMERATED {
+                                                    dB3, dB6, dB9, dB12, dB15,
+                                                    spare3, spare2, spare1},
+            t-SearchDeltaP-r16                  ENUMERATED {
+                                                    s5, s10, s20, s30, s60, s120, s180,
+                                                    s240, s300, spare7, spare6, spare5,
+                                                    spare4, spare3, spare2, spare1}
+        }                                                                                   OPTIONAL,       -- Need R
+        cellEdgeEvaluation-r16              SEQUENCE {
+            s-SearchThresholdP-r16              ReselectionThreshold,
+            s-SearchThresholdQ-r16              ReselectionThresholdQ                       OPTIONAL        -- Need R
+        }                                                                                   OPTIONAL,       -- Need R
+        combineRelaxedMeasCondition-r16     ENUMERATED {true}                               OPTIONAL,       -- Need R
+        highPriorityMeasRelax-r16           ENUMERATED {true}                               OPTIONAL        -- Need R
+    }                                                                                       OPTIONAL        -- Need R
+    ]],
+    [[
+    cellEquivalentSize-r17                  INTEGER(2..16)                                  OPTIONAL,       -- Cond HSDN
+    relaxedMeasurement-r17                  SEQUENCE {
+        stationaryMobilityEvaluation-r17        SEQUENCE {
+            s-SearchDeltaP-Stationary-r17           ENUMERATED {dB2, dB3, dB6, dB9, dB12, dB15, spare2, spare1},
+            t-SearchDeltaP-Stationary-r17           ENUMERATED {s5, s10, s20, s30, s60, s120, s180, s240, s300, spare7, spare6, spare5,
+                                                                spare4, spare3, spare2, spare1}
+        },
+        cellEdgeEvaluationWhileStationary-r17   SEQUENCE {
+            s-SearchThresholdP2-r17                 ReselectionThreshold,
+            s-SearchThresholdQ2-r17                 ReselectionThresholdQ                   OPTIONAL        -- Need R
+        }                                                                                   OPTIONAL,       -- Need R
+        combineRelaxedMeasCondition2-r17        ENUMERATED {true}                           OPTIONAL        -- Need R
+    }                                                                                       OPTIONAL        -- Need R
+    ]]
+}
+
+RangeToBestCell    ::= Q-OffsetRange

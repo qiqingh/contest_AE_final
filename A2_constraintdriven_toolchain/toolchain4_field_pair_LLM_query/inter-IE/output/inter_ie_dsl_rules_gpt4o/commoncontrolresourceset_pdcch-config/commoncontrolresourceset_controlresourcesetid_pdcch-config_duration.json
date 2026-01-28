@@ -1,0 +1,83 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      111,
+      176,
+      241
+    ],
+    "field2_all": [
+      80,
+      145,
+      210
+    ],
+    "actual_pairs": [
+      [
+        [
+          111,
+          176,
+          241
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between controlresourcesetid and duration. The snippets focus on single-IE behavior or do not explicitly relate the two fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "commoncontrolresourceset",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdcch-config",
+    "field2": "duration",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.1.2",
+      "5.1.4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if the PDSCH duration \\( l_{\\mathrm{d}} \\) is less than or equal to 4 OFDM symbols, only single-symbol DM-RS is supported. - if the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, lte-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4 is configured, the PDSCH duration \\( l_{\\mathrm{d}}=10 \\) symbols for normal cyclic prefix, the subcarrier spacing configuration \\( \\mu=0 \\), single-symbol DM-RS is configured, and at least one PDSCH DM-RS symbol in the PDSCH allocation collides with a symbol containing resource elements as indicated by the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, ite-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4, then \\( \\bar{l} \\) shall be incremented by one in all slots.\n---\n- if the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, lte-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4 is configured, the PDSCH duration \\( l_{\\mathrm{d}}=10 \\) symbols for normal cyclic prefix, the subcarrier spacing configuration \\( \\mu=0 \\), single-symbol DM-RS is configured, and at least one PDSCH DM-RS symbol in the PDSCH allocation collides with a symbol containing resource elements as indicated by the higher-layer parameter ite-CRS-ToMatchAround, ite-CRS-PatternList 1, ite-CRS-PatternList2, ite-CRSPatternList3, or lte-CRS-PatternList4, then \\( \\bar{l} \\) shall be incremented by one in all slots.\n---\n- within a BWP, a frequency domain resource of a CORESET configured by ControlResourceSet with controlResourceSetId or ControlResourceSetZero and time domain resource determined by the higher layer parameters monitoringSlotPeriodicityAndOffset, duration and monitoringSymbols WithinSlot of all search-space-sets configured by SearchSpace and time domain resource of search-space-set zero configured by searchSpaceZero associated with the CORESET as well as CORESET duration configured by ControlResourceSet with controlResourceSetld or ControlResourceSetZero. This resource not available for PDSCH can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup 1 and rateMatchPatternGroup2).",
+    "generated_at": "2026-01-10T14:29:47.769021",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between controlresourcesetid and duration based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between controlresourcesetid and duration. The snippets focus on single-IE behavior or do not explicitly relate the two fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

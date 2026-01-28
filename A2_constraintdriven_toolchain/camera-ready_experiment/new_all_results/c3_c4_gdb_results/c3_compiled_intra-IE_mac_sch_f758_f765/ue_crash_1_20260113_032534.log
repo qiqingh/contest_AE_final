@@ -1,0 +1,95 @@
+Attaching to process 123298
+[New LWP 123302]
+[New LWP 123303]
+[New LWP 123304]
+[New LWP 123305]
+[New LWP 123306]
+[New LWP 123307]
+[New LWP 123308]
+[New LWP 123309]
+[New LWP 123310]
+[New LWP 123311]
+[New LWP 123312]
+[New LWP 123313]
+[New LWP 123314]
+[New LWP 123315]
+[New LWP 123316]
+[New LWP 123317]
+[New LWP 123318]
+[New LWP 123319]
+[New LWP 123320]
+[New LWP 123321]
+[New LWP 123322]
+[New LWP 123323]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007c83121b67f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffde7eae8b0, rem=rem@entry=0x7ffde7eae8b0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+
+Thread 15 "DL__actor" received signal SIGFPE, Arithmetic exception.
+[Switching to Thread 0x7c82edc75640 (LWP 123315)]
+0x00005794009cffb1 in nr_csi_im_power_estimation (rxdataF=0x7c82edc5f4c0, interference_plus_noise_power=0x579403419054, csiim_config_pdu=<optimized out>, proc=0x0, ue=<optimized out>) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/csi_rx.c:778
+778	  int32_t power_re = sum2_re / count - (sum_re / count) * (sum_re / count);
+(gdb) #0  0x00005794009cffb1 in nr_csi_im_power_estimation (rxdataF=0x7c82edc5f4c0, interference_plus_noise_power=0x579403419054, csiim_config_pdu=<optimized out>, proc=0x0, ue=<optimized out>) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/csi_rx.c:778
+        frame_parms = 0x7c8308a92b10
+        sum_re = 0
+        l_csiim = {13, -1, -1, -1}
+        end_rb = 106
+        count = 0
+        sum2_im = 0
+        power_im = <optimized out>
+        sum_im = 0
+        sum2_re = 0
+        power_re = <optimized out>
+        frame_parms = <optimized out>
+        end_rb = <optimized out>
+        count = <optimized out>
+        sum_re = <optimized out>
+        sum_im = <optimized out>
+        sum2_re = <optimized out>
+        sum2_im = <optimized out>
+        l_csiim = <optimized out>
+        power_re = <optimized out>
+        power_im = <optimized out>
+        symb_idx = <optimized out>
+        symb = <optimized out>
+        done = <optimized out>
+        symbol_offset = <optimized out>
+        symb_idx2 = <optimized out>
+        ant_rx = <optimized out>
+        rx_signal = <optimized out>
+        rb = <optimized out>
+        sc0_offset = <optimized out>
+        sc_idx = <optimized out>
+        sc = <optimized out>
+#1  nr_ue_csi_im_procedures (ue=ue@entry=0x7c8308a92010, proc=proc@entry=0x7c82dc03ef80, rxdataF=rxdataF@entry=0x7c82edc5f4c0, csiim_config_pdu=csiim_config_pdu@entry=0x7c82dc04172c) at /home/openairinterface5g/openair1/PHY/NR_UE_TRANSPORT/csi_rx.c:804
+No locals.
+#2  0x000057940099005d in pdsch_processing (ue=0x7c8308a92010, proc=<optimized out>, phy_data=0x7c82dc03efb8) at /home/openairinterface5g/openair1/SCHED_NR_UE/phy_procedures_nr_ue.c:1019
+        frame_rx = <optimized out>
+        nr_slot_rx = <optimized out>
+        gNB_id = <optimized out>
+        dlsch = 0x7c82dc041540
+        slot_fep_map = {false <repeats 13 times>, true}
+        rxdataF_sz = <optimized out>
+        rxdataF = <error reading variable rxdataF (Cannot access memory at address 0xb92)>
+        __FUNCTION__ = "pdsch_processing"
+#3  0x0000579400bbe3d5 in actor_thread (arg=0x7c8308ff9620) at /home/openairinterface5g/common/utils/threadPool/./notified_fifo.h:92
+        elt = 0x7c82dc03ef00
+        actor = 0x7c8308ff9620
+        __FUNCTION__ = "actor_thread"
+#4  0x00007c8312165ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, -8083817480396214560, 136901776856640, 2, 136902386014160, 140728494383728, -8083817479990415648, -8082978956903321888}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#5  0x00007c83121f7850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 123298] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 123298
+[Inferior 1 (process 123298) detached]

@@ -1,0 +1,499 @@
+MIMO-ParametersPerBand ::=          SEQUENCE {
+    tci-StatePDSCH                      SEQUENCE {
+        maxNumberConfiguredTCI-StatesPerCC  ENUMERATED {n4, n8, n16, n32, n64, n128}                                   OPTIONAL,
+        maxNumberActiveTCI-PerBWP           ENUMERATED {n1, n2, n4, n8}                                                OPTIONAL
+    }                                                                                                              OPTIONAL,
+    additionalActiveTCI-StatePDCCH              ENUMERATED {supported}                                             OPTIONAL,
+    pusch-TransCoherence                        ENUMERATED {nonCoherent, partialCoherent, fullCoherent}            OPTIONAL,
+    beamCorrespondenceWithoutUL-BeamSweeping    ENUMERATED {supported}                                             OPTIONAL,
+    periodicBeamReport                          ENUMERATED {supported}                                             OPTIONAL,
+    aperiodicBeamReport                         ENUMERATED {supported}                                             OPTIONAL,
+    sp-BeamReportPUCCH                          ENUMERATED {supported}                                             OPTIONAL,
+    sp-BeamReportPUSCH                          ENUMERATED {supported}                                             OPTIONAL,
+    dummy1                                      DummyG                                                             OPTIONAL,
+    maxNumberRxBeam                             INTEGER (2..8)                                                     OPTIONAL,
+    maxNumberRxTxBeamSwitchDL                   SEQUENCE {
+        scs-15kHz                                   ENUMERATED {n4, n7, n14}                                           OPTIONAL,
+        scs-30kHz                                   ENUMERATED {n4, n7, n14}                                           OPTIONAL,
+        scs-60kHz                                   ENUMERATED {n4, n7, n14}                                           OPTIONAL,
+        scs-120kHz                                  ENUMERATED {n4, n7, n14}                                           OPTIONAL,
+        scs-240kHz                                  ENUMERATED {n4, n7, n14}                                           OPTIONAL
+    }                                                                                                              OPTIONAL,
+    maxNumberNonGroupBeamReporting              ENUMERATED {n1, n2, n4}                                            OPTIONAL,
+    groupBeamReporting                          ENUMERATED {supported}                                             OPTIONAL,
+    uplinkBeamManagement                        SEQUENCE {
+        maxNumberSRS-ResourcePerSet-BM              ENUMERATED {n2, n4, n8, n16},
+        maxNumberSRS-ResourceSet                    INTEGER (1..8)
+    }                                                                                                              OPTIONAL,
+    maxNumberCSI-RS-BFD                 INTEGER (1..64)                                                            OPTIONAL,
+    maxNumberSSB-BFD                    INTEGER (1..64)                                                            OPTIONAL,
+    maxNumberCSI-RS-SSB-CBD             INTEGER (1..256)                                                           OPTIONAL,
+    dummy2                              ENUMERATED {supported}                                                     OPTIONAL,
+    twoPortsPTRS-UL                     ENUMERATED {supported}                                                     OPTIONAL,
+    dummy5                              SRS-Resources                                                              OPTIONAL,
+    dummy3                              INTEGER (1..4)                                                             OPTIONAL,
+    beamReportTiming                    SEQUENCE {
+        scs-15kHz                           ENUMERATED {sym2, sym4, sym8}                                              OPTIONAL,
+        scs-30kHz                           ENUMERATED {sym4, sym8, sym14, sym28}                                      OPTIONAL,
+        scs-60kHz                           ENUMERATED {sym8, sym14, sym28}                                            OPTIONAL,
+        scs-120kHz                          ENUMERATED {sym14, sym28, sym56}                                           OPTIONAL
+    }                                                                                                              OPTIONAL,
+    ptrs-DensityRecommendationSetDL     SEQUENCE {
+        scs-15kHz                           PTRS-DensityRecommendationDL                                               OPTIONAL,
+        scs-30kHz                           PTRS-DensityRecommendationDL                                               OPTIONAL,
+        scs-60kHz                           PTRS-DensityRecommendationDL                                               OPTIONAL,
+        scs-120kHz                          PTRS-DensityRecommendationDL                                               OPTIONAL
+    }                                                                                                              OPTIONAL,
+    ptrs-DensityRecommendationSetUL     SEQUENCE {
+        scs-15kHz                           PTRS-DensityRecommendationUL                                               OPTIONAL,
+        scs-30kHz                           PTRS-DensityRecommendationUL                                               OPTIONAL,
+        scs-60kHz                           PTRS-DensityRecommendationUL                                               OPTIONAL,
+        scs-120kHz                          PTRS-DensityRecommendationUL                                               OPTIONAL
+    }                                                                                                              OPTIONAL,
+    dummy4                              DummyH                                                                     OPTIONAL,
+    aperiodicTRS                        ENUMERATED {supported}                                                     OPTIONAL,
+    ...,
+    [[
+    dummy6                              ENUMERATED {true}                                                          OPTIONAL,
+    beamManagementSSB-CSI-RS            BeamManagementSSB-CSI-RS                                                   OPTIONAL,
+    beamSwitchTiming                    SEQUENCE {
+        scs-60kHz                           ENUMERATED {sym14, sym28, sym48, sym224, sym336}                           OPTIONAL,
+        scs-120kHz                          ENUMERATED {sym14, sym28, sym48, sym224, sym336}                           OPTIONAL
+    }                                                                                                              OPTIONAL,
+    codebookParameters                  CodebookParameters                                                         OPTIONAL,
+    csi-RS-IM-ReceptionForFeedback      CSI-RS-IM-ReceptionForFeedback                                             OPTIONAL,
+    csi-RS-ProcFrameworkForSRS          CSI-RS-ProcFrameworkForSRS                                                 OPTIONAL,
+    csi-ReportFramework                 CSI-ReportFramework                                                        OPTIONAL,
+    csi-RS-ForTracking                  CSI-RS-ForTracking                                                         OPTIONAL,
+    srs-AssocCSI-RS                     SEQUENCE (SIZE (1.. maxNrofCSI-RS-Resources)) OF SupportedCSI-RS-Resource  OPTIONAL,
+    spatialRelations                    SpatialRelations                                                           OPTIONAL
+    ]],
+    [[
+    -- R1 16-2b-0: Support of default QCL assumption with two TCI states
+    defaultQCL-TwoTCI-r16               ENUMERATED {supported}                                                     OPTIONAL,
+    codebookParametersPerBand-r16       CodebookParameters-v1610                                                   OPTIONAL,
+    -- R1 16-1b-3: Support of PUCCH resource groups per BWP for simultaneous spatial relation update
+    simul-SpatialRelationUpdatePUCCHResGroup-r16    ENUMERATED {supported}                                         OPTIONAL,
+
+    -- R1 16-1f: Maximum number of SCells configured for SCell beam failure recovery simultaneously
+    maxNumberSCellBFR-r16                           ENUMERATED {n1,n2,n4,n8}                                       OPTIONAL,
+
+    -- R1 16-2c: Supports simultaneous reception with different Type-D for FR2 only
+    simultaneousReceptionDiffTypeD-r16              ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 16-1a-1: SSB/CSI-RS for L1-SINR measurement
+    ssb-csirs-SINR-measurement-r16      SEQUENCE {
+        maxNumberSSB-CSIRS-OneTx-CMR-r16    ENUMERATED {n8, n16, n32, n64},
+        maxNumberCSI-IM-NZP-IMR-res-r16     ENUMERATED {n8, n16, n32, n64},
+        maxNumberCSIRS-2Tx-res-r16          ENUMERATED {n0, n4, n8, n16, n32, n64},
+        maxNumberSSB-CSIRS-res-r16          ENUMERATED {n8, n16, n32, n64, n128},
+        maxNumberCSI-IM-NZP-IMR-res-mem-r16 ENUMERATED {n8, n16, n32, n64, n128},
+        supportedCSI-RS-Density-CMR-r16     ENUMERATED {one, three, oneAndThree},
+        maxNumberAperiodicCSI-RS-Res-r16    ENUMERATED {n2, n4, n8, n16, n32, n64},
+        supportedSINR-meas-r16              ENUMERATED {ssbWithCSI-IM, ssbWithNZP-IMR, csirsWithNZP-IMR, csi-RSWithoutIMR}  OPTIONAL
+    }                                                                                                              OPTIONAL,
+    -- R1 16-1a-2: Non-group based L1-SINR reporting
+    nonGroupSINR-reporting-r16              ENUMERATED {n1, n2, n4}                                                OPTIONAL,
+    -- R1 16-1a-3: Non-group based L1-SINR reporting
+    groupSINR-reporting-r16                 ENUMERATED {supported}                                                 OPTIONAL,
+
+    multiDCI-multiTRP-Parameters-r16        SEQUENCE {
+        -- R1 16-2a-0: Overlapping PDSCHs in time and fully overlapping in frequency and time
+        overlapPDSCHsFullyFreqTime-r16          INTEGER (1..2)                                                     OPTIONAL,
+        -- R1 16-2a-1: Overlapping PDSCHs in time and partially overlapping in frequency and time
+        overlapPDSCHsInTimePartiallyFreq-r16    ENUMERATED {supported}                                             OPTIONAL,
+        -- R1 16-2a-2: Out of order operation for DL
+        outOfOrderOperationDL-r16               SEQUENCE {
+            supportPDCCH-ToPDSCH-r16                ENUMERATED {supported}                                         OPTIONAL,
+            supportPDSCH-ToHARQ-ACK-r16             ENUMERATED {supported}                                         OPTIONAL
+        }                                                                                                          OPTIONAL,
+        -- R1 16-2a-3: Out of order operation for UL
+        outOfOrderOperationUL-r16               ENUMERATED {supported}                                             OPTIONAL,
+        -- R1 16-2a-5: Separate CRS rate matching
+        separateCRS-RateMatching-r16            ENUMERATED {supported}                                             OPTIONAL,
+        -- R1 16-2a-6: Default QCL enhancement for multi-DCI based multi-TRP
+        defaultQCL-PerCORESETPoolIndex-r16      ENUMERATED {supported}                                             OPTIONAL,
+        -- R1 16-2a-7: Maximum number of activated TCI states
+        maxNumberActivatedTCI-States-r16        SEQUENCE {
+            maxNumberPerCORESET-Pool-r16            ENUMERATED {n1, n2, n4, n8},
+            maxTotalNumberAcrossCORESET-Pool-r16    ENUMERATED {n2, n4, n8, n16}
+        }                                                                                                          OPTIONAL
+    }                                                                                                              OPTIONAL,
+    singleDCI-SDM-scheme-Parameters-r16         SEQUENCE {
+        -- R1 16-2b-1b: Single-DCI based SDM scheme - Support of new DMRS port entry
+        supportNewDMRS-Port-r16                     ENUMERATED {supported1, supported2, supported3}                                        OPTIONAL,
+        -- R1 16-2b-1a: Support of s-port DL PTRS
+        supportTwoPortDL-PTRS-r16                   ENUMERATED {supported}                                         OPTIONAL
+    }                                                                                                              OPTIONAL,
+    -- R1 16-2b-2: Support of single-DCI based FDMSchemeA
+    supportFDM-SchemeA-r16                      ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-2b-3a: Single-DCI based FDMSchemeB CW soft combining
+    supportCodeWordSoftCombining-r16            ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-2b-4: Single-DCI based TDMSchemeA	
+    supportTDM-SchemeA-r16                      ENUMERATED {kb3, kb5, kb10, kb20, noRestriction}                   OPTIONAL,
+    -- R1 16-2b-5: Single-DCI based inter-slot TDM
+    supportInter-slotTDM-r16                    SEQUENCE {
+        supportRepNumPDSCH-TDRA-r16                 ENUMERATED {n2, n3, n4, n5, n6, n7, n8, n16},
+        maxTBS-Size-r16                             ENUMERATED {kb3, kb5, kb10, kb20, noRestriction},
+        maxNumberTCI-states-r16                     INTEGER (1..2)
+    }                                                                                                              OPTIONAL,
+    -- R1 16-4: Low PAPR DMRS for PDSCH
+    lowPAPR-DMRS-PDSCH-r16                      ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-6a: Low PAPR DMRS for PUSCH without transform precoding
+    lowPAPR-DMRS-PUSCHwithoutPrecoding-r16      ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-6b: Low PAPR DMRS for PUCCH
+    lowPAPR-DMRS-PUCCH-r16                      ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-6c: Low PAPR DMRS for PUSCH with transform precoding & pi/2 BPSK
+    lowPAPR-DMRS-PUSCHwithPrecoding-r16         ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 16-7: Extension of the maximum number of configured aperiodic CSI report settings
+    csi-ReportFrameworkExt-r16                  CSI-ReportFrameworkExt-r16                                         OPTIONAL,
+    -- R1 16-3a, 16-3a-1, 16-3b, 16-3b-1, 16-8: Individual new codebook types
+    codebookParametersAddition-r16              CodebookParametersAddition-r16                                     OPTIONAL,
+    -- R1 16-8: Mixed codebook types
+    codebookComboParametersAddition-r16         CodebookComboParametersAddition-r16                                OPTIONAL,
+    -- R4 8-2: SSB based beam correspondence
+    beamCorrespondenceSSB-based-r16             ENUMERATED {supported}                                             OPTIONAL,
+    -- R4 8-3: CSI-RS based beam correspondence
+    beamCorrespondenceCSI-RS-based-r16          ENUMERATED {supported}                                             OPTIONAL,
+    beamSwitchTiming-r16                        SEQUENCE {
+        scs-60kHz-r16                               ENUMERATED {sym224, sym336}                                    OPTIONAL,
+        scs-120kHz-r16                              ENUMERATED {sym224, sym336}                                    OPTIONAL
+    }                                                                                                              OPTIONAL
+    ]],
+    [[
+    -- R1 16-1a-4: Semi-persistent L1-SINR report on PUCCH
+    semi-PersistentL1-SINR-Report-PUCCH-r16     SEQUENCE {
+        supportReportFormat1-2OFDM-syms-r16         ENUMERATED {supported}                                     OPTIONAL,
+        supportReportFormat4-14OFDM-syms-r16        ENUMERATED {supported}                                     OPTIONAL
+    }                                                                                                          OPTIONAL,
+    -- R1 16-1a-5: Semi-persistent L1-SINR report on PUSCH
+    semi-PersistentL1-SINR-Report-PUSCH-r16     ENUMERATED {supported}                                         OPTIONAL
+    ]],
+    [[
+    -- R1 16-1h: Support of 64 configured PUCCH spatial relations
+    spatialRelations-v1640                      SEQUENCE {
+        maxNumberConfiguredSpatialRelations-v1640   ENUMERATED {n96, n128, n160, n192, n224, n256, n288, n320}
+    }                                                                                                          OPTIONAL,
+    -- R1 16-1i: Support of 64 configured candidate beam RSs for BFR
+    support64CandidateBeamRS-BFR-r16            ENUMERATED {supported}                                         OPTIONAL
+    ]],
+    [[
+    -- R1 16-2a-9: Interpretation of maxNumberMIMO-LayersPDSCH for multi-DCI based mTRP
+    maxMIMO-LayersForMulti-DCI-mTRP-r16         ENUMERATED {supported}                                         OPTIONAL
+    ]],
+    [[
+    supportedSINR-meas-v1670                    BIT STRING (SIZE (4))                                          OPTIONAL
+    ]],
+    [[
+    -- R1 23-8-5	Increased repetition for SRS
+    srs-increasedRepetition-r17                 ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-8-6	Partial frequency sounding of SRS
+    srs-partialFrequencySounding-r17            ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-8-7	Start RB location hopping for partial frequency SRS
+    srs-startRB-locationHoppingPartial-r17      ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-8-8	Comb-8 SRS
+    srs-combEight-r17                           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-9-1	Basic Features of Further Enhanced Port-Selection Type II Codebook (FeType-II) per band information
+    codebookParametersfetype2-r17               CodebookParametersfetype2-r17                                  OPTIONAL,
+    -- R1 23-3-1-2a    Two associated CSI-RS resources
+    mTRP-PUSCH-twoCSI-RS-r17                    ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-2    Multi-TRP PUCCH repetition scheme 1 (inter-slot)
+    mTRP-PUCCH-InterSlot-r17                    ENUMERATED {pf0-2, pf1-3-4, pf0-4}                             OPTIONAL,
+    -- R1 23-3-2b    Cyclic mapping for multi-TRP PUCCH repetition
+    mTRP-PUCCH-CyclicMapping-r17                ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-2c    Second TPC field for multi-TRP PUCCH repetition
+    mTRP-PUCCH-SecondTPC-r17                    ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-5-2    MTRP BFR based on two BFD-RS set
+    mTRP-BFR-twoBFD-RS-Set-r17                  SEQUENCE {
+        maxBFD-RS-resourcesPerSetPerBWP-r17         ENUMERATED {n1, n2},
+        maxBFR-r17                                  INTEGER (1..9),
+        maxBFD-RS-resourcesAcrossSetsPerBWP-r17     ENUMERATED {n2, n3, n4}
+    }                                                                                                          OPTIONAL,
+    -- R1 23-5-2a    PUCCH-SR resources for MTRP BFRQ - Max number of PUCCH-SR resources for MTRP BFRQ per cell group
+    mTRP-BFR-PUCCH-SR-perCG-r17                 ENUMERATED{n1, n2}                                             OPTIONAL,
+    -- R1 23-5-2b    Association between a BFD-RS resource set on SpCell and a PUCCH SR resource
+    mTRP-BFR-association-PUCCH-SR-r17           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-6-3    Simultaneous activation of two TCI states for PDCCH across multiple CCs (HST/URLLC)
+    sfn-SimulTwoTCI-AcrossMultiCC-r17           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-6-4    Default DL beam setup for SFN
+    sfn-DefaultDL-BeamSetup-r17                 ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-6-4a    Default UL beam setup for SFN PDCCH(FR2 only)
+    sfn-DefaultUL-BeamSetup-r17                 ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-8-1    SRS triggering offset enhancement
+    srs-TriggeringOffset-r17                    ENUMERATED {n1, n2, n4}                                        OPTIONAL,
+    -- R1 23-8-2    Triggering SRS only in DCI 0_1/0_2
+    srs-TriggeringDCI-r17                       ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-9-5    Active CSI-RS resources and ports for mixed codebook types in any slot per band information
+    codebookComboParameterMixedType-r17         CodebookComboParameterMixedType-r17                            OPTIONAL,
+    -- R1 23-1-1    Unified TCI [with joint DL/UL TCI update] for intra-cell beam management
+    unifiedJointTCI-r17                         SEQUENCE{
+        maxConfiguredJointTCI-r17                   ENUMERATED {n8, n12, n16, n24, n32, n48, n64, n128},
+        maxActivatedTCIAcrossCC-r17                 ENUMERATED {n1, n2, n4, n8, n16}
+    }                                                                                                          OPTIONAL,
+    -- R1  23-1-1b    Unified TCI with joint DL/UL TCI update for intra- and inter-cell beam management with more than one MAC-CE
+    unifiedJointTCI-multiMAC-CE-r17             SEQUENCE{
+        minBeamApplicationTime-r17                  ENUMERATED {n1, n2, n4, n7, n14, n28, n42, n56, n70, n84, n98, n112, n224, n336}
+                                                                                                               OPTIONAL,
+        maxNumMAC-CE-PerCC                          ENUMERATED {n2, n3, n4, n5, n6, n7, n8}
+    } OPTIONAL,
+    -- R1 23-1-1d    Per BWP TCI state pool configuration for CA mode
+    unifiedJointTCI-perBWP-CA-r17               ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1e    TCI state pool configuration with TCI pool sharing for CA mode
+    unifiedJointTCI-ListSharingCA-r17           ENUMERATED {n1,n2,n4,n8}                                       OPTIONAL,
+    -- R1 23-1-1f    Common multi-CC TCI state ID update and activation
+    unifiedJointTCI-commonMultiCC-r17           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1g    Beam misalignment between the DL source RS in the TCI state
+    unifiedJointTCI-BeamAlignDLRS-r17           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1h    Association between TCI state and UL PC settings for PUCCH, PUSCH, and SRS
+    unifiedJointTCI-PC-association-r17          ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1i    Indication/configuration of R17 TCI states for aperiodic CSI-RS, PDCCH, PDSCH
+    unifiedJointTCI-Legacy-r17                  ENUMERATED {supported}                                         OPTIONAL,
+    -- 23-1-1m    Indication/configuration of R17 TCI states for SRS
+    unifiedJointTCI-Legacy-SRS-r17              ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1j    Indication/configuration of R17 TCI states for CORESET #0
+    unifiedJointTCI-Legacy-CORESET0-r17         ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1c    SCell BFR with unified TCI framework  (NOTE; pre-requisite is empty)
+    unifiedJointTCI-SCellBFR-r17                ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-1-1a    Unified TCI with joint DL/UL TCI update for inter-cell beam management
+    unifiedJointTCI-InterCell-r17               SEQUENCE{
+        additionalMAC-CE-PerCC-r17                  ENUMERATED {n0, n1, n2, n4},
+        additionalMAC-CE-AcrossCC-r17               ENUMERATED {n0, n1, n2, n4}
+    }                                                                                                          OPTIONAL,
+    -- R1  23-10-1    Unified TCI with separate DL/UL TCI update for intra-cell beam management
+    unifiedSeparateTCI-r17                      SEQUENCE{
+        maxConfiguredDL-TCI-r17                     ENUMERATED {n4, n8, n12, n16, n24, n32, n48, n64, n128},
+        maxConfiguredUL-TCI-r17                     ENUMERATED {n4, n8, n12, n16, n24, n32, n48, n64},
+        maxActivatedDL-TCIAcrossCC-r17              ENUMERATED {n1, n2, n4, n8, n16},
+        maxActivatedUL-TCIAcrossCC-r17              ENUMERATED {n1, n2, n4, n8, n16}
+    } OPTIONAL,
+    -- R1  23-10-1b    Unified TCI with separate DL/UL TCI update for intra-cell beam management with more than one MAC-CE
+    unifiedSeparateTCI-multiMAC-CE-r17          SEQUENCE{
+        minBeamApplicationTime-r17                  ENUMERATED {n1, n2, n4, n7, n14, n28, n42, n56, n70, n84, n98, n112, n224, n336},
+        maxActivatedDL-TCIPerCC-r17                 INTEGER (2..8),
+        maxActivatedUL-TCIPerCC-r17                 INTEGER (2..8)
+    }                                                                                                          OPTIONAL,
+    -- R1 23-10-1d    Per BWP DL/UL-TCI state pool configuration for CA mode
+    unifiedSeparateTCI-perBWP-CA-r17            ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-10-1e    TCI state pool configuration with DL/UL-TCI pool sharing for CA mode
+    unifiedSeparateTCI-ListSharingCA-r17        SEQUENCE {
+        maxNumListDL-TCI-r17                        ENUMERATED {n1,n2,n4,n8}                                   OPTIONAL,
+        maxNumListUL-TCI-r17                        ENUMERATED {n1,n2,n4,n8}                                   OPTIONAL
+    } OPTIONAL,
+    -- R1 23-10-1f    Common multi-CC DL/UL-TCI state ID update and activation with separate DL/UL TCI update
+    unifiedSeparateTCI-commonMultiCC-r17    ENUMERATED {supported}                                             OPTIONAL,
+    -- 23-10-1m    Unified TCI with separate DL/UL TCI update for inter-cell beam management with more than one MAC-CE
+    unifiedSeparateTCI-InterCell-r17            SEQUENCE {
+        k-DL-PerCC-r17                              ENUMERATED {n0, n1, n2, n4},
+        k-UL-PerCC-r17                              ENUMERATED {n0, n1, n2, n4},
+        k-DL-AcrossCC-r17                           ENUMERATED {n0, n1, n2, n4},
+        k-UL-AcrossCC-r17                           ENUMERATED {n0, n1, n2, n4}
+    }                                                                                                          OPTIONAL,
+    -- R1  23-1-2    Inter-cell beam measurement and reporting (for inter-cell BM and mTRP)
+    unifiedJointTCI-mTRP-InterCell-BM-r17       SEQUENCE {
+        maxNumAdditionalPCI-L1-RSRP-r17             INTEGER (1..7),
+        maxNumSSB-ResourceL1-RSRP-AcrossCC-r17      ENUMERATED {n1,n2,n4,n8}
+    }                                                                                                          OPTIONAL,
+    -- R1  23-1-3    MPE mitigation
+    mpe-Mitigation-r17                          SEQUENCE {
+        maxNumP-MPR-RI-pairs-r17                    INTEGER (1..4),
+        maxNumConfRS-r17                            ENUMERATED {n1, n2, n4, n8, n12, n16, n28, n32, n48, n64}
+    }                                                                                                          OPTIONAL,
+    -- R1  23-1-4    UE capability value reporting
+    srs-PortReport-r17                          SEQUENCE {
+            capVal1-r17                             ENUMERATED {n1, n2, n4}                                    OPTIONAL,
+            capVal2-r17                             ENUMERATED {n1, n2, n4}                                    OPTIONAL,
+            capVal3-r17                             ENUMERATED {n1, n2, n4}                                    OPTIONAL,
+            capVal4-r17                             ENUMERATED {n1, n2, n4}                                    OPTIONAL
+    }                                                                                                          OPTIONAL,
+  -- R1 23-2-1a    Monitoring of individual candidates
+    mTRP-PDCCH-individual-r17                   ENUMERATED {supported}                                         OPTIONAL,
+  -- R1 23-2-1b    PDCCH repetition with PDCCH monitoring on any span of up to 3 consecutive OFDM symbols of a slot
+    mTRP-PDCCH-anySpan-3Symbols-r17             ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-2-2    Two QCL TypeD for CORESET monitoring in PDCCH repetition
+    mTRP-PDCCH-TwoQCL-TypeD-r17                 ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-1-2b    CSI-RS processing framework for SRS with two associated CSI-RS resources
+    mTRP-PUSCH-CSI-RS-r17                       SEQUENCE {
+        maxNumPeriodicSRS-r17                       INTEGER (1..8),
+        maxNumAperiodicSRS-r17                      INTEGER (1..8),
+        maxNumSP-SRS-r17                            INTEGER (0..8),
+        numSRS-ResourcePerCC-r17                    INTEGER (1..16),
+        numSRS-ResourceNonCodebook-r17              INTEGER (1..2)
+    }                                                                                                          OPTIONAL,
+    -- R1 23-3-1a    Cyclic mapping for Multi-TRP PUSCH repetition
+    mTRP-PUSCH-cyclicMapping-r17                ENUMERATED {typeA,typeB,both}                                  OPTIONAL,
+    -- R1 23-3-1b    Second TPC field for Multi-TRP PUSCH repetition
+    mTRP-PUSCH-secondTPC-r17                    ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-1c     Two PHR reporting
+    mTRP-PUSCH-twoPHR-Reporting-r17             ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-1e    A-CSI report
+    mTRP-PUSCH-A-CSI-r17                        ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-1f    SP-CSI report
+    mTRP-PUSCH-SP-CSI-r17                       ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-1g    CG PUSCH transmission
+    mTRP-PUSCH-CG-r17                           ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-2d    Updating two Spatial relation or two sets of power control parameters for PUCCH group
+    mTRP-PUCCH-MAC-CE-r17                       ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-3-2e    Maximum number of power control parameter sets configured for multi-TRP PUCCH repetition in FR1
+    mTRP-PUCCH-maxNum-PC-FR1-r17                INTEGER (3..8)                                                 OPTIONAL,
+    -- R1 23-4    IntCell-mTRP
+    mTRP-inter-Cell-r17                         SEQUENCE {
+        maxNumAdditionalPCI-Case1-r17               INTEGER (1..7),
+        maxNumAdditionalPCI-Case2-r17               INTEGER (0..7)
+    }                                                                                                          OPTIONAL,
+    -- R1 23-5-1    Group based L1-RSRP reporting enhancements
+    mTRP-GroupBasedL1-RSRP-r17                  SEQUENCE {
+        maxNumBeamGroups-r17                        INTEGER (1..4),
+        maxNumRS-WithinSlot-r17                     ENUMERATED {n2,n3,n4,n8,n16,n32,n64},
+        maxNumRS-AcrossSlot-r17                     ENUMERATED {n8, n16, n32, n64, n128}
+    }                                                                                                          OPTIONAL,
+    -- R1 23-5-2c    MAC-CE based update of explicit BFD-RS    mTRP-PUCCH-IntraSlot-r17  => per band
+    mTRP-BFD-RS-MAC-CE-r17                      ENUMERATED {n4, n8, n12, n16, n32, n48, n64 }                  OPTIONAL,
+   -- R1 23-7-1    Basic Features of CSI Enhancement for Multi-TRP
+    mTRP-CSI-EnhancementPerBand-r17             SEQUENCE {
+        maxNumNZP-CSI-RS-r17                        INTEGER (2..8),
+        cSI-Report-mode-r17                         ENUMERATED {mode1, mode2, both},
+        supportedComboAcrossCCs-r17                 SEQUENCE (SIZE (1..16)) OF CSI-MultiTRP-SupportedCombinations-r17,
+        codebookModeNCJT-r17                        ENUMERATED{mode1,mode1And2}
+    }                                                                                                          OPTIONAL,
+    -- R1 23-7-1b    Active CSI-RS resources and ports in the presence of multi-TRP CSI
+    codebookComboParameterMultiTRP-r17          CodebookComboParameterMultiTRP-r17                             OPTIONAL,
+    -- R1 23-7-1a    Additional CSI report mode 1
+    mTRP-CSI-additionalCSI-r17                  ENUMERATED{x1,x2}                                              OPTIONAL,
+    -- R1 23-7-4    Support of Nmax=2 for Multi-TRP CSI
+    mTRP-CSI-N-Max2-r17                         ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-7-5    CMR sharing
+    mTRP-CSI-CMR-r17                            ENUMERATED {supported}                                         OPTIONAL,
+    -- R1 23-8-11    Partial frequency sounding of SRS for non-frequency hopping case
+    srs-partialFreqSounding-r17                 ENUMERATED {supported}                                         OPTIONAL,
+    -- R1-24 feature: Extend beamSwitchTiming for FR2-2
+    beamSwitchTiming-v1710                      SEQUENCE {
+        scs-480kHz                                  ENUMERATED {sym56, sym112, sym192, sym896, sym1344}        OPTIONAL,
+        scs-960kHz                                  ENUMERATED {sym112, sym224, sym384, sym1792, sym2688}      OPTIONAL
+    }                                                                                                          OPTIONAL,
+    -- R1-24 feature: Extend beamSwitchTiming-r16 for FR2-2
+    beamSwitchTiming-r17                        SEQUENCE {
+        scs-480kHz-r17                              ENUMERATED {sym896, sym1344}                               OPTIONAL,
+        scs-960kHz-r17                              ENUMERATED {sym1792, sym2688}                              OPTIONAL
+    }                                                                                                          OPTIONAL,
+    -- R1-24 feature: Extend beamReportTiming for FR2-2
+    beamReportTiming-v1710                      SEQUENCE {
+        scs-480kHz-r17                              ENUMERATED {sym56, sym112, sym224}                         OPTIONAL,
+        scs-960kHz-r17                              ENUMERATED {sym112, sym224, sym448}                        OPTIONAL
+    }                                                                                                          OPTIONAL,
+    -- R1-24 feature:    Extend maximum number of RX/TX beam switch DL for FR2-2
+    maxNumberRxTxBeamSwitchDL-v1710             SEQUENCE {
+        scs-480kHz-r17                              ENUMERATED {n2, n4, n7}                                    OPTIONAL,
+        scs-960kHz-r17                              ENUMERATED {n1, n2, n4, n7}                                OPTIONAL
+    }                                                                                                          OPTIONAL
+    ]],
+    [[
+    -- R1-23-1-4a:	Semi-persistent/aperiodic capability value report
+    srs-PortReportSP-AP-r17                     ENUMERATED {supported}                                         OPTIONAL,
+    maxNumberRxBeam-v1720                       INTEGER (9..12)                                                OPTIONAL,
+    -- R1-23-6-5	Support implicit configuration of RS(s) with two TCI states for beam failure detection
+    sfn-ImplicitRS-twoTCI-r17                   ENUMERATED {supported}                                         OPTIONAL,
+    -- R1-23-6-6	QCL-TypeD collision handling with CORESET with 2 TCI states
+    sfn-QCL-TypeD-Collision-twoTCI-r17          ENUMERATED {supported}                                         OPTIONAL,
+    -- R1-23-7-1c	Basic Features of CSI Enhancement for Multi-TRP - number of CPUs
+    mTRP-CSI-numCPU-r17                         ENUMERATED {n2, n3, n4}                                        OPTIONAL
+    ]],
+    [[
+    supportRepNumPDSCH-TDRA-DCI-1-2-r17         ENUMERATED {n2, n3, n4, n5, n6, n7, n8, n16}                   OPTIONAL
+    ]]
+}
+
+DummyG ::=                          SEQUENCE {
+    maxNumberSSB-CSI-RS-ResourceOneTx   ENUMERATED {n8, n16, n32, n64},
+    maxNumberSSB-CSI-RS-ResourceTwoTx   ENUMERATED {n0, n4, n8, n16, n32, n64},
+    supportedCSI-RS-Density             ENUMERATED {one, three, oneAndThree}
+}
+
+BeamManagementSSB-CSI-RS ::=        SEQUENCE {
+    maxNumberSSB-CSI-RS-ResourceOneTx   ENUMERATED {n0, n8, n16, n32, n64},
+    maxNumberCSI-RS-Resource            ENUMERATED {n0, n4, n8, n16, n32, n64},
+    maxNumberCSI-RS-ResourceTwoTx       ENUMERATED {n0, n4, n8, n16, n32, n64},
+    supportedCSI-RS-Density             ENUMERATED {one, three, oneAndThree}                                       OPTIONAL,
+    maxNumberAperiodicCSI-RS-Resource   ENUMERATED {n0, n1, n4, n8, n16, n32, n64}
+}
+
+DummyH ::=                          SEQUENCE {
+    burstLength                         INTEGER (1..2),
+    maxSimultaneousResourceSetsPerCC    INTEGER (1..8),
+    maxConfiguredResourceSetsPerCC      INTEGER (1..64),
+    maxConfiguredResourceSetsAllCC      INTEGER (1..128)
+}
+
+CSI-RS-ForTracking ::=              SEQUENCE {
+    maxBurstLength                      INTEGER (1..2),
+    maxSimultaneousResourceSetsPerCC    INTEGER (1..8),
+    maxConfiguredResourceSetsPerCC      INTEGER (1..64),
+    maxConfiguredResourceSetsAllCC      INTEGER (1..256)
+}
+
+CSI-RS-IM-ReceptionForFeedback ::=              SEQUENCE {
+    maxConfigNumberNZP-CSI-RS-PerCC                 INTEGER (1..64),
+    maxConfigNumberPortsAcrossNZP-CSI-RS-PerCC      INTEGER (2..256),
+    maxConfigNumberCSI-IM-PerCC                     ENUMERATED {n1, n2, n4, n8, n16, n32},
+    maxNumberSimultaneousNZP-CSI-RS-PerCC           INTEGER (1..64),
+    totalNumberPortsSimultaneousNZP-CSI-RS-PerCC    INTEGER (2..256)
+}
+
+CSI-RS-ProcFrameworkForSRS ::=                  SEQUENCE {
+    maxNumberPeriodicSRS-AssocCSI-RS-PerBWP         INTEGER (1..4),
+    maxNumberAperiodicSRS-AssocCSI-RS-PerBWP        INTEGER (1..4),
+    maxNumberSP-SRS-AssocCSI-RS-PerBWP              INTEGER (0..4),
+    simultaneousSRS-AssocCSI-RS-PerCC               INTEGER (1..8)
+}
+
+CSI-ReportFramework ::=                         SEQUENCE {
+    maxNumberPeriodicCSI-PerBWP-ForCSI-Report       INTEGER (1..4),
+    maxNumberAperiodicCSI-PerBWP-ForCSI-Report      INTEGER (1..4),
+    maxNumberSemiPersistentCSI-PerBWP-ForCSI-Report INTEGER (0..4),
+    maxNumberPeriodicCSI-PerBWP-ForBeamReport       INTEGER (1..4),
+    maxNumberAperiodicCSI-PerBWP-ForBeamReport      INTEGER (1..4),
+    maxNumberAperiodicCSI-triggeringStatePerCC      ENUMERATED {n3, n7, n15, n31, n63, n128},
+    maxNumberSemiPersistentCSI-PerBWP-ForBeamReport INTEGER (0..4),
+    simultaneousCSI-ReportsPerCC                    INTEGER (1..8)
+}
+
+CSI-ReportFrameworkExt-r16 ::=                      SEQUENCE {
+    maxNumberAperiodicCSI-PerBWP-ForCSI-ReportExt-r16   INTEGER (5..8)
+}
+
+PTRS-DensityRecommendationDL ::=    SEQUENCE {
+    frequencyDensity1                   INTEGER (1..276),
+    frequencyDensity2                   INTEGER (1..276),
+    timeDensity1                        INTEGER (0..29),
+    timeDensity2                        INTEGER (0..29),
+    timeDensity3                        INTEGER (0..29)
+}
+
+PTRS-DensityRecommendationUL ::=    SEQUENCE {
+    frequencyDensity1                   INTEGER (1..276),
+    frequencyDensity2                   INTEGER (1..276),
+    timeDensity1                        INTEGER (0..29),
+    timeDensity2                        INTEGER (0..29),
+    timeDensity3                        INTEGER (0..29),
+    sampleDensity1                      INTEGER (1..276),
+    sampleDensity2                      INTEGER (1..276),
+    sampleDensity3                      INTEGER (1..276),
+    sampleDensity4                      INTEGER (1..276),
+    sampleDensity5                      INTEGER (1..276)
+}
+
+SpatialRelations ::=                    SEQUENCE {
+    maxNumberConfiguredSpatialRelations     ENUMERATED {n4, n8, n16, n32, n64, n96},
+    maxNumberActiveSpatialRelations         ENUMERATED {n1, n2, n4, n8, n14},
+    additionalActiveSpatialRelationPUCCH    ENUMERATED {supported}                              OPTIONAL,
+    maxNumberDL-RS-QCL-TypeD                ENUMERATED {n1, n2, n4, n8, n14}
+}
+
+DummyI ::=               SEQUENCE {
+    supportedSRS-TxPortSwitch           ENUMERATED {t1r2, t1r4, t2r4, t1r4-t2r4, tr-equal},
+    txSwitchImpactToRx                  ENUMERATED {true}                                       OPTIONAL
+}
+
+CSI-MultiTRP-SupportedCombinations-r17 ::= SEQUENCE {
+    maxNumTx-Ports-r17                         ENUMERATED {n2, n4, n8, n12, n16, n24, n32},
+    maxTotalNumCMR-r17                         INTEGER (2..64),
+    maxTotalNumTx-PortsNZP-CSI-RS-r17          INTEGER (2..256)
+}

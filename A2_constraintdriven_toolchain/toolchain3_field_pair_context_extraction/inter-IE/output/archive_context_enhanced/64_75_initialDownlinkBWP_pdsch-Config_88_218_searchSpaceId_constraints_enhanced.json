@@ -1,0 +1,2893 @@
+[
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "Reference signal",
+      "SS"
+    ],
+    "original_sentence": "5.5.2.10 Reference signal measurement timing configuration  The UE shall setup the first SS/PBCH block measurement timing configuration (SMTC) in accordance with the received periodicityAndOffset parameter (providing Periodicity and Offset value for the following condition) in the smtcl configuration. The first subframe of each SMTC occasion occurs at an SFN and subframe of the NR SpCell meeting the following condition:",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "section_number": "5.5.2.10",
+    "section_title": "Reference signal measurement timing configuration",
+    "section_relevance": {
+      "combined_score": 100.0,
+      "ie1_score": 100.0,
+      "ie2_score": 0.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [
+          "Config",
+          "configuration",
+          "config",
+          "Configuration"
+        ],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "A set of Reference Signals (e.g. a CSI-RS config or a SS block) to be used for PUCCH pathloss estimation. Up to maxNrofPUCCH-PathlossReference-RSs may be configured. If the field is not configured, the UE uses the SSB as reference signal (see TS 38.213 [13], clause 7.2). The set includes Reference Signals indicated in pathlossReferenceRSs (without suffix) and in pathlossReferenceRSs-v1610. The UE maintains pathlossReferenceRSs and pathlossReferenceRSs-v1610 separately: Receiving pathlossReferenceRSs-v1610 set to release releases only the entries that were configured by pathlossReferenceRSs-v1610, and receiving pathlossReferenceRSs-v1610 set to setup replaces only the entries that were configured by pathlossReferenceRSs-v1610 with the newly signalled entries.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "Defines an association of the search space to multiple monitoring locations in the frequency domain and indicates whether the pattern configured in the associated CORESET is replicated to a specific RB set, see TS 38.213, clause 10.1. Each bit in the bitmap corresponds to one RB set, and the leftmost (most significant) bit corresponds to RB set 0 in the BWP. A bit set to 1 indicates that a frequency domain resource allocation replicated from the pattern configured in the associated CORESET is mapped to the RB set.",
+    "source_file": "ts_138331v170000p_mathpix.md",
+    "section_number": "6.3.2",
+    "section_title": "Radio resource control information elements",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "tci-StateId",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        67
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "TCI state ID",
+      "SS"
+    ],
+    "original_sentence": "- TCI state ID: This field indicates and activates the TCI state for the LTM target cell (i.e. the SpCell of the target configuration indicated by the Target Configuration ID field). The TCI state is identified by TCI-Stateld in Itm-DL-OrJointTCI-StateToAddModList as specified in TS 38.331 [5]. If the value of unifiedTCI-StateType in the Itm-TCI-Info of the configuration indicated by Target Configuration ID field is joint, this field is for joint TCI state, otherwise, this field is for downlink TCI state. The length of the field is 7 bits; - UL TCI state ID: This field indicates and activates the uplink TCI state for the LTM target cell (i.e. the SpCell of the target configuration indicated by the Target Configuration ID field). The UL TCI state is identified by TCI-UL-Stateld in Itm-UL-TCI-StatesToAddModList as specified in TS 38.331 [5]. The octet containing this field (i.e. this field and the two reserved bits in the same octet) is included if the value of unifiedTCI-StateType in the Itm-TCI-Info of the configuration indicated by Target Configuration ID field is separate. The length of the field is 6 bits; - C: This field indicates the presence of the contention-free Random Access Resources fields. If the value of this field is set to 1, the following fields are present: Random Access Preamble index field, S/U field, SS/PBCH index field, PRACH Mask index field, Repetition number field and the reserved bits in the same octet. If the value of this field is set to 0 , these fields are absent.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.75",
+    "section_title": "LTM Cell Switch Command MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "tci-StateId",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        67
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "TCI state ID",
+      "SS"
+    ],
+    "original_sentence": "- UL TCI state ID: This field indicates and activates the uplink TCI state for the LTM target cell (i.e. the SpCell of the target configuration indicated by the Target Configuration ID field). The UL TCI state is identified by TCI-UL-Stateld in Itm-UL-TCI-StatesToAddModList as specified in TS 38.331 [5]. The octet containing this field (i.e. this field and the two reserved bits in the same octet) is included if the value of unifiedTCI-StateType in the Itm-TCI-Info of the configuration indicated by Target Configuration ID field is separate. The length of the field is 6 bits; - C: This field indicates the presence of the contention-free Random Access Resources fields. If the value of this field is set to 1, the following fields are present: Random Access Preamble index field, S/U field, SS/PBCH index field, PRACH Mask index field, Repetition number field and the reserved bits in the same octet. If the value of this field is set to 0 , these fields are absent.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.75",
+    "section_title": "LTM Cell Switch Command MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qclType",
+      "search space"
+    ],
+    "original_sentence": "- if the active TCI state for PDCCH reception includes two RS, the UE expects that one RS is configured with qclType set to 'typeD' [6, TS 38.214] and the UE uses the RS configured with qcl-Type set to 'typeD' for radio link monitoring; the UE does not expect both RS to be configured with qcl-Type set to 'typeD' - the UE is not required to use for radio link monitoring an aperiodic or semi-persistent RS - For \\( L_{\\text {max }}=4 \\), the UE selects the \\( N_{\\text {RLM }} \\) RS provided for active TCI states for PDCCH receptions in CORESETs associated with the search space sets in an order from the shortest monitoring periodicity. If more than one CORESETs are associated with search space sets having same monitoring periodicity, the UE determines the order of the CORESET from the highest CORESET index as described in clause 10.1.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "A UE can be provided, for each BWP of a serving cell, a set \\( \\bar{q}_{0} \\) of periodic CSI-RS resource configuration indexes by failureDetectionResourcesToAddModList and a set \\( \\bar{q}_{1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList or candidateBeamRSListExt or candidateBeamRSSCellList for radio link quality measurements on the BWP of the serving cell. Instead of the sets \\( \\bar{q}_{0} \\) and \\( \\bar{q}_{1} \\), for each BWP of a serving cell, the UE can be provided respective two sets \\( \\bar{q}_{0,0} \\) and \\( \\bar{q}_{0,1} \\) of periodic CSI-RS resource configuration indexes that can be activated by a MAC CE [11 TS 38.321] and corresponding two sets \\( \\bar{q}_{1,0} \\) and \\( \\bar{q}_{1,1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList l and candidateBeamRSList2, respectively, for radio link quality measurements on the BWP of the serving cell. The set \\( \\bar{q}_{0,0} \\) is associated with the set \\( \\bar{q}_{1,0} \\) and the set \\( \\bar{q}_{0,1} \\) is associated with the set \\( \\bar{q}_{1,1} \\).  If the UE is not provided \\( \\bar{q}_{0} \\) by failureDetectionResourcesToAddModList for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for respective CORESETs that the UE uses for monitoring PDCCH. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for first and second CORESETs that the UE uses for monitoring PDCCH, where the UE is provided two coresetPoollndex values 0 and 1 for the first and second CORESETs, or is not provided coresetPoollndex value for the first CORESETs and is provided coresetPoollndex value of 1 for the second CORESETs, respectively. If there are two RS indexes in a TCI state, the set \\( \\bar{q}_{0} \\) or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\) includes RS indexes configured with qcl-Type set to 'typeD' for the corresponding TCI states. If a CORESET that the UE uses for monitoring PDCCH includes two TCI states and the UE is provided sfnSchemePdcch set to 'sfnSchemeA' or 'sfnSchemeB', the set \\( \\bar{q}_{0} \\) includes RS indexes in the RS sets associated with the two TCI states. The UE expects the set \\( \\bar{q}_{0} \\) to include up to two RS indexes. If the UE is provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), the UE expects the set \\( \\bar{q}_{0,0} \\) or the set \\( \\bar{q}_{0,1} \\) to include up to a number of \\( N_{\\mathrm{BFD}} \\) RS indexes indicated by capabilityparametername. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), and if a number of active TCI states for PDCCH receptions in the first or second CORESETs is larger than \\( N_{\\mathrm{BFD}} \\), the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets associated with the active TCI states for PDCCH receptions in the first or second CORESETs corresponding to search space sets according to an ascending order for monitoring periodicity. If more than one first or second CORESETs correspond to search space sets with same monitoring periodicity, the UE determines the order of the first or second CORESETs according to a descending order of a CORESET index.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "search space"
+    ],
+    "original_sentence": "- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212] the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same \\( q_{d} \\) applies to the PUCCH transmission in each of the multiple slots.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "If a PRACH transmission from a UE is not in response to a detection of a PDCCH order by the UE, or is in response to a detection of a PDCCH order by the UE that triggers a contention based random access procedure, or is associated with a link recovery procedure where a corresponding index \\( q_{\\text {new }} \\) is associated with a SS/PBCH block, as described in clause 6, referenceSignalPower is provided by ss-PBCH-BlockPower.  If a PRACH transmission from a UE is in response to a detection of a PDCCH order by the UE that triggers a contention-free random access procedure and depending on the DL RS that the DM-RS of the PDCCH order is quasicollocated with as described in clause 10.1, referenceSignalPower is provided by ss-PBCH-BlockPower or, if the UE is configured resources for a periodic CSI-RS reception or the PRACH transmission is associated with a link recovery procedure where a corresponding index \\( q_{\\text {new }} \\) is associated with a periodic CSI-RS configuration as described in clause 6, referenceSignalPower is obtained by ss-PBCH-BlockPower and powerControlOffsetSS where powerControlOffsetSS provides an offset of CSI-RS transmission power relative to SS/PBCH block transmission power [6, TS 38.214]. If powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB . If the active TCI state for the PDCCH that provides the PDCCH order includes two RS, the UE expects that one RS is configured with qcl-Type set to 'typeD' and the UE uses the one RS when applying a value provided by power ControlOffsetSS.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.4",
+    "section_title": "Physical random access channel",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "- If PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides ssb-Index, the UE transmits the PUCCH using a same spatial domain filter as for a reception of a SS/PBCH block with index provided by ssb-Index for a same serving cell or, if servingCellld is provided, for a serving cell indicated by servingCellld - else if PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides csi-RS-Index, or the indicated DLorJoint-TCIState provides csi-rs configured with qcl-Type set to 'typeD', the UE transmits the PUCCH using a same spatial domain filter as for a reception of a CSI-RS with resource index provided by csi-RSIndex or csi-rs for a same serving cell or, if servingCellld or cell is provided, for a serving cell indicated by servingCellld or cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.2",
+    "section_title": "PUCCH Formats for UCI transmission",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "The UE may assume that the DM-RS antenna port associated with PDCCH receptions in the CORESET configured by pdcch-ConfigSIBI in MIB, the DM-RS antenna port associated with corresponding PDSCH receptions, and the corresponding SS/PBCH block are quasi co-located with respect to average gain, quasi co-location 'type A' and 'typeD' properties, when applicable [6, TS 38.214], if the UE is not provided a TCI state indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in the CORESET. The value for the DM-RS scrambling sequence initialization is the cell ID. For operation without shared spectrum channel access in FR1 and FR2-1, a SCS is provided by subCarrierSpacingCommon in MIB. For operation with shared spectrum channel access in FR1 and for operation in FR2-2, a SCS is same as the SCS of a corresponding SS/PBCH block.  For single cell operation or for operation with carrier aggregation in a same frequency band, a UE does not expect to monitor a PDCCH in a Type0/0A/0B/2/3-PDCCH CSS set or in a USS set if a DM-RS for monitoring a PDCCH in a Typel-PDCCH CSS set is not configured with same qcl-Type set to 'typeD' properties [6, TS 38.214] with a DM-RS for monitoring the PDCCH in the Type0/0A/0B/2/3-PDCCH CSS set or in the USS set, and if the PDCCH or an associated PDSCH overlaps in at least one symbol with a PDCCH the UE monitors in a Type1-PDCCH CSS set or with an associated PDSCH.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "- a SS/PBCH block the UE identified during a most recent random access procedure not initiated by a PDCCH order that triggers a contention-free random access procedure, if no MAC CE activation command indicating a TCI state for the CORESET is received after the most recent random access procedure, or a SS/PBCH block the UE identified during a most recent configured grant PUSCH transmission as described in clause 19.  For a CORESET other than a CORESET with index 0 , if a UE is provided a single TCI state for a CORESET, or if the UE receives a MAC CE activation command for one or two of the provided TCI states for a CORESET, the UE assumes that the DM-RS antenna port associated with PDCCH receptions in the CORESET is quasi co-located with the one or more DL RS configured by the TCI states. For a CORESET with index 0 , the UE expects that a CSI-RS configured with qcl-Type set to 'typeD' in a TCI state indicated by a MAC CE activation command for the CORESET is provided by a SS/PBCH block",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "search space"
+    ],
+    "original_sentence": "- monitors PDCCH candidates in overlapping PDCCH monitoring occasions in multiple CORESETs where none of the CORESETs has TCI-states configured with qcl-Type set to 'typeD', the UE is required to monitor PDCCH candidates in overlapping PDCCH monitoring occasions for search space sets associated with different CORESETs.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "Search space"
+    ],
+    "original_sentence": "\\hline SRS & Sounding reference signal \\\\ \\hline SSS & Secondary synchronization signal \\\\ \\hline SSSG & Search space set group \\\\",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "3.3",
+    "section_title": "Abbreviations",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "referenceSignal",
+      "SS"
+    ],
+    "original_sentence": "- If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using RS resource with index \\( q_{d} \\), where \\( 0 \\leq q_{d}<Q_{d}-Q_{d} \\) is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "tci-StateId",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        67
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "tci-StateID",
+      "search space"
+    ],
+    "original_sentence": "each with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.  For each DL BWP configured to a UE in a serving cell, the UE is provided by higher layers with \\( S \\leq 10 \\) search space sets where, for each search space set from the \\( S \\) search space sets, the UE is provided the following by SearchSpace:",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 20.0,
+      "ie1_score": 0.0,
+      "ie2_score": 20.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "BWP-id",
+      "SS"
+    ],
+    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.2",
+    "section_title": "Resource settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "SS"
+    ],
+    "original_sentence": "- powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE. - scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.2.3.1",
+    "section_title": "NZP CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "SS"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "SS"
+    ],
+    "original_sentence": "- if the UE is configured with the higher layer parameter spatialRelationInfo or spatialRelationInfoPos containing the ID of a reference 'ssb-Index', 'ssb-IndexServing' or 'ssb-IndexNcell', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference SS/PBCH block, if the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'csi-RS-Index' or 'csi-RS-IndexServing', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference periodic CSI-RS or of the reference semi-persistent CSI-RS, or of the latest reference aperiodic CSI-RS. If the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'srs' or 'srs-SpatialRelation', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the transmission of the reference periodic SRS or of the reference semi-persistent SRS or of the reference aperiodic SRS. When the SRS is configured by the higher layer parameter SRS-PosResourceSet and if the higher layer parameter spatialRelationInfoPos contains the ID of a reference 'dl-PRS', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS. - when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        64
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "search space"
+    ],
+    "original_sentence": "\\hline & & 1,2, 3 & No/Ye s & - & Yes & - & pdsch-TimeDomainAllocationList provided in PDSCH-Config-MTCH, if configured, otherwise TimeDomainAllocationList provided in PDSCH-Config-MCCH \\\\ \\hline \\multirow[t]{2}{*}{C-RNTI, MCS-CRNTI, CSRNTI} & & 1, 2, 3 & No & - & - & - & Default A \\\\ \\hline & Any common search space associated with CORESET 0 & 1, 2, 3 & Yes & - & - & - & pdsch-TimeDomainAllocationList provided in PDSCH-ConfigCommon \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        64
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "search space"
+    ],
+    "original_sentence": "elseif the higher layer parameter mcs-Table given by PDSCH-Config-Multicast is set to 'qam64LowSE', and the PDSCH is scheduled by a PDCCH with DCI format \\( 4 \\_1 \\) or \\( 4 \\_2 \\) with CRC scrambled by G-RNTI - the UE shall use \\( I_{M C S} \\) and Table 5.1.3.1-3 to determine the modulation order ( \\( Q_{m} \\) ) and Target code rate ( \\( R \\) ) used in the physical downlink shared channel. elseif the UE is not configured with MCS-C-RNTI, the higher layer parameter mcs-Table given by PDSCH-Config is set to 'qam64LowSE', and the PDSCH is scheduled by a PDCCH with a DCI format other than DCI format \\( 1 \\_2 \\) in a UE-specific search space with CRC scrambled by C-RNTI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.3.1",
+    "section_title": "Modulation order and target code rate determination",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        64
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "search space"
+    ],
+    "original_sentence": "elseif the UE is not configured with MCS-C-RNTI, the higher layer parameter mcs-Table given by PDSCH-Config is set to 'qam64LowSE', and the PDSCH is scheduled by a PDCCH with a DCI format other than DCI format \\( 1 \\_2 \\) in a UE-specific search space with CRC scrambled by C-RNTI",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.3.1",
+    "section_title": "Modulation order and target code rate determination",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "When the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the indicated mapping between TCI states and codepoints of the DCI field Transmission Configuration Indication'should be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {subrame, } \\mu}+ \\frac{2^{\\mu}}{2^{\\mu_{K} a c}} \\cdot k_{\\text {mac }} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH and \\( \\mu_{K_{\\text {mac }}} \\) is the subcarrier spacing configuration for \\( k_{\\text {mac }} \\) with a value of 0 for frequency range 1 , and \\( k_{\\text {mac }} \\) is provided by \\( K \\)-Mac or \\( k_{\\text {mac }}=0 \\) if \\( K \\)-Mac is not provided. If tci-PresentInDCI is set to 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET scheduling the PDSCH, and the time offset between the reception of the DL DCI and the corresponding PDSCH is equal to or greater than timeDurationForQCL if applicable, after a UE receives an initial higher layer configuration of TCI states and before reception of the activation command, the UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the SS/PBCH block determined in the initial access procedure with respect to qcl-Type set to 'typeA', and when applicable, also with respect to qcl-Type set to 'typeD'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "QCL type",
+      "search space"
+    ],
+    "original_sentence": "If a PDSCH is scheduled by a DCI format having the TCI field present, the TCI field in DCI in the scheduling component carrier points to the activated TCI states in the scheduled component carrier or DL BWP, the UE shall use the TCI-State according to the value of the 'Transmission Configuration Indication' field in the detected PDCCH with DCI for determining PDSCH antenna port quasi co-location. The UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the RS(s) in the TCI state with respect to the QCL type parameter(s) given by the indicated TCI state if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal to or greater than a threshold timeDurationForQCL, where the threshold is based on reported UE capability [13, TS 38.306]. For a single slot PDSCH, the indicated TCI state(s) should be based on the activated TCI states in the slot with the scheduled PDSCH. For a multi-slot PDSCH or the UE is configured with higher layer parameter [pdsch-TimeDomainAllocationListForMultiPDSCH-r177, the indicated TCI state(s) should be based on the activated TCI states in the first slot with the scheduled \\( \\operatorname{PDSCH}(s) \\), and UE shall expect the activated TCI states are the same across the slots with the scheduled \\( \\operatorname{PDSCH}(s) \\). When the UE is configured with CORESET associated with a search space set for crosscarrier scheduling and the UE is not configured with enableDefaultBeamForCCS, the UE expects tci-PresentInDCI is set as 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET, and if one or more of the TCI states configured for the serving cell scheduled by the search space set contains qcl-Type set to 'typeD', the UE expects the time offset between the reception of the detected PDCCH in the search space set and a corresponding PDSCH is larger than or equal to the threshold timeDurationForQCL.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "search space"
+    ],
+    "original_sentence": "- the UE may assume that the DM-RS ports of \\( \\operatorname{PDSCH}(s) \\) of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) used for PDCCH quasi co-location indication of the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored by the UE. In this case, if the qcl-Type is set to 'typeD' of the PDSCH DM-RS is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "- For each aperiodic CSI-RS resource in a CSI-RS resource set associated with each CSI triggering state, the UE is indicated the quasi co-location configuration of quasi co-location RS source(s) and quasi co-location type(s), as described in clause 5.1.5, through higher layer signaling of qcl-info which contains a list of references to TCIState's for the aperiodic CSI-RS resources associated with the CSI triggering state. If a State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic or semipersistent located in the same or different CC/DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.1",
+    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot \\( n \\) corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot \\( n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH and \\( \\mu_{K_{\\text {mac }}} \\) is the subcarrier spacing configuration for \\( k_{\\text {mac }} \\) with a value of 0 for frequency range 1 , and \\( k_{\\text {mac }} \\) is provided by \\( K-M a c \\) or \\( k_{\\mathrm{mac}}=0 \\) if \\( K-M a c \\) is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.2",
+    "section_title": "Semi",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "QCL type",
+      "SS"
+    ],
+    "original_sentence": "- qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.2.3.1",
+    "section_title": "NZP CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qclType",
+      "SS"
+    ],
+    "original_sentence": "For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format \\( 0 \\_0 \\) or \\( 0 \\_1 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format \\( 0 \\_2 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "SS"
+    ],
+    "original_sentence": "When the UE is configured DLorJoint-TCIState or UL-TCIState, the UE can assume that SRS resource(s) in any SRS resource set, except SRS resource set for positioning and an SRS resource set configured with followUnifiedTCIstater17, can be configured with DLorJoint-TCIState or UL-TCIState or updated as described in clause [6.1.3.X] of [10, TS 38.321]. The reference RS in the DLorJoint-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter \\( t r s \\)-Info. The reference RS in the UL-TCIState(s) can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource with the higher layer parameter usage set to beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.  If an SRS resource set, except an SRS resource set for positioning, is configured with [followUnifiedTCIstate-r17], the UE shall transmit the target SRS resource(s) within the SRS resource set according to the spatial relation, if applicable, with a reference to the RS used for determining UL TX spatial filter or the RS configured with qcl-Type set to 'typeD' in QCL-Info of the indicated DLorJoint-TCIState or UL-TCIState. The reference RS in the indicated DLorJoint-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference-signal",
+      "SS"
+    ],
+    "original_sentence": "The downlink SS/PBCH SSS EPRE can be derived from the SS/PBCH downlink transmit power given by the parameter ss-PBCH-BlockPower provided by higher layers. The downlink SSS transmit power is defined as the linear average over the power contributions (in \\( [\\mathrm{W}] \\) ) of all resource elements that carry the SSS within the operating system bandwidth.  The downlink CSI-RS EPRE can be derived from the SS/PBCH block downlink transmit power given by the parameter ss-PBCH-BlockPower and CSI-RS power offset given by the parameter powerControlOffsetSS provided by higher layers, where the CSI-RS is QCLed with the SS/PBCH block, and the SS/PBCH block can be associated with serving cell PCI or additional PCI different from serving cell PCI. The downlink reference-signal transmit power is defined as the linear average over the power contributions (in \\( [\\mathrm{W}] \\) ) of the resource elements that carry the configured CSI-RS within the operating system bandwidth.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "4.1",
+    "section_title": "Power allocation for downlink",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "search space"
+    ],
+    "original_sentence": "- if UE is configured with TCI-State configurations with DLorJointTCIState or UL-TCIState, the UE may use a spatial domain transmit filter that is same as the spatial domain receive filter the UE may use to receive the DL reference signal associated with the indicated TCI state.  When the PDCCH reception includes two PDCCH from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the time offset between the reception of the DL DCI and the corresponding PDSCH, the PDCCH candidate that ends later in time is used. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.  For the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format \\( 0 \\_0 \\) or \\( 0 \\_1 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format \\( 0 \\_2 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "Reference Signal",
+      "SS"
+    ],
+    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.  When the UE is configured DLorJoint-TCIState or UL-TCIState, the UE can assume that SRS resource(s) in any SRS resource set, except SRS resource set for positioning and an SRS resource set configured with followUnifiedTCIstater17, can be configured with DLorJoint-TCIState or UL-TCIState or updated as described in clause [6.1.3.X] of [10, TS 38.321]. The reference RS in the DLorJoint-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter \\( t r s \\)-Info. The reference RS in the UL-TCIState(s) can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource with the higher layer parameter usage set to beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "- if the UE is configured with the higher layer parameter spatialRelationInfo or spatialRelationInfoPos containing the ID of a reference 'ssb-Index', 'ssb-IndexServing' or 'ssb-IndexNcell', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference SS/PBCH block, if the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'csi-RS-Index' or 'csi-RS-IndexServing', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference periodic CSI-RS or of the reference semi-persistent CSI-RS, or of the latest reference aperiodic CSI-RS. If the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'srs' or 'srs-SpatialRelation', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the transmission of the reference periodic SRS or of the reference semi-persistent SRS or of the reference aperiodic SRS. When the SRS is configured by the higher layer parameter SRS-PosResourceSet and if the higher layer parameter spatialRelationInfoPos contains the ID of a reference 'dl-PRS', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS. - when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "The UE is not expected to receive a PDSCH with mapping type A in a slot, if the PDCCH scheduling the PDSCH was received in the same slot and was not contained within the first three symbols of the slot. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], if the two PDCCH candidates scheduling the PDSCH with mapping Type A were received in the same slot as the PDSCH, both PDCCH candidates are expected to be contained within the first three symbols of the slot.  The UE is not expected to receive a PDSCH with mapping type B in a slot, if the first symbol of the PDCCH scheduling the PDSCH was received in a later symbol than the first symbol indicated in the PDSCH time domain resource allocation. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the UE is not expected to receive a PDSCH with mapping type B in a slot, if the first symbol of the PDCCH candidate that starts later in time scheduling the PDSCH was received in a later symbol than the first symbol indicated in the PDSCH time domain resource allocation.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "value ' 0 '. When the minimum scheduling offset restriction is applied the UE is not expected to be scheduled with a DCI in slot \\( n \\) to receive a PDSCH scheduled with C-RNTI, CS-RNTI or MCS-C-RNTI with \\( K_{0} \\) smaller than \\( \\left\\lceil K_{0 \\min } \\cdot \\frac{2 \\mu^{\\prime}}{2^{\\mu}}\\right\\rceil \\), where \\( K_{0 \\mathrm{~mm}} \\) and \\( \\mu \\) are the applied minimum scheduling offset restriction and the numerology of the active DL BWP of the scheduled cell when receiving the DCI in slot \\( n \\), respectively, and \\( \\mu^{\\prime} \\) is the numerology of the new active DL BWP in case of active DL BWP change in the scheduled cell and is equal to \\( \\mu \\), otherwise. The minimum scheduling offset restriction is not applied when PDSCH transmission is scheduled with C-RNTI, CS-RNTI or MCS-C-RNTI in common search space associated with CORESET0 and default PDSCH time domain resource allocation is used, in the search space set provided by recoverySearchSpaceld when monitoring PDCCH as described in [6, TS 38.213] or when PDSCH transmission is scheduled with SI-RNTI, MSGB-RNTI or RA-RNTI. The application delay of the change of the minimum scheduling offset restriction is determined in Clause 5.3.1.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\caption{Table 5.1.2.1.1-1: Applicable PDSCH time domain resource allocation for DCI formats 1_0, 1_1, 4_0, 4_1 and 4_2} \\begin{tabular}{|l|l|l|l|l|l|l|l|} \\hline RNTI & PDCCH search space & SS/ PB CH blo ck and CO RE SET mul tipl exi ng & PDSC HConfi gCom mon includ es pdsch Time Doma inAllo & PDSC HConfi g inclu des pdsc \\( h \\) Time Doma inAllo catio nList & PDSC HConfig MCCH /PDSC HConfig MTCH includ es pdsch & PDSC HConfig includ es pdsch TimeD omain Alloca tionLi stFor MultiP & PDSCH time domain resource allocation to apply \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\hline RNTI & PDCCH search space & SS/ PB CH blo ck and CO RE SET mul tipl exi ng & PDSC HConfi gCom mon includ es pdsch Time Doma inAllo & PDSC HConfi g inclu des pdsc \\( h \\) Time Doma inAllo catio nList & PDSC HConfig MCCH /PDSC HConfig MTCH includ es pdsch & PDSC HConfig includ es pdsch TimeD omain Alloca tionLi stFor MultiP & PDSCH time domain resource allocation to apply \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\hline \\multicolumn{6}{|l|}{Note 1: If the PDSCH was scheduled with SI-RNTI in PDCCH Type0 common search space, the UE may assume that this PDSCH resource allocation is not applied} \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "Note 1: The UE may assume that this PDSCH resource allocation is not used, if the PDSCH was scheduled with SI-RNTI in PDCCH Type0 common search space \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PDSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "If a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part.  For a PDSCH scheduled with a DCI format \\( 1 \\_0 \\) in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format \\( 1 \\_0 \\), the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.2",
+    "section_title": "Resource allocation in frequency domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "For a PDSCH scheduled with a DCI format \\( 1 \\_0 \\) in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format \\( 1 \\_0 \\), the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. 5.1.2.2.1 Downlink resource allocation type 0",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.2.1",
+    "section_title": "Downlink resource allocation type 0",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "5.1.2.2.2 Downlink resource allocation type 1  In downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.2.2",
+    "section_title": "Downlink resource allocation type 1",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "In downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.2.2.2",
+    "section_title": "Downlink resource allocation type 1",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "When receiving the PDSCH scheduled with SI-RNTI and the system information indicator in DCI is set to 0 , the UE shall assume that no SS/PBCH block is transmitted in REs used by the UE for a reception of the PDSCH.  When receiving the PDSCH scheduled with SI-RNTI and the system information indicator in DCI is set to 1 , RARNTI, MSGB-RNTI, P-RNTI or TC-RNTI, the UE assumes SS/PBCH block transmission according to ssbPositionsInBurst, and if the PDSCH resource allocation overlaps with PRBs containing SS/PBCH block transmission resources the UE shall assume that the PRBs containing SS/PBCH block transmission resources are not available for PDSCH in the OFDM symbols where SS/PBCH block is transmitted.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.4",
+    "section_title": "PDSCH resource mapping",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "When receiving PDSCH scheduled by PDCCH with CRC scrambled by C-RNTI, MCS-C-RNTI, CS-RNTI, G-RNTI, G-CS-RNTI, MCCH-RNTI or PDSCHs with SPS, the REs corresponding to the configured or dynamically indicated resources in Clauses 5.1.4.1, 5.1.4.2 are not available for PDSCH. Furthermore, the UE assumes SS/PBCH block transmission according to ssb-PositionsInBurst if the PDSCH resource allocation overlaps with PRBs containing SS/PBCH block transmission resources, and the UE shall assume that the PRBs containing SS/PBCH block transmission resources are not available for PDSCH in the OFDM symbols where SS/PBCH block is transmitted.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.4",
+    "section_title": "PDSCH resource mapping",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "A UE shall upon detection of a PDCCH with a configured DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\) with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\), the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\). When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol \\( i \\) of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol \\( i \\), the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- A slot is not counted in the number of \\( N \\cdot K \\) slots for PUSCH transmission of a PUSCH repetition Type A scheduled by DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\) if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- A slot is not counted in the number of \\( N \\cdot K \\) slots for a PUSCH transmission of TB processing over multiple slots if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DLConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- A slot is not counted in the number of \\( N \\cdot K \\) slots for a PUSCH transmission of a PUSCH repetition Type A scheduled by RAR UL grant, if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-Configuration Common if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- For the case of a reduced capability half-duplex UE, and when AvailableSlotCounting is enabled, the UE determines \\( N \\cdot K \\) slots for a PUSCH transmission of a PUSCH repetition type A scheduled by DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\), or for a PUSCH transmission of TB processing over multiple slots scheduled by DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\), based on the TDRA information field value in the DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\). A slot is not counted in the number of \\( N \\cdot K \\) slots if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1",
+    "section_title": "Resource allocation in time domain",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\hline RNTI & PDCCH search space & pusch-ConfigCommon includes puschTimeDomainAllocationList & pusch-Config includes puschTimeDomainAllocationList & PUSCH time domain resource allocation to apply \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PUSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\caption{Table 6.1.2.1.1-1A: Applicable PUSCH time domain resource allocation for DCI format 0_1 in UE specific search space scrambled with C-RNTI, MCS-C-RNTI, CS-RNTI or SP-CSI-RNTI} \\begin{tabular}{|l|l|l|l|l|} \\hline puschConfigCommon includes puschTimeDomainAll ocationList & pusch-Config includes puschTimeDomainAll ocationList & pusch-Config includes puschTimeDomainAlloc ationListDCI-0-1 & pusch-Config includes puschTimeDomainAllocationLi st-ForMultiPUSCH or pusch-Config includes puschTimeDomainAllocationLi stForMultiPUSCH-17 & PUSCH time domain resource allocation to apply \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PUSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "\\caption{Table 6.1.2.1.1-1B: Applicable PUSCH time domain resource allocation for \\( \\mathbf{D C l} \\) format \\( \\mathbf{0} \\) _ 2 in UE specific search space scrambled with C-RNTI, MCS-C-RNTI, CS-RNTI or SP-CSI-RNTI} \\begin{tabular}{|l|l|l|l|} \\hline pusch-ConfigCommon includes puschTimeDomainAllocation L ist & pusch-Config includes puschTimeDomainAllocationL ist & pusch-Config includes puschTimeDomainAllocationListD Cl-0-2 & PUSCH time domain resource allocation to apply \\\\",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.1.1",
+    "section_title": "Determination of the resource allocation table to be used for PUSCH",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "6.1.2.2.2 Uplink resource allocation type 1  In uplink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format \\( 0 \\_0 \\) is decoded in any common search space in which case the size of the initial UL bandwidth part \\( N_{\\mathrm{BWP}, 0}^{\\mathrm{azz}} \\) shall be used.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.2.2",
+    "section_title": "Uplink resource allocation type 1",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "In uplink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format \\( 0 \\_0 \\) is decoded in any common search space in which case the size of the initial UL bandwidth part \\( N_{\\mathrm{BWP}, 0}^{\\mathrm{azz}} \\) shall be used.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.2.2",
+    "section_title": "Uplink resource allocation type 1",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "6.1.2.2.3 Uplink resource allocation type 2  In uplink resource allocation of type 2, the resource block assignment information defined in [5, TS 38.212] indicates to a UE a set of up to \\( M \\) interlace indices, and for DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DCI 0_1 a set of up to \\( N_{\\text {RB-set, UL }}^{\\mathrm{BWP}} \\) contiguous RB sets, where \\( M \\) and interlace indexing are defined in Clause 4.4.4.6 in [4, TS 38.211].",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.2.3",
+    "section_title": "Uplink resource allocation type 2",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "In uplink resource allocation of type 2, the resource block assignment information defined in [5, TS 38.212] indicates to a UE a set of up to \\( M \\) interlace indices, and for DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DCI 0_1 a set of up to \\( N_{\\text {RB-set, UL }}^{\\mathrm{BWP}} \\) contiguous RB sets, where \\( M \\) and interlace indexing are defined in Clause 4.4.4.6 in [4, TS 38.211].",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.2.3",
+    "section_title": "Uplink resource allocation type 2",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "search space"
+    ],
+    "original_sentence": "For DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DC \\( 0 \\_1 \\) for both \\( \\mu=0 \\) and \\( \\mu=1 \\), the \\( Y= \\left\\lceil\\log _{2} \\frac{N_{\\mathrm{RB}-\\mathrm{set}, \\mathrm{UL}}^{\\mathrm{BWP}}\\left(N_{\\mathrm{RB}-\\mathrm{set}, \\mathrm{UL}}^{\\mathrm{BWP}}+1\\right)}{2}\\right\\rceil \\) LSBs of the resource block assignment information indicate to a UE a set of contiguously allocated RB sets for PUSCH scheduled by DCI \\( 0 \\_0 \\) monitored in a UE-specific search space, DCI \\( 0 \\_1 \\) and Type 1 and Type 2 configured grant. The resource allocation field consists of a resource indication value ( \\( R I V_{\\text {RB-set }} \\) ). For \\( 0 \\leq R I V_{\\text {RB-set }}<N_{\\text {RB-set, UL }}^{\\text {BWP }}\\left(N_{\\text {RB-set, UL }}^{\\text {BWP }}+1\\right) / 2, l=0,1, \\cdots L_{\\text {RBset }}-1 \\) the resource indication value corresponds to the starting RB set index \\( N_{\\text {RB-set, UL }}^{\\text {start }} \\) and the number of contiguous RB sets \\( L_{\\text {RB-set }} \\). The resource indication value is defined by;",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.2.3",
+    "section_title": "Uplink resource allocation type 2",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- A slot is not counted in the number of \\( N \\cdot K \\) slots if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by \\( t d d-U L-D L- \\) ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.3.1",
+    "section_title": "Transport Block repetition for uplink transmissions of PUSCH repetition Type A with a configured grant",
+    "section_relevance": {
+      "combined_score": 72.0,
+      "ie1_score": 40.0,
+      "ie2_score": 20.0,
+      "match_type": "BOTH",
+      "matched_variants": {
+        "ie1": [
+          "Config",
+          "config"
+        ],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        72
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "SS"
+    ],
+    "original_sentence": "- If AvailableSlotCounting is enabled, and in case of reduced capability half-duplex UE, the UE shall repeat the TB across the \\( N \\cdot K \\) slots applying the same symbol allocation in each slot. A slot is not counted in the number of \\( N \\cdot K \\) slots if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.2.3.1",
+    "section_title": "Transport Block repetition for uplink transmissions of PUSCH repetition Type A with a configured grant",
+    "section_relevance": {
+      "combined_score": 72.0,
+      "ie1_score": 40.0,
+      "ie2_score": 20.0,
+      "match_type": "BOTH",
+      "matched_variants": {
+        "ie1": [
+          "Config",
+          "config"
+        ],
+        "ie2": [
+          "ss",
+          "SS"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        75
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "bundle size",
+      "search space"
+    ],
+    "original_sentence": "- for PDSCH transmissions scheduled with DCI format \\( 1 \\_0 \\) in any common search space in bandwidth part \\( i \\) with starting position \\( N_{\\text {BWP, } i}^{\\text {statt }} \\), other than Type0-PDCCH common search space in CORESET 0, the set of \\( N_{\\text {BWP, init }}^{\\text {size }} \\) virtual resource blocks \\( \\left\\{0,1, \\ldots, N_{\\text {BWP, init }}^{\\text {size }}-1\\right\\} \\), where \\( N_{\\text {BWP, init }}^{\\text {size }} \\) is the size of CORESET 0 if CORESET 0 is configured for the cell and the size of initial downlink bandwidth part if CORESET 0 is not configured for the cell, are divided into \\( N_{\\text {bundle }} \\) virtual resource-block bundles in increasing order of the virtual resource-block number and virtual bundle number and the set of \\( N_{\\text {BWP, nit }}^{\\text {size }} \\) physical resource blocks \\( \\left\\{N_{\\text {start }}^{\\text {CORESET }}, N_{\\text {start }}^{\\text {CORESET }}+1, \\ldots, N_{\\text {start }}^{\\text {CORESET }}+N_{\\text {BWP, init }}^{\\text {size }}-1\\right\\} \\) are divided into \\( N_{\\text {bundle }} \\) physical resource-block bundles in increasing order of the physical resource-block number and physical bundle number, where \\( N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\text {BWP, init }}^{\\text {size }}+\\left(N_{\\text {BWP, }, i}^{\\text {start }}+N_{\\text {start }}^{\\text {CORESET }}\\right) \\bmod L\\right) / L\\right\\rceil, L=2 \\) is the bundle size, and \\( N_{\\text {start }}^{\\text {CORESET }} \\) is the lowest-numbered physical resource block in the control resource set where the corresponding DCI was received. When two PDCCH candidates from two linked search space sets as indicated by the higher-layer parameter searchSpaceLinking are detected, and the two linked search space sets are associated with different control resource sets, the control resource set with the lowest number among the two linked control resource sets is used to determine \\( N_{\\text {start }}^{\\text {CORESET }} \\).",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "section_number": "7.3.1.6",
+    "section_title": "Mapping from virtual to physical resource blocks",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bundleSize",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        75
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "bundle size",
+      "search space"
+    ],
+    "original_sentence": "- for all other PDSCH transmissions, the set of \\( N_{\\mathrm{BWP}, i}^{\\text {size }} \\) resource blocks in bandwidth part \\( i \\) with starting position \\( N_{\\mathrm{BWP}, i}^{\\text {start }} \\) are divided into \\( N_{\\text {bundle }}=\\left\\lceil\\left(N_{\\mathrm{BWP}, i}^{\\text {size }}+\\left(N_{\\mathrm{BWP}, i}^{\\text {start }} \\bmod L_{i}\\right)\\right) / L_{i}\\right\\rceil \\) resource-block bundles in increasing order of the resource-block number and bundle number where \\( L_{i} \\) is the bundle size for bandwidth part \\( i \\) provided by the higher-layer parameter vrb-ToPRB-Interleaver for DCI formats \\( 1 \\_0,1 \\_1 \\), and \\( 1 \\_3 \\) in a UE-specific search space, or vrb-ToPRB-InterleaverDCI-1-2 for DCI format 1_2, and",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "section_number": "7.3.1.6",
+    "section_title": "Mapping from virtual to physical resource blocks",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "QCL Type",
+      "SS"
+    ],
+    "original_sentence": "In absence of CSI-RS configuration, and unless otherwise configured, the UE may assume PDSCH DM-RS and SS/PBCH block to be quasi co-located with respect to Doppler shift, Doppler spread, average delay, delay spread, and, when applicable, spatial Rx parameters. Unless specified otherwise, the UE may assume that the PDSCH DM-RS within the same CDM group are quasi co-located with respect to Doppler shift, Doppler spread, average delay, delay spread, and spatial Rx (when applicable). The UE may assume that DMRS ports associated with a TCI state as described in clause 5.1.6.2 of [6, TS 38.214] of a PDSCH are QCL with QCL Type A, Type D (when applicable) and average gain.",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "section_number": "7.4.1.1.2",
+    "section_title": "Mapping to physical resources",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference-signal",
+      "SS"
+    ],
+    "original_sentence": "The UE shall assume the reference-signal sequence \\( r(m) \\) for an SS/PBCH block is defined by",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "section_number": "7.4.1.4.1",
+    "section_title": "Sequence generation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "64_75_initialDownlinkBWP_pdsch-Config",
+      "88_218_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "reference-signal",
+      "SS"
+    ],
+    "original_sentence": "The reference-signal sequence \\( r(m) \\) for an S-SS/PSBCH block is defined by",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "section_number": "8.4.1.4.1",
+    "section_title": "Sequence generation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  }
+]

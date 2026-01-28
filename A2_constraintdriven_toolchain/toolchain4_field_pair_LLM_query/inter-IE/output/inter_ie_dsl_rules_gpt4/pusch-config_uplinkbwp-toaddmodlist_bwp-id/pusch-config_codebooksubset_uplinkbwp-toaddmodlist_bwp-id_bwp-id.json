@@ -1,0 +1,101 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      359,
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "field2_all": [
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "actual_pairs": [
+      [
+        [
+          438,
+          546,
+          654
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear semantic constraint between the 'codebooksubset' field from 'pusch-config' and the 'bwp-id' field from 'uplinkbwp-toaddmodlist_bwp-id'. The evidence describes the association of a CSI-ReportConfig with a downlink BWP and mentions the 'codebooksubset' as part of the parameters for one CSI reporting band, but it does not explicitly relate these two fields or provide a normative constraint between them.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pusch-config",
+    "field1": "codebooksubset",
+    "ie2_name": "uplinkbwp-toaddmodlist_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
+    "generated_at": "2025-12-11T09:54:50.165526",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear semantic constraint between the 'codebooksubset' field from 'pusch-config' and the 'bwp-id' field from 'uplinkbwp-toaddmodlist_bwp-id'. The evidence describes the association of a CSI-ReportConfig with a downlink BWP and mentions the 'codebooksubset' as part of the parameters for one CSI reporting band, but it does not explicitly relate these two fields or provide a normative constraint between them.",
+      "version_tags": []
+    }
+  }
+}

@@ -1,0 +1,15 @@
+SIB18-r17 ::=               SEQUENCE {
+    gin-ElementList-r17         SEQUENCE (SIZE (1..maxGIN-r17)) OF GIN-Element-r17            OPTIONAL,   -- Need R
+    gins-PerSNPN-List-r17       SEQUENCE (SIZE (1..maxNPN-r16)) OF GINs-PerSNPN-r17           OPTIONAL,   -- Need S
+    lateNonCriticalExtension    OCTET STRING                                                  OPTIONAL,
+    ...
+}
+
+GIN-Element-r17 ::=         SEQUENCE {
+    plmn-Identity-r17           PLMN-Identity,
+    nid-List-r17                SEQUENCE (SIZE (1..maxGIN-r17)) OF NID-r16
+}
+
+GINs-PerSNPN-r17 ::=        SEQUENCE {
+    supportedGINs-r17           BIT STRING (SIZE (1..maxGIN-r17))                             OPTIONAL   -- Need R
+}

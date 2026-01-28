@@ -1,0 +1,69 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      177,
+      178
+    ],
+    "field2_all": [
+      181
+    ],
+    "actual_pairs": [
+      [
+        [
+          177,
+          178
+        ],
+        [
+          181
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between the fields cce-REG-MappingType and searchSpaceId within the same IE. The evidence discusses conditions related to PDCCH candidates and CORESETs but does not link the two fields in a normative manner.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "cce-REG-MappingType",
+    "field2": "searchSpaceId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.3",
+      "9.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the UE provides HARQ-ACK information in a PUCCH transmission in response to detecting a DCI format scheduling a PDSCH reception or having associated HARQ-ACK information without scheduling a PDSCH reception, the UE determines a PUCCH resource with index r_{\\text {PUCCH }}, 0 <= r_{\\text {PUCCH }} <= 15 , as r_{\\text {PUCCH }}=\\left\\lfloor\\frac{2 \\cdot n_{\\text {CCE }, 0}}{N_{\\text {CCE }}}\\right\\rfloor+2 \\cdot \\Delta_{\\text {PRI }} , where N_{\\text {CCE }} is a number of CCEs in a CORESET of a PDCCH reception with the DCI format, as described in clause 10.1, n_{\\text {CCE }, 0} is the index of a first CCE for the PDCCH reception, and \\Delta_{\\text {PRI }} is a value of the PUCCH resource indicator field in the DCI format. When the PDCCH reception by a UE includes first and second PDCCH candidates from respective first and second search space sets, as described in clause 10.1 , the CORESET and n_{\\text {CCE }, 0} are associated with the search space set having the smaller index. If - the first search space set has larger index than the second search space set and includes the first PDCCH candidate and a third PDCCH candidate that have same first CCE index and CCE aggregation levels 8 and 16, or 16 and 8, respectively, - the second search space set includes the second PDCCH candidate that has same index and same CCE aggregation level as the first PDCCH candidate, and a fourth PDCCH candidate that has same index and same CCE aggregation level as the third PDCCH candidate, - the CORESET associated with the first search space set has cce-REG-MappingType = 'nonInterleaved' and has duration of one symbol, and - the second PDCCH candidate has different first CCE index than the fourth PDCCH candidate the UE determines n_{\\text {CCE }, 0} from the PDCCH candidate with CCE aggregation level 16 among the second PDCCH candidate and the fourth PDCCH candidate.\n---\n\\end{array}\\right\\} \\] where N_{\\text {CCE } p} is a number of CCEs in CORESET p of the PDCCH reception for the DCI format as described in clause 10.1, n_{\\text {CCE }, p} is the index of a first CCE for the PDCCH reception, and \\Delta_{\\text {PRI }} is a value of the PUCCH resource indicator field in the DCI format. When the PDCCH reception includes first and second PDCCH candidates from respective first and second search space sets, as described in clause 10.1, the CORESET is associated with the search space set having the smaller index. If - the first search space set has larger index than the second search space set and includes the first PDCCH candidate and a third PDCCH candidate that have same first CCE index and CCE aggregation levels 8 and 16, or 16 and 8, respectively, - the second search space set includes the second PDCCH candidate that has same index and same CCE aggregation level as the first PDCCH candidate, and a fourth PDCCH candidate that has same index and same CCE aggregation level as the third PDCCH candidate, - the CORESET associated with the first search space set has cce-REG-MappingType = 'nonInterleaved' and has duration of one symbol, and - the second PDCCH candidate has different first CCE index than the fourth PDCCH candidate the UE determines n_{\\text {CCE }, 0} from the PDCCH candidate with CCE aggregation level 16 among the second PDCCH candidate and the fourth PDCCH candidate.",
+    "generated_at": "2026-01-07T19:38:53.755308",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between the fields cce-REG-MappingType and searchSpaceId within the same IE. The evidence discusses conditions related to PDCCH candidates and CORESETs but does not link the two fields in a normative manner.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

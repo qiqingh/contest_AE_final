@@ -1,0 +1,11 @@
+PDCCH-ServingCellConfig ::=         SEQUENCE {
+    slotFormatIndicator                 SetupRelease { SlotFormatIndicator }                                OPTIONAL,   -- Need M
+    ...,
+    [[
+    availabilityIndicator-r16           SetupRelease {AvailabilityIndicator-r16}                            OPTIONAL,   -- Need M
+    searchSpaceSwitchTimer-r16          INTEGER (1..80)                                                     OPTIONAL    -- Need R
+    ]],
+    [[
+    searchSpaceSwitchTimer-v1710        INTEGER (81..1280)                                                  OPTIONAL    -- Need R
+    ]]
+}

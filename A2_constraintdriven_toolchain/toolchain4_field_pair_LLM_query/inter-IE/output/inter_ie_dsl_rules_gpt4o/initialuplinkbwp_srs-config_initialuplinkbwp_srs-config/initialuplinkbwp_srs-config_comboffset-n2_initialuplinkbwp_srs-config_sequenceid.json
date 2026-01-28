@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      344
+    ],
+    "field2_all": [
+      356
+    ],
+    "actual_pairs": [
+      [
+        [
+          344
+        ],
+        [
+          356
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_srs-config",
+    "field1": "comboffset-n2",
+    "ie2_name": "initialuplinkbwp_srs-config",
+    "field2": "sequenceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- Transmission comb offset, as defined by the higher layer parameter combOffset-n2, combOffset-n4, and combOffset-n8 for transmission comb value 2, 4, or 8, and described in clause 6.4.1.4 of [4, TS 38.211]. - SRS sequence ID, as defined by the higher layer parameter sequenceld in clause 6.4.1.4 of [4, TS 38.211].",
+    "generated_at": "2026-01-10T14:54:43.656702",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between comboffset-n2 and sequenceid across different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

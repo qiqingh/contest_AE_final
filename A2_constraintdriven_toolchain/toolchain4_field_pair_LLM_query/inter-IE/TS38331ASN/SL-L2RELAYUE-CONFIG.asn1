@@ -1,0 +1,11 @@
+SL-L2RelayUE-Config-r17 ::=        SEQUENCE {
+    sl-RemoteUE-ToAddModList-r17       SEQUENCE (SIZE (1..maxNrofRemoteUE-r17)) OF SL-RemoteUE-ToAddMod-r17    OPTIONAL,    -- Need N
+    sl-RemoteUE-ToReleaseList-r17      SEQUENCE (SIZE (1..maxNrofRemoteUE-r17)) OF SL-DestinationIdentity-r16  OPTIONAL,    -- Need N
+    ...
+}
+
+SL-RemoteUE-ToAddMod-r17 ::=       SEQUENCE {
+    sl-L2IdentityRemote-r17            SL-DestinationIdentity-r16,
+    sl-SRAP-ConfigRelay-r17           SL-SRAP-Config-r17                                                    OPTIONAL,    -- Need M
+    ...
+}

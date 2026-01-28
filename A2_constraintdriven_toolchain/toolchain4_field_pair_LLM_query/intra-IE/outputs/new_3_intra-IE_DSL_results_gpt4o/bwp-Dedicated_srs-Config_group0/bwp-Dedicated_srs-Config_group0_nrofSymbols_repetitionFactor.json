@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "IMPLIES(r17 enabled, MOD(field1, field2) == 0)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      453
+    ],
+    "field2_all": [
+      454
+    ],
+    "actual_pairs": [
+      [
+        [
+          453
+        ],
+        [
+          454
+        ]
+      ]
+    ]
+  },
+  "predicate": "Only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured.",
+  "preconditions": [
+    "r17 enabled"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=6, field2=3",
+      "field1=4, field2=2"
+    ],
+    "invalid": [
+      "field1=5, field2=3",
+      "field1=7, field2=2"
+    ]
+  },
+  "notes": "The constraint applies only when r17 is enabled, ensuring nrofSymbols is a multiple of repetitionFactor.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "nrofSymbols",
+    "field2": "repetitionFactor",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} resourceMapping OFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T21:55:32.161916",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(r17 enabled, MOD(field1, field2) == 0)",
+      "preconditions": [
+        "r17 enabled"
+      ],
+      "predicate": "Only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=6, field2=3",
+          "field1=4, field2=2"
+        ],
+        "invalid": [
+          "field1=5, field2=3",
+          "field1=7, field2=2"
+        ]
+      },
+      "notes": "The constraint applies only when r17 is enabled, ensuring nrofSymbols is a multiple of repetitionFactor.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

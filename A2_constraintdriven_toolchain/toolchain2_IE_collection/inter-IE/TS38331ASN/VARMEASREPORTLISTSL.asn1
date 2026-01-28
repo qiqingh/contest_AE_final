@@ -1,0 +1,8 @@
+VarMeasReportListSL-r16 ::=               SEQUENCE (SIZE (1..maxNrofSL-MeasId-r16)) OF VarMeasReportSL-r16
+
+VarMeasReportSL-r16 ::=                   SEQUENCE {
+    -- List of NR sidelink measurement that have been triggered
+    sl-MeasId-r16                             SL-MeasId-r16,
+    sl-FrequencyTriggeredList-r16             SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF ARFCN-ValueNR              OPTIONAL,
+    sl-NumberOfReportsSent-r16                INTEGER
+}

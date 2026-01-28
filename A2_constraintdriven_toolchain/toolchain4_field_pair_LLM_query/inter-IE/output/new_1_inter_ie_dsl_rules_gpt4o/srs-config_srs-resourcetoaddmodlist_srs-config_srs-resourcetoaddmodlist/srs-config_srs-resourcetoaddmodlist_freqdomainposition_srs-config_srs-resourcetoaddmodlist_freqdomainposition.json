@@ -1,0 +1,129 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      349,
+      455,
+      563,
+      671
+    ],
+    "field2_all": [
+      455,
+      563,
+      671
+    ],
+    "actual_pairs": [
+      [
+        [
+          349
+        ],
+        [
+          563,
+          671
+        ]
+      ],
+      [
+        [
+          455,
+          563
+        ],
+        [
+          563,
+          671
+        ]
+      ],
+      [
+        [
+          455,
+          671
+        ],
+        [
+          563,
+          671
+        ]
+      ],
+      [
+        [
+          349
+        ],
+        [
+          455,
+          563
+        ]
+      ],
+      [
+        [
+          349
+        ],
+        [
+          455,
+          671
+        ]
+      ],
+      [
+        [
+          455,
+          563
+        ],
+        [
+          455,
+          671
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior for freqdomainposition without inter-IE relation.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "srs-config_srs-resourcetoaddmodlist",
+    "field1": "freqdomainposition",
+    "ie2_name": "srs-config_srs-resourcetoaddmodlist",
+    "field2": "freqdomainposition",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1",
+      "6.4.1.4.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "for all \\( N_{\\text {symb }}^{\\text {SRS }} \\) OFDM symbols of the SRS resource. The quantity \\( n_{R R C} \\) is given by the higher-layer parameter freq DomainPosition if configured, otherwise \\( n_{\\mathrm{RRC}}=0 \\), and the values of \\( m_{\\mathrm{SRS}, b} \\) and \\( N_{\\mathrm{b}} \\) for \\( b=B_{\\mathrm{SRS}} \\) are given by the selected row of Table 6.4.1.4.3-1 corresponding to the configured value of \\( C_{\\text {SRS }} \\).\n---\n- Defining frequency domain position and configurable shift, as defined by the higher layer parameters freqDomainPosition and freqDomainShift, respectively, and described in clause 6.4.1.4 of [4, TS 38.211]. If freqDomainPosition is not configured, freqDomainPosition is zero.",
+    "generated_at": "2026-01-09T12:43:17.825241",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between freqdomainposition fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior for freqdomainposition without inter-IE relation.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

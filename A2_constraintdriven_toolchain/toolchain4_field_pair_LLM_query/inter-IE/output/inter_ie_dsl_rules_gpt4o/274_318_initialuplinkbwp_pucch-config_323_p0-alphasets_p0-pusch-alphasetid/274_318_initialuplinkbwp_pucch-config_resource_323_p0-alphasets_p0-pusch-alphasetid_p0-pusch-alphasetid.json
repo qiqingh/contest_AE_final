@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      297
+    ],
+    "field2_all": [
+      323
+    ],
+    "actual_pairs": [
+      [
+        [
+          297
+        ],
+        [
+          323
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields 'resource' from '274_318_initialuplinkbwp_pucch-config' and 'p0-pusch-alphasetid' from '323_p0-alphasets_p0-pusch-alphasetid'. The evidence primarily discusses behavior within a single IE context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "274_318_initialuplinkbwp_pucch-config",
+    "field1": "resource",
+    "ie2_name": "323_p0-alphasets_p0-pusch-alphasetid",
+    "field2": "p0-pusch-alphasetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively. - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for",
+    "generated_at": "2026-01-10T14:46:23.117125",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields 'resource' from '274_318_initialuplinkbwp_pucch-config' and 'p0-pusch-alphasetid' from '323_p0-alphasets_p0-pusch-alphasetid'. The evidence primarily discusses behavior within a single IE context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

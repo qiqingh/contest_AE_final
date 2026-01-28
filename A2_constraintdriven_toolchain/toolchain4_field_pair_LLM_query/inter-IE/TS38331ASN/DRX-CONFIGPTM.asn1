@@ -1,0 +1,44 @@
+DRX-ConfigPTM-r17 ::=             SEQUENCE {
+    drx-onDurationTimerPTM-r17        CHOICE {
+        subMilliSeconds                   INTEGER (1..31),
+        milliSeconds                      ENUMERATED {
+            ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60,
+            ms80, ms100, ms200, ms300, ms400, ms500, ms600, ms800, ms1000, ms1200,
+            ms1600, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1
+        }
+    },
+    drx-InactivityTimerPTM-r17        ENUMERATED {
+            ms0, ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60, ms80,
+            ms100, ms200, ms300, ms500, ms750, ms1280, ms1920, ms2560, spare9, spare8,
+            spare7, spare6, spare5, spare4, spare3, spare2, spare1
+    },
+    drx-HARQ-RTT-TimerDL-PTM-r17      INTEGER (0..56)                      OPTIONAL,  -- Cond HARQFeedback
+    drx-RetransmissionTimerDL-PTM-r17 ENUMERATED {
+            sl0, sl1, sl2, sl4, sl6, sl8, sl16, sl24, sl33, sl40, sl64, sl80, sl96, sl112, sl128,
+            sl160, sl320, spare15, spare14, spare13, spare12, spare11, spare10, spare9,
+            spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1
+    }                                                                      OPTIONAL,   -- Cond HARQFeedback
+    drx-LongCycleStartOffsetPTM-r17   CHOICE {
+        ms10                              INTEGER(0..9),
+        ms20                              INTEGER(0..19),
+        ms32                              INTEGER(0..31),
+        ms40                              INTEGER(0..39),
+        ms60                              INTEGER(0..59),
+        ms64                              INTEGER(0..63),
+        ms70                              INTEGER(0..69),
+        ms80                              INTEGER(0..79),
+        ms128                             INTEGER(0..127),
+        ms160                             INTEGER(0..159),
+        ms256                             INTEGER(0..255),
+        ms320                             INTEGER(0..319),
+        ms512                             INTEGER(0..511),
+        ms640                             INTEGER(0..639),
+        ms1024                            INTEGER(0..1023),
+        ms1280                            INTEGER(0..1279),
+        ms2048                            INTEGER(0..2047),
+        ms2560                            INTEGER(0..2559),
+        ms5120                            INTEGER(0..5119),
+        ms10240                           INTEGER(0..10239)
+    },
+    drx-SlotOffsetPTM-r17                 INTEGER (0..31)
+}

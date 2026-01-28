@@ -1,0 +1,72 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      111,
+      176
+    ],
+    "field2_all": [
+      683
+    ],
+    "actual_pairs": [
+      [
+        [
+          111,
+          176
+        ],
+        [
+          683
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields 'duration' from '108_180_pdcch-config_controlresourcesettoaddmodlist' and 'firstactiveuplinkbwp-id' from '683_firstactiveuplinkbwp-id'. The evidence describes behavior related to BWP inactivity and active BWP changes but does not relate the specific fields across the IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "108_180_pdcch-config_controlresourcesettoaddmodlist",
+    "field1": "duration",
+    "ie2_name": "683_firstactiveuplinkbwp-id",
+    "field2": "firstactiveuplinkbwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "11.4"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "When a UE's BWP inactivity timer for a cell within FR1 (or FR2) expires within a time duration where the UE is not required to receive or transmit for an active UL/DL BWP change in the cell or in a different cell within FR1 (or FR2), the UE delays the active UL/DL BWP change triggered by the BWP inactivity timer expiration until a subframe for FR1 or half a subframe for FR2 that is immediately after the UE completes the active UL/DL BWP change in the cell or in the different cell within FR1 (or FR2).  If a UE is provided by firstActiveDownlinkBWP-Id a first active DL BWP and by firstActiveUplinkBWP-Id a first active UL BWP on a carrier of a secondary cell, the UE uses the indicated DL BWP and the indicated UL BWP as the respective first active DL BWP on the secondary cell and first active UL BWP on the carrier of the secondary cell.",
+    "generated_at": "2026-01-10T14:22:00.733470",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields 'duration' from '108_180_pdcch-config_controlresourcesettoaddmodlist' and 'firstactiveuplinkbwp-id' from '683_firstactiveuplinkbwp-id'. The evidence describes behavior related to BWP inactivity and active BWP changes but does not relate the specific fields across the IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+IMS-Parameters ::=         SEQUENCE {
+    ims-ParametersCommon       IMS-ParametersCommon                  OPTIONAL,
+    ims-ParametersFRX-Diff     IMS-ParametersFRX-Diff                OPTIONAL,
+    ...
+}
+
+IMS-Parameters-v1700 ::=   SEQUENCE {
+    ims-ParametersFR2-2-r17    IMS-ParametersFR2-2-r17               OPTIONAL
+}
+
+IMS-ParametersCommon ::=   SEQUENCE {
+    voiceOverEUTRA-5GC                  ENUMERATED {supported}                OPTIONAL,
+    ...,
+    [[
+    voiceOverSCG-BearerEUTRA-5GC        ENUMERATED {supported}                OPTIONAL
+    ]],
+    [[
+    voiceFallbackIndicationEPS-r16       ENUMERATED {supported}                   OPTIONAL
+    ]]
+}
+
+IMS-ParametersFRX-Diff ::= SEQUENCE {
+    voiceOverNR                ENUMERATED {supported}                OPTIONAL,
+    ...
+}
+
+IMS-ParametersFR2-2-r17 ::= SEQUENCE {
+    voiceOverNR-r17             ENUMERATED {supported}               OPTIONAL,
+    ...
+}

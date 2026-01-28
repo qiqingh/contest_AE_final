@@ -1,0 +1,38 @@
+UEPositioningAssistanceInfo-r17 ::= SEQUENCE {
+    criticalExtensions                  CHOICE {
+        uePositioningAssistanceInfo-r17     UEPositioningAssistanceInfo-r17-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UEPositioningAssistanceInfo-r17-IEs ::= SEQUENCE {
+    ue-TxTEG-AssociationList-r17            UE-TxTEG-AssociationList-r17          OPTIONAL,
+    lateNonCriticalExtension                OCTET STRING                          OPTIONAL,
+    nonCriticalExtension                    UEPositioningAssistanceInfo-v1720-IEs OPTIONAL
+}
+
+UEPositioningAssistanceInfo-v1720-IEs::=    SEQUENCE {
+    ue-TxTEG-TimingErrorMarginValue-r17         ENUMERATED {tc0, tc2, tc4, tc6, tc8, tc12, tc16, tc20, tc24, tc32, tc40, tc48, tc56,
+                                                            tc64, tc72, tc80}                                      OPTIONAL,
+    nonCriticalExtension                        SEQUENCE {}                                                        OPTIONAL
+}
+
+UE-TxTEG-AssociationList-r17 ::= SEQUENCE (SIZE (1..maxNrOfTxTEGReport-r17)) OF UE-TxTEG-Association-r17
+
+UE-TxTEG-Association-r17 ::=        SEQUENCE {
+    ue-TxTEG-ID-r17                     INTEGER (0..maxNrOfTxTEG-ID-1-r17),
+    nr-TimeStamp-r17                    NR-TimeStamp-r17,
+    associatedSRS-PosResourceIdList-r17 SEQUENCE (SIZE(1..maxNrofSRS-PosResources-r16)) OF SRS-PosResourceId-r16,
+    servCellId-r17                      ServCellIndex                            OPTIONAL
+}
+
+NR-TimeStamp-r17 ::= SEQUENCE {
+    nr-SFN-r17           INTEGER (0..1023),
+    nr-Slot-r17          CHOICE {
+        scs15-r17            INTEGER (0..9),
+        scs30-r17            INTEGER (0..19),
+        scs60-r17            INTEGER (0..39),
+        scs120-r17           INTEGER (0..79)
+    },
+    ...
+}

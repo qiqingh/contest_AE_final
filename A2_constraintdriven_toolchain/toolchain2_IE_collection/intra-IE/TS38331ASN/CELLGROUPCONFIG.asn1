@@ -1,0 +1,160 @@
+-- Configuration of one Cell-Group:
+CellGroupConfig ::=                        SEQUENCE {
+    cellGroupId                                CellGroupId,
+    rlc-BearerToAddModList                     SEQUENCE (SIZE(1..maxLC-ID)) OF RLC-BearerConfig                        OPTIONAL,   -- Need N
+    rlc-BearerToReleaseList                    SEQUENCE (SIZE(1..maxLC-ID)) OF LogicalChannelIdentity                  OPTIONAL,   -- Need N
+    mac-CellGroupConfig                        MAC-CellGroupConfig                                                     OPTIONAL,   -- Need M
+    physicalCellGroupConfig                    PhysicalCellGroupConfig                                                 OPTIONAL,   -- Need M
+    spCellConfig                               SpCellConfig                                                            OPTIONAL,   -- Need M
+    sCellToAddModList                          SEQUENCE (SIZE (1..maxNrofSCells)) OF SCellConfig                       OPTIONAL,   -- Need N
+    sCellToReleaseList                         SEQUENCE (SIZE (1..maxNrofSCells)) OF SCellIndex                        OPTIONAL,   -- Need N
+    ...,
+    [[
+    reportUplinkTxDirectCurrent                ENUMERATED {true}                                                   OPTIONAL    -- Cond BWP-Reconfig
+    ]],
+    [[
+    bap-Address-r16                            BIT STRING (SIZE (10))                                                  OPTIONAL,   -- Need M
+    bh-RLC-ChannelToAddModList-r16             SEQUENCE (SIZE(1..maxBH-RLC-ChannelID-r16)) OF BH-RLC-ChannelConfig-r16 OPTIONAL,   -- Need N
+    bh-RLC-ChannelToReleaseList-r16            SEQUENCE (SIZE(1..maxBH-RLC-ChannelID-r16)) OF BH-RLC-ChannelID-r16     OPTIONAL,   -- Need N
+    f1c-TransferPath-r16                       ENUMERATED {lte, nr, both}                                              OPTIONAL,   -- Need M
+    simultaneousTCI-UpdateList1-r16            SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousTCI-UpdateList2-r16            SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousSpatial-UpdatedList1-r16       SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousSpatial-UpdatedList2-r16       SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    uplinkTxSwitchingOption-r16                ENUMERATED {switchedUL, dualUL}                                         OPTIONAL,   -- Need R
+    uplinkTxSwitchingPowerBoosting-r16         ENUMERATED {enabled}                                                    OPTIONAL    -- Need R
+    ]],
+    [[
+    reportUplinkTxDirectCurrentTwoCarrier-r16  ENUMERATED {true}                                                       OPTIONAL    -- Need N
+    ]],
+    [[
+    f1c-TransferPathNRDC-r17                   ENUMERATED {mcg, scg, both}                                             OPTIONAL,   -- Need M
+    uplinkTxSwitching-2T-Mode-r17              ENUMERATED {enabled}                                                    OPTIONAL,   -- Cond 2Tx
+    uplinkTxSwitching-DualUL-TxState-r17       ENUMERATED {oneT, twoT}                                                 OPTIONAL,   -- Cond 2Tx
+    uu-RelayRLC-ChannelToAddModList-r17        SEQUENCE (SIZE(1..maxUu-RelayRLC-ChannelID-r17)) OF Uu-RelayRLC-ChannelConfig-r17
+                                                                                                                       OPTIONAL,   -- Need N
+    uu-RelayRLC-ChannelToReleaseList-r17       SEQUENCE (SIZE(1..maxUu-RelayRLC-ChannelID-r17)) OF Uu-RelayRLC-ChannelID-r17
+                                                                                                                       OPTIONAL,   -- Need N
+    simultaneousU-TCI-UpdateList1-r17          SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousU-TCI-UpdateList2-r17          SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousU-TCI-UpdateList3-r17          SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    simultaneousU-TCI-UpdateList4-r17          SEQUENCE (SIZE (1..maxNrofServingCellsTCI-r16)) OF ServCellIndex        OPTIONAL,   -- Need R
+    rlc-BearerToReleaseListExt-r17             SEQUENCE (SIZE(1..maxLC-ID)) OF LogicalChannelIdentityExt-r17           OPTIONAL,   -- Need N
+    iab-ResourceConfigToAddModList-r17  SEQUENCE (SIZE(1..maxNrofIABResourceConfig-r17)) OF IAB-ResourceConfig-r17   OPTIONAL, -- Need N
+    iab-ResourceConfigToReleaseList-r17 SEQUENCE (SIZE(1..maxNrofIABResourceConfig-r17)) OF IAB-ResourceConfigID-r17 OPTIONAL  -- Need N
+    ]],
+    [[
+    reportUplinkTxDirectCurrentMoreCarrier-r17 ReportUplinkTxDirectCurrentMoreCarrier-r17                            OPTIONAL  -- Need N
+    ]]
+}
+
+-- Serving cell specific MAC and PHY parameters for a SpCell:
+SpCellConfig ::=                        SEQUENCE {
+    servCellIndex                       ServCellIndex                                               OPTIONAL,   -- Cond SCG
+    reconfigurationWithSync             ReconfigurationWithSync                                     OPTIONAL,   -- Cond ReconfWithSync
+    rlf-TimersAndConstants              SetupRelease { RLF-TimersAndConstants }                     OPTIONAL,   -- Need M
+    rlmInSyncOutOfSyncThreshold         ENUMERATED {n1}                                             OPTIONAL,   -- Need S
+    spCellConfigDedicated               ServingCellConfig                                           OPTIONAL,   -- Need M
+    ...,
+    [[
+    lowMobilityEvaluationConnected-r17  SEQUENCE {
+        s-SearchDeltaP-Connected-r17        ENUMERATED {dB3, dB6, dB9, dB12, dB15, spare3, spare2, spare1},
+        t-SearchDeltaP-Connected-r17        ENUMERATED {s5, s10, s20, s30, s60, s120, s180, s240, s300, spare7, spare6, spare5,
+                                                        spare4, spare3, spare2, spare1}
+    }                                                                                               OPTIONAL,   -- Need R
+    goodServingCellEvaluationRLM-r17    GoodServingCellEvaluation-r17                               OPTIONAL,   -- Need R
+    goodServingCellEvaluationBFD-r17    GoodServingCellEvaluation-r17                               OPTIONAL,   -- Need R
+    deactivatedSCG-Config-r17           SetupRelease { DeactivatedSCG-Config-r17 }                  OPTIONAL    -- Cond SCG-Opt
+    ]]
+}
+
+ReconfigurationWithSync ::=         SEQUENCE {
+    spCellConfigCommon                  ServingCellConfigCommon                                     OPTIONAL,   -- Need M
+    newUE-Identity                      RNTI-Value,
+    t304                                ENUMERATED {ms50, ms100, ms150, ms200, ms500, ms1000, ms2000, ms10000},
+    rach-ConfigDedicated                CHOICE {
+        uplink                              RACH-ConfigDedicated,
+        supplementaryUplink                 RACH-ConfigDedicated
+    }                                                                                               OPTIONAL,   -- Need N
+    ...,
+    [[
+    smtc                                SSB-MTC                                                     OPTIONAL    -- Need S
+    ]],
+    [[
+    daps-UplinkPowerConfig-r16      DAPS-UplinkPowerConfig-r16                                      OPTIONAL    -- Need N
+    ]],
+    [[
+    sl-PathSwitchConfig-r17         SL-PathSwitchConfig-r17                                         OPTIONAL    -- Cond DirectToIndirect-PathSwitch
+    ]]
+}
+
+DAPS-UplinkPowerConfig-r16 ::=      SEQUENCE {
+    p-DAPS-Source-r16                   P-Max,
+    p-DAPS-Target-r16                   P-Max,
+    uplinkPowerSharingDAPS-Mode-r16     ENUMERATED {semi-static-mode1, semi-static-mode2, dynamic }
+}
+
+SCellConfig ::=                     SEQUENCE {
+    sCellIndex                          SCellIndex,
+    sCellConfigCommon                   ServingCellConfigCommon                                     OPTIONAL,   -- Cond SCellAdd
+    sCellConfigDedicated                ServingCellConfig                                           OPTIONAL,   -- Cond SCellAddMod
+    ...,
+    [[
+    smtc                                SSB-MTC                                                     OPTIONAL    -- Need S
+    ]],
+    [[
+    sCellState-r16                  ENUMERATED {activated}                                          OPTIONAL,   -- Cond SCellAddSync
+    secondaryDRX-GroupConfig-r16    ENUMERATED {true}                                               OPTIONAL    -- Cond DRX-Config2
+    ]],
+    [[
+    preConfGapStatus-r17             BIT STRING (SIZE (maxNrofGapId-r17))                           OPTIONAL,   -- Cond PreConfigMG
+    goodServingCellEvaluationBFD-r17 GoodServingCellEvaluation-r17                                  OPTIONAL,   -- Need R
+    sCellSIB20-r17                   SetupRelease { SCellSIB20-r17 }                                OPTIONAL    -- Need M
+    ]]
+
+}
+
+SCellSIB20-r17 ::= OCTET STRING (CONTAINING SystemInformation)
+
+DeactivatedSCG-Config-r17 ::=       SEQUENCE {
+    bfd-and-RLM-r17                     BOOLEAN,
+    ...
+}
+
+GoodServingCellEvaluation-r17 ::=       SEQUENCE {
+    offset-r17                              ENUMERATED {db2, db4, db6, db8}                         OPTIONAL   -- Need S
+}
+
+SL-PathSwitchConfig-r17 ::=         SEQUENCE {
+    targetRelayUE-Identity-r17          SL-SourceIdentity-r17,
+    t420-r17                            ENUMERATED {ms50, ms100, ms150, ms200, ms500, ms1000, ms2000, ms10000},
+    ...
+}
+
+IAB-ResourceConfig-r17 ::=          SEQUENCE {
+    iab-ResourceConfigID-r17            IAB-ResourceConfigID-r17,
+    slotList-r17                        SEQUENCE (SIZE (1..5120)) OF INTEGER (0..5119)                           OPTIONAL,    -- Need M
+    periodicitySlotList-r17             ENUMERATED {ms0p5, ms0p625, ms1, ms1p25, ms2, ms2p5, ms5, ms10, ms20, ms40, ms80, ms160}     OPTIONAL,    -- Need M
+    slotListSubcarrierSpacing-r17       SubcarrierSpacing                                                        OPTIONAL,    -- Need M
+    ...
+}
+IAB-ResourceConfigID-r17 ::=        INTEGER(0..maxNrofIABResourceConfig-1-r17)
+
+ReportUplinkTxDirectCurrentMoreCarrier-r17 ::= SEQUENCE (SIZE(1.. maxSimultaneousBands)) OF IntraBandCC-CombinationReqList-r17
+
+IntraBandCC-CombinationReqList-r17::=   SEQUENCE {
+    servCellIndexList-r17                   SEQUENCE (SIZE(1.. maxNrofServingCells)) OF ServCellIndex,
+    cc-CombinationList-r17                  SEQUENCE (SIZE(1.. maxNrofReqComDC-Location-r17)) OF IntraBandCC-Combination-r17
+}
+
+IntraBandCC-Combination-r17::=      SEQUENCE (SIZE(1.. maxNrofServingCells)) OF CC-State-r17
+
+CC-State-r17::=                     SEQUENCE {
+    dlCarrier-r17                       CarrierState-r17                             OPTIONAL, -- Need N
+    ulCarrier-r17                       CarrierState-r17                             OPTIONAL  -- Need N
+}
+
+CarrierState-r17::=                 CHOICE {
+    deActivated-r17                     NULL,
+    activeBWP-r17                       INTEGER (0..maxNrofBWPs)
+}

@@ -1,0 +1,23 @@
+CrossCarrierSchedulingConfig ::=        SEQUENCE {
+    schedulingCellInfo                      CHOICE {
+        own                                     SEQUENCE {                  -- Cross carrier scheduling: scheduling cell
+            cif-Presence                            BOOLEAN
+        },
+        other                                   SEQUENCE {                  -- Cross carrier scheduling: scheduled cell
+            schedulingCellId                        ServCellIndex,
+            cif-InSchedulingCell                    INTEGER (1..7)
+        }
+    },
+    ...,
+    [[
+    carrierIndicatorSize-r16            SEQUENCE {
+        carrierIndicatorSizeDCI-1-2-r16        INTEGER (0..3),
+        carrierIndicatorSizeDCI-0-2-r16        INTEGER (0..3)
+    }                                                                                       OPTIONAL,  -- Cond CIF-PRESENCE
+    enableDefaultBeamForCCS-r16         ENUMERATED {enabled}                                OPTIONAL  -- Need S
+    ]],
+    [[
+    ccs-BlindDetectionSplit-r17         ENUMERATED {oneSeventh, threeFourteenth, twoSeventh, threeSeventh,
+                                            oneHalf, fourSeventh, fiveSeventh, spare1}      OPTIONAL  -- Need R
+    ]]
+}

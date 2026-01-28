@@ -1,0 +1,104 @@
+{
+  "dsl_rule": "ASSOCIATED(field1, field2, 'same DL BWP')",
+  "constraint_type": "Association",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      688,
+      705,
+      722
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          688,
+          705,
+          722
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          688,
+          705,
+          722
+        ]
+      ]
+    ]
+  },
+  "predicate": "The bwp-id from bwp-dedicated_pdsch-config and the nzp-csi-rs-resourceid from nzp-csi-rs-resourceid are associated under the same Downlink Bandwidth Part (DL BWP)",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "bwp-id: 1, nzp-csi-rs-resourceid: 1 under the same DL BWP"
+    ],
+    "invalid": [
+      "bwp-id: 1, nzp-csi-rs-resourceid: 2 under different DL BWPs"
+    ]
+  },
+  "notes": "The evidence explicitly states that each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id. This implies an association between the bwp-id and the nzp-csi-rs-resourceid under the same DL BWP.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdsch-config",
+    "field1": "bwp-id",
+    "ie2_name": "nzp-csi-rs-resourceid",
+    "field2": "nzp-csi-rs-resourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.  The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.\n---\nThe time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.",
+    "generated_at": "2025-12-11T09:16:04.626560",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "Association",
+      "dsl": "ASSOCIATED(field1, field2, 'same DL BWP')",
+      "preconditions": [],
+      "predicate": "The bwp-id from bwp-dedicated_pdsch-config and the nzp-csi-rs-resourceid from nzp-csi-rs-resourceid are associated under the same Downlink Bandwidth Part (DL BWP)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "bwp-id: 1, nzp-csi-rs-resourceid: 1 under the same DL BWP"
+        ],
+        "invalid": [
+          "bwp-id: 1, nzp-csi-rs-resourceid: 2 under different DL BWPs"
+        ]
+      },
+      "notes": "The evidence explicitly states that each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id. This implies an association between the bwp-id and the nzp-csi-rs-resourceid under the same DL BWP.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

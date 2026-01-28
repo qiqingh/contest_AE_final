@@ -1,0 +1,10 @@
+SIB7 ::=                            SEQUENCE {
+    messageIdentifier                   BIT STRING (SIZE (16)),
+    serialNumber                        BIT STRING (SIZE (16)),
+    warningMessageSegmentType           ENUMERATED {notLastSegment, lastSegment},
+    warningMessageSegmentNumber         INTEGER (0..63),
+    warningMessageSegment               OCTET STRING,
+    dataCodingScheme                    OCTET STRING (SIZE (1))                     OPTIONAL,   -- Cond Segment1
+    lateNonCriticalExtension            OCTET STRING                                OPTIONAL,
+    ...
+}

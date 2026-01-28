@@ -1,0 +1,31 @@
+RateMatchPattern ::=                SEQUENCE {
+    rateMatchPatternId                  RateMatchPatternId,
+
+    patternType                         CHOICE {
+        bitmaps                             SEQUENCE {
+            resourceBlocks                      BIT STRING (SIZE (275)),
+            symbolsInResourceBlock              CHOICE {
+                oneSlot                             BIT STRING (SIZE (14)),
+                twoSlots                            BIT STRING (SIZE (28))
+            },
+            periodicityAndPattern               CHOICE {
+                n2                                  BIT STRING (SIZE (2)),
+                n4                                  BIT STRING (SIZE (4)),
+                n5                                  BIT STRING (SIZE (5)),
+                n8                                  BIT STRING (SIZE (8)),
+                n10                                 BIT STRING (SIZE (10)),
+                n20                                 BIT STRING (SIZE (20)),
+                n40                                 BIT STRING (SIZE (40))
+            }                                                                                           OPTIONAL,   -- Need S
+            ...
+        },
+        controlResourceSet                  ControlResourceSetId
+    },
+    subcarrierSpacing                   SubcarrierSpacing                                               OPTIONAL,   -- Cond CellLevel
+    dummy                               ENUMERATED { dynamic, semiStatic },
+    ...,
+    [[
+    controlResourceSet-r16              ControlResourceSetId-r16                                        OPTIONAL    -- Need R
+    ]]
+
+}

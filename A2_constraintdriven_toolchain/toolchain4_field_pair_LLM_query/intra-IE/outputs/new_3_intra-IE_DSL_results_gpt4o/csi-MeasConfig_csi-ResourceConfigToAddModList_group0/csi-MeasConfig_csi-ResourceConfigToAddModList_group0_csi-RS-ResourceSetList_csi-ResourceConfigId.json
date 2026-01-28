@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      778,
+      783,
+      788,
+      789,
+      793,
+      798,
+      803,
+      804
+    ],
+    "field2_all": [
+      777,
+      782,
+      787,
+      792,
+      797,
+      802
+    ],
+    "actual_pairs": [
+      [
+        [
+          778,
+          783,
+          788,
+          789,
+          793,
+          798,
+          803,
+          804
+        ],
+        [
+          777,
+          782,
+          787,
+          792,
+          797,
+          802
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any normative constraints between field1 and field2 within the same IE.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ResourceConfigToAddModList_group0",
+    "field1": "csi-RS-ResourceSetList",
+    "field2": "csi-ResourceConfigId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} bwp-ld The DL BWP which the CSI-RS associated with this CSI-ResourceConfig are located in (see TS 38.214 [19], clause 5.2.1.2. \\end{tabular} \\begin{tabular}{l} csi-M-ResourceSetList List of references to CSI-IM resources used for CSI measurement and reporting in a CSI-RS resource set. Contains up to maxNrofCSI-M-ResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise (see TS 38.214 [19], clause 5.2.1.2). \\end{tabular} \\begin{tabular}{l} csi-ResourceConfigid Used in CS/-ReportConfig to refer to an instance of CSI-ResourceConfig. \\end{tabular}\n---\n\\begin{tabular}{l} csi-M-ResourceSetList List of references to CSI-IM resources used for CSI measurement and reporting in a CSI-RS resource set. Contains up to maxNrofCSI-M-ResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise (see TS 38.214 [19], clause 5.2.1.2). \\end{tabular} \\begin{tabular}{l} csi-ResourceConfigid Used in CS/-ReportConfig to refer to an instance of CSI-ResourceConfig. \\end{tabular}",
+    "generated_at": "2026-01-07T21:55:46.974500",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any normative constraints between field1 and field2 within the same IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

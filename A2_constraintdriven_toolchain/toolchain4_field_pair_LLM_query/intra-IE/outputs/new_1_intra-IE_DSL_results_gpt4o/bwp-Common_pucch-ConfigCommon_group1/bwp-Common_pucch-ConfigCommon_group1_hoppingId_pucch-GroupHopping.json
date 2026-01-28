@@ -1,0 +1,65 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      487
+    ],
+    "field2_all": [
+      486
+    ],
+    "actual_pairs": [
+      [
+        [
+          487
+        ],
+        [
+          486
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'hoppingId' and 'pucch-GroupHopping' within the same IE. The evidence snippet mentions 'hoppingId' and 'pucch-GroupHopping' but does not provide a normative rule linking them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Common_pucch-ConfigCommon_group1",
+    "field1": "hoppingId",
+    "field2": "pucch-GroupHopping",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{aligned} \\] where the pseudo-random sequence c(i) is defined by clause 5.2 .1 and shall be initialized at the beginning of each radio frame with c_{\\text {init }}=\\left\\lfloor n_{1 \\mathrm{D}} / 30\\right\\rfloor where n_{1 \\mathrm{D}} is given by the higher-layer parameter hopping Id if configured, otherwise n_{1 \\mathrm{D}}=N_{1 \\mathrm{D}}^{\\text {cell }} . - if pucch-GroupHopping equals 'disable' \\[ \\begin{aligned}",
+    "generated_at": "2026-01-07T16:31:40.381301",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct semantic constraint between the fields 'hoppingId' and 'pucch-GroupHopping' within the same IE. The evidence snippet mentions 'hoppingId' and 'pucch-GroupHopping' but does not provide a normative rule linking them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

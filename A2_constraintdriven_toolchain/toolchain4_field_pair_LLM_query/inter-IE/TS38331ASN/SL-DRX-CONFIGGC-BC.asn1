@@ -1,0 +1,35 @@
+SL-DRX-ConfigGC-BC-r17 ::=      SEQUENCE {
+    sl-DRX-GC-BC-PerQoS-List-r17    SEQUENCE (SIZE (1..maxSL-GC-BC-DRX-QoS-r17)) OF SL-DRX-GC-BC-QoS-r17        OPTIONAL,    -- Need M
+    sl-DRX-GC-generic-r17           SL-DRX-GC-Generic-r17                                                       OPTIONAL,    -- Need M
+    sl-DefaultDRX-GC-BC-r17         SL-DRX-GC-BC-QoS-r17                                                        OPTIONAL,    -- Need M
+    ...
+}
+
+SL-DRX-GC-BC-QoS-r17 ::=            SEQUENCE {
+    sl-DRX-GC-BC-MappedQoS-FlowList-r17 SEQUENCE (SIZE (1..maxNrofSL-QFIs-r16)) OF SL-QoS-Profile-r16       OPTIONAL,    -- Need M
+    sl-DRX-GC-BC-OnDurationTimer-r17        CHOICE {
+                                                subMilliSeconds INTEGER (1..31),
+                                                milliSeconds    ENUMERATED {
+                                                      ms1, ms2, ms3, ms4, ms5,ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60,
+                                                      ms80, ms100, ms200, ms300, ms400, ms500, ms600, ms800, ms1000, ms1200,
+                                                      ms1600, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+                                            },
+    sl-DRX-GC-InactivityTimer-r17           ENUMERATED {
+                                                ms0, ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60, ms80,
+                                                ms100, ms200, ms300, ms500, ms750, ms1280, ms1920, ms2560, spare9, spare8,
+                                                spare7, spare6, spare5, spare4, spare3, spare2, spare1},
+    sl-DRX-GC-BC-Cycle-r17                  ENUMERATED {
+                                                ms10, ms20, ms32, ms40, ms60, ms64, ms70, ms80, ms128, ms160, ms256, ms320, ms512,
+                                                ms640, ms1024, ms1280, ms2048, ms2560, ms5120, ms10240, spare12, spare11, spare10,
+                                                spare9, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1},
+    ...
+}
+
+SL-DRX-GC-Generic-r17 ::=               SEQUENCE {
+    sl-DRX-GC-HARQ-RTT-Timer1-r17           ENUMERATED {sl0, sl1, sl2, sl4, spare4, spare3, spare2, spare1}       OPTIONAL,  -- Need M
+    sl-DRX-GC-HARQ-RTT-Timer2-r17           ENUMERATED {sl0, sl1, sl2, sl4, spare4, spare3, spare2, spare1}       OPTIONAL,  -- Need M
+    sl-DRX-GC-RetransmissionTimer-r17       ENUMERATED {
+                                                sl0, sl1, sl2, sl4, sl6, sl8, sl16, sl24, sl33, sl40, sl64, sl80, sl96, sl112, sl128,
+                                                sl160, sl320, spare15, spare14, spare13, spare12, spare11, spare10, spare9, spare8,
+                                                spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+}

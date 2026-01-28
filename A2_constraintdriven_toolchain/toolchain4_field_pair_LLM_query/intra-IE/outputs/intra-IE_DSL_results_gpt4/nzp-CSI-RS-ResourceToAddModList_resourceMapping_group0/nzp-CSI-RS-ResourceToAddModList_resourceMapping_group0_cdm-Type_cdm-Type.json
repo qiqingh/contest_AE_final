@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      711
+    ],
+    "field2_all": [
+      711
+    ],
+    "actual_pairs": [
+      [
+        [
+          711
+        ],
+        [
+          711
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the two fields within the same IE. Both fields are identical (cdm-Type) and the evidence does not suggest any value dependency or range alignment between the same field.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_resourceMapping_group0",
+    "field1": "cdm-Type",
+    "field2": "cdm-Type",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.5.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "The UE shall assume \\beta_{\\text {CSIRS }}>0 for a non-zero-power CSI-RS where \\beta_{\\text {CSIRS }} is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled. The quantities k^{\\prime}, l^{\\prime}, w_{\\mathrm{f}}\\left(k^{\\prime}\\right) , and w_{\\mathrm{t}}\\left(l^{\\prime}\\right) are given by Tables 7.4.1.5.3-1 to 7.4.1.5.3-5 where each (\\bar{k}, \\bar{l}) in a given row of Table 7.4.1.5.3-1 corresponds to a CDM group of size 1 (no CDM) or size 2,4 , or 8. The CDM type is provided by the higher layer parameter cdm-Type in the CSI-RS-ResourceMapping IE. For NZP CSI-RS configured by the TRSResourceSet [E, the CDM type is 'noCDM'. The indices k^{\\prime} and l^{\\prime} index resource elements within a CDM group. The time-domain locations l_{0} \\in\\{0,1, \\ldots, 13\\} and l_{1} \\in\\{2,3, \\ldots, 12\\} are provided by the higher-layer parameters firstOFDMSymbollnTimeDomain and firstOFDMSymbollnTimeDomain2, respectively, in the CSI-RSResourceMapping IE or the CSI-RS-ResourceConfigMobility IE and defined relative to the start of a slot. For NZP CSIRS configured by TRS-ResourceSet [E, the time-domain location l_{0} \\in\\{0,1, \\ldots, 13\\} is provided by the higher-layer parameter firstOFDMSymbollnTimeDomain or firstOFDMSymbollnTimeDomain+4.",
+    "generated_at": "2025-12-11T14:23:31.957845",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the two fields within the same IE. Both fields are identical (cdm-Type) and the evidence does not suggest any value dependency or range alignment between the same field.",
+      "version_tags": []
+    }
+  }
+}

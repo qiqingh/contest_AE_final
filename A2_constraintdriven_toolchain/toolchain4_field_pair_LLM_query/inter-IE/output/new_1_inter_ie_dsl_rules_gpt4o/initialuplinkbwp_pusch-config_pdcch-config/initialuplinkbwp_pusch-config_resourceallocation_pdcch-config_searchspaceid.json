@@ -1,0 +1,89 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      329
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          329
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between 'resourceallocation' from 'initialuplinkbwp_pusch-config' and 'searchspaceid' from 'pdcch-config'. The snippets describe behaviors and configurations within individual IEs or general procedures without linking these specific fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pusch-config",
+    "field1": "resourceallocation",
+    "ie2_name": "pdcch-config",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 28,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.2.1.1",
+      "5.1.2.1",
+      "5.1.2.2.2",
+      "6.1.2.2.2",
+      "6.1.2.3.1",
+      "6.1",
+      "6.1.2.2.3",
+      "5.1.2.1.1",
+      "6.1.2.1",
+      "5.1.4",
+      "5.1.2.2",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The UE is not expected to receive a PDSCH with mapping type A in a slot, if the PDCCH scheduling the PDSCH was received in the same slot and was not contained within the first three symbols of the slot. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], if the two PDCCH candidates scheduling the PDSCH with mapping Type A were received in the same slot as the PDSCH, both PDCCH candidates are expected to be contained within the first three symbols of the slot.  The UE is not expected to receive a PDSCH with mapping type B in a slot, if the first symbol of the PDCCH scheduling the PDSCH was received in a later symbol than the first symbol indicated in the PDSCH time domain resource allocation. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the UE is not expected to receive a PDSCH with mapping type B in a slot, if the first symbol of the PDCCH candidate that starts later in time scheduling the PDSCH was received in a later symbol than the first symbol indicated in the PDSCH time domain resource allocation.\n---\n\\hline \\multicolumn{6}{|l|}{Note 1: If the PDSCH was scheduled with SI-RNTI in PDCCH Type0 common search space, the UE may assume that this PDSCH resource allocation is not applied} \\\\\n---\nIf a bandwidth part indicator field is not configured in the scheduling DCI or the UE does not support active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's active bandwidth part. If a bandwidth part indicator field is configured in the scheduling DCI and the UE supports active BWP change via DCI, the RB indexing for downlink type 0 and type 1 resource allocation is determined within the UE's bandwidth part indicated by bandwidth part indicator field value in the DCI. The UE shall upon detection of PDCCH intended for the UE determine first the downlink bandwidth part and then the resource allocation within the bandwidth part.  For a PDSCH scheduled with a DCI format \\( 1 \\_0 \\) in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format \\( 1 \\_0 \\), the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.\n---\nWhen receiving the PDSCH scheduled with SI-RNTI and the system information indicator in DCI is set to 0 , the UE shall assume that no SS/PBCH block is transmitted in REs used by the UE for a reception of the PDSCH.  When receiving the PDSCH scheduled with SI-RNTI and the system information indicator in DCI is set to 1 , RARNTI, MSGB-RNTI, P-RNTI or TC-RNTI, the UE assumes SS/PBCH block transmission according to ssbPositionsInBurst, and if the PDSCH resource allocation overlaps with PRBs containing SS/PBCH block transmission resources the UE shall assume that the PRBs containing SS/PBCH block transmission resources are not available for PDSCH in the OFDM symbols where SS/PBCH block is transmitted.\n---\nA UE shall upon detection of a PDCCH with a configured DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) transmit the corresponding PUSCH as indicated by that DCI unless the UE does not generate a transport block as described in [10, TS38.321]. Upon detection of a DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\) with 'UL-SCH indicator' set to ' 0 ' and with a non-zero 'CSI request' where the associated reportQuantity in CSI-ReportConfig set to 'none' for all CSI report(s) triggered by 'CSI request' in this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\), the UE ignores all fields in this DCI except the 'CSI request' and the UE shall not transmit the corresponding PUSCH as indicated by this DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\). When the UE is scheduled with multiple PUSCHs by a DCI, HARQ process ID indicated by this DCI applies to the first PUSCH not overlapping with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst, HARQ process ID is then incremented by 1 for each subsequent PUSCH(s) in the scheduled order, with modulo operation of nrofHARQ-ProcessesForPUSCH applied if nrofHARQ-ProcessesForPUSCH is provided, or with modulo operation of 16 applied, otherwise. HARQ process [D is not incremented for PUSCH(s) not transmitted if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DL-ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssbPositionsInBurst. For any HARQ process ID(s) in a given scheduled cell, the UE is not expected to transmit a PUSCH that overlaps in time with another PUSCH. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet for the active BWP of a serving cell and PDCCHs that schedule two non-overlapping in time domain PUSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, for any two HARQ process [Ds in a given scheduled cell, if the UE is scheduled to start a first PUSCH transmission starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell,, the UE is not expected to be scheduled to transmit a PUSCH starting earlier than the end of the first PUSCH by a PDCCH that ends later than symbol \\( i \\) of the scheduling cell. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the PDCCH ending in symbol \\( i \\), the PDCCH candidate that ends later in time is used. The UE is not expected to be scheduled to transmit another PUSCH by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI, for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by TC-RNTI or by an UL grant in RA Response. The UE is not expected to be scheduled to transmit another PUSCH by DCI format \\( 0 \\_0,0 \\_1 \\) or \\( 0 \\_2 \\) scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI for a given HARQ process with the DCI received before the end of the expected transmission of the last PUSCH for that HARQ process if the latter is scheduled by a DCI with CRC scrambled by C-RNTI, CS-RNTI or MCS-C-RNTI.\n---\n- A slot is not counted in the number of \\( N \\cdot K \\) slots for PUSCH transmission of a PUSCH repetition Type A scheduled by DCI format \\( 0 \\_1 \\) or \\( 0 \\_2 \\) if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.\n---\n- A slot is not counted in the number of \\( N \\cdot K \\) slots if at least one of the symbols indicated by the indexed row of the used resource allocation table in the slot overlaps with a DL symbol indicated by \\( t d d-U L-D L- \\) ConfigurationCommon or tdd-UL-DL-ConfigurationDedicated if provided, or a symbol of an SS/PBCH block with index provided by ssb-PositionsInBurst.\n---\n- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.\n---\n5.1.2.2.2 Downlink resource allocation type 1  In downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell.\n---\n\\hline RNTI & PDCCH search space & pusch-ConfigCommon includes puschTimeDomainAllocationList & pusch-Config includes puschTimeDomainAllocationList & PUSCH time domain resource allocation to apply \\\\\n---\n6.1.2.2.2 Uplink resource allocation type 1  In uplink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved virtual resource blocks within the active bandwidth part of size \\( N_{\\text {BWP }}^{\\text {size }} \\) PRBs except for the case when DCI format \\( 0 \\_0 \\) is decoded in any common search space in which case the size of the initial UL bandwidth part \\( N_{\\mathrm{BWP}, 0}^{\\mathrm{azz}} \\) shall be used.\n---\n6.1.2.2.3 Uplink resource allocation type 2  In uplink resource allocation of type 2, the resource block assignment information defined in [5, TS 38.212] indicates to a UE a set of up to \\( M \\) interlace indices, and for DCI \\( 0 \\_0 \\) monitored in a UE-specific search space and DCI 0_1 a set of up to \\( N_{\\text {RB-set, UL }}^{\\mathrm{BWP}} \\) contiguous RB sets, where \\( M \\) and interlace indexing are defined in Clause 4.4.4.6 in [4, TS 38.211].",
+    "generated_at": "2026-01-09T12:31:29.206358",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between 'resourceallocation' from 'initialuplinkbwp_pusch-config' and 'searchspaceid' from 'pdcch-config'. The snippets describe behaviors and configurations within individual IEs or general procedures without linking these specific fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

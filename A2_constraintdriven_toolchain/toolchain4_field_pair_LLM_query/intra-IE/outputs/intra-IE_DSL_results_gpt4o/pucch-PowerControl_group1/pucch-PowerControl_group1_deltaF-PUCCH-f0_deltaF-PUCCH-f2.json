@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      528
+    ],
+    "field2_all": [
+      529
+    ],
+    "actual_pairs": [
+      [
+        [
+          528
+        ],
+        [
+          529
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any direct or conditional relationship between deltaF-PUCCH-f0 and deltaF-PUCCH-f2 within the same IE. The evidence is primarily definitional and does not contain normative constraints linking the two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-PowerControl_group1",
+    "field1": "deltaF-PUCCH-f0",
+    "field2": "deltaF-PUCCH-f2",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212] the UE determines a RS resource index q_{d} providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index q_{d} based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same q_{d} applies to the PUCCH transmission in each of the multiple slots. - The parameter \\Delta_{\\mathrm{F}_{\\mathrm{P}} \\mathrm{PCCH}}(F) is a value of deltaF-PUCCH-fofor PUCCH format 0 , deltaF-PUCCH-fl for PUCCH format 1, deltaF-PUCCH-f2 for PUCCH format 2, deltaF-PUCCH-f3 for PUCCH format 3, and deltaF-PUCCH-f4 for PUCCH format 4, if provided; otherwise \\Delta_{\\mathrm{F}_{-} \\mathrm{PUCCH}}(F)=0 . - \\quad \\Delta_{\\mathrm{TF}, b, f, c}(i) is a PUCCH transmission power adjustment component on active UL BWP b of carrier f of primary cell c",
+    "generated_at": "2026-01-10T21:38:47.259877",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any direct or conditional relationship between deltaF-PUCCH-f0 and deltaF-PUCCH-f2 within the same IE. The evidence is primarily definitional and does not contain normative constraints linking the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

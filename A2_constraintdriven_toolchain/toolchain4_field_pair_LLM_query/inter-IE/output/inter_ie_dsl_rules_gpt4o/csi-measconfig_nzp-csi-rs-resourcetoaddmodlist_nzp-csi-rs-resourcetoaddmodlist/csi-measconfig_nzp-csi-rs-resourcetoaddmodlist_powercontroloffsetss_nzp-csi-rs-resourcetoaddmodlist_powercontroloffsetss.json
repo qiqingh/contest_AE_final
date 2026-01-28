@@ -1,0 +1,101 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      700,
+      717,
+      734
+    ],
+    "field2_all": [
+      700,
+      717,
+      734
+    ],
+    "actual_pairs": [
+      [
+        [
+          700,
+          717
+        ],
+        [
+          700,
+          717,
+          734
+        ]
+      ],
+      [
+        [
+          700,
+          717,
+          734
+        ],
+        [
+          717,
+          734
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields 'powercontroloffsetss' from 'csi-measconfig_nzp-csi-rs-resourcetoaddmodlist' and 'nzp-csi-rs-resourcetoaddmodlist'. The evidence primarily describes behavior within a single IE or lacks explicit normative wording for an inter-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field1": "powercontroloffsetss",
+    "ie2_name": "nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "powercontroloffsetss",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 7,
+      "original_count": 7,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.5.3",
+      "5.1.6.1.1",
+      "7.4",
+      "4.3",
+      "7.1.1",
+      "4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "The UE shall assume \\( \\beta_{\\text {CSIRS }}>0 \\) for a non-zero-power CSI-RS where \\( \\beta_{\\text {CSIRS }} \\) is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled.\n---\nThe downlink CSI-RS EPRE can be derived from the SS/PBCH block downlink transmit power given by the parameter ss-PBCH-BlockPower and CSI-RS power offset given by the parameter powerControlOffsetSS provided by higher layers, where the CSI-RS is QCLed with the SS/PBCH block, and the SS/PBCH block can be associated with serving cell PCI or additional PCI different from serving cell PCI. The downlink reference-signal transmit power is defined as the linear average over the power contributions (in \\( [\\mathrm{W}] \\) ) of the resource elements that carry the configured CSI-RS within the operating system bandwidth.\n---\n- same powerControlOffset and powerControlOffsetSS given by NZP-CSI-RS-Resource value across all resources.\n---\n- powerControlOffsetSS given by a TRS-ResourceSet applies to all resources in a TRS-ResourceSet.\n---\nThe physical layer in the UE assesses the radio link quality according to the set \\( \\bar{q}_{0}, \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\), of resource configurations against the threshold \\( \\mathrm{Q}_{\\text {out }, \\mathrm{LR} \\text {. }} \\) For the set \\( \\bar{q}_{0} \\), the UE assesses the radio link quality only according to SS/PBCH blocks on the PCell or the PSCell or periodic CSI-RS resource configurations that are quasi co-located, as described in [6, TS 38.214], with the DM-RS of PDCCH receptions monitored by the UE. The UE applies the \\( \\mathrm{Q}_{\\mathrm{m}, \\mathrm{LR}} \\) threshold to the L1-RSRP measurement obtained from a SS/PBCH block. The UE applies the \\( \\mathrm{Q}_{\\mathrm{m}, \\mathrm{LR}} \\) threshold to the L1RSRP measurement obtained for a CSI-RS resource after scaling a respective CSI-RS reception power with a value provided by powerControlOffsetSS.\n---\nIf the UE is not configured periodic CSI-RS reception, referenceSignalPower is provided by \\( s s-P B C H \\) BlockPower. If the UE is configured periodic CSI-RS reception, referenceSignalPower is provided either by ss-PBCH-BlockPower or by powerControlOffsetSS providing an offset of the CSI-RS transmission power relative to the SS/PBCH block transmission power [6, TS 38.214]. [f powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB .\n---\nIf a PRACH transmission from a UE is in response to a detection of a PDCCH order by the UE that triggers a contention-free random access procedure and depending on the DL RS that the DM-RS of the PDCCH order is quasicollocated with as described in clause 10.1, referenceSignalPower is provided by ss-PBCH-BlockPower or, if the UE is configured resources for a periodic CSI-RS reception or the PRACH transmission is associated with a link recovery procedure where a corresponding index \\( q_{\\text {new }} \\) is associated with a periodic CSI-RS configuration as described in clause 6, referenceSignalPower is obtained by ss-PBCH-BlockPower and powerControlOffsetSS where powerControlOffsetSS provides an offset of CSI-RS transmission power relative to SS/PBCH block transmission power [6, TS 38.214]. If powerControlOffsetSS is not provided to the UE, the UE assumes an offset of 0 dB . If the active TCI state for the PDCCH that provides the PDCCH order includes two RS, the UE expects that one RS is configured with qcl-Type set to 'typeD' and the UE uses the one RS when applying a value provided by power ControlOffsetSS.",
+    "generated_at": "2026-01-10T14:45:08.430073",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE constraint between the fields 'powercontroloffsetss' from 'csi-measconfig_nzp-csi-rs-resourcetoaddmodlist' and 'nzp-csi-rs-resourcetoaddmodlist'. The evidence primarily describes behavior within a single IE or lacks explicit normative wording for an inter-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

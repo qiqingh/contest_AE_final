@@ -1,0 +1,12 @@
+FeatureCombination-r17 ::= SEQUENCE {
+    redCap-r17                 ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    smallData-r17              ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    nsag-r17                   NSAG-List-r17                                        OPTIONAL,  -- Need R
+    msg3-Repetitions-r17       ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    spare4                     ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    spare3                     ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    spare2                     ENUMERATED {true}                                    OPTIONAL,  -- Need R
+    spare1                     ENUMERATED {true}                                    OPTIONAL   -- Need R
+}
+
+NSAG-List-r17 ::= SEQUENCE (SIZE (1.. maxSliceInfo-r17)) OF NSAG-ID-r17

@@ -1,0 +1,18 @@
+NeedForGapNCSG-InfoNR-r17 ::=     SEQUENCE {
+    intraFreq-needForNCSG-r17         NeedForNCSG-IntraFreqList-r17,
+    interFreq-needForNCSG-r17         NeedForNCSG-BandListNR-r17
+}
+
+NeedForNCSG-IntraFreqList-r17 ::= SEQUENCE (SIZE (1.. maxNrofServingCells)) OF NeedForNCSG-IntraFreq-r17
+
+NeedForNCSG-BandListNR-r17 ::=    SEQUENCE (SIZE (1..maxBands)) OF NeedForNCSG-NR-r17
+
+NeedForNCSG-IntraFreq-r17  ::=    SEQUENCE {
+    servCellId-r17                    ServCellIndex,
+    gapIndicationIntra-r17            ENUMERATED {gap, ncsg, nogap-noncsg}
+}
+
+NeedForNCSG-NR-r17  ::=           SEQUENCE {
+    bandNR-r17                        FreqBandIndicatorNR,
+    gapIndication-r17                 ENUMERATED {gap, ncsg, nogap-noncsg}
+}

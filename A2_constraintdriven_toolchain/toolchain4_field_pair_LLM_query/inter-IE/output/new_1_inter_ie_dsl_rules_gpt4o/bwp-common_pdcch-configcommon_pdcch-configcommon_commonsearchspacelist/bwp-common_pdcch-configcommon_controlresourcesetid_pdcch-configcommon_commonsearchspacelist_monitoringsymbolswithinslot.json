@@ -1,0 +1,110 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      80,
+      89,
+      145,
+      154,
+      210,
+      219
+    ],
+    "field2_all": [
+      92,
+      93,
+      157,
+      158
+    ],
+    "actual_pairs": [
+      [
+        [
+          80,
+          89,
+          145,
+          154,
+          210,
+          219
+        ],
+        [
+          92,
+          93,
+          157,
+          158
+        ]
+      ],
+      [
+        [
+          80,
+          89,
+          145,
+          154
+        ],
+        [
+          92,
+          93,
+          157,
+          158
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not establish a direct inter-IE relationship between the specified fields. The evidence primarily describes single-IE behavior or lacks explicit normative constraints linking the two fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pdcch-configcommon",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdcch-configcommon_commonsearchspacelist",
+    "field2": "monitoringsymbolswithinslot",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 7,
+      "original_count": 7,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.1.4.1",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- within a BWP, a frequency domain resource of a CORESET configured by ControlResourceSet with controlResourceSetId or ControlResourceSetZero and time domain resource determined by the higher layer parameters monitoringSlotPeriodicityAndOffset, duration and monitoringSymbols WithinSlot of all search-space-sets configured by SearchSpace and time domain resource of search-space-set zero configured by searchSpaceZero associated with the CORESET as well as CORESET duration configured by ControlResourceSet with controlResourceSetld or ControlResourceSetZero. This resource not available for PDSCH can be included in one or two groups of resource sets (higher layer parameters rateMatchPatternGroup 1 and rateMatchPatternGroup2).\n---\n- an association between the search space set \\( s \\) and a CORESET \\( p \\) by controlResourceSetld or by controlResourceSetld-v1610 - a PDCCH monitoring periodicity of \\( k_{s} \\) slots and a PDCCH monitoring offset of \\( o_{s} \\) slots, by monitoringSlotPeriodicityAndOffset or by monitoringSlotPeriodicityAndOffset-r17 - a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot\n---\n- a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot\n---\n- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.  If the monitoringSymbolsWithinSlot indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols that are same in every slot where the UE monitors PDCCH for all search space sets, the UE does not expect to be configured with a PDCCH SCS other than 15 kHz if the subset includes at least one symbol after the third symbol.\n---\nIf the monitoringSymbolsWithinSlot indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols that are same in every slot where the UE monitors PDCCH for all search space sets, the UE does not expect to be configured with a PDCCH SCS other than 15 kHz if the subset includes at least one symbol after the third symbol.  A UE does not expect to be provided a first symbol and a number of consecutive symbols for a CORESET that results to a PDCCH candidate mapping to symbols of different slots.\n---\nFor search space sets \\( s_{i} \\) and \\( s_{j} \\) that include searchSpaceLinking with value \\( s_{j} \\) and \\( s_{i} \\), respectively, a UE monitors, in monitoring occasions with same index according to each of search space sets \\( s_{i} \\) and \\( s_{j} \\) in a slot, PDCCH candidates \\( m_{s_{i}, n_{C I}}^{(L)} \\) and \\( m_{s_{j}, n_{C I}}^{(L)} \\), with \\( m_{s_{i}, n_{C I}}^{(L)}=m_{s_{j}, n_{C I}}^{(L)} \\), for detection of a DCI format with same information. The UE expects \\( k_{s_{i}}= k_{s_{j}}, o_{s_{i}}=o_{s_{j}}, T_{s_{i}}=T_{s_{j}}, M_{s_{i}}^{(L)}=M_{s_{j}}^{(L)} \\), and a same number of non-overlapping PDCCH monitoring occasions per slot based on corresponding monitoringSymbolsWithinSlot, for search space sets \\( s_{i} \\) and \\( s_{j} \\). For CORESET \\( p_{i} \\) associated with the search space set \\( s_{i} \\) and for CORESET \\( p_{j} \\) associated with the search space set \\( s_{j} \\), the UE is provided tci-\n---\nmonitoringSymbolsWithinSlot The first symbol(s) for PDCCH monitoring in the slots configured for (multi-slot) PDCCH monitoring (see monitoringSlotPeriodicityAndOffset and duration). The most significant (left) bit represents the first OFDM in a slot, and the second most significant (left) bit represents the second OFDM symbol in a slot and so on. The bit(s) set to one identify the first OFDM symbol(s) of the control resource set within a slot. If the cyclic prefix of the BWP is set to extended CP, the last two bits within the bit string shall be ignored by the UE or IAB-MT.",
+    "generated_at": "2026-01-09T12:31:49.788699",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between controlresourcesetid and monitoringsymbolswithinslot.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not establish a direct inter-IE relationship between the specified fields. The evidence primarily describes single-IE behavior or lacks explicit normative constraints linking the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

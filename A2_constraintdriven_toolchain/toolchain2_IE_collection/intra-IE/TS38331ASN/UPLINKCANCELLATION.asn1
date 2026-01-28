@@ -1,0 +1,21 @@
+UplinkCancellation-r16 ::=           SEQUENCE {
+    ci-RNTI-r16                          RNTI-Value,
+    dci-PayloadSizeForCI-r16             INTEGER (0..maxCI-DCI-PayloadSize-r16),
+    ci-ConfigurationPerServingCell-r16   SEQUENCE (SIZE (1..maxNrofServingCells)) OF CI-ConfigurationPerServingCell-r16,
+    ...
+}
+
+CI-ConfigurationPerServingCell-r16 ::=   SEQUENCE {
+    servingCellId                            ServCellIndex,
+    positionInDCI-r16                        INTEGER (0..maxCI-DCI-PayloadSize-1-r16),
+    positionInDCI-ForSUL-r16                 INTEGER (0..maxCI-DCI-PayloadSize-1-r16)                             OPTIONAL,   -- Cond SUL-Only
+    ci-PayloadSize-r16                       ENUMERATED {n1, n2, n4, n5, n7, n8, n10, n14, n16, n20, n28, n32, n35, n42, n56, n112},
+    timeFrequencyRegion-r16                  SEQUENCE {
+        timeDurationForCI-r16                    ENUMERATED {n2, n4, n7, n14}                                      OPTIONAL,   -- Cond SymbolPeriodicity
+        timeGranularityForCI-r16                 ENUMERATED {n1, n2, n4, n7, n14, n28},
+        frequencyRegionForCI-r16                 INTEGER (0..37949),
+        deltaOffset-r16                          INTEGER (0..2),
+        ...
+    },
+    uplinkCancellationPriority-v1610         ENUMERATED {enabled}                                                  OPTIONAL    -- Need S
+}

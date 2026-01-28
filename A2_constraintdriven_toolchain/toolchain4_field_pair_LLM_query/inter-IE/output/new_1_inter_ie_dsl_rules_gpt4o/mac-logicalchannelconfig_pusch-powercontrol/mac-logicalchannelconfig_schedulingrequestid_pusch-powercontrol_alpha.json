@@ -1,0 +1,74 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      23
+    ],
+    "field2_all": [
+      433,
+      541,
+      649
+    ],
+    "actual_pairs": [
+      [
+        [
+          23
+        ],
+        [
+          433,
+          541,
+          649
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not relate schedulingrequestid and alpha across different IEs. It only describes behavior related to PUCCH and HARQ-ACK.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-logicalchannelconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "pusch-powercontrol",
+    "field2": "alpha",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "shift \\( \\alpha \\) [4, TS 38.211] where \\( m_{0} \\) is provided by initialCyclicShift of PUCCH-format0, and \\( m_{\\mathrm{CS}} \\) is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.5-1 and Table 9.2.5-2, respectively.  If the UE would transmit negative SR and a PUCCH with at most two HARQ-ACK information bits in a resource using PUCCH format 0 , the UE transmits the PUCCH in the resource using PUCCH format 0 for HARQ-ACK information as described in clause 9.2.3.",
+    "generated_at": "2026-01-09T12:59:14.532594",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between schedulingrequestid and alpha based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not relate schedulingrequestid and alpha across different IEs. It only describes behavior related to PUCCH and HARQ-ACK.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+SL-PBPS-CPS-Config-r17 ::=                SEQUENCE {
+sl-AllowedResourceSelectionConfig-r17     ENUMERATED {c1, c2, c3, c4, c5, c6, c7}                             OPTIONAL,   -- Need M
+sl-MinNumCandidateSlotsPeriodic-r17       INTEGER (1..32)                                                     OPTIONAL,   -- Need M
+sl-PBPS-OccasionReservePeriodList-r17     SEQUENCE (SIZE (1..16)) OF INTEGER (1..16)                          OPTIONAL,   -- Need M
+sl-Additional-PBPS-Occasion-r17           ENUMERATED { monitored }                                            OPTIONAL,   -- Need M
+sl-CPS-WindowPeriodic-r17                 INTEGER (5..30)                                                     OPTIONAL,   -- Need M
+sl-MinNumCandidateSlotsAperiodic-r17      INTEGER (1..32)                                                     OPTIONAL,   -- Need M
+sl-MinNumRssiMeasurementSlots-r17         INTEGER (1..800)                                                    OPTIONAL,   -- Need M
+sl-DefaultCBR-RandomSelection-r17         INTEGER (0..100)                                                    OPTIONAL,   -- Need M
+sl-DefaultCBR-PartialSensing-r17          INTEGER (0..100)                                                    OPTIONAL,   -- Need M
+sl-CPS-WindowAperiodic-r17                INTEGER (0..30)                                                     OPTIONAL,   -- Need M
+sl-PartialSensingInactiveTime-r17         ENUMERATED { enabled, disabled }                                    OPTIONAL,   -- Need M
+    ...
+}

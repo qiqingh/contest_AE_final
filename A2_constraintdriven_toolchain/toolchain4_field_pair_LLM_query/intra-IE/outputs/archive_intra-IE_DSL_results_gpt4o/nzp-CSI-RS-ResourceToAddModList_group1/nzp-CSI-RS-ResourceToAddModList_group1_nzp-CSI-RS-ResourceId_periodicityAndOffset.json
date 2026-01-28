@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      722
+    ],
+    [
+      736,
+      737
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct semantic constraint between nzp-CSI-RS-ResourceId and periodicityAndOffset within the same IE. The evidence discusses periodicityAndOffset in the context of periodic resources but does not relate it to nzp-CSI-RS-ResourceId.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group1",
+    "field1": "nzp-CSI-RS-ResourceId",
+    "field2": "periodicityAndOffset",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the periodicity and slot offset for periodic NZP CSI-RS resources, as given by the higher layer parameter periodicityAndOffset configured by NZP-CSI-RS-Resource, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211].\n---\n- the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet.",
+    "generated_at": "2025-12-09T09:47:43.997308",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct semantic constraint between nzp-CSI-RS-ResourceId and periodicityAndOffset within the same IE. The evidence discusses periodicityAndOffset in the context of periodic resources but does not relate it to nzp-CSI-RS-ResourceId.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

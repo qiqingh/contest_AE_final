@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'enabled'), EQ(field2, 2))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      936
+    ],
+    "field2_all": [
+      937
+    ],
+    "actual_pairs": [
+      [
+        [
+          936
+        ],
+        [
+          937
+        ]
+      ]
+    ]
+  },
+  "predicate": "If groupBasedBeamReporting is 'enabled', nrofReportedRS must be 2.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "groupBasedBeamReporting='enabled', nrofReportedRS=2"
+    ],
+    "invalid": [
+      "groupBasedBeamReporting='enabled', nrofReportedRS=3"
+    ]
+  },
+  "notes": "The evidence indicates a conditional relationship where enabling groupBasedBeamReporting requires nrofReportedRS to be 2.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "groupBasedBeamReporting",
+    "field2": "nrofReportedRS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP-Capability[Set]Index' or 'ssb-Index-RSRP-Capability[Set]Index', - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting. - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'enabled', the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single reporting instance two different CRI or SSBRI for each report setting, where CSI-RS and/or SSB resources can be received simultaneously by the UE either with a single spatial domain receive filter, or with multiple simultaneous spatial domain receive filters.\n---\n71 ETSI TS 138214 V17.1.0 (2022-05) - if the UE is configured with the higher layer parameter groupBasedBeamReporting-r 17 , the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single reporting instance nrofReportedRSgroup, if configured, group(s) of two CRIs or SSBRIs selecting one CSI-RS or SSB from each of the two CSI Resource Sets for the report setting, where CSI-RS and/or SSB resources of each group can be received simultaneously by the UE. If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-SINR', 'ssb-Index-SINR', 'cri-SINR-Capability[Set]Index' or 'ssb-Index-SINR-Capability[Set][ndex', - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting. - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'enabled', the UE shall report in a single reporting instance two different CRI or SSBRI for each report setting, where CSI-RS and/or SSB resources can be received simultaneously by the UE.\n---\nIf the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-SINR', 'ssb-Index-SINR', 'cri-SINR-Capability[Set]Index' or 'ssb-Index-SINR-Capability[Set][ndex', - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting. - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'enabled', the UE shall report in a single reporting instance two different CRI or SSBRI for each report setting, where CSI-RS and/or SSB resources can be received simultaneously by the UE.\n---\n- the UE may be configured with CSI-RS resource setting up to 16 CSI-RS resource sets having up to 64 resources within each set. The total number of different CSI-RS resources over all resource sets is no more than 128. For L1-RSRP reporting, if the higher layer parameter nrofReportedRS in CSI-ReportConfig is configured to be one, the reported L1-RSRP value is defined by a 7 -bit value in the range [-140,-44] \\mathrm{dBm} with 1 dB step size, if the higher layer parameter nrofReportedRS is configured to be larger than one, or if the higher layer parameter groupBasedBeamReporting is configured as 'enabled', or if the higher layer parameter groupBasedBeamReporting-r 17 is configured, the UE shall use differential L1-RSRP based reporting, where the largest measured value of L1-RSRP is quantized to a 7 -bit value in the range [-140,-44] \\mathrm{dBm} with 1 dB step size, and the differential L 1 -RSRP is quantized to ETSI\n---\n- for channel measurement, the UE may be configured with CSI-RS resource setting with up to 16 resource sets, with a total of up to 64 CSI -RS resources or up to 64 \\mathrm{SS} / \\mathrm{PBCH} Block resources. For L1-SINR reporting, if the higher layer parameter nrofReportedRS in CSI-ReportConfig is configured to be one, the reported L1-SINR value is defined by a 7-bit value in the range [-23,40] dB with 0.5 dB step size, and if the higher layer parameter nrofReportedRS is configured to be larger than one, or if the higher layer parameter groupBasedBeamReporting is configured as 'enabled', the UE shall use differential L1-SINR based reporting, where the largest measured value of L1-SINR is quantized to a 7-bit value in the range [ -23,40 ] dB with 0.5 dB step size, and the differential L1-SINR is quantized to a 4 -bit value. The differential L1-SINR is computed with 1 dB step size with a reference to the largest measured L1-SINR value which is part of the same L1-SINR reporting instance. When NZP CSI-RS is configured for channel measurement and/or interference measurement, the reported L1-SINR values should not be compensated by the power offset(s) given by higher layer parameter powerControOffsetSS or powerControlOffset. When one or two resource settings are configured for L1-SINR measurement",
+    "generated_at": "2026-01-10T21:40:01.156503",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'enabled'), EQ(field2, 2))",
+      "preconditions": [],
+      "predicate": "If groupBasedBeamReporting is 'enabled', nrofReportedRS must be 2.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "groupBasedBeamReporting='enabled', nrofReportedRS=2"
+        ],
+        "invalid": [
+          "groupBasedBeamReporting='enabled', nrofReportedRS=3"
+        ]
+      },
+      "notes": "The evidence indicates a conditional relationship where enabling groupBasedBeamReporting requires nrofReportedRS to be 2.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      333
+    ],
+    "field2_all": [
+      828,
+      852,
+      867,
+      891,
+      906,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          333
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ],
+      [
+        [
+          333
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE relationship between the fields uplinkbandwidthpartid and srs-resourcesetid. The evidence primarily describes behaviors within individual IEs or general SRS configurations without linking these specific fields across IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field1": "uplinkbandwidthpartid",
+    "ie2_name": "initialuplinkbwp_srs-config",
+    "field2": "srs-resourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 9,
+      "original_count": 9,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.1.2",
+      "6.1.3.59",
+      "6.3.2",
+      "6.1.3.26",
+      "6.1.3.36",
+      "6.1.3.27",
+      "6.1.3.17"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission. - If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.\n---\n- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;\n---\n- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell which contains all resources indicated by the Resource ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource ID, fields. The length of the field is 2 bits;\n---\n- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1, Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;\n---\n- \\( F_{1} \\) : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP/AP SRS Resource Set indicated with SP/AP SRS Resource Set ID field. Fo refers to the first SRS resource within the resource set, \\( F_{1} \\) to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - Resource Serving Cell ID: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 2 bits;\n---\n- BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains activated SRS Resource Set. The length of the field is 2 bits; - SRS Resource Set ID: This field indicates the SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;\n---\n- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) within the field Spatial Relation for Resource ID, are present, except for Spatial Relation Resource ID, with DL-PRS or SSB. When A/D is set to 1 , if this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) in the field Spatial Relation for Resource ID, are present, otherwise if this field is set to 0 , they are not present. When \\( A / D \\) is set to 0 , this field is always set to 0 that they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - Positoining SRS Resource Set ID: This field indicates the SP Positioning SRS Resource Set identified by SRSPosResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;\n---\n- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;\n---\nsrs-ResourceSetid, srs-PosResourceSetid \\\\ The ID of this resource set. It is unique in the context of the BWP in which the parent SRS-Config is defined.",
+    "generated_at": "2026-01-10T14:23:23.544703",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between uplinkbandwidthpartid and srs-resourcesetid.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE relationship between the fields uplinkbandwidthpartid and srs-resourcesetid. The evidence primarily describes behaviors within individual IEs or general SRS configurations without linking these specific fields across IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

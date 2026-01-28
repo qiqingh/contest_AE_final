@@ -1,0 +1,24 @@
+BandCombinationListSL-Discovery-r17 ::= SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParametersSidelinkDiscovery-r17
+
+BandParametersSidelinkDiscovery-r17 ::= SEQUENCE {
+    sl-CrossCarrierScheduling-r17            ENUMERATED {supported}                            OPTIONAL,
+    --R1 32-4: Transmitting NR sidelink mode 2 with partial sensing
+    sl-TransmissionMode2-PartialSensing-r17  SEQUENCE {
+        harq-TxProcessModeTwoSidelink-r17        ENUMERATED {n8, n16},
+        scs-CP-PatternTxSidelinkModeTwo-r17      CHOICE {
+            fr1-r17                                  SEQUENCE {
+                scs-15kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                scs-30kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                scs-60kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL
+            },
+            fr2-r17                                  SEQUENCE {
+                scs-60kHz-r17                            BIT STRING (SIZE (16))                OPTIONAL,
+                scs-120kHz-r17                           BIT STRING (SIZE (16))                OPTIONAL
+            }
+        }                                                                                      OPTIONAL,
+        extendedCP-Mode2PartialSensing-r17           ENUMERATED {supported}                    OPTIONAL,
+        dl-openLoopPC-Sidelink-r17                   ENUMERATED {supported}                    OPTIONAL
+    }                                                                                          OPTIONAL,
+    --R1 32-5a-1: Transmitting Inter-UE coordination scheme 1 in NR sidelink mode 2
+    tx-IUC-Scheme1-Mode2Sidelink-r17         ENUMERATED {supported}                            OPTIONAL
+}

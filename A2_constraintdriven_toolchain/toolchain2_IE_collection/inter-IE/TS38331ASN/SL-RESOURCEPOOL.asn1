@@ -1,0 +1,145 @@
+SL-ResourcePool-r16 ::=            SEQUENCE {
+    sl-PSCCH-Config-r16                SetupRelease { SL-PSCCH-Config-r16 }                                  OPTIONAL,   -- Need M
+    sl-PSSCH-Config-r16                SetupRelease { SL-PSSCH-Config-r16 }                                  OPTIONAL,   -- Need M
+    sl-PSFCH-Config-r16                SetupRelease { SL-PSFCH-Config-r16 }                                  OPTIONAL,   -- Need M
+    sl-SyncAllowed-r16                 SL-SyncAllowed-r16                                                    OPTIONAL,   -- Need M
+    sl-SubchannelSize-r16              ENUMERATED {n10, n12, n15, n20, n25, n50, n75, n100}                  OPTIONAL,   -- Need M
+    dummy                              INTEGER (10..160)                                                     OPTIONAL,   -- Need M
+    sl-StartRB-Subchannel-r16          INTEGER (0..265)                                                      OPTIONAL,   -- Need M
+    sl-NumSubchannel-r16               INTEGER (1..27)                                                       OPTIONAL,   -- Need M
+    sl-Additional-MCS-Table-r16        ENUMERATED {qam256, qam64LowSE, qam256-qam64LowSE }                   OPTIONAL,   -- Need M
+    sl-ThreshS-RSSI-CBR-r16            INTEGER (0..45)                                                       OPTIONAL,   -- Need M
+    sl-TimeWindowSizeCBR-r16           ENUMERATED {ms100, slot100}                                           OPTIONAL,   -- Need M
+    sl-TimeWindowSizeCR-r16            ENUMERATED {ms1000, slot1000}                                         OPTIONAL,   -- Need M
+    sl-PTRS-Config-r16                 SL-PTRS-Config-r16                                                    OPTIONAL,    -- Need M
+    sl-UE-SelectedConfigRP-r16         SL-UE-SelectedConfigRP-r16                                            OPTIONAL,   -- Need M
+    sl-RxParametersNcell-r16           SEQUENCE {
+        sl-TDD-Configuration-r16           TDD-UL-DL-ConfigCommon                                            OPTIONAL,   -- Need M
+        sl-SyncConfigIndex-r16             INTEGER (0..15)
+    }                                                                                                        OPTIONAL,   -- Need M
+    sl-ZoneConfigMCR-List-r16          SEQUENCE (SIZE (16)) OF SL-ZoneConfigMCR-r16                          OPTIONAL,   -- Need M
+    sl-FilterCoefficient-r16           FilterCoefficient                                                     OPTIONAL,   -- Need M
+    sl-RB-Number-r16                   INTEGER (10..275)                                                     OPTIONAL,   -- Need M
+    sl-PreemptionEnable-r16            ENUMERATED {enabled, pl1, pl2, pl3, pl4, pl5, pl6, pl7, pl8}          OPTIONAL,   -- Need R
+    sl-PriorityThreshold-UL-URLLC-r16  INTEGER (1..9)                                                        OPTIONAL,   -- Need M
+    sl-PriorityThreshold-r16           INTEGER (1..9)                                                        OPTIONAL,   -- Need M
+    sl-X-Overhead-r16                  ENUMERATED {n0,n3, n6, n9}                                            OPTIONAL,   -- Need S
+    sl-PowerControl-r16                SL-PowerControl-r16                                                   OPTIONAL,   -- Need M
+    sl-TxPercentageList-r16            SL-TxPercentageList-r16                                               OPTIONAL,   -- Need M
+    sl-MinMaxMCS-List-r16              SL-MinMaxMCS-List-r16                                                 OPTIONAL,   -- Need M
+    ...,
+    [[
+    sl-TimeResource-r16                BIT STRING (SIZE (10..160))                                           OPTIONAL    -- Need M
+    ]],
+    [[
+    sl-PBPS-CPS-Config-r17             SetupRelease { SL-PBPS-CPS-Config-r17 }                               OPTIONAL,   -- Need M
+    sl-InterUE-CoordinationConfig-r17  SetupRelease { SL-InterUE-CoordinationConfig-r17 }                    OPTIONAL    -- Need M
+    ]]
+}
+
+SL-ZoneConfigMCR-r16 ::=               SEQUENCE {
+    sl-ZoneConfigMCR-Index-r16             INTEGER (0..15),
+    sl-TransRange-r16                      ENUMERATED {m20, m50, m80, m100, m120, m150, m180, m200, m220, m250, m270, m300, m350,
+                                                       m370, m400, m420, m450, m480, m500, m550, m600, m700, m1000, spare9, spare8,
+                                                       spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+                                                                                                             OPTIONAL,   -- Need M
+    sl-ZoneConfig-r16                      SL-ZoneConfig-r16                                                 OPTIONAL,   -- Need M
+    ...
+}
+
+SL-SyncAllowed-r16 ::=                 SEQUENCE {
+    gnss-Sync-r16                          ENUMERATED {true}                                                 OPTIONAL,   -- Need R
+    gnbEnb-Sync-r16                        ENUMERATED {true}                                                 OPTIONAL,   -- Need R
+    ue-Sync-r16                            ENUMERATED {true}                                                 OPTIONAL    -- Need R
+}
+
+SL-PSCCH-Config-r16 ::=                SEQUENCE {
+    sl-TimeResourcePSCCH-r16               ENUMERATED {n2, n3}                                               OPTIONAL,   -- Need M
+    sl-FreqResourcePSCCH-r16               ENUMERATED {n10,n12, n15, n20, n25}                               OPTIONAL,   -- Need M
+    sl-DMRS-ScrambleID-r16                 INTEGER (0..65535)                                                OPTIONAL,   -- Need M
+    sl-NumReservedBits-r16                 INTEGER (2..4)                                                    OPTIONAL,   -- Need M
+   ...
+}
+
+SL-PSSCH-Config-r16 ::=                SEQUENCE {
+    sl-PSSCH-DMRS-TimePatternList-r16      SEQUENCE (SIZE (1..3)) OF INTEGER (2..4)                          OPTIONAL,   -- Need M
+    sl-BetaOffsets2ndSCI-r16               SEQUENCE (SIZE (4)) OF SL-BetaOffsets-r16                         OPTIONAL,   -- Need M
+    sl-Scaling-r16                         ENUMERATED {f0p5, f0p65, f0p8, f1}                                OPTIONAL,   -- Need M
+   ...
+}
+
+SL-PSFCH-Config-r16 ::=                SEQUENCE {
+    sl-PSFCH-Period-r16                    ENUMERATED {sl0, sl1, sl2, sl4}                                   OPTIONAL,   -- Need M
+    sl-PSFCH-RB-Set-r16                    BIT STRING (SIZE (10..275))                                       OPTIONAL,   -- Need M
+    sl-NumMuxCS-Pair-r16                   ENUMERATED {n1, n2, n3, n6}                                       OPTIONAL,   -- Need M
+    sl-MinTimeGapPSFCH-r16                 ENUMERATED {sl2, sl3}                                             OPTIONAL,   -- Need M
+    sl-PSFCH-HopID-r16                     INTEGER (0..1023)                                                 OPTIONAL,   -- Need M
+    sl-PSFCH-CandidateResourceType-r16     ENUMERATED {startSubCH, allocSubCH}                               OPTIONAL,   -- Need M
+   ...
+}
+SL-PTRS-Config-r16 ::=                 SEQUENCE {
+    sl-PTRS-FreqDensity-r16                SEQUENCE (SIZE (2)) OF INTEGER (1..276)                           OPTIONAL,   -- Need M
+    sl-PTRS-TimeDensity-r16                SEQUENCE (SIZE (3)) OF INTEGER (0..29)                            OPTIONAL,   -- Need M
+    sl-PTRS-RE-Offset-r16                  ENUMERATED {offset01, offset10, offset11}                         OPTIONAL,   -- Need M
+    ...
+}
+
+SL-UE-SelectedConfigRP-r16 ::=         SEQUENCE {
+    sl-CBR-PriorityTxConfigList-r16        SL-CBR-PriorityTxConfigList-r16                                  OPTIONAL,   -- Need M
+    sl-Thres-RSRP-List-r16                 SL-Thres-RSRP-List-r16                                            OPTIONAL,   -- Need M
+    sl-MultiReserveResource-r16            ENUMERATED {enabled}                                              OPTIONAL,   -- Need M
+    sl-MaxNumPerReserve-r16                ENUMERATED {n2, n3}                                               OPTIONAL,   -- Need M
+    sl-SensingWindow-r16                   ENUMERATED {ms100, ms1100}                                        OPTIONAL,   -- Need M
+    sl-SelectionWindowList-r16             SL-SelectionWindowList-r16                                        OPTIONAL,   -- Need M
+    sl-ResourceReservePeriodList-r16       SEQUENCE (SIZE (1..16)) OF SL-ResourceReservePeriod-r16           OPTIONAL,   -- Need M
+    sl-RS-ForSensing-r16                   ENUMERATED {pscch, pssch},
+    ...,
+    [[
+    sl-CBR-PriorityTxConfigList-v1650      SL-CBR-PriorityTxConfigList-v1650                                 OPTIONAL    -- Need M
+    ]]
+}
+
+SL-ResourceReservePeriod-r16 ::=       CHOICE {
+    sl-ResourceReservePeriod1-r16          ENUMERATED {ms0, ms100, ms200, ms300, ms400, ms500, ms600, ms700, ms800, ms900, ms1000},
+    sl-ResourceReservePeriod2-r16          INTEGER (1..99)
+}
+
+SL-SelectionWindowList-r16 ::=         SEQUENCE (SIZE (8)) OF SL-SelectionWindowConfig-r16
+
+SL-SelectionWindowConfig-r16 ::=       SEQUENCE {
+    sl-Priority-r16                        INTEGER (1..8),
+    sl-SelectionWindow-r16                 ENUMERATED {n1, n5, n10, n20}
+}
+
+SL-TxPercentageList-r16 ::=            SEQUENCE (SIZE (8)) OF SL-TxPercentageConfig-r16
+
+SL-TxPercentageConfig-r16 ::=          SEQUENCE {
+    sl-Priority-r16                        INTEGER (1..8),
+    sl-TxPercentage-r16                    ENUMERATED {p20, p35, p50}
+}
+
+SL-MinMaxMCS-List-r16 ::=              SEQUENCE (SIZE (1..3)) OF SL-MinMaxMCS-Config-r16
+
+SL-MinMaxMCS-Config-r16 ::=            SEQUENCE {
+    sl-MCS-Table-r16                       ENUMERATED {qam64, qam256, qam64LowSE},
+    sl-MinMCS-PSSCH-r16                    INTEGER (0..27),
+    sl-MaxMCS-PSSCH-r16                    INTEGER (0..31)
+}
+
+SL-BetaOffsets-r16 ::=                 INTEGER (0..31)
+
+SL-PowerControl-r16 ::=    SEQUENCE {
+    sl-MaxTransPower-r16       INTEGER (-30..33),
+    sl-Alpha-PSSCH-PSCCH-r16   ENUMERATED {alpha0, alpha04, alpha05, alpha06, alpha07, alpha08, alpha09, alpha1}  OPTIONAL,   -- Need M
+    dl-Alpha-PSSCH-PSCCH-r16   ENUMERATED {alpha0, alpha04, alpha05, alpha06, alpha07, alpha08, alpha09, alpha1}  OPTIONAL,   -- Need S
+    sl-P0-PSSCH-PSCCH-r16      INTEGER (-16..15)                                                                  OPTIONAL,   -- Need S
+    dl-P0-PSSCH-PSCCH-r16      INTEGER (-16..15)                                                                  OPTIONAL,   -- Need M
+    dl-Alpha-PSFCH-r16         ENUMERATED {alpha0, alpha04, alpha05, alpha06, alpha07, alpha08, alpha09, alpha1}  OPTIONAL,   -- Need S
+    dl-P0-PSFCH-r16            INTEGER (-16..15)                                                                  OPTIONAL,   -- Need M
+    ...,
+    [[
+    dl-P0-PSSCH-PSCCH-r17      INTEGER (-202..24)                                                                 OPTIONAL,   -- Need M
+    sl-P0-PSSCH-PSCCH-r17      INTEGER (-202..24)                                                                 OPTIONAL,   -- Need S
+    dl-P0-PSFCH-r17            INTEGER (-202..24)                                                                 OPTIONAL    -- Need M
+    ]]
+}

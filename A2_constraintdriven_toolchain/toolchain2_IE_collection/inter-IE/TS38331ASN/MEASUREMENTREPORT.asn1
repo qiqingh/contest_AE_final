@@ -1,0 +1,13 @@
+MeasurementReport ::=               SEQUENCE {
+    criticalExtensions                  CHOICE {
+        measurementReport                   MeasurementReport-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+MeasurementReport-IEs ::=           SEQUENCE {
+    measResults                         MeasResults,
+
+    lateNonCriticalExtension                OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                    SEQUENCE{}                                                              OPTIONAL
+}

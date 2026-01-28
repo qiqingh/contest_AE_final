@@ -1,0 +1,166 @@
+Attaching to process 2408091
+[New LWP 2408095]
+[New LWP 2408096]
+[New LWP 2408097]
+[New LWP 2408098]
+[New LWP 2408099]
+[New LWP 2408100]
+[New LWP 2408101]
+[New LWP 2408102]
+[New LWP 2408120]
+[New LWP 2408121]
+[New LWP 2408122]
+[New LWP 2408123]
+[New LWP 2408124]
+[New LWP 2408125]
+[New LWP 2408126]
+[New LWP 2408127]
+[New LWP 2408128]
+[New LWP 2408129]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007ab331d4e8b0 in _int_malloc (av=av@entry=0x7ab331ec4c80 <main_arena>, bytes=bytes@entry=1840) at ./malloc/malloc.c:4382
+4382	./malloc/malloc.c: No such file or directory.
+(gdb) (gdb) Continuing.
+[New Thread 0x7ab306830640 (LWP 2408152)]
+[New Thread 0x7ab30602f640 (LWP 2408153)]
+[New Thread 0x7ab30582e640 (LWP 2408154)]
+[New Thread 0x7ab304e6a640 (LWP 2408155)]
+
+Thread 20 "UEthread_0" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7ab306830640 (LWP 2408152)]
+compute_cqi_bitlen (csi_reportconfig=csi_reportconfig@entry=0x7ab2ec010ff0, ri_restriction=0 '\000', csi_report=csi_report@entry=0x7ab326f9b920) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_COMMON/nr_mac_common.c:5086
+5086	  if (*freq_config->cqi_FormatIndicator == NR_CSI_ReportConfig__reportFreqConfiguration__cqi_FormatIndicator_widebandCQI) {
+(gdb) #0  compute_cqi_bitlen (csi_reportconfig=csi_reportconfig@entry=0x7ab2ec010ff0, ri_restriction=0 '\000', csi_report=csi_report@entry=0x7ab326f9b920) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_COMMON/nr_mac_common.c:5086
+        codebookConfig = 0x0
+        freq_config = 0x0
+        __FUNCTION__ = "compute_cqi_bitlen"
+#1  0x00005b991e82a81e in compute_csi_bitlen (csi_MeasConfig=csi_MeasConfig@entry=0x7ab2ec00e120, csi_report_template=csi_report_template@entry=0x7ab326f9b6a0) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_COMMON/nr_mac_common.c:5190
+        csi_reportconfig = 0x7ab2ec010ff0
+        csi_report = 0x7ab326f9b920
+        csi_resourceidx = <optimized out>
+        resourceType = <optimized out>
+        found_resource = 1
+        csi_report_id = 5 '\005'
+        nb_resources = 1 '\001'
+        reportQuantity_type = NR_CSI_ReportConfig__reportQuantity_PR_cri_RI_CQI
+        csi_ResourceConfigId = <optimized out>
+        csi_resourceconfig = <optimized out>
+        __FUNCTION__ = "compute_csi_bitlen"
+#2  0x00005b991e9066f6 in configure_servingcell_info (scd=<optimized out>, mac=0x7ab326c78010) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/config_ue.c:2351
+        sc_info = 0x7ab326f9b2d0
+        sc_info = <optimized out>
+        __FUNCTION__ = "configure_servingcell_info"
+        tmp = <optimized out>
+        tmp = <optimized out>
+        pdsch_servingcellconfig = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        i = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+        pusch_servingcellconfig = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+#3  nr_rrc_mac_config_req_cg (module_id=<optimized out>, cc_idP=cc_idP@entry=0, cell_group_config=0x7ab2ec0044d0, ue_Capability=0x0) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/config_ue.c:2633
+        spCellConfig = <optimized out>
+        scd = <optimized out>
+        __FUNCTION__ = "nr_rrc_mac_config_req_cg"
+        mac = 0x7ab326c78010
+        ret = <optimized out>
+#4  0x00005b991e8c80a2 in process_msg_rcc_to_mac (msg=0x7ab2ec015460) at /home/openairinterface5g/openair2/RRC/NR_UE/L2_interface_ue.c:132
+        ue_id = <optimized out>
+        __FUNCTION__ = "process_msg_rcc_to_mac"
+#5  0x00005b991e80fbdd in UE_dl_preprocessing (stats_printed=<synthetic pointer>, phy_data=0x7ab2fc03efb8, tx_wait_for_dlsch=0x7ab30682cd20, proc=0x7ab2fc03ef80, UE=0x7ab32d142010) at /home/openairinterface5g/executables/nr-ue.c:639
+        sampleShift = 2147483647
+        fp = 0x7ab32d142b10
+        msg = 0x7ab2ec015460
+        dl_slot = <optimized out>
+        sampleShift = <optimized out>
+        fp = <optimized out>
+        msg = <optimized out>
+        dl_slot = <optimized out>
+        __FUNCTION__ = "UE_dl_preprocessing"
+        dl_indication = <optimized out>
+        ack_nack_slot = <optimized out>
+        sl_indication = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+#6  UE_thread (arg=0x7ab32d142010) at /home/openairinterface5g/executables/nr-ue.c:1096
+        firstSymSamp = <optimized out>
+        readBlockSize = <optimized out>
+        newRx = 0x7ab2fc03ef00
+        slot = <optimized out>
+        curMsg = {proc = {timestamp_tx = <optimized out>, gNB_id = 0, nr_slot_tx = 16, nr_slot_tx_offset = <optimized out>, rx_slot_type = 1, nr_slot_rx = 13, tx_slot_type = 1, frame_tx = <optimized out>, frame_rx = <optimized out>}, UE = <optimized out>, writeBlockSize = <optimized out>, phy_data = {phy_pdcch_config = {nb_search_space = <optimized out>, pdcch_config = {{rnti = <optimized out>, BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, coreset = {frequency_domain_resource = {<optimized out>, <optimized out>, <optimized out>, <optimized out>, <optimized out>, <optimized out>}, StartSymbolIndex = <optimized out>, duration = <optimized out>, CceRegMappingType = <optimized out>, RegBundleSize = <optimized out>, InterleaverSize = <optimized out>, ShiftIndex = <optimized out>, CoreSetType = <optimized out>, precoder_granularity = <optimized out>, pdcch_dmrs_scrambling_id = <optimized out>, scrambling_rnti = <optimized out>, tci_state_pdcch = <optimized out>, tci_present_in_dci = <optimized out>}, number_of_candidates = <optimized out>, CCE = {<optimized out> <repeats 64 times>}, L = {<optimized out> <repeats 64 times>}, num_dci_options = <optimized out>, dci_length_options = {<optimized out>, <optimized out>}, dci_format_options = {<optimized out>, <optimized out>}, ss_type_options = {<optimized out>, <optimized out>}} <repeats 40 times>}}, dlsch = {{rnti = <optimized out>, rnti_type = <optimized out>, active = <optimized out>, dlsch_config = {BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, resource_alloc = <optimized out>, rb_bitmap = {<optimized out> <repeats 36 times>}, number_rbs = <optimized out>, start_rb = <optimized out>, number_symbols = <optimized out>, start_symbol = <optimized out>, rb_offset = <optimized out>, dlDmrsSymbPos = <optimized out>, dmrsConfigType = <optimized out>, prb_bundling_size_ind = <optimized out>, rate_matching_ind = <optimized out>, zp_csi_rs_trigger = <optimized out>, mcs = <optimized out>, new_data_indicator = <optimized out>, rv = <optimized out>, targetCodeRate = <optimized out>, qamModOrder = <optimized out>, TBS = <optimized out>, tb2_mcs = <optimized out>, tb2_new_data_indicator = <optimized out>, tb2_rv = <optimized out>, harq_process_nbr = <optimized out>, vrb_to_prb_mapping = <optimized out>, dai = <optimized out>, scaling_factor_S = <optimized out>, pucch_resource_id = <optimized out>, pdsch_to_harq_feedback_time_ind = <optimized out>, n_dmrs_cdm_groups = <optimized out>, dmrs_ports = <optimized out>, n_front_load_symb = <optimized out>, tci_state = <optimized out>, cbgti = <optimized out>, codeBlockGroupFlushIndicator = <optimized out>, PTRSPortIndex = <optimized out>, PTRSTimeDensity = <optimized out>, PTRSFreqDensity = <optimized out>, PTRSReOffset = <optimized out>, nEpreRatioOfPDSCHToPTRS = <optimized out>, mcs_table = <optimized out>, tbslbrm = <optimized out>, nscid = <optimized out>, dlDmrsScramblingId = <optimized out>, dlDataScramblingId = <optimized out>, pduBitmap = <optimized out>, k1_feedback = <optimized out>, ldpcBaseGraph = <optimized out>, numCsiRsForRateMatching = <optimized out>, csiRsForRateMatching = {{subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}}, Nl = <optimized out>, max_ldpc_iterations = <optimized out>, last_iteration_cnt = <optimized out>, ptrs_symbols = <optimized out>, ptrs_symbol_index = <optimized out>}, {rnti = <optimized out>, rnti_type = <optimized out>, active = <optimized out>, dlsch_config = {BWPSize = <optimized out>, BWPStart = <optimized out>, SubcarrierSpacing = <optimized out>, resource_alloc = <optimized out>, rb_bitmap = {<optimized out> <repeats 36 times>}, number_rbs = <optimized out>, start_rb = <optimized out>, number_symbols = <optimized out>, start_symbol = <optimized out>, rb_offset = <optimized out>, dlDmrsSymbPos = <optimized out>, dmrsConfigType = <optimized out>, prb_bundling_size_ind = <optimized out>, rate_matching_ind = <optimized out>, zp_csi_rs_trigger = <optimized out>, mcs = <optimized out>, new_data_indicator = <optimized out>, rv = <optimized out>, targetCodeRate = <optimized out>, qamModOrder = <optimized out>, TBS = <optimized out>, tb2_mcs = <optimized out>, tb2_new_data_indicator = <optimized out>, tb2_rv = <optimized out>, harq_process_nbr = <optimized out>, vrb_to_prb_mapping = <optimized out>, dai = <optimized out>, scaling_factor_S = <optimized out>, pucch_resource_id = <optimized out>, pdsch_to_harq_feedback_time_ind = <optimized out>, n_dmrs_cdm_groups = <optimized out>, dmrs_ports = <optimized out>, n_front_load_symb = <optimized out>, tci_state = <optimized out>, cbgti = <optimized out>, codeBlockGroupFlushIndicator = <optimized out>, PTRSPortIndex = <optimized out>, PTRSTimeDensity = <optimized out>, PTRSFreqDensity = <optimized out>, PTRSReOffset = <optimized out>, nEpreRatioOfPDSCHToPTRS = <optimized out>, mcs_table = <optimized out>, tbslbrm = <optimized out>, nscid = <optimized out>, dlDmrsScramblingId = <optimized out>, dlDataScramblingId = <optimized out>, pduBitmap = <optimized out>, k1_feedback = <optimized out>, ldpcBaseGraph = <optimized out>, numCsiRsForRateMatching = <optimized out>, csiRsForRateMatching = {{subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}, {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}}, Nl = <optimized out>, max_ldpc_iterations = <optimized out>, last_iteration_cnt = <optimized out>, ptrs_symbols = <optimized out>, ptrs_symbol_index = <optimized out>}}, sl_rx_action = <optimized out>, csirs_vars = {active = <optimized out>, csirs_config_pdu = {subcarrier_spacing = <optimized out>, cyclic_prefix = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, csi_type = <optimized out>, row = <optimized out>, freq_domain = <optimized out>, symb_l0 = <optimized out>, symb_l1 = <optimized out>, cdm_type = <optimized out>, freq_density = <optimized out>, scramb_id = <optimized out>, power_control_offset = <optimized out>, power_control_offset_ss = <optimized out>, measurement_bitmap = <optimized out>}}, csiim_vars = {active = <optimized out>, csiim_config_pdu = {bwp_size = <optimized out>, bwp_start = <optimized out>, subcarrier_spacing = <optimized out>, start_rb = <optimized out>, nr_of_rbs = <optimized out>, k_csiim = {<optimized out>, <optimized out>, <optimized out>, <optimized out>}, l_csiim = {<optimized out>, <optimized out>, <optimized out>, <optimized out>}}}}, next_barrier = <optimized out>}
+        next_frame_tx = <optimized out>
+        next_tx_slot_and_frame = <optimized out>
+        slot_nr = 13
+        iq_shift_to_apply = <optimized out>
+        tmp = <optimized out>
+        writeTimestamp = 299427240
+        ret = <optimized out>
+        curMsgTx = <optimized out>
+        wait_for_prev_slot = <optimized out>
+        next_duration_rx_to_tx = <optimized out>
+        next_nr_slot_tx = <optimized out>
+        next_barrier = <optimized out>
+        tmp = <optimized out>
+        rx_timestamp = 299360388
+        writeBlockSize = <optimized out>
+        curMsgRx = 0x7ab2fc03ef80
+        newTx = <optimized out>
+        slot_and_frame = <optimized out>
+        dummy = <optimized out>
+        UE = 0x7ab32d142010
+        rxp = {0x7ab31ed9e250, 0x0, 0x0, 0x0}
+        stream_status = STREAM_STATUS_SYNCED
+        cfg = 0x7ab32d3eeb38
+        tmp = <optimized out>
+        __FUNCTION__ = "UE_thread"
+        fp = 0x7ab32d142b10
+        sl_cfg = 0x0
+        tmp2 = <optimized out>
+        nf = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 0, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 39 times>, __align = 0}, notifF = {__data = {__wseq = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g1_start = {__value64 = 0, __value32 = {__low = 0, __high = 0}}, __g_refs = {0, 0}, __g_size = {0, 0}, __g1_orig_size = 0, __wrefs = 0, __g_signals = {0, 0}}, __size = '\000' <repeats 47 times>, __align = 0}, abortFIFO = false}
+        freeBlocks = {outF = 0x0, inF = 0x0, lockF = {__data = {__lock = <optimized out>, __count = <optimized out>, __owner = <optimized out>, __nusers = <optimized out>, __kind = <optimized out>, __spins = <optimized out>, __elision = <optimized out>, __list = {__prev = <optimized out>, __next = <optimized out>}}, __size = {<optimized out> <repeats 40 times>}, __align = <optimized out>}, notifF = {__data = {__wseq = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g1_start = {__value64 = <optimized out>, __value32 = {__low = <optimized out>, __high = <optimized out>}}, __g_refs = {<optimized out>, <optimized out>}, __g_size = {<optimized out>, <optimized out>}, __g1_orig_size = <optimized out>, __wrefs = <optimized out>, __g_signals = {<optimized out>, <optimized out>}}, __size = {<optimized out> <repeats 48 times>}, __align = <optimized out>}, abortFIFO = <optimized out>}
+        timing_advance = 0
+        mac = 0x7ab326c78010
+        syncRunning = false
+        nb_slot_frame = 20
+        absolute_slot = <optimized out>
+        decoded_frame_rx = 569
+        trashed_frames = <optimized out>
+        tx_wait_for_dlsch = {0 <repeats 17 times>, 1, 0 <repeats 142 times>}
+        shiftForNextFrame = 0
+        intialSyncOffset = 92160
+        sync_timestamp = 262195199
+        stats_printed = false
+        ntn_ta_common = 0
+        ntn_koffset = <optimized out>
+        duration_rx_to_tx = 3
+        nr_slot_tx_offset = 0
+        update_ntn_system_information = false
+#7  0x00007ab331d3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, 7551421696943087445, 134909326984768, 2, 134910053705680, 140724989887232, 7551421695484518229, 7551521347814973269}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#8  0x00007ab331dd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 2408091] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 2408091
+[Inferior 1 (process 2408091) detached]

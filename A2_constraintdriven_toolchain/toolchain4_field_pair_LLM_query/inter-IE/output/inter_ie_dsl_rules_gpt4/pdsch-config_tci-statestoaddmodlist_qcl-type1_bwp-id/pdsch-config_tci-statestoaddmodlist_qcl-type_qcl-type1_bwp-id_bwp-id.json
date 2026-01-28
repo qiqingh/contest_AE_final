@@ -1,0 +1,203 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      71,
+      133,
+      136,
+      198,
+      201,
+      263,
+      266
+    ],
+    "field2_all": [
+      68,
+      71,
+      133,
+      136,
+      198,
+      201,
+      263,
+      266
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198
+        ],
+        [
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          71,
+          136,
+          201,
+          266
+        ],
+        [
+          68,
+          133,
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          71
+        ],
+        [
+          68,
+          133,
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          201,
+          266
+        ],
+        [
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          71,
+          136,
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          71
+        ]
+      ],
+      [
+        [
+          201,
+          266
+        ],
+        [
+          68,
+          133,
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          71,
+          136,
+          201,
+          266
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          71
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          68,
+          133,
+          198,
+          263
+        ]
+      ],
+      [
+        [
+          136,
+          201
+        ],
+        [
+          133,
+          198
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear, explicit relationship between the two fields across the different IEs. The evidence discusses the behavior and characteristics of the fields, but does not provide a normative constraint between them.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdsch-config_tci-statestoaddmodlist",
+    "field1": "qcl-type",
+    "ie2_name": "qcl-type1_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
+    "generated_at": "2025-12-11T09:39:48.672969",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear, explicit relationship between the two fields across the different IEs. The evidence discusses the behavior and characteristics of the fields, but does not provide a normative constraint between them.",
+      "version_tags": []
+    }
+  }
+}

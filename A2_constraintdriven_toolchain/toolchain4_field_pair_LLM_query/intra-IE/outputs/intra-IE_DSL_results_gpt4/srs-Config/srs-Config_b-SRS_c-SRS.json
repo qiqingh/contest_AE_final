@@ -1,0 +1,86 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 0), EQ(field2, 0))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      352
+    ],
+    "field2_all": [
+      351
+    ],
+    "actual_pairs": [
+      [
+        [
+          352
+        ],
+        [
+          351
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 0)",
+  "preconditions": [
+    "freqHopping not configured"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "b-SRS=0, c-SRS=0 when freqHopping is not configured"
+    ],
+    "invalid": [
+      "b-SRS=1, c-SRS=0 when freqHopping is not configured"
+    ]
+  },
+  "notes": "The rule applies when freqHopping is not configured. In this case, both b-SRS and c-SRS should be 0.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "srs-Config",
+    "field1": "b-SRS",
+    "field2": "c-SRS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "where m_{\\mathrm{SRS}, b} is given by a selected row of Table 6.4.1.4.3-1 with b=B_{\\mathrm{SRS}} where B_{\\mathrm{SRS}} \\in\\{0,1,2,3\\} is given by the field b -SRS contained in the higher-layer parameter freqHopping if configured, otherwise B_{\\text {SRS }}=0 . The row of the table is selected according to the index C_{\\mathrm{SRS}} \\in\\{0,1, \\ldots, 63\\} given by the field c -SRS contained in the higher-layer parameter freqHopping. The quantity P_{F} \\in\\{2,4\\} is given by the higher-layer parameter FreqScalingFactor if configured, otherwise P_{F}=1 . When FreqScalingFactor is configured, the UE expects the length of the SRS sequence to be a multiple of 6 .\n---\nwhere m_{\\mathrm{SRS}, b} is given by a selected row of Table 6.4.1.4.3-1 with b=B_{\\mathrm{SRS}} where B_{\\mathrm{SRS}} \\in\\{0,1,2,3\\} is given by the field b -SRS contained in the higher-layer parameter freqHopping if configured, otherwise B_{\\text {SRS }}=0 . The row of the table is selected according to the index C_{\\mathrm{SRS}} \\in\\{0,1, \\ldots, 63\\} given by the field c -SRS contained in the higher-layer parameter freqHopping. The quantity P_{F} \\in\\{2,4\\} is given by the higher-layer parameter FreqScalingFactor if configured, otherwise P_{F}=1 . When FreqScalingFactor is configured, the UE expects the length of the SRS sequence to be a multiple of 6 .",
+    "generated_at": "2025-12-11T14:23:57.549927",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 0), EQ(field2, 0))",
+      "preconditions": [
+        "freqHopping not configured"
+      ],
+      "predicate": "EQ(field1, 0)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "b-SRS=0, c-SRS=0 when freqHopping is not configured"
+        ],
+        "invalid": [
+          "b-SRS=1, c-SRS=0 when freqHopping is not configured"
+        ]
+      },
+      "notes": "The rule applies when freqHopping is not configured. In this case, both b-SRS and c-SRS should be 0.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

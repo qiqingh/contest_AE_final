@@ -1,0 +1,83 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      42
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          42
+        ]
+      ],
+      [
+        [
+          116,
+          181
+        ],
+        [
+          42
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the fields searchspaceid and pdcch-config across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdcch-config",
+    "field1": "searchspaceid",
+    "ie2_name": "initialdownlinkbwp_pdcch-config",
+    "field2": "pdcch-config",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If a UE is configured with enableDefaultTCI-StatePerCoresetPoollndex and the UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet - if there is any other DL signal with an indicated TCI state in the same symbols as the CSI-RS, the UE applies the QCL assumption of the other DL signal also when receiving the aperiodic CSI-RS. The other DL signal refers to PDSCH scheduled by a PDCCH associated with the same coresetPoolIndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to the threshold timeDurationForQCL, as defined in [13, TS 38.306], aperiodic CSI-RS triggered by a PDCCH associated with the same coresetPoollndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to the UE reported threshold beamSwitchTiming when the reported value is one of the values \\( \\{14,28,48\\} \\cdot 2^{\\max \\left(0, \\mu \\text { CSIRS }^{-3}\\right)} \\) and enableBeamSwitchTiming is not provided, aperiodic CSI-RS triggered by a PDCCH associated with the same coresetPoollndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to 48. \\( 2^{\\max \\left(0, \\mu_{\\text {CSIRS }}-3\\right)} \\) when the reported value of beamSwitchTiming-r 16 is one of the values \\( \\{224,336\\} \\). \\( 2^{\\max \\left(0, \\mu_{\\text {CSIRS }}{ }^{-3}\\right)} \\) and enableBeamSwitchTiming is provided, periodic CSI-RS, semi-persistent CSI-RS; - else, the UE applies the QCL parameter(s) of the CORESET associated with a monitored search space with the lowest controlResourceSetld among CORESETs, which are configured with the same value of coresetPoollndex as the PDCCH triggering that aperiodic CSI-RS, in the latest slot in which one or more CORESETs are associated with the same value of coresetPoollndex as the PDCCH triggering that aperiodic CSI-RS",
+    "generated_at": "2026-01-10T14:23:25.938219",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between searchspaceid and pdcch-config based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the fields searchspaceid and pdcch-config across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

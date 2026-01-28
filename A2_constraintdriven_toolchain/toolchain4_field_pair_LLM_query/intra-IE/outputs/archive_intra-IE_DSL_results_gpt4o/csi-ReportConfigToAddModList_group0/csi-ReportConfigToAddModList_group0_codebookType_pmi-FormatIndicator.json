@@ -1,0 +1,81 @@
+{
+  "dsl_rule": "IMPLIES(IN(codebookType, {'typeI-r16', 'typeI-PortSelection-r16', 'typeI-PortSelection-r17'}), NE(pmi-FormatIndicator, NULL))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": [
+    [
+      836
+    ],
+    [
+      833
+    ]
+  ],
+  "predicate": "NE(pmi-FormatIndicator, NULL)",
+  "preconditions": [
+    "codebookType present",
+    "pmi-FormatIndicator present"
+  ],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "codebookType='typeI-r16', pmi-FormatIndicator=NULL"
+    ],
+    "invalid": [
+      "codebookType='typeI-r16', pmi-FormatIndicator='widebandPMI'"
+    ]
+  },
+  "notes": "The evidence explicitly states that pmi-FormatIndicator should not be configured if codebookType is set to certain values.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "codebookType",
+    "field2": "pmi-FormatIndicator",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- wideband PMI or subband PMI reporting as configured by the higher layer parameter pmi-FormatIndicator. When wideband PMI reporting is configured, a wideband PMI is reported for the entire CSI reporting band. When subband PMI reporting is configured, except with 2 antenna ports, a single wideband indication (i) in Clause 5.2.2.2) is reported for the entire CSI reporting band and one subband indication ( i_{2} in clause 5.2.2.2) is reported for each subband in the CSI reporting band. When subband PMIs are configured with 2 antenna ports, a PMI is reported for each subband in the CSI reporting band. - a UE is not expected to be configured with pmi-FormatIndicator if codebookType is set to 'type[I-r16' or 'type[I-PortSelection-r16' or 'type[I-PortSelection-r17'.",
+    "generated_at": "2025-12-09T09:45:38.875485",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(IN(codebookType, {'typeI-r16', 'typeI-PortSelection-r16', 'typeI-PortSelection-r17'}), NE(pmi-FormatIndicator, NULL))",
+      "preconditions": [
+        "codebookType present",
+        "pmi-FormatIndicator present"
+      ],
+      "predicate": "NE(pmi-FormatIndicator, NULL)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "codebookType='typeI-r16', pmi-FormatIndicator=NULL"
+        ],
+        "invalid": [
+          "codebookType='typeI-r16', pmi-FormatIndicator='widebandPMI'"
+        ]
+      },
+      "notes": "The evidence explicitly states that pmi-FormatIndicator should not be configured if codebookType is set to certain values.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

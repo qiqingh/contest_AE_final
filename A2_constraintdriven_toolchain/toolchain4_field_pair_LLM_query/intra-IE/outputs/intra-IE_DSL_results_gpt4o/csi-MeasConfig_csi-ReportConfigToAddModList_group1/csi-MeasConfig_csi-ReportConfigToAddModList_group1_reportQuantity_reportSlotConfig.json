@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      932,
+      933
+    ],
+    "field2_all": [
+      928,
+      929
+    ],
+    "actual_pairs": [
+      [
+        [
+          932,
+          933
+        ],
+        [
+          928,
+          929
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between field1 (reportQuantity) and field2 (reportSlotConfig) within the same IE. The evidence only describes independent behaviors of each field.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "reportQuantity",
+    "field2": "reportSlotConfig",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} reportQuantity The CSI related quantities to report. see TS 38.214 [19], clause 5.2.1. If the field reportQuantity-r16 is present, UE shall ignore reportQuantity (without suffix). \\end{tabular} \\begin{tabular}{l} reportSlotConfig Periodicity and slot offset (see TS 38.214 [19], clause 5.2.1.4). If the field reportSlotConfig-v1530 is present, the UE shall ignore the value provided in reportSlotConfig (without suffix). \\end{tabular}",
+    "generated_at": "2026-01-10T21:40:11.247690",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between field1 (reportQuantity) and field2 (reportSlotConfig) within the same IE. The evidence only describes independent behaviors of each field.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      43,
+      108,
+      173,
+      238
+    ],
+    "field2_all": [
+      84,
+      85,
+      149,
+      150,
+      214,
+      215
+    ],
+    "actual_pairs": [
+      [
+        [
+          173,
+          238
+        ],
+        [
+          84,
+          85,
+          149,
+          150,
+          214,
+          215
+        ]
+      ],
+      [
+        [
+          108,
+          173
+        ],
+        [
+          84,
+          85,
+          149,
+          150,
+          214,
+          215
+        ]
+      ],
+      [
+        [
+          43
+        ],
+        [
+          84,
+          85,
+          149,
+          150,
+          214,
+          215
+        ]
+      ],
+      [
+        [
+          43,
+          108,
+          173,
+          238
+        ],
+        [
+          84,
+          85,
+          149,
+          150,
+          214,
+          215
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior related to cce-REG-MappingType without linking it to controlresourcesetid.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie1_name": "commoncontrolresourceset",
+    "field1": "cce-reg-mappingtype",
+    "ie2_name": "pdcch-config_controlresourcesettoaddmodlist",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3; - interleaved or non-interleaved mapping is given by the higher-layer parameter cce-REG-MappingType;",
+    "generated_at": "2026-01-09T12:48:39.267926",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between cce-reg-mappingtype and controlresourcesetid based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior related to cce-REG-MappingType without linking it to controlresourcesetid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

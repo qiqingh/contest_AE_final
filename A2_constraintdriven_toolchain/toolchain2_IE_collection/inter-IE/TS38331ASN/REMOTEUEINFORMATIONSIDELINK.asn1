@@ -1,0 +1,24 @@
+RemoteUEInformationSidelink-r17 ::=           SEQUENCE {
+    criticalExtensions                            CHOICE {
+        remoteUEInformationSidelink-r17               RemoteUEInformationSidelink-r17-IEs,
+        criticalExtensionsFuture                      SEQUENCE {}
+    }
+}
+
+RemoteUEInformationSidelink-r17-IEs ::=       SEQUENCE {
+    sl-RequestedSIB-List-r17                     SetupRelease { SL-RequestedSIB-List-r17}          OPTIONAL, -- Need M
+    sl-PagingInfo-RemoteUE-r17                    SetupRelease { SL-PagingInfo-RemoteUE-r17}         OPTIONAL, -- Need M
+    lateNonCriticalExtension                      OCTET STRING                                       OPTIONAL,
+    nonCriticalExtension                          SEQUENCE {}                                        OPTIONAL
+}
+
+SL-RequestedSIB-List-r17 ::=                 SEQUENCE (SIZE (maxSIB-MessagePlus1-r17)) OF SL-SIB-ReqInfo-r17
+
+SL-PagingInfo-RemoteUE-r17 ::=                SEQUENCE {
+    sl-PagingIdentityRemoteUE-r17                 SL-PagingIdentityRemoteUE-r17,
+    sl-PagingCycleRemoteUE-r17                    PagingCycle                                        OPTIONAL  -- Need M
+}
+
+SL-SIB-ReqInfo-r17 ::=                   ENUMERATED { sib1, sib2, sib3, sib4, sib5, sib6, sib7, sib8, sib9, sib10, sib11, sib12, sib13,
+                                                      sib14, sib15, sib16, sib17, sib18, sib19, sib20, sib21, sibNotReq11, sibNotReq10, sibNotReq9,
+                                                      sibNotReq8, sibNotReq7, sibNotReq6, sibNotReq5, sibNotReq4, sibNotReq3, sibNotReq2, sibNotReq1, ... }

@@ -1,0 +1,15 @@
+EUTRA-MBSFN-SubframeConfigList ::= SEQUENCE (SIZE (1..maxMBSFN-Allocations)) OF EUTRA-MBSFN-SubframeConfig
+
+EUTRA-MBSFN-SubframeConfig ::=      SEQUENCE {
+    radioframeAllocationPeriod          ENUMERATED {n1, n2, n4, n8, n16, n32},
+    radioframeAllocationOffset          INTEGER (0..7),
+    subframeAllocation1                 CHOICE {
+        oneFrame                            BIT STRING (SIZE(6)),
+        fourFrames                          BIT STRING (SIZE(24))
+    },
+    subframeAllocation2                 CHOICE {
+        oneFrame                            BIT STRING (SIZE(2)),
+        fourFrames                          BIT STRING (SIZE(8))
+    }                                                                                                       OPTIONAL,   -- Need R
+    ...
+}

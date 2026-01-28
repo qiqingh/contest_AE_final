@@ -1,0 +1,25 @@
+CG-CandidateList ::=                SEQUENCE {
+    criticalExtensions                  CHOICE {
+        c1                                  CHOICE{
+            cg-CandidateList-r17                CG-CandidateList-r17-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+CG-CandidateList-r17-IEs ::=        SEQUENCE {
+    cg-CandidateToAddModList-r17        SEQUENCE (SIZE (1..maxNrofCondCells-r16)) OF CG-CandidateInfo-r17    OPTIONAL,
+    cg-CandidateToReleaseList-r17       SEQUENCE (SIZE (1..maxNrofCondCells-r16)) OF CG-CandidateInfoId-r17  OPTIONAL,
+    nonCriticalExtension                SEQUENCE {}                                                          OPTIONAL
+}
+
+CG-CandidateInfo-r17 ::=            SEQUENCE {
+    cg-CandidateInfoId-r17              CG-CandidateInfoId-r17,
+    candidateCG-Config-r17             OCTET STRING (CONTAINING CG-Config)
+}
+
+CG-CandidateInfoId-r17::=           SEQUENCE {
+    ssbFrequency-r17                    ARFCN-ValueNR,
+    physCellId-r17                      PhysCellId
+}

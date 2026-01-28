@@ -1,0 +1,171 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      333,
+      441,
+      549,
+      657
+    ],
+    "field2_all": [
+      338,
+      444,
+      552,
+      660
+    ],
+    "actual_pairs": [
+      [
+        [
+          441,
+          657
+        ],
+        [
+          552,
+          660
+        ]
+      ],
+      [
+        [
+          333,
+          441,
+          549,
+          657
+        ],
+        [
+          444,
+          552
+        ]
+      ],
+      [
+        [
+          333,
+          441,
+          549,
+          657
+        ],
+        [
+          444,
+          660
+        ]
+      ],
+      [
+        [
+          441,
+          549
+        ],
+        [
+          444,
+          660
+        ]
+      ],
+      [
+        [
+          333,
+          441,
+          549,
+          657
+        ],
+        [
+          552,
+          660
+        ]
+      ],
+      [
+        [
+          333
+        ],
+        [
+          552,
+          660
+        ]
+      ],
+      [
+        [
+          333
+        ],
+        [
+          444,
+          660
+        ]
+      ],
+      [
+        [
+          441,
+          549
+        ],
+        [
+          552,
+          660
+        ]
+      ],
+      [
+        [
+          333
+        ],
+        [
+          444,
+          552
+        ]
+      ],
+      [
+        [
+          333
+        ],
+        [
+          338,
+          444,
+          552,
+          660
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the fields srs-resourcesetid and usage across different IEs. The evidence describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field1": "srs-resourcesetid",
+    "ie2_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field2": "usage",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.1.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "For non-codebook based transmission, the UE can calculate the precoder used for the transmission of SRS based on measurement of an associated NZP CSI-RS resource. A UE can be configured with only one NZP CSI-RS resource for the SRS resource set with higher layer parameter usage in SRS-ResourceSet set to 'nonCodebook' if configured. - If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission.",
+    "generated_at": "2026-01-09T12:21:19.575433",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between srs-resourcesetid and usage across different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the fields srs-resourcesetid and usage across different IEs. The evidence describes behavior within a single IE.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

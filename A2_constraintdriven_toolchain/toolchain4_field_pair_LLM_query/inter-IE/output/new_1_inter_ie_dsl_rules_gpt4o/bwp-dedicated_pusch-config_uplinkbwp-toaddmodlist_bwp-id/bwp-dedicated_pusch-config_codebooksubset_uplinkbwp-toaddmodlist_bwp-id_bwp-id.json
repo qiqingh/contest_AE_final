@@ -1,0 +1,133 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      359,
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "field2_all": [
+      438,
+      467,
+      546,
+      575,
+      654
+    ],
+    "actual_pairs": [
+      [
+        [
+          438,
+          546
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          438,
+          546
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          438,
+          546
+        ]
+      ],
+      [
+        [
+          438,
+          546,
+          654
+        ],
+        [
+          467,
+          575
+        ]
+      ],
+      [
+        [
+          359,
+          575
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ],
+      [
+        [
+          359,
+          467
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior related to CSI-ReportConfig and does not establish a direct relationship between codebooksubset and bwp-id across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pusch-config",
+    "field1": "codebooksubset",
+    "ie2_name": "uplinkbwp-toaddmodlist_bwp-id",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
+    "generated_at": "2026-01-09T12:14:52.946879",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between codebooksubset and bwp-id based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior related to CSI-ReportConfig and does not establish a direct relationship between codebooksubset and bwp-id across different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

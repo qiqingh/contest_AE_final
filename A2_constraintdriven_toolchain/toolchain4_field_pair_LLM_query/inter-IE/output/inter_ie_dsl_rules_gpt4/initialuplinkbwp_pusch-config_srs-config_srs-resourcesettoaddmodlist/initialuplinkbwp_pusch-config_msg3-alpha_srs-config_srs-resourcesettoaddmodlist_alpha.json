@@ -1,0 +1,133 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 1), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      322
+    ],
+    "field2_all": [
+      339,
+      445,
+      553,
+      661
+    ],
+    "actual_pairs": [
+      [
+        [
+          322
+        ],
+        [
+          339
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          553,
+          661
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          445,
+          661
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          339,
+          445,
+          553,
+          661
+        ]
+      ],
+      [
+        [
+          322
+        ],
+        [
+          445,
+          553
+        ]
+      ]
+    ]
+  },
+  "predicate": "If msg3-alpha (from initialuplinkbwp_pusch-config) is absent (represented as 1), then alpha (from srs-config_srs-resourcesettoaddmodlist) should also be set to 1.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1=1, field2=1"
+    ],
+    "invalid": [
+      "field1=1, field2=0"
+    ]
+  },
+  "notes": "The rule is derived from the evidence provided which states that if msg3-alpha is absent, the UE should use the value of alpha.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pusch-config",
+    "field1": "msg3-alpha",
+    "ie2_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field2": "alpha",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1",
+      "6.3.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "Dedicated alpha value for MsgA PUSCH. If the field is absent, the UE shall use the value of msg3-Alpha if configured, else UE applies value 1 (see TS 38.213 [13], clause 7.1.1).\n---\nconfiguration \\{p0-pusch, alpha\\} sets for PUSCH (except msg3 and msgA PUSCH), i.e., \\{ \\{p0,alpha,index1\\}, \\{p0,alpha,index2\\},...\\} (see TS 38.213 [13], clause 7.1). When no set is configured, the UE uses the P0-nominal for msg3 PUSCH, PO-UE is set to 0 and alpha is set according to msg3-Alpha configured for msg3 PUSCH.\n---\n- if \\( P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} \\) and msgA-Alpha is provided, \\( \\alpha_{b_{,} f_{, c}}(0) \\) is the value of msgA-Alpha - elseif \\( P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} \\) or msgA-Alpha is not provided, and msg3Alpha is provided, \\( \\alpha_{b, f, c}(0) \\) is the value of msg3-Alpha",
+    "generated_at": "2025-12-11T09:15:07.709993",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 1), EQ(field2, 1))",
+      "preconditions": [],
+      "predicate": "If msg3-alpha (from initialuplinkbwp_pusch-config) is absent (represented as 1), then alpha (from srs-config_srs-resourcesettoaddmodlist) should also be set to 1.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=1, field2=1"
+        ],
+        "invalid": [
+          "field1=1, field2=0"
+        ]
+      },
+      "notes": "The rule is derived from the evidence provided which states that if msg3-alpha is absent, the UE should use the value of alpha.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

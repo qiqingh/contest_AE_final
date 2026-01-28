@@ -1,0 +1,143 @@
+ConfiguredGrantConfig ::=           SEQUENCE {
+    frequencyHopping                    ENUMERATED {intraSlot, interSlot}                                       OPTIONAL,   -- Need S
+    cg-DMRS-Configuration               DMRS-UplinkConfig,
+    mcs-Table                           ENUMERATED {qam256, qam64LowSE}                                         OPTIONAL,   -- Need S
+    mcs-TableTransformPrecoder          ENUMERATED {qam256, qam64LowSE}                                         OPTIONAL,   -- Need S
+    uci-OnPUSCH                         SetupRelease { CG-UCI-OnPUSCH }                                         OPTIONAL,   -- Need M
+    resourceAllocation                  ENUMERATED { resourceAllocationType0, resourceAllocationType1, dynamicSwitch },
+    rbg-Size                            ENUMERATED {config2}                                                    OPTIONAL,   -- Need S
+    powerControlLoopToUse               ENUMERATED {n0, n1},
+    p0-PUSCH-Alpha                      P0-PUSCH-AlphaSetId,
+    transformPrecoder                   ENUMERATED {enabled, disabled}                                          OPTIONAL,   -- Need S
+    nrofHARQ-Processes                  INTEGER(1..16),
+    repK                                ENUMERATED {n1, n2, n4, n8},
+    repK-RV                             ENUMERATED {s1-0231, s2-0303, s3-0000}                                  OPTIONAL,   -- Need R
+    periodicity                         ENUMERATED {
+                                                sym2, sym7, sym1x14, sym2x14, sym4x14, sym5x14, sym8x14, sym10x14, sym16x14, sym20x14,
+                                                sym32x14, sym40x14, sym64x14, sym80x14, sym128x14, sym160x14, sym256x14, sym320x14, sym512x14,
+                                                sym640x14, sym1024x14, sym1280x14, sym2560x14, sym5120x14,
+                                                sym6, sym1x12, sym2x12, sym4x12, sym5x12, sym8x12, sym10x12, sym16x12, sym20x12, sym32x12,
+                                                sym40x12, sym64x12, sym80x12, sym128x12, sym160x12, sym256x12, sym320x12, sym512x12, sym640x12,
+                                                sym1280x12, sym2560x12
+    },
+    configuredGrantTimer                INTEGER (1..64)                                                         OPTIONAL,   -- Need R
+    rrc-ConfiguredUplinkGrant           SEQUENCE {
+        timeDomainOffset                    INTEGER (0..5119),
+        timeDomainAllocation                INTEGER (0..15),
+        frequencyDomainAllocation           BIT STRING (SIZE(18)),
+        antennaPort                         INTEGER (0..31),
+        dmrs-SeqInitialization              INTEGER (0..1)                                                         OPTIONAL,   -- Need R
+        precodingAndNumberOfLayers          INTEGER (0..63),
+        srs-ResourceIndicator               INTEGER (0..15)                                                        OPTIONAL,   -- Need R
+        mcsAndTBS                           INTEGER (0..31),
+        frequencyHoppingOffset              INTEGER (1.. maxNrofPhysicalResourceBlocks-1)                          OPTIONAL,   -- Need R
+        pathlossReferenceIndex              INTEGER (0..maxNrofPUSCH-PathlossReferenceRSs-1),
+        ...,
+        [[
+        pusch-RepTypeIndicator-r16          ENUMERATED {pusch-RepTypeA,pusch-RepTypeB}                             OPTIONAL,   -- Need M
+        frequencyHoppingPUSCH-RepTypeB-r16  ENUMERATED {interRepetition, interSlot}                                OPTIONAL,   -- Cond RepTypeB
+        timeReferenceSFN-r16                ENUMERATED {sfn512}                                                    OPTIONAL    -- Need S
+        ]],
+        [[
+        pathlossReferenceIndex2-r17        INTEGER (0..maxNrofPUSCH-PathlossReferenceRSs-1)                        OPTIONAL,   -- Need R
+        srs-ResourceIndicator2-r17         INTEGER (0..15)                                                         OPTIONAL,   -- Need R
+        precodingAndNumberOfLayers2-r17    INTEGER (0..63)                                                         OPTIONAL,   -- Need R
+        timeDomainAllocation-v1710         INTEGER (16..63)                                                        OPTIONAL,    -- Need M
+        timeDomainOffset-r17               INTEGER (0..40959)                                                      OPTIONAL,   -- Need R
+        cg-SDT-Configuration-r17           CG-SDT-Configuration-r17                                                OPTIONAL    -- Need M
+        ]]
+    }                                                                                                           OPTIONAL,   -- Need R
+    ...,
+    [[
+    cg-RetransmissionTimer-r16              INTEGER (1..64)                                                     OPTIONAL,   -- Need R
+    cg-minDFI-Delay-r16                     ENUMERATED
+                                                    {sym7, sym1x14, sym2x14, sym3x14, sym4x14, sym5x14, sym6x14, sym7x14, sym8x14,
+                                                     sym9x14, sym10x14, sym11x14, sym12x14, sym13x14, sym14x14,sym15x14, sym16x14
+                                                    }                                                   OPTIONAL,   -- Need R
+    cg-nrofPUSCH-InSlot-r16                 INTEGER (1..7)                                              OPTIONAL,   -- Need R
+    cg-nrofSlots-r16                        INTEGER (1..40)                                             OPTIONAL,   -- Need R
+    cg-StartingOffsets-r16                  CG-StartingOffsets-r16                                      OPTIONAL,   -- Need R
+    cg-UCI-Multiplexing-r16                 ENUMERATED {enabled}                                        OPTIONAL,   -- Need R
+    cg-COT-SharingOffset-r16                INTEGER (1..39)                                             OPTIONAL,   -- Need R
+    betaOffsetCG-UCI-r16                    INTEGER (0..31)                                            OPTIONAL,   -- Need R
+    cg-COT-SharingList-r16                  SEQUENCE (SIZE (1..1709)) OF CG-COT-Sharing-r16             OPTIONAL,   -- Need R
+    harq-ProcID-Offset-r16                  INTEGER (0..15)                                             OPTIONAL,   -- Need M
+    harq-ProcID-Offset2-r16                 INTEGER (0..15)                                             OPTIONAL,   -- Need M
+    configuredGrantConfigIndex-r16          ConfiguredGrantConfigIndex-r16                              OPTIONAL,   -- Cond CG-List
+    configuredGrantConfigIndexMAC-r16       ConfiguredGrantConfigIndexMAC-r16                           OPTIONAL,   -- Cond CG-IndexMAC
+    periodicityExt-r16                      INTEGER (1..5120)                                           OPTIONAL,   -- Need R
+    startingFromRV0-r16                     ENUMERATED {on, off}                                        OPTIONAL,   -- Need R
+    phy-PriorityIndex-r16                   ENUMERATED {p0, p1}                                         OPTIONAL,   -- Need R
+    autonomousTx-r16                        ENUMERATED {enabled}                                        OPTIONAL    -- Cond LCH-BasedPrioritization
+    ]],
+    [[
+    cg-betaOffsetsCrossPri0-r17             SetupRelease { BetaOffsetsCrossPriSelCG-r17 }               OPTIONAL,   -- Need M
+    cg-betaOffsetsCrossPri1-r17             SetupRelease { BetaOffsetsCrossPriSelCG-r17 }               OPTIONAL,   -- Need M
+    mappingPattern-r17                      ENUMERATED {cyclicMapping, sequentialMapping}               OPTIONAL,   -- Cond SRSsets
+    sequenceOffsetForRV-r17                 INTEGER (0..3)                                              OPTIONAL,   -- Need R
+    p0-PUSCH-Alpha2-r17                     P0-PUSCH-AlphaSetId                                         OPTIONAL,   -- Need R
+    powerControlLoopToUse2-r17              ENUMERATED {n0, n1}                                         OPTIONAL,   -- Need R
+    cg-COT-SharingList-r17                  SEQUENCE (SIZE (1..50722)) OF CG-COT-Sharing-r17             OPTIONAL,   -- Need R
+    periodicityExt-r17                      INTEGER (1..40960)                                          OPTIONAL,   -- Need R
+    repK-v1710                              ENUMERATED {n12, n16, n24, n32}                             OPTIONAL,   -- Need R
+    nrofHARQ-Processes-v1700                INTEGER(17..32)                                             OPTIONAL,   -- Need M
+    harq-ProcID-Offset2-v1700               INTEGER (16..31)                                            OPTIONAL,   -- Need R
+    configuredGrantTimer-v1700              INTEGER(33..288)                                            OPTIONAL,   -- Need R
+    cg-minDFI-Delay-v1710                   INTEGER (238..3584)                                         OPTIONAL    -- Need R
+    ]],
+    [[
+    harq-ProcID-Offset-v1730                INTEGER (16..31)                                            OPTIONAL,   -- Need R
+    cg-nrofSlots-r17                        INTEGER (1..320)                                            OPTIONAL    -- Need R
+    ]]
+}
+
+CG-UCI-OnPUSCH ::= CHOICE {
+    dynamic                                 SEQUENCE (SIZE (1..4)) OF BetaOffsets,
+    semiStatic                              BetaOffsets
+}
+
+CG-COT-Sharing-r16 ::= CHOICE {
+    noCOT-Sharing-r16                   NULL,
+    cot-Sharing-r16                     SEQUENCE {
+         duration-r16                       INTEGER (1..39),
+         offset-r16                         INTEGER (1..39),
+         channelAccessPriority-r16          INTEGER (1..4)
+    }
+}
+
+CG-COT-Sharing-r17 ::=  CHOICE {
+    noCOT-Sharing-r17                   NULL,
+    cot-Sharing-r17                     SEQUENCE {
+         duration-r17                       INTEGER (1..319),
+         offset-r17                         INTEGER (1..319)
+    }
+}
+
+CG-StartingOffsets-r16 ::= SEQUENCE {
+    cg-StartingFullBW-InsideCOT-r16         SEQUENCE (SIZE (1..7)) OF INTEGER (0..6)             OPTIONAL,   -- Need R
+    cg-StartingFullBW-OutsideCOT-r16        SEQUENCE (SIZE (1..7)) OF INTEGER (0..6)             OPTIONAL,   -- Need R
+    cg-StartingPartialBW-InsideCOT-r16      INTEGER (0..6)                                       OPTIONAL,   -- Need R
+    cg-StartingPartialBW-OutsideCOT-r16     INTEGER (0..6)                                       OPTIONAL    -- Need R
+}
+
+BetaOffsetsCrossPriSelCG-r17 ::= CHOICE {
+    dynamic-r17         SEQUENCE (SIZE (1..4)) OF BetaOffsetsCrossPri-r17,
+    semiStatic-r17      BetaOffsetsCrossPri-r17
+}
+
+CG-SDT-Configuration-r17 ::= SEQUENCE {
+    cg-SDT-RetransmissionTimer   INTEGER (1..64)                                                 OPTIONAL,   -- Need R
+    sdt-SSB-Subset-r17       CHOICE {
+        shortBitmap-r17          BIT STRING (SIZE (4)),
+        mediumBitmap-r17         BIT STRING (SIZE (8)),
+        longBitmap-r17           BIT STRING (SIZE (64))
+    }                                                                                            OPTIONAL,   -- Need S
+    sdt-SSB-PerCG-PUSCH-r17   ENUMERATED {oneEighth, oneFourth, half, one, two, four, eight, sixteen}  OPTIONAL,   -- Need M
+    sdt-P0-PUSCH-r17         INTEGER (-16..15)                                                   OPTIONAL, -- Need M
+    sdt-Alpha-r17            ENUMERATED {alpha0, alpha04, alpha05, alpha06, alpha07, alpha08, alpha09, alpha1} OPTIONAL, -- Need M
+    sdt-DMRS-Ports-r17       CHOICE {
+        dmrsType1-r17            BIT STRING (SIZE (8)),
+        dmrsType2-r17            BIT STRING (SIZE (12))
+    }                                                                                            OPTIONAL,  -- Need M
+    sdt-NrofDMRS-Sequences-r17  INTEGER (1..2)                                                   OPTIONAL   -- Need M
+}

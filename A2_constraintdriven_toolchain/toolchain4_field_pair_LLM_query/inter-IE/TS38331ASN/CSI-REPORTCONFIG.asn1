@@ -1,0 +1,173 @@
+CSI-ReportConfig ::=                SEQUENCE {
+    reportConfigId                          CSI-ReportConfigId,
+    carrier                                 ServCellIndex                   OPTIONAL,   -- Need S
+    resourcesForChannelMeasurement          CSI-ResourceConfigId,
+    csi-IM-ResourcesForInterference         CSI-ResourceConfigId            OPTIONAL,   -- Need R
+    nzp-CSI-RS-ResourcesForInterference     CSI-ResourceConfigId            OPTIONAL,   -- Need R
+    reportConfigType                        CHOICE {
+        periodic                                SEQUENCE {
+            reportSlotConfig                        CSI-ReportPeriodicityAndOffset,
+            pucch-CSI-ResourceList                  SEQUENCE (SIZE (1..maxNrofBWPs)) OF PUCCH-CSI-Resource
+        },
+        semiPersistentOnPUCCH                   SEQUENCE {
+            reportSlotConfig                        CSI-ReportPeriodicityAndOffset,
+            pucch-CSI-ResourceList                  SEQUENCE (SIZE (1..maxNrofBWPs)) OF PUCCH-CSI-Resource
+        },
+        semiPersistentOnPUSCH                   SEQUENCE {
+            reportSlotConfig                        ENUMERATED {sl5, sl10, sl20, sl40, sl80, sl160, sl320},
+            reportSlotOffsetList                SEQUENCE (SIZE (1.. maxNrofUL-Allocations)) OF INTEGER(0..32),
+            p0alpha                                 P0-PUSCH-AlphaSetId
+        },
+        aperiodic                               SEQUENCE {
+            reportSlotOffsetList                SEQUENCE (SIZE (1..maxNrofUL-Allocations)) OF INTEGER(0..32)
+        }
+    },
+    reportQuantity                          CHOICE {
+        none                                    NULL,
+        cri-RI-PMI-CQI                          NULL,
+        cri-RI-i1                               NULL,
+        cri-RI-i1-CQI                           SEQUENCE {
+            pdsch-BundleSizeForCSI                  ENUMERATED {n2, n4}                                         OPTIONAL    -- Need S
+        },
+        cri-RI-CQI                              NULL,
+        cri-RSRP                                NULL,
+        ssb-Index-RSRP                          NULL,
+        cri-RI-LI-PMI-CQI                       NULL
+    },
+    reportFreqConfiguration                 SEQUENCE {
+        cqi-FormatIndicator                     ENUMERATED { widebandCQI, subbandCQI }                          OPTIONAL,   -- Need R
+        pmi-FormatIndicator                     ENUMERATED { widebandPMI, subbandPMI }                          OPTIONAL,   -- Need R
+        csi-ReportingBand                       CHOICE {
+            subbands3                               BIT STRING(SIZE(3)),
+            subbands4                               BIT STRING(SIZE(4)),
+            subbands5                               BIT STRING(SIZE(5)),
+            subbands6                               BIT STRING(SIZE(6)),
+            subbands7                               BIT STRING(SIZE(7)),
+            subbands8                               BIT STRING(SIZE(8)),
+            subbands9                               BIT STRING(SIZE(9)),
+            subbands10                              BIT STRING(SIZE(10)),
+            subbands11                              BIT STRING(SIZE(11)),
+            subbands12                              BIT STRING(SIZE(12)),
+            subbands13                              BIT STRING(SIZE(13)),
+            subbands14                              BIT STRING(SIZE(14)),
+            subbands15                              BIT STRING(SIZE(15)),
+            subbands16                              BIT STRING(SIZE(16)),
+            subbands17                              BIT STRING(SIZE(17)),
+            subbands18                              BIT STRING(SIZE(18)),
+            ...,
+            subbands19-v1530                        BIT STRING(SIZE(19))
+        }   OPTIONAL    -- Need S
+
+    }                                                                                                           OPTIONAL,   -- Need R
+    timeRestrictionForChannelMeasurements           ENUMERATED {configured, notConfigured},
+    timeRestrictionForInterferenceMeasurements      ENUMERATED {configured, notConfigured},
+    codebookConfig                                  CodebookConfig                                              OPTIONAL,   -- Need R
+    dummy                                           ENUMERATED {n1, n2}                                         OPTIONAL,   -- Need R
+    groupBasedBeamReporting                     CHOICE {
+        enabled                                     NULL,
+        disabled                                    SEQUENCE {
+            nrofReportedRS                          ENUMERATED {n1, n2, n3, n4}                                 OPTIONAL    -- Need S
+        }
+    },
+    cqi-Table                   ENUMERATED {table1, table2, table3, table4-r17}                                     OPTIONAL,   -- Need R
+    subbandSize                 ENUMERATED {value1, value2},
+    non-PMI-PortIndication      SEQUENCE (SIZE (1..maxNrofNZP-CSI-RS-ResourcesPerConfig)) OF PortIndexFor8Ranks OPTIONAL,   -- Need R
+    ...,
+    [[
+    semiPersistentOnPUSCH-v1530         SEQUENCE {
+        reportSlotConfig-v1530              ENUMERATED {sl4, sl8, sl16}
+    }                                                                                                           OPTIONAL    -- Need R
+    ]],
+    [[
+    semiPersistentOnPUSCH-v1610         SEQUENCE {
+        reportSlotOffsetListDCI-0-2-r16     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..32)   OPTIONAL,    -- Need R
+        reportSlotOffsetListDCI-0-1-r16     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..32)   OPTIONAL     -- Need R
+    }                                                                                                           OPTIONAL,    -- Need R
+    aperiodic-v1610                     SEQUENCE {
+        reportSlotOffsetListDCI-0-2-r16     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..32)   OPTIONAL,    -- Need R
+        reportSlotOffsetListDCI-0-1-r16     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..32)   OPTIONAL     -- Need R
+    }                                                                                                           OPTIONAL,    -- Need R
+    reportQuantity-r16                  CHOICE {
+       cri-SINR-r16                         NULL,
+       ssb-Index-SINR-r16                   NULL
+    }                                                                                                           OPTIONAL,   -- Need R
+    codebookConfig-r16                          CodebookConfig-r16                                              OPTIONAL    -- Need R
+    ]],
+    [[
+    cqi-BitsPerSubband-r17              ENUMERATED {bits4}                                                      OPTIONAL,   -- Need R
+    groupBasedBeamReporting-v1710       SEQUENCE {
+        nrofReportedGroups-r17              ENUMERATED {n1, n2, n3, n4}
+    }                                                                                                           OPTIONAL,   -- Need R
+    codebookConfig-r17                  CodebookConfig-r17                                                      OPTIONAL,   -- Need R
+    sharedCMR-r17                       ENUMERATED {enable}                                                     OPTIONAL,   -- Need R
+    csi-ReportMode-r17                  ENUMERATED {mode1, mode2}                                               OPTIONAL,   -- Need R
+    numberOfSingleTRP-CSI-Mode1-r17     ENUMERATED {n0, n1, n2}                                                 OPTIONAL,   -- Need R
+    reportQuantity-r17                  CHOICE {
+        cri-RSRP-Index-r17                  NULL,
+        ssb-Index-RSRP-Index-r17            NULL,
+        cri-SINR-Index-r17                  NULL,
+        ssb-Index-SINR-Index-r17            NULL
+    }                                                                                                           OPTIONAL    -- Need R
+    ]],
+    [[
+    semiPersistentOnPUSCH-v1720         SEQUENCE {
+        reportSlotOffsetList-r17            SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL,   -- Need R
+        reportSlotOffsetListDCI-0-2-r17     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL,   -- Need R
+        reportSlotOffsetListDCI-0-1-r17     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL    -- Need R
+    }                                                                                                           OPTIONAL,   -- Need R
+    aperiodic-v1720                     SEQUENCE {
+        reportSlotOffsetList-r17            SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL,   -- Need R
+        reportSlotOffsetListDCI-0-2-r17     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL,   -- Need R
+        reportSlotOffsetListDCI-0-1-r17     SEQUENCE (SIZE (1.. maxNrofUL-Allocations-r16)) OF INTEGER(0..128)  OPTIONAL    -- Need R
+    }                                                                                                           OPTIONAL    -- Need R
+    ]],
+    [[
+    codebookConfig-v1730                CodebookConfig-v1730                                                    OPTIONAL    -- Need R
+    ]]
+}
+
+CSI-ReportPeriodicityAndOffset ::=  CHOICE {
+    slots4                              INTEGER(0..3),
+    slots5                              INTEGER(0..4),
+    slots8                              INTEGER(0..7),
+    slots10                             INTEGER(0..9),
+    slots16                             INTEGER(0..15),
+    slots20                             INTEGER(0..19),
+    slots40                             INTEGER(0..39),
+    slots80                             INTEGER(0..79),
+    slots160                            INTEGER(0..159),
+    slots320                            INTEGER(0..319)
+}
+
+PUCCH-CSI-Resource ::=              SEQUENCE {
+    uplinkBandwidthPartId               BWP-Id,
+    pucch-Resource                      PUCCH-ResourceId
+}
+
+PortIndexFor8Ranks ::=              CHOICE {
+    portIndex8                          SEQUENCE{
+        rank1-8                             PortIndex8                                                      OPTIONAL,   -- Need R
+        rank2-8                             SEQUENCE(SIZE(2)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank3-8                             SEQUENCE(SIZE(3)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank4-8                             SEQUENCE(SIZE(4)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank5-8                             SEQUENCE(SIZE(5)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank6-8                             SEQUENCE(SIZE(6)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank7-8                             SEQUENCE(SIZE(7)) OF PortIndex8                                 OPTIONAL,   -- Need R
+        rank8-8                             SEQUENCE(SIZE(8)) OF PortIndex8                                 OPTIONAL    -- Need R
+    },
+    portIndex4                          SEQUENCE{
+        rank1-4                             PortIndex4                                                      OPTIONAL,   -- Need R
+        rank2-4                             SEQUENCE(SIZE(2)) OF PortIndex4                                 OPTIONAL,   -- Need R
+        rank3-4                             SEQUENCE(SIZE(3)) OF PortIndex4                                 OPTIONAL,   -- Need R
+        rank4-4                             SEQUENCE(SIZE(4)) OF PortIndex4                                 OPTIONAL    -- Need R
+    },
+    portIndex2                          SEQUENCE{
+        rank1-2                             PortIndex2                                                      OPTIONAL,   -- Need R
+        rank2-2                             SEQUENCE(SIZE(2)) OF PortIndex2                                 OPTIONAL    -- Need R
+    },
+    portIndex1                          NULL
+}
+
+PortIndex8::=                       INTEGER (0..7)
+PortIndex4::=                       INTEGER (0..3)
+PortIndex2::=                       INTEGER (0..1)

@@ -1,0 +1,470 @@
+RF-Parameters ::=                                   SEQUENCE {
+    supportedBandListNR                                 SEQUENCE (SIZE (1..maxBands)) OF BandNR,
+    supportedBandCombinationList                        BandCombinationList                         OPTIONAL,
+    appliedFreqBandListFilter                           FreqBandList                                OPTIONAL,
+    ...,
+    [[
+    supportedBandCombinationList-v1540                  BandCombinationList-v1540                   OPTIONAL,
+    srs-SwitchingTimeRequested                          ENUMERATED {true}                           OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1550                  BandCombinationList-v1550                   OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1560                  BandCombinationList-v1560                   OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1610                  BandCombinationList-v1610                   OPTIONAL,
+    supportedBandCombinationListSidelinkEUTRA-NR-r16    BandCombinationListSidelinkEUTRA-NR-r16     OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-r16     BandCombinationList-UplinkTxSwitch-r16      OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1630                  BandCombinationList-v1630                   OPTIONAL,
+    supportedBandCombinationListSidelinkEUTRA-NR-v1630  BandCombinationListSidelinkEUTRA-NR-v1630   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1630   BandCombinationList-UplinkTxSwitch-v1630    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1640                  BandCombinationList-v1640                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1640   BandCombinationList-UplinkTxSwitch-v1640    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1650                  BandCombinationList-v1650                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1650   BandCombinationList-UplinkTxSwitch-v1650    OPTIONAL
+    ]],
+    [[
+    extendedBand-n77-r16                                ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-UplinkTxSwitch-v1670   BandCombinationList-UplinkTxSwitch-v1670    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1680                  BandCombinationList-v1680                   OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1690                  BandCombinationList-v1690                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1690   BandCombinationList-UplinkTxSwitch-v1690    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1700                  BandCombinationList-v1700                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1700   BandCombinationList-UplinkTxSwitch-v1700    OPTIONAL,
+    supportedBandCombinationListSL-RelayDiscovery-r17   OCTET STRING                                OPTIONAL,  -- Contains PC5 BandCombinationListSidelinkNR-r16
+    supportedBandCombinationListSL-NonRelayDiscovery-r17 OCTET STRING                               OPTIONAL,  -- Contains PC5 BandCombinationListSidelinkNR-r16
+    supportedBandCombinationListSidelinkEUTRA-NR-v1710  BandCombinationListSidelinkEUTRA-NR-v1710   OPTIONAL,
+    sidelinkRequested-r17                               ENUMERATED {true}                           OPTIONAL,
+    extendedBand-n77-2-r17                              ENUMERATED {supported}                      OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1720                  BandCombinationList-v1720                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1720   BandCombinationList-UplinkTxSwitch-v1720    OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1730                  BandCombinationList-v1730                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1730   BandCombinationList-UplinkTxSwitch-v1730    OPTIONAL,
+    supportedBandCombinationListSL-RelayDiscovery-v1730 BandCombinationListSL-Discovery-r17         OPTIONAL,
+    supportedBandCombinationListSL-NonRelayDiscovery-v1730 BandCombinationListSL-Discovery-r17      OPTIONAL
+    ]],
+    [[
+    supportedBandCombinationList-v1740                  BandCombinationList-v1740                   OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v1740   BandCombinationList-UplinkTxSwitch-v1740    OPTIONAL
+    ]]
+}
+
+RF-Parameters-v15g0 ::=                   SEQUENCE {
+    supportedBandCombinationList-v15g0        BandCombinationList-v15g0                   OPTIONAL
+}
+
+RF-Parameters-v16a0 ::=                            SEQUENCE {
+    supportedBandCombinationList-v16a0                 BandCombinationList-v16a0                    OPTIONAL,
+    supportedBandCombinationList-UplinkTxSwitch-v16a0  BandCombinationList-UplinkTxSwitch-v16a0     OPTIONAL
+}
+
+RF-Parameters-v16c0 ::=                            SEQUENCE {
+    supportedBandListNR-v16c0                          SEQUENCE (SIZE (1..maxBands)) OF BandNR-v16c0
+}
+
+BandNR ::=                          SEQUENCE {
+    bandNR                              FreqBandIndicatorNR,
+    modifiedMPR-Behaviour               BIT STRING (SIZE (8))                           OPTIONAL,
+    mimo-ParametersPerBand              MIMO-ParametersPerBand                          OPTIONAL,
+    extendedCP                          ENUMERATED {supported}                          OPTIONAL,
+    multipleTCI                         ENUMERATED {supported}                          OPTIONAL,
+    bwp-WithoutRestriction              ENUMERATED {supported}                          OPTIONAL,
+    bwp-SameNumerology                  ENUMERATED {upto2, upto4}                       OPTIONAL,
+    bwp-DiffNumerology                  ENUMERATED {upto4}                              OPTIONAL,
+    crossCarrierScheduling-SameSCS      ENUMERATED {supported}                          OPTIONAL,
+    pdsch-256QAM-FR2                    ENUMERATED {supported}                          OPTIONAL,
+    pusch-256QAM                        ENUMERATED {supported}                          OPTIONAL,
+    ue-PowerClass                       ENUMERATED {pc1, pc2, pc3, pc4}                 OPTIONAL,
+    rateMatchingLTE-CRS                 ENUMERATED {supported}                          OPTIONAL,
+    channelBWs-DL                       CHOICE {
+        fr1                                 SEQUENCE {
+            scs-15kHz                           BIT STRING (SIZE (10))                      OPTIONAL,
+            scs-30kHz                           BIT STRING (SIZE (10))                      OPTIONAL,
+            scs-60kHz                           BIT STRING (SIZE (10))                      OPTIONAL
+        },
+        fr2                                 SEQUENCE {
+            scs-60kHz                           BIT STRING (SIZE (3))                       OPTIONAL,
+            scs-120kHz                          BIT STRING (SIZE (3))                       OPTIONAL
+        }
+    }                                                                                   OPTIONAL,
+    channelBWs-UL                       CHOICE {
+        fr1                                 SEQUENCE {
+            scs-15kHz                           BIT STRING (SIZE (10))                      OPTIONAL,
+            scs-30kHz                           BIT STRING (SIZE (10))                      OPTIONAL,
+            scs-60kHz                           BIT STRING (SIZE (10))                      OPTIONAL
+        },
+        fr2                                 SEQUENCE {
+            scs-60kHz                           BIT STRING (SIZE (3))                       OPTIONAL,
+            scs-120kHz                          BIT STRING (SIZE (3))                       OPTIONAL
+        }
+    }                                                                                   OPTIONAL,
+    ...,
+    [[
+    maxUplinkDutyCycle-PC2-FR1                  ENUMERATED {n60, n70, n80, n90, n100}   OPTIONAL
+    ]],
+    [[
+    pucch-SpatialRelInfoMAC-CE          ENUMERATED {supported}                          OPTIONAL,
+    powerBoosting-pi2BPSK               ENUMERATED {supported}                          OPTIONAL
+    ]],
+    [[
+    maxUplinkDutyCycle-FR2          ENUMERATED {n15, n20, n25, n30, n40, n50, n60, n70, n80, n90, n100}     OPTIONAL
+    ]],
+    [[
+    channelBWs-DL-v1590                 CHOICE {
+        fr1                                 SEQUENCE {
+            scs-15kHz                           BIT STRING (SIZE (16))              OPTIONAL,
+            scs-30kHz                           BIT STRING (SIZE (16))              OPTIONAL,
+            scs-60kHz                           BIT STRING (SIZE (16))              OPTIONAL
+        },
+        fr2                                 SEQUENCE {
+            scs-60kHz                           BIT STRING (SIZE (8))               OPTIONAL,
+            scs-120kHz                          BIT STRING (SIZE (8))               OPTIONAL
+        }
+    }                                                                               OPTIONAL,
+    channelBWs-UL-v1590                 CHOICE {
+        fr1                                 SEQUENCE {
+            scs-15kHz                           BIT STRING (SIZE (16))              OPTIONAL,
+            scs-30kHz                           BIT STRING (SIZE (16))              OPTIONAL,
+            scs-60kHz                           BIT STRING (SIZE (16))              OPTIONAL
+        },
+        fr2                                 SEQUENCE {
+            scs-60kHz                           BIT STRING (SIZE (8))               OPTIONAL,
+            scs-120kHz                          BIT STRING (SIZE (8))               OPTIONAL
+        }
+    }                                                                               OPTIONAL
+    ]],
+    [[
+    asymmetricBandwidthCombinationSet     BIT STRING (SIZE (1..32))           OPTIONAL
+    ]],
+    [[
+    -- R1 10: NR-unlicensed
+    sharedSpectrumChAccessParamsPerBand-r16 SharedSpectrumChAccessParamsPerBand-r16 OPTIONAL,
+    -- R1 11-7b: Independent cancellation of the overlapping PUSCHs in an intra-band UL CA
+    cancelOverlappingPUSCH-r16              ENUMERATED {supported}                  OPTIONAL,
+    -- R1 14-1: Multiple LTE-CRS rate matching patterns
+    multipleRateMatchingEUTRA-CRS-r16       SEQUENCE {
+        maxNumberPatterns-r16               INTEGER (2..6),
+        maxNumberNon-OverlapPatterns-r16    INTEGER (1..3)
+    }                                                                               OPTIONAL,
+    -- R1 14-1a: Two LTE-CRS overlapping rate matching patterns within a part of NR carrier using 15 kHz overlapping with a LTE carrier
+    overlapRateMatchingEUTRA-CRS-r16        ENUMERATED {supported}                  OPTIONAL,
+    -- R1 14-2: PDSCH Type B mapping of length 9 and 10 OFDM symbols
+    pdsch-MappingTypeB-Alt-r16              ENUMERATED {supported}                  OPTIONAL,
+    -- R1 14-3: One slot periodic TRS configuration for FR1
+    oneSlotPeriodicTRS-r16                  ENUMERATED {supported}                  OPTIONAL,
+    olpc-SRS-Pos-r16                        OLPC-SRS-Pos-r16                        OPTIONAL,
+    spatialRelationsSRS-Pos-r16             SpatialRelationsSRS-Pos-r16             OPTIONAL,
+    simulSRS-MIMO-TransWithinBand-r16       ENUMERATED {n2}                         OPTIONAL,
+    channelBW-DL-IAB-r16                    CHOICE {
+        fr1-100mhz                              SEQUENCE {
+            scs-15kHz                               ENUMERATED {supported}          OPTIONAL,
+            scs-30kHz                               ENUMERATED {supported}          OPTIONAL,
+            scs-60kHz                               ENUMERATED {supported}          OPTIONAL
+        },
+        fr2-200mhz                          SEQUENCE {
+            scs-60kHz                           ENUMERATED {supported}              OPTIONAL,
+            scs-120kHz                          ENUMERATED {supported}              OPTIONAL
+        }
+    }                                                                               OPTIONAL,
+    channelBW-UL-IAB-r16                    CHOICE {
+        fr1-100mhz                              SEQUENCE {
+            scs-15kHz                               ENUMERATED {supported}          OPTIONAL,
+            scs-30kHz                               ENUMERATED {supported}          OPTIONAL,
+            scs-60kHz                               ENUMERATED {supported}          OPTIONAL
+        },
+        fr2-200mhz                              SEQUENCE {
+            scs-60kHz                               ENUMERATED {supported}          OPTIONAL,
+            scs-120kHz                              ENUMERATED {supported}          OPTIONAL
+        }
+    }                                                                               OPTIONAL,
+    rasterShift7dot5-IAB-r16                ENUMERATED {supported}                  OPTIONAL,
+    ue-PowerClass-v1610                     ENUMERATED {pc1dot5}                    OPTIONAL,
+    condHandover-r16                        ENUMERATED {supported}                  OPTIONAL,
+    condHandoverFailure-r16                 ENUMERATED {supported}                  OPTIONAL,
+    condHandoverTwoTriggerEvents-r16        ENUMERATED {supported}                  OPTIONAL,
+    condPSCellChange-r16                    ENUMERATED {supported}                  OPTIONAL,
+    condPSCellChangeTwoTriggerEvents-r16    ENUMERATED {supported}                  OPTIONAL,
+    mpr-PowerBoost-FR2-r16                  ENUMERATED {supported}                  OPTIONAL,
+
+    -- R1 11-9: Multiple active configured grant configurations for a BWP of a serving cell
+    activeConfiguredGrant-r16               SEQUENCE {
+    maxNumberConfigsPerBWP-r16                  ENUMERATED {n1, n2, n4, n8, n12},
+    maxNumberConfigsAllCC-r16                   INTEGER (2..32)
+    }                                                                               OPTIONAL,
+    -- R1 11-9a: Joint release in a DCI for two or more configured grant Type 2 configurations for a given BWP of a serving cell
+    jointReleaseConfiguredGrantType2-r16    ENUMERATED {supported}                  OPTIONAL,
+    -- R1 12-2: Multiple SPS configurations
+    sps-r16                                 SEQUENCE {
+    maxNumberConfigsPerBWP-r16                  INTEGER (1..8),
+    maxNumberConfigsAllCC-r16                   INTEGER (2..32)
+    }                                                                               OPTIONAL,
+    -- R1 12-2a: Joint release in a DCI for two or more SPS configurations for a given BWP of a serving cell
+    jointReleaseSPS-r16                     ENUMERATED {supported}                  OPTIONAL,
+    -- R1 13-19: Simultaneous positioning SRS and MIMO SRS transmission within a band across multiple CCs
+    simulSRS-TransWithinBand-r16            ENUMERATED {n2}                         OPTIONAL,
+    trs-AdditionalBandwidth-r16             ENUMERATED {trs-AddBW-Set1, trs-AddBW-Set2}  OPTIONAL,
+    handoverIntraF-IAB-r16                  ENUMERATED {supported}                  OPTIONAL
+    ]],
+    [[
+    -- R1 22-5a: Simultaneous transmission of SRS for antenna switching and SRS for CB/NCB /BM for intra-band UL CA
+    -- R1 22-5c: Simultaneous transmission of SRS for antenna switching and SRS for antenna switching for intra-band UL CA
+    simulTX-SRS-AntSwitchingIntraBandUL-CA-r16  SimulSRS-ForAntennaSwitching-r16            OPTIONAL,
+    -- R1 10: NR-unlicensed
+    sharedSpectrumChAccessParamsPerBand-v1630   SharedSpectrumChAccessParamsPerBand-v1630   OPTIONAL
+    ]],
+    [[
+    handoverUTRA-FDD-r16                      ENUMERATED {supported}                       OPTIONAL,
+    -- R4 7-4: Report the shorter transient capability supported by the UE: 2, 4 or 7us
+    enhancedUL-TransientPeriod-r16            ENUMERATED {us2, us4, us7}                   OPTIONAL,
+    sharedSpectrumChAccessParamsPerBand-v1640 SharedSpectrumChAccessParamsPerBand-v1640    OPTIONAL
+    ]],
+    [[
+    type1-PUSCH-RepetitionMultiSlots-v1650    ENUMERATED {supported}                       OPTIONAL,
+    type2-PUSCH-RepetitionMultiSlots-v1650    ENUMERATED {supported}                       OPTIONAL,
+    pusch-RepetitionMultiSlots-v1650          ENUMERATED {supported}                       OPTIONAL,
+    configuredUL-GrantType1-v1650             ENUMERATED {supported}                       OPTIONAL,
+    configuredUL-GrantType2-v1650             ENUMERATED {supported}                       OPTIONAL,
+    sharedSpectrumChAccessParamsPerBand-v1650 SharedSpectrumChAccessParamsPerBand-v1650    OPTIONAL
+    ]],
+    [[
+    enhancedSkipUplinkTxConfigured-v1660      ENUMERATED {supported}                       OPTIONAL,
+    enhancedSkipUplinkTxDynamic-v1660         ENUMERATED {supported}                       OPTIONAL
+    ]],
+    [[
+    maxUplinkDutyCycle-PC1dot5-MPE-FR1-r16    ENUMERATED {n10, n15, n20, n25, n30, n40, n50, n60, n70, n80, n90, n100}   OPTIONAL,
+    txDiversity-r16                           ENUMERATED {supported}                       OPTIONAL
+    ]],
+    [[
+     -- R1 36-1: Support of 1024QAM for PDSCH for FR1
+    pdsch-1024QAM-FR1-r17                     ENUMERATED {supported}                       OPTIONAL,
+     -- R4 22-1 support of FR2 HST operation
+    ue-PowerClass-v1700                       ENUMERATED {pc5, pc6, pc7}                   OPTIONAL,
+    -- R1 24: NR extension to 71GHz (FR2-2)
+    fr2-2-AccessParamsPerBand-r17             FR2-2-AccessParamsPerBand-r17                OPTIONAL,
+    rlm-Relaxation-r17                        ENUMERATED {supported}                       OPTIONAL,
+    bfd-Relaxation-r17                        ENUMERATED {supported}                       OPTIONAL,
+    cg-SDT-r17                                ENUMERATED {supported}                       OPTIONAL,
+    locationBasedCondHandover-r17             ENUMERATED {supported}                       OPTIONAL,
+    timeBasedCondHandover-r17                 ENUMERATED {supported}                       OPTIONAL,
+    eventA4BasedCondHandover-r17              ENUMERATED {supported}                       OPTIONAL,
+    mn-InitiatedCondPSCellChangeNRDC-r17      ENUMERATED {supported}                       OPTIONAL,
+    sn-InitiatedCondPSCellChangeNRDC-r17      ENUMERATED {supported}                       OPTIONAL,
+    -- R1 29-3a: PDCCH skipping
+    pdcch-SkippingWithoutSSSG-r17             ENUMERATED {supported}                       OPTIONAL,
+    -- R1 29-3b: 2 search space sets group switching
+    sssg-Switching-1BitInd-r17                ENUMERATED {supported}                       OPTIONAL,
+    -- R1 29-3c: 3 search space sets group switching
+    sssg-Switching-2BitInd-r17                ENUMERATED {supported}                       OPTIONAL,
+    -- R1 29-3d: 2 search space sets group switching with PDCCH skipping
+    pdcch-SkippingWithSSSG-r17                ENUMERATED {supported}                       OPTIONAL,
+    -- R1 29-3e: Support Search space set group switching capability 2 for FR1
+    searchSpaceSetGrp-switchCap2-r17          ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-1: Uplink Time and Frequency pre-compensation and timing relationship enhancements
+    uplinkPreCompensation-r17                 ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-4: UE reporting of information related to TA pre-compensation
+    uplink-TA-Reporting-r17                   ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-5: Increasing the number of HARQ processes
+    max-HARQ-ProcessNumber-r17                ENUMERATED {u16d32, u32d16, u32d32}          OPTIONAL,
+    -- R1 26-6: Type-2 HARQ codebook enhancement
+    type2-HARQ-Codebook-r17                   ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-6a: Type-1 HARQ codebook enhancement
+    type1-HARQ-Codebook-r17                   ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-6b: Type-3 HARQ codebook enhancement
+    type3-HARQ-Codebook-r17                   ENUMERATED {supported}                       OPTIONAL,
+    -- R1 26-9: UE-specific K_offset
+    ue-specific-K-Offset-r17                  ENUMERATED {supported}                       OPTIONAL,
+    -- R1 24-1f: Multiple PDSCH scheduling by single DCI for 120kHz in FR2-1
+    multiPDSCH-SingleDCI-FR2-1-SCS-120kHz-r17 ENUMERATED {supported}                       OPTIONAL,
+    -- R1 24-1g: Multiple PUSCH scheduling by single DCI for 120kHz in FR2-1
+    multiPUSCH-SingleDCI-FR2-1-SCS-120kHz-r17 ENUMERATED {supported}                       OPTIONAL,
+    -- R4 14-4: Parallel PRS measurements in RRC_INACTIVE state, FR1/FR2 diff
+    parallelPRS-MeasRRC-Inactive-r17          ENUMERATED {supported}                       OPTIONAL,
+    -- R1 27-1-2: Support of UE-TxTEGs for UL TDOA
+    nr-UE-TxTEG-ID-MaxSupport-r17             ENUMERATED {n1, n2, n3, n4, n6, n8}          OPTIONAL,
+    -- R1 27-17: PRS processing in RRC_INACTIVE
+    prs-ProcessingRRC-Inactive-r17            ENUMERATED {supported}                       OPTIONAL,
+    -- R1 27-3-2: DL PRS measurement outside MG and in a PRS processing window
+    prs-ProcessingWindowType1A-r17            ENUMERATED {option1, option2, option3}       OPTIONAL,
+    prs-ProcessingWindowType1B-r17            ENUMERATED {option1, option2, option3}       OPTIONAL,
+    prs-ProcessingWindowType2-r17             ENUMERATED {option1, option2, option3}       OPTIONAL,
+    -- R1 27-15: Positioning SRS transmission in RRC_INACTIVE state for initial UL BWP
+    srs-AllPosResourcesRRC-Inactive-r17       SRS-AllPosResourcesRRC-Inactive-r17          OPTIONAL,
+    -- R1 27-16: OLPC for positioning SRS in RRC_INACTIVE state - gNB
+    olpc-SRS-PosRRC-Inactive-r17              OLPC-SRS-Pos-r16                             OPTIONAL,
+    -- R1 27-19: Spatial relation for positioning SRS in RRC_INACTIVE state - gNB
+    spatialRelationsSRS-PosRRC-Inactive-r17   SpatialRelationsSRS-Pos-r16                  OPTIONAL,
+    -- R1 30-1: Increased maximum number of PUSCH Type A repetitions
+    maxNumberPUSCH-TypeA-Repetition-r17       ENUMERATED {supported}                       OPTIONAL,
+    -- R1 30-2: PUSCH Type A repetitions based on available slots
+    puschTypeA-RepetitionsAvailSlot-r17       ENUMERATED {supported}                       OPTIONAL,
+    -- R1 30-3: TB processing over multi-slot PUSCH
+    tb-ProcessingMultiSlotPUSCH-r17           ENUMERATED {supported}                       OPTIONAL,
+    -- R1 30-3a: Repetition of TB processing over multi-slot PUSCH
+    tb-ProcessingRepMultiSlotPUSCH-r17        ENUMERATED {supported}                       OPTIONAL,
+    -- R1 30-4: The maximum duration for DM-RS bundling
+    maxDurationDMRS-Bundling-r17              SEQUENCE {
+        fdd-r17                                   ENUMERATED {n4, n8, n16, n32}            OPTIONAL,
+        tdd-r17                                   ENUMERATED {n2, n4, n8, n16}             OPTIONAL
+    }                                                                                      OPTIONAL,
+    -- R1 30-6: Repetition of PUSCH transmission scheduled by RAR UL grant and DCI format 0_0 with CRC scrambled by TC-RNTI
+    pusch-RepetitionMsg3-r17                  ENUMERATED {supported}                       OPTIONAL,
+    sharedSpectrumChAccessParamsPerBand-v1710 SharedSpectrumChAccessParamsPerBand-v1710    OPTIONAL,
+    -- R4 25-2: Parallel measurements on cells belonging to a different NGSO satellite than a serving satellite without scheduling restrictions
+    -- on normal operations with the serving cell
+    parallelMeasurementWithoutRestriction-r17 ENUMERATED {supported}                       OPTIONAL,
+    -- R4 25-5: Parallel measurements on multiple NGSO satellites within a SMTC
+    maxNumber-NGSO-SatellitesWithinOneSMTC-r17 ENUMERATED {n1, n2, n3, n4}                 OPTIONAL,
+    -- R1 26-10: K1 range extension
+    k1-RangeExtension-r17                     ENUMERATED {supported}                       OPTIONAL,
+    -- R1 35-1: Aperiodic CSI-RS for tracking for fast SCell activation
+    aperiodicCSI-RS-FastScellActivation-r17   SEQUENCE {
+        maxNumberAperiodicCSI-RS-PerCC-r17        ENUMERATED {n8, n16, n32, n48, n64, n128, n255},
+        maxNumberAperiodicCSI-RS-AcrossCCs-r17    ENUMERATED {n8, n16, n32, n64, n128, n256, n512, n1024}
+    }                                                                                      OPTIONAL,
+    -- R1 35-2: Aperiodic CSI-RS bandwidth for tracking for fast SCell activation for 10MHz UE channel bandwidth
+    aperiodicCSI-RS-AdditionalBandwidth-r17   ENUMERATED {addBW-Set1, addBW-Set2}          OPTIONAL,
+    -- R1 28-1a: RRC-configured DL BWP without CD-SSB or NCD-SSB
+    bwp-WithoutCD-SSB-OrNCD-SSB-RedCap-r17    ENUMERATED {supported}                       OPTIONAL,
+    -- R1 28-3: Half-duplex FDD operation type A for RedCap UE
+    halfDuplexFDD-TypeA-RedCap-r17            ENUMERATED {supported}                       OPTIONAL,
+     -- R1 27-15b: Positioning SRS transmission in RRC_INACTIVE state configured outside initial UL BWP
+    posSRS-RRC-Inactive-OutsideInitialUL-BWP-r17 PosSRS-RRC-Inactive-OutsideInitialUL-BWP-r17 OPTIONAL,
+     -- R4 15-3 UE support of CBW for 480kHz SCS
+    channelBWs-DL-SCS-480kHz-FR2-2-r17        BIT STRING (SIZE (8))                        OPTIONAL,
+    channelBWs-UL-SCS-480kHz-FR2-2-r17        BIT STRING (SIZE (8))                        OPTIONAL,
+    -- R4 15-4 UE support of CBW for 960kHz SCS
+    channelBWs-DL-SCS-960kHz-FR2-2-r17        BIT STRING (SIZE (8))                        OPTIONAL,
+    channelBWs-UL-SCS-960kHz-FR2-2-r17        BIT STRING (SIZE (8))                        OPTIONAL,
+    -- R4 17-1 UL gap for Tx power management
+    ul-GapFR2-r17                             ENUMERATED {supported}                       OPTIONAL,
+    -- R1 25-4: One-shot HARQ ACK feedback triggered by DCI format 1_2
+    oneShotHARQ-feedbackTriggeredByDCI-1-2-r17 ENUMERATED {supported}                      OPTIONAL,
+    -- R1 25-5: PHY priority handling for one-shot HARQ ACK feedback
+    oneShotHARQ-feedbackPhy-Priority-r17      ENUMERATED {supported}                       OPTIONAL,
+    -- R1 25-6: Enhanced type 3 HARQ-ACK codebook feedback
+    enhancedType3-HARQ-CodebookFeedback-r17   SEQUENCE {
+        enhancedType3-HARQ-Codebooks-r17          ENUMERATED {n1, n2, n4, n8},
+        maxNumberPUCCH-Transmissions-r17          ENUMERATED {n1, n2, n3, n4, n5, n6, n7}
+    }                                                                                      OPTIONAL,
+    -- R1 25-7: Triggered HARQ-ACK codebook re-transmission
+    triggeredHARQ-CodebookRetx-r17              SEQUENCE {
+        minHARQ-Retx-Offset-r17                     ENUMERATED {n-7, n-5, n-3, n-1, n1},
+        maxHARQ-Retx-Offset-r17                     ENUMERATED {n4, n6, n8, n10, n12, n14, n16, n18, n20, n22, n24}
+    }                                                                                      OPTIONAL
+    ]],
+    [[
+    -- R4 22-2 support of one shot large UL timing adjustment
+    ue-OneShotUL-TimingAdj-r17                        ENUMERATED {supported}               OPTIONAL,
+    -- R1 25-2: Repetitions for PUCCH format 0, and 2 over multiple slots with K = 2, 4, 8
+    pucch-Repetition-F0-2-r17                         ENUMERATED {supported}               OPTIONAL,
+    -- R1 25-11a: 4-bits subband CQI for NTN and unlicensed
+    cqi-4-BitsSubbandNTN-SharedSpectrumChAccess-r17   ENUMERATED {supported}               OPTIONAL,
+    -- R1 25-16: HARQ-ACK with different priorities multiplexing on a PUCCH/PUSCH
+    mux-HARQ-ACK-DiffPriorities-r17                   ENUMERATED {supported}               OPTIONAL,
+    -- R1 25-20a: Propagation delay compensation based on legacy TA procedure for NTN and unlicensed
+    ta-BasedPDC-NTN-SharedSpectrumChAccess-r17        ENUMERATED {supported}               OPTIONAL,
+    -- R1 33-2b: DCI-based enabling/disabling ACK/NACK-based feedback for dynamic scheduling for multicast
+    ack-NACK-FeedbackForMulticastWithDCI-Enabler-r17  ENUMERATED {supported}               OPTIONAL,
+    -- R1 33-2e: Multiple G-RNTIs for group-common PDSCHs
+    maxNumberG-RNTI-r17                               INTEGER (2..8)                       OPTIONAL,
+    -- R1 33-2f: Dynamic multicast with DCI format 4_2
+    dynamicMulticastDCI-Format4-2-r17                 ENUMERATED {supported}               OPTIONAL,
+    -- R1 33-2i: Supported maximal modulation order for multicast PDSCH
+    maxModulationOrderForMulticast-r17                CHOICE {
+        fr1-r17                                           ENUMERATED {qam256, qam1024},
+        fr2-r17                                           ENUMERATED {qam64, qam256}
+    }                                                                                                                          OPTIONAL,
+    -- R1 33-3-1: Dynamic Slot-level repetition for group-common PDSCH for TN and licensed
+    dynamicSlotRepetitionMulticastTN-NonSharedSpectrumChAccess-r17  ENUMERATED {n8, n16}                                       OPTIONAL,
+    -- R1 33-3-1a: Dynamic Slot-level repetition for group-common PDSCH for NTN and unlicensed
+    dynamicSlotRepetitionMulticastNTN-SharedSpectrumChAccess-r17    ENUMERATED {n8, n16}                                       OPTIONAL,
+    -- R1 33-4-1: DCI-based enabling/disabling NACK-only based feedback for dynamic scheduling for multicast
+    nack-OnlyFeedbackForMulticastWithDCI-Enabler-r17                ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-5-1b: DCI-based enabling/disabling ACK/NACK-based feedback for dynamic scheduling for multicast
+    ack-NACK-FeedbackForSPS-MulticastWithDCI-Enabler-r17            ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-5-1h: Multiple G-CS-RNTIs for SPS group-common PDSCHs
+    maxNumberG-CS-RNTI-r17                                          INTEGER (2..8)                                             OPTIONAL,
+    -- R1 33-10: Support group-common PDSCH RE-level rate matching for multicast
+    re-LevelRateMatchingForMulticast-r17                            ENUMERATED {supported}                                     OPTIONAL,
+     -- R1 36-1a: Support of 1024QAM for PDSCH with maximum 2 MIMO layers for FR1
+    pdsch-1024QAM-2MIMO-FR1-r17                                     ENUMERATED {supported}                                     OPTIONAL,
+     -- R4 14-3 PRS measurement without MG
+    prs-MeasurementWithoutMG-r17                                    ENUMERATED {cpLength, quarterSymbol, halfSymbol, halfSlot} OPTIONAL,
+    -- R4 25-7: The number of target LEO satellites the UE can monitor per carrier
+    maxNumber-LEO-SatellitesPerCarrier-r17                          INTEGER (3..4)                                             OPTIONAL,
+    -- R1 27-3-3 DL PRS Processing Capability outside MG - buffering capability
+    prs-ProcessingCapabilityOutsideMGinPPW-r17    SEQUENCE (SIZE(1..3)) OF PRS-ProcessingCapabilityOutsideMGinPPWperType-r17   OPTIONAL,
+    -- R1 27-15a: Positioning SRS transmission in RRC_INACTIVE state for initial UL BWP with semi-persistent SRS
+    srs-SemiPersistent-PosResourcesRRC-Inactive-r17                 SEQUENCE {
+        maxNumOfSemiPersistentSRSposResources-r17                       ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+        maxNumOfSemiPersistentSRSposResourcesPerSlot-r17                ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}
+    }                                                                                                                          OPTIONAL,
+    -- R2: UE support of CBW for 120kHz SCS
+    channelBWs-DL-SCS-120kHz-FR2-2-r17                              BIT STRING (SIZE (8))                                      OPTIONAL,
+    channelBWs-UL-SCS-120kHz-FR2-2-r17                              BIT STRING (SIZE (8))                                      OPTIONAL
+    ]],
+    [[
+    -- R1 30-4a: DM-RS bundling for PUSCH repetition type A
+    dmrs-BundlingPUSCH-RepTypeA-r17                                 ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4b: DM-RS bundling for PUSCH repetition type B
+    dmrs-BundlingPUSCH-RepTypeB-r17                                 ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4c: DM-RS bundling for TB processing over multi-slot PUSCH
+    dmrs-BundlingPUSCH-multiSlot-r17                                ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4d: DMRS bundling for PUCCH repetitions
+    dmrs-BundlingPUCCH-Rep-r17                                      ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4e: Enhanced inter-slot frequency hopping with inter-slot bundling for PUSCH
+    interSlotFreqHopInterSlotBundlingPUSCH-r17                      ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4f: Enhanced inter-slot frequency hopping for PUCCH repetitions with DMRS bundling
+    interSlotFreqHopPUCCH-r17                                       ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4g: Restart DM-RS bundling
+    dmrs-BundlingRestart-r17                                        ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 30-4h: DM-RS bundling for non-back-to-back transmission
+    dmrs-BundlingNonBackToBackTX-r17                                ENUMERATED {supported}                                     OPTIONAL
+    ]],
+    [[
+    -- R1 33-5-1e: Dynamic Slot-level repetition for SPS group-common PDSCH for multicast
+    maxDynamicSlotRepetitionForSPS-Multicast-r17                    ENUMERATED {n8, n16}                                       OPTIONAL,
+    -- R1 33-5-1g: DCI-based enabling/disabling NACK-only based feedback for SPS group-common PDSCH for multicast
+    nack-OnlyFeedbackForSPS-MulticastWithDCI-Enabler-r17            ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-5-1i: Multicast SPS scheduling with DCI format 4_2
+    sps-MulticastDCI-Format4-2-r17                                  ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-5-2: Multiple SPS group-common PDSCH configuration on PCell
+    sps-MulticastMultiConfig-r17                                    INTEGER (1..8)                                             OPTIONAL,
+    -- R1 33-6-1: DL priority indication for multicast in DCI
+    priorityIndicatorInDCI-Multicast-r17                            ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-6-1a: DL priority configuration for SPS multicast
+    priorityIndicatorInDCI-SPS-Multicast-r17                        ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-6-2: Two HARQ-ACK codebooks simultaneously constructed for supporting HARQ-ACK codebooks with different priorities
+    -- for unicast and multicast at a UE
+    twoHARQ-ACK-CodebookForUnicastAndMulticast-r17                  ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-6-3: More than one PUCCH for HARQ-ACK transmission for multicast or for unicast and multicast within a slot
+    multiPUCCH-HARQ-ACK-ForMulticastUnicast-r17                     ENUMERATED {supported}                                     OPTIONAL,
+    -- R1 33-9: Supporting unicast PDCCH to release SPS group-common PDSCH
+    releaseSPS-MulticastWithCS-RNTI-r17                             ENUMERATED {supported}                                     OPTIONAL
+    ]]
+}
+
+BandNR-v16c0 ::=                                                SEQUENCE {
+    pusch-RepetitionTypeA-v16c0                                     ENUMERATED {supported}                                     OPTIONAL,
+    ...
+}

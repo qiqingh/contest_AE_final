@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      472,
+      475,
+      478,
+      481
+    ],
+    [
+      470
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields 'mappingType' and 'pusch-ConfigCommon' within the same IE 'bwp-Common_pusch-ConfigCommon_group1'. The evidence snippets mention PUSCH configuration but do not establish a normative constraint between these specific fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Common_pusch-ConfigCommon_group1",
+    "field1": "mappingType",
+    "field2": "pusch-ConfigCommon",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "8.1",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If a UE does not have dedicated RRC configuration, or has an initial UL BWP as an active UL BWP, or is not provided startSymbolAndLengthMsgA-PO, msgA-PUSCH-timeDomainAllocation provides a SLIV and a PUSCH mapping type for a PUSCH transmission by indicating - one of the first maxNrofUL-Allocations values from PUSCH-TimeDomainResourceAllocationList, if PUSCHTimeDomainResourceAllocationList is provided in PUSCH-ConfigCommon\n---\nIndicates a combination of start symbol and length and PUSCH mapping type from the TDRA table (PUSCH-TimeDomainResourceAllocationList if provided in PUSCHConfigCommon, or else the default Table 6.1.2.1.1-2 in 38.214 [19] is used if pusch-TimeDomainAllocationList is not provided in PUSCH-ConfigCommon). The parameter K2 in the table is not used for msgA PUSCH. The network configures one of msgA-PUSCH-TimeDomainAllocation and startSymbolAndLengthMisgA-PO, but not both. If the field is absent, the UE shall use the value of startSymbolAndLenghtMsgA-PO.",
+    "generated_at": "2025-12-09T09:48:16.952200",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields 'mappingType' and 'pusch-ConfigCommon' within the same IE 'bwp-Common_pusch-ConfigCommon_group1'. The evidence snippets mention PUSCH configuration but do not establish a normative constraint between these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

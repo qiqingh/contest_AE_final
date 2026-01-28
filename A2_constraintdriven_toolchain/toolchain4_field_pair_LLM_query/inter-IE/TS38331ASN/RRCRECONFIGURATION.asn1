@@ -1,0 +1,124 @@
+RRCReconfiguration ::=                  SEQUENCE {
+    rrc-TransactionIdentifier               RRC-TransactionIdentifier,
+    criticalExtensions                      CHOICE {
+        rrcReconfiguration                      RRCReconfiguration-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+RRCReconfiguration-IEs ::=              SEQUENCE {
+    radioBearerConfig                       RadioBearerConfig                                                      OPTIONAL, -- Need M
+    secondaryCellGroup                      OCTET STRING (CONTAINING CellGroupConfig)                              OPTIONAL, -- Cond SCG
+    measConfig                              MeasConfig                                                             OPTIONAL, -- Need M
+    lateNonCriticalExtension                OCTET STRING                                                           OPTIONAL,
+    nonCriticalExtension                    RRCReconfiguration-v1530-IEs                                           OPTIONAL
+}
+
+RRCReconfiguration-v1530-IEs ::=            SEQUENCE {
+    masterCellGroup                         OCTET STRING (CONTAINING CellGroupConfig)                              OPTIONAL, -- Need M
+    fullConfig                              ENUMERATED {true}                                                      OPTIONAL, -- Cond FullConfig
+    dedicatedNAS-MessageList                SEQUENCE (SIZE(1..maxDRB)) OF DedicatedNAS-Message                     OPTIONAL, -- Cond nonHO
+    masterKeyUpdate                         MasterKeyUpdate                                                        OPTIONAL, -- Cond MasterKeyChange
+    dedicatedSIB1-Delivery                  OCTET STRING (CONTAINING SIB1)                                         OPTIONAL, -- Need N
+    dedicatedSystemInformationDelivery      OCTET STRING (CONTAINING SystemInformation)                            OPTIONAL, -- Need N
+    otherConfig                             OtherConfig                                                            OPTIONAL, -- Need M
+    nonCriticalExtension                    RRCReconfiguration-v1540-IEs                                           OPTIONAL
+}
+
+RRCReconfiguration-v1540-IEs ::=        SEQUENCE {
+    otherConfig-v1540                       OtherConfig-v1540                                                      OPTIONAL, -- Need M
+    nonCriticalExtension                    RRCReconfiguration-v1560-IEs                                           OPTIONAL
+}
+
+RRCReconfiguration-v1560-IEs ::=         SEQUENCE {
+    mrdc-SecondaryCellGroupConfig            SetupRelease { MRDC-SecondaryCellGroupConfig }                        OPTIONAL,   -- Need M
+    radioBearerConfig2                       OCTET STRING (CONTAINING RadioBearerConfig)                           OPTIONAL,   -- Need M
+    sk-Counter                               SK-Counter                                                            OPTIONAL,   -- Need N
+    nonCriticalExtension                     RRCReconfiguration-v1610-IEs                                          OPTIONAL
+}
+RRCReconfiguration-v1610-IEs ::=        SEQUENCE {
+    otherConfig-v1610                       OtherConfig-v1610                                                    OPTIONAL, -- Need M
+    bap-Config-r16                          SetupRelease { BAP-Config-r16 }                                      OPTIONAL, -- Need M
+    iab-IP-AddressConfigurationList-r16     IAB-IP-AddressConfigurationList-r16                                  OPTIONAL, -- Need M
+    conditionalReconfiguration-r16          ConditionalReconfiguration-r16                                       OPTIONAL, -- Need M
+    daps-SourceRelease-r16                  ENUMERATED{true}                                                     OPTIONAL, -- Need N
+    t316-r16                                SetupRelease {T316-r16}                                              OPTIONAL, -- Need M
+    needForGapsConfigNR-r16                 SetupRelease {NeedForGapsConfigNR-r16}                               OPTIONAL, -- Need M
+    onDemandSIB-Request-r16                 SetupRelease { OnDemandSIB-Request-r16 }                             OPTIONAL, -- Need M
+    dedicatedPosSysInfoDelivery-r16         OCTET STRING (CONTAINING PosSystemInformation-r16-IEs)               OPTIONAL, -- Need N
+    sl-ConfigDedicatedNR-r16                SetupRelease {SL-ConfigDedicatedNR-r16}                              OPTIONAL, -- Need M
+    sl-ConfigDedicatedEUTRA-Info-r16        SetupRelease {SL-ConfigDedicatedEUTRA-Info-r16}                      OPTIONAL, -- Need M
+    targetCellSMTC-SCG-r16                  SSB-MTC                                                              OPTIONAL, -- Need S
+    nonCriticalExtension                    RRCReconfiguration-v1700-IEs                                         OPTIONAL
+}
+
+RRCReconfiguration-v1700-IEs ::=        SEQUENCE {
+    otherConfig-v1700                       OtherConfig-v1700                                              OPTIONAL, -- Need M
+    sl-L2RelayUE-Config-r17                 SetupRelease { SL-L2RelayUE-Config-r17 }                       OPTIONAL, -- Need M
+    sl-L2RemoteUE-Config-r17                SetupRelease { SL-L2RemoteUE-Config-r17 }                      OPTIONAL, -- Need M
+    dedicatedPagingDelivery-r17             OCTET STRING (CONTAINING Paging)                               OPTIONAL, -- Cond PagingRelay
+    needForGapNCSG-ConfigNR-r17             SetupRelease {NeedForGapNCSG-ConfigNR-r17}                     OPTIONAL, -- Need M
+    needForGapNCSG-ConfigEUTRA-r17          SetupRelease {NeedForGapNCSG-ConfigEUTRA-r17}                  OPTIONAL, -- Need M
+    musim-GapConfig-r17                     SetupRelease {MUSIM-GapConfig-r17}                             OPTIONAL, -- Need M
+    ul-GapFR2-Config-r17                    SetupRelease { UL-GapFR2-Config-r17 }                          OPTIONAL, -- Need M
+    scg-State-r17                           ENUMERATED { deactivated }                                     OPTIONAL, -- Need N
+    appLayerMeasConfig-r17                  AppLayerMeasConfig-r17                                         OPTIONAL, -- Need M
+    ue-TxTEG-RequestUL-TDOA-Config-r17      SetupRelease {UE-TxTEG-RequestUL-TDOA-Config-r17}              OPTIONAL,  -- Need M
+    nonCriticalExtension                    SEQUENCE {}                                                    OPTIONAL
+}
+
+MRDC-SecondaryCellGroupConfig ::=       SEQUENCE {
+    mrdc-ReleaseAndAdd                      ENUMERATED {true}                                                     OPTIONAL,   -- Need N
+    mrdc-SecondaryCellGroup                 CHOICE {
+        nr-SCG                                  OCTET STRING  (CONTAINING RRCReconfiguration),
+        eutra-SCG                               OCTET STRING
+    }
+}
+
+BAP-Config-r16 ::=                      SEQUENCE {
+    bap-Address-r16                         BIT STRING (SIZE (10))                                    OPTIONAL, -- Need M
+    defaultUL-BAP-RoutingID-r16             BAP-RoutingID-r16                                         OPTIONAL, -- Need M
+    defaultUL-BH-RLC-Channel-r16            BH-RLC-ChannelID-r16                                      OPTIONAL, -- Need M
+    flowControlFeedbackType-r16             ENUMERATED {perBH-RLC-Channel, perRoutingID, both}        OPTIONAL, -- Need R
+    ...
+}
+
+MasterKeyUpdate ::=                 SEQUENCE {
+    keySetChangeIndicator           BOOLEAN,
+    nextHopChainingCount            NextHopChainingCount,
+    nas-Container                   OCTET STRING                                                     OPTIONAL,    -- Cond securityNASC
+    ...
+}
+
+OnDemandSIB-Request-r16 ::=                  SEQUENCE {
+    onDemandSIB-RequestProhibitTimer-r16         ENUMERATED {s0, s0dot5, s1, s2, s5, s10, s20, s30}
+}
+
+T316-r16 ::=         ENUMERATED {ms50, ms100, ms200, ms300, ms400, ms500, ms600, ms1000, ms1500, ms2000}
+
+IAB-IP-AddressConfigurationList-r16 ::= SEQUENCE {
+    iab-IP-AddressToAddModList-r16      SEQUENCE (SIZE(1..maxIAB-IP-Address-r16)) OF IAB-IP-AddressConfiguration-r16 OPTIONAL, -- Need N
+    iab-IP-AddressToReleaseList-r16     SEQUENCE (SIZE(1..maxIAB-IP-Address-r16)) OF IAB-IP-AddressIndex-r16         OPTIONAL, -- Need N
+    ...
+}
+
+IAB-IP-AddressConfiguration-r16 ::=     SEQUENCE {
+    iab-IP-AddressIndex-r16                 IAB-IP-AddressIndex-r16,
+    iab-IP-Address-r16                      IAB-IP-Address-r16                                                OPTIONAL,  -- Need M
+    iab-IP-Usage-r16                        IAB-IP-Usage-r16                                                  OPTIONAL,  -- Need M
+    iab-donor-DU-BAP-Address-r16            BIT STRING (SIZE(10))                                             OPTIONAL,  -- Need M
+...
+}
+
+SL-ConfigDedicatedEUTRA-Info-r16 ::=            SEQUENCE {
+    sl-ConfigDedicatedEUTRA-r16                    OCTET STRING                                              OPTIONAL,  -- Need M
+    sl-TimeOffsetEUTRA-List-r16                    SEQUENCE (SIZE (8)) OF SL-TimeOffsetEUTRA-r16             OPTIONAL    -- Need M
+}
+
+SL-TimeOffsetEUTRA-r16 ::=        ENUMERATED {ms0, ms0dot25, ms0dot5, ms0dot625, ms0dot75, ms1, ms1dot25, ms1dot5, ms1dot75,
+                                              ms2, ms2dot5, ms3, ms4, ms5, ms6, ms8, ms10, ms20}
+
+UE-TxTEG-RequestUL-TDOA-Config-r17 ::=  CHOICE {
+    oneShot-r17                             NULL,
+    periodicReporting-r17                   ENUMERATED { ms160, ms320, ms1280, ms2560, ms61440, ms81920, ms368640, ms737280 }
+}

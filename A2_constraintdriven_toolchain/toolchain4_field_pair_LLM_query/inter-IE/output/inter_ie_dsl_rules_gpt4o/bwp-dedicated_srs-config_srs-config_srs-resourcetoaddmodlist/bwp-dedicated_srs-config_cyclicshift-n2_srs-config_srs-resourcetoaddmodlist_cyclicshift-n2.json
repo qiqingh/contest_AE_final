@@ -1,0 +1,105 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      345,
+      451,
+      559
+    ],
+    "field2_all": [
+      451,
+      559,
+      667
+    ],
+    "actual_pairs": [
+      [
+        [
+          345
+        ],
+        [
+          451,
+          559
+        ]
+      ],
+      [
+        [
+          451,
+          559
+        ],
+        [
+          451,
+          667
+        ]
+      ],
+      [
+        [
+          451,
+          559
+        ],
+        [
+          559,
+          667
+        ]
+      ],
+      [
+        [
+          451,
+          559
+        ],
+        [
+          451,
+          559
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes the definition of cyclic shift without relating the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_srs-config",
+    "field1": "cyclicshift-n2",
+    "ie2_name": "srs-config_srs-resourcetoaddmodlist",
+    "field2": "cyclicshift-n2",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- Cyclic shift, as defined by the higher layer parameter cyclicShift-n2, cyclicShift-n4, or cyclicShift-n8 for transmission comb value 2, 4 or 8, and described in clause 6.4.1.4 of [4, TS 38.211].",
+    "generated_at": "2026-01-10T14:07:58.079517",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between cyclicshift-n2 fields from bwp-dedicated_srs-config and srs-config_srs-resourcetoaddmodlist.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes the definition of cyclic shift without relating the two fields across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

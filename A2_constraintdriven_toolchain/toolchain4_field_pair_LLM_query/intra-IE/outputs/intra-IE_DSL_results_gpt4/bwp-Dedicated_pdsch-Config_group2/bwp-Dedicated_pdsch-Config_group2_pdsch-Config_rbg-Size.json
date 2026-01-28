@@ -1,0 +1,83 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'resourceAllocationType0'), EQ(field2, 'config1'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      259
+    ],
+    "field2_all": [
+      268
+    ],
+    "actual_pairs": [
+      [
+        [
+          259
+        ],
+        [
+          268
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'resourceAllocationType0')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "If field1 is set to 'resourceAllocationType0', then field2 should be set to 'config1'."
+    ],
+    "invalid": [
+      "If field1 is set to 'resourceAllocationType0', but field2 is not set to 'config1'."
+    ]
+  },
+  "notes": "The rule is derived from the evidence that in downlink resource allocation of type 0, the higher layer parameter rbg-Size is configured by PDSCH-Config.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group2",
+    "field1": "pdsch-Config",
+    "field2": "rbg-Size",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.2.3",
+      "5.1.2.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "In downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1.\n---\nIn downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast.\n---\nWhen a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4.",
+    "generated_at": "2025-12-11T14:21:05.991894",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'resourceAllocationType0'), EQ(field2, 'config1'))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'resourceAllocationType0')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If field1 is set to 'resourceAllocationType0', then field2 should be set to 'config1'."
+        ],
+        "invalid": [
+          "If field1 is set to 'resourceAllocationType0', but field2 is not set to 'config1'."
+        ]
+      },
+      "notes": "The rule is derived from the evidence that in downlink resource allocation of type 0, the higher layer parameter rbg-Size is configured by PDSCH-Config.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

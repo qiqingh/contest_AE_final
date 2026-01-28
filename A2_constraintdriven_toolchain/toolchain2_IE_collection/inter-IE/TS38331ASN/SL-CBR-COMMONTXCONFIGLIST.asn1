@@ -1,0 +1,13 @@
+SL-CBR-CommonTxConfigList-r16 ::=     SEQUENCE {
+    sl-CBR-RangeConfigList-r16            SEQUENCE (SIZE (1..maxCBR-Config-r16)) OF SL-CBR-LevelsConfig-r16     OPTIONAL,   -- Need M
+    sl-CBR-PSSCH-TxConfigList-r16         SEQUENCE (SIZE (1.. maxTxConfig-r16)) OF SL-CBR-PSSCH-TxConfig-r16    OPTIONAL    -- Need M
+}
+
+SL-CBR-LevelsConfig-r16 ::=           SEQUENCE (SIZE (1..maxCBR-Level-r16)) OF SL-CBR-r16
+
+SL-CBR-PSSCH-TxConfig-r16 ::=         SEQUENCE {
+    sl-CR-Limit-r16                       INTEGER(0..10000)                                                     OPTIONAL,   -- Need M
+    sl-TxParameters-r16                   SL-PSSCH-TxParameters-r16                                             OPTIONAL    -- Need M
+}
+
+SL-CBR-r16 ::=                        INTEGER (0..100)

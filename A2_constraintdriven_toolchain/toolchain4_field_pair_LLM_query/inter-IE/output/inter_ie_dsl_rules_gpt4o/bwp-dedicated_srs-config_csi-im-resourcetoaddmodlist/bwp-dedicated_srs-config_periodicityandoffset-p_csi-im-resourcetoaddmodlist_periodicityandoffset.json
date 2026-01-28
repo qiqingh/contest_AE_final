@@ -1,0 +1,86 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      462,
+      463,
+      570,
+      571
+    ],
+    "field2_all": [
+      751,
+      752,
+      759,
+      760,
+      767,
+      768
+    ],
+    "actual_pairs": [
+      [
+        [
+          462,
+          463,
+          570,
+          571
+        ],
+        [
+          751,
+          752,
+          759,
+          760,
+          767,
+          768
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE constraint between the fields 'periodicityandoffset-p' from 'bwp-dedicated_srs-config' and 'periodicityandoffset' from 'csi-im-resourcetoaddmodlist'. The evidence only describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_srs-config",
+    "field1": "periodicityandoffset-p",
+    "ie2_name": "csi-im-resourcetoaddmodlist",
+    "field2": "periodicityandoffset",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.4"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "For an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, a periodicity \\( T_{\\text {SRS }} \\) (in slots) and slot offset \\( T_{\\text {offset }} \\) are configured according to the higher-layer parameter periodicityAndOffset- \\( p \\) or periodicityAndOffset-sp in the SRS-Resource [E, or periodicityAndOffset-p or periodicityAndOffset-sp in the SRSPosResource IE. Candidate slots in which the configured SRS resource may be used for SRS transmission are the slots satisfying",
+    "generated_at": "2026-01-10T14:53:55.063305",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE constraint between the fields 'periodicityandoffset-p' from 'bwp-dedicated_srs-config' and 'periodicityandoffset' from 'csi-im-resourcetoaddmodlist'. The evidence only describes behavior within a single IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

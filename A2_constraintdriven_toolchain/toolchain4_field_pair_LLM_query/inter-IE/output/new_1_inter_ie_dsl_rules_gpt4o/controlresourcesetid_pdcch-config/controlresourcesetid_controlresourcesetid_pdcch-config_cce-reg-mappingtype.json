@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      112,
+      113,
+      177,
+      178,
+      242,
+      243
+    ],
+    "field2_all": [
+      80,
+      145,
+      210
+    ],
+    "actual_pairs": [
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          80,
+          145,
+          210
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between the fields controlresourcesetid and cce-reg-mappingtype. The evidence primarily describes behavior within individual IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "controlresourcesetid",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdcch-config",
+    "field2": "cce-reg-mappingtype",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1",
+      "7.3.2.2",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- \\( \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} \\) is given by the higher-layer parameter frequencyDomainResources; - \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3; - interleaved or non-interleaved mapping is given by the higher-layer parameter cce-REG-MappingType;\n---\n- the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- CCE-to-REG mapping parameters provided by cce-REG-MappingType; - an antenna port quasi co-location, from a set of antenna port quasi co-locations provided by TCI-State, indicating quasi co-location information of the DM-RS antenna port for PDCCH reception; - an indication for a presence or absence of a transmission configuration indication (TCI) field for a DCI format, other than DCI format \\( 1 \\_0 \\), that schedules PDSCH receptions or has associated HARQ-ACK information without scheduling PDSCH and is provided by a PDCCH in CORESET \\( p \\), by tci-PresentInDCI or tci-PresentDC1-1-2.\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol,",
+    "generated_at": "2026-01-09T12:52:37.741401",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint between controlresourcesetid and cce-reg-mappingtype based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between the fields controlresourcesetid and cce-reg-mappingtype. The evidence primarily describes behavior within individual IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

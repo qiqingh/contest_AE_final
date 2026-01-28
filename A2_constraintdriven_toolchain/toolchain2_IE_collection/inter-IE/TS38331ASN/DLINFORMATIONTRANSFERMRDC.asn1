@@ -1,0 +1,16 @@
+DLInformationTransferMRDC-r16 ::=       SEQUENCE {
+    criticalExtensions                      CHOICE {
+        c1                                      CHOICE {
+            dlInformationTransferMRDC-r16           DLInformationTransferMRDC-r16-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+DLInformationTransferMRDC-r16-IEs::=    SEQUENCE {
+    dl-DCCH-MessageNR-r16                   OCTET STRING             OPTIONAL, -- Need N
+    dl-DCCH-MessageEUTRA-r16                OCTET STRING             OPTIONAL, -- Need N
+    lateNonCriticalExtension                OCTET STRING             OPTIONAL,
+    nonCriticalExtension                    SEQUENCE {}              OPTIONAL
+}

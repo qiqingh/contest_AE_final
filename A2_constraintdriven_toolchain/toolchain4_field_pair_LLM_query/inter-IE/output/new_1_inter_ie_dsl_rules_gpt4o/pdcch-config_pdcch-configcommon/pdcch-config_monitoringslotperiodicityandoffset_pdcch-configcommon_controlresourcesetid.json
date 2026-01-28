@@ -1,0 +1,90 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      118,
+      119,
+      183,
+      184,
+      248,
+      249
+    ],
+    "field2_all": [
+      80,
+      89,
+      145,
+      154,
+      210,
+      219
+    ],
+    "actual_pairs": [
+      [
+        [
+          118,
+          119,
+          183,
+          184,
+          248,
+          249
+        ],
+        [
+          80,
+          89,
+          145,
+          154,
+          210,
+          219
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE constraint between 'monitoringslotperiodicityandoffset' from 'pdcch-config' and 'controlresourcesetid' from 'pdcch-configcommon'. The evidence only describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config",
+    "field1": "monitoringslotperiodicityandoffset",
+    "ie2_name": "pdcch-configcommon",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "Defines an association of the search space to multiple monitoring locations in the frequency domain and indicates whether the pattern configured in the associated CORESET is replicated to a specific RB set, see TS 38.213, clause 10.1. Each bit in the bitmap corresponds to one RB set, and the leftmost (most significant) bit corresponds to RB set 0 in the BWP. A bit set to 1 indicates that a frequency domain resource allocation replicated from the pattern configured in the associated CORESET is mapped to the RB set. monitoringSlotPeriodicityAndOffset",
+    "generated_at": "2026-01-09T12:28:25.913541",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE constraint between 'monitoringslotperiodicityandoffset' from 'pdcch-config' and 'controlresourcesetid' from 'pdcch-configcommon'. The evidence only describes behavior within a single IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

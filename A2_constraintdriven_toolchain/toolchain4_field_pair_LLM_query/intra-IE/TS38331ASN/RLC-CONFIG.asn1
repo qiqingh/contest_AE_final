@@ -1,0 +1,119 @@
+RLC-Config ::=                      CHOICE {
+    am                                  SEQUENCE {
+        ul-AM-RLC                           UL-AM-RLC,
+        dl-AM-RLC                           DL-AM-RLC
+    },
+    um-Bi-Directional                   SEQUENCE {
+        ul-UM-RLC                           UL-UM-RLC,
+        dl-UM-RLC                           DL-UM-RLC
+    },
+    um-Uni-Directional-UL               SEQUENCE {
+        ul-UM-RLC                           UL-UM-RLC
+    },
+    um-Uni-Directional-DL               SEQUENCE {
+        dl-UM-RLC                           DL-UM-RLC
+    },
+    ...
+}
+
+UL-AM-RLC ::=                       SEQUENCE {
+    sn-FieldLength                      SN-FieldLengthAM                                    OPTIONAL,   -- Cond Reestab
+    t-PollRetransmit                    T-PollRetransmit,
+    pollPDU                             PollPDU,
+    pollByte                            PollByte,
+    maxRetxThreshold                    ENUMERATED { t1, t2, t3, t4, t6, t8, t16, t32 }
+}
+
+DL-AM-RLC ::=                       SEQUENCE {
+    sn-FieldLength                      SN-FieldLengthAM                                    OPTIONAL,   -- Cond Reestab
+    t-Reassembly                        T-Reassembly,
+    t-StatusProhibit                    T-StatusProhibit
+}
+
+UL-UM-RLC ::=                       SEQUENCE {
+    sn-FieldLength                      SN-FieldLengthUM                                    OPTIONAL    -- Cond Reestab
+}
+
+DL-UM-RLC ::=                       SEQUENCE {
+    sn-FieldLength                      SN-FieldLengthUM                                    OPTIONAL,   -- Cond Reestab
+    t-Reassembly                        T-Reassembly
+}
+
+T-PollRetransmit ::=                ENUMERATED {
+                                        ms5, ms10, ms15, ms20, ms25, ms30, ms35,
+                                        ms40, ms45, ms50, ms55, ms60, ms65, ms70,
+                                        ms75, ms80, ms85, ms90, ms95, ms100, ms105,
+                                        ms110, ms115, ms120, ms125, ms130, ms135,
+                                        ms140, ms145, ms150, ms155, ms160, ms165,
+                                        ms170, ms175, ms180, ms185, ms190, ms195,
+                                        ms200, ms205, ms210, ms215, ms220, ms225,
+                                        ms230, ms235, ms240, ms245, ms250, ms300,
+                                        ms350, ms400, ms450, ms500, ms800, ms1000,
+                                        ms2000, ms4000, ms1-v1610, ms2-v1610, ms3-v1610,
+                                        ms4-v1610, spare1}
+
+
+PollPDU ::=                         ENUMERATED {
+                                        p4, p8, p16, p32, p64, p128, p256, p512, p1024, p2048, p4096, p6144, p8192, p12288, p16384,p20480,
+                                        p24576, p28672, p32768, p40960, p49152, p57344, p65536, infinity, spare8, spare7, spare6, spare5, spare4,
+                                        spare3, spare2, spare1}
+
+PollByte ::=                        ENUMERATED {
+                                        kB1, kB2, kB5, kB8, kB10, kB15, kB25, kB50, kB75,
+                                        kB100, kB125, kB250, kB375, kB500, kB750, kB1000,
+                                        kB1250, kB1500, kB2000, kB3000, kB4000, kB4500,
+                                        kB5000, kB5500, kB6000, kB6500, kB7000, kB7500,
+                                        mB8, mB9, mB10, mB11, mB12, mB13, mB14, mB15,
+                                        mB16, mB17, mB18, mB20, mB25, mB30, mB40, infinity,
+                                        spare20, spare19, spare18, spare17, spare16,
+                                        spare15, spare14, spare13, spare12, spare11,
+                                        spare10, spare9, spare8, spare7, spare6, spare5,
+                                        spare4, spare3, spare2, spare1}
+
+T-Reassembly ::=                    ENUMERATED {
+                                        ms0, ms5, ms10, ms15, ms20, ms25, ms30, ms35,
+                                        ms40, ms45, ms50, ms55, ms60, ms65, ms70,
+                                        ms75, ms80, ms85, ms90, ms95, ms100, ms110,
+                                        ms120, ms130, ms140, ms150, ms160, ms170,
+                                        ms180, ms190, ms200, spare1}
+
+T-StatusProhibit ::=                ENUMERATED {
+                                        ms0, ms5, ms10, ms15, ms20, ms25, ms30, ms35,
+                                        ms40, ms45, ms50, ms55, ms60, ms65, ms70,
+                                        ms75, ms80, ms85, ms90, ms95, ms100, ms105,
+                                        ms110, ms115, ms120, ms125, ms130, ms135,
+                                        ms140, ms145, ms150, ms155, ms160, ms165,
+                                        ms170, ms175, ms180, ms185, ms190, ms195,
+                                        ms200, ms205, ms210, ms215, ms220, ms225,
+                                        ms230, ms235, ms240, ms245, ms250, ms300,
+                                        ms350, ms400, ms450, ms500, ms800, ms1000,
+                                        ms1200, ms1600, ms2000, ms2400, spare2, spare1}
+
+SN-FieldLengthUM ::=                ENUMERATED {size6, size12}
+SN-FieldLengthAM ::=                ENUMERATED {size12, size18}
+
+RLC-Config-v1610 ::=                SEQUENCE {
+    dl-AM-RLC-v1610                     DL-AM-RLC-v1610
+}
+
+RLC-Config-v1700 ::=                SEQUENCE {
+    dl-AM-RLC-v1700                     DL-AM-RLC-v1700,
+    dl-UM-RLC-v1700                     DL-UM-RLC-v1700
+}
+
+DL-AM-RLC-v1610 ::=                 SEQUENCE {
+    t-StatusProhibit-v1610              T-StatusProhibit-v1610                               OPTIONAL,   -- Need N
+    ...
+}
+
+DL-AM-RLC-v1700 ::=                 SEQUENCE {
+    t-ReassemblyExt-r17                 T-ReassemblyExt-r17                                  OPTIONAL    -- Need N
+}
+
+DL-UM-RLC-v1700 ::=                 SEQUENCE {
+    t-ReassemblyExt-r17                 T-ReassemblyExt-r17                                  OPTIONAL    -- Need N
+}
+
+T-StatusProhibit-v1610 ::=          ENUMERATED { ms1, ms2, ms3, ms4, spare4, spare3, spare2, spare1}
+
+T-ReassemblyExt-r17 ::=             ENUMERATED {ms210, ms220, ms340, ms350, ms550, ms1100, ms1650, ms2200}

@@ -1,0 +1,572 @@
+[
+  {
+    "fields": [
+      "resourceType",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        335
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP-id"
+    ],
+    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.  The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.2",
+    "section_title": "Resource settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceType",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        335
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "resourceType",
+      "BWP ID"
+    ],
+    "original_sentence": "For a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'semi-persistent': - when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "slotOffset",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        337
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "slot offset",
+      "BWP-Id"
+    ],
+    "original_sentence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.  The time domain behavior of the CSI-ReportConfig is indicated by the higher layer parameter reportConfigType and can be set to 'aperiodic', 'semiPersistentOnPUCCH', 'semiPersistentOnPUSCH', or 'periodic'. For 'periodic' and 'semiPersistentOnPUCCH/'semiPersistentOnPUSCH' CSI reporting, the configured periodicity and slot offset applies in the numerology of the UL BWP in which the CSI report is configured to be transmitted on. The higher layer parameter reportQuantity indicates the CSI-related, L1-RSRP-related, L1-SINR-related or Capability[Set][ndex-related quantities to report. The reportFreqConfiguration indicates the reporting granularity in the frequency domain, including the CSI reporting band and if PMI/CQI reporting is wideband or sub-band. The timeRestrictionForChannelMeasurements parameter in CSI-ReportConfig can be configured to enable time domain restriction for channel measurements and timeRestrictionForInterferenceMeasurements can be configured to enable time domain restriction for interference measurements. The CSI-ReportConfig can also contain CodebookConfig, which contains configuration parameters for Type-I, Type II, Enhanced Type II CSI, or Further Enhanced Type II Port Selection including codebook subset restriction when applicable, and configurations of group-based reporting.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.1",
+    "section_title": "Reporting settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "slotOffset",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        337
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "slot offset",
+      "BWP-id"
+    ],
+    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.  The time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.2",
+    "section_title": "Resource settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "slotOffset",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        337
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SlotOffset",
+      "BWP ID"
+    ],
+    "original_sentence": "- \\( N_{\\text {slot, offset, PDCCH }}^{\\mathrm{CA}} \\) and \\( \\mu_{\\text {off set, PDCCH }} \\) are the \\( N_{\\text {slot, offset }}^{\\mathrm{CA}} \\) and the \\( \\mu_{\\text {offset }} \\), respectively, which are determined by higher-layer configured ca-SlotOffset for the cell receiving the PDCCH, \\( N_{\\text {slot, offset, SRS }}^{C A} \\) and \\( \\mu_{\\text {offset, SRS }} \\) are the \\( N_{\\text {slot,offsel }}^{C A} \\) and the \\( \\mu_{\\text {offset }} \\), respectively, which are determined by higher-layer configured ca-SlotOffset for the cell transmitting the SRS, as defined in [4, TS 38.211] clause 4.5. - if the UE is configured with the higher layer parameter spatialRelationInfo or spatialRelationInfoPos containing the ID of a reference 'ssb-Index', 'ssb-IndexServing' or 'ssb-IndexNcell', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference SS/PBCH block, if the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'csi-RS-Index' or 'csi-RS-IndexServing', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference periodic CSI-RS or of the reference semi-persistent CSI-RS, or of the latest reference aperiodic CSI-RS. If the higher layer parameter spatialRelationInfo or spatialRelationInfoPos contains the ID of a reference 'srs' or 'srs-SpatialRelation', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the transmission of the reference periodic SRS or of the reference semi-persistent SRS or of the reference aperiodic SRS. When the SRS is configured by the higher layer parameter SRS-PosResourceSet and if the higher layer parameter spatialRelationInfoPos contains the ID of a reference 'dl-PRS', the UE shall transmit the target SRS resource with the same spatial domain transmission filter used for the reception of the reference DL PRS. - when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "srs-ResourceSetId",
+      "qcl-Type"
+    ],
+    "original_sentence": "- If aperiodic SRS resource set is configured, the associated NZP-CSI-RS is indicated via SRS request field in DCI format \\( 0 \\_1 \\) and \\( 1 \\_1 \\), as well as DCI format \\( 0 \\_2 \\) (if SRS request field is present) and DCI format \\( 1 \\_2 \\) (if SRS request field is present), where AperiodicSRS-ResourceTrigger and AperiodicSRS-ResourceTriggerList (indicating the association between aperiodic SRS triggering state(s) and SRS resource sets), triggered SRS resource(s) srs-ResourceSetId, csi-RS (indicating the associated NZP-CSI-RS-ResourceId) are higher layer configured in SRS-ResourceSet. The SRS-ResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_1 \\) and 1_1 are defined by the entries of the higher layer parameter srs-ResourceSetToAddModList and the SRSResourceSet(s) associated with the SRS request by DCI format \\( 0 \\_2 \\) and \\( 1 \\_2 \\) are defined by the entries of the higher layer parameter srs-ResourceSetToAddModListDCI-0-2. A UE is not expected to update the SRS precoding information if the gap from the last symbol of the reception of the aperiodic NZP-CSI-RS resource and the first symbol of the aperiodic SRS transmission is less than \\( 42 \\cdot 2^{\\max (0, \\mu-3)} \\) OFDM symbols, where the SCS configuration \\( \\mu \\) is the smallest SCS configuration between the NZP-CSI-RS resource and the SRS transmission. - If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.1.2",
+    "section_title": "Non",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "usage",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        338
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "usage",
+      "BWP ID"
+    ],
+    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.17",
+    "section_title": "SP SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS resource set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell which contains all resources indicated by the Resource ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource ID, fields. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1, Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- \\( F_{1} \\) : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP/AP SRS Resource Set indicated with SP/AP SRS Resource Set ID field. Fo refers to the first SRS resource within the resource set, \\( F_{1} \\) to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - Resource Serving Cell ID: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains activated SRS Resource Set. The length of the field is 2 bits; - SRS Resource Set ID: This field indicates the SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.27",
+    "section_title": "SRS Pathloss Reference RS Update MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) within the field Spatial Relation for Resource ID, are present, except for Spatial Relation Resource ID, with DL-PRS or SSB. When A/D is set to 1 , if this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) in the field Spatial Relation for Resource ID, are present, otherwise if this field is set to 0 , they are not present. When \\( A / D \\) is set to 0 , this field is always set to 0 that they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - Positoining SRS Resource Set ID: This field indicates the SP Positioning SRS Resource Set identified by SRSPosResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.36",
+    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "bwp-Id"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        68
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP ID"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.59",
+    "section_title": "SP/AP SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "tci-StateId"
+    ],
+    "source_IEs": [
+      "333_340_srs-Config_srs-ResourceSetToAddModList",
+      "67_71_pdsch-Config_tci-StatesToAddModList"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        67
+      ]
+    ],
+    "matched_fields": [
+      "SRS resource set ID",
+      "TCI State ID"
+    ],
+    "original_sentence": "- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell associated with all TCI states indicated by the TCI State ID, fields. The length of the field is 5 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.59",
+    "section_title": "SP/AP SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  }
+]

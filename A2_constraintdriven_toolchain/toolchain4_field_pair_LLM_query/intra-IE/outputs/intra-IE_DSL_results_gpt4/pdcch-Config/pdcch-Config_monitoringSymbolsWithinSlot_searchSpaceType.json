@@ -1,0 +1,82 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'subset of up to three consecutive symbols'), EQ(field2, '15 kHz'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      55,
+      56
+    ],
+    "field2_all": [
+      62
+    ],
+    "actual_pairs": [
+      [
+        [
+          55,
+          56
+        ],
+        [
+          62
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'subset of up to three consecutive symbols')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "If field1 is a subset of up to three consecutive symbols, then field2 is 15 kHz"
+    ],
+    "invalid": [
+      "If field1 is a subset of up to three consecutive symbols, then field2 is not 15 kHz"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that if the monitoringSymbolsWithinSlot (field1) indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols, the UE does not expect to be configured with a PDCCH SCS (field2) other than 15 kHz.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "pdcch-Config",
+    "field1": "monitoringSymbolsWithinSlot",
+    "field2": "searchSpaceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 6,
+      "original_count": 6,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot - a duration of T_{s}<k_{s} indicating a number of slots that the search space set s exists by duration, or a number of slots in consecutive groups of slots where the search space set s can exist by duration-r 17\n---\nIf the monitoringSymbolsWithinSlot indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols that are same in every slot where the UE monitors PDCCH for all search space sets, the UE does not expect to be configured with a PDCCH SCS other than 15 kHz if the subset includes at least one symbol after the third symbol.\n---\nFor search space sets s_{i} and s_{j} that include searchSpaceLinking with value s_{j} and s_{i} , respectively, a UE monitors, in monitoring occasions with same index according to each of search space sets s_{i} and s_{j} in a slot, PDCCH candidates m_{s_{i}, n_{C I}}^{(L)} and m_{s_{j}, n_{C I}}^{(L)} , with m_{s_{i}, n_{C I}}^{(L)}=m_{s_{j}, n_{C I}}^{(L)} , for detection of a DCI format with same information. The UE expects k_{s_{i}}= k_{s_{j}}, o_{s_{i}}=o_{s_{j}}, T_{s_{i}}=T_{s_{j}}, M_{s_{i}}^{(L)}=M_{s_{j}}^{(L)} , and a same number of non-overlapping PDCCH monitoring occasions per slot based on corresponding monitoringSymbolsWithinSlot, for search space sets s_{i} and s_{j} . For CORESET p_{i} associated with the search space set s_{i} and for CORESET p_{j} associated with the search space set s_{j} , the UE is provided tci-\n---\n- a PDCCH monitoring pattern within a slot, indicating first symbol(s) of the CORESET for PDCCH monitoring within each slot where the UE monitors PDCCH, by monitoringSymbols WithinSlot - a duration of T_{s}<k_{s} indicating a number of slots that the search space set s exists by duration, or a number of slots in consecutive groups of slots where the search space set s can exist by duration-r 17\n---\nIf the monitoringSymbolsWithinSlot indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols that are same in every slot where the UE monitors PDCCH for all search space sets, the UE does not expect to be configured with a PDCCH SCS other than 15 kHz if the subset includes at least one symbol after the third symbol.\n---\nFor search space sets s_{i} and s_{j} that include searchSpaceLinking with value s_{j} and s_{i} , respectively, a UE monitors, in monitoring occasions with same index according to each of search space sets s_{i} and s_{j} in a slot, PDCCH candidates m_{s_{i}, n_{C I}}^{(L)} and m_{s_{j}, n_{C I}}^{(L)} , with m_{s_{i}, n_{C I}}^{(L)}=m_{s_{j}, n_{C I}}^{(L)} , for detection of a DCI format with same information. The UE expects k_{s_{i}}= k_{s_{j}}, o_{s_{i}}=o_{s_{j}}, T_{s_{i}}=T_{s_{j}}, M_{s_{i}}^{(L)}=M_{s_{j}}^{(L)} , and a same number of non-overlapping PDCCH monitoring occasions per slot based on corresponding monitoringSymbolsWithinSlot, for search space sets s_{i} and s_{j} . For CORESET p_{i} associated with the search space set s_{i} and for CORESET p_{j} associated with the search space set s_{j} , the UE is provided tci-",
+    "generated_at": "2025-12-11T14:15:23.385227",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'subset of up to three consecutive symbols'), EQ(field2, '15 kHz'))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'subset of up to three consecutive symbols')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If field1 is a subset of up to three consecutive symbols, then field2 is 15 kHz"
+        ],
+        "invalid": [
+          "If field1 is a subset of up to three consecutive symbols, then field2 is not 15 kHz"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that if the monitoringSymbolsWithinSlot (field1) indicates to a UE to monitor PDCCH in a subset of up to three consecutive symbols, the UE does not expect to be configured with a PDCCH SCS (field2) other than 15 kHz.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,184 @@
+CodebookConfig ::=                                  SEQUENCE {
+    codebookType                                        CHOICE {
+        type1                                               SEQUENCE {
+            subType                                             CHOICE {
+                typeI-SinglePanel                                   SEQUENCE {
+                    nrOfAntennaPorts                                    CHOICE {
+                        two                                                 SEQUENCE {
+                            twoTX-CodebookSubsetRestriction                     BIT STRING (SIZE (6))
+                        },
+                        moreThanTwo                                         SEQUENCE {
+                            n1-n2                                               CHOICE {
+                                two-one-TypeI-SinglePanel-Restriction               BIT STRING (SIZE (8)),
+                                two-two-TypeI-SinglePanel-Restriction               BIT STRING (SIZE (64)),
+                                four-one-TypeI-SinglePanel-Restriction              BIT STRING (SIZE (16)),
+                                three-two-TypeI-SinglePanel-Restriction             BIT STRING (SIZE (96)),
+                                six-one-TypeI-SinglePanel-Restriction               BIT STRING (SIZE (24)),
+                                four-two-TypeI-SinglePanel-Restriction              BIT STRING (SIZE (128)),
+                                eight-one-TypeI-SinglePanel-Restriction             BIT STRING (SIZE (32)),
+                                four-three-TypeI-SinglePanel-Restriction            BIT STRING (SIZE (192)),
+                                six-two-TypeI-SinglePanel-Restriction               BIT STRING (SIZE (192)),
+                                twelve-one-TypeI-SinglePanel-Restriction            BIT STRING (SIZE (48)),
+                                four-four-TypeI-SinglePanel-Restriction             BIT STRING (SIZE (256)),
+                                eight-two-TypeI-SinglePanel-Restriction             BIT STRING (SIZE (256)),
+                                sixteen-one-TypeI-SinglePanel-Restriction           BIT STRING (SIZE (64))
+                            },
+                            typeI-SinglePanel-codebookSubsetRestriction-i2      BIT STRING (SIZE (16))        OPTIONAL    -- Need R
+                        }
+                    },
+                    typeI-SinglePanel-ri-Restriction                    BIT STRING (SIZE (8))
+                },
+                typeI-MultiPanel                                    SEQUENCE {
+                    ng-n1-n2                                                CHOICE {
+                        two-two-one-TypeI-MultiPanel-Restriction                BIT STRING (SIZE (8)),
+                        two-four-one-TypeI-MultiPanel-Restriction               BIT STRING (SIZE (16)),
+                        four-two-one-TypeI-MultiPanel-Restriction               BIT STRING (SIZE (8)),
+                        two-two-two-TypeI-MultiPanel-Restriction                BIT STRING (SIZE (64)),
+                        two-eight-one-TypeI-MultiPanel-Restriction              BIT STRING (SIZE (32)),
+                        four-four-one-TypeI-MultiPanel-Restriction              BIT STRING (SIZE (16)),
+                        two-four-two-TypeI-MultiPanel-Restriction               BIT STRING (SIZE (128)),
+                        four-two-two-TypeI-MultiPanel-Restriction               BIT STRING (SIZE (64))
+                    },
+                    ri-Restriction                          BIT STRING (SIZE (4))
+                }
+            },
+            codebookMode                                        INTEGER (1..2)
+
+        },
+        type2                                   SEQUENCE {
+            subType                                 CHOICE {
+                typeII                                  SEQUENCE {
+                    n1-n2-codebookSubsetRestriction         CHOICE {
+                        two-one                                 BIT STRING (SIZE (16)),
+                        two-two                                 BIT STRING (SIZE (43)),
+                        four-one                                BIT STRING (SIZE (32)),
+                        three-two                               BIT STRING (SIZE (59)),
+                        six-one                                 BIT STRING (SIZE (48)),
+                        four-two                                BIT STRING (SIZE (75)),
+                        eight-one                               BIT STRING (SIZE (64)),
+                        four-three                              BIT STRING (SIZE (107)),
+                        six-two                                 BIT STRING (SIZE (107)),
+                        twelve-one                              BIT STRING (SIZE (96)),
+                        four-four                               BIT STRING (SIZE (139)),
+                        eight-two                               BIT STRING (SIZE (139)),
+                        sixteen-one                             BIT STRING (SIZE (128))
+                    },
+                    typeII-RI-Restriction                   BIT STRING (SIZE (2))
+                },
+                typeII-PortSelection                    SEQUENCE {
+                    portSelectionSamplingSize               ENUMERATED {n1, n2, n3, n4}                   OPTIONAL,       -- Need R
+                    typeII-PortSelectionRI-Restriction      BIT STRING (SIZE (2))
+                }
+            },
+            phaseAlphabetSize                       ENUMERATED {n4, n8},
+            subbandAmplitude                        BOOLEAN,
+            numberOfBeams                           ENUMERATED {two, three, four}
+        }
+    }
+}
+
+CodebookConfig-r16  ::=                SEQUENCE  {
+    codebookType                           CHOICE {
+        type2                                  SEQUENCE {
+            subType                                CHOICE {
+                typeII-r16                             SEQUENCE  {
+                    n1-n2-codebookSubsetRestriction-r16    CHOICE {
+                        two-one                                BIT STRING (SIZE (16)),
+                        two-two                                BIT STRING (SIZE (43)),
+                        four-one                               BIT STRING (SIZE (32)),
+                        three-two                              BIT STRING (SIZE (59)),
+                        six-one                                BIT STRING (SIZE (48)),
+                        four-two                               BIT STRING (SIZE (75)),
+                        eight-one                              BIT STRING (SIZE (64)),
+                        four-three                             BIT STRING (SIZE (107)),
+                        six-two                                BIT STRING (SIZE (107)),
+                        twelve-one                             BIT STRING (SIZE (96)),
+                        four-four                              BIT STRING (SIZE (139)),
+                        eight-two                              BIT STRING (SIZE (139)),
+                        sixteen-one                            BIT STRING (SIZE (128))
+                    },
+                    typeII-RI-Restriction-r16              BIT STRING (SIZE(4))
+                },
+                typeII-PortSelection-r16  SEQUENCE {
+                    portSelectionSamplingSize-r16          ENUMERATED {n1, n2, n3, n4},
+                    typeII-PortSelectionRI-Restriction-r16 BIT STRING (SIZE (4))
+                }
+            },
+        numberOfPMI-SubbandsPerCQI-Subband-r16 INTEGER (1..2),
+        paramCombination-r16                   INTEGER (1..8)
+        }
+    }
+}
+
+CodebookConfig-r17  ::=               SEQUENCE  {
+    codebookType                          CHOICE   {
+        type1                                 SEQUENCE  {
+            typeI-SinglePanel-Group1-r17          SEQUENCE {
+                nrOfAntennaPorts                      CHOICE {
+                    two                                   SEQUENCE {
+                        twoTX-CodebookSubsetRestriction1-r17  BIT STRING (SIZE (6))
+                    },
+                    moreThanTwo                            SEQUENCE {
+                        n1-n2                                        CHOICE {
+                            two-one-TypeI-SinglePanel-Restriction1-r17       BIT STRING (SIZE (8)),
+                            two-two-TypeI-SinglePanel-Restriction1-r17       BIT STRING (SIZE (64)),
+                            four-one-TypeI-SinglePanel-Restriction1-r17      BIT STRING (SIZE (16)),
+                            three-two-TypeI-SinglePanel-Restriction1-r17     BIT STRING (SIZE (96)),
+                            six-one-TypeI-SinglePanel-Restriction1-r17       BIT STRING (SIZE (24)),
+                            four-two-TypeI-SinglePanel-Restriction1-r17      BIT STRING (SIZE (128)),
+                            eight-one-TypeI-SinglePanel-Restriction1-r17     BIT STRING (SIZE (32)),
+                            four-three-TypeI-SinglePanel-Restriction1-r17    BIT STRING (SIZE (192)),
+                            six-two-TypeI-SinglePanel-Restriction1-r17       BIT STRING (SIZE (192)),
+                            twelve-one-TypeI-SinglePanel-Restriction1-r17    BIT STRING (SIZE (48)),
+                            four-four-TypeI-SinglePanel-Restriction1-r17     BIT STRING (SIZE (256)),
+                            eight-two-TypeI-SinglePanel-Restriction1-r17     BIT STRING (SIZE (256)),
+                            sixteen-one-TypeI-SinglePanel-Restriction1-r17   BIT STRING (SIZE (64))
+                        }
+                    }
+                }
+            }                                                                                       OPTIONAL,  -- Need R
+            typeI-SinglePanel-Group2-r17           SEQUENCE {
+                nrOfAntennaPorts                       CHOICE {
+                    two                                    SEQUENCE {
+                        twoTX-CodebookSubsetRestriction2-r17   BIT STRING (SIZE (6))
+                    },
+                    moreThanTwo                            SEQUENCE {
+                        n1-n2                                        CHOICE {
+                            two-one-TypeI-SinglePanel-Restriction2-r17       BIT STRING (SIZE (8)),
+                            two-two-TypeI-SinglePanel-Restriction2-r17       BIT STRING (SIZE (64)),
+                            four-one-TypeI-SinglePanel-Restriction2-r17      BIT STRING (SIZE (16)),
+                            three-two-TypeI-SinglePanel-Restriction2-r17     BIT STRING (SIZE (96)),
+                            six-one-TypeI-SinglePanel-Restriction2-r17       BIT STRING (SIZE (24)),
+                            four-two-TypeI-SinglePanel-Restriction2-r17      BIT STRING (SIZE (128)),
+                            eight-one-TypeI-SinglePanel-Restriction2-r17     BIT STRING (SIZE (32)),
+                            four-three-TypeI-SinglePanel-Restriction2-r17    BIT STRING (SIZE (192)),
+                            six-two-TypeI-SinglePanel-Restriction2-r17       BIT STRING (SIZE (192)),
+                            twelve-one-TypeI-SinglePanel-Restriction2-r17    BIT STRING (SIZE (48)),
+                            four-four-TypeI-SinglePanel-Restriction2-r17     BIT STRING (SIZE (256)),
+                            eight-two-TypeI-SinglePanel-Restriction2-r17     BIT STRING (SIZE (256)),
+                            sixteen-one-TypeI-SinglePanel-Restriction2-r17   BIT STRING (SIZE (64))
+                        }
+                    }
+                }
+            }                                                                                       OPTIONAL,  -- Need R
+            typeI-SinglePanel-ri-RestrictionSTRP-r17                    BIT STRING (SIZE (8))       OPTIONAL,  -- Need R
+            typeI-SinglePanel-ri-RestrictionSDM-r17                     BIT STRING (SIZE (4))       OPTIONAL   -- Need R
+        },
+        type2                                 SEQUENCE {
+            typeII-PortSelection-r17              SEQUENCE {
+                paramCombination-r17                   INTEGER (1..8),
+                valueOfN-r17                           ENUMERATED {n2, n4}                          OPTIONAL,  -- Need R
+                numberOfPMI-SubbandsPerCQI-Subband-r17 INTEGER(1..2)                                OPTIONAL,  -- Need R
+                typeII-PortSelectionRI-Restriction-r17 BIT STRING (SIZE (4))
+            }
+        }
+    }
+}
+
+CodebookConfig-v1730  ::=             SEQUENCE  {
+    codebookType                          CHOICE   {
+        type1                                 SEQUENCE  {
+            codebookMode                          INTEGER (1..2)                                    OPTIONAL   -- Need R
+        }
+    }
+}

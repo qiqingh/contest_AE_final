@@ -1,0 +1,30 @@
+LogMeasResultListWLAN-r16 ::=    SEQUENCE (SIZE (1..maxWLAN-Id-Report-r16)) OF LogMeasResultWLAN-r16
+
+LogMeasResultWLAN-r16 ::=        SEQUENCE {
+    wlan-Identifiers-r16             WLAN-Identifiers-r16,
+    rssiWLAN-r16                     WLAN-RSSI-Range-r16          OPTIONAL,
+    rtt-WLAN-r16                     WLAN-RTT-r16                 OPTIONAL,
+    ...
+}
+
+WLAN-Identifiers-r16 ::=         SEQUENCE {
+    ssid-r16                         OCTET STRING (SIZE (1..32))  OPTIONAL,
+    bssid-r16                        OCTET STRING (SIZE (6))      OPTIONAL,
+    hessid-r16                       OCTET STRING (SIZE (6))      OPTIONAL,
+    ...
+}
+
+WLAN-RSSI-Range-r16 ::= INTEGER(0..141)
+
+WLAN-RTT-r16 ::=                 SEQUENCE {
+    rttValue-r16                     INTEGER (0..16777215),
+    rttUnits-r16                     ENUMERATED {
+                                         microseconds,
+                                         hundredsofnanoseconds,
+                                         tensofnanoseconds,
+                                         nanoseconds,
+                                         tenthsofnanoseconds,
+                                         ...},
+    rttAccuracy-r16                  INTEGER (0..255)             OPTIONAL,
+    ...
+}

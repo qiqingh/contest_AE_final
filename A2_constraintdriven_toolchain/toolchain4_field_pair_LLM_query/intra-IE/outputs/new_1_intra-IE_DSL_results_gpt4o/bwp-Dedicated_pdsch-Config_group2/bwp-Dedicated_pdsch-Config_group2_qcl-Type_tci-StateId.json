@@ -1,0 +1,65 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      266
+    ],
+    "field2_all": [
+      262
+    ],
+    "actual_pairs": [
+      [
+        [
+          266
+        ],
+        [
+          262
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not explicitly relate the fields qcl-Type and tci-StateId within the same IE. The evidence snippet lacks normative constraints or explicit relations between these fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group2",
+    "field1": "qcl-Type",
+    "field2": "tci-StateId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "ssb SSB-Index }, qcl-Type ENUMERATED {typeA, typeB, typeC, typeD}, ...; [ [ ``` ``` --Editor's note: Needed in Rel-15/16 TCI state for mTRP intercell and in Rel-17 TCI state for BM intercell. ] ] } DLorJoint-TCIState-rl7 ::= SEQUENCE { tci-StateUnifiedId-rl7 TCI-StateId, qcl-Typel-rl7 QCL-Info, ```",
+    "generated_at": "2026-01-07T16:28:36.358589",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not explicitly relate the fields qcl-Type and tci-StateId within the same IE. The evidence snippet lacks normative constraints or explicit relations between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

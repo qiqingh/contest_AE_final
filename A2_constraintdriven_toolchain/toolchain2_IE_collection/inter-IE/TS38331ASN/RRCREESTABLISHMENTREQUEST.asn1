@@ -1,0 +1,17 @@
+RRCReestablishmentRequest ::=       SEQUENCE {
+    rrcReestablishmentRequest           RRCReestablishmentRequest-IEs
+}
+
+RRCReestablishmentRequest-IEs ::=   SEQUENCE {
+    ue-Identity                         ReestabUE-Identity,
+    reestablishmentCause                ReestablishmentCause,
+    spare                               BIT STRING (SIZE (1))
+}
+
+ReestabUE-Identity ::=              SEQUENCE {
+    c-RNTI                              RNTI-Value,
+    physCellId                          PhysCellId,
+    shortMAC-I                          ShortMAC-I
+}
+
+ReestablishmentCause ::=            ENUMERATED {reconfigurationFailure, handoverFailure, otherFailure, spare1}

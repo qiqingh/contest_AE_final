@@ -1,0 +1,44 @@
+RRCResume ::=                       SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        rrcResume                           RRCResume-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCResume-IEs ::=                   SEQUENCE {
+    radioBearerConfig                   RadioBearerConfig                                               OPTIONAL, -- Need M
+    masterCellGroup                     OCTET STRING (CONTAINING CellGroupConfig)                       OPTIONAL, -- Need M
+    measConfig                          MeasConfig                                                      OPTIONAL, -- Need M
+    fullConfig                          ENUMERATED {true}                                               OPTIONAL, -- Need N
+    lateNonCriticalExtension            OCTET STRING                                                    OPTIONAL,
+    nonCriticalExtension                RRCResume-v1560-IEs                                             OPTIONAL
+}
+
+RRCResume-v1560-IEs ::=             SEQUENCE {
+    radioBearerConfig2                  OCTET STRING (CONTAINING RadioBearerConfig)                     OPTIONAL, -- Need M
+    sk-Counter                          SK-Counter                                                      OPTIONAL, -- Need N
+    nonCriticalExtension                RRCResume-v1610-IEs                                             OPTIONAL
+}
+
+RRCResume-v1610-IEs ::=             SEQUENCE {
+    idleModeMeasurementReq-r16          ENUMERATED {true}                                               OPTIONAL, -- Need N
+    restoreMCG-SCells-r16               ENUMERATED {true}                                               OPTIONAL, -- Need N
+    restoreSCG-r16                      ENUMERATED {true}                                               OPTIONAL, -- Need N
+    mrdc-SecondaryCellGroup-r16         CHOICE {
+        nr-SCG-r16                          OCTET STRING (CONTAINING RRCReconfiguration),
+        eutra-SCG-r16                       OCTET STRING
+    }                                                                                                   OPTIONAL, -- Cond RestoreSCG
+    needForGapsConfigNR-r16             SetupRelease {NeedForGapsConfigNR-r16}                          OPTIONAL, -- Need M
+    nonCriticalExtension                RRCResume-v1700-IEs                                             OPTIONAL
+}
+
+RRCResume-v1700-IEs ::=             SEQUENCE {
+    sl-ConfigDedicatedNR-r17            SetupRelease {SL-ConfigDedicatedNR-r16}                         OPTIONAL, -- Cond L2RemoteUE
+    sl-L2RemoteUE-Config-r17            SetupRelease {SL-L2RemoteUE-Config-r17}                         OPTIONAL, -- Cond L2RemoteUE
+    needForGapNCSG-ConfigNR-r17         SetupRelease {NeedForGapNCSG-ConfigNR-r17}                      OPTIONAL, -- Need M
+    needForGapNCSG-ConfigEUTRA-r17      SetupRelease {NeedForGapNCSG-ConfigEUTRA-r17}                   OPTIONAL, -- Need M
+    scg-State-r17                       ENUMERATED {deactivated}                                        OPTIONAL, -- Need N
+    appLayerMeasConfig-r17              AppLayerMeasConfig-r17                                          OPTIONAL, -- Need M
+    nonCriticalExtension                SEQUENCE {}                                                     OPTIONAL
+}

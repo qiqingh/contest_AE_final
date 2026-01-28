@@ -1,0 +1,46 @@
+RACH-ConfigCommon ::=               SEQUENCE {
+    rach-ConfigGeneric                  RACH-ConfigGeneric,
+    totalNumberOfRA-Preambles           INTEGER (1..63)                                                     OPTIONAL,   -- Need S
+    ssb-perRACH-OccasionAndCB-PreamblesPerSSB   CHOICE {
+        oneEighth                                   ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        oneFourth                                   ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        oneHalf                                     ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        one                                         ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32,n36,n40,n44,n48,n52,n56,n60,n64},
+        two                                         ENUMERATED {n4,n8,n12,n16,n20,n24,n28,n32},
+        four                                        INTEGER (1..16),
+        eight                                       INTEGER (1..8),
+        sixteen                                     INTEGER (1..4)
+    }                                                                                                       OPTIONAL,   -- Need M
+
+    groupBconfigured                    SEQUENCE {
+        ra-Msg3SizeGroupA                   ENUMERATED {b56, b144, b208, b256, b282, b480, b640,
+                                                        b800, b1000, b72, spare6, spare5,spare4, spare3, spare2, spare1},
+        messagePowerOffsetGroupB            ENUMERATED { minusinfinity, dB0, dB5, dB8, dB10, dB12, dB15, dB18},
+        numberOfRA-PreamblesGroupA          INTEGER (1..64)
+    }                                                                                                       OPTIONAL,   -- Need R
+    ra-ContentionResolutionTimer            ENUMERATED { sf8, sf16, sf24, sf32, sf40, sf48, sf56, sf64},
+    rsrp-ThresholdSSB                       RSRP-Range                                                      OPTIONAL,   -- Need R
+    rsrp-ThresholdSSB-SUL                   RSRP-Range                                                      OPTIONAL,   -- Cond SUL
+    prach-RootSequenceIndex                 CHOICE {
+        l839                                    INTEGER (0..837),
+        l139                                    INTEGER (0..137)
+    },
+    msg1-SubcarrierSpacing                  SubcarrierSpacing                                               OPTIONAL,   -- Cond L139
+    restrictedSetConfig                     ENUMERATED {unrestrictedSet, restrictedSetTypeA, restrictedSetTypeB},
+    msg3-transformPrecoder                  ENUMERATED {enabled}                                            OPTIONAL,   -- Need R
+    ...,
+    [[
+    ra-PrioritizationForAccessIdentity-r16  SEQUENCE {
+        ra-Prioritization-r16                   RA-Prioritization,
+        ra-PrioritizationForAI-r16              BIT STRING (SIZE (2))
+    }                                                                                                       OPTIONAL,   -- Cond InitialBWP-Only
+    prach-RootSequenceIndex-r16             CHOICE {
+        l571                                    INTEGER (0..569),
+        l1151                                   INTEGER (0..1149)
+    }   OPTIONAL   -- Need R
+    ]],
+    [[
+    ra-PrioritizationForSlicing-r17         RA-PrioritizationForSlicing-r17                          OPTIONAL,   -- Cond InitialBWP-Only
+    featureCombinationPreamblesList-r17     SEQUENCE (SIZE(1..maxFeatureCombPreamblesPerRACHResource-r17)) OF FeatureCombinationPreambles-r17 OPTIONAL -- Cond AdditionalRACH
+    ]]
+}

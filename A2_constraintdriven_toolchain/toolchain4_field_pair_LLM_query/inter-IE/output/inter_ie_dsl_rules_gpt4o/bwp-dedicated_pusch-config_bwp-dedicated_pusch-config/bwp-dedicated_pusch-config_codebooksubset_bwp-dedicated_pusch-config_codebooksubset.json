@@ -1,0 +1,84 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      438,
+      546
+    ],
+    "field2_all": [
+      438,
+      546,
+      654
+    ],
+    "actual_pairs": [
+      [
+        [
+          438,
+          546
+        ],
+        [
+          438,
+          546,
+          654
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish an inter-IE constraint between the two fields 'codebooksubset' from different IEs. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pusch-config",
+    "field1": "codebooksubset",
+    "ie2_name": "bwp-dedicated_pusch-config",
+    "field2": "codebooksubset",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 11,
+      "original_count": 11,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "6.1",
+      "5.2.1.4.2",
+      "6.1.1.1",
+      "5.2.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.\n---\n- The CodebookConfig in CSI-ReportConfig can be configured with two Codebook Subset Restrictions. The first restriction applies to a reported PMI associated to a CSI-RS resource in Group 1. The second restriction applies to a reported PMI associated to a CSI-RS resource in Group 2.\n---\nFor the PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant activated by DCI format \\( 0 \\_0 \\) or \\( 0 \\_1 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubset, maxRank, scaling of UCI-OnPUSCH, which are provided by pusch-Config. For the PUSCH transmission corresponding to a Type 2 configured grant activated by DCI format \\( 0 \\_2 \\), the parameters applied for the transmission are provided by configuredGrantConfig except for dataScramblingIdentityPUSCH, txConfig, codebookSubsetDCI-0-2, maxRankDCI-0-2, scaling of UCI-OnPUSCH, resourceAllocationTypelGranularityDCI-0-2 provided by pusch-Config. If the UE is provided with transformPrecoder in configured GrantConfig, the UE applies the higher layer parameter tp-pi2BPSK, if provided in pusch-Config, according to the procedure described in clause 6.1.4 for the PUSCH transmission corresponding to a configured grant. When the UE is configured DLorJointTCIState or UL-TCIState, the UE shall perform PUSCH transmission corresponding to a Type 1 configured grant or a Type 2 configured grant or a dynamic grant according to the spatial relation, if applicable, with a reference to the RS for determining UL Tx spatial filter or the RS configured with qclType set to 'typeD' of the indicated DLorJointTCIState or UL-TCIState. The reference RS in the indicated DLorJointTCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, or a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info. The reference RS in the indicated UL-TCIState can be a CSI-RS resource in a NZP-CSI-RS-ResourceSet configured with higher layer parameter repetition, a CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, an SRS resource in an SRS resource set with the higher layer parameter usage set to 'beamManagement', or SS/PBCH block associated with the same or different PCI from the PCI of the serving cell.\n---\nFor codebook based transmission, the UE determines its codebook subsets based on TPMI(s) and upon the reception of higher layer parameter codebookSubset in pusch-Config for PUSCH associated with DCI format \\( 0 \\_1 \\) and codebookSubsetDCI-0-2 in pusch-Config for PUSCH associated with DCI format 02 which may be configured with 'fullyAndPartialAndNonCoherent', or 'partialAndNonCoherent', or 'nonCoherent' depending on the UE capability. When higher layer parameter ul-FullPowerTransmission is set to 'fullpowerMode2' and the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 is set to 'partialAndNonCoherent', and when the SRS-resourceSet with usage set to \"codebook\" includes at least one SRS resource with 4 ports and one SRS resource with 2 ports, the codebookSubset associated with the 2 -port SRS resource is 'nonCoherent'. The maximum transmission rank may be configured by the higher layer parameter maxRank in pusch-Config for PUSCH scheduled with DCI format 0_1 and maxRankDCI-0-2 for PUSCH scheduled with DCI format 0_2.\n---\nA UE reporting its UE capability of 'partialAndNonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent'.  A UE reporting its UE capability of 'nonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent' or with 'partialAndNonCoherent'.\n---\nA UE reporting its UE capability of 'nonCoherent' transmission shall not expect to be configured by either codebookSubset or codebookSubsetDCI-0-2 with 'fullyAndPartialAndNonCoherent' or with 'partialAndNonCoherent'.  A UE shall not expect to be configured with the higher layer parameter codebookSubset or the higher layer parameter codebookSubsetDCI-0-2 set to 'partialAndNonCoherent' when higher layer parameter nrofSRS-Ports in an SRSResourceSet with usage set to 'codebook' indicates that the maximum number of the configured SRS antenna ports in the SRS-ResourceSet is two.\n---\nA UE shall not expect to be configured with higher layer parameter ul-FullPowerTransmission set to 'fullpowerMode1' and codebookSubset or codebookSubsetDCI-0-2 set to 'fullAndPartialAndNonCoherent' simultaneously.\n---\nNumber of antenna ports in first ( \\( n 1 \\) ) and second ( \\( n 2 \\) ) dimension and codebook subset restriction (see TS 38.214 [19] clause 5.2.2.2.3). \\\\ Number of bits for codebook subset restriction is CEIL(log2(nchoosek(O1*O2,4)))+8*n1*n2 where nchoosek(a,b) = a!/(b!(a-b)!).\n---\ni2 codebook subset restriction for Type I Single-panel codebook used when reportQuantity is CRI/Ri/i1/CQI (see TS 38.214 [19] clause 5.2.2.2.1).\n---\nCodebook configuration for Type-1 or Type-2 including codebook subset restriction. Network can only configure one of codebookConfig, codebookConfig-r16 or codebookConfig-r17 to a UE.\n---\ncodebookSubset, codebookSubsetDCI-0-2 \\\\ Subset of PMIs addressed by TPMI, where PMIs are those supported by UEs with maximum coherence capabilities (see TS 38.214 [19], clause 6.1.1.1). The field codebookSubset applies to DCI format 0_1 and the field codebookSubsetDCI-0-2 applies to DCI format 0_2 (see TS 38.214 [19], clause 6.1.1.1).",
+    "generated_at": "2026-01-10T14:54:33.000542",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish an inter-IE constraint between the two fields 'codebooksubset' from different IEs. The evidence primarily describes single-IE behavior or lacks explicit normative wording to define a cross-IE relationship.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

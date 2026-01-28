@@ -1,0 +1,61 @@
+IABOtherInformation-r16 ::=     SEQUENCE {
+    rrc-TransactionIdentifier       RRC-TransactionIdentifier,
+    criticalExtensions              CHOICE {
+        iabOtherInformation-r16         IABOtherInformation-r16-IEs,
+        criticalExtensionsFuture        SEQUENCE {}
+    }
+}
+
+IABOtherInformation-r16-IEs ::=         SEQUENCE {
+    ip-InfoType-r16                         CHOICE {
+        iab-IP-Request-r16                      SEQUENCE {
+            iab-IPv4-AddressNumReq-r16              IAB-IP-AddressNumReq-r16                OPTIONAL,
+            iab-IPv6-AddressReq-r16                 CHOICE {
+                iab-IPv6-AddressNumReq-r16              IAB-IP-AddressNumReq-r16,
+                iab-IPv6-AddressPrefixReq-r16           IAB-IP-AddressPrefixReq-r16,
+                ...
+            }                                                                               OPTIONAL
+        },
+        iab-IP-Report-r16               SEQUENCE {
+            iab-IPv4-AddressReport-r16      IAB-IP-AddressAndTraffic-r16                    OPTIONAL,
+            iab-IPv6-Report-r16             CHOICE {
+                iab-IPv6-AddressReport-r16      IAB-IP-AddressAndTraffic-r16,
+                iab-IPv6-PrefixReport-r16       IAB-IP-PrefixAndTraffic-r16,
+                ...
+            }                                                                               OPTIONAL
+        },
+        ...
+    },
+    lateNonCriticalExtension        OCTET STRING                                            OPTIONAL,
+    nonCriticalExtension            SEQUENCE {}                                             OPTIONAL
+}
+
+IAB-IP-AddressNumReq-r16 ::=    SEQUENCE {
+    all-Traffic-NumReq-r16          INTEGER (1..8)                                  OPTIONAL,
+    f1-C-Traffic-NumReq-r16         INTEGER (1..8)                                  OPTIONAL,
+    f1-U-Traffic-NumReq-r16         INTEGER (1..8)                                  OPTIONAL,
+    non-F1-Traffic-NumReq-r16       INTEGER (1..8)                                  OPTIONAL,
+    ...
+}
+
+IAB-IP-AddressPrefixReq-r16 ::= SEQUENCE {
+    all-Traffic-PrefixReq-r16       ENUMERATED {true}                               OPTIONAL,
+    f1-C-Traffic-PrefixReq-r16      ENUMERATED {true}                               OPTIONAL,
+    f1-U-Traffic-PrefixReq-r16      ENUMERATED {true}                               OPTIONAL,
+    non-F1-Traffic-PrefixReq-r16    ENUMERATED {true}                               OPTIONAL,
+    ...
+}
+
+IAB-IP-AddressAndTraffic-r16 ::= SEQUENCE {
+    all-Traffic-IAB-IP-Address-r16  SEQUENCE (SIZE(1..8)) OF IAB-IP-Address-r16     OPTIONAL,
+    f1-C-Traffic-IP-Address-r16     SEQUENCE (SIZE(1..8)) OF IAB-IP-Address-r16     OPTIONAL,
+    f1-U-Traffic-IP-Address-r16     SEQUENCE (SIZE(1..8)) OF IAB-IP-Address-r16     OPTIONAL,
+    non-F1-Traffic-IP-Address-r16   SEQUENCE (SIZE(1..8)) OF IAB-IP-Address-r16     OPTIONAL
+}
+
+IAB-IP-PrefixAndTraffic-r16 ::= SEQUENCE {
+    all-Traffic-IAB-IP-Address-r16  IAB-IP-Address-r16                              OPTIONAL,
+    f1-C-Traffic-IP-Address-r16     IAB-IP-Address-r16                              OPTIONAL,
+    f1-U-Traffic-IP-Address-r16     IAB-IP-Address-r16                              OPTIONAL,
+    non-F1-Traffic-IP-Address-r16   IAB-IP-Address-r16                              OPTIONAL
+}

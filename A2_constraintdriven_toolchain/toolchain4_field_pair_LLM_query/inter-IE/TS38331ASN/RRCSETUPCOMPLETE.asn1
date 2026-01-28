@@ -1,0 +1,45 @@
+RRCSetupComplete ::=                SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        rrcSetupComplete                    RRCSetupComplete-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCSetupComplete-IEs ::=            SEQUENCE {
+    selectedPLMN-Identity               INTEGER (1..maxPLMN),
+    registeredAMF                       RegisteredAMF                                   OPTIONAL,
+    guami-Type                          ENUMERATED {native, mapped}                     OPTIONAL,
+    s-NSSAI-List                        SEQUENCE (SIZE (1..maxNrofS-NSSAI)) OF S-NSSAI  OPTIONAL,
+    dedicatedNAS-Message                DedicatedNAS-Message,
+    ng-5G-S-TMSI-Value                  CHOICE {
+        ng-5G-S-TMSI                        NG-5G-S-TMSI,
+        ng-5G-S-TMSI-Part2                  BIT STRING (SIZE (9))
+    }                                                                                   OPTIONAL,
+    lateNonCriticalExtension            OCTET STRING                                    OPTIONAL,
+    nonCriticalExtension                RRCSetupComplete-v1610-IEs                      OPTIONAL
+}
+
+RRCSetupComplete-v1610-IEs ::=      SEQUENCE {
+    iab-NodeIndication-r16              ENUMERATED {true}                               OPTIONAL,
+    idleMeasAvailable-r16               ENUMERATED {true}                               OPTIONAL,
+    ue-MeasurementsAvailable-r16        UE-MeasurementsAvailable-r16                    OPTIONAL,
+    mobilityHistoryAvail-r16            ENUMERATED {true}                               OPTIONAL,
+    mobilityState-r16                   ENUMERATED {normal, medium, high, spare}        OPTIONAL,
+    nonCriticalExtension                RRCSetupComplete-v1690-IEs                      OPTIONAL
+}
+
+RRCSetupComplete-v1690-IEs ::=      SEQUENCE {
+    ul-RRC-Segmentation-r16             ENUMERATED {true}                               OPTIONAL,
+    nonCriticalExtension                RRCSetupComplete-v1700-IEs                      OPTIONAL
+}
+
+RRCSetupComplete-v1700-IEs ::=      SEQUENCE {
+    onboardingRequest-r17               ENUMERATED {true}                               OPTIONAL,
+    nonCriticalExtension                SEQUENCE{}                                      OPTIONAL
+}
+
+RegisteredAMF ::=                   SEQUENCE {
+    plmn-Identity                       PLMN-Identity                                   OPTIONAL,
+    amf-Identifier                      AMF-Identifier
+}

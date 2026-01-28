@@ -1,0 +1,64 @@
+MRDC-Parameters ::= SEQUENCE {
+    singleUL-Transmission               ENUMERATED {supported}              OPTIONAL,
+    dynamicPowerSharingENDC             ENUMERATED {supported}              OPTIONAL,
+    tdm-Pattern                         ENUMERATED {supported}              OPTIONAL,
+    ul-SharingEUTRA-NR                  ENUMERATED {tdm, fdm, both}         OPTIONAL,
+    ul-SwitchingTimeEUTRA-NR            ENUMERATED {type1, type2}           OPTIONAL,
+    simultaneousRxTxInterBandENDC       ENUMERATED {supported}              OPTIONAL,
+    asyncIntraBandENDC                  ENUMERATED {supported}              OPTIONAL,
+    ...,
+    [[
+    dualPA-Architecture                 ENUMERATED {supported}              OPTIONAL,
+    intraBandENDC-Support               ENUMERATED {non-contiguous, both}   OPTIONAL,
+    ul-TimingAlignmentEUTRA-NR          ENUMERATED {required}               OPTIONAL
+    ]]
+}
+
+MRDC-Parameters-v1580 ::= SEQUENCE {
+	dynamicPowerSharingNEDC             ENUMERATED {supported}              OPTIONAL
+}
+
+MRDC-Parameters-v1590 ::=	SEQUENCE {
+	interBandContiguousMRDC             ENUMERATED {supported}              OPTIONAL
+}
+
+MRDC-Parameters-v15g0 ::=   SEQUENCE {
+    simultaneousRxTxInterBandENDCPerBandPair   SimultaneousRxTxPerBandPair  OPTIONAL
+}
+
+MRDC-Parameters-v1620 ::=    SEQUENCE {
+    maxUplinkDutyCycle-interBandENDC-TDD-PC2-r16    SEQUENCE{
+        eutra-TDD-Config0-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config1-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config2-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config3-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config4-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config5-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        eutra-TDD-Config6-r16    ENUMERATED {n20, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL
+    }                                                                                    OPTIONAL,
+    -- R1 18-2 Single UL TX operation for TDD PCell in EN-DC
+    tdm-restrictionTDD-endc-r16          ENUMERATED {supported}                          OPTIONAL,
+    -- R1 18-2a Single UL TX operation for FDD PCell in EN-DC
+    tdm-restrictionFDD-endc-r16          ENUMERATED {supported}                          OPTIONAL,
+    --  R1 18-2b Support of HARQ-offset for SUO case1 in EN-DC with LTE TDD PCell for type 1 UE
+    singleUL-HARQ-offsetTDD-PCell-r16    ENUMERATED {supported}                          OPTIONAL,
+    --  R1 18-3 Dual Tx transmission for EN-DC with FDD PCell(TDM pattern for dual Tx UE)
+    tdm-restrictionDualTX-FDD-endc-r16   ENUMERATED {supported}                          OPTIONAL
+}
+
+MRDC-Parameters-v1630 ::= SEQUENCE {
+    -- R4 2-20 Maximum uplink duty cycle for FDD+TDD EN-DC power class 2
+    maxUplinkDutyCycle-interBandENDC-FDD-TDD-PC2-r16  SEQUENCE {
+        maxUplinkDutyCycle-FDD-TDD-EN-DC1-r16             ENUMERATED {n30, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL,
+        maxUplinkDutyCycle-FDD-TDD-EN-DC2-r16             ENUMERATED {n30, n40, n50, n60, n70, n80, n90, n100}    OPTIONAL
+    }                                                                                                             OPTIONAL,
+
+    -- R4 2-19 FDD-FDD or TDD-TDD inter-band MR-DC with overlapping or partially overlapping DL spectrum
+    interBandMRDC-WithOverlapDL-Bands-r16       ENUMERATED {supported}                   OPTIONAL
+}
+
+MRDC-Parameters-v1700 ::=	SEQUENCE {
+    condPSCellAdditionENDC-r17                  ENUMERATED {supported}                   OPTIONAL,
+    scg-ActivationDeactivationENDC-r17          ENUMERATED {supported}                   OPTIONAL,
+    scg-ActivationDeactivationResumeENDC-r17    ENUMERATED {supported}                   OPTIONAL
+}

@@ -1,0 +1,137 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      347,
+      453,
+      561,
+      669
+    ],
+    "field2_all": [
+      453,
+      561,
+      669
+    ],
+    "actual_pairs": [
+      [
+        [
+          347
+        ],
+        [
+          561,
+          669
+        ]
+      ],
+      [
+        [
+          453,
+          561
+        ],
+        [
+          561,
+          669
+        ]
+      ],
+      [
+        [
+          453,
+          669
+        ],
+        [
+          561,
+          669
+        ]
+      ],
+      [
+        [
+          347
+        ],
+        [
+          453,
+          561
+        ]
+      ],
+      [
+        [
+          347
+        ],
+        [
+          453,
+          669
+        ]
+      ],
+      [
+        [
+          453,
+          561
+        ],
+        [
+          453,
+          669
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE relationship between the nrofsymbols fields from different IEs. All evidence pertains to single-IE behavior or unrelated contexts.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "srs-config_srs-resourcetoaddmodlist",
+    "field1": "nrofsymbols",
+    "ie2_name": "srs-config_srs-resourcetoaddmodlist",
+    "field2": "nrofsymbols",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 11,
+      "original_count": 11,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "9.2.4",
+      "9.2.6",
+      "9.2.1",
+      "9.2.5.2",
+      "6.4.1.4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- \\( \\quad N_{\\text {symb }}^{\\text {SRS }} \\in\\{1,2,4,8,10,12,14\\} \\) consecutive OFDM symbols given by the field nrofSymbols contained in the higher layer parameter resourceMapping. If \\( N_{\\mathrm{hop}}>1, N_{\\mathrm{symb}}^{\\mathrm{SRS}} \\) is the number of consecutive OFDM symbol per hop.\n---\nIf the format indicates PUCCH-format0, the PUCCH format configured for a PUCCH resource is PUCCH format 0 , where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0} \\) provided by nrofPRBs; otherwise, \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0}=1 \\).\n---\nIf the format indicates PUCCH-formatl, the PUCCH format configured for a PUCCH resource is PUCCH format 1, where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex, and an index for an orthogonal cover code by timeDomainOCC. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1} \\) provided by nrofPRBs; otherwise, \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1}=1 \\).  If the format indicates PUCCH-format2 or PUCCH-format3, the PUCCH format configured for a PUCCH resource is PUCCH format 2 or PUCCH format 3, respectively, where the PUCCH resource also includes a number of PRBs provided by nrofPRBs, a number of symbols for a PUCCH transmission provided by nrofSymbols, and a first symbol for the PUCCH transmission provided by startingSymbollndex. If a UE is provided by uselnterlacePUCCH-PUSCH in BWP-UplinkDedicated, and the format indicates PUCCH-format2 or PUCCH-format3 and PUCCH-ResourceExt is provided, the PUCCH resource also includes an index of a second interlace by interlacel, if provided; otherwise, if interlacel is not provided, the PUCCH resource also includes, if provided, an orthogonal cover code length by occLength and an orthogonal cover code index by occ-Index. If the format indicates PUCCH-format 3 and PUCCHResourceExt is provided, the UE assumes that the \\( M_{\\mathrm{RB}}^{\\text {PUCCH,3 }} \\) [4, TS38.211] PRBs with the lowest indexes within the first, and if configured, second interlace are used for PUCCH transmission.\n---\nIf the UE determines that, for a SR transmission occasion in a PUCCH, the number of symbols available for the PUCCH transmission in a slot is smaller than the value provided by nrofSymbols, the UE does not transmit the PUCCH in the slot.\n---\n- \\( \\quad N_{\\text {symb }- \\text { UCT }}^{\\text {PUCC }} \\) is equal to a number of PUCCH symbols \\( N_{\\text {symb }}^{\\text {PUCCH, } 2} \\) for PUCCH format 2 provided by nrofsymbols in PUCCH-format2. For PUCCH format 3 or for PUCCH format 4, \\( N_{\\text {symb-UCT }}^{\\text {PUCCH }} \\) is equal to a number of PUCCH symbols \\( N_{\\text {symb }}^{\\text {PUCC, } 3} \\) for PUCCH format 3 or equal to a number of PUCCH symbols \\( N_{\\text {symb }}^{\\text {PUCCH }, 4} \\) for PUCCH format\n---\n4 provided by nrofSymbols in PUCCH-format3 or nrofSymbols in PUCCH-format4, respectively, after excluding a number of symbols used for DM-RS transmission for PUCCH format 3 or for PUCCH format 4, respectively [4, TS 38.211]\n---\n- a repetition of the PUCCH transmission in each of the \\( N_{\\text {PUCCH }}^{\\text {repeat }} \\) slots has a same number of consecutive symbols, as provided by nrofSymbols\n---\nIf the UE determines that, for a repetition of a PUCCH transmission in a slot, the number of symbols available for the PUCCH transmission is smaller than the value provided by nrofSymbols for the corresponding PUCCH format, the UE does not transmit the PUCCH repetition in the slot.\n---\n- consecutive UL symbols, as described in clause 11.1, or flexible symbols that are not SS/PBCH block symbols, starting from the first symbol, equal to or larger than a number of symbols provided by nrofsymbols\n---\nWithin a slot that is configured for CLI-RSSI measurement (see slotConfiguration), the UE measures the RSSI from startPosition to startPosition + nrofSymbols -1 . The configured CLI-RSSI resource does not exceed the slot boundary of the reference SCS. If the SCS of configured DL BWP(s) is larger than the reference SCS, network configures startPosition and nrofSymbols such that the configured CLI-RSSI resource not to exceed the slot boundary corresponding to the configured BWP SCS. If the reference SCS is larger than SCS of configured DL BWP(s), network ensures startPosition and nrofSymbols are integer multiple of reference SCS divided by configured BWP SCS.\n---\nOFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '.",
+    "generated_at": "2026-01-10T14:40:16.342197",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between nrofsymbols fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE relationship between the nrofsymbols fields from different IEs. All evidence pertains to single-IE behavior or unrelated contexts.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+DL-DCCH-Message ::=                  SEQUENCE {
+    message                             DL-DCCH-MessageType
+}
+
+DL-DCCH-MessageType ::=             CHOICE {
+    c1                                  CHOICE {
+        rrcReconfiguration                  RRCReconfiguration,
+        rrcResume                           RRCResume,
+        rrcRelease                          RRCRelease,
+        rrcReestablishment                  RRCReestablishment,
+        securityModeCommand                 SecurityModeCommand,
+        dlInformationTransfer               DLInformationTransfer,
+        ueCapabilityEnquiry                 UECapabilityEnquiry,
+        counterCheck                        CounterCheck,
+        mobilityFromNRCommand               MobilityFromNRCommand,
+        dlDedicatedMessageSegment-r16       DLDedicatedMessageSegment-r16,
+        ueInformationRequest-r16            UEInformationRequest-r16,
+        dlInformationTransferMRDC-r16       DLInformationTransferMRDC-r16,
+        loggedMeasurementConfiguration-r16  LoggedMeasurementConfiguration-r16,
+                spare3 NULL, spare2 NULL, spare1 NULL
+    },
+    messageClassExtension   SEQUENCE {}
+}

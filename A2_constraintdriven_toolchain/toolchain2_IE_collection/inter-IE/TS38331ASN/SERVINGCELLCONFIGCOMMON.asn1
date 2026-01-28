@@ -1,0 +1,50 @@
+ServingCellConfigCommon ::=         SEQUENCE {
+    physCellId                          PhysCellId                                                          OPTIONAL,   -- Cond HOAndServCellAdd,
+    downlinkConfigCommon                DownlinkConfigCommon                                                OPTIONAL,   -- Cond HOAndServCellAdd
+    uplinkConfigCommon                  UplinkConfigCommon                                                  OPTIONAL,   -- Need M
+    supplementaryUplinkConfig           UplinkConfigCommon                                                  OPTIONAL,   -- Need S
+    n-TimingAdvanceOffset               ENUMERATED { n0, n25600, n39936 }                                   OPTIONAL,   -- Need S
+    ssb-PositionsInBurst                CHOICE {
+        shortBitmap                         BIT STRING (SIZE (4)),
+        mediumBitmap                        BIT STRING (SIZE (8)),
+        longBitmap                          BIT STRING (SIZE (64))
+    }                                                                                                       OPTIONAL, -- Cond AbsFreqSSB
+    ssb-periodicityServingCell          ENUMERATED { ms5, ms10, ms20, ms40, ms80, ms160, spare2, spare1 }   OPTIONAL, -- Need S
+    dmrs-TypeA-Position                 ENUMERATED {pos2, pos3},
+    lte-CRS-ToMatchAround               SetupRelease { RateMatchPatternLTE-CRS }                            OPTIONAL, -- Need M
+    rateMatchPatternToAddModList        SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPattern   OPTIONAL, -- Need N
+    rateMatchPatternToReleaseList       SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPatternId OPTIONAL, -- Need N
+    ssbSubcarrierSpacing                SubcarrierSpacing                                                   OPTIONAL, -- Cond HOAndServCellWithSSB
+    tdd-UL-DL-ConfigurationCommon       TDD-UL-DL-ConfigCommon                                              OPTIONAL, -- Cond TDD
+    ss-PBCH-BlockPower                  INTEGER (-60..50),
+    ...,
+    [[
+    channelAccessMode-r16               CHOICE {
+        dynamic                             NULL,
+        semiStatic                          SemiStaticChannelAccessConfig-r16
+    }                                                                                                       OPTIONAL, -- Cond SharedSpectrum
+    discoveryBurstWindowLength-r16          ENUMERATED {ms0dot5, ms1, ms2, ms3, ms4, ms5}                   OPTIONAL, -- Need R
+    ssb-PositionQCL-r16                     SSB-PositionQCL-Relation-r16                                    OPTIONAL, -- Cond SharedSpectrum
+    highSpeedConfig-r16                     HighSpeedConfig-r16                                             OPTIONAL  -- Need R
+    ]],
+    [[
+    highSpeedConfig-v1700               HighSpeedConfig-v1700                                               OPTIONAL, -- Need R
+    channelAccessMode2-r17              ENUMERATED {enabled}                                                OPTIONAL, -- Cond SharedSpectrum2
+    discoveryBurstWindowLength-r17      ENUMERATED {ms0dot125, ms0dot25, ms0dot5, ms0dot75, ms1, ms1dot25}  OPTIONAL, -- Need R
+    ssb-PositionQCL-r17                 SSB-PositionQCL-Relation-r17                                        OPTIONAL, -- Cond SharedSpectrum2
+    highSpeedConfigFR2-r17              HighSpeedConfigFR2-r17                                              OPTIONAL, -- Need R
+    uplinkConfigCommon-v1700            UplinkConfigCommon-v1700                                            OPTIONAL, -- Need R
+    ntn-Config-r17                      NTN-Config-r17                                                      OPTIONAL  -- Need R
+    ]],
+    [[
+    featurePriorities-r17               SEQUENCE {
+        redCapPriority-r17                  FeaturePriority-r17                                             OPTIONAL, -- Need R
+        slicingPriority-r17                 FeaturePriority-r17                                             OPTIONAL, -- Need R
+        msg3-Repetitions-Priority-r17       FeaturePriority-r17                                             OPTIONAL, -- Need R
+        sdt-Priority-r17                    FeaturePriority-r17                                             OPTIONAL  -- Need R
+    }                                                                                                       OPTIONAL  -- Need R
+    ]],
+    [[
+    ra-ChannelAccess-r17            ENUMERATED {enabled}                                                OPTIONAL -- Cond SharedSpectrum2
+    ]]
+}

@@ -1,0 +1,13 @@
+DRX-ConfigSecondaryGroup-r16 ::=   SEQUENCE {
+    drx-onDurationTimer-r16            CHOICE {
+                                           subMilliSeconds INTEGER (1..31),
+                                           milliSeconds    ENUMERATED {
+                                               ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60,
+                                               ms80, ms100, ms200, ms300, ms400, ms500, ms600, ms800, ms1000, ms1200,
+                                               ms1600, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1 }
+                                            },
+    drx-InactivityTimer-r16            ENUMERATED {
+                                           ms0, ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60, ms80,
+                                           ms100, ms200, ms300, ms500, ms750, ms1280, ms1920, ms2560, spare9, spare8,
+                                           spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+}

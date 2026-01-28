@@ -1,0 +1,56 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      678,
+      679
+    ],
+    "field2_all": [
+      678,
+      679
+    ],
+    "actual_pairs": [
+      [
+        [
+          678,
+          679
+        ],
+        [
+          678,
+          679
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a semantic constraint between the two fields within the same IE. The fields 'periodicityAndOffset-p' are not present in the ASN.1 definition of the IE 'bwp-Dedicated_srs-Config_group2'. Therefore, no rule can be derived.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group2",
+    "field1": "periodicityAndOffset-p",
+    "field2": "periodicityAndOffset-p",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "Throughout this clause, when the higher layer parameter SRShoppingNrofHops is provided for SRS-PosResource, the sounding reference signal slot configuration applies to a given hop. For an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, a periodicity T_{\\text {SRS }} (in slots) and slot offset T_{\\text {offset }} are configured according to the higher-layer parameter periodicityAndOffset- p or periodicityAndOffset-sp in the SRS-Resource [E, or periodicityAndOffset-p or periodicityAndOffset-sp in the SRSPosResource IE. Candidate slots in which the configured SRS resource may be used for SRS transmission are the slots satisfying \\[ \\left(N_{\\text {slot }}^{\\text {frame }, \\mu} n_{\\mathrm{f}}+n_{\\mathrm{s}, \\mathrm{f}}^{\\mu}-T_{\\text {offset }}\\right) \\bmod T_{\\mathrm{SRS}}=0",
+    "generated_at": "2025-12-11T14:21:27.641792",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence does not establish a semantic constraint between the two fields within the same IE. The fields 'periodicityAndOffset-p' are not present in the ASN.1 definition of the IE 'bwp-Dedicated_srs-Config_group2'. Therefore, no rule can be derived."
+    }
+  }
+}

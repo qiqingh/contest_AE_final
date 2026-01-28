@@ -1,0 +1,134 @@
+NR-DL-PRS-PDC-Info-r17 ::=    SEQUENCE {
+    nr-DL-PRS-PDC-ResourceSet-r17          NR-DL-PRS-PDC-ResourceSet-r17                    OPTIONAL, -- Need R
+    ...
+}
+
+NR-DL-PRS-PDC-ResourceSet-r17 ::=    SEQUENCE {
+    periodicityAndOffset-r17     NR-DL-PRS-Periodicity-and-ResourceSetSlotOffset-r17,
+    numSymbols-r17               ENUMERATED {n2, n4, n6, n12, spare4, spare3, spare2, spare1},
+    dl-PRS-ResourceBandwidth-r17        INTEGER (1..63),
+    dl-PRS-StartPRB-r17                 INTEGER (0..2176),
+    resourceList-r17             SEQUENCE (SIZE (1..maxNrofPRS-ResourcesPerSet-r17)) OF NR-DL-PRS-Resource-r17,
+    repFactorAndTimeGap-r17      RepFactorAndTimeGap-r17                                    OPTIONAL,   -- Need S
+    ...
+}
+
+NR-DL-PRS-Periodicity-and-ResourceSetSlotOffset-r17 ::= CHOICE {
+    scs15-r17       CHOICE {
+                        n4-r17                  INTEGER (0..3),
+                        n5-r17                  INTEGER (0..4),
+                        n8-r17                  INTEGER (0..7),
+                        n10-r17                 INTEGER (0..9),
+                        n16-r17                 INTEGER (0..15),
+                        n20-r17                 INTEGER (0..19),
+                        n32-r17                 INTEGER (0..31),
+                        n40-r17                 INTEGER (0..39),
+                        n64-r17                 INTEGER (0..63),
+                        n80-r17                 INTEGER (0..79),
+                        n160-r17                INTEGER (0..159),
+                        n320-r17                INTEGER (0..319),
+                        n640-r17                INTEGER (0..639),
+                        n1280-r17               INTEGER (0..1279),
+                        n2560-r17               INTEGER (0..2559),
+                        n5120-r17               INTEGER (0..5119),
+                        n10240-r17              INTEGER (0..10239),
+                        ...
+    },
+    scs30-r17       CHOICE {
+                        n8-r17                  INTEGER (0..7),
+                        n10-r17                 INTEGER (0..9),
+                        n16-r17                 INTEGER (0..15),
+                        n20-r17                 INTEGER (0..19),
+                        n32-r17                 INTEGER (0..31),
+                        n40-r17                 INTEGER (0..39),
+                        n64-r17                 INTEGER (0..63),
+                        n80-r17                 INTEGER (0..79),
+                        n128-r17                INTEGER (0..127),
+                        n160-r17                INTEGER (0..159),
+                        n320-r17                INTEGER (0..319),
+                        n640-r17                INTEGER (0..639),
+                        n1280-r17               INTEGER (0..1279),
+                        n2560-r17               INTEGER (0..2559),
+                        n5120-r17               INTEGER (0..5119),
+                        n10240-r17              INTEGER (0..10239),
+                        n20480-r17              INTEGER (0..20479),
+                        ...
+    },
+    scs60-r17       CHOICE {
+                        n16-r17                 INTEGER (0..15),
+                        n20-r17                 INTEGER (0..19),
+                        n32-r17                 INTEGER (0..31),
+                        n40-r17                 INTEGER (0..39),
+                        n64-r17                 INTEGER (0..63),
+                        n80-r17                 INTEGER (0..79),
+                        n128-r17                INTEGER (0..127),
+                        n160-r17                INTEGER (0..159),
+                        n256-r17                INTEGER (0..255),
+                        n320-r17                INTEGER (0..319),
+                        n640-r17                INTEGER (0..639),
+                        n1280-r17               INTEGER (0..1279),
+                        n2560-r17               INTEGER (0..2559),
+                        n5120-r17               INTEGER (0..5119),
+                        n10240-r17              INTEGER (0..10239),
+                        n20480-r17              INTEGER (0..20479),
+                        n40960-r17              INTEGER (0..40959),
+                        ...
+    },
+    scs120-r17      CHOICE {
+                        n32-r17                 INTEGER (0..31),
+                        n40-r17                 INTEGER (0..39),
+                        n64-r17                 INTEGER (0..63),
+                        n80-r17                 INTEGER (0..79),
+                        n128-r17                INTEGER (0..127),
+                        n160-r17                INTEGER (0..159),
+                        n256-r17                INTEGER (0..255),
+                        n320-r17                INTEGER (0..319),
+                        n512-r17                INTEGER (0..511),
+                        n640-r17                INTEGER (0..639),
+                        n1280-r17               INTEGER (0..1279),
+                        n2560-r17               INTEGER (0..2559),
+                        n5120-r17               INTEGER (0..5119),
+                        n10240-r17              INTEGER (0..10239),
+                        n20480-r17              INTEGER (0..20479),
+                        n40960-r17              INTEGER (0..40959),
+                        n81920-r17              INTEGER (0..81919),
+                        ...
+    },
+    ...
+}
+
+NR-DL-PRS-Resource-r17 ::= SEQUENCE {
+    nr-DL-PRS-ResourceID-r17            NR-DL-PRS-ResourceID-r17,
+    dl-PRS-SequenceID-r17               INTEGER (0..4095),
+    dl-PRS-CombSizeN-AndReOffset-r17    CHOICE {
+            n2-r17                          INTEGER (0..1),
+            n4-r17                          INTEGER (0..3),
+            n6-r17                          INTEGER (0..5),
+            n12-r17                         INTEGER (0..11),
+            ...
+    },
+    dl-PRS-ResourceSlotOffset-r17       INTEGER (0..maxNrofPRS-ResourceOffsetValue-1-r17),
+    dl-PRS-ResourceSymbolOffset-r17     INTEGER (0..12),
+    dl-PRS-QCL-Info-r17                 DL-PRS-QCL-Info-r17                         OPTIONAL, -- Need N
+    ...
+}
+
+DL-PRS-QCL-Info-r17 ::= CHOICE {
+    ssb-r17                     SEQUENCE {
+        ssb-Index-r17                   INTEGER (0..63),
+        rs-Type-r17                     ENUMERATED {typeC, typeD, typeC-plus-typeD},
+        ...
+    },
+    dl-PRS-r17                  SEQUENCE {
+        qcl-DL-PRS-ResourceID-r17       NR-DL-PRS-ResourceID-r17,
+        ...
+    },
+    ...
+}
+
+NR-DL-PRS-ResourceID-r17 ::= INTEGER (0..maxNrofPRS-ResourcesPerSet-1-r17)
+
+RepFactorAndTimeGap-r17 ::=  SEQUENCE {
+    repetitionFactor-r17         ENUMERATED {n2, n4, n6, n8, n16, n32, spare2, spare1},
+    timeGap-r17                  ENUMERATED {s1, s2, s4, s8, s16, s32, spare2, spare1}
+}

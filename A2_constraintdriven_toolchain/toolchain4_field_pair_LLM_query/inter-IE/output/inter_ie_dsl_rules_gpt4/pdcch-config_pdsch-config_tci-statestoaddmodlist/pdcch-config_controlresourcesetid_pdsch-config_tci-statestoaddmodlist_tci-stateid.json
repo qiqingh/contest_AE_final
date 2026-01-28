@@ -1,0 +1,154 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 0), IN(field2, {0,1,2,3,...,63}))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      108,
+      117,
+      173,
+      182,
+      238,
+      247
+    ],
+    "field2_all": [
+      67,
+      132,
+      197,
+      262
+    ],
+    "actual_pairs": [
+      [
+        [
+          108,
+          117,
+          173,
+          182,
+          238,
+          247
+        ],
+        [
+          132,
+          197
+        ]
+      ],
+      [
+        [
+          108,
+          117,
+          173,
+          182,
+          238,
+          247
+        ],
+        [
+          197,
+          262
+        ]
+      ],
+      [
+        [
+          108,
+          117,
+          173,
+          182,
+          238,
+          247
+        ],
+        [
+          67,
+          132,
+          197,
+          262
+        ]
+      ],
+      [
+        [
+          108,
+          117,
+          173,
+          182,
+          238,
+          247
+        ],
+        [
+          67
+        ]
+      ]
+    ]
+  },
+  "predicate": "If the ControlResourceSetId (field1) is 0, then the TCI-StateId (field2) must be in the range of 0 to 63.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1=0, field2=32",
+      "field1=0, field2=0"
+    ],
+    "invalid": [
+      "field1=0, field2=64",
+      "field1=0, field2=100"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that when the CORESET ID (field1) is set to 0, the TCI-StateId (field2) indicates a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config",
+    "field1": "controlresourcesetid",
+    "ie2_name": "pdsch-config_tci-statestoaddmodlist",
+    "field2": "tci-stateid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.1",
+      "6.1.3.15",
+      "6.1.3.47"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits.\n---\n- TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits.\n---\n- CORESET Pool ID: This field indicates that the mapping between the activated TCI states and the codepoint of the DCI Transmission Configuration Indication set by field TCI state ID is specific to the ControlResourceSetld configured with CORESET Pool ID as specified in TS 38.331 [5]. This field set to 1 indicates that the TCI states are specified to CORESET pool ID equal to 1 , otherwise the TCI states are specified to CORESET pool ID equal to 0 . If no more than one value for the coresetPoollndex is configured for any CORESET in the BWP, the R bit is present instead;\n---\neach with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.",
+    "generated_at": "2025-12-11T09:55:03.989947",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 0), IN(field2, {0,1,2,3,...,63}))",
+      "preconditions": [],
+      "predicate": "If the ControlResourceSetId (field1) is 0, then the TCI-StateId (field2) must be in the range of 0 to 63.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=0, field2=32",
+          "field1=0, field2=0"
+        ],
+        "invalid": [
+          "field1=0, field2=64",
+          "field1=0, field2=100"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that when the CORESET ID (field1) is set to 0, the TCI-StateId (field2) indicates a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

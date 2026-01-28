@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      824
+    ],
+    "field2_all": [
+      846
+    ],
+    "actual_pairs": [
+      [
+        [
+          824
+        ],
+        [
+          846
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between the fields 'csi-IM-ResourcesForInterference' and 'subbandSize'. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "csi-IM-ResourcesForInterference",
+    "field2": "subbandSize",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the UE is configured with a CSI Reporting Setting for a bandwidth part with fewer than 24 PRBs, the CSI reporting setting is expected to have a wideband frequency-granularity, and, if applicable, the higher layer parameter codebookType is set to 'typel-SinglePanel'. The first subband size is given by N_{P R B}^{S B}-\\left(N_{B I T P_{j}}^{S^{\\text {stor }}} \\bmod N_{P R B}^{S B}\\right) and the last subband size given by \\left(N_{B I T P_{j},}^{\\text {start }}+N_{B I R P_{j},}^{\\text {size }}\\right) \\bmod N_{P R B}^{S B} if If a UE is configured with semi-persistent CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic or semi-persistent. If a UE is configured with aperiodic CSI reporting, the UE shall report CSI when both CSI-IM and NZP CSI-RS resources are configured as periodic, semi-persistent or aperiodic. A UE configured with DCI format 0_1 or 0_2 does not expect to be triggered with multiple CSI reports with the same CSI-ReportConfigld.",
+    "generated_at": "2026-01-10T21:43:57.801043",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between the fields 'csi-IM-ResourcesForInterference' and 'subbandSize'. The evidence lacks explicit normative constraints or mathematical/logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      268
+    ],
+    "field2_all": [
+      268
+    ],
+    "actual_pairs": [
+      [
+        [
+          268
+        ],
+        [
+          268
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a semantic constraint between the two instances of the same field 'rbg-Size'. The note in the evidence only describes the usage of the field under certain conditions, but does not imply a value dependency or range alignment between two instances of 'rbg-Size'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group2",
+    "field1": "rbg-Size",
+    "field2": "rbg-Size",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "rbg-Size Selection between configuration 1 and configuration 2 for RBG size for PUSCH. The UE does not apply this field if resourceAllocation is set to resourceAllocationType1. Otherwise, the UE applies the value config 1 when the field is absent. Note: rbg-Size is used when the transformPrecoder parameter is disabled. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2025-12-11T14:21:13.739454",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a semantic constraint between the two instances of the same field 'rbg-Size'. The note in the evidence only describes the usage of the field under certain conditions, but does not imply a value dependency or range alignment between two instances of 'rbg-Size'.",
+      "version_tags": []
+    }
+  }
+}

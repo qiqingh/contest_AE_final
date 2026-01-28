@@ -1,0 +1,90 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'pattern0'), EQ(field2, 'pattern1'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      746,
+      754,
+      762
+    ],
+    "field2_all": [
+      746,
+      754,
+      762
+    ],
+    "actual_pairs": [
+      [
+        [
+          746,
+          754,
+          762
+        ],
+        [
+          746,
+          754,
+          762
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 'pattern0')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = 'pattern0', field2 = 'pattern1'"
+    ],
+    "invalid": [
+      "field1 = 'pattern0', field2 = 'pattern0'"
+    ]
+  },
+  "notes": "The rule is derived from the evidence where it is stated that if csi-IM-ResourceElementPattern is set to 'pattern0', then it should be set to 'pattern1' in the next instance.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-IM-ResourceToAddModList",
+    "field1": "csi-IM-ResourceElementPattern",
+    "field2": "csi-IM-ResourceElementPattern",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "In each of the PRBs configured by freqBand, the UE shall assume each CSI-[M resource is located in, - resource elements \\left(k_{C S I-M}, l_{C S I-M}\\right),\\left(k_{C S I-M}, l_{C S I-M}+1\\right),\\left(k_{C S I-M}+1, l_{C S I-M}\\right) and \\left(k_{C S I-M}+1, l_{C S I-M}+1\\right) , if csi-M-ResourceElementPattern is set to 'pattern0', - resource elements \\left(k_{C S I-M}, l_{C S I-M}\\right),\\left(k_{C S I-M}+1, l_{C S I-M}\\right),\\left(k_{C S I-M}+2, l_{C S I-M}\\right) and \\left(k_{C S I-M}+3, l_{C S-I M}\\right) if csi-IM-ResourceElementPattern is set to 'pattern1', where k_{C S I-M} and l_{C S I-M} are the configured frequency-domain location and time-domain location, respectively, given by the higher layer parameters in the above list. 5.2.2.5 CSI reference resource definition",
+    "generated_at": "2025-12-11T14:19:41.435240",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'pattern0'), EQ(field2, 'pattern1'))",
+      "preconditions": [],
+      "predicate": "EQ(field1, 'pattern0')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 'pattern0', field2 = 'pattern1'"
+        ],
+        "invalid": [
+          "field1 = 'pattern0', field2 = 'pattern0'"
+        ]
+      },
+      "notes": "The rule is derived from the evidence where it is stated that if csi-IM-ResourceElementPattern is set to 'pattern0', then it should be set to 'pattern1' in the next instance.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

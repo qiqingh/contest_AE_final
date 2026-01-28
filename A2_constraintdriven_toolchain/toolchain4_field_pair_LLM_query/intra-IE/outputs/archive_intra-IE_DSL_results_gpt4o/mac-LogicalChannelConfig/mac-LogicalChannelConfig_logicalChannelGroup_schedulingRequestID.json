@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      22
+    ],
+    [
+      23
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any explicit normative constraint between 'logicalChannelGroup' and 'schedulingRequestID'. The evidence only describes the role of 'schedulingRequestID' without relating it to 'logicalChannelGroup'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "mac-LogicalChannelConfig",
+    "field1": "logicalChannelGroup",
+    "field2": "schedulingRequestID",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "6.3.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "scheduling Requestid If present, it indicates the scheduling request configuration applicable for this logical channel, as specified in TS 38.321 [3].\n---\nsi-Scheduling Requestid If present, it indicates the scheduling request configuration applicable for this sidelink logical channel, as specified in TS 38.321 [3].",
+    "generated_at": "2025-12-09T09:46:54.418152",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any explicit normative constraint between 'logicalChannelGroup' and 'schedulingRequestID'. The evidence only describes the role of 'schedulingRequestID' without relating it to 'logicalChannelGroup'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

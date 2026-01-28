@@ -1,0 +1,53 @@
+CSI-RS-ResourceConfigMobility ::=   SEQUENCE {
+    subcarrierSpacing                   SubcarrierSpacing,
+    csi-RS-CellList-Mobility            SEQUENCE (SIZE (1..maxNrofCSI-RS-CellsRRM)) OF CSI-RS-CellMobility,
+    ...,
+    [[
+    refServCellIndex                    ServCellIndex                                                           OPTIONAL    -- Need S
+    ]]
+
+
+}
+
+CSI-RS-CellMobility ::=             SEQUENCE {
+    cellId                              PhysCellId,
+    csi-rs-MeasurementBW                SEQUENCE {
+        nrofPRBs                            ENUMERATED { size24, size48, size96, size192, size264},
+        startPRB                            INTEGER(0..2169)
+    },
+    density                             ENUMERATED {d1,d3}                                                      OPTIONAL,   -- Need R
+    csi-rs-ResourceList-Mobility        SEQUENCE (SIZE (1..maxNrofCSI-RS-ResourcesRRM)) OF CSI-RS-Resource-Mobility
+}
+
+CSI-RS-Resource-Mobility ::=        SEQUENCE {
+    csi-RS-Index                        CSI-RS-Index,
+    slotConfig                          CHOICE {
+        ms4                                 INTEGER (0..31),
+        ms5                                 INTEGER (0..39),
+        ms10                                INTEGER (0..79),
+        ms20                                INTEGER (0..159),
+        ms40                                INTEGER (0..319)
+    },
+    associatedSSB                       SEQUENCE {
+        ssb-Index                           SSB-Index,
+        isQuasiColocated                    BOOLEAN
+    }                                                                                                           OPTIONAL, -- Need R
+    frequencyDomainAllocation           CHOICE {
+        row1                                BIT STRING (SIZE (4)),
+        row2                                BIT STRING (SIZE (12))
+    },
+    firstOFDMSymbolInTimeDomain         INTEGER (0..13),
+    sequenceGenerationConfig            INTEGER (0..1023),
+    ...,
+    [[
+    slotConfig-r17                      CHOICE {
+        ms4                                 INTEGER (0..255),
+        ms5                                 INTEGER (0..319),
+        ms10                                INTEGER (0..639),
+        ms20                                INTEGER (0..1279),
+        ms40                                INTEGER (0..2559)
+    }                                                                                                           OPTIONAL  -- Need R
+    ]]
+}
+
+CSI-RS-Index ::=                    INTEGER (0..maxNrofCSI-RS-ResourcesRRM-1)

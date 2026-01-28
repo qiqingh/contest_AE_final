@@ -1,0 +1,87 @@
+{
+  "dsl_rule": "EQ(field1, field2)",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      694
+    ],
+    "field2_all": [
+      697
+    ],
+    "actual_pairs": [
+      [
+        [
+          694
+        ],
+        [
+          697
+        ]
+      ]
+    ]
+  },
+  "predicate": "field1 and field2 must be configured with the same value within a resource set",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = 2, field2 = 2",
+      "field1 = 1, field2 = 1"
+    ],
+    "invalid": [
+      "field1 = 2, field2 = 3",
+      "field1 = 1, field2 = 0"
+    ]
+  },
+  "notes": "The evidence indicates that all CSI-RS resources of a resource set are configured with the same starting RB and cdm-type, implying equality between field1 and field2.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "cdm-Type",
+    "field2": "startingRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 2,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "All CSI-RS resources within one set are configured with same density and same nrofPorts, except for the NZP CSI-RS resources used for interference measurement. The UE expects that all the CSI-RS resources of a resource set are configured with the same starting RB and number of RBs and the same cdm-type. For a CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, the slot offsets of the two resources in a Resource Pair are configured within X \\in\\{1,[2]\\} slots, without DL/UL switching in between the two resources, where X=1 implies that the two resources are configured in the same slot, and X=2 implies that the two resources are configured within two adjacent slots.",
+    "generated_at": "2026-01-10T21:41:58.694550",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "EQ(field1, field2)",
+      "preconditions": [],
+      "predicate": "field1 and field2 must be configured with the same value within a resource set",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 2, field2 = 2",
+          "field1 = 1, field2 = 1"
+        ],
+        "invalid": [
+          "field1 = 2, field2 = 3",
+          "field1 = 1, field2 = 0"
+        ]
+      },
+      "notes": "The evidence indicates that all CSI-RS resources of a resource set are configured with the same starting RB and cdm-type, implying equality between field1 and field2.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

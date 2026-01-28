@@ -1,0 +1,18 @@
+MeasResultsSL-r16 ::=         SEQUENCE {
+    measResultsListSL-r16         CHOICE {
+        measResultNR-SL-r16           MeasResultNR-SL-r16,
+        ...
+    },
+    ...
+}
+
+MeasResultNR-SL-r16 ::=       SEQUENCE {
+    measResultListCBR-NR-r16      SEQUENCE (SIZE (1.. maxNrofSL-PoolToMeasureNR-r16)) OF MeasResultCBR-NR-r16,
+    ...
+}
+
+MeasResultCBR-NR-r16 ::=      SEQUENCE {
+    sl-poolReportIdentity-r16     SL-ResourcePoolID-r16,
+    sl-CBR-ResultsNR-r16          SL-CBR-r16,
+    ...
+}

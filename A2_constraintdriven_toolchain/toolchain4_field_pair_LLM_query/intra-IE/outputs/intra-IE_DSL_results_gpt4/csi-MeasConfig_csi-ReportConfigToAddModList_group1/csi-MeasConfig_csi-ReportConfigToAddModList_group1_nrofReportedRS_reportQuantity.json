@@ -1,0 +1,64 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      937
+    ],
+    "field2_all": [
+      932,
+      933
+    ],
+    "actual_pairs": [
+      [
+        [
+          937
+        ],
+        [
+          932,
+          933
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear, normative relationship between the two fields within the same IE. The constraints mentioned are dependent on other parameters (e.g., 'groupBasedBeamReporting') and not strictly on the values of 'nrofReportedRS' and 'reportQuantity'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "nrofReportedRS",
+    "field2": "reportQuantity",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RSRP', 'ssb-Index-RSRP', 'cri-RSRP-Capability[Set]Index' or 'ssb-Index-RSRP-Capability[Set]Index', - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE is not required to update measurements for more than 64 CSI-RS and/or SSB resources, and the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting.\n---\nIf the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-SINR', 'ssb-Index-SINR', 'cri-SINR-Capability[Set]Index' or 'ssb-Index-SINR-Capability[Set][ndex', - if the UE is configured with the higher layer parameter groupBasedBeamReporting set to 'disabled', the UE shall report in a single report nrofReportedRS (higher layer configured) different CRI or SSBRI for each report setting.",
+    "generated_at": "2025-12-11T14:18:46.456794",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a clear, normative relationship between the two fields within the same IE. The constraints mentioned are dependent on other parameters (e.g., 'groupBasedBeamReporting') and not strictly on the values of 'nrofReportedRS' and 'reportQuantity'.",
+      "version_tags": []
+    }
+  }
+}

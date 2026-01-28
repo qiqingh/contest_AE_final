@@ -1,0 +1,11 @@
+SL-RemoteUE-Config-r17::=           SEQUENCE {
+    threshHighRemote-r17                RSRP-Range                                       OPTIONAL,     -- Need R
+    hystMaxRemote-r17                   Hysteresis                                       OPTIONAL,     -- Cond ThreshHighRemote
+    sl-ReselectionConfig-r17            SL-ReselectionConfig-r17                         OPTIONAL      -- Need R
+}
+
+SL-ReselectionConfig-r17::=         SEQUENCE {
+    sl-RSRP-Thresh-r17                  SL-RSRP-Range-r16                                OPTIONAL,     -- Need R
+    sl-FilterCoefficientRSRP-r17        FilterCoefficient                                OPTIONAL,     -- Need R
+    sl-HystMin-r17                      Hysteresis                                       OPTIONAL      -- Cond SL-RSRP-Thresh
+}

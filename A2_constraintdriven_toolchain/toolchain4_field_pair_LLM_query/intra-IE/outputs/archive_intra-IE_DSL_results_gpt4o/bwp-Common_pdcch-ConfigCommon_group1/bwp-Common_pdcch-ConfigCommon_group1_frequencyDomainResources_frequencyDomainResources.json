@@ -1,0 +1,65 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      146,
+      147
+    ],
+    [
+      146,
+      147
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not mention the target fields 'frequencyDomainResources' or relate them within the same IE. The evidence lacks explicit normative constraints between these fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Common_pdcch-ConfigCommon_group1",
+    "field1": "frequencyDomainResources",
+    "field2": "frequencyDomainResources",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.1.2.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For a UE configured by the higher layer parameter repetitionScheme set to 'fdmScheme A' or 'fdmSchemeB', and when the UE is indicated with two TCI states in a codepoint of the DCI field 'Transmission Configuration Indication' and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)', - If P_{B W P, .}^{\\prime} is determined as \"wideband\", the first \\left[\\frac{n_{P R B}}{2}\\right] PRBs are assigned to the first TCI state and the remaining \\left\\lfloor\\frac{n_{P R B}}{2}\\right\\rfloor PRBs are assigned to the second TCI state, where n_{P R B} is the total number of allocated PRBs for the UE. - If P_{B W P, ~ i}^{\\prime} is determined as one of the values among \\{2,4\\} , even PRGs within the allocated frequency domain resources are assigned to the first TCI state and odd PRGs within the allocated frequency domain resources are assigned to the second TCI state, wherein the PRGs are numbered continuously in increasing order with the first PRG index equal to 0 . - The UE is not expected to receive more than two PDSCH transmission layers for each PDSCH transmission occasion.\n---\n\\begin{tabular}{l} gapindicationintra Indicates whether measurement gap or NCSG is required for the UE to perform intra-frequency SSB based measurements on the concerned serving cell. Value gap indicates that a measurement gap is needed if any of the UE configured BWPs do not contain the frequency domain resources of the SSB associated to the initial DL BWP. Value ncsg indicates that a NCSG is needed if any of the UE configured BWPs do not contain the frequency domain resources of the SSB associated to the initial DL BWP. Value nogapnoncsg indicates that neither a measurement gap nor a NCSG is needed to measure the SSB associated to the initial DL BWP for all configured BWPs, no matter the SSB is within the configured BWP or not. \\end{tabular}",
+    "generated_at": "2025-12-09T09:49:09.367644",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not mention the target fields 'frequencyDomainResources' or relate them within the same IE. The evidence lacks explicit normative constraints between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

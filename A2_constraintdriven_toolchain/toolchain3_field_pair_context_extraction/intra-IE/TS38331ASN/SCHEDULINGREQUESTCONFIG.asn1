@@ -1,0 +1,22 @@
+SchedulingRequestConfig ::=         SEQUENCE {
+    schedulingRequestToAddModList       SEQUENCE (SIZE (1..maxNrofSR-ConfigPerCellGroup)) OF SchedulingRequestToAddMod
+                                                                                                          OPTIONAL, -- Need N
+    schedulingRequestToReleaseList      SEQUENCE (SIZE (1..maxNrofSR-ConfigPerCellGroup)) OF SchedulingRequestId
+                                                                                                          OPTIONAL  -- Need N
+}
+
+SchedulingRequestToAddMod ::=       SEQUENCE {
+    schedulingRequestId                 SchedulingRequestId,
+    sr-ProhibitTimer                    ENUMERATED {ms1, ms2, ms4, ms8, ms16, ms32, ms64, ms128}          OPTIONAL, -- Need S
+    sr-TransMax                         ENUMERATED { n4, n8, n16, n32, n64, spare3, spare2, spare1}
+}
+
+SchedulingRequestConfig-v1700 ::=       SEQUENCE {
+    schedulingRequestToAddModListExt-v1700  SEQUENCE (SIZE (1..maxNrofSR-ConfigPerCellGroup)) OF SchedulingRequestToAddModExt-v1700
+                                                                                                          OPTIONAL  -- Need N
+}
+
+SchedulingRequestToAddModExt-v1700 ::=  SEQUENCE {
+    sr-ProhibitTimer-v1700                  ENUMERATED { ms192, ms256, ms320, ms384, ms448, ms512, ms576, ms640, ms1082, spare7, spare6, spare5, spare4, spare3, spare2, spare1}
+                                                                                                          OPTIONAL  -- Need R
+}

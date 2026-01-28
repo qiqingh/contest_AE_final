@@ -1,0 +1,6 @@
+MultiFrequencyBandListNR-SIB ::=            SEQUENCE (SIZE (1.. maxNrofMultiBands)) OF NR-MultiBandInfo
+
+NR-MultiBandInfo ::=                        SEQUENCE {
+    freqBandIndicatorNR                         FreqBandIndicatorNR         OPTIONAL,   -- Cond OptULNotSIB2
+    nr-NS-PmaxList                              NR-NS-PmaxList              OPTIONAL    -- Need S
+}

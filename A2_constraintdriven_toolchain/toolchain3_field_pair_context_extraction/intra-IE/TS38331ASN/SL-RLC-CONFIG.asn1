@@ -1,0 +1,15 @@
+SL-RLC-Config-r16 ::=                        CHOICE {
+    sl-AM-RLC-r16                                SEQUENCE {
+        sl-SN-FieldLengthAM-r16                      SN-FieldLengthAM                               OPTIONAL,   -- Cond SLRBSetup
+        sl-T-PollRetransmit-r16                      T-PollRetransmit,
+        sl-PollPDU-r16                                   PollPDU,
+        sl-PollByte-r16                                  PollByte,
+        sl-MaxRetxThreshold-r16                          ENUMERATED { t1, t2, t3, t4, t6, t8, t16, t32 },
+    ...
+    },
+    sl-UM-RLC-r16                                SEQUENCE {
+        sl-SN-FieldLengthUM-r16                      SN-FieldLengthUM                               OPTIONAL,    -- Cond SLRBSetup
+    ...
+    },
+    ...
+}

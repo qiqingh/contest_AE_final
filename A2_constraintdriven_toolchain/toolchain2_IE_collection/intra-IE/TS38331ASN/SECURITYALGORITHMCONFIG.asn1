@@ -1,0 +1,13 @@
+SecurityAlgorithmConfig ::=         SEQUENCE {
+    cipheringAlgorithm                  CipheringAlgorithm,
+    integrityProtAlgorithm              IntegrityProtAlgorithm          OPTIONAL,   -- Need R
+    ...
+}
+
+IntegrityProtAlgorithm ::=          ENUMERATED {
+                                        nia0, nia1, nia2, nia3, spare4, spare3,
+                                        spare2, spare1, ...}
+
+CipheringAlgorithm ::=              ENUMERATED {
+                                        nea0, nea1, nea2, nea3, spare4, spare3,
+                                        spare2, spare1, ...}

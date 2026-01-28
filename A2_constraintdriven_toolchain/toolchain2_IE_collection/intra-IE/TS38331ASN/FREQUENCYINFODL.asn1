@@ -1,0 +1,7 @@
+FrequencyInfoDL ::=                 SEQUENCE {
+    absoluteFrequencySSB                ARFCN-ValueNR                                                   OPTIONAL,   -- Cond SpCellAdd
+    frequencyBandList                   MultiFrequencyBandListNR,
+    absoluteFrequencyPointA             ARFCN-ValueNR,
+    scs-SpecificCarrierList             SEQUENCE (SIZE (1..maxSCSs)) OF SCS-SpecificCarrier,
+    ...
+}

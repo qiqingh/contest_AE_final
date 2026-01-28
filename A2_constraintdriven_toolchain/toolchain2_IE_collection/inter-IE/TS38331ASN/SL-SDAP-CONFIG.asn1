@@ -1,0 +1,15 @@
+SL-SDAP-Config-r16 ::=                  SEQUENCE {
+    sl-SDAP-Header-r16                      ENUMERATED {present, absent},
+    sl-DefaultRB-r16                        BOOLEAN,
+    sl-MappedQoS-Flows-r16                  CHOICE {
+        sl-MappedQoS-FlowsList-r16              SEQUENCE (SIZE (1..maxNrofSL-QFIs-r16)) OF SL-QoS-Profile-r16,
+        sl-MappedQoS-FlowsListDedicated-r16     SL-MappedQoS-FlowsListDedicated-r16
+    }                                                                                                           OPTIONAL,   -- Need M
+    sl-CastType-r16                        ENUMERATED {broadcast, groupcast, unicast, spare1}                   OPTIONAL,   -- Need M
+    ...
+}
+
+SL-MappedQoS-FlowsListDedicated-r16 ::= SEQUENCE {
+    sl-MappedQoS-FlowsToAddList-r16         SEQUENCE (SIZE (1..maxNrofSL-QFIs-r16)) OF SL-QoS-FlowIdentity-r16  OPTIONAL,    -- Need N
+    sl-MappedQoS-FlowsToReleaseList-r16      SEQUENCE (SIZE (1..maxNrofSL-QFIs-r16)) OF SL-QoS-FlowIdentity-r16  OPTIONAL     -- Need N
+}

@@ -1,0 +1,363 @@
+SRS-Config ::=                          SEQUENCE {
+    srs-ResourceSetToReleaseList            SEQUENCE (SIZE(1..maxNrofSRS-ResourceSets)) OF SRS-ResourceSetId        OPTIONAL,   -- Need N
+    srs-ResourceSetToAddModList             SEQUENCE (SIZE(1..maxNrofSRS-ResourceSets)) OF SRS-ResourceSet          OPTIONAL,   -- Need N
+    srs-ResourceToReleaseList               SEQUENCE (SIZE(1..maxNrofSRS-Resources)) OF SRS-ResourceId              OPTIONAL,   -- Need N
+    srs-ResourceToAddModList                SEQUENCE (SIZE(1..maxNrofSRS-Resources)) OF SRS-Resource                OPTIONAL,   -- Need N
+    tpc-Accumulation                        ENUMERATED {disabled}                                                   OPTIONAL,   -- Need S
+    ...,
+    [[
+    srs-RequestDCI-1-2-r16                  INTEGER (1..2)                                                          OPTIONAL, -- Need S
+    srs-RequestDCI-0-2-r16                  INTEGER (1..2)                                                          OPTIONAL, -- Need S
+    srs-ResourceSetToAddModListDCI-0-2-r16  SEQUENCE (SIZE(1..maxNrofSRS-ResourceSets)) OF SRS-ResourceSet          OPTIONAL, -- Need N
+    srs-ResourceSetToReleaseListDCI-0-2-r16 SEQUENCE (SIZE(1..maxNrofSRS-ResourceSets)) OF SRS-ResourceSetId        OPTIONAL, -- Need N
+    srs-PosResourceSetToReleaseList-r16     SEQUENCE (SIZE(1..maxNrofSRS-PosResourceSets-r16)) OF SRS-PosResourceSetId-r16
+                                                                                                                    OPTIONAL, -- Need N
+    srs-PosResourceSetToAddModList-r16      SEQUENCE (SIZE(1..maxNrofSRS-PosResourceSets-r16)) OF SRS-PosResourceSet-r16        OPTIONAL,-- Need N
+    srs-PosResourceToReleaseList-r16        SEQUENCE (SIZE(1..maxNrofSRS-PosResources-r16)) OF SRS-PosResourceId-r16            OPTIONAL,-- Need N
+    srs-PosResourceToAddModList-r16         SEQUENCE (SIZE(1..maxNrofSRS-PosResources-r16)) OF SRS-PosResource-r16              OPTIONAL -- Need N
+    ]]
+}
+
+SRS-ResourceSet ::=                     SEQUENCE {
+    srs-ResourceSetId                       SRS-ResourceSetId,
+    srs-ResourceIdList                      SEQUENCE (SIZE(1..maxNrofSRS-ResourcesPerSet)) OF SRS-ResourceId    OPTIONAL, -- Cond Setup
+    resourceType                            CHOICE {
+        aperiodic                               SEQUENCE {
+            aperiodicSRS-ResourceTrigger            INTEGER (1..maxNrofSRS-TriggerStates-1),
+            csi-RS                                  NZP-CSI-RS-ResourceId                                  OPTIONAL, -- Cond NonCodebook
+            slotOffset                              INTEGER (1..32)                                        OPTIONAL, -- Need S
+            ...,
+            [[
+            aperiodicSRS-ResourceTriggerList            SEQUENCE (SIZE(1..maxNrofSRS-TriggerStates-2))
+                                                            OF INTEGER (1..maxNrofSRS-TriggerStates-1)     OPTIONAL  -- Need M
+            ]]
+        },
+        semi-persistent                         SEQUENCE {
+            associatedCSI-RS                        NZP-CSI-RS-ResourceId                                  OPTIONAL, -- Cond NonCodebook
+            ...
+        },
+        periodic                                SEQUENCE {
+            associatedCSI-RS                        NZP-CSI-RS-ResourceId                                  OPTIONAL, -- Cond NonCodebook
+            ...
+        }
+    },
+    usage                                   ENUMERATED {beamManagement, codebook, nonCodebook, antennaSwitching},
+    alpha                                   Alpha                                                          OPTIONAL, -- Need S
+    p0                                      INTEGER (-202..24)                                             OPTIONAL, -- Cond Setup
+    pathlossReferenceRS                     PathlossReferenceRS-Config                                     OPTIONAL, -- Need M
+    srs-PowerControlAdjustmentStates        ENUMERATED { sameAsFci2, separateClosedLoop}                   OPTIONAL, -- Need S
+    ...,
+    [[
+    pathlossReferenceRSList-r16             SetupRelease { PathlossReferenceRSList-r16}                    OPTIONAL  -- Need M
+    ]],
+    [[
+    usagePDC-r17                            ENUMERATED {true}                                              OPTIONAL, -- Need R
+    availableSlotOffsetList-r17             SEQUENCE (SIZE(1..4)) OF AvailableSlotOffset-r17               OPTIONAL, -- Need R
+    followUnifiedTCI-StateSRS-r17           ENUMERATED {enabled}                                           OPTIONAL  -- Need R
+    ]]
+}
+
+AvailableSlotOffset-r17 ::=   INTEGER (0..7)
+
+PathlossReferenceRS-Config ::=              CHOICE {
+    ssb-Index                                   SSB-Index,
+    csi-RS-Index                                NZP-CSI-RS-ResourceId
+}
+
+PathlossReferenceRSList-r16 ::=             SEQUENCE (SIZE (1..maxNrofSRS-PathlossReferenceRS-r16)) OF PathlossReferenceRS-r16
+
+PathlossReferenceRS-r16 ::=                 SEQUENCE {
+    srs-PathlossReferenceRS-Id-r16              SRS-PathlossReferenceRS-Id-r16,
+    pathlossReferenceRS-r16                     PathlossReferenceRS-Config
+}
+
+SRS-PathlossReferenceRS-Id-r16 ::=          INTEGER (0..maxNrofSRS-PathlossReferenceRS-1-r16)
+
+SRS-PosResourceSet-r16 ::=                  SEQUENCE {
+    srs-PosResourceSetId-r16                    SRS-PosResourceSetId-r16,
+    srs-PosResourceIdList-r16                   SEQUENCE (SIZE(1..maxNrofSRS-ResourcesPerSet)) OF SRS-PosResourceId-r16
+                                                                                                           OPTIONAL, -- Cond Setup
+    resourceType-r16                            CHOICE {
+        aperiodic-r16                               SEQUENCE {
+            aperiodicSRS-ResourceTriggerList-r16        SEQUENCE (SIZE(1..maxNrofSRS-TriggerStates-1))
+                                                            OF INTEGER (1..maxNrofSRS-TriggerStates-1)     OPTIONAL, -- Need M
+            ...
+        },
+        semi-persistent-r16                         SEQUENCE {
+            ...
+        },
+        periodic-r16                                SEQUENCE {
+            ...
+        }
+    },
+    alpha-r16                                   Alpha                                                      OPTIONAL, -- Need S
+    p0-r16                                      INTEGER (-202..24)                                         OPTIONAL, -- Cond Setup
+    pathlossReferenceRS-Pos-r16                 CHOICE {
+        ssb-IndexServing-r16                        SSB-Index,
+        ssb-Ncell-r16                               SSB-InfoNcell-r16,
+        dl-PRS-r16                                  DL-PRS-Info-r16
+    }                                                                                                      OPTIONAL, -- Need M
+    ...
+}
+
+SRS-ResourceSetId ::=                   INTEGER (0..maxNrofSRS-ResourceSets-1)
+
+SRS-PosResourceSetId-r16 ::=            INTEGER (0..maxNrofSRS-PosResourceSets-1-r16)
+
+SRS-Resource ::=                        SEQUENCE {
+    srs-ResourceId                          SRS-ResourceId,
+    nrofSRS-Ports                           ENUMERATED {port1, ports2, ports4},
+    ptrs-PortIndex                          ENUMERATED {n0, n1 }                                           OPTIONAL,   -- Need R
+    transmissionComb                        CHOICE {
+        n2                                      SEQUENCE {
+            combOffset-n2                           INTEGER (0..1),
+            cyclicShift-n2                          INTEGER (0..7)
+        },
+        n4                                      SEQUENCE {
+            combOffset-n4                           INTEGER (0..3),
+            cyclicShift-n4                          INTEGER (0..11)
+        }
+    },
+    resourceMapping                         SEQUENCE {
+        startPosition                           INTEGER (0..5),
+        nrofSymbols                             ENUMERATED {n1, n2, n4},
+        repetitionFactor                        ENUMERATED {n1, n2, n4}
+    },
+    freqDomainPosition                      INTEGER (0..67),
+    freqDomainShift                         INTEGER (0..268),
+    freqHopping                             SEQUENCE {
+        c-SRS                                   INTEGER (0..63),
+        b-SRS                                   INTEGER (0..3),
+        b-hop                                   INTEGER (0..3)
+    },
+    groupOrSequenceHopping                  ENUMERATED { neither, groupHopping, sequenceHopping },
+    resourceType                            CHOICE {
+        aperiodic                               SEQUENCE {
+            ...
+        },
+        semi-persistent                         SEQUENCE {
+            periodicityAndOffset-sp                     SRS-PeriodicityAndOffset,
+            ...
+        },
+        periodic                                SEQUENCE {
+            periodicityAndOffset-p                      SRS-PeriodicityAndOffset,
+            ...
+        }
+    },
+    sequenceId                              INTEGER (0..1023),
+    spatialRelationInfo                     SRS-SpatialRelationInfo                                        OPTIONAL,   -- Need R
+    ...,
+    [[
+    resourceMapping-r16                     SEQUENCE {
+        startPosition-r16                       INTEGER (0..13),
+        nrofSymbols-r16                         ENUMERATED {n1, n2, n4},
+        repetitionFactor-r16                    ENUMERATED {n1, n2, n4}
+    }                                                                                                      OPTIONAL    -- Need R
+    ]],
+    [[
+    spatialRelationInfo-PDC-r17             SetupRelease { SpatialRelationInfo-PDC-r17 }                   OPTIONAL,   -- Need M
+    resourceMapping-r17                     SEQUENCE {
+        startPosition-r17                       INTEGER (0..13),
+        nrofSymbols-r17                         ENUMERATED {n1, n2, n4, n8, n10, n12, n14},
+        repetitionFactor-r17                    ENUMERATED {n1, n2, n4, n5, n6, n7, n8, n10, n12, n14}
+    }                                                                                                      OPTIONAL,   -- Need R
+    partialFreqSounding-r17                 SEQUENCE {
+        startRBIndexFScaling-r17                CHOICE{
+            startRBIndexAndFreqScalingFactor2-r17   INTEGER (0..1),
+            startRBIndexAndFreqScalingFactor4-r17   INTEGER (0..3)
+        },
+        enableStartRBHopping-r17                ENUMERATED {enable}                                        OPTIONAL    -- Need R
+    }                                                                                                      OPTIONAL,   -- Need R
+    transmissionComb-n8-r17                 SEQUENCE {
+        combOffset-n8-r17                       INTEGER (0..7),
+        cyclicShift-n8-r17                      INTEGER (0..5)
+    }                                                                                                      OPTIONAL,   -- Need R
+    srs-TCI-State-r17                       CHOICE {
+        srs-UL-TCI-State                        TCI-UL-StateId-r17,
+        srs-DLorJointTCI-State                  TCI-StateId
+    }                                                                                                      OPTIONAL    -- Need R
+    ]],
+    [[
+    repetitionFactor-v1730                  ENUMERATED {n3}                                                OPTIONAL,   -- Need R
+    srs-DLorJointTCI-State-v1730            SEQUENCE {
+        cellAndBWP-r17                          ServingCellAndBWP-Id-r17
+    }                                                                                                 OPTIONAL -- Cond DLorJointTCI-SRS
+    ]]
+}
+
+SRS-PosResource-r16::=                  SEQUENCE {
+    srs-PosResourceId-r16                   SRS-PosResourceId-r16,
+    transmissionComb-r16                    CHOICE {
+        n2-r16                                  SEQUENCE {
+            combOffset-n2-r16                       INTEGER (0..1),
+            cyclicShift-n2-r16                      INTEGER (0..7)
+        },
+        n4-r16                                  SEQUENCE {
+            combOffset-n4-r16                        INTEGER (0..3),
+            cyclicShift-n4-r16                      INTEGER (0..11)
+        },
+        n8-r16                                  SEQUENCE {
+            combOffset-n8-r16                       INTEGER (0..7),
+            cyclicShift-n8-r16                      INTEGER (0..5)
+        },
+    ...
+    },
+    resourceMapping-r16                       SEQUENCE {
+        startPosition-r16                           INTEGER (0..13),
+        nrofSymbols-r16                             ENUMERATED {n1, n2, n4, n8, n12}
+    },
+    freqDomainShift-r16                       INTEGER (0..268),
+    freqHopping-r16                           SEQUENCE {
+        c-SRS-r16                                 INTEGER (0..63),
+        ...
+    },
+    groupOrSequenceHopping-r16                ENUMERATED { neither, groupHopping, sequenceHopping },
+    resourceType-r16                          CHOICE {
+        aperiodic-r16                             SEQUENCE {
+            slotOffset-r16                            INTEGER (1..32)                                      OPTIONAL,   -- Need S
+            ...
+        },
+        semi-persistent-r16                       SEQUENCE {
+            periodicityAndOffset-sp-r16               SRS-PeriodicityAndOffset-r16,
+            ...,
+            [[
+            periodicityAndOffset-sp-Ext-r16           SRS-PeriodicityAndOffsetExt-r16                      OPTIONAL    -- Need R
+            ]]
+        },
+        periodic-r16                              SEQUENCE {
+            periodicityAndOffset-p-r16                SRS-PeriodicityAndOffset-r16,
+            ...,
+            [[
+            periodicityAndOffset-p-Ext-r16            SRS-PeriodicityAndOffsetExt-r16                      OPTIONAL    -- Need R
+            ]]
+        }
+    },
+    sequenceId-r16                            INTEGER (0..65535),
+    spatialRelationInfoPos-r16                SRS-SpatialRelationInfoPos-r16                               OPTIONAL,   -- Need R
+    ...
+}
+
+SRS-SpatialRelationInfo ::=     SEQUENCE {
+    servingCellId                       ServCellIndex                                                      OPTIONAL,   -- Need S
+    referenceSignal                     CHOICE {
+        ssb-Index                           SSB-Index,
+        csi-RS-Index                        NZP-CSI-RS-ResourceId,
+        srs                                 SEQUENCE {
+            resourceId                          SRS-ResourceId,
+            uplinkBWP                           BWP-Id
+        }
+    }
+}
+
+SRS-SpatialRelationInfoPos-r16 ::=      CHOICE {
+    servingRS-r16                           SEQUENCE {
+        servingCellId                           ServCellIndex                                              OPTIONAL,   -- Need S
+        referenceSignal-r16                     CHOICE {
+            ssb-IndexServing-r16                    SSB-Index,
+            csi-RS-IndexServing-r16                 NZP-CSI-RS-ResourceId,
+            srs-SpatialRelation-r16                 SEQUENCE {
+                resourceSelection-r16                   CHOICE {
+                    srs-ResourceId-r16                      SRS-ResourceId,
+                    srs-PosResourceId-r16                   SRS-PosResourceId-r16
+                },
+                uplinkBWP-r16                           BWP-Id
+            }
+        }
+    },
+    ssb-Ncell-r16                           SSB-InfoNcell-r16,
+    dl-PRS-r16                              DL-PRS-Info-r16
+}
+
+SSB-Configuration-r16  ::=          SEQUENCE {
+    ssb-Freq-r16                     ARFCN-ValueNR,
+    halfFrameIndex-r16                  ENUMERATED {zero, one},
+    ssbSubcarrierSpacing-r16            SubcarrierSpacing,
+    ssb-Periodicity-r16                 ENUMERATED { ms5, ms10, ms20, ms40, ms80, ms160, spare2,spare1 }   OPTIONAL, -- Need S
+    sfn0-Offset-r16                     SEQUENCE {
+        sfn-Offset-r16                      INTEGER (0..1023),
+        integerSubframeOffset-r16           INTEGER (0..9)                                                 OPTIONAL  -- Need R
+    }                                                                                                      OPTIONAL, -- Need R
+    sfn-SSB-Offset-r16                  INTEGER (0..15),
+    ss-PBCH-BlockPower-r16              INTEGER (-60..50)                                                  OPTIONAL  -- Cond Pathloss
+}
+
+SSB-InfoNcell-r16  ::=              SEQUENCE {
+    physicalCellId-r16                  PhysCellId,
+    ssb-IndexNcell-r16                  SSB-Index                                                          OPTIONAL, -- Need S
+    ssb-Configuration-r16               SSB-Configuration-r16                                              OPTIONAL  -- Need S
+}
+
+DL-PRS-Info-r16  ::=                SEQUENCE {
+    dl-PRS-ID-r16                      INTEGER (0..255),
+    dl-PRS-ResourceSetId-r16           INTEGER (0..7),
+    dl-PRS-ResourceId-r16              INTEGER (0..63)                                                     OPTIONAL  -- Need S
+}
+
+SRS-ResourceId ::=                      INTEGER (0..maxNrofSRS-Resources-1)
+SRS-PosResourceId-r16 ::=               INTEGER (0..maxNrofSRS-PosResources-1-r16)
+
+SRS-PeriodicityAndOffset ::=            CHOICE {
+    sl1                                     NULL,
+    sl2                                     INTEGER(0..1),
+    sl4                                     INTEGER(0..3),
+    sl5                                     INTEGER(0..4),
+    sl8                                     INTEGER(0..7),
+    sl10                                    INTEGER(0..9),
+    sl16                                    INTEGER(0..15),
+    sl20                                    INTEGER(0..19),
+    sl32                                    INTEGER(0..31),
+    sl40                                    INTEGER(0..39),
+    sl64                                    INTEGER(0..63),
+    sl80                                    INTEGER(0..79),
+    sl160                                   INTEGER(0..159),
+    sl320                                   INTEGER(0..319),
+    sl640                                   INTEGER(0..639),
+    sl1280                                  INTEGER(0..1279),
+    sl2560                                  INTEGER(0..2559)
+}
+
+SRS-PeriodicityAndOffset-r16 ::=        CHOICE {
+    sl1                                     NULL,
+    sl2                                     INTEGER(0..1),
+    sl4                                     INTEGER(0..3),
+    sl5                                     INTEGER(0..4),
+    sl8                                     INTEGER(0..7),
+    sl10                                    INTEGER(0..9),
+    sl16                                    INTEGER(0..15),
+    sl20                                    INTEGER(0..19),
+    sl32                                    INTEGER(0..31),
+    sl40                                    INTEGER(0..39),
+    sl64                                    INTEGER(0..63),
+    sl80                                    INTEGER(0..79),
+    sl160                                   INTEGER(0..159),
+    sl320                                   INTEGER(0..319),
+    sl640                                   INTEGER(0..639),
+    sl1280                                  INTEGER(0..1279),
+    sl2560                                  INTEGER(0..2559),
+    sl5120                                  INTEGER(0..5119),
+    sl10240                                 INTEGER(0..10239),
+    sl40960                                 INTEGER(0..40959),
+    sl81920                                 INTEGER(0..81919),
+    ...
+}
+
+SRS-PeriodicityAndOffsetExt-r16 ::=     CHOICE {
+    sl128                                   INTEGER(0..127),
+    sl256                                   INTEGER(0..255),
+    sl512                                   INTEGER(0..511),
+    sl20480                                 INTEGER(0..20479)
+}
+
+SpatialRelationInfo-PDC-r17 ::=   SEQUENCE {
+    referenceSignal                   CHOICE {
+        ssb-Index                         SSB-Index,
+        csi-RS-Index                      NZP-CSI-RS-ResourceId,
+        dl-PRS-PDC                        NR-DL-PRS-ResourceID-r17,
+        srs                               SEQUENCE {
+            resourceId                        SRS-ResourceId,
+            uplinkBWP                         BWP-Id
+        },
+        ...
+    },
+    ...
+}

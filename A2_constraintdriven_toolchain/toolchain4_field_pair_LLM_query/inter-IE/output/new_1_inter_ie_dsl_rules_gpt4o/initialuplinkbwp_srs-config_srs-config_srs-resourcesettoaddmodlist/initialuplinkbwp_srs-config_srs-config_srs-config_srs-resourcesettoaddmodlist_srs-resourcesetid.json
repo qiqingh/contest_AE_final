@@ -1,0 +1,110 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      332
+    ],
+    "field2_all": [
+      333,
+      441,
+      549,
+      657
+    ],
+    "actual_pairs": [
+      [
+        [
+          332
+        ],
+        [
+          333
+        ]
+      ],
+      [
+        [
+          332
+        ],
+        [
+          549,
+          657
+        ]
+      ],
+      [
+        [
+          332
+        ],
+        [
+          333,
+          441,
+          549,
+          657
+        ]
+      ],
+      [
+        [
+          332
+        ],
+        [
+          441,
+          657
+        ]
+      ],
+      [
+        [
+          332
+        ],
+        [
+          441,
+          549
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior or lacks explicit inter-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_srs-config",
+    "field1": "srs-config",
+    "ie2_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field2": "srs-resourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "srs-ResourceSetid, srs-PosResourceSetid \\\\ The ID of this resource set. It is unique in the context of the BWP in which the parent SRS-Config is defined.",
+    "generated_at": "2026-01-09T12:18:51.564904",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between field1 and field2 based on provided evidence.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior or lacks explicit inter-IE constraint.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

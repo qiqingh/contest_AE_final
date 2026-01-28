@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      563
+    ],
+    "field2_all": [
+      570,
+      571
+    ],
+    "actual_pairs": [
+      [
+        [
+          563
+        ],
+        [
+          570,
+          571
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between freqDomainPosition and periodicityAndOffset-p within the same IE. The evidence is primarily definitional and lacks explicit normative constraints involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "freqDomainPosition",
+    "field2": "periodicityAndOffset-p",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "ETSI TS 138214 V17.1.0 (2022-05) - Time domain behaviour of SRS resource configuration as indicated by the higher layer parameter resourceType, which may be periodic, semi-persistent, aperiodic SRS transmission as defined in clause 6.4.1.4 of [4, TS 38.211]. - Slot level periodicity and slot level offset as defined by the higher layer parameters periodicityAndOffset- p or periodicityAndOffset-sp for an SRS resource of type periodic or semi-persistent. The UE is not expected to be configured with SRS resources in the same SRS resource set SRS-ResourceSet or SRS-PosResourceSet with different slot level periodicities. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a slot level offset is defined by the higher layer parameter slotOffset. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a list of zero up to four different available slot offset values from the reference slot n+k to the slot where the aperiodic SRS resource set is transmitted where n is the slot with triggering DCI and k is SlotOffset is defined by the higher layer parameter AvailableSlotOffset. The parameter AvailableSlotOffset can be configured up to 4 different values. For an SRSPosResourceSet configured with higher layer parameter resourceType set to 'aperiodic', the slot level offset is defined by the higher layer parameter slotOffset for each SRS resource. - Number of OFDM symbols in the SRS resource, starting OFDM symbol of the SRS resource within a slot including repetition factor R as defined by the higher layer parameter resourceMapping and described in clause 6.4-1.4 of [4, TS 38.211]. If R is not configured, then R is equal to the number of OFDM symbols in the SRS resource. - SRS bandwidth B_{S R S} and C_{S R S} , as defined by the higher layer parameter freqHopping and described in clause 6.4.1.4 of [4, TS 38.211]. If not configured, then B_{\\text {SRS }}=0 . - Frequency hopping bandwidth b_{\\text {hop }} , as defined by the higher layer parameter freqHopping and described in clause 6.4.1.4 of [4, TS 38.211]. If not configured, then b_{\\text {hop }}=0 . - Defining partial frequency sounding factor and start RB index for partial frequency sounding as defined by the higher layer parameters FreqScalingFactor \\mathrm{P}_{\\mathrm{F}} and StartRBIndex k_{\\mathrm{F}} , respectively, and described in Clause 6.4.1.4 of [4, TS 38.211]. If not configured, then P_{F}=1 and k_{F}=0 . - Defining start RB index hopping for partial frequency sounding in different SRS frequency hopping periods for aperiodic/periodic/semi-persistent SRS based on the hopping pattern k_{\\text {hopping }} as described in clause 6.4.1.4.3 in [4, TS 38.211. If not configured, then start RB hopping is not enabled and k_{\\text {hoppng }} is fixed to be 0 for all SRS symbols. - Defining frequency domain position and configurable shift, as defined by the higher layer parameters freqDomainPosition and freqDomainShift, respectively, and described in clause 6.4.1.4 of [4, TS 38.211]. If freqDomainPosition is not configured, freqDomainPosition is zero. - Cyclic shift, as defined by the higher layer parameter cyclicShift-n2, cyclicShift-n4, or cyclicShift-n8 for transmission comb value 2, 4 or 8, and described in clause 6.4.1.4 of [4, TS 38.211]. - Transmission comb value, as defined by the higher layer parameter transmission Comb described in clause 6.4.1.4 of [4, TS 38.211].",
+    "generated_at": "2026-01-10T21:41:44.677025",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between freqDomainPosition and periodicityAndOffset-p within the same IE. The evidence is primarily definitional and lacks explicit normative constraints involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+EphemerisInfo-r17 ::=          CHOICE {
+    positionVelocity-r17           PositionVelocity-r17,
+    orbital-r17                    Orbital-r17
+}
+
+PositionVelocity-r17 ::=       SEQUENCE {
+    positionX-r17                  PositionStateVector-r17,
+    positionY-r17                  PositionStateVector-r17,
+    positionZ-r17                  PositionStateVector-r17,
+    velocityVX-r17                 VelocityStateVector-r17,
+    velocityVY-r17                 VelocityStateVector-r17,
+    velocityVZ-r17                 VelocityStateVector-r17
+}
+
+Orbital-r17 ::=                SEQUENCE {
+    semiMajorAxis-r17              INTEGER (0..8589934591),
+    eccentricity-r17               INTEGER (0..1048575),
+    periapsis-r17                  INTEGER (0..268435455),
+    longitude-r17                  INTEGER (0..268435455),
+    inclination-r17                INTEGER (-67108864..67108863),
+    meanAnomaly-r17                INTEGER (0..268435455)
+}
+
+PositionStateVector-r17 ::= INTEGER (-33554432..33554431)
+
+VelocityStateVector-r17 ::= INTEGER (-131072..131071)

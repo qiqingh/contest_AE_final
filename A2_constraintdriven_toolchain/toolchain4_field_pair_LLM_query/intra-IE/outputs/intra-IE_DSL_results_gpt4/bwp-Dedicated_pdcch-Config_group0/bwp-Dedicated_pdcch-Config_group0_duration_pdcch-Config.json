@@ -1,0 +1,52 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      111
+    ],
+    "field2_all": [
+      107
+    ],
+    "actual_pairs": [
+      [
+        [
+          111
+        ],
+        [
+          107
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not contain any explicit normative wording or mathematical relation between the target fields 'duration' and 'pdcch-Config'. Also, the target fields are not present in the given ASN.1 definition of the IE 'bwp-Dedicated_pdcch-Config_group0'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "duration",
+    "field2": "pdcch-Config",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "11.4"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If a PDCCH monitoring periodicity for DCI format 2 \\_5 is smaller than a duration of an availability combination of soft symbols over a number of slots that the [AB-MT obtains at a PDCCH monitoring occasion for DCI format 2 _ 5 by a corresponding AI index field value, and the IAB-MT detects more than one DCI formats 2-5 indicating an availability combination of soft symbols or of soft RB sets in RB set groups in a slot, the IAB-MT expects that each of the more than one DCI formats 2_5 indicates a same value for the availability combination of the soft symbols or of soft RB sets in an RB set group in the slot. An [AB-MT monitors PDCCH candidates for a DCI format 2 _ 5 with CRC scrambled by AI-RNTI in one or both of the following search space sets: - a Type3-PDCCH CSS set configured by SearchSpace in PDCCH-Config with searchSpaceType = common;",
+    "generated_at": "2025-12-11T14:17:25.976268",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence does not contain any explicit normative wording or mathematical relation between the target fields 'duration' and 'pdcch-Config'. Also, the target fields are not present in the given ASN.1 definition of the IE 'bwp-Dedicated_pdcch-Config_group0'."
+    }
+  }
+}

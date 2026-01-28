@@ -1,0 +1,63 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      205
+    ],
+    [
+      205
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not mention the fields 'bundleSize' within the same IE or relate them explicitly. The evidence is either definitional or lacks normative constraints between the fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group1",
+    "field1": "bundleSize",
+    "field2": "bundleSize",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "5.1.2.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- If the scheduled PRBs are contiguous and the size of the scheduled PRBs is larger than N_{B W P, i}^{s i z e}, / 2, P_{B W P, i}^{\\prime} is the same as the scheduled bandwidth, otherwise P_{B W P, i}^{\\prime} is set to the remaining configured value of 2 or 4, respectively. When receiving PDSCH scheduled by PDCCH with DCI format 1 _1 with CRC scrambled by C-RNTI, MCS-C-RNTI, or CS-RNTI, if the higher layer parameter prb-BundlingType is set to 'staticBundling', the P_{B W P, i}^{\\prime} value is configured with the single value indicated by the higher layer parameter bundleSize. When a UE is configured with nominal RBG size P=2 for bandwidth part i according to Clause 5.1.2.2.1, or when a UE is configured with interleaving unit of 2 for VRB to PRB mapping provided by the higher layer parameter vrb-ToPRB-Interleaver given by PDSCH-Config for band width part i , the UE is not expected to be configured with P_{B W P, i}^{\\prime}= 4.\n---\n\\begin{tabular}{l} prb-BundlingType, prb-BundlingTypeDCI-1-2 Indicates the PRB bundle type and bundle size(s) (see TS 38.214 [19], clause 5.1.2.3). If dynamic is chosen, the actual bundleSizeSet1 or bundleSizeSet2 to use is indicated via DCI. Constraints on bundleSize(Set) setting depending on vrb-ToPRB-Interleaverand mg-Size settings are described in TS 38.214 [19], clause 5.1.2.3. If a bundleSize(Set) value is absent, the UE applies the value n 2 . The field prb-BundlingType applies to DCI format 1_1, and the field prb-Bundling TypeDCI-1-2 applies to DCI format 1 _ 2 (see TS 38.212 [17], clause 7.3.1 and TS 38.214 [19], clause 5.1.2.3). \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2025-12-09T09:44:17.841100",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not mention the fields 'bundleSize' within the same IE or relate them explicitly. The evidence is either definitional or lacks normative constraints between the fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

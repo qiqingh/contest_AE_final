@@ -1,0 +1,36 @@
+SL-ConfiguredGrantConfig-r16 ::=           SEQUENCE {
+    sl-ConfigIndexCG-r16                       SL-ConfigIndexCG-r16,
+    sl-PeriodCG-r16                            SL-PeriodCG-r16                                                       OPTIONAL, -- Need M
+    sl-NrOfHARQ-Processes-r16                  INTEGER (1..16)                                                       OPTIONAL, -- Need M
+    sl-HARQ-ProcID-offset-r16                  INTEGER (0..15)                                                       OPTIONAL, -- Need M
+    sl-CG-MaxTransNumList-r16                  SL-CG-MaxTransNumList-r16                                             OPTIONAL, -- Need M
+    rrc-ConfiguredSidelinkGrant-r16            SEQUENCE {
+        sl-TimeResourceCG-Type1-r16                INTEGER (0..496)                                                  OPTIONAL, -- Need M
+        sl-StartSubchannelCG-Type1-r16             INTEGER (0..26)                                                   OPTIONAL, -- Need M
+        sl-FreqResourceCG-Type1-r16                INTEGER (0..6929)                                                 OPTIONAL, -- Need M
+        sl-TimeOffsetCG-Type1-r16                  INTEGER (0..7999)                                                 OPTIONAL, -- Need R
+        sl-N1PUCCH-AN-r16                          PUCCH-ResourceId                                                  OPTIONAL, -- Need M
+        sl-PSFCH-ToPUCCH-CG-Type1-r16              INTEGER (0..15)                                                   OPTIONAL, -- Need M
+        sl-ResourcePoolID-r16                      SL-ResourcePoolID-r16                                             OPTIONAL, -- Need M
+        sl-TimeReferenceSFN-Type1-r16              ENUMERATED {sfn512}                                               OPTIONAL  -- Need S
+    }                                                                                                                OPTIONAL, -- Need M
+    ...,
+    [[
+    sl-N1PUCCH-AN-Type2-r16                    PUCCH-ResourceId                                                      OPTIONAL  -- Need M
+    ]]
+}
+
+SL-ConfigIndexCG-r16 ::=          INTEGER (0..maxNrofCG-SL-1-r16)
+
+SL-CG-MaxTransNumList-r16 ::=     SEQUENCE (SIZE (1..8)) OF SL-CG-MaxTransNum-r16
+
+SL-CG-MaxTransNum-r16 ::=                  SEQUENCE {
+    sl-Priority-r16                            INTEGER (1..8),
+    sl-MaxTransNum-r16                         INTEGER (1..32)
+}
+
+SL-PeriodCG-r16 ::=            CHOICE{
+    sl-PeriodCG1-r16               ENUMERATED {ms100, ms200, ms300, ms400, ms500, ms600, ms700, ms800, ms900, ms1000, spare6,
+                                               spare5, spare4, spare3, spare2, spare1},
+    sl-PeriodCG2-r16               INTEGER (1..99)
+}

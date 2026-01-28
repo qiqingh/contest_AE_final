@@ -1,0 +1,95 @@
+{
+  "dsl_rule": "IMPLIES(IN(field1, {'cri-RSRP', 'cri-SINR', 'none'}), EQ(field2, 1) OR EQ(field2, 2))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      932,
+      933
+    ],
+    "field2_all": [
+      926
+    ],
+    "actual_pairs": [
+      [
+        [
+          932,
+          933
+        ],
+        [
+          926
+        ]
+      ]
+    ]
+  },
+  "predicate": "If reportQuantity is 'cri-RSRP', 'cri-SINR', or 'none', then resourcesForChannelMeasurement must be configured with 1 or 2 ports.",
+  "preconditions": [
+    "field1 present",
+    "field2 present"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1='cri-RSRP', field2=1",
+      "field1='cri-SINR', field2=2"
+    ],
+    "invalid": [
+      "field1='cri-RSRP', field2=3",
+      "field1='none', field2=0"
+    ]
+  },
+  "notes": "The constraint is derived from the requirement that specific reportQuantity values limit the number of ports in resourcesForChannelMeasurement.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "reportQuantity",
+    "field2": "resourcesForChannelMeasurement",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 10,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "ResourceSet are transmitted in different OFDM symbols. If repetition is set to 'off', the UE shall not assume that the CSI-RS resources within the NZP-CSI-RS-ResourceSet are transmitted with the same downlink spatial domain transmission filter. If the UE is configured with a CSI-ReportConfig with reportQuantity set to 'cri-RSRP', 'cri-SINR' or 'none' and if the CSI-ResourceConfig for channel measurement (higher layer parameter resourcesForChannelMeasurement) contains a NZP-CSI-RS-ResourceSet that is configured with the higher layer parameter repetition and without the higher layer parameter trs-Info, the UE can only be configured with the same number (1 or 2) of ports with the higher layer parameter nrofPorts for all CSI-RS resources within the set. If the UE is configured with the CSI-RS resource in the same OFDM symbol(s) as an SS/PBCH block, the UE may assume that the CSI-RS and the SS/PBCH block are quasi co-located with 'typeD' if 'typeD' is applicable. Furthermore, the UE shall not expect to be configured with the CSI-RS in PRBs that overlap with those of the SS/PBCH block, and the UE shall expect that the same subcarrier spacing is used for both the CSI-RS and the SS/PBCH block. 5.1.6.1.3 CSI-RS for mobility",
+    "generated_at": "2026-01-07T21:49:31.792545",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(IN(field1, {'cri-RSRP', 'cri-SINR', 'none'}), EQ(field2, 1) OR EQ(field2, 2))",
+      "preconditions": [
+        "field1 present",
+        "field2 present"
+      ],
+      "predicate": "If reportQuantity is 'cri-RSRP', 'cri-SINR', or 'none', then resourcesForChannelMeasurement must be configured with 1 or 2 ports.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1='cri-RSRP', field2=1",
+          "field1='cri-SINR', field2=2"
+        ],
+        "invalid": [
+          "field1='cri-RSRP', field2=3",
+          "field1='none', field2=0"
+        ]
+      },
+      "notes": "The constraint is derived from the requirement that specific reportQuantity values limit the number of ports in resourcesForChannelMeasurement.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

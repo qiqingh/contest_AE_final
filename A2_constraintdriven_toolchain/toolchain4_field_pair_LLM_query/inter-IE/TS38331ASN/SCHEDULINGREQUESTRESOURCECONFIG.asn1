@@ -1,0 +1,35 @@
+SchedulingRequestResourceConfig ::=     SEQUENCE {
+    schedulingRequestResourceId             SchedulingRequestResourceId,
+    schedulingRequestID                     SchedulingRequestId,
+    periodicityAndOffset                    CHOICE {
+        sym2                                    NULL,
+        sym6or7                                 NULL,
+        sl1                                     NULL,                       -- Recurs in every slot
+        sl2                                     INTEGER (0..1),
+        sl4                                     INTEGER (0..3),
+        sl5                                     INTEGER (0..4),
+        sl8                                     INTEGER (0..7),
+        sl10                                    INTEGER (0..9),
+        sl16                                    INTEGER (0..15),
+        sl20                                    INTEGER (0..19),
+        sl40                                    INTEGER (0..39),
+        sl80                                    INTEGER (0..79),
+        sl160                                   INTEGER (0..159),
+        sl320                                   INTEGER (0..319),
+        sl640                                   INTEGER (0..639)
+    }                                                                                                       OPTIONAL,   -- Need M
+    resource                                PUCCH-ResourceId                                                OPTIONAL    -- Need M
+}
+
+SchedulingRequestResourceConfigExt-v1610 ::=   SEQUENCE {
+    phy-PriorityIndex-r16                       ENUMERATED {p0, p1}                                         OPTIONAL,   -- Need M
+    ...
+}
+
+SchedulingRequestResourceConfigExt-v1700 ::=    SEQUENCE {
+    periodicityAndOffset-r17                        CHOICE {
+        sl1280                                          INTEGER (0..1279),
+        sl2560                                          INTEGER (0..2559),
+        sl5120                                          INTEGER (0..5119)
+    }                                                                                                       OPTIONAL   -- Need M
+}

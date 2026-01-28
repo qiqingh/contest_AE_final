@@ -1,0 +1,227 @@
+UEAssistanceInformation ::=         SEQUENCE {
+    criticalExtensions                  CHOICE {
+        ueAssistanceInformation             UEAssistanceInformation-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UEAssistanceInformation-IEs ::=     SEQUENCE {
+    delayBudgetReport                   DelayBudgetReport                   OPTIONAL,
+    lateNonCriticalExtension            OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                UEAssistanceInformation-v1540-IEs   OPTIONAL
+}
+
+DelayBudgetReport::=                CHOICE {
+    type1                               ENUMERATED {
+                                            msMinus1280, msMinus640, msMinus320, msMinus160,msMinus80, msMinus60, msMinus40,
+                                            msMinus20, ms0, ms20,ms40, ms60, ms80, ms160, ms320, ms640, ms1280},
+    ...
+}
+
+UEAssistanceInformation-v1540-IEs ::= SEQUENCE {
+    overheatingAssistance               OverheatingAssistance               OPTIONAL,
+    nonCriticalExtension                UEAssistanceInformation-v1610-IEs   OPTIONAL
+}
+
+OverheatingAssistance ::=           SEQUENCE {
+    reducedMaxCCs                       ReducedMaxCCs-r16                   OPTIONAL,
+    reducedMaxBW-FR1                    ReducedMaxBW-FRx-r16                OPTIONAL,
+    reducedMaxBW-FR2                    ReducedMaxBW-FRx-r16                OPTIONAL,
+    reducedMaxMIMO-LayersFR1            SEQUENCE {
+        reducedMIMO-LayersFR1-DL            MIMO-LayersDL,
+        reducedMIMO-LayersFR1-UL            MIMO-LayersUL
+    } OPTIONAL,
+    reducedMaxMIMO-LayersFR2            SEQUENCE {
+        reducedMIMO-LayersFR2-DL            MIMO-LayersDL,
+        reducedMIMO-LayersFR2-UL            MIMO-LayersUL
+    } OPTIONAL
+}
+OverheatingAssistance-r17 ::=       SEQUENCE {
+    reducedMaxBW-FR2-2-r17              SEQUENCE {
+        reducedBW-FR2-2-DL-r17              ReducedAggregatedBandwidth-r17,
+        reducedBW-FR2-2-UL-r17              ReducedAggregatedBandwidth-r17
+    } OPTIONAL,
+    reducedMaxMIMO-LayersFR2-2          SEQUENCE {
+        reducedMIMO-LayersFR2-2-DL          MIMO-LayersDL,
+        reducedMIMO-LayersFR2-2-UL          MIMO-LayersUL
+    } OPTIONAL
+}
+
+ReducedAggregatedBandwidth ::= ENUMERATED {mhz0, mhz10, mhz20, mhz30, mhz40, mhz50, mhz60, mhz80, mhz100, mhz200, mhz300, mhz400}
+
+ReducedAggregatedBandwidth-r17 ::= ENUMERATED {mhz0, mhz100, mhz200, mhz400, mhz800, mhz1200, mhz1600, mhz2000}
+
+UEAssistanceInformation-v1610-IEs ::= SEQUENCE {
+    idc-Assistance-r16                  IDC-Assistance-r16                  OPTIONAL,
+    drx-Preference-r16                  DRX-Preference-r16                  OPTIONAL,
+    maxBW-Preference-r16                MaxBW-Preference-r16                OPTIONAL,
+    maxCC-Preference-r16                MaxCC-Preference-r16                OPTIONAL,
+    maxMIMO-LayerPreference-r16         MaxMIMO-LayerPreference-r16         OPTIONAL,
+    minSchedulingOffsetPreference-r16   MinSchedulingOffsetPreference-r16   OPTIONAL,
+    releasePreference-r16               ReleasePreference-r16               OPTIONAL,
+    sl-UE-AssistanceInformationNR-r16   SL-UE-AssistanceInformationNR-r16   OPTIONAL,
+    referenceTimeInfoPreference-r16     BOOLEAN                             OPTIONAL,
+    nonCriticalExtension                UEAssistanceInformation-v1700-IEs   OPTIONAL
+}
+
+UEAssistanceInformation-v1700-IEs ::= SEQUENCE {
+    ul-GapFR2-Preference-r17              UL-GapFR2-Preference-r17              OPTIONAL,
+    musim-Assistance-r17                  MUSIM-Assistance-r17                  OPTIONAL,
+    overheatingAssistance-r17             OverheatingAssistance-r17             OPTIONAL,
+    maxBW-PreferenceFR2-2-r17             MaxBW-PreferenceFR2-2-r17             OPTIONAL,
+    maxMIMO-LayerPreferenceFR2-2-r17      MaxMIMO-LayerPreferenceFR2-2-r17      OPTIONAL,
+    minSchedulingOffsetPreferenceExt-r17  MinSchedulingOffsetPreferenceExt-r17  OPTIONAL,
+    rlm-MeasRelaxationState-r17           BOOLEAN                               OPTIONAL,
+    bfd-MeasRelaxationState-r17           BIT STRING (SIZE (1..maxNrofServingCells)) OPTIONAL,
+    nonSDT-DataIndication-r17             SEQUENCE {
+        resumeCause-r17                       ResumeCause                       OPTIONAL
+    }                                                                           OPTIONAL,
+    scg-DeactivationPreference-r17        ENUMERATED { scgDeactivationPreferred, noPreference }    OPTIONAL,
+    uplinkData-r17                        ENUMERATED { true }                   OPTIONAL,
+    rrm-MeasRelaxationFulfilment-r17      BOOLEAN                               OPTIONAL,
+    propagationDelayDifference-r17        PropagationDelayDifference-r17        OPTIONAL,
+    nonCriticalExtension                  SEQUENCE {}                           OPTIONAL
+}
+
+IDC-Assistance-r16 ::=                  SEQUENCE {
+    affectedCarrierFreqList-r16             AffectedCarrierFreqList-r16               OPTIONAL,
+    affectedCarrierFreqCombList-r16         AffectedCarrierFreqCombList-r16           OPTIONAL,
+    ...
+}
+
+AffectedCarrierFreqList-r16 ::= SEQUENCE (SIZE (1.. maxFreqIDC-r16)) OF AffectedCarrierFreq-r16
+
+AffectedCarrierFreq-r16 ::=     SEQUENCE {
+    carrierFreq-r16                 ARFCN-ValueNR,
+    interferenceDirection-r16       ENUMERATED {nr, other, both, spare}
+}
+
+AffectedCarrierFreqCombList-r16 ::= SEQUENCE (SIZE (1..maxCombIDC-r16)) OF AffectedCarrierFreqComb-r16
+
+AffectedCarrierFreqComb-r16 ::=     SEQUENCE {
+    affectedCarrierFreqComb-r16         SEQUENCE (SIZE (2..maxNrofServingCells)) OF  ARFCN-ValueNR    OPTIONAL,
+    victimSystemType-r16                VictimSystemType-r16
+}
+
+VictimSystemType-r16 ::=    SEQUENCE {
+    gps-r16                     ENUMERATED {true}        OPTIONAL,
+    glonass-r16                 ENUMERATED {true}        OPTIONAL,
+    bds-r16                     ENUMERATED {true}        OPTIONAL,
+    galileo-r16                 ENUMERATED {true}        OPTIONAL,
+    navIC-r16                   ENUMERATED {true}        OPTIONAL,
+    wlan-r16                    ENUMERATED {true}        OPTIONAL,
+    bluetooth-r16               ENUMERATED {true}        OPTIONAL,
+    ...
+}
+
+DRX-Preference-r16 ::=              SEQUENCE {
+    preferredDRX-InactivityTimer-r16    ENUMERATED {
+                                            ms0, ms1, ms2, ms3, ms4, ms5, ms6, ms8, ms10, ms20, ms30, ms40, ms50, ms60, ms80,
+                                            ms100, ms200, ms300, ms500, ms750, ms1280, ms1920, ms2560, spare9, spare8,
+                                            spare7, spare6, spare5, spare4, spare3, spare2, spare1} OPTIONAL,
+    preferredDRX-LongCycle-r16          ENUMERATED {
+                                            ms10, ms20, ms32, ms40, ms60, ms64, ms70, ms80, ms128, ms160, ms256, ms320, ms512,
+                                            ms640, ms1024, ms1280, ms2048, ms2560, ms5120, ms10240, spare12, spare11, spare10,
+                                            spare9, spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1 } OPTIONAL,
+    preferredDRX-ShortCycle-r16         ENUMERATED {
+                                            ms2, ms3, ms4, ms5, ms6, ms7, ms8, ms10, ms14, ms16, ms20, ms30, ms32,
+                                            ms35, ms40, ms64, ms80, ms128, ms160, ms256, ms320, ms512, ms640, spare9,
+                                            spare8, spare7, spare6, spare5, spare4, spare3, spare2, spare1 } OPTIONAL,
+    preferredDRX-ShortCycleTimer-r16    INTEGER (1..16)    OPTIONAL
+}
+
+MaxBW-Preference-r16 ::=            SEQUENCE {
+    reducedMaxBW-FR1-r16                ReducedMaxBW-FRx-r16                     OPTIONAL,
+    reducedMaxBW-FR2-r16                ReducedMaxBW-FRx-r16                     OPTIONAL
+}
+
+MaxBW-PreferenceFR2-2-r17 ::=       SEQUENCE {
+    reducedMaxBW-FR2-2-r17              SEQUENCE {
+        reducedBW-FR2-2-DL-r17              ReducedAggregatedBandwidth-r17       OPTIONAL,
+        reducedBW-FR2-2-UL-r17              ReducedAggregatedBandwidth-r17       OPTIONAL
+    } OPTIONAL
+}
+
+MaxCC-Preference-r16 ::=            SEQUENCE {
+    reducedMaxCCs-r16                   ReducedMaxCCs-r16                        OPTIONAL
+}
+
+MaxMIMO-LayerPreference-r16 ::=     SEQUENCE {
+    reducedMaxMIMO-LayersFR1-r16        SEQUENCE {
+        reducedMIMO-LayersFR1-DL-r16        INTEGER (1..8),
+        reducedMIMO-LayersFR1-UL-r16        INTEGER (1..4)
+    } OPTIONAL,
+    reducedMaxMIMO-LayersFR2-r16        SEQUENCE {
+        reducedMIMO-LayersFR2-DL-r16        INTEGER (1..8),
+        reducedMIMO-LayersFR2-UL-r16        INTEGER (1..4)
+    } OPTIONAL
+}
+
+MaxMIMO-LayerPreferenceFR2-2-r17 ::=    SEQUENCE {
+    reducedMaxMIMO-LayersFR2-2-r17          SEQUENCE {
+        reducedMIMO-LayersFR2-2-DL-r17          INTEGER (1..8),
+        reducedMIMO-LayersFR2-2-UL-r17          INTEGER (1..4)
+    } OPTIONAL
+}
+
+MinSchedulingOffsetPreference-r16 ::= SEQUENCE {
+    preferredK0-r16                       SEQUENCE {
+        preferredK0-SCS-15kHz-r16             ENUMERATED {sl1, sl2, sl4, sl6}              OPTIONAL,
+        preferredK0-SCS-30kHz-r16             ENUMERATED {sl1, sl2, sl4, sl6}              OPTIONAL,
+        preferredK0-SCS-60kHz-r16             ENUMERATED {sl2, sl4, sl8, sl12}             OPTIONAL,
+        preferredK0-SCS-120kHz-r16            ENUMERATED {sl2, sl4, sl8, sl12}             OPTIONAL
+    }                                                                                  OPTIONAL,
+    preferredK2-r16                       SEQUENCE {
+        preferredK2-SCS-15kHz-r16             ENUMERATED {sl1, sl2, sl4, sl6}             OPTIONAL,
+        preferredK2-SCS-30kHz-r16             ENUMERATED {sl1, sl2, sl4, sl6}             OPTIONAL,
+        preferredK2-SCS-60kHz-r16             ENUMERATED {sl2, sl4, sl8, sl12}            OPTIONAL,
+        preferredK2-SCS-120kHz-r16            ENUMERATED {sl2, sl4, sl8, sl12}            OPTIONAL
+    }                                                                                 OPTIONAL
+}
+
+MinSchedulingOffsetPreferenceExt-r17 ::=  SEQUENCE {
+    preferredK0-r17                           SEQUENCE {
+        preferredK0-SCS-480kHz-r17                ENUMERATED {sl8, sl16, sl32, sl48}      OPTIONAL,
+        preferredK0-SCS-960kHz-r17                ENUMERATED {sl8, sl16, sl32, sl48}      OPTIONAL
+    }                                                                                     OPTIONAL,
+    preferredK2-r17                           SEQUENCE {
+        preferredK2-SCS-480kHz-r17                ENUMERATED {sl8, sl16, sl32, sl48}      OPTIONAL,
+        preferredK2-SCS-960kHz-r17                ENUMERATED {sl8, sl16, sl32, sl48}      OPTIONAL
+    }                                                                                     OPTIONAL
+}
+
+MUSIM-Assistance-r17 ::=              SEQUENCE {
+    musim-PreferredRRC-State-r17          ENUMERATED {idle, inactive, outOfConnected}     OPTIONAL,
+    musim-GapPreferenceList-r17           MUSIM-GapPreferenceList-r17                     OPTIONAL
+}
+
+MUSIM-GapPreferenceList-r17 ::= SEQUENCE (SIZE (1..4)) OF MUSIM-GapInfo-r17
+
+ReleasePreference-r16 ::=           SEQUENCE {
+    preferredRRC-State-r16              ENUMERATED {idle, inactive, connected, outOfConnected}
+}
+
+ReducedMaxBW-FRx-r16 ::=            SEQUENCE {
+    reducedBW-DL-r16                    ReducedAggregatedBandwidth,
+    reducedBW-UL-r16                    ReducedAggregatedBandwidth
+}
+
+ReducedMaxCCs-r16 ::=               SEQUENCE {
+    reducedCCsDL-r16                    INTEGER (0..31),
+    reducedCCsUL-r16                    INTEGER (0..31)
+}
+
+SL-UE-AssistanceInformationNR-r16 ::= SEQUENCE (SIZE (1..maxNrofTrafficPattern-r16)) OF SL-TrafficPatternInfo-r16
+
+SL-TrafficPatternInfo-r16::=          SEQUENCE {
+    trafficPeriodicity-r16                ENUMERATED {ms20, ms50, ms100, ms200, ms300, ms400, ms500, ms600, ms700, ms800, ms900, ms1000},
+    timingOffset-r16                      INTEGER (0..10239),
+    messageSize-r16                       BIT STRING (SIZE (8)),
+    sl-QoS-FlowIdentity-r16               SL-QoS-FlowIdentity-r16
+}
+
+UL-GapFR2-Preference-r17::=           SEQUENCE {
+    ul-GapFR2-PatternPreference-r17       INTEGER (0..3)                     OPTIONAL
+}
+
+PropagationDelayDifference-r17 ::=  SEQUENCE (SIZE (1..4)) OF INTEGER (-270..270)

@@ -1,0 +1,14 @@
+VarMeasConfig ::=                   SEQUENCE {
+    -- Measurement identities
+    measIdList                          MeasIdToAddModList                  OPTIONAL,
+    -- Measurement objects
+    measObjectList                      MeasObjectToAddModList              OPTIONAL,
+    -- Reporting configurations
+    reportConfigList                    ReportConfigToAddModList            OPTIONAL,
+    -- Other parameters
+    quantityConfig                      QuantityConfig                      OPTIONAL,
+    s-MeasureConfig                         CHOICE {
+        ssb-RSRP                                RSRP-Range,
+        csi-RSRP                                RSRP-Range
+    }                                                                       OPTIONAL
+}

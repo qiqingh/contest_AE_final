@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      562
+    ],
+    "field2_all": [
+      560
+    ],
+    "actual_pairs": [
+      [
+        [
+          562
+        ],
+        [
+          560
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence does not provide a clear semantic constraint between the fields 'repetitionFactor' and 'startPosition'. The only constraint mentioned is related to 'nrofSymbols' and 'repetitionFactor', not 'startPosition'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "repetitionFactor",
+    "field2": "startPosition",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "OFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '.",
+    "generated_at": "2025-12-11T14:23:25.690493",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence does not provide a clear semantic constraint between the fields 'repetitionFactor' and 'startPosition'. The only constraint mentioned is related to 'nrofSymbols' and 'repetitionFactor', not 'startPosition'.",
+      "version_tags": []
+    }
+  }
+}

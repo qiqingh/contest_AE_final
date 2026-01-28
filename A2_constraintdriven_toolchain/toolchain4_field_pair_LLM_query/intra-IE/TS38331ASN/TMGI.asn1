@@ -1,0 +1,7 @@
+TMGI-r17 ::=                     SEQUENCE {
+    plmn-Id-r17                      CHOICE {
+        plmn-Index                       INTEGER (1..maxPLMN),
+        explicitValue                    PLMN-Identity
+    },
+    serviceId-r17                    OCTET STRING (SIZE (3))
+}

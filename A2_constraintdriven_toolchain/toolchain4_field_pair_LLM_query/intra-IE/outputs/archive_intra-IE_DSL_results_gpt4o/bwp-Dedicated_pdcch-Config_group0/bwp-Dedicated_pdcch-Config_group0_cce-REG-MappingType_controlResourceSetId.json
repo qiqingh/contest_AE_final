@@ -1,0 +1,60 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      112,
+      113
+    ],
+    [
+      108,
+      117
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not mention both target fields (cce-REG-MappingType, controlResourceSetId) or relate them within the same IE. The evidence snippet only discusses cce-REG-MappingType in a different context.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "cce-REG-MappingType",
+    "field2": "controlResourceSetId",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\quad N_{\\text {symb }}^{\\text {CORESET }} is given by the higher-layer parameter duration, where N_{\\text {symb }}^{\\text {CORESET }}=3 is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3; - interleaved or non-interleaved mapping is given by the higher-layer parameter cce-REG-MappingType;",
+    "generated_at": "2025-12-09T09:44:36.639134",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not mention both target fields (cce-REG-MappingType, controlResourceSetId) or relate them within the same IE. The evidence snippet only discusses cce-REG-MappingType in a different context.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

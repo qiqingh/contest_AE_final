@@ -1,0 +1,36 @@
+SIB17-r17 ::=               SEQUENCE {
+    segmentNumber-r17           INTEGER (0..63),
+    segmentType-r17             ENUMERATED {notLastSegment, lastSegment},
+    segmentContainer-r17        OCTET STRING
+}
+
+SIB17-IEs-r17 ::=           SEQUENCE {
+    trs-ResourceSetConfig-r17   SEQUENCE (SIZE (1..maxNrofTRS-ResourceSets-r17)) OF TRS-ResourceSet-r17,
+    validityDuration-r17        ENUMERATED {t1, t2, t4, t8, t16, t32, t64, t128, t256, t512, infinity, spare5, spare4, spare3, spare2,
+                                            spare1}                                                            OPTIONAL,  -- Need S
+    lateNonCriticalExtension    OCTET STRING                                                                   OPTIONAL,
+    ...
+}
+
+TRS-ResourceSet-r17 ::=                SEQUENCE {
+    powerControlOffsetSS-r17               ENUMERATED {db-3, db0, db3, db6},
+    scramblingID-Info-r17                  CHOICE {
+        scramblingIDforCommon-r17              ScramblingId,
+        scramblingIDperResourceListWith2-r17   SEQUENCE (SIZE (2)) OF ScramblingId,
+        scramblingIDperResourceListWith4-r17   SEQUENCE (SIZE (4)) OF ScramblingId,
+    ...
+    },
+    firstOFDMSymbolInTimeDomain-r17            INTEGER (0..9),
+    startingRB-r17                             INTEGER (0..maxNrofPhysicalResourceBlocks-1),
+    nrofRBs-r17                                INTEGER (24..maxNrofPhysicalResourceBlocksPlus1),
+    ssb-Index-r17                              SSB-Index,
+    periodicityAndOffset-r17                   CHOICE {
+        slots10                                    INTEGER (0..9),
+        slots20                                    INTEGER (0..19),
+        slots40                                    INTEGER (0..39),
+        slots80                                    INTEGER (0..79)
+    },
+    frequencyDomainAllocation-r17              BIT STRING (SIZE (4)),
+    indBitID-r17                               INTEGER (0..5),
+    nrofResources-r17                          ENUMERATED {n2, n4}
+}

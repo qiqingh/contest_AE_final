@@ -1,0 +1,60 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      388,
+      394
+    ],
+    [
+      389
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative constraint between the 'format' and 'initialCyclicShift' fields within the same IE. The evidence describes the role of 'initialCyclicShift' in different formats but does not specify a direct dependency or constraint between these fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group0",
+    "field1": "format",
+    "field2": "initialCyclicShift",
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.3",
+      "9.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the format indicates PUCCH-format0, the PUCCH format configured for a PUCCH resource is PUCCH format 0 , where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0}=1 .\n---\nIf the format indicates PUCCH-formatl, the PUCCH format configured for a PUCCH resource is PUCCH format 1, where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex, and an index for an orthogonal cover code by timeDomainOCC. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1}=1 .\n---\nIf a UE transmits a PUCCH with HARQ-ACK information using PUCCH format 0 , the UE determines values m_{0} and m_{\\mathrm{CS}} for computing a value of cyclic shift \\alpha [4, TS 38.211] where m_{0} is provided by mittalCyclicShift of PUCCHformat0 or, if initialCyclicShift is not provided, by the initial cyclic shift index as described in clause 9.2.1 and m_{\\mathrm{CS}} is determined from the value of one HARQ-ACK information bit or from the values of two HARQ-ACK information bits as in Table 9.2.3-3 and Table 9.2.3-4, respectively.\n---\nIf a UE transmits a PUCCH with HARQ-ACK information using PUCCH format 1 , the UE is provided a value for m_{0} by initialCyclicShift of PUCCH-formatl or, if mittalCyclicShift is not provided, by the initial cyclic shift index as described in clause 9.2.1.",
+    "generated_at": "2025-12-09T09:44:10.451749",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative constraint between the 'format' and 'initialCyclicShift' fields within the same IE. The evidence describes the role of 'initialCyclicShift' in different formats but does not specify a direct dependency or constraint between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

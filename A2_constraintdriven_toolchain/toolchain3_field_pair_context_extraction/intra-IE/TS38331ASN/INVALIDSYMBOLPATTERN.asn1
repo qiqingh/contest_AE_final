@@ -1,0 +1,16 @@
+InvalidSymbolPattern-r16 ::=     SEQUENCE {
+    symbols-r16                      CHOICE {
+        oneSlot                          BIT STRING (SIZE (14)),
+        twoSlots                         BIT STRING (SIZE (28))
+    },
+    periodicityAndPattern-r16        CHOICE {
+        n2                               BIT STRING (SIZE (2)),
+        n4                               BIT STRING (SIZE (4)),
+        n5                               BIT STRING (SIZE (5)),
+        n8                               BIT STRING (SIZE (8)),
+        n10                              BIT STRING (SIZE (10)),
+        n20                              BIT STRING (SIZE (20)),
+        n40                              BIT STRING (SIZE (40))
+    }                                                                OPTIONAL,   -- Need M
+    ...
+}

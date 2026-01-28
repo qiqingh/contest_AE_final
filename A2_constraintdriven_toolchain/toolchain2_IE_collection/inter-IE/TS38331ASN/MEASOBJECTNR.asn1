@@ -1,0 +1,139 @@
+MeasObjectNR ::=                    SEQUENCE {
+    ssbFrequency                        ARFCN-ValueNR                                                   OPTIONAL,   -- Cond SSBorAssociatedSSB
+    ssbSubcarrierSpacing                SubcarrierSpacing                                               OPTIONAL,   -- Cond SSBorAssociatedSSB
+    smtc1                               SSB-MTC                                                         OPTIONAL,   -- Cond SSBorAssociatedSSB
+    smtc2                               SSB-MTC2                                                        OPTIONAL,   -- Cond IntraFreqConnected
+    refFreqCSI-RS                       ARFCN-ValueNR                                                   OPTIONAL,   -- Cond CSI-RS
+    referenceSignalConfig               ReferenceSignalConfig,
+    absThreshSS-BlocksConsolidation     ThresholdNR                                                     OPTIONAL,   -- Need R
+    absThreshCSI-RS-Consolidation       ThresholdNR                                                     OPTIONAL,   -- Need R
+    nrofSS-BlocksToAverage              INTEGER (2..maxNrofSS-BlocksToAverage)                          OPTIONAL,   -- Need R
+    nrofCSI-RS-ResourcesToAverage       INTEGER (2..maxNrofCSI-RS-ResourcesToAverage)                   OPTIONAL,   -- Need R
+    quantityConfigIndex                 INTEGER (1..maxNrofQuantityConfig),
+    offsetMO                            Q-OffsetRangeList,
+    cellsToRemoveList                   PCI-List                                                        OPTIONAL,   -- Need N
+    cellsToAddModList                   CellsToAddModList                                               OPTIONAL,   -- Need N
+    excludedCellsToRemoveList           PCI-RangeIndexList                                              OPTIONAL,   -- Need N
+    excludedCellsToAddModList           SEQUENCE (SIZE (1..maxNrofPCI-Ranges)) OF PCI-RangeElement      OPTIONAL,   -- Need N
+    allowedCellsToRemoveList            PCI-RangeIndexList                                              OPTIONAL,   -- Need N
+    allowedCellsToAddModList            SEQUENCE (SIZE (1..maxNrofPCI-Ranges)) OF PCI-RangeElement      OPTIONAL,   -- Need N
+    ...,
+    [[
+    freqBandIndicatorNR                 FreqBandIndicatorNR                                             OPTIONAL,   -- Need R
+    measCycleSCell                      ENUMERATED {sf160, sf256, sf320, sf512, sf640, sf1024, sf1280}  OPTIONAL    -- Need R
+    ]],
+    [[
+    smtc3list-r16                       SSB-MTC3List-r16                                                OPTIONAL,   -- Need R
+    rmtc-Config-r16                     SetupRelease {RMTC-Config-r16}                                  OPTIONAL,   -- Need M
+    t312-r16                            SetupRelease { T312-r16 }                                       OPTIONAL    -- Need M
+    ]],
+    [[
+    associatedMeasGapSSB-r17            MeasGapId-r17                                                   OPTIONAL,   -- Need R
+    associatedMeasGapCSIRS-r17          MeasGapId-r17                                                   OPTIONAL,   -- Need R
+    smtc4list-r17                       SSB-MTC4List-r17                                                OPTIONAL,    -- Need R
+    measCyclePSCell-r17                 ENUMERATED {ms160, ms256, ms320, ms512, ms640, ms1024, ms1280, spare1}
+                                                                                                        OPTIONAL,   -- Cond SCG
+    cellsToAddModListExt-v1710          CellsToAddModListExt-v1710                                      OPTIONAL    -- Need N
+   ]],
+   [[
+    associatedMeasGapSSB2-v1720         MeasGapId-r17                                               OPTIONAL, -- Cond AssociatedGapSSB
+    associatedMeasGapCSIRS2-v1720       MeasGapId-r17                                               OPTIONAL  -- Cond AssociatedGapCSIRS
+   ]]
+}
+
+SSB-MTC3List-r16::=                 SEQUENCE (SIZE(1..4)) OF SSB-MTC3-r16
+
+SSB-MTC4List-r17::=                 SEQUENCE (SIZE(1..3)) OF SSB-MTC4-r17
+
+T312-r16 ::=                        ENUMERATED { ms0, ms50, ms100, ms200, ms300, ms400, ms500, ms1000}
+
+ReferenceSignalConfig::=            SEQUENCE {
+    ssb-ConfigMobility                  SSB-ConfigMobility                                              OPTIONAL,   -- Need M
+    csi-rs-ResourceConfigMobility       SetupRelease { CSI-RS-ResourceConfigMobility }                  OPTIONAL    -- Need M
+}
+
+SSB-ConfigMobility::=               SEQUENCE {
+    ssb-ToMeasure                       SetupRelease { SSB-ToMeasure }                                  OPTIONAL,   -- Need M
+    deriveSSB-IndexFromCell             BOOLEAN,
+    ss-RSSI-Measurement                 SS-RSSI-Measurement                                             OPTIONAL,   -- Need M
+    ...,
+    [[
+    ssb-PositionQCL-Common-r16              SSB-PositionQCL-Relation-r16                                OPTIONAL,   -- Cond SharedSpectrum
+    ssb-PositionQCL-CellsToAddModList-r16   SSB-PositionQCL-CellsToAddModList-r16                       OPTIONAL,   -- Need N
+    ssb-PositionQCL-CellsToRemoveList-r16   PCI-List                                                    OPTIONAL    -- Need N
+    ]],
+    [[
+    deriveSSB-IndexFromCellInter-r17    ServCellIndex                                                   OPTIONAL,   -- Need R
+    ssb-PositionQCL-Common-r17          SSB-PositionQCL-Relation-r17                                OPTIONAL,   -- Cond SharedSpectrum2
+    ssb-PositionQCL-Cells-r17           SetupRelease {SSB-PositionQCL-CellList-r17}                     OPTIONAL    -- Need M
+    ]],
+    [[
+    cca-CellsToAddModList-r17           PCI-List                                                        OPTIONAL,   -- Need N
+    cca-CellsToRemoveList-r17           PCI-List                                                        OPTIONAL    -- Need N
+    ]]
+}
+
+Q-OffsetRangeList ::=               SEQUENCE {
+    rsrpOffsetSSB                       Q-OffsetRange               DEFAULT dB0,
+    rsrqOffsetSSB                       Q-OffsetRange               DEFAULT dB0,
+    sinrOffsetSSB                       Q-OffsetRange               DEFAULT dB0,
+    rsrpOffsetCSI-RS                    Q-OffsetRange               DEFAULT dB0,
+    rsrqOffsetCSI-RS                    Q-OffsetRange               DEFAULT dB0,
+    sinrOffsetCSI-RS                    Q-OffsetRange               DEFAULT dB0
+}
+
+
+ThresholdNR ::=                     SEQUENCE{
+    thresholdRSRP                       RSRP-Range                                                      OPTIONAL,   -- Need R
+    thresholdRSRQ                       RSRQ-Range                                                      OPTIONAL,   -- Need R
+    thresholdSINR                       SINR-Range                                                      OPTIONAL    -- Need R
+}
+
+CellsToAddModList ::=               SEQUENCE (SIZE (1..maxNrofCellMeas)) OF CellsToAddMod
+
+CellsToAddModListExt-v1710 ::=      SEQUENCE (SIZE (1..maxNrofCellMeas)) OF CellsToAddModExt-v1710
+
+CellsToAddMod ::=                   SEQUENCE {
+    physCellId                          PhysCellId,
+    cellIndividualOffset                Q-OffsetRangeList
+}
+
+CellsToAddModExt-v1710 ::=          SEQUENCE {
+    ntn-PolarizationDL-r17              ENUMERATED {rhcp,lhcp,linear}                                   OPTIONAL,  -- Need R
+    ntn-PolarizationUL-r17              ENUMERATED {rhcp,lhcp,linear}                                   OPTIONAL   -- Need R
+}
+
+RMTC-Config-r16 ::=                 SEQUENCE {
+    rmtc-Periodicity-r16                ENUMERATED {ms40, ms80, ms160, ms320, ms640},
+    rmtc-SubframeOffset-r16             INTEGER(0..639)                                                 OPTIONAL,   -- Need M
+    measDurationSymbols-r16             ENUMERATED {sym1, sym14or12, sym28or24, sym42or36, sym70or60},
+    rmtc-Frequency-r16                  ARFCN-ValueNR,
+    ref-SCS-CP-r16                      ENUMERATED {kHz15, kHz30, kHz60-NCP, kHz60-ECP},
+    ...,
+    [[
+    rmtc-Bandwidth-r17                  ENUMERATED {mhz100, mhz400, mhz800, mhz1600, mhz2000}           OPTIONAL,   -- Need R
+    measDurationSymbols-v1700           ENUMERATED {sym140, sym560, sym1120}                            OPTIONAL,   -- Need R
+    ref-SCS-CP-v1700                    ENUMERATED {kHz120, kHz480, kHz960}                             OPTIONAL,   -- Need R
+    tci-StateInfo-r17               SEQUENCE {
+        tci-StateId-r17                  TCI-StateId,
+        ref-ServCellId-r17               ServCellIndex                                                  OPTIONAL   -- Need R
+    } OPTIONAL -- Need R
+    ]],
+    [[
+    ref-BWPId-r17                   BWP-Id                                                              OPTIONAL   -- Need R
+    ]]
+}
+
+SSB-PositionQCL-CellsToAddModList-r16 ::= SEQUENCE (SIZE (1..maxNrofCellMeas)) OF SSB-PositionQCL-CellsToAddMod-r16
+
+SSB-PositionQCL-CellsToAddMod-r16 ::= SEQUENCE {
+    physCellId-r16                        PhysCellId,
+    ssb-PositionQCL-r16                   SSB-PositionQCL-Relation-r16
+}
+
+SSB-PositionQCL-CellList-r17 ::= SEQUENCE (SIZE (1..maxNrofCellMeas)) OF SSB-PositionQCL-Cell-r17
+
+SSB-PositionQCL-Cell-r17         ::= SEQUENCE {
+    physCellId-r17                        PhysCellId,
+    ssb-PositionQCL-r17                   SSB-PositionQCL-Relation-r17
+}

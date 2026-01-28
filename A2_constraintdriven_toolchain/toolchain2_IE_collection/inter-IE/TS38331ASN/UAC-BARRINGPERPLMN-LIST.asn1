@@ -1,0 +1,9 @@
+UAC-BarringPerPLMN-List ::=         SEQUENCE (SIZE (1.. maxPLMN)) OF UAC-BarringPerPLMN
+
+UAC-BarringPerPLMN ::=              SEQUENCE {
+    plmn-IdentityIndex                  INTEGER (1..maxPLMN),
+    uac-ACBarringListType               CHOICE{
+        uac-ImplicitACBarringList           SEQUENCE (SIZE(maxAccessCat-1)) OF UAC-BarringInfoSetIndex,
+        uac-ExplicitACBarringList           UAC-BarringPerCatList
+    }                                                                                                     OPTIONAL     -- Need S
+}

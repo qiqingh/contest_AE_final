@@ -1,0 +1,8 @@
+Uu-RelayRLC-ChannelConfig-r17::= SEQUENCE {
+    uu-LogicalChannelIdentity-r17    LogicalChannelIdentity                    OPTIONAL,   -- Cond RelayLCH-SetupOnly
+    uu-RelayRLC-ChannelID-r17        Uu-RelayRLC-ChannelID-r17,
+    reestablishRLC-r17               ENUMERATED {true}                         OPTIONAL,   -- Need N
+    rlc-Config-r17                   RLC-Config                                OPTIONAL,   -- Cond RelayLCH-Setup
+    mac-LogicalChannelConfig-r17     LogicalChannelConfig                      OPTIONAL,   -- Cond RelayLCH-Setup
+    ...
+}

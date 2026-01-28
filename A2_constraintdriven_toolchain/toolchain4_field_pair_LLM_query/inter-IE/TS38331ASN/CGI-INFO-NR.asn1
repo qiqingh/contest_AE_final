@@ -1,0 +1,15 @@
+CGI-InfoNR ::=                    SEQUENCE {
+    plmn-IdentityInfoList               PLMN-IdentityInfoList               OPTIONAL,
+    frequencyBandList                   MultiFrequencyBandListNR            OPTIONAL,
+    noSIB1                              SEQUENCE {
+        ssb-SubcarrierOffset                INTEGER (0..15),
+        pdcch-ConfigSIB1                    PDCCH-ConfigSIB1
+    }                                                                       OPTIONAL,
+    ...,
+    [[
+    npn-IdentityInfoList-r16            NPN-IdentityInfoList-r16            OPTIONAL
+    ]],
+    [[
+    cellReservedForOtherUse-r16         ENUMERATED {true}                   OPTIONAL
+    ]]
+}

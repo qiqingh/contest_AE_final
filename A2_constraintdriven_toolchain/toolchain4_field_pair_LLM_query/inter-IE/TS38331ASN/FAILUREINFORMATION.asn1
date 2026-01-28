@@ -1,0 +1,27 @@
+FailureInformation ::=         SEQUENCE {
+    criticalExtensions             CHOICE {
+        failureInformation             FailureInformation-IEs,
+        criticalExtensionsFuture       SEQUENCE {}
+    }
+}
+
+FailureInformation-IEs ::=     SEQUENCE {
+    failureInfoRLC-Bearer          FailureInfoRLC-Bearer        OPTIONAL,
+    lateNonCriticalExtension       OCTET STRING                 OPTIONAL,
+    nonCriticalExtension           FailureInformation-v1610-IEs OPTIONAL
+}
+
+FailureInfoRLC-Bearer ::=      SEQUENCE {
+    cellGroupId                    CellGroupId,
+    logicalChannelIdentity         LogicalChannelIdentity,
+    failureType                    ENUMERATED {rlc-failure, spare3, spare2, spare1}
+}
+
+FailureInformation-v1610-IEs ::= SEQUENCE {
+    failureInfoDAPS-r16              FailureInfoDAPS-r16        OPTIONAL,
+    nonCriticalExtension             SEQUENCE {}                OPTIONAL
+}
+
+FailureInfoDAPS-r16 ::=          SEQUENCE {
+    failureType-r16                  ENUMERATED {daps-failure, spare3, spare2, spare1}
+}

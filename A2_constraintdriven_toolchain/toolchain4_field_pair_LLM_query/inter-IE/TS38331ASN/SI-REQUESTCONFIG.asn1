@@ -1,0 +1,14 @@
+SI-RequestConfig ::=                SEQUENCE {
+    rach-OccasionsSI                    SEQUENCE {
+        rach-ConfigSI                       RACH-ConfigGeneric,
+        ssb-perRACH-Occasion                ENUMERATED {oneEighth, oneFourth, oneHalf, one, two, four, eight, sixteen}
+    }                                                                                                       OPTIONAL,   -- Need R
+    si-RequestPeriod                    ENUMERATED {one, two, four, six, eight, ten, twelve, sixteen}       OPTIONAL,   -- Need R
+    si-RequestResources                 SEQUENCE (SIZE (1..maxSI-Message)) OF SI-RequestResources
+}
+
+SI-RequestResources ::=             SEQUENCE {
+    ra-PreambleStartIndex               INTEGER (0..63),
+    ra-AssociationPeriodIndex           INTEGER (0..15)                                                     OPTIONAL,   -- Need R
+    ra-ssb-OccasionMaskIndex            INTEGER (0..15)                                                     OPTIONAL    -- Need R
+}

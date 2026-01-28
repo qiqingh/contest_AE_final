@@ -1,0 +1,114 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      101,
+      103,
+      105,
+      166,
+      168,
+      170,
+      231,
+      233,
+      235
+    ],
+    "field2_all": [
+      116,
+      181,
+      246
+    ],
+    "actual_pairs": [
+      [
+        [
+          101,
+          103,
+          105,
+          166,
+          168,
+          170
+        ],
+        [
+          116,
+          181,
+          246
+        ]
+      ],
+      [
+        [
+          101,
+          103,
+          105,
+          166,
+          168,
+          170,
+          231,
+          233,
+          235
+        ],
+        [
+          116,
+          181,
+          246
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'mappingtype' field from 'bwp-common_pdsch-configcommon' and the 'searchspaceid' field from 'pdcch-config'. The snippets discuss these fields and their respective IEs, but not in a way that directly relates one to the other.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pdsch-configcommon",
+    "field1": "mappingtype",
+    "ie2_name": "pdcch-config",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 6,
+      "original_count": 6,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.1",
+      "9.2.1",
+      "5.1.2.1",
+      "7.4.1.1.2",
+      "5.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the first search space set has larger index than the second search space set and includes the first PDCCH candidate and a third PDCCH candidate that have same first CCE index and CCE aggregation levels 8 and 16, or 16 and 8, respectively, - the second search space set includes the second PDCCH candidate that has same index and same CCE aggregation level as the first PDCCH candidate, and a fourth PDCCH candidate that has same index and same CCE aggregation level as the third PDCCH candidate, - the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\nFor search space sets \\( s_{i}, s_{j}, s_{k} \\), and \\( s_{l} \\), that include searchSpaceLinking with values \\( s_{j}, s_{i}, s_{l} \\), and \\( s_{k} \\), respectively, a UE expects to simultaneously monitor PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)}=m_{s_{j}, n_{C I, 1}}^{(8)} \\), and \\( m_{s_{k}, n_{C I, 2}}^{(16)}=m_{s_{l}, n_{C I, 2}}^{(16)} \\) only if a first CCE of \\( m_{s_{i} n_{C I, 1}}^{(8)} \\) or \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\) has different index than a first CCE of \\( m_{s_{k} n}^{(16)}{ }_{C I, 2} \\) or \\( m_{s_{l} n n_{C I, 2}}^{(16)} \\) in a CORESET configured with \\( c c e \\) -REG-MappingType \\( = \\) 'nonInterleaved' and with duration of one symbol.\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol, the UE assumes that a detected DCI format is the first DCI format. For search space sets \\( s_{i}, s_{j}, s_{k} \\), and \\( s_{l} \\) that include searchSpaceLinking with values \\( s_{j}, s_{i}, s_{l} \\), and \\( s_{k} \\), respectively, and for detection of DCI formats with same size, a UE expects different CCEs or different scrambling in a CORESET \\( p \\) for any of first PDCCH candidates \\( m_{s_{i} n}^{(L)} n_{C I, 1} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(L)} \\), with \\( m_{s_{i}, n_{C I, 1}}^{(L)}=m_{s_{j}, n}^{(L)} \\), and any of second PDCCH candidates \\( m_{s_{k} n_{C I, 2}}^{(L)} \\) and \\( m_{s_{l} n_{C I, 2}}^{(L)} \\), with \\( m_{s_{k} n_{C I, 2}}^{(L)}=m_{s_{l} n_{C I, 2}}^{(L)} \\) that the UE would simultaneously monitor.\n---\nThe UE is not expected to receive a PDSCH with mapping type A in a slot, if the PDCCH scheduling the PDSCH was received in the same slot and was not contained within the first three symbols of the slot. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], if the two PDCCH candidates scheduling the PDSCH with mapping Type A were received in the same slot as the PDSCH, both PDCCH candidates are expected to be contained within the first three symbols of the slot.\n---\nFor PDSCH with mapping Type B , if PDSCH is scheduled by a PDCCH reception that includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], \\( d_{1,1} \\) for PDSCH processing time is determined by considering the PDCCH candidate that results in larger \\( \\mathrm{d}_{1,1} \\) value.\n---\nFor PDSCH mapping type B - if the PDSCH duration \\( l_{\\mathrm{d}} \\in\\{2,3,4,5,6,7,8,9,10,11,12,13\\} \\) OFDM symbols for normal cyclic prefix or \\( l_{\\mathrm{d}} \\in \\{2,4,6\\} \\) OFDM symbols for extended cyclic prefix, and the front-loaded DM-RS of the PDSCH allocation collides with resources reserved for a search space set associated with a CORESET, \\( \\bar{l} \\) shall be incremented such that the first DM-RS symbol occurs immediately after the CORESET and until no collision with any CORESET occurs, and",
+    "generated_at": "2025-12-11T09:21:17.225566",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'mappingtype' field from 'bwp-common_pdsch-configcommon' and the 'searchspaceid' field from 'pdcch-config'. The snippets discuss these fields and their respective IEs, but not in a way that directly relates one to the other.",
+      "version_tags": []
+    }
+  }
+}

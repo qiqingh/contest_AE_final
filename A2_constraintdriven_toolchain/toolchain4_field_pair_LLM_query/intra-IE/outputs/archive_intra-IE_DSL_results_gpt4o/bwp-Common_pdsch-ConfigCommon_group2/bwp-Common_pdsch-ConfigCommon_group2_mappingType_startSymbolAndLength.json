@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      231,
+      233,
+      235
+    ],
+    [
+      232,
+      234,
+      236
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative constraint between the fields 'mappingType' and 'startSymbolAndLength' within the same IE 'bwp-Common_pdsch-ConfigCommon_group2'. The evidence mentions similar concepts but does not directly relate these specific fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Common_pdsch-ConfigCommon_group2",
+    "field1": "mappingType",
+    "field2": "startSymbolAndLength",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "6.1.2.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "A set of allowed periodicities P are defined in [12, TS 38.331]. The higher layer parameter cg-nrofSlots, provides the number of consecutive slots allocated within a configured grant period. The higher layer parameter cg-nrofPUSCHInSlot provides the number of consecutive PUSCH allocations within a slot, where the first PUSCH allocation follows the higher layer parameter timeDomainAllocation for Type 1 PUSCH transmission or the higher layer configuration according to [10, TS 38.321], and UL grant received on the DCI for Type 2 PUSCH transmissions, and the remaining PUSCH allocations have the same length and PUSCH mapping type, and are appended following the previous allocations without any gaps. The same combination of start symbol and length and PUSCH mapping type repeats over the consecutively allocated slots.\n---\nIndicates a combination of start symbol and length and PUSCH mapping type from the TDRA table (PUSCH-TimeDomainResourceAllocationList if provided in PUSCHConfigCommon, or else the default Table 6.1.2.1.1-2 in 38.214 [19] is used if pusch-TimeDomainAllocationList is not provided in PUSCH-ConfigCommon). The parameter K2 in the table is not used for msgA PUSCH. The network configures one of msgA-PUSCH-TimeDomainAllocation and startSymbolAndLengthMisgA-PO, but not both. If the field is absent, the UE shall use the value of startSymbolAndLenghtMsgA-PO.",
+    "generated_at": "2025-12-09T09:44:08.722785",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative constraint between the fields 'mappingType' and 'startSymbolAndLength' within the same IE 'bwp-Common_pdsch-ConfigCommon_group2'. The evidence mentions similar concepts but does not directly relate these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

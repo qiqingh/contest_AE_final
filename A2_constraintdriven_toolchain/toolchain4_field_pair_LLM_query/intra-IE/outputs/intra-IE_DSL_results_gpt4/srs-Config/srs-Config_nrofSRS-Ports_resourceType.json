@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field2, 'aperiodic'), EQ(field1, 'port1'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      342
+    ],
+    "field2_all": [
+      335,
+      355
+    ],
+    "actual_pairs": [
+      [
+        [
+          342
+        ],
+        [
+          335,
+          355
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field2, 'aperiodic')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = 'port1', field2 = 'aperiodic'"
+    ],
+    "invalid": [
+      "field1 = 'ports2', field2 = 'aperiodic'"
+    ]
+  },
+  "notes": "The evidence suggests that when the resourceType (field2) is set to 'aperiodic', the nrofSRS-Ports (field1) must be set to 'port1'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "srs-Config",
+    "field1": "nrofSRS-Ports",
+    "field2": "resourceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "and where N_{b_{\\text {hop }}}=1 regardless of the value of N_{\\mathrm{b}} . The quantity n_{\\text {SRS }} counts the number of SRS transmissions. For the case of an SRS resource configured as aperiodic by the higher-layer parameter resourceType, it is given by n_{\\text {SRS }}= \\left[l^{\\prime} /(s R)\\right] within the slot in which the N_{\\text {symb }}^{\\text {SRS }} symbol SRS resource is transmitted. The quantity s is given by s=2 if the higher-layer parameter nrofSRS-Ports-n8 equals 'ports8tdm', otherwise s=1 . The quantity R \\leq N_{\\text {symb }}^{\\mathrm{SRS}} / s is the repetition factor given by the field repetition Factor if configured, otherwise R=N_{\\text {symb }}^{\\text {SRS }} -\n---\nand where N_{b_{\\text {hop }}}=1 regardless of the value of N_{\\mathrm{b}} . The quantity n_{\\text {SRS }} counts the number of SRS transmissions. For the case of an SRS resource configured as aperiodic by the higher-layer parameter resourceType, it is given by n_{\\text {SRS }}= \\left[l^{\\prime} /(s R)\\right] within the slot in which the N_{\\text {symb }}^{\\text {SRS }} symbol SRS resource is transmitted. The quantity s is given by s=2 if the higher-layer parameter nrofSRS-Ports-n8 equals 'ports8tdm', otherwise s=1 . The quantity R \\leq N_{\\text {symb }}^{\\mathrm{SRS}} / s is the repetition factor given by the field repetition Factor if configured, otherwise R=N_{\\text {symb }}^{\\text {SRS }} -",
+    "generated_at": "2025-12-11T14:24:08.662313",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field2, 'aperiodic'), EQ(field1, 'port1'))",
+      "preconditions": [],
+      "predicate": "EQ(field2, 'aperiodic')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 'port1', field2 = 'aperiodic'"
+        ],
+        "invalid": [
+          "field1 = 'ports2', field2 = 'aperiodic'"
+        ]
+      },
+      "notes": "The evidence suggests that when the resourceType (field2) is set to 'aperiodic', the nrofSRS-Ports (field1) must be set to 'port1'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

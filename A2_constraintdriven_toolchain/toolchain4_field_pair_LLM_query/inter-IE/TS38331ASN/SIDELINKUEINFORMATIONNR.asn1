@@ -1,0 +1,117 @@
+SidelinkUEInformationNR-r16::=         SEQUENCE {
+    criticalExtensions                  CHOICE {
+        sidelinkUEInformationNR-r16         SidelinkUEInformationNR-r16-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+SidelinkUEInformationNR-r16-IEs ::=    SEQUENCE {
+    sl-RxInterestedFreqList-r16            SL-InterestedFreqList-r16           OPTIONAL,
+    sl-TxResourceReqList-r16               SL-TxResourceReqList-r16            OPTIONAL,
+    sl-FailureList-r16                     SL-FailureList-r16                  OPTIONAL,
+    lateNonCriticalExtension               OCTET STRING                        OPTIONAL,
+    nonCriticalExtension                   SidelinkUEInformationNR-v1700-IEs   OPTIONAL
+}
+
+SidelinkUEInformationNR-v1700-IEs ::=  SEQUENCE {
+    sl-TxResourceReqList-v1700             SL-TxResourceReqList-v1700                                                 OPTIONAL,
+    sl-RxDRX-ReportList-v1700              SL-RxDRX-ReportList-v1700                                                  OPTIONAL,
+    sl-RxInterestedGC-BC-DestList-r17      SL-RxInterestedGC-BC-DestList-r17                                          OPTIONAL,
+    sl-RxInterestedFreqListDisc-r17        SL-InterestedFreqList-r16                                                  OPTIONAL,
+    sl-TxResourceReqListDisc-r17           SL-TxResourceReqListDisc-r17                                               OPTIONAL,
+    sl-TxResourceReqListCommRelay-r17      SL-TxResourceReqListCommRelay-r17                                          OPTIONAL,
+    ue-Type-r17                            ENUMERATED {relayUE, remoteUE}                                             OPTIONAL,
+    sl-SourceIdentityRemoteUE-r17          SL-SourceIdentity-r17                                                      OPTIONAL,
+    nonCriticalExtension                   SEQUENCE {}                                                                OPTIONAL
+}
+
+SL-InterestedFreqList-r16 ::=          SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF INTEGER (1..maxNrofFreqSL-r16)
+
+SL-TxResourceReqList-r16 ::=           SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-TxResourceReq-r16
+
+SL-TxResourceReq-r16 ::=               SEQUENCE {
+    sl-DestinationIdentity-r16             SL-DestinationIdentity-r16,
+    sl-CastType-r16                        ENUMERATED {broadcast, groupcast, unicast, spare1},
+    sl-RLC-ModeIndicationList-r16          SEQUENCE (SIZE (1.. maxNrofSLRB-r16)) OF SL-RLC-ModeIndication-r16         OPTIONAL,
+    sl-QoS-InfoList-r16                    SEQUENCE (SIZE (1..maxNrofSL-QFIsPerDest-r16)) OF SL-QoS-Info-r16          OPTIONAL,
+    sl-TypeTxSyncList-r16                  SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-TypeTxSync-r16                OPTIONAL,
+    sl-TxInterestedFreqList-r16            SL-TxInterestedFreqList-r16                                                OPTIONAL,
+    sl-CapabilityInformationSidelink-r16   OCTET STRING                                                               OPTIONAL
+}
+
+SL-TxResourceReqList-v1700 ::=         SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-TxResourceReq-v1700
+
+SL-RxDRX-ReportList-v1700 ::=          SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-RxDRX-Report-v1700
+
+SL-TxResourceReq-v1700 ::=             SEQUENCE {
+    sl-DRX-InfoFromRxList-r17              SEQUENCE (SIZE (1..maxNrofSL-RxInfoSet-r17)) OF SL-DRX-ConfigUC-SemiStatic-r17   OPTIONAL,
+    sl-DRX-Indication-r17                  ENUMERATED {on, off}                                                             OPTIONAL,
+    ...
+}
+
+SL-RxDRX-Report-v1700 ::=              SEQUENCE {
+    sl-DRX-ConfigFromTx-r17                SL-DRX-ConfigUC-SemiStatic-r17,
+    ...}
+
+SL-RxInterestedGC-BC-DestList-r17 ::=  SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-RxInterestedGC-BC-Dest-r17
+
+SL-RxInterestedGC-BC-Dest-r17 ::=      SEQUENCE {
+    sl-RxInterestedQoS-InfoList-r17        SEQUENCE (SIZE (1..maxNrofSL-QFIsPerDest-r16)) OF SL-QoS-Info-r16,
+    sl-DestinationIdentity-r16             SL-DestinationIdentity-r16
+}
+
+SL-TxResourceReqListDisc-r17 ::=       SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-TxResourceReqDisc-r17
+
+SL-TxResourceReqDisc-r17 ::=           SEQUENCE {
+    sl-DestinationIdentityDisc-r17         SL-DestinationIdentity-r16,
+    sl-SourceIdentityRelayUE-r17           SL-SourceIdentity-r17                                                      OPTIONAL,
+    sl-CastTypeDisc-r17                    ENUMERATED {broadcast, groupcast, unicast, spare1},
+    sl-TxInterestedFreqListDisc-r17        SL-TxInterestedFreqList-r16,
+    sl-TypeTxSyncListDisc-r17              SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-TypeTxSync-r16,
+    sl-DiscoveryType-r17                   ENUMERATED {relay, non-Relay},
+    ...
+}
+
+SL-TxResourceReqListCommRelay-r17 ::=  SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-TxResourceReqCommRelayInfo-r17
+
+SL-TxResourceReqCommRelayInfo-r17 ::=  SEQUENCE {
+    sl-RelayDRXConfig-r17                 SL-TxResourceReq-v1700                                                       OPTIONAL,
+    sl-TxResourceReqCommRelay-r17         SL-TxResourceReqCommRelay-r17
+}
+
+SL-TxResourceReqCommRelay-r17 ::=      CHOICE {
+    sl-TxResourceReqL2U2N-Relay-r17        SL-TxResourceReqL2U2N-Relay-r17,
+    sl-TxResourceReqL3U2N-Relay-r17        SL-TxResourceReq-r16
+}
+
+SL-TxResourceReqL2U2N-Relay-r17 ::=    SEQUENCE {
+    sl-DestinationIdentityL2U2N-r17        SL-DestinationIdentity-r16                                                 OPTIONAL,
+    sl-TxInterestedFreqListL2U2N-r17       SL-TxInterestedFreqList-r16,
+    sl-TypeTxSyncListL2U2N-r17             SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF SL-TypeTxSync-r16,
+    sl-LocalID-Request-r17                 ENUMERATED {true}                                                          OPTIONAL,
+    sl-PagingIdentityRemoteUE-r17          SL-PagingIdentityRemoteUE-r17                                              OPTIONAL,
+    sl-CapabilityInformationSidelink-r17   OCTET STRING                                                               OPTIONAL,
+    ...
+}
+
+SL-TxInterestedFreqList-r16 ::=        SEQUENCE (SIZE (1..maxNrofFreqSL-r16)) OF INTEGER (1..maxNrofFreqSL-r16)
+
+SL-QoS-Info-r16 ::=                    SEQUENCE {
+    sl-QoS-FlowIdentity-r16               SL-QoS-FlowIdentity-r16,
+    sl-QoS-Profile-r16                    SL-QoS-Profile-r16                                                          OPTIONAL
+}
+
+SL-RLC-ModeIndication-r16 ::=          SEQUENCE {
+    sl-Mode-r16                            CHOICE  {
+        sl-AM-Mode-r16                         NULL,
+        sl-UM-Mode-r16                         NULL
+    },
+    sl-QoS-InfoList-r16                SEQUENCE (SIZE (1..maxNrofSL-QFIsPerDest-r16)) OF SL-QoS-Info-r16
+}
+
+SL-FailureList-r16 ::=                 SEQUENCE (SIZE (1..maxNrofSL-Dest-r16)) OF SL-Failure-r16
+
+SL-Failure-r16 ::=                     SEQUENCE {
+    sl-DestinationIdentity-r16             SL-DestinationIdentity-r16,
+    sl-Failure-r16                         ENUMERATED {rlf,configFailure, drxReject-v1710, spare5, spare4, spare3, spare2, spare1}
+}

@@ -1,0 +1,35 @@
+LogicalChannelConfig ::=            SEQUENCE {
+    ul-SpecificParameters               SEQUENCE {
+        priority                            INTEGER (1..16),
+        prioritisedBitRate                  ENUMERATED {kBps0, kBps8, kBps16, kBps32, kBps64, kBps128, kBps256, kBps512,
+                                            kBps1024, kBps2048, kBps4096, kBps8192, kBps16384, kBps32768, kBps65536, infinity},
+        bucketSizeDuration                  ENUMERATED {ms5, ms10, ms20, ms50, ms100, ms150, ms300, ms500, ms1000,
+                                                            spare7, spare6, spare5, spare4, spare3,spare2, spare1},
+        allowedServingCells                 SEQUENCE (SIZE (1..maxNrofServingCells-1)) OF ServCellIndex
+                                                                                                            OPTIONAL,   -- Cond PDCP-CADuplication
+        allowedSCS-List                     SEQUENCE (SIZE (1..maxSCSs)) OF SubcarrierSpacing                   OPTIONAL,   -- Need R
+        maxPUSCH-Duration                   ENUMERATED {ms0p02, ms0p04, ms0p0625, ms0p125, ms0p25, ms0p5, ms0p01-v1700, spare1}
+                                                                                                                OPTIONAL,   -- Need R
+        configuredGrantType1Allowed         ENUMERATED {true}                                                   OPTIONAL,   -- Need R
+        logicalChannelGroup                 INTEGER (0..maxLCG-ID)                                              OPTIONAL,   -- Need R
+        schedulingRequestID                 SchedulingRequestId                                                 OPTIONAL,   -- Need R
+        logicalChannelSR-Mask               BOOLEAN,
+        logicalChannelSR-DelayTimerApplied  BOOLEAN,
+        ...,
+        bitRateQueryProhibitTimer       ENUMERATED {s0, s0dot4, s0dot8, s1dot6, s3, s6, s12, s30}               OPTIONAL,    -- Need R
+        [[
+        allowedCG-List-r16                  SEQUENCE (SIZE (0.. maxNrofConfiguredGrantConfigMAC-1-r16)) OF ConfiguredGrantConfigIndexMAC-r16
+                                                                                                                OPTIONAL,   -- Need S
+        allowedPHY-PriorityIndex-r16        ENUMERATED {p0, p1}                                                 OPTIONAL    -- Need S
+        ]],
+        [[
+        logicalChannelGroupIAB-Ext-r17      INTEGER (0..maxLCG-ID-IAB-r17)                                      OPTIONAL,   -- Need R
+        allowedHARQ-mode-r17                ENUMERATED {harqModeA, harqModeB}                                   OPTIONAL    -- Need R
+        ]]
+    }                                                                                                       OPTIONAL,   -- Cond UL
+    ...,
+    [[
+    channelAccessPriority-r16           INTEGER (1..4)                                                      OPTIONAL,   -- Need R
+    bitRateMultiplier-r16               ENUMERATED {x40, x70, x100, x200}                                   OPTIONAL    -- Need R
+    ]]
+}

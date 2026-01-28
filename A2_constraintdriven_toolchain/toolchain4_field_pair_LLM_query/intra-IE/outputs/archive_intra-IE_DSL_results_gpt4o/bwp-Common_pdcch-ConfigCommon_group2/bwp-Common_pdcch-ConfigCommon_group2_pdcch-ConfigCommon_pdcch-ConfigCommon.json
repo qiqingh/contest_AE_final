@@ -1,0 +1,64 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      209
+    ],
+    [
+      209
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any explicit normative constraint between the fields within the same IE. The evidence snippets do not mention both target fields or relate them directly.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Common_pdcch-ConfigCommon_group2",
+    "field1": "pdcch-ConfigCommon",
+    "field2": "pdcch-ConfigCommon",
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "17.2",
+      "4.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For operation without shared spectrum channel access in FR2-2, a UE expects a MIB in a SS/PBCH block to provide subCarrierSpacingCommon = 'scs30or120'. Upon detection of a SS/PBCH block, the UE determines from MIB that a CORESET for Type0-PDCCH CSS set, as described in clause 13, is present if k_{S S B}<24 [4, TS 38.211] for FR1 or if k_{S S B}<12 for FR2. The UE determines from MIB that a CORESET for Type0-PDCCH CSS set is not present if k_{S S B}>23 for FR1 or if k_{S S B}>11 for FR2; the CORESET for Type0-PDCCH CSS set may be provided by PDCCH-ConfigCommon. For a serving cell without transmission of SS/PBCH blocks, a UE acquires time and frequency synchronization with the serving cell based on receptions of SS/PBCH blocks on the PCell, or on the PSCell, or on an SCell if applicable as described in [10, TS 38.133], of the cell group for the serving cell.\n---\nA UE can be configured by cfr-Config-MCCH-MTCH an MBS frequency resource for PDCCH and PDSCH receptions providing MCCH and MTCH [12, TS 38.331]; otherwise, the MBS frequency resource is same as for the CORESET with index 0 that is associated with the Type0-PDCCH CSS set for PDCCH and PDSCH receptions providing MCCH and MTCH. A UE monitors PDCCH for scheduling PDSCH receptions for MCCH or MTCH as described in clause 10.1. In clauses referring to a higher layer parameter value provided by PDCCH-ConfigCommon or PDSCH-ConfigCommon, when applicable a corresponding higher layer parameter value for MCCH/MTCH PDCCH receptions or PDSCH receptions, respectively, is provided as described in [12, TS 38.331]. A UE is not required to simultaneously receive PDSCHs for MCCH or MTCH on two serving cells. A UE in the RRC_IDLE state or in the RRC_INACTIVE state is not required to simultaneously receive on a serving cell\n---\n\\begin{tabular}{|l|l|} Conditional Presence & Explanation InitialBWP-Only & If SIB1 is broadcast the field is mandatory present in the PDCCH-ConfigCommon of the initial BWP (BWP\\#0) in ServingCellConfigCommon; it is absent in other BWPs and when sent in system information. If SIB1 is not broadcast and there is an SSB associated to the cell, the field is optionally present, Need M, in the PDCCH-ConfigCommon of the initial BWP (BWP\\#0) in ServingCellConfigCommon (still with the same setting for all UEs). In other cases, the field is absent. OtherBWP & This field is optionally present, Need R, if this BWP is not the initial DL BWP and pagingSearchSpace is configured in this BWP. Otherwise this field is absent.",
+    "generated_at": "2025-12-09T09:43:17.299234",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any explicit normative constraint between the fields within the same IE. The evidence snippets do not mention both target fields or relate them directly.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

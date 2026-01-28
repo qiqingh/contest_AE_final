@@ -1,0 +1,72 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      712,
+      713
+    ],
+    "field2_all": [
+      706,
+      707,
+      708
+    ],
+    "actual_pairs": [
+      [
+        [
+          712,
+          713
+        ],
+        [
+          706,
+          707,
+          708
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct relationship between the fields 'density' and 'frequencyDomainAllocation' within the same IE. The evidence discusses general configurations and parameters but does not specify a constraint involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_resourceMapping_group0",
+    "field1": "density",
+    "field2": "frequencyDomainAllocation",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 4,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- l \\in\\{0,4\\}, l \\in\\{1,5\\}, l \\in\\{2,6\\}, l \\in\\{3,7\\}, l \\in\\{7,11\\}, l \\in\\{8,12\\} or l \\in\\{9,13\\} for frequency range 2 . - where the first symbol location in a slot is indicated by firstOFDMSymbollnTimeDomain in the TRSResourceSet and the second symbol location in a slot is firstOFDMSymbollnTimeDomain +4 - a single port CSI-RS resource with density \\rho=3 given by Table 7.4.1.5.3-1 from [4, TS 38.211]. - the band width and the frequency location of the NZP CSI-RS resource, is given by the higher layer parameter nrofRBs, startingRB and frequencyDomainAllocation in a TRS-ResourceSet and applies to all resources in a TRSResourceSet. Band width, nrofRBs, and the initial CRB index, startingRB, of the NZP CSI-RS resource configured by TRS-ResourceSet are not restricted by initial DL BWP. - UE is not required to receive TRS occasions outside the initial DL BWP. - the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet.",
+    "generated_at": "2026-01-07T19:38:57.923990",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct relationship between the fields 'density' and 'frequencyDomainAllocation' within the same IE. The evidence discusses general configurations and parameters but does not specify a constraint involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

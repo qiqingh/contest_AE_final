@@ -1,0 +1,111 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      68,
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      824,
+      863,
+      902
+    ],
+    "actual_pairs": [
+      [
+        [
+          68
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ],
+      [
+        [
+          68,
+          133,
+          198,
+          263
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided only describes behavior within a single IE and does not establish a cross-reference or dependency between the specified fields from different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-im-resourcesforinterference",
+    "field1": "csi-im-resourcesforinterference",
+    "ie2_name": "pdsch-config_tci-statestoaddmodlist",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "csi-IM-ResourcesForinterference \\\\ CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- \\\\",
+    "generated_at": "2026-01-09T12:27:58.874845",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between csi-im-resourcesforinterference and bwp-id from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided only describes behavior within a single IE and does not establish a cross-reference or dependency between the specified fields from different IEs.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

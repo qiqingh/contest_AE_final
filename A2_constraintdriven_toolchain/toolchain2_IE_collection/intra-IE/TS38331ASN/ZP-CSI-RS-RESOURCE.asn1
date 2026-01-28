@@ -1,0 +1,8 @@
+ZP-CSI-RS-Resource ::=              SEQUENCE {
+    zp-CSI-RS-ResourceId                ZP-CSI-RS-ResourceId,
+    resourceMapping                     CSI-RS-ResourceMapping,
+    periodicityAndOffset                CSI-ResourcePeriodicityAndOffset                OPTIONAL, --Cond PeriodicOrSemiPersistent
+    ...
+}
+
+ZP-CSI-RS-ResourceId ::=            INTEGER (0..maxNrofZP-CSI-RS-Resources-1)

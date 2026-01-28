@@ -1,0 +1,69 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      695,
+      696
+    ],
+    "field2_all": [
+      698
+    ],
+    "actual_pairs": [
+      [
+        [
+          695,
+          696
+        ],
+        [
+          698
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence does not establish a direct normative relationship between the fields 'density' and 'nrofRBs' within the same IE. The evidence discusses configurations and constraints at a higher level, such as resource sets, but does not provide a specific constraint linking these two fields directly.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "density",
+    "field2": "nrofRBs",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 3,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1",
+      "5.1.6.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- l \\in\\{0,4\\}, l \\in\\{1,5\\}, l \\in\\{2,6\\}, l \\in\\{3,7\\}, l \\in\\{7,11\\}, l \\in\\{8,12\\} or l \\in\\{9,13\\} for frequency range 2 . - where the first symbol location in a slot is indicated by firstOFDMSymbollnTimeDomain in the TRSResourceSet and the second symbol location in a slot is firstOFDMSymbollnTimeDomain +4 - a single port CSI-RS resource with density \\rho=3 given by Table 7.4.1.5.3-1 from [4, TS 38.211]. - the band width and the frequency location of the NZP CSI-RS resource, is given by the higher layer parameter nrofRBs, startingRB and frequencyDomainAllocation in a TRS-ResourceSet and applies to all resources in a TRSResourceSet. Band width, nrofRBs, and the initial CRB index, startingRB, of the NZP CSI-RS resource configured by TRS-ResourceSet are not restricted by initial DL BWP. - UE is not required to receive TRS occasions outside the initial DL BWP. - the periodicity for periodic NZP CSI-RS resources, is given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet, is one of 2^{\\mu} X_{p} slots where X_{F}=10,20,40 , or 80 and where \\mu is defined in Clause 4.3 of [4, TS 38.211], applies to all resources in a TRS-ResourceSet. The slot offset given by the higher layer parameter periodicityAndOffset configured by a TRS-ResourceSet provides the location of the first slot containing the periodic NZP CSI-RS resources configured by by a TRS-ResourceSet.\n---\n- trs-Info in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and for which the UE can assume that the antenna port with the same port index of the configured NZP CSI-RS resources in the NZP-CSI-RSResourceSet is the same as described in Clause 5.1.6.1.1 and can be configured when reporting setting is not configured or when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'none'. All CSI-RS resources within one set are configured with same density and same nrofPorts, except for the NZP CSI-RS resources used for interference measurement. The UE expects that all the CSI-RS resources of a resource set are configured with the same starting RB and number of RBs and the same cdm-type. For a CSI-RS Resource Set for channel measurement configured with two Resource Groups and N Resource Pairs, the slot offsets of the two resources in a Resource Pair are configured within X \\in\\{1,[2]\\} slots, without DL/UL switching in between the two resources, where X=1 implies that the two resources are configured in the same slot, and X=2 implies that the two resources are configured within two adjacent slots. The band width and initial common resource block (CRB) index of a CSI-RS resource within a BWP, as defined in Clause 7.4.1.5 of [4, TS 38.211], are determined based on the higher layer parameters nrofRBs and startingRB, respectively, within the CSI-FrequencyOccupation IE configured by the higher layer parameter freqBand within the CSI-RS-ResourceMapping [E. Both nrofRBs and startingRB are configured as integer multiples of 4 RBs , and the reference point for starting R B is CRB 0 on the common resource block grid. If starting R B<N_{B W P}^{\\text {start }} , the UE shall assume that the initial CRB index of the CSI-RS resource is N_{\\text {initial } R B}=N_{B W P}^{\\text {start }} , otherwise N_{\\text {initial } R B}= startingRB. If nrofRBs >N_{B W P}^{\\text {size }}+N_{B W P}^{\\text {start }}-N_{\\text {initial RB }} , the UE shall assume that the bandwidth of the CSI-RS resource is N_{C S I-R S}^{B W}=N_{B W P}^{\\text {size }}+N_{B W P}^{\\text {start }}-N_{\\text {initial } R B} , otherwise N_{C S I-R S}^{B W}=n r o f R B s . In all cases, the UE shall expect that N_{\\text {CSI-RS }}^{B W} >= \\min \\left(24, N_{B W P}^{\\text {size }}\\right) . ETSI",
+    "generated_at": "2026-01-07T19:42:54.462773",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence does not establish a direct normative relationship between the fields 'density' and 'nrofRBs' within the same IE. The evidence discusses configurations and constraints at a higher level, such as resource sets, but does not provide a specific constraint linking these two fields directly.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

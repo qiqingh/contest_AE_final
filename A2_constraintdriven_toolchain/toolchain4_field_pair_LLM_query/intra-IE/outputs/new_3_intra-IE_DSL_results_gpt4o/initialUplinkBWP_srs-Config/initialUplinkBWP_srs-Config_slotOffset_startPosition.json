@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      337
+    ],
+    "field2_all": [
+      346
+    ],
+    "actual_pairs": [
+      [
+        [
+          337
+        ],
+        [
+          346
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'slotOffset' and 'startPosition' within the same IE 'initialUplinkBWP_srs-Config'. The evidence snippets do not mention these fields together or provide any normative constraints linking them.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "initialUplinkBWP_srs-Config",
+    "field1": "slotOffset",
+    "field2": "startPosition",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 4,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} nrofSymbols Within a slot that is configured for CLI-RSSI measurement (see slotConfiguration), the UE measures the RSSI from startPosition to startPosition + nrofSymbols -1 . The configured CLI-RSSI resource does not exceed the slot boundary of the reference SCS. If the SCS of configured DL BWP(s) is larger than the reference SCS, network configures startPosition and nrofSymbols such that the configured CLI-RSSI resource not to exceed the slot boundary corresponding to the configured BWP SCS. If the reference SCS is larger than SCS of configured DL BWP(s), network ensures startPosition and nrofSymbols are integer multiple of reference SCS divided by configured BWP SCS. \\end{tabular} \\begin{tabular}{l} refServCellindex The index of the reference serving cell. Frequency reference point of the RSSI resource is subcarrier 0 of CRB0 of the reference serving cell. If this field is absent, the reference serving cell is PCell. \\end{tabular} \\begin{tabular}{l} rssi-PeriodicityAndOffset Periodicity and slot offset for this CLI-RSSI resource. All values are in \"number of slots\". Value sil corresponds to a periodicity of 1 slot, value s/2 corresponds to a periodicity of 2 slots, and so on. For each periodicity the corresponding offset is given in number of slots. \\end{tabular} \\begin{tabular}{l}\n---\n\\begin{tabular}{l} periodicityAndOffset-sp Periodicity and slot offset for this SRS resource. All values are in \"number of slots\". Value sil corresponds to a periodicity of 1 slot, value s/ 2 corresponds to a periodicity of 2 slots, and so on. For each periodicity the corresponding offset is given in number of slots. For periodicity sli the offset is 0 slots (see TS 38.214 [19], clause 6.2.1). \\end{tabular} \\begin{tabular}{l} ptrs-Portindex The PTRS port index for this SRS resource for non-codebook based UL MIMO. This is only applicable when the corresponding PTRS-UplinkConfig is set to CP-OFDM. The ptrs-Portindex configured here must be smaller than the maxNrofPorts configured in the PTRS-UplinkConfig (see TS 38.214 [19], clause 6.2.3.1). This parameter is not applicable to CLI SRS-RSRP measurement. \\end{tabular} \\begin{tabular}{l} resourceMapping OFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-07T21:48:55.096239",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency | RangeAlignment",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'slotOffset' and 'startPosition' within the same IE 'initialUplinkBWP_srs-Config'. The evidence snippets do not mention these fields together or provide any normative constraints linking them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

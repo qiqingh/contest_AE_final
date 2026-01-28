@@ -1,0 +1,198 @@
+UE-NR-Capability ::=            SEQUENCE {
+    accessStratumRelease            AccessStratumRelease,
+    pdcp-Parameters                 PDCP-Parameters,
+    rlc-Parameters                  RLC-Parameters                                                        OPTIONAL,
+    mac-Parameters                  MAC-Parameters                                                        OPTIONAL,
+    phy-Parameters                  Phy-Parameters,
+    rf-Parameters                   RF-Parameters,
+    measAndMobParameters            MeasAndMobParameters                                                  OPTIONAL,
+    fdd-Add-UE-NR-Capabilities      UE-NR-CapabilityAddXDD-Mode                                           OPTIONAL,
+    tdd-Add-UE-NR-Capabilities      UE-NR-CapabilityAddXDD-Mode                                           OPTIONAL,
+    fr1-Add-UE-NR-Capabilities      UE-NR-CapabilityAddFRX-Mode                                           OPTIONAL,
+    fr2-Add-UE-NR-Capabilities      UE-NR-CapabilityAddFRX-Mode                                           OPTIONAL,
+    featureSets                     FeatureSets                                                           OPTIONAL,
+    featureSetCombinations          SEQUENCE (SIZE (1..maxFeatureSetCombinations)) OF FeatureSetCombination         OPTIONAL,
+    lateNonCriticalExtension        OCTET STRING (CONTAINING UE-NR-Capability-v15c0)                      OPTIONAL,
+    nonCriticalExtension            UE-NR-Capability-v1530                                                OPTIONAL
+}
+
+-- Regular non-critical Rel-15 extensions:
+UE-NR-Capability-v1530 ::=               SEQUENCE {
+    fdd-Add-UE-NR-Capabilities-v1530         UE-NR-CapabilityAddXDD-Mode-v1530                            OPTIONAL,
+    tdd-Add-UE-NR-Capabilities-v1530         UE-NR-CapabilityAddXDD-Mode-v1530                            OPTIONAL,
+    dummy                                    ENUMERATED {supported}                                       OPTIONAL,
+    interRAT-Parameters                      InterRAT-Parameters                                          OPTIONAL,
+    inactiveState                            ENUMERATED {supported}                                       OPTIONAL,
+    delayBudgetReporting                     ENUMERATED {supported}                                       OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v1540                                       OPTIONAL
+}
+
+UE-NR-Capability-v1540 ::=              SEQUENCE {
+    sdap-Parameters                         SDAP-Parameters                                               OPTIONAL,
+    overheatingInd                          ENUMERATED {supported}                                        OPTIONAL,
+    ims-Parameters                          IMS-Parameters                                                OPTIONAL,
+    fr1-Add-UE-NR-Capabilities-v1540        UE-NR-CapabilityAddFRX-Mode-v1540                             OPTIONAL,
+    fr2-Add-UE-NR-Capabilities-v1540        UE-NR-CapabilityAddFRX-Mode-v1540                             OPTIONAL,
+    fr1-fr2-Add-UE-NR-Capabilities          UE-NR-CapabilityAddFRX-Mode                                   OPTIONAL,
+    nonCriticalExtension                    UE-NR-Capability-v1550                                        OPTIONAL
+}
+
+UE-NR-Capability-v1550 ::=               SEQUENCE {
+    reducedCP-Latency                        ENUMERATED {supported}                                       OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v1560                                       OPTIONAL
+}
+
+UE-NR-Capability-v1560 ::=               SEQUENCE {
+    nrdc-Parameters                         NRDC-Parameters                                               OPTIONAL,
+    receivedFilters                         OCTET STRING (CONTAINING UECapabilityEnquiry-v1560-IEs)       OPTIONAL,
+    nonCriticalExtension                    UE-NR-Capability-v1570                                        OPTIONAL
+}
+
+UE-NR-Capability-v1570 ::=               SEQUENCE {
+    nrdc-Parameters-v1570                   NRDC-Parameters-v1570                                         OPTIONAL,
+    nonCriticalExtension                    UE-NR-Capability-v1610                                        OPTIONAL
+}
+
+-- Late non-critical Rel-15 extensions:
+UE-NR-Capability-v15c0 ::=               SEQUENCE {
+    nrdc-Parameters-v15c0                    NRDC-Parameters-v15c0                                        OPTIONAL,
+    partialFR2-FallbackRX-Req                ENUMERATED {true}                                            OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v15g0                                       OPTIONAL
+}
+
+UE-NR-Capability-v15g0 ::=               SEQUENCE {
+    rf-Parameters-v15g0                      RF-Parameters-v15g0                                          OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v15j0                                       OPTIONAL
+}
+
+UE-NR-Capability-v15j0 ::=               SEQUENCE {
+    -- Following field is only for REL-15 late non-critical extensions
+    lateNonCriticalExtension                 OCTET STRING                                                 OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v16a0                                       OPTIONAL
+}
+
+-- Regular non-critical Rel-16 extensions:
+UE-NR-Capability-v1610 ::=               SEQUENCE {
+    inDeviceCoexInd-r16                     ENUMERATED {supported}                                        OPTIONAL,
+    dl-DedicatedMessageSegmentation-r16     ENUMERATED {supported}                                        OPTIONAL,
+    nrdc-Parameters-v1610                   NRDC-Parameters-v1610                                         OPTIONAL,
+    powSav-Parameters-r16                   PowSav-Parameters-r16                                         OPTIONAL,
+    fr1-Add-UE-NR-Capabilities-v1610        UE-NR-CapabilityAddFRX-Mode-v1610                             OPTIONAL,
+    fr2-Add-UE-NR-Capabilities-v1610        UE-NR-CapabilityAddFRX-Mode-v1610                             OPTIONAL,
+    bh-RLF-Indication-r16                   ENUMERATED {supported}                                        OPTIONAL,
+    directSN-AdditionFirstRRC-IAB-r16       ENUMERATED {supported}                                        OPTIONAL,
+    bap-Parameters-r16                      BAP-Parameters-r16                                            OPTIONAL,
+    referenceTimeProvision-r16              ENUMERATED {supported}                                        OPTIONAL,
+    sidelinkParameters-r16                  SidelinkParameters-r16                                        OPTIONAL,
+    highSpeedParameters-r16                 HighSpeedParameters-r16                                       OPTIONAL,
+    mac-Parameters-v1610                    MAC-Parameters-v1610                                          OPTIONAL,
+    mcgRLF-RecoveryViaSCG-r16               ENUMERATED {supported}                                        OPTIONAL,
+    resumeWithStoredMCG-SCells-r16          ENUMERATED {supported}                                        OPTIONAL,
+    resumeWithStoredSCG-r16                 ENUMERATED {supported}                                        OPTIONAL,
+    resumeWithSCG-Config-r16                ENUMERATED {supported}                                        OPTIONAL,
+    ue-BasedPerfMeas-Parameters-r16         UE-BasedPerfMeas-Parameters-r16                               OPTIONAL,
+    son-Parameters-r16                      SON-Parameters-r16                                            OPTIONAL,
+    onDemandSIB-Connected-r16               ENUMERATED {supported}                                        OPTIONAL,
+    nonCriticalExtension                    UE-NR-Capability-v1640                                        OPTIONAL
+}
+
+UE-NR-Capability-v1640 ::=               SEQUENCE {
+    redirectAtResumeByNAS-r16               ENUMERATED {supported}                                        OPTIONAL,
+    phy-ParametersSharedSpectrumChAccess-r16  Phy-ParametersSharedSpectrumChAccess-r16                    OPTIONAL,
+    nonCriticalExtension                    UE-NR-Capability-v1650                                        OPTIONAL
+}
+
+UE-NR-Capability-v1650 ::=               SEQUENCE {
+    mpsPriorityIndication-r16                ENUMERATED {supported}                                       OPTIONAL,
+    highSpeedParameters-v1650                HighSpeedParameters-v1650                                    OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v1690                                       OPTIONAL
+}
+
+UE-NR-Capability-v1690 ::=               SEQUENCE {
+    ul-RRC-Segmentation-r16                  ENUMERATED {supported}                                       OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v1700                                       OPTIONAL
+}
+
+-- Late non-critical extensions from Rel-16 onwards:
+UE-NR-Capability-v16a0 ::=               SEQUENCE {
+    phy-Parameters-v16a0                     Phy-Parameters-v16a0                                         OPTIONAL,
+    rf-Parameters-v16a0                      RF-Parameters-v16a0                                          OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v16c0                                       OPTIONAL
+}
+
+UE-NR-Capability-v16c0 ::=               SEQUENCE {
+    rf-Parameters-v16c0                      RF-Parameters-v16c0                                          OPTIONAL,
+    nonCriticalExtension                     SEQUENCE{}                                                   OPTIONAL
+}
+
+-- Regular non-critical Rel-17 extensions:
+UE-NR-Capability-v1700 ::=               SEQUENCE {
+    inactiveStatePO-Determination-r17        ENUMERATED {supported}                                       OPTIONAL,
+    highSpeedParameters-v1700                HighSpeedParameters-v1700                                    OPTIONAL,
+    powSav-Parameters-v1700                  PowSav-Parameters-v1700                                      OPTIONAL,
+    mac-Parameters-v1700                     MAC-Parameters-v1700                                         OPTIONAL,
+    ims-Parameters-v1700                     IMS-Parameters-v1700                                         OPTIONAL,
+    measAndMobParameters-v1700               MeasAndMobParameters-v1700,
+    appLayerMeasParameters-r17               AppLayerMeasParameters-r17                                   OPTIONAL,
+    redCapParameters-r17                     RedCapParameters-r17                                         OPTIONAL,
+    ra-SDT-r17                               ENUMERATED {supported}                                       OPTIONAL,
+    srb-SDT-r17                              ENUMERATED {supported}                                       OPTIONAL,
+    gNB-SideRTT-BasedPDC-r17                 ENUMERATED {supported}                                       OPTIONAL,
+    bh-RLF-DetectionRecovery-Indication-r17  ENUMERATED {supported}                                       OPTIONAL,
+    nrdc-Parameters-v1700                    NRDC-Parameters-v1700                                        OPTIONAL,
+    bap-Parameters-v1700                     BAP-Parameters-v1700                                         OPTIONAL,
+    musim-GapPreference-r17                  ENUMERATED {supported}                                       OPTIONAL,
+    musimLeaveConnected-r17                  ENUMERATED {supported}                                       OPTIONAL,
+    mbs-Parameters-r17                       MBS-Parameters-r17,
+    nonTerrestrialNetwork-r17                ENUMERATED {supported}                                       OPTIONAL,
+    ntn-ScenarioSupport-r17                  ENUMERATED {gso, ngso}                                       OPTIONAL,
+    sliceInfoforCellReselection-r17          ENUMERATED {supported}                                       OPTIONAL,
+    ue-RadioPagingInfo-r17                   UE-RadioPagingInfo-r17                                       OPTIONAL,
+    -- R4 17-2 UL gap pattern for Tx power management
+    ul-GapFR2-Pattern-r17                    BIT STRING (SIZE (4))                                        OPTIONAL,
+    ntn-Parameters-r17                       NTN-Parameters-r17                                           OPTIONAL,
+    nonCriticalExtension                     UE-NR-Capability-v1740                                       OPTIONAL
+}
+
+UE-NR-Capability-v1740 ::=               SEQUENCE {
+    redCapParameters-v1740                   RedCapParameters-v1740,
+    nonCriticalExtension                     SEQUENCE {}                                                  OPTIONAL
+}
+
+UE-NR-CapabilityAddXDD-Mode ::=          SEQUENCE {
+    phy-ParametersXDD-Diff                   Phy-ParametersXDD-Diff                                       OPTIONAL,
+    mac-ParametersXDD-Diff                   MAC-ParametersXDD-Diff                                       OPTIONAL,
+    measAndMobParametersXDD-Diff             MeasAndMobParametersXDD-Diff                                 OPTIONAL
+}
+
+UE-NR-CapabilityAddXDD-Mode-v1530 ::=    SEQUENCE {
+    eutra-ParametersXDD-Diff                 EUTRA-ParametersXDD-Diff
+}
+
+UE-NR-CapabilityAddFRX-Mode ::=          SEQUENCE {
+    phy-ParametersFRX-Diff                   Phy-ParametersFRX-Diff                                       OPTIONAL,
+    measAndMobParametersFRX-Diff             MeasAndMobParametersFRX-Diff                                 OPTIONAL
+}
+
+UE-NR-CapabilityAddFRX-Mode-v1540 ::=    SEQUENCE {
+    ims-ParametersFRX-Diff                   IMS-ParametersFRX-Diff                                       OPTIONAL
+}
+
+UE-NR-CapabilityAddFRX-Mode-v1610 ::=    SEQUENCE {
+    powSav-ParametersFRX-Diff-r16            PowSav-ParametersFRX-Diff-r16                                OPTIONAL,
+    mac-ParametersFRX-Diff-r16               MAC-ParametersFRX-Diff-r16                                   OPTIONAL
+}
+
+BAP-Parameters-r16 ::=                   SEQUENCE {
+    flowControlBH-RLC-ChannelBased-r16       ENUMERATED {supported}                                       OPTIONAL,
+    flowControlRouting-ID-Based-r16          ENUMERATED {supported}                                       OPTIONAL
+}
+
+BAP-Parameters-v1700 ::=                 SEQUENCE {
+    bapHeaderRewriting-Rerouting-r17         ENUMERATED {supported}                                       OPTIONAL,
+    bapHeaderRewriting-Routing-r17           ENUMERATED {supported}                                       OPTIONAL
+}
+
+MBS-Parameters-r17 ::=                   SEQUENCE {
+    maxMRB-Add-r17                           INTEGER (1..16)                                              OPTIONAL
+}

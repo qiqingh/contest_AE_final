@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "MATCH(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      68
+    ],
+    "field2_all": [
+      824,
+      863,
+      902
+    ],
+    "actual_pairs": [
+      [
+        [
+          68
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ]
+    ]
+  },
+  "predicate": "The bwp-Id in the CSI-ResourceConfig is the same value as the bwp-Id in the initialdownlinkbwp_pdsch-config.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1 = 3, field2 = 3"
+    ],
+    "invalid": [
+      "field1 = 2, field2 = 5"
+    ]
+  },
+  "notes": "The evidence explicitly states that the bwp-Id in the CSI-ResourceConfig must match the bwp-Id in the initialdownlinkbwp_pdsch-config.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "csi-im-resourcesforinterference",
+    "field1": "csi-im-resourcesforinterference",
+    "ie2_name": "initialdownlinkbwp_pdsch-config",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "csi-IM-ResourcesForinterference \\\\ CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- \\\\",
+    "generated_at": "2025-12-10T13:54:59.728085",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "MATCH(field1, field2)",
+      "preconditions": [],
+      "predicate": "The bwp-Id in the CSI-ResourceConfig is the same value as the bwp-Id in the initialdownlinkbwp_pdsch-config.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 3, field2 = 3"
+        ],
+        "invalid": [
+          "field1 = 2, field2 = 5"
+        ]
+      },
+      "notes": "The evidence explicitly states that the bwp-Id in the CSI-ResourceConfig must match the bwp-Id in the initialdownlinkbwp_pdsch-config.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

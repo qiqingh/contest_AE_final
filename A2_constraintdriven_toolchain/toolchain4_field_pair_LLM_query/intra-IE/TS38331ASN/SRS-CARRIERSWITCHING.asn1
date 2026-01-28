@@ -1,0 +1,19 @@
+SRS-CarrierSwitching ::=            SEQUENCE {
+    srs-SwitchFromServCellIndex         INTEGER (0..31)                                                         OPTIONAL,   -- Need M
+    srs-SwitchFromCarrier               ENUMERATED {sUL, nUL},
+    srs-TPC-PDCCH-Group                 CHOICE {
+        typeA                               SEQUENCE (SIZE (1..32)) OF SRS-TPC-PDCCH-Config,
+        typeB                               SRS-TPC-PDCCH-Config
+    }                                                                                                           OPTIONAL,   -- Need M
+    monitoringCells                     SEQUENCE (SIZE (1..maxNrofServingCells)) OF ServCellIndex               OPTIONAL,   -- Need M
+    ...
+}
+
+SRS-TPC-PDCCH-Config ::=            SEQUENCE {
+    srs-CC-SetIndexlist                 SEQUENCE (SIZE(1..4)) OF SRS-CC-SetIndex                                OPTIONAL    -- Need M
+}
+
+SRS-CC-SetIndex ::=                 SEQUENCE {
+    cc-SetIndex                         INTEGER (0..3)                                                          OPTIONAL,   -- Need M
+    cc-IndexInOneCC-Set                 INTEGER (0..7)                                                          OPTIONAL    -- Need M
+}

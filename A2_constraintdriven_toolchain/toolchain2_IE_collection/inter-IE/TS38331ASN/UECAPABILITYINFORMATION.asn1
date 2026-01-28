@@ -1,0 +1,13 @@
+UECapabilityInformation ::=         SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        ueCapabilityInformation             UECapabilityInformation-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+UECapabilityInformation-IEs ::=     SEQUENCE {
+    ue-CapabilityRAT-ContainerList      UE-CapabilityRAT-ContainerList                                          OPTIONAL,
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                SEQUENCE{}                                                              OPTIONAL
+}

@@ -1,0 +1,112 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      25
+    ],
+    "field2_all": [
+      294,
+      402,
+      510,
+      618
+    ],
+    "actual_pairs": [
+      [
+        [
+          25
+        ],
+        [
+          402,
+          510
+        ]
+      ],
+      [
+        [
+          25
+        ],
+        [
+          510,
+          618
+        ]
+      ],
+      [
+        [
+          25
+        ],
+        [
+          294,
+          402,
+          510,
+          618
+        ]
+      ],
+      [
+        [
+          25
+        ],
+        [
+          402,
+          618
+        ]
+      ],
+      [
+        [
+          25
+        ],
+        [
+          294
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence only describes single-IE behavior.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-logicalchannelconfig",
+    "field1": "logicalchannelsr-delaytimerapplied",
+    "ie2_name": "pucch-config_schedulingrequestresourcetoaddmodlist",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.5",
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "logicalChannelSR-DelayTimerApplied \\\\ Indicates whether to apply the delay timer for SR transmission for this logical channel. Set to false if logicalChannelSR-Delay Timer is not included in BSR-Config.\n---\ns/-LogicalChannelSR-Delay TimerApplied \\\\ Indicates whether to apply the delay timer for SR transmission for this sidelink logical channel. Set to false if logicalChannelSR-DelayTimer is not included in sl-BSR-Config.",
+    "generated_at": "2026-01-10T14:27:17.150885",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence only describes single-IE behavior.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

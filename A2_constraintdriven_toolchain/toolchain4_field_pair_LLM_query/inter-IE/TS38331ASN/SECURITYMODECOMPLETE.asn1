@@ -1,0 +1,12 @@
+SecurityModeComplete ::=            SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        securityModeComplete                SecurityModeComplete-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+SecurityModeComplete-IEs ::=        SEQUENCE {
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                SEQUENCE{}                                                              OPTIONAL
+}

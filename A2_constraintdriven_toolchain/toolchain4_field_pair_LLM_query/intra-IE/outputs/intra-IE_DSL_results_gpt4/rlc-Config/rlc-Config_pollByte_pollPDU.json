@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(true, OR(GE(field1, field2), GE(field2, field1)))",
+  "constraint_type": "RangeAlignment",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      14
+    ],
+    "field2_all": [
+      13
+    ],
+    "actual_pairs": [
+      [
+        [
+          14
+        ],
+        [
+          13
+        ]
+      ]
+    ]
+  },
+  "predicate": "OR(GE(field1, field2), GE(field2, field1))",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=kB1, field2=p4",
+      "field1=kB2, field2=p8"
+    ],
+    "invalid": [
+      "field1=kB1, field2=p8",
+      "field1=kB2, field2=p4"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that if PDU_WITHOUT_POLL >= pollPDU; or if BYTE_WITHOUT_POLL>= pollByte. Here, pollByte and pollPDU are field1 and field2 respectively.",
+  "version_tags": [
+    "r16"
+  ],
+  "meta": {
+    "ie_name": "rlc-Config",
+    "field1": "pollByte",
+    "field2": "pollPDU",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138322v160100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.3.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- if PDU_WITHOUT_POLL >= pollPDU; or - if BYTE_WITHOUT_POLL>= pollByte:\n---\n- if PDU_WITHOUT_POLL >= pollPDU; or - if BYTE_WITHOUT_POLL>= pollByte:",
+    "generated_at": "2025-12-11T14:16:58.924684",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "RangeAlignment",
+      "dsl": "IMPLIES(true, OR(GE(field1, field2), GE(field2, field1)))",
+      "preconditions": [],
+      "predicate": "OR(GE(field1, field2), GE(field2, field1))",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=kB1, field2=p4",
+          "field1=kB2, field2=p8"
+        ],
+        "invalid": [
+          "field1=kB1, field2=p8",
+          "field1=kB2, field2=p4"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that if PDU_WITHOUT_POLL >= pollPDU; or if BYTE_WITHOUT_POLL>= pollByte. Here, pollByte and pollPDU are field1 and field2 respectively.",
+      "version_tags": [
+        "r16"
+      ]
+    }
+  }
+}

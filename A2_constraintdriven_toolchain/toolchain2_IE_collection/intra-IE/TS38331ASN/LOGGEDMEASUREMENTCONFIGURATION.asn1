@@ -1,0 +1,54 @@
+LoggedMeasurementConfiguration-r16 ::=  SEQUENCE {
+    criticalExtensions                      CHOICE {
+        loggedMeasurementConfiguration-r16      LoggedMeasurementConfiguration-r16-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+LoggedMeasurementConfiguration-r16-IEs ::=  SEQUENCE {
+    traceReference-r16                          TraceReference-r16,
+    traceRecordingSessionRef-r16                OCTET STRING (SIZE (2)),
+    tce-Id-r16                                  OCTET STRING (SIZE (1)),
+    absoluteTimeInfo-r16                        AbsoluteTimeInfo-r16,
+    areaConfiguration-r16                       AreaConfiguration-r16                    OPTIONAL,  --Need R
+    plmn-IdentityList-r16                       PLMN-IdentityList2-r16                   OPTIONAL,  --Need R
+    bt-NameList-r16                             SetupRelease {BT-NameList-r16}           OPTIONAL,  --Need M
+    wlan-NameList-r16                           SetupRelease {WLAN-NameList-r16}         OPTIONAL,  --Need M
+    sensor-NameList-r16                         SetupRelease {Sensor-NameList-r16}       OPTIONAL,  --Need M
+    loggingDuration-r16                         LoggingDuration-r16,
+    reportType                                  CHOICE {
+        periodical                                  LoggedPeriodicalReportConfig-r16,
+        eventTriggered                              LoggedEventTriggerConfig-r16,
+        ...
+    },
+    lateNonCriticalExtension                    OCTET STRING                             OPTIONAL,
+    nonCriticalExtension                        LoggedMeasurementConfiguration-v1700-IEs OPTIONAL
+}
+
+LoggedMeasurementConfiguration-v1700-IEs ::= SEQUENCE {
+    sigLoggedMeasType-r17                       ENUMERATED {true}                        OPTIONAL, -- Need R
+    earlyMeasIndication-r17                     ENUMERATED {true}                        OPTIONAL, -- Need R
+    areaConfiguration-v1700                     AreaConfiguration-v1700                  OPTIONAL,  --Need R
+    nonCriticalExtension                        SEQUENCE {}                              OPTIONAL
+}
+
+LoggedPeriodicalReportConfig-r16 ::=            SEQUENCE {
+    loggingInterval-r16                             LoggingInterval-r16,
+    ...
+ }
+
+LoggedEventTriggerConfig-r16 ::=                SEQUENCE {
+    eventType-r16                                   EventType-r16,
+    loggingInterval-r16                             LoggingInterval-r16,
+    ...
+}
+
+EventType-r16 ::= CHOICE {
+    outOfCoverage     NULL,
+    eventL1           SEQUENCE {
+        l1-Threshold      MeasTriggerQuantity,
+        hysteresis        Hysteresis,
+        timeToTrigger     TimeToTrigger
+    },
+    ...
+}

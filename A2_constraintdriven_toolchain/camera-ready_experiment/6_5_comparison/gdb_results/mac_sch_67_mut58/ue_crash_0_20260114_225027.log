@@ -1,0 +1,66 @@
+Attaching to process 3635029
+[New LWP 3635062]
+[New LWP 3635063]
+[New LWP 3635064]
+[New LWP 3635065]
+[New LWP 3635066]
+[New LWP 3635067]
+[New LWP 3635068]
+[New LWP 3635069]
+[New LWP 3635093]
+[New LWP 3635094]
+[New LWP 3635095]
+[New LWP 3635096]
+[New LWP 3635097]
+[New LWP 3635098]
+[New LWP 3635099]
+[New LWP 3635100]
+[New LWP 3635101]
+[New LWP 3635102]
+[New LWP 3635103]
+[New LWP 3635104]
+[New LWP 3635105]
+[New LWP 3635106]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000756f702a47f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffca4b84e90, rem=rem@entry=0x7ffca4b84e90) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+[Thread 0x756f40d1d640 (LWP 3635103) exited]
+[Thread 0x756f3bfff640 (LWP 3635104) exited]
+
+Thread 1 "nr-uesoftmodem" received signal SIGQUIT, Quit.
+0x0000756f702a47f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffca4b84c10, rem=rem@entry=0x7ffca4b84c10) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	in ../sysdeps/unix/sysv/linux/clock_nanosleep.c
+(gdb) #0  0x0000756f702a47f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffca4b84c10, rem=rem@entry=0x7ffca4b84c10) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        r = <optimized out>
+#1  0x0000756f702a9677 in __GI___nanosleep (req=req@entry=0x7ffca4b84c10, rem=rem@entry=0x7ffca4b84c10) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+        ret = <optimized out>
+#2  0x0000756f702a95ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+        save_errno = 2
+        max = 4294967295
+        ts = {tv_sec = 0, tv_nsec = 292193487}
+#3  0x00006162f68ff645 in exit_function (file=file@entry=0x6162f6bc3cf0 "/home/openairinterface5g/common/config/config_cmdline.c", function=function@entry=0x6162f6bc4180 <__FUNCTION__.3> "config_check_unknown_cmdlineopt", line=line@entry=209, s=s@entry=0x6162f6b5c029 "exit_fun", assert=assert@entry=0) at /home/openairinterface5g/executables/nr-uesoftmodem.c:203
+        CC_id = <optimized out>
+#4  0x00006162f6a790cc in config_check_unknown_cmdlineopt (cfg=<optimized out>, prefix=prefix@entry=0x6162f6b5d74d "ALLSECTIONS") at /home/openairinterface5g/common/config/config_cmdline.c:209
+        unknowndetected = <optimized out>
+        testprefix = '\000' <repeats 511 times>
+        finalcheck = <optimized out>
+        __FUNCTION__ = "config_check_unknown_cmdlineopt"
+#5  0x00006162f68f2a72 in main (argc=<optimized out>, argv=<optimized out>) at /home/openairinterface5g/executables/nr-uesoftmodem.c:821
+        __FUNCTION__ = "main"
+        ret_loader = <optimized out>
+        pckg = 0x61632016e210 "Branch:  Abrev. Hash:  Date: "
+        mode_offset = <optimized out>
+        node_number = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 3635029] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 3635029
+[Inferior 1 (process 3635029) detached]

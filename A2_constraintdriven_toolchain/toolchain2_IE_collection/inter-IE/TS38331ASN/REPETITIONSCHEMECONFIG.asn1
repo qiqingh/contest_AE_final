@@ -1,0 +1,23 @@
+RepetitionSchemeConfig-r16 ::= CHOICE {
+    fdm-TDM-r16                        SetupRelease { FDM-TDM-r16 },
+    slotBased-r16                      SetupRelease { SlotBased-r16 }
+}
+
+RepetitionSchemeConfig-v1630 ::=   SEQUENCE {
+    slotBased-v1630                    SetupRelease { SlotBased-v1630 }
+}
+
+FDM-TDM-r16 ::=                SEQUENCE {
+    repetitionScheme-r16           ENUMERATED {fdmSchemeA, fdmSchemeB,tdmSchemeA },
+    startingSymbolOffsetK-r16      INTEGER (0..7)                                    OPTIONAL  -- Need R
+}
+
+SlotBased-r16 ::=              SEQUENCE {
+    tciMapping-r16                 ENUMERATED {cyclicMapping, sequentialMapping},
+    sequenceOffsetForRV-r16        INTEGER (1..3)
+}
+
+SlotBased-v1630 ::=            SEQUENCE {
+    tciMapping-r16                 ENUMERATED {cyclicMapping, sequentialMapping},
+    sequenceOffsetForRV-r16        INTEGER (0)
+}

@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      568
+    ],
+    "field2_all": [
+      570,
+      571
+    ],
+    "actual_pairs": [
+      [
+        [
+          568
+        ],
+        [
+          570,
+          571
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'groupOrSequenceHopping' and 'periodicityAndOffset-p'. The evidence lacks normative constraints or logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group1",
+    "field1": "groupOrSequenceHopping",
+    "field2": "periodicityAndOffset-p",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} groupOrSequenceHopping Parameter(s) for configuring group or sequence hopping (see TS 38.211 [16], clause 6.4.1.4.2). For CLI SRS-RSRP measurement, the network always configures this parameter to 'neither'. \\end{tabular} \\begin{tabular}{l} nrofSRS-Ports Number of ports. For CLI SRS-RSRP measurement, the network always configures this parameter to 'port1'. \\end{tabular} \\begin{tabular}{l} periodicityAndOffset-p Periodicity and slot offset for this SRS resource. All values are in \"number of slots\". Value sil corresponds to a periodicity of 1 slot, value sil2 corresponds to a periodicity of 2 slots, and so on. For each periodicity the corresponding offset is given in number of slots. For periodicity sli the offset is 0 slots (see TS 38.214 [19], clause 6.2.1). For CLI SRS-RSRP measurement, si 1280 and s/ 2560 cannot be configured. \\end{tabular}\n---\n\\begin{tabular}{l} groupOrSequenceHopping Parameter(s) for configuring group or sequence hopping (see TS 38.211 [16], clause 6.4.1.4.2). For CLI SRS-RSRP measurement, the network always configures this parameter to 'neither'. \\end{tabular} \\begin{tabular}{l} nrofSRS-Ports Number of ports. For CLI SRS-RSRP measurement, the network always configures this parameter to 'port1'. \\end{tabular} \\begin{tabular}{l} periodicityAndOffset-p Periodicity and slot offset for this SRS resource. All values are in \"number of slots\". Value sil corresponds to a periodicity of 1 slot, value sil2 corresponds to a periodicity of 2 slots, and so on. For each periodicity the corresponding offset is given in number of slots. For periodicity sli the offset is 0 slots (see TS 38.214 [19], clause 6.2.1). For CLI SRS-RSRP measurement, si 1280 and s/ 2560 cannot be configured. \\end{tabular}",
+    "generated_at": "2026-01-10T21:41:51.722210",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any direct or conditional relationship between the fields 'groupOrSequenceHopping' and 'periodicityAndOffset-p'. The evidence lacks normative constraints or logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

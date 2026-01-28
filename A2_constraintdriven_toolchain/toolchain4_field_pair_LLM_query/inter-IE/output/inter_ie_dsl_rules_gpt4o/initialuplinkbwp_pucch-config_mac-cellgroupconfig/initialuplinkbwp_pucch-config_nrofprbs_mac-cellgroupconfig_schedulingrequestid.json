@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      287
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          287
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE relationship between nrofprbs and schedulingrequestid. The evidence focuses on PUCCH configuration and does not mention schedulingrequestid.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_pucch-config",
+    "field1": "nrofprbs",
+    "ie2_name": "mac-cellgroupconfig",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If a UE would transmit a PUCCH with \\( O_{\\mathrm{CSI}} \\mathrm{CSI} \\) report bits in a resource using PUCCH format 2 or PUCCH format 3 or PUCCH format 4 in a slot, \\( \\left\\lceil\\log _{2}(K+1)\\right\\rceil \\) bits representing corresponding negative or positive SR, in ascending order of the values of scheduling RequestResourceld, a schedulingRequestResourceld associated with schedulingRequestID-BFR-SCell, and a schedulingRequestResourceld associated with schedulingRequestID-LBT-SCell, are prepended to the CSI information bits as described in clause 9.2.5.2 and the UE transmits a PUCCH with the combined \\( O_{\\text {UCI }}= \\left[\\log _{2}(K+1)\\right]+O_{\\mathrm{CSI}} \\mathrm{UCI} \\) bits in a resource using the PUCCH format 2 or PUCCH format 3 or PUCCH format 4 for CSI reporting. If one of the SRs is a positive LRR, the value of the \\( \\left[\\log _{2}(K+1)\\right] \\) bits indicates the positive LRR. An all-zero value for the \\( \\left[\\log _{2}(K+1)\\right] \\) bits represents a negative SR value across all \\( K \\mathrm{SRs} \\).  If a UE transmits a PUCCH with \\( O_{\\mathrm{ACK}} \\) HARQ-ACK information bits, \\( O_{\\mathrm{SR}}=\\left\\lceil\\log _{2}(K+1)\\right\\rceil \\) SR bits, and \\( O_{\\mathrm{CRC}} \\) CRC bits using PUCCH format 2 or PUCCH format 3 in a PUCCH resource that includes \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs, the UE determines a number of PRBs \\( M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\) for the PUCCH transmission to be the minimum number of PRBs, that is smaller than or equal to a number of PRBs provided by nrofPRBs in PUCCH-format 2 or nrofPRBs in PUCCH-format 3 and starts from the first PRB from the number of PRBs, that results to \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right) \\leq M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCH}} \\cdot Q_{m} \\cdot r \\) and, if \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}}>1,\\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right)>\\left(M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}}-1\\right) \\cdot N_{\\mathrm{sc}, \\mathrm{crl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), where \\( N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}}, N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCH}}, Q_{m} \\), and \\( r \\) are defined in clause 9.2.5.2. For PUCCH format 3, if \\( M_{\\mathrm{RB} \\text { min }}^{\\mathrm{PUCCH}} \\) is not equal \\( 2^{\\alpha_{2}} \\cdot 3^{\\alpha_{3}} \\cdot 5^{\\alpha_{5}} \\) according to [4, TS 38.211], \\( M_{\\mathrm{RB}, \\mathrm{m} \\text { in }}^{\\mathrm{PUCCH}} \\) is increased to the nearest allowed value of nrofPRBs \\( [12, \\mathrm{TS} 38.331] \\). If \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right)> \\left(M_{\\mathrm{RB}}^{\\mathrm{PUCCH}}-1\\right) \\cdot N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}} \\cdot N_{\\text {symb-UCl }}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), the UE transmits the PUCCH over the \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs.\n---\nIf a UE transmits a PUCCH with \\( O_{\\mathrm{ACK}} \\) HARQ-ACK information bits, \\( O_{\\mathrm{SR}}=\\left\\lceil\\log _{2}(K+1)\\right\\rceil \\) SR bits, and \\( O_{\\mathrm{CRC}} \\) CRC bits using PUCCH format 2 or PUCCH format 3 in a PUCCH resource that includes \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs, the UE determines a number of PRBs \\( M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\) for the PUCCH transmission to be the minimum number of PRBs, that is smaller than or equal to a number of PRBs provided by nrofPRBs in PUCCH-format 2 or nrofPRBs in PUCCH-format 3 and starts from the first PRB from the number of PRBs, that results to \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right) \\leq M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCH}} \\cdot Q_{m} \\cdot r \\) and, if \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}}>1,\\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right)>\\left(M_{\\mathrm{RB}, \\mathrm{min}}^{\\mathrm{PUCCH}}-1\\right) \\cdot N_{\\mathrm{sc}, \\mathrm{crl}}^{\\mathrm{RB}} \\cdot N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), where \\( N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}}, N_{\\mathrm{symb}-\\mathrm{UCl}}^{\\mathrm{PUCH}}, Q_{m} \\), and \\( r \\) are defined in clause 9.2.5.2. For PUCCH format 3, if \\( M_{\\mathrm{RB} \\text { min }}^{\\mathrm{PUCCH}} \\) is not equal \\( 2^{\\alpha_{2}} \\cdot 3^{\\alpha_{3}} \\cdot 5^{\\alpha_{5}} \\) according to [4, TS 38.211], \\( M_{\\mathrm{RB}, \\mathrm{m} \\text { in }}^{\\mathrm{PUCCH}} \\) is increased to the nearest allowed value of nrofPRBs \\( [12, \\mathrm{TS} 38.331] \\). If \\( \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right)> \\left(M_{\\mathrm{RB}}^{\\mathrm{PUCCH}}-1\\right) \\cdot N_{\\mathrm{sc}, \\mathrm{ctrl}}^{\\mathrm{RB}} \\cdot N_{\\text {symb-UCl }}^{\\mathrm{PUCCH}} \\cdot Q_{m} \\cdot r \\), the UE transmits the PUCCH over the \\( M_{\\mathrm{RB}}^{\\mathrm{PUCCH}} \\) PRBs.",
+    "generated_at": "2026-01-10T14:48:01.423048",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between nrofprbs and schedulingrequestid is evident.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE relationship between nrofprbs and schedulingrequestid. The evidence focuses on PUCCH configuration and does not mention schedulingrequestid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

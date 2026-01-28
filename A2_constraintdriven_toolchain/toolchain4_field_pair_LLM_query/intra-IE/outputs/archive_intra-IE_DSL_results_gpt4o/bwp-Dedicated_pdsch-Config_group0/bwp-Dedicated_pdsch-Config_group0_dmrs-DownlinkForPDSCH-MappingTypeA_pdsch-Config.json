@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      130
+    ],
+    [
+      129
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any explicit normative constraint between the fields 'dmrs-DownlinkForPDSCH-MappingTypeA' and 'pdsch-Config' within the same IE. The evidence snippet mentions 'PDSCH-Config' but does not relate it to 'dmrs-DownlinkForPDSCH-MappingTypeA'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group0",
+    "field1": "dmrs-DownlinkForPDSCH-MappingTypeA",
+    "field2": "pdsch-Config",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "The PDSCH-Config IE is used to configure the UE specific PDSCH parameters. If this IE is used for MBS CFR, the following fields shall be absent: minimumSchedulingOffsetK0, antennaPortsFieldPresenceDCI-1-2, aperiodicZP-CSI-RS-ResourceSetsToAddModListDCI-1-2, aperiodicZP-CSI-RS-ResourceSetsToReleaseListDCI-1-2, dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2, dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2, dmrs-SequenceInitializationDCI-1-2, harq-ProcessNumberSizeDCI-1-2, mcs-TableDCI-1-2, numberOfBitsForRV-DCI-1-2, pdsch-AggregationFactor, pdsch-TimeDomainAllocationListDCI-1-2, prb-BundlingTypeDCI-1-2, priority[ndicatorDCI-1-2, rateMatchPatternGroup1DCI-1-2, rateMatchPatternGroup2DCI-1-2, resourceAllocationType1GranularityDCI-1-2, vrb-ToPRB-InterleaverDCI-1-2, referenceOfSLIVDCI-1-2, resourceAllocationDCI-1-2, dataScramblingIdentityPDSCH2-r16, repetitionSchemeConfig.",
+    "generated_at": "2025-12-09T09:46:40.038711",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any explicit normative constraint between the fields 'dmrs-DownlinkForPDSCH-MappingTypeA' and 'pdsch-Config' within the same IE. The evidence snippet mentions 'PDSCH-Config' but does not relate it to 'dmrs-DownlinkForPDSCH-MappingTypeA'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      238,
+      247
+    ],
+    [
+      257
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not explicitly relate the fields 'controlResourceSetId' and 'searchSpaceType' within the same IE. The evidence lacks normative wording or explicit math/table relations connecting these fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group2",
+    "field1": "controlResourceSetId",
+    "field2": "searchSpaceType",
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 54,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.1.2",
+      "5.1.2.2.2",
+      "5.1.4.1",
+      "5.2.1.5.1",
+      "6.1.2.2.3",
+      "7.3.1.6",
+      "5.1.5",
+      "5.1.2.2",
+      "7.3.1.1",
+      "5.1.2.3",
+      "6.1.3.44",
+      "5.1.6.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- the higher-layer parameter dataScramblingldentityPDSCH2 if the codeword is scheduled using a CORESET with CORESETPoollndex equal to 1 ; if the higher-layer parameters dataScramblingldentityPDSCH and dataScramblingldentityPDSCH2 are configured together with the higher-layer parameter CORESETPoollndex containing two different values, and the RNTI equals the C-RNTI, MCS-C-RNTI, or CS-RNTI, and the transmission is not scheduled using DCI format 1_0 in a common search space;\n---\nFor non-interleaved VRB-to-PRB mapping, virtual resource block n is mapped to physical resource block n , except for PDSCH transmissions scheduled with DCI format 1 \\_0 in a common search space in which case virtual resource block n is mapped to physical resource block n+N_{\\text {start }}^{\\text {COREST }} where N_{\\text {start }}^{\\text {CORESET }} is the lowest-numbered physical resource block in the control resource set where the corresponding DCI was received. When two PDCCH candidates from two linked common search space sets as indicated by the higher-layer parameter searchSpaceLinking are detected, and the two linked common search space sets are associated with different control resource sets, the control resource set with the lowest number among the two linked control resource sets is used to determine N_{\\text {start }}^{\\text {CORESET }} .\n---\n- subcarrier 0 of the lowest-numbered resource block in CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI;\n---\nNOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon.\n---\nFor a PDSCH scheduled with a DCI format 1 \\_0 in any type of PDCCH common search space, regardless of which bandwidth part is the active bandwidth part, RB numbering starts from the lowest RB of the CORESET in which the DCI was received; otherwise RB numbering starts from the lowest RB in the determined downlink bandwidth part. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the downlink RB set of a PDSCH when scheduled by DCI format 1 \\_0 , the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used.\n---\nIn downlink resource allocation of type 1, the resource block assignment information indicates to a scheduled UE a set of contiguously allocated non-interleaved or interleaved virtual resource blocks within the active bandwidth part of size N_{\\text {BWP }}^{\\text {size }} PRBs except for the case when DCI format 1_0 is decoded in any common search space in which case the size of CORESET 0 shall be used if CORESET 0 is configured for the cell and the size of initial DL bandwidth part shall be used if CORESET 0 is not configured for the cell.\n---\nFor PDSCH carrying SIB1 scheduled by PDCCH with CRC scrambled by SI-RNTI, a PRG is partitioned from the lowest numbered resource block of CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI; otherwise, a PRG is partitioned from common resource block 0 .\n---\nIf a PDSCH scheduled by a PDCCH would overlap with resources in the CORESET containing the PDCCH, the resources corresponding to a union of the detected PDCCH that scheduled the PDSCH and associated PDCCH DM-RS are not available for the PDSCH . When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the resources corresponding to a union of the two PDCCH candidates scheduling the PDSCH and the associated PDCCH DM-RS are not available for the PDSCH. When precoderGranularity configured in a CORESET where the PDCCH was detected is set to 'allContiguousRBs', the associated PDCCH DM-RS are DM-RS in all REGs of the CORESET. Otherwise, the associated DM-RS are the DMRS in REGs of the PDCCH.\n---\nIf a PDSCH is scheduled by a DCI format having the TCI field present, the TCI field in DCI in the scheduling component carrier points to the activated TCI states in the scheduled component carrier or DL BWP, the UE shall use the TCI-State according to the value of the 'Transmission Configuration Indication' field in the detected PDCCH with DCI for determining PDSCH antenna port quasi co-location. The UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the RS(s) in the TCI state with respect to the QCL type parameter(s) given by the indicated TCI state if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal to or greater than a threshold timeDurationForQCL, where the threshold is based on reported UE capability [13, TS 38.306]. For a single slot PDSCH, the indicated TCI state(s) should be based on the activated TCI states in the slot with the scheduled PDSCH. For a multi-slot PDSCH or the UE is configured with higher layer parameter [pdsch-TimeDomainAllocationListForMultiPDSCH-r177, the indicated TCI state(s) should be based on the activated TCI states in the first slot with the scheduled \\operatorname{PDSCH}(s) , and UE shall expect the activated TCI states are the same across the slots with the scheduled \\operatorname{PDSCH}(s) . When the UE is configured with CORESET associated with a search space set for crosscarrier scheduling and the UE is not configured with enableDefaultBeamForCCS, the UE expects tci-PresentInDCI is set as 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET, and if one or more of the TCI states configured for the serving cell scheduled by the search space set contains qcl-Type set to 'typeD', the UE expects the time offset between the reception of the detected PDCCH in the search space set and a corresponding PDSCH is larger than or equal to the threshold timeDurationForQCL.\n---\nFor a CSI-RS resource associated with a NZP-CSI-RS-ResourceSet with the higher layer parameter repetition set to 'on', the UE shall not expect to be configured with CSI-RS over the symbols during which the UE is also configured to monitor the CORESET, while for other NZP-CSI-RS-ResourceSet configurations, if the UE is configured with a CSI-RS resource and a search space set associated with a CORESET in the same OFDM symbol(s), the UE may assume that the CSI-RS and a PDCCH DM-RS transmitted in all the search space sets associated with CORESET are quasi co-located with 'typeD', if 'typeD' is applicable. If the CORESET is activated with two TCI states, UE may assume that the first TCI state of the CORESET as the default QCL assumption for the CSI-RS. This also applies to the case when CSI-RS and the CORESET are in different intra-band component carriers, if 'typeD' is applicable. Furthermore, the UE shall not\n---\n- else if at least one CORESET is configured for the BWP in which the aperiodic CSI-RS is received, when receiving the aperiodic CSI-RS, the UE applies the QCL assumption used for the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored;\n---\nIn uplink resource allocation of type 2, the resource block assignment information defined in [5, TS 38.212] indicates to a UE a set of up to M interlace indices, and for DCI 0 \\_0 monitored in a UE-specific search space and DCI 0_1 a set of up to N_{\\text {RB-set, UL }}^{\\mathrm{BWP}} contiguous RB sets, where M and interlace indexing are defined in Clause 4.4.4.6 in [4, TS 38.211]. Within the active UL BWP, the assigned physical resource block n is mapped to virtual resource block n . For DCI 0 \\_0 monitored in a UE-specific search space and DCI 0_1, the UE shall determine the resource allocation in frequency domain as an intersection of the resource blocks of the indicated interlaces and the union of the indicated set of RB sets and intra-cell guard bands defined in Clause 7 between the indicated RB sets, if any. For DCI 00 monitored in a common search space, the UE shall determine the resource allocation in frequency domain as an intersection of the resource blocks of the indicated interlaces and a single uplink RB set of the active UL BWP. For DCI 0 \\_0 monitored in a CSS with CRC scrambled by an RNTI other than TC-RNTI, the uplink RB set is the lowest indexed one amongst uplink RB set(s) that intersects the lowest-indexed CCE of the PDCCH in which the UE detects the DCI 0 \\_0 in the active downlink BWP . When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], for the purpose of determining the uplink RB set of a PUSCH when scheduled by DCI 0 \\_0 monitored in a CSS with CRC scrambled by an RNTI other than TC-RNTI, the CORESET with lower ID among two CORESETs associated with two PDCCH candidates is used. If there is no intersection, the uplink RB set is RB set 0 in the active uplink BWP. For DCI 0-0 with CRC scrambled by TC-RNTI, the uplink RB set is the same one in which the UE transmits the PRACH associated with the RAR UL grant, in which case the UE assumes that the uplink RB set is defined as when the UE is not configured with intraCellGuardBandsUL-List (see Clause 7).",
+    "generated_at": "2025-12-09T09:48:47.504512",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not explicitly relate the fields 'controlResourceSetId' and 'searchSpaceType' within the same IE. The evidence lacks normative wording or explicit math/table relations connecting these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

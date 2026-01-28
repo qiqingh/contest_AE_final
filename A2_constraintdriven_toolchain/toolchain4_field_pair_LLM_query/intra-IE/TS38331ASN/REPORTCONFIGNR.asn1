@@ -1,0 +1,254 @@
+ReportConfigNR ::=                          SEQUENCE {
+    reportType                                  CHOICE {
+        periodical                                  PeriodicalReportConfig,
+        eventTriggered                              EventTriggerConfig,
+        ...,
+        reportCGI                                   ReportCGI,
+        reportSFTD                                  ReportSFTD-NR,
+        condTriggerConfig-r16                       CondTriggerConfig-r16,
+        cli-Periodical-r16                          CLI-PeriodicalReportConfig-r16,
+        cli-EventTriggered-r16                      CLI-EventTriggerConfig-r16,
+        rxTxPeriodical-r17                          RxTxPeriodical-r17
+    }
+}
+
+ReportCGI ::=                     SEQUENCE {
+    cellForWhichToReportCGI          PhysCellId,
+        ...,
+    [[
+    useAutonomousGaps-r16            ENUMERATED {setup}                OPTIONAL   -- Need R
+    ]]
+
+}
+
+ReportSFTD-NR ::=                 SEQUENCE {
+    reportSFTD-Meas                  BOOLEAN,
+    reportRSRP                       BOOLEAN,
+    ...,
+    [[
+    reportSFTD-NeighMeas             ENUMERATED {true}                                OPTIONAL,   -- Need R
+    drx-SFTD-NeighMeas               ENUMERATED {true}                                OPTIONAL,   -- Need R
+    cellsForWhichToReportSFTD        SEQUENCE (SIZE (1..maxCellSFTD)) OF PhysCellId   OPTIONAL    -- Need R
+    ]]
+}
+
+CondTriggerConfig-r16 ::=        SEQUENCE {
+    condEventId                      CHOICE {
+        condEventA3                      SEQUENCE {
+            a3-Offset                        MeasTriggerQuantityOffset,
+            hysteresis                       Hysteresis,
+            timeToTrigger                    TimeToTrigger
+        },
+        condEventA5                      SEQUENCE {
+            a5-Threshold1                    MeasTriggerQuantity,
+            a5-Threshold2                    MeasTriggerQuantity,
+            hysteresis                       Hysteresis,
+            timeToTrigger                    TimeToTrigger
+        },
+        ...,
+        condEventA4-r17                  SEQUENCE {
+            a4-Threshold-r17                 MeasTriggerQuantity,
+            hysteresis-r17                   Hysteresis,
+            timeToTrigger-r17                TimeToTrigger
+        },
+        condEventD1-r17                  SEQUENCE {
+            distanceThreshFromReference1-r17 INTEGER(0.. 65525),
+            distanceThreshFromReference2-r17 INTEGER(0.. 65525),
+            referenceLocation1-r17           ReferenceLocation-r17,
+            referenceLocation2-r17           ReferenceLocation-r17,
+            hysteresisLocation-r17           HysteresisLocation-r17,
+            timeToTrigger-r17                TimeToTrigger
+        },
+        condEventT1-r17                  SEQUENCE {
+            t1-Threshold-r17                 INTEGER (0..549755813887),
+            duration-r17                     INTEGER (1..6000)
+        }
+    },
+    rsType-r16                       NR-RS-Type,
+    ...
+}
+
+EventTriggerConfig::=                       SEQUENCE {
+    eventId                                     CHOICE {
+        eventA1                                     SEQUENCE {
+            a1-Threshold                                MeasTriggerQuantity,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger
+        },
+        eventA2                                     SEQUENCE {
+            a2-Threshold                                MeasTriggerQuantity,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger
+        },
+        eventA3                                     SEQUENCE {
+            a3-Offset                                   MeasTriggerQuantityOffset,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            useAllowedCellList                          BOOLEAN
+        },
+        eventA4                                     SEQUENCE {
+            a4-Threshold                                MeasTriggerQuantity,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            useAllowedCellList                          BOOLEAN
+        },
+        eventA5                                     SEQUENCE {
+            a5-Threshold1                               MeasTriggerQuantity,
+            a5-Threshold2                               MeasTriggerQuantity,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            useAllowedCellList                          BOOLEAN
+        },
+        eventA6                                     SEQUENCE {
+            a6-Offset                                   MeasTriggerQuantityOffset,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            useAllowedCellList                          BOOLEAN
+        },
+        ...,
+        [[
+        eventX1-r17                                 SEQUENCE {
+            x1-Threshold1-Relay-r17                     SL-MeasTriggerQuantity-r16,
+            x1-Threshold2-r17                           MeasTriggerQuantity,
+            reportOnLeave-r17                           BOOLEAN,
+            hysteresis-r17                              Hysteresis,
+            timeToTrigger-r17                           TimeToTrigger,
+            useAllowedCellList-r17                      BOOLEAN
+        },
+        eventX2-r17                                 SEQUENCE {
+            x2-Threshold-Relay-r17                      SL-MeasTriggerQuantity-r16,
+            reportOnLeave-r17                           BOOLEAN,
+            hysteresis-r17                              Hysteresis,
+            timeToTrigger-r17                           TimeToTrigger
+        },
+        eventD1-r17                                 SEQUENCE {
+            distanceThreshFromReference1-r17            INTEGER(1.. 65525),
+            distanceThreshFromReference2-r17            INTEGER(1.. 65525),
+            referenceLocation1-r17                      ReferenceLocation-r17,
+            referenceLocation2-r17                      ReferenceLocation-r17,
+            reportOnLeave-r17                           BOOLEAN,
+            hysteresisLocation-r17                      HysteresisLocation-r17,
+            timeToTrigger-r17                           TimeToTrigger
+        }
+        ]]
+    },
+    rsType                                      NR-RS-Type,
+    reportInterval                              ReportInterval,
+    reportAmount                                ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantityCell                          MeasReportQuantity,
+    maxReportCells                              INTEGER (1..maxCellReport),
+    reportQuantityRS-Indexes                     MeasReportQuantity                                            OPTIONAL,   -- Need R
+    maxNrofRS-IndexesToReport                   INTEGER (1..maxNrofIndexesToReport)                            OPTIONAL,   -- Need R
+    includeBeamMeasurements                     BOOLEAN,
+    reportAddNeighMeas                          ENUMERATED {setup}                                             OPTIONAL,   -- Need R
+    ...,
+    [[
+    measRSSI-ReportConfig-r16                   MeasRSSI-ReportConfig-r16                                      OPTIONAL,   -- Need R
+    useT312-r16                                 BOOLEAN                                                        OPTIONAL,   -- Need M
+    includeCommonLocationInfo-r16               ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    includeBT-Meas-r16                          SetupRelease {BT-NameList-r16}                                 OPTIONAL,   -- Need M
+    includeWLAN-Meas-r16                        SetupRelease {WLAN-NameList-r16}                               OPTIONAL,   -- Need M
+    includeSensor-Meas-r16                      SetupRelease {Sensor-NameList-r16}                             OPTIONAL    -- Need M
+    ]],
+    [[
+    coarseLocationRequest-r17                   ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    reportQuantityRelay-r17                     SL-MeasReportQuantity-r16                                      OPTIONAL    -- Need R
+    ]]
+}
+
+PeriodicalReportConfig ::=                  SEQUENCE {
+    rsType                                      NR-RS-Type,
+    reportInterval                              ReportInterval,
+    reportAmount                                ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantityCell                          MeasReportQuantity,
+    maxReportCells                              INTEGER (1..maxCellReport),
+    reportQuantityRS-Indexes                    MeasReportQuantity                                             OPTIONAL,   -- Need R
+    maxNrofRS-IndexesToReport                   INTEGER (1..maxNrofIndexesToReport)                            OPTIONAL,   -- Need R
+    includeBeamMeasurements                     BOOLEAN,
+    useAllowedCellList                          BOOLEAN,
+    ...,
+    [[
+    measRSSI-ReportConfig-r16                   MeasRSSI-ReportConfig-r16                                      OPTIONAL,   -- Need R
+    includeCommonLocationInfo-r16               ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    includeBT-Meas-r16                          SetupRelease {BT-NameList-r16}                                 OPTIONAL,   -- Need M
+    includeWLAN-Meas-r16                        SetupRelease {WLAN-NameList-r16}                               OPTIONAL,   -- Need M
+    includeSensor-Meas-r16                      SetupRelease {Sensor-NameList-r16}                             OPTIONAL,   -- Need M
+    ul-DelayValueConfig-r16                     SetupRelease { UL-DelayValueConfig-r16 }                       OPTIONAL,   -- Need M
+    reportAddNeighMeas-r16                      ENUMERATED {setup}                                             OPTIONAL    -- Need R
+    ]],
+    [[
+    ul-ExcessDelayConfig-r17                    SetupRelease { UL-ExcessDelayConfig-r17 }                      OPTIONAL,   -- Need M
+    coarseLocationRequest-r17                   ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    reportQuantityRelay-r17                     SL-MeasReportQuantity-r16                                      OPTIONAL    -- Need R
+    ]]
+}
+
+NR-RS-Type ::=                              ENUMERATED {ssb, csi-rs}
+
+MeasTriggerQuantity ::=                     CHOICE {
+    rsrp                                        RSRP-Range,
+    rsrq                                        RSRQ-Range,
+    sinr                                        SINR-Range
+}
+
+MeasTriggerQuantityOffset ::=               CHOICE {
+    rsrp                                        INTEGER (-30..30),
+    rsrq                                        INTEGER (-30..30),
+    sinr                                        INTEGER (-30..30)
+}
+
+
+MeasReportQuantity ::=                      SEQUENCE {
+    rsrp                                        BOOLEAN,
+    rsrq                                        BOOLEAN,
+    sinr                                        BOOLEAN
+}
+
+MeasRSSI-ReportConfig-r16 ::=               SEQUENCE {
+    channelOccupancyThreshold-r16               RSSI-Range-r16         OPTIONAL   -- Need R
+}
+
+CLI-EventTriggerConfig-r16 ::=              SEQUENCE {
+    eventId-r16                                 CHOICE {
+        eventI1-r16                                 SEQUENCE {
+            i1-Threshold-r16                            MeasTriggerQuantityCLI-r16,
+            reportOnLeave-r16                           BOOLEAN,
+            hysteresis-r16                              Hysteresis,
+            timeToTrigger-r16                           TimeToTrigger
+        },
+    ...
+    },
+    reportInterval-r16                          ReportInterval,
+    reportAmount-r16                            ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    maxReportCLI-r16                            INTEGER (1..maxCLI-Report-r16),
+    ...
+}
+
+CLI-PeriodicalReportConfig-r16 ::=          SEQUENCE {
+    reportInterval-r16                          ReportInterval,
+    reportAmount-r16                            ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantityCLI-r16                       MeasReportQuantityCLI-r16,
+    maxReportCLI-r16                            INTEGER (1..maxCLI-Report-r16),
+    ...
+}
+
+RxTxPeriodical-r17  ::=                     SEQUENCE {
+    rxTxReportInterval-r17                      RxTxReportInterval-r17                             OPTIONAL,   -- Need R
+    reportAmount-r17                            ENUMERATED {r1, infinity, spare6, spare5, spare4, spare3, spare2, spare1},
+    ...
+}
+
+RxTxReportInterval-r17 ::= ENUMERATED {ms80,ms120,ms160,ms240,ms320,ms480,ms640,ms1024,ms1280,ms2048,ms2560,ms5120,spare4,spare3,spare2,spare1}
+
+MeasTriggerQuantityCLI-r16 ::=              CHOICE {
+    srs-RSRP-r16                                SRS-RSRP-Range-r16,
+    cli-RSSI-r16                                CLI-RSSI-Range-r16
+}
+
+MeasReportQuantityCLI-r16 ::=               ENUMERATED {srs-rsrp, cli-rssi}

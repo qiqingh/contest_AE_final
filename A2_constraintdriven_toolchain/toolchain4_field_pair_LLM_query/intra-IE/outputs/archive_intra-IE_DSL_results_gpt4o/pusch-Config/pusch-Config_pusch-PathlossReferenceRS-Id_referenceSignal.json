@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      326
+    ],
+    [
+      327,
+      328
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not explicitly relate the fields pusch-PathlossReferenceRS-Id and referenceSignal within the same IE. The evidence lacks normative wording or explicit relations between these fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "pusch-Config",
+    "field1": "pusch-PathlossReferenceRS-Id",
+    "field2": "referenceSignal",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB\n---\n- P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB",
+    "generated_at": "2025-12-09T09:46:47.831795",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not explicitly relate the fields pusch-PathlossReferenceRS-Id and referenceSignal within the same IE. The evidence lacks normative wording or explicit relations between these fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

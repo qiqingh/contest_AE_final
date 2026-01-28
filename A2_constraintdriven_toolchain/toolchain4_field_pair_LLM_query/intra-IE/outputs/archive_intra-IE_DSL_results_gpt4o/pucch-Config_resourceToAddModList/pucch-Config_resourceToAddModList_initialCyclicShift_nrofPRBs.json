@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      281
+    ],
+    [
+      287
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative constraint between initialCyclicShift and nrofPRBs within the same IE. The evidence mentions these fields in the context of different PUCCH formats but does not relate them directly with a normative rule.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList",
+    "field1": "initialCyclicShift",
+    "field2": "nrofPRBs",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the format indicates PUCCH-format0, the PUCCH format configured for a PUCCH resource is PUCCH format 0 , where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0}=1 .\n---\nIf the format indicates PUCCH-formatl, the PUCCH format configured for a PUCCH resource is PUCCH format 1, where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex, and an index for an orthogonal cover code by timeDomainOCC. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1}=1 .",
+    "generated_at": "2025-12-09T09:48:42.850415",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative constraint between initialCyclicShift and nrofPRBs within the same IE. The evidence mentions these fields in the context of different PUCCH formats but does not relate them directly with a normative rule.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

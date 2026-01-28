@@ -1,0 +1,57 @@
+SSB-MTC ::=                             SEQUENCE {
+    periodicityAndOffset                    CHOICE {
+        sf5                                 INTEGER (0..4),
+        sf10                                    INTEGER (0..9),
+        sf20                                    INTEGER (0..19),
+        sf40                                    INTEGER (0..39),
+        sf80                                    INTEGER (0..79),
+        sf160                                   INTEGER (0..159)
+    },
+    duration                                ENUMERATED { sf1, sf2, sf3, sf4, sf5 }
+}
+
+SSB-MTC2 ::=                        SEQUENCE {
+    pci-List                            SEQUENCE (SIZE (1..maxNrofPCIsPerSMTC)) OF PhysCellId                   OPTIONAL,   -- Need M
+    periodicity                         ENUMERATED {sf5, sf10, sf20, sf40, sf80, spare3, spare2, spare1}
+}
+
+SSB-MTC2-LP-r16 ::=                 SEQUENCE {
+    pci-List                            SEQUENCE (SIZE (1..maxNrofPCIsPerSMTC)) OF PhysCellId                   OPTIONAL,   -- Need R
+    periodicity                         ENUMERATED {sf10, sf20, sf40, sf80, sf160, spare3, spare2, spare1}
+}
+
+SSB-MTC3-r16 ::=                    SEQUENCE {
+    periodicityAndOffset-r16            CHOICE {
+        sf5-r16                                     INTEGER (0..4),
+        sf10-r16                                    INTEGER (0..9),
+        sf20-r16                                    INTEGER (0..19),
+        sf40-r16                                    INTEGER (0..39),
+        sf80-r16                                    INTEGER (0..79),
+        sf160-r16                                   INTEGER (0..159),
+        sf320-r16                                   INTEGER (0..319),
+        sf640-r16                                   INTEGER (0..639),
+        sf1280-r16                                  INTEGER (0..1279)
+    },
+    duration-r16                        ENUMERATED {sf1, sf2, sf3, sf4, sf5},
+    pci-List-r16                        SEQUENCE (SIZE (1..maxNrofPCIsPerSMTC)) OF PhysCellId                   OPTIONAL,  -- Need M
+    ssb-ToMeasure-r16                   SetupRelease { SSB-ToMeasure }                                          OPTIONAL   -- Need M
+}
+
+SSB-MTC4-r17 ::=             SEQUENCE {
+    pci-List-r17                 SEQUENCE (SIZE (1..maxNrofPCIsPerSMTC)) OF PhysCellId                          OPTIONAL,  -- Need M
+    offset-r17                   INTEGER (0..159)
+}
+
+SSB-MTC-AdditionalPCI-r17 ::=       SEQUENCE {
+    additionalPCIIndex-r17              AdditionalPCIIndex-r17,
+    additionalPCI-r17                   PhysCellId,
+    periodicity-r17                     ENUMERATED { ms5, ms10, ms20, ms40, ms80, ms160, spare2, spare1 },
+    ssb-PositionsInBurst-r17            CHOICE {
+        shortBitmap                         BIT STRING (SIZE (4)),
+        mediumBitmap                        BIT STRING (SIZE (8)),
+        longBitmap                          BIT STRING (SIZE (64))
+    },
+    ss-PBCH-BlockPower-r17              INTEGER (-60..50)
+}
+
+AdditionalPCIIndex-r17  ::=  INTEGER(1..maxNrofAdditionalPCI-r17)

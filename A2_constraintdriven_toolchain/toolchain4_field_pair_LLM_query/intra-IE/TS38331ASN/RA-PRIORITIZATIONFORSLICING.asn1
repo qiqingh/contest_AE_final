@@ -1,0 +1,12 @@
+RA-PrioritizationForSlicing-r17 ::=    SEQUENCE {
+    ra-PrioritizationSliceInfoList-r17     RA-PrioritizationSliceInfoList-r17,
+    ...
+}
+
+RA-PrioritizationSliceInfoList-r17 ::= SEQUENCE (SIZE (1..maxSliceInfo-r17)) OF RA-PrioritizationSliceInfo-r17
+
+RA-PrioritizationSliceInfo-r17 ::=     SEQUENCE {
+    nsag-ID-List-r17                       SEQUENCE (SIZE (1..maxSliceInfo-r17)) OF NSAG-ID-r17,
+    ra-Prioritization-r17                  RA-Prioritization,
+    ...
+}

@@ -1,0 +1,11 @@
+MCCH-Message-r17 ::= SEQUENCE {
+    message              MCCH-MessageType-r17
+}
+
+MCCH-MessageType-r17 ::= CHOICE {
+    c1                       CHOICE {
+        mbsBroadcastConfiguration-r17     MBSBroadcastConfiguration-r17,
+        spare1                            NULL
+    },
+    messageClassExtension   SEQUENCE {}
+}

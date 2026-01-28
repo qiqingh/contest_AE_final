@@ -1,0 +1,129 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 0), EQ(field2, 0))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      115,
+      180,
+      245
+    ],
+    "field2_all": [
+      67,
+      132,
+      197,
+      262
+    ],
+    "actual_pairs": [
+      [
+        [
+          115,
+          180,
+          245
+        ],
+        [
+          67
+        ]
+      ],
+      [
+        [
+          115,
+          180,
+          245
+        ],
+        [
+          132,
+          197
+        ]
+      ],
+      [
+        [
+          115,
+          180,
+          245
+        ],
+        [
+          197,
+          262
+        ]
+      ],
+      [
+        [
+          115,
+          180,
+          245
+        ],
+        [
+          67,
+          132,
+          197,
+          262
+        ]
+      ]
+    ]
+  },
+  "predicate": "If the field 'tci-statespdcch-toaddlist' from 'controlresourcesettoaddmodlist' is set to 0, then the field 'tci-stateid' from 'pdsch-config_tci-statestoaddmodlist' must also be set to 0.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1: 0, field2: 0"
+    ],
+    "invalid": [
+      "field1: 0, field2: 1"
+    ]
+  },
+  "notes": "The evidence explicitly states that if the field of CORESET ID (field1) is set to 0, then the TCI-Stateld (field2) indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "controlresourcesettoaddmodlist",
+    "field1": "tci-statespdcch-toaddlist",
+    "ie2_name": "pdsch-config_tci-statestoaddmodlist",
+    "field2": "tci-stateid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.3.15"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits.",
+    "generated_at": "2025-12-11T09:27:17.622771",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 0), EQ(field2, 0))",
+      "preconditions": [],
+      "predicate": "If the field 'tci-statespdcch-toaddlist' from 'controlresourcesettoaddmodlist' is set to 0, then the field 'tci-stateid' from 'pdsch-config_tci-statestoaddmodlist' must also be set to 0.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1: 0, field2: 0"
+        ],
+        "invalid": [
+          "field1: 0, field2: 1"
+        ]
+      },
+      "notes": "The evidence explicitly states that if the field of CORESET ID (field1) is set to 0, then the TCI-Stateld (field2) indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

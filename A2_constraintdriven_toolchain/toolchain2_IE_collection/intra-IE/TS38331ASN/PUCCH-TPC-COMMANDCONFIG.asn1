@@ -1,0 +1,9 @@
+PUCCH-TPC-CommandConfig ::=             SEQUENCE {
+    tpc-IndexPCell                          INTEGER (1..15)                         OPTIONAL,   -- Cond PDCCH-OfSpcell
+    tpc-IndexPUCCH-SCell                    INTEGER (1..15)                         OPTIONAL,   -- Cond PDCCH-ofSpCellOrPUCCH-SCell
+    ...,
+    [[
+    tpc-IndexPUCCH-sSCell-r17                             INTEGER (1..15)                         OPTIONAL,  -- Need R
+    tpc-IndexPUCCH-sScellSecondaryPUCCHgroup-r17          INTEGER (1..15)                         OPTIONAL   -- Cond twoPUCCHgroup
+    ]]
+}

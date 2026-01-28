@@ -1,0 +1,13 @@
+UL-CCCH-Message ::=             SEQUENCE {
+    message                         UL-CCCH-MessageType
+}
+
+UL-CCCH-MessageType ::=         CHOICE {
+    c1                              CHOICE {
+        rrcSetupRequest                 RRCSetupRequest,
+        rrcResumeRequest                RRCResumeRequest,
+        rrcReestablishmentRequest       RRCReestablishmentRequest,
+        rrcSystemInfoRequest            RRCSystemInfoRequest
+    },
+    messageClassExtension           SEQUENCE {}
+}

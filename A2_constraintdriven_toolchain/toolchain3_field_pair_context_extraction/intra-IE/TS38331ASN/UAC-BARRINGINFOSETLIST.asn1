@@ -1,0 +1,15 @@
+UAC-BarringInfoSetList ::=          SEQUENCE (SIZE(1..maxBarringInfoSet)) OF UAC-BarringInfoSet
+
+UAC-BarringInfoSetList-v1700 ::= SEQUENCE (SIZE(1..maxBarringInfoSet)) OF UAC-BarringInfoSet-v1700
+
+UAC-BarringInfoSet ::=              SEQUENCE {
+    uac-BarringFactor                   ENUMERATED {p00, p05, p10, p15, p20, p25, p30, p40,
+                                                    p50, p60, p70, p75, p80, p85, p90, p95},
+    uac-BarringTime                     ENUMERATED {s4, s8, s16, s32, s64, s128, s256, s512},
+    uac-BarringForAccessIdentity        BIT STRING (SIZE(7))
+}
+
+UAC-BarringInfoSet-v1700 ::= SEQUENCE {
+    uac-BarringFactorForAI3-r17  ENUMERATED {p00, p05, p10, p15, p20, p25, p30, p40, p50, p60, p70, p75, p80, p85, p90, p95}
+                                                                       OPTIONAL  -- Need S
+}

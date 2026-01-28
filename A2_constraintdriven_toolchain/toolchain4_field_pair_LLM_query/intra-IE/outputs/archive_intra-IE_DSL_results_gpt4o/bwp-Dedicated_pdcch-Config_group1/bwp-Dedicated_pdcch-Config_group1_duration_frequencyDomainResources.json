@@ -1,0 +1,59 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      176
+    ],
+    [
+      174,
+      175
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not contain any explicit normative constraint or relation between the fields 'duration' and 'frequencyDomainResources' within the same IE. The evidence snippet refers to higher-layer parameters without establishing a direct relation between the target fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group1",
+    "field1": "duration",
+    "field2": "frequencyDomainResources",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.3.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} is given by the higher-layer parameter frequencyDomainResources; - \\quad N_{\\text {symb }}^{\\text {CORESET }} is given by the higher-layer parameter duration, where N_{\\text {symb }}^{\\text {CORESET }}=3 is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;",
+    "generated_at": "2025-12-09T09:48:05.351155",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not contain any explicit normative constraint or relation between the fields 'duration' and 'frequencyDomainResources' within the same IE. The evidence snippet refers to higher-layer parameters without establishing a direct relation between the target fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

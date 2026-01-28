@@ -1,0 +1,62 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      699
+    ],
+    "field2_all": [
+      700
+    ],
+    "actual_pairs": [
+      [
+        [
+          699
+        ],
+        [
+          700
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the fields 'powerControlOffset' and 'powerControlOffsetSS'. The definitions of these fields are given, but no rule or constraint that links them is mentioned.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "nzp-CSI-RS-ResourceToAddModList_group0",
+    "field1": "powerControlOffset",
+    "field2": "powerControlOffsetSS",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- powerControlOffset: which is the assumed ratio of PDSCH EPRE to NZP CSI-RS EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. For CQI calculation based on a pair of NZP CSI-RS resources, powerControlOffset of each NZP CSI-RS resource in the pair of NZP CSI-RS resources for channel measurement is the assumed ratio of EPRE when UE derives CSI feedback and takes values in the range of [-8,15] \\mathrm{dB} with 1 dB step size. - powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE.",
+    "generated_at": "2025-12-11T14:16:48.071139",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the fields 'powerControlOffset' and 'powerControlOffsetSS'. The definitions of these fields are given, but no rule or constraint that links them is mentioned.",
+      "version_tags": []
+    }
+  }
+}

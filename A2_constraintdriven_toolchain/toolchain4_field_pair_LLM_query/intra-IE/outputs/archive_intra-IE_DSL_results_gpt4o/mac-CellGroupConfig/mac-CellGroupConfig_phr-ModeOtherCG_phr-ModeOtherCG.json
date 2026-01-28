@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      39
+    ],
+    [
+      39
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not mention both target fields 'phr-ModeOtherCG' and 'phr-ModeOtherCG' within the same IE or relate them in a normative way. The evidence snippets focus on 'phr-ModeOtherCG' but do not establish a semantic constraint between two fields within the same IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ModeOtherCG",
+    "field2": "phr-ModeOtherCG",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "4> if this MAC entity is configured with phr-AssumedPUSCH-Reporting: 5> if this MAC entity has UL resources allocated for transmission on this Serving Cell; or 5> if the other MAC entity, if configured, has UL resources allocated for transmission on this Serving Cell and phr-ModeOtherCG is set to real by upper layers: 6> if dynamicTransformPrecoderFieldPresenceDCI-0-1-r18 or dynamicTransformPrecoderFieldPresenceDCI-0-2-r18 is set to enabled in the active BWP of this Serving Cell:\n---\n5> else: 6> if this MAC entity has UL resources allocated for transmission on this Serving Cell; or 6> if the other MAC entity, if configured, has UL resources allocated for transmission on this Serving Cell and phr-ModeOtherCG is set to real by upper layers: 7> obtain the value for the corresponding \\mathrm{P}_{\\mathrm{CMAX}, \\mathrm{C}, \\mathrm{C}} field from the physical layer. 7> if mpe-Reporting-FR2 is configured and this Serving Cell operates on FR2 and this Serving Cell is associated to this MAC entity:",
+    "generated_at": "2025-12-09T09:45:34.191291",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not mention both target fields 'phr-ModeOtherCG' and 'phr-ModeOtherCG' within the same IE or relate them in a normative way. The evidence snippets focus on 'phr-ModeOtherCG' but do not establish a semantic constraint between two fields within the same IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

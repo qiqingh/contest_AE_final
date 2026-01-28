@@ -1,0 +1,14 @@
+HandoverCommand ::=                 SEQUENCE {
+    criticalExtensions                  CHOICE {
+        c1                                  CHOICE{
+            handoverCommand                     HandoverCommand-IEs,
+            spare3 NULL, spare2 NULL, spare1 NULL
+        },
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+HandoverCommand-IEs ::=             SEQUENCE {
+    handoverCommandMessage              OCTET STRING (CONTAINING RRCReconfiguration),
+    nonCriticalExtension                SEQUENCE {}                                        OPTIONAL
+}

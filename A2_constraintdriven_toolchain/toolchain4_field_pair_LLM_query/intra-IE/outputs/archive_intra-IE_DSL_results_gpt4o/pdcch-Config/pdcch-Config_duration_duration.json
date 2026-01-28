@@ -1,0 +1,85 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      46
+    ],
+    [
+      46
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not contain any explicit normative constraints or relations between the 'duration' fields within the same IE 'pdcch-Config'. The evidence snippets do not mention both target fields or relate them directly.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie_name": "pdcch-Config",
+    "field1": "duration",
+    "field2": "duration",
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 220,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md",
+      "ts_138331v170000p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.2.1",
+      "6.1.2.3.1",
+      "7.4.1.1.2",
+      "5.4.1",
+      "6.1.2.3.3",
+      "10.4",
+      "5.5.2.10",
+      "6.1.2.3.2",
+      "6.1.2.3",
+      "10.3",
+      "5.3.1",
+      "3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "A set of allowed periodicities P are defined in [12, TS 38.331]. The higher layer parameter cg-nrofSlots, provides the number of consecutive slots allocated within a configured grant period. The higher layer parameter cg-nrofPUSCHInSlot provides the number of consecutive PUSCH allocations within a slot, where the first PUSCH allocation follows the higher layer parameter timeDomainAllocation for Type 1 PUSCH transmission or the higher layer configuration according to [10, TS 38.321], and UL grant received on the DCI for Type 2 PUSCH transmissions, and the remaining PUSCH allocations have the same length and PUSCH mapping type, and are appended following the previous allocations without any gaps. The same combination of start symbol and length and PUSCH mapping type repeats over the consecutively allocated slots. For operation with shared spectrum channel access, and when the higher layer parameter ueSemiStaticChannelAccessConfig is not configured, where a UE is performing uplink transmission with configured grants in contiguous OFDM symbols on all resource blocks of an RB set, for the first such UL transmission the UE determines a duration of a cyclic prefix extension T_{\\text {ext }} to be applied for transmission according to [4, TS 38.211] where the index for \\Delta_{i} [4, TS 38.211] is chosen randomly from a set of values configured by higher layers according to the following rule: - If the first such UL transmission is within a channel occupancy initiated by the gNB (defined in Clause 4 of [16, TS 37.213]), the set of values is determined by cg-StartingFullBW-InsideCOT; - otherwise, the set of values is determined by cg-StartingFullBW-OutsideCOT.\n---\nFor any RV sequence, the repetitions shall be terminated after transmitting K repetitions, or at the last transmission occasion among the K repetitions within the period P , or from the starting symbol of the repetition that overlaps with a PUSCH with the same HARQ process scheduled by DCI format 0 \\_0,0 \\_1 or 0 \\_2 , whichever is reached first. In addition, the UE shall terminate the repetition of a transport block in a PUSCH transmission if the UE receives a DCI format 0_1 with DFI flag provided and set to ' 1 ', and if in this DCI the UE detects ACK for the HARQ process corresponding to that transport block. The UE is not expected to be configured with the time duration for the transmission of K repetitions larger than the time duration derived by the periodicity P . If the UE determines that, for a transmission occasion, the number of symbols available for the PUSCH transmission in a slot is smaller than transmission duration L , the UE does not transmit the PUSCH in the transmission occasion. For both Type 1 and Type 2 PUSCH transmissions with a configured grant, when K>1 ,\n---\nAfter the initial transmission of a transport block, later transmission occasions among the K repetitions associated with any RV value and associated to any of the first or second SRS resource set can be used for transmitting the transport block. For any RV sequence, the repetitions shall be terminated after transmitting K nominal repetitions, or at the last transmission occasion among the K nominal repetitions within the period P , or from the starting symbol of an actual repetition that overlaps with a PUSCH with the same HARQ process scheduled by DCI format 0 \\_0,0 \\_1 or 0 \\_2 , whichever is reached first. The UE is not expected to be configured with the time duration for the transmission of K nominal repetitions larger than the time duration derived by the periodicity P . 6.1.2.3.3 Transport Block repetition for uplink transmissions of TB processing over multiple slots with a configured grant\n---\n- Any transmission occasion n associated with R V=0 , and for which n \\bmod N=0 , if the configured R V sequence is \\{0,3,0,3\\} or \\{0,0,0,0\\} . The UE is not expected to be configured with the time duration for N \\cdot K transmissions larger than the time duration derived by the periodicity P . If the UE determines that, for a transmission occasion, the number of symbols available in a slot for the PUSCH transmission of TB processing over multiple slots is smaller than transmission duration L , the UE does not transmit the PUSCH in the transmission occasion. For Type 2 PUSCH transmission with a configured grant of TB processing over multiple slots, the UE shall transmit the TB across the N \\cdot K slots determined for the PUSCH transmission applying the same symbol allocation in each slot. A Type 2 PUSCH transmission with a configured grant of TB processing over multiple slots is omitted in a slot according to the conditions in clause 9, clause 11.1 and clause 11.2A of [6, TS 38.213].\n---\nOn the frequency configured by rmtc-Frequency, the UE shall not consider RSSI measurements outside the configured RMTC occasion which lasts for measDurationSymbols for RSSI and channel occupancy measurements. The UE derives the RSSI measurement duration from a combination of measDurationSymbols and ref-SCS-CP. At least for RSSI measurement confined within the active DL BWP, the UE performs RSSI measurement using the numerology of the active DL BWP during the derived measurement duration. Otherwise, the numerology used by the UE for measurements is up to UE implementation. If configured, the UE performs RSSI measurements on a bandwidth in accordance with the received r m t c -Bandwidth. 5.5.2.11 Measurement gap sharing configuration\n---\n- the UE sets the active DL BWP to the indicated active DL BWP - an offset by p s -Offset indicating a time, where the UE starts monitoring PDCCH for detection of DCI format 26 according to the number of search space sets, prior to a slot where the drx-onDurationTimer would start on the PCell or on the SpCell [11, TS 38.321] - for each search space set, the PDCCH monitoring occasions are the ones in the first T_{\\mathrm{s}} slots indicated by duration, or T_{\\mathrm{s}}=1 slot if duration is not provided, starting from the first slot of the first T_{\\mathrm{s}} slots and ending prior to the start of drx-onDurationTimer. ETSI\n---\n- at the beginning of a first slot, of a slot group of X_{s} slots, that is at least P_{\\text {switch }} symbols after the last symbol of the PDCCH reception providing the DCI format with the PDCCH monitoring adaptation field when \\mu \\in\\{5,6\\} When the PDCCH monitoring adaptation field indicates to a UE to skip PDCCH monitoring for a duration on the active DL BWP of a serving cell, the UE starts skipping of PDCCH monitoring at the beginning of a first slot that is after the last symbol of the PDCCH reception providing the DCI format with the PDCCH monitoring adaptation field. If a UE is provided group indexes for a Type3-PDCCH CSS set or a USS set by searchSpaceGroupldList-r17 and a timer value by searchSpaceSwitchTimer-r 17 for PDCCH monitoring an active DL BWP of on a serving cell and the timer is running, the UE\n---\nETSI TS 138211 V18.2.0 (2024-05) - if the PDSCH duration l_{\\mathrm{d}} is 2 symbols, the UE is not expected to receive a DM-RS symbol beyond the second symbol; - if the PDSCH duration l_{\\mathrm{d}} is 5 symbols and if one additional single-symbol DMRS is configured, the UE only expects the additional DM-RS to be transmitted on the 5th symbol when the front-loaded DM-RS symbol is in the 1st symbol of the PDSCH duration, otherwise the UE should expect that the additional DM-RS is not transmitted; - if the PDSCH duration l_{\\mathrm{d}} is 7 symbols for normal cyclic prefix or 6 symbols for extended cyclic prefix: - if one additional single-symbol DM-RS is configured, the UE only expects the additional DM-RS to be transmitted on the 5th or 6th symbol when the front-loaded DM-RS symbol is in the 1st or 2nd symbol, respectively, of the PDSCH duration, otherwise the UE should expect that the additional DM-RS is not transmitted;\n---\nV2X sidelink communication: AS functionality enabling V2X Communication as defined in TS 23.285 [20], between nearby UEs, using E-UTRA technology but not traversing any network node. NOTE 1: A timer is running once it is started, until it is stopped or until it expires; otherwise it is not running. A timer can be started if it is not running or restarted if it is running. A Timer is always started or restarted from its initial value. The duration of a timer is not updated until it is stopped or expires (e.g. due to BWP switching). When the MAC entity applies zero value for a timer, the timer shall be started and immediately expire unless explicitly stated otherwise. NOTE 2: In this version of the specification, the SRS in the procedural description includes Positioning SRS except for the Positioning SRS for transmission in RRC_INACTIVE as in clause 5.26. Positioning SRS except for the Positioning SRS for transmission in RRC_INACTIVE is treated the same as SRS by the UE unless explicitly stated otherwise.\n---\nFor each Serving Cell and each configured downlink assignment, if configured and activated, the MAC entity shall: 1> if the PDSCH duration of the configured downlink assignment does not overlap with the PDSCH duration of a downlink assignment received on the PDCCH for this Serving Cell: 2> instruct the physical layer to receive, in this PDSCH duration, transport block on the DL-SCH according to the configured downlink assignment and to deliver it to the HARQ entity; 2> set the HARQ Process ID to the HARQ Process ID associated with this PDSCH duration;\n---\nUplink grant is either received dynamically on the PDCCH , in a Random Access Response, configured semipersistently by RRC or determined to be associated with the PUSCH resource of MSGA as specified in clause 5.1.2a. The MAC entity shall have an uplink grant to transmit on the UL-SCH. To perform the requested transmissions, the MAC layer receives HARQ information from lower layers. An uplink grant addressed to CS-RNTI with NDI =0 is considered as a configured uplink grant. An uplink grant addressed to CS-RNTI with NDI =1 is considered as a dynamic uplink grant. For a BWP configured with s T x-2 P anel, the MAC entity considers the PUSCH duration of one uplink grant overlaps with the PUSCH duration of another uplink grant if they are overlapping in time and associated with an srsResourceSetld corresponding to the same coresetPoollndex. If the MAC entity has a C-RNTI, a Temporary C-RNTI, or CS-RNTI, the MAC entity shall for each PDCCH occasion and for each Serving Cell belonging to a TAG that has a running timeAlignmentTimer or a running cg-SDTTimeAlignmentTimer and for each grant received for this PDCCH occasion:\n---\n3> if the uplink grant is part of a bundle and if no MAC PDU has been obtained for this bundle; or 3> if the uplink grant is part of a bundle of the configured uplink grant, and the PUSCH duration of the uplink grant overlaps with an uplink grant received in a Random Access Response (i.e. MAC RAR or fallbackRAR) or an uplink grant determined as specified in clause 5.1 .2 a for MSGA payload for this Serving Cell; or 3> if the MAC entity is not configured with lch-basedPrioritization and the BWP is not configured with s T x 2Panel, and if this uplink grant is part of a bundle of the configured uplink grant and the PUSCH duration of the uplink grant overlaps with a PUSCH duration of another uplink grant received on the PDCCH; or 3> if the MAC entity is not configured with lch-basedPrioritization and the BWP is configured with sTx2Panel, and if this uplink grant is part of a bundle of the configured uplink grant associated with an srsResourceSetld corresponding to a coresetPoollndex, and the PUSCH duration of the uplink grant overlaps with a PUSCH duration of another uplink grant received on the PDCCH associated with the same coresetPoollndex; or 3> if the MAC entity is configured with lch-basedPrioritization and this uplink grant is not a prioritized uplink grant:",
+    "generated_at": "2025-12-09T09:43:52.201592",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not contain any explicit normative constraints or relations between the 'duration' fields within the same IE 'pdcch-Config'. The evidence snippets do not mention both target fields or relate them directly.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

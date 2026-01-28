@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      290
+    ],
+    "field2_all": [
+      292
+    ],
+    "actual_pairs": [
+      [
+        [
+          290
+        ],
+        [
+          292
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between 'format2' and 'simultaneousHARQ-ACK-CSI' within the same IE. The evidence discusses general behavior and configuration but lacks specific constraints involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_format2",
+    "field1": "format2",
+    "field2": "simultaneousHARQ-ACK-CSI",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "ETSI TS 138213 V17.1.0 (2022-05) If a UE is provided a first interlace of M_{\\text {Interlace }, 0}^{\\text {PUCCH }} PRBs by interlace0 in InterlaceAllocation and transmits a PUCCH with O_{\\mathrm{ACK}} HARQ-ACK information bits, O_{\\mathrm{SR}}=\\left[\\log _{2}(K+1)\\right] SR bits, and O_{\\mathrm{CRC}} CRC bits using PUCCH format 2 or PUCCH format 3, the UE transmits the PUCCH over the first interlace if \\left(O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CRC}}\\right) <= M_{\\mathrm{Interlace}, 0}^{\\mathrm{PUCCH}} \\cdot N_{\\mathrm{sc}, \\mathrm{crrl}}^{\\mathrm{RB}} . N_{\\text {symb-UCI }}^{\\text {PUCCH }} \\cdot Q_{m} \\cdot r ; otherwise, if the UE is provided a second interlace by interlacel in PUCCH-format2 or PUCCHformat3, the UE transmits the PUCCH over the first and second interlaces. 9.2.5.2 UE procedure for multiplexing HARQ-ACK/SR/CSI in a PUCCH For a transmission occasion of a single CSI report, a PUCCH resource is provided by pucch-CSI-ResourceList. For a transmission occasion of multiple CSI reports, corresponding PUCCH resources can be provided by multi-CSI-PUCCHResourceList. If a UE is provided first and second PUCCH-Config, multi-CSI-PUCCH-ResourceList is provided by the first PUCCH-Config, and PUCCH-Resourceld in pucch-CSI-ResourceList or multi-CSI-PUCCH-ResourceList indicates a corresponding PUCCH resource in PUCCH-Resource provided by the first PUCCH-Config- If a UE is provided only one PUCCH resource set for transmission of HARQ-ACK information in response to PDSCH reception scheduled by a DCI format or in response to a DCI format having associated HARQ-ACK information without scheduling PDSCH reception, the UE does not expect to be provided simultaneousHARQ-ACK-CSI. A UE is configured by maxCodeRate a code rate for multiplexing HARQ-ACK, SR, and CSI report(s) in a PUCCH transmission using PUCCH format 2, PUCCH format 3, or PUCCH format 4.",
+    "generated_at": "2026-01-10T21:41:53.173501",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between 'format2' and 'simultaneousHARQ-ACK-CSI' within the same IE. The evidence discusses general behavior and configuration but lacks specific constraints involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

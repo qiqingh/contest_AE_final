@@ -1,0 +1,106 @@
+{
+  "dsl_rule": "MATCH(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      824,
+      863,
+      902
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ],
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          824,
+          863,
+          902
+        ]
+      ]
+    ]
+  },
+  "predicate": "The bwp-id in bwp-dedicated_pdsch-config must match with the bwp-Id in csi-im-resourcesforinterference",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "bwp-id in bwp-dedicated_pdsch-config is 1 and bwp-Id in csi-im-resourcesforinterference is 1"
+    ],
+    "invalid": [
+      "bwp-id in bwp-dedicated_pdsch-config is 1 and bwp-Id in csi-im-resourcesforinterference is 2"
+    ]
+  },
+  "notes": "The evidence explicitly states that the bwp-Id in the CSI-ResourceConfig (which is part of csi-im-resourcesforinterference) is the same value as the bwp-Id in the bwp-dedicated_pdsch-config.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdsch-config",
+    "field1": "bwp-id",
+    "ie2_name": "csi-im-resourcesforinterference",
+    "field2": "csi-im-resourcesforinterference",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "csi-IM-ResourcesForinterference \\\\ CSI IM resources for interference measurement. csi-ResourceConfigid of a CSI-ResourceConfig included in the configuration of the serving cell indicated with the field \"carrier\" above. The CSI-ResourceConfig indicated here contains only CSI-IM resources. The bwp-Id in that CSI-ResourceConfig is the same value as the bwp-Id in the CSI- \\\\",
+    "generated_at": "2025-12-11T09:32:56.469474",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "MATCH(field1, field2)",
+      "preconditions": [],
+      "predicate": "The bwp-id in bwp-dedicated_pdsch-config must match with the bwp-Id in csi-im-resourcesforinterference",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "bwp-id in bwp-dedicated_pdsch-config is 1 and bwp-Id in csi-im-resourcesforinterference is 1"
+        ],
+        "invalid": [
+          "bwp-id in bwp-dedicated_pdsch-config is 1 and bwp-Id in csi-im-resourcesforinterference is 2"
+        ]
+      },
+      "notes": "The evidence explicitly states that the bwp-Id in the CSI-ResourceConfig (which is part of csi-im-resourcesforinterference) is the same value as the bwp-Id in the bwp-dedicated_pdsch-config.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

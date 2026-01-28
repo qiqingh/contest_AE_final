@@ -1,0 +1,83 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      116,
+      181,
+      246
+    ],
+    "field2_all": [
+      46
+    ],
+    "actual_pairs": [
+      [
+        [
+          116,
+          181,
+          246
+        ],
+        [
+          46
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE relationship between the specified fields. All evidence snippets either describe single-IE behavior or lack explicit normative wording linking the two fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialdownlinkbwp_pdcch-config",
+    "field1": "duration",
+    "ie2_name": "pdcch-config",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 9,
+      "original_count": 9,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.4",
+      "5.5.2.10",
+      "10.3",
+      "9.2.1",
+      "6.3.2",
+      "4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "For operation with shared spectrum channel access, a UE assumes that transmission of SS/PBCH blocks in a half frame is within a discovery burst transmission window that starts from the first symbol of the first slot in a half-frame. The UE can be provided per serving cell by discoveryBurstWindowLength a duration of the discovery burst transmission window. If discoveryBurstWindowLength is not provided, the UE assumes that the duration of the discovery burst transmission window is a half frame. For a serving cell, the UE assumes that a periodicity of the discovery burst transmission window is same as a periodicity of half frames for receptions of SS/PBCH blocks in the serving cell. The UE assumes that one or more SS/PBCH blocks indicated by ssb-PositionsInBurst may be transmitted within the discovery burst transmission window and have candidate SS/PBCH blocks indexes corresponding to SS/PBCH block indexes provided by ssb-PositionsInBurst. If MSB \\( k, k \\geq 1 \\), of ssb-PositionsInBurst is set to 1 , the UE assumes that SS/PBCH block(s) within the discovery burst transmission window with candidate SS/PBCH block index(es)\n---\n- the second search space set includes the second PDCCH candidate that has same index and same CCE aggregation level as the first PDCCH candidate, and a fourth PDCCH candidate that has same index and same CCE aggregation level as the third PDCCH candidate, - the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- for each search space set, the PDCCH monitoring occasions are the ones in the first \\( T_{\\mathrm{s}} \\) slots indicated by duration, or \\( T_{\\mathrm{s}}=1 \\) slot if duration is not provided, starting from the first slot of the first \\( T_{\\mathrm{s}} \\) slots and ending prior to the start of drx-onDurationTimer.\n---\n- at the beginning of the first slot that is at least \\( P_{\\text {switch }} \\) symbols after a slot where the timer expires or, if the UE is provided a search space set to monitor PDCCH for detecting a DCI format \\( 2 \\_0 \\), after a last symbol of a remaining channel occupancy duration for the serving cell if indicated by DCI format \\( 2 \\_0 \\) when \\( \\mu \\in \\{0,1,2,3\\} \\)\n---\n- at the beginning of the first slot, of a group of \\( X_{s} \\) slots, that is at least \\( P_{\\text {switch }} \\) symbols after a slot where the timer expires or, if the UE is provided a search space set to monitor PDCCH for detecting a DCI format \\( 2 \\_0 \\), after a last symbol of a remaining channel occupancy duration for the serving cell if indicated by DCI format \\( 2 \\_0 \\) when \\( \\mu \\in\\{5,6\\} \\)  A UE determines a slot and a symbol in the slot to start or stop PDCCH monitoring according to search space sets for a serving cell that the UE is provided searchSpaceGroupldList or, if cellGroupsForSwitchList is provided, for a set of serving cells, based on the smallest SCS configuration \\( \\mu \\) among all configured DL BWPs in the serving cell or in the set of serving cells and, if any, in the serving cell where the UE receives a PDCCH and detects a corresponding DCI format \\( 2 \\_0 \\) triggering the start or stop of PDCCH monitoring according to search space sets.\n---\n- a '11' value for the bits indicates skipping PDCCH monitoring for a duration provided by the second value in the set of durations  When the PDCCH monitoring adaptation field indicates to a UE to start PDCCH monitoring according to search space sets with a first group index and stop PDCCH monitoring according to search space sets with a second group index, the UE applies the indication\n---\nIf smtc3list is present, for cells indicated in the pci-List parameter in each SSB-MTC3 element of the list in the same MeasObjectNR, the IAB-MT shall setup an additional SS block measurement timing configuration in accordance with the received periodicityAndOffset parameter (using same condition as smtcl to identify the SFN and the subframe for SMTC occasion) in each SSB-MTC3 configuration and use the duration and ssb-ToMeasure parameters from each SSB-MTC3 configuration.  On the indicated ssbFrequency, the UE shall not consider SS/PBCH block transmission in subframes outside the SMTC occasion for RRM measurements based on SS/PBCH blocks and for RRM measurements based on CSI-RS except for SFTD measurement (see TS 38.133 [14], clause 9.3.8).\n---\nThis parameter is used to link two search spaces of same type. If two search spaces have the same SearchSpaceLinkingld UE assumes these search spaces are linked to PDCCH repetition REF. When PDCCH repetition is monitored in two linked search space (SS) sets, the UE does not expect a third monitored SS set to be linked with any of the two linked SS sets. The two linked SS sets have the same SS set type (USS/CSS). The two linked SS sets have the same DCI formats to monitor. For intra-slot PDCCH repetition: The two SS sets should have the same periodicity and offset (monitoringSlotPeriodicityAndOffset), and the same duration. For linking monitoring occasions across the two SS sets that exist in the same slot: The two SS sets have the same number of monitoring occasions within a slot and n-th monitoring occasion of one SS set is linked to \\( n \\)-th monitoring occasion of the other SS set. The following SS sets cannot be linked with another SS set for PDCCH repetition: SS set 0, searchSpaceSIB1, searchSpaceOtherSystem Information, pagingSearchSpace, ra-SearchSpace, searchSpaceBroadcast, peiSearchSpace, and sdt-SearchSpace. SS set configured by recoverySearchSpaceld cannot be linked to another SS set for PDCCH repetition. When a scheduled serving cell is configured to be cross-carrier scheduled by a scheduling serving cell, two PDCCH candidates (with the same AL and candidate index associated with the scheduled serving cell) are linked only if the corresponding two SS sets in the scheduling serving cell are linked and two SS sets in the scheduled serving cell with the same SS set IDs are also linked.",
+    "generated_at": "2026-01-09T12:29:00.636888",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between 'duration' from initialdownlinkbwp_pdcch-config and 'searchspaceid' from pdcch-config.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE relationship between the specified fields. All evidence snippets either describe single-IE behavior or lack explicit normative wording linking the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

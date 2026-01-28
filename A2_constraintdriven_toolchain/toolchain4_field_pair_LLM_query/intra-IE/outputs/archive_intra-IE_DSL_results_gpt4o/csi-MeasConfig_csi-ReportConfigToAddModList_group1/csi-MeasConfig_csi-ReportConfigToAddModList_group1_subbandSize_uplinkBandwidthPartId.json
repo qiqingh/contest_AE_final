@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      938
+    ],
+    [
+      930
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative constraint between 'subbandSize' and 'uplinkBandwidthPartId'. The evidence snippet mentions a BWP-dependent value for 'subbandSize', but does not relate it directly to 'uplinkBandwidthPartId'.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "subbandSize",
+    "field2": "uplinkBandwidthPartId",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "Indicates one out of two possible BWP-dependent values for the subband size as indicated in TS 38.214 [19], table 5.2.1.4-2. If csi-ReportingBand is absent, the UE shall ignore this field.",
+    "generated_at": "2025-12-09T09:45:28.226103",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative constraint between 'subbandSize' and 'uplinkBandwidthPartId'. The evidence snippet mentions a BWP-dependent value for 'subbandSize', but does not relate it directly to 'uplinkBandwidthPartId'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

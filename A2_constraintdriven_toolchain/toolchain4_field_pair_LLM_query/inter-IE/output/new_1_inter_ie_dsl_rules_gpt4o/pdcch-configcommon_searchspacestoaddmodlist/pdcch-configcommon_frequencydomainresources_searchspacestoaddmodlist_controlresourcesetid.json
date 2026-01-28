@@ -1,0 +1,94 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      117,
+      182,
+      247
+    ],
+    "field2_all": [
+      81,
+      82,
+      146,
+      147,
+      211,
+      212
+    ],
+    "actual_pairs": [
+      [
+        [
+          117,
+          182,
+          247
+        ],
+        [
+          81,
+          82,
+          146,
+          147,
+          211,
+          212
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'frequencydomainresources' from 'pdcch-configcommon' and 'controlresourcesetid' from 'searchspacestoaddmodlist'. The evidence primarily describes single-IE behavior or lacks explicit normative wording for a cross-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-configcommon",
+    "field1": "frequencydomainresources",
+    "ie2_name": "searchspacestoaddmodlist",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2",
+      "7.3.2.2",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "For a CORESET configured by the ControlResourceSet [E: - \\( \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} \\) is given by the higher-layer parameter frequencyDomainResources;\n---\n- \\( \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} \\) is given by the higher-layer parameter frequencyDomainResources; - \\( \\quad N_{\\text {symb }}^{\\text {CORESET }} \\) is given by the higher-layer parameter duration, where \\( N_{\\text {symb }}^{\\text {CORESET }}=3 \\) is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3;\n---\nIf a UE is provided two TCI states indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in a CORESET associated with a Type3-PDCCH CSS set, the UE may assume the quasi co-location information indicated in both of the two TCI states for the PDCCH reception in the CORESET.  For each CORESET in a DL BWP of a serving cell, a respective frequencyDomainResources provides a bitmap\n---\nFor each CORESET in a DL BWP of a serving cell, a respective frequencyDomainResources provides a bitmap - if a CORESET is not associated with any search space set configured with freqMonitorLocations, the bits of the bitmap have a one-to-one mapping with non-overlapping groups of 6 consecutive PRBs, in ascending order of the PRB index in the DL BWP bandwidth of \\( N_{\\mathrm{RB}}^{\\mathrm{BWP}} \\) PRBs with starting common RB position \\( N_{\\mathrm{BWP}}^{\\text {start }} \\), where the first common RB of the first group of 6 PRBs has common RB index \\( 6 \\cdot\\left[N_{\\mathrm{BWP}}^{\\text {start }} / 6\\right] \\) if \\( r b \\)-Offset is not provided, or the first common RB of the first group of 6 PRBs has common RB index \\( N_{\\mathrm{BWP}}^{\\text {start }}+N_{\\mathrm{RB}}^{\\text {offset }} \\) where \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by rb-Offset.\n---\nfrequencyDomainResources \\\\ Frequency domain resources for the CORESET. Each bit corresponds a group of 6 RBs, with grouping starting from the first RB group in the BWP. When at least one search space is configured with freqMonitorLocation-r16, only the first \\( N_{\\text {RBG }, \\text { seto }}^{\\text {size }} \\) bits are valid (see TS 38.213 [13], clause 10.1). The first (left-most / most significant) bit corresponds to the first RB group in the BWP, and so on. A bit that is set to 1 indicates that this RB group belongs to the frequency domain resource of this CORESET. Bits corresponding to a group of RBs not fully contained in the bandwidth part within which the CORESET is configured are set to zero (see TS 38.211 [16], clause 7.3.2.2).",
+    "generated_at": "2026-01-09T12:43:03.741584",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'frequencydomainresources' from 'pdcch-configcommon' and 'controlresourcesetid' from 'searchspacestoaddmodlist'. The evidence primarily describes single-IE behavior or lacks explicit normative wording for a cross-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

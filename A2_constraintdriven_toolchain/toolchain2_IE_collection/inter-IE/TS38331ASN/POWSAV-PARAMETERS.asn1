@@ -1,0 +1,31 @@
+PowSav-Parameters-r16 ::=         SEQUENCE {
+    powSav-ParametersCommon-r16               PowSav-ParametersCommon-r16                                        OPTIONAL,
+    powSav-ParametersFRX-Diff-r16             PowSav-ParametersFRX-Diff-r16                                      OPTIONAL,
+    ...
+}
+
+PowSav-Parameters-v1700 ::=     SEQUENCE {
+    powSav-ParametersFR2-2-r17      PowSav-ParametersFR2-2-r17                                                   OPTIONAL,
+    ...
+}
+
+PowSav-ParametersCommon-r16 ::=    SEQUENCE {
+    drx-Preference-r16                        ENUMERATED {supported}                                             OPTIONAL,
+    maxCC-Preference-r16                      ENUMERATED {supported}                                             OPTIONAL,
+    releasePreference-r16                     ENUMERATED {supported}                                             OPTIONAL,
+    -- R1 19-4a: UE assistance information
+    minSchedulingOffsetPreference-r16         ENUMERATED {supported}                                             OPTIONAL,
+    ...
+}
+
+PowSav-ParametersFRX-Diff-r16 ::=    SEQUENCE {
+    maxBW-Preference-r16                      ENUMERATED {supported}                                             OPTIONAL,
+    maxMIMO-LayerPreference-r16               ENUMERATED {supported}                                             OPTIONAL,
+    ...
+}
+
+PowSav-ParametersFR2-2-r17 ::=      SEQUENCE {
+    maxBW-Preference-r17                      ENUMERATED {supported}                                             OPTIONAL,
+    maxMIMO-LayerPreference-r17               ENUMERATED {supported}                                             OPTIONAL,
+    ...
+}

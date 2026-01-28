@@ -1,0 +1,306 @@
+BandCombinationList ::=             SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination
+
+BandCombinationList-v1540 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1540
+
+BandCombinationList-v1550 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1550
+
+BandCombinationList-v1560 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1560
+
+BandCombinationList-v1570 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1570
+
+BandCombinationList-v1580 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1580
+
+BandCombinationList-v1590 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1590
+
+BandCombinationList-v15g0 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v15g0
+
+BandCombinationList-v1610 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1610
+
+BandCombinationList-v1630 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1630
+
+BandCombinationList-v1640 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1640
+
+BandCombinationList-v1650 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1650
+
+BandCombinationList-v1680 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1680
+
+BandCombinationList-v1690 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1690
+
+BandCombinationList-v16a0 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v16a0
+
+BandCombinationList-v1700 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1700
+
+BandCombinationList-v1720 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1720
+
+BandCombinationList-v1730 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1730
+
+BandCombinationList-v1740 ::=       SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-v1740
+
+BandCombinationList-UplinkTxSwitch-r16 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-r16
+
+BandCombinationList-UplinkTxSwitch-v1630 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1630
+
+BandCombinationList-UplinkTxSwitch-v1640 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1640
+
+BandCombinationList-UplinkTxSwitch-v1650 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1650
+
+BandCombinationList-UplinkTxSwitch-v1670 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1670
+
+BandCombinationList-UplinkTxSwitch-v1690 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1690
+
+BandCombinationList-UplinkTxSwitch-v16a0 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v16a0
+
+BandCombinationList-UplinkTxSwitch-v1700 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1700
+
+BandCombinationList-UplinkTxSwitch-v1720 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1720
+
+BandCombinationList-UplinkTxSwitch-v1730 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1730
+
+BandCombinationList-UplinkTxSwitch-v1740 ::= SEQUENCE (SIZE (1..maxBandComb)) OF BandCombination-UplinkTxSwitch-v1740
+
+BandCombination ::=                 SEQUENCE {
+    bandList                            SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParameters,
+    featureSetCombination               FeatureSetCombinationId,
+    ca-ParametersEUTRA                  CA-ParametersEUTRA                          OPTIONAL,
+    ca-ParametersNR                     CA-ParametersNR                             OPTIONAL,
+    mrdc-Parameters                     MRDC-Parameters                             OPTIONAL,
+    supportedBandwidthCombinationSet    BIT STRING (SIZE (1..32))                   OPTIONAL,
+    powerClass-v1530                    ENUMERATED {pc2}                            OPTIONAL
+}
+
+BandCombination-v1540::=            SEQUENCE {
+    bandList-v1540                      SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParameters-v1540,
+    ca-ParametersNR-v1540               CA-ParametersNR-v1540                       OPTIONAL
+}
+
+BandCombination-v1550 ::=           SEQUENCE {
+    ca-ParametersNR-v1550               CA-ParametersNR-v1550
+}
+BandCombination-v1560::=            SEQUENCE {
+    ne-DC-BC                                ENUMERATED {supported}                 OPTIONAL,
+    ca-ParametersNRDC                       CA-ParametersNRDC                      OPTIONAL,
+    ca-ParametersEUTRA-v1560                CA-ParametersEUTRA-v1560               OPTIONAL,
+    ca-ParametersNR-v1560                   CA-ParametersNR-v1560                  OPTIONAL
+}
+
+BandCombination-v1570 ::=           SEQUENCE {
+    ca-ParametersEUTRA-v1570            CA-ParametersEUTRA-v1570
+}
+
+BandCombination-v1580 ::=           SEQUENCE {
+    mrdc-Parameters-v1580               MRDC-Parameters-v1580
+}
+
+BandCombination-v1590::=            SEQUENCE {
+    supportedBandwidthCombinationSetIntraENDC  BIT STRING (SIZE (1..32))           OPTIONAL,
+    mrdc-Parameters-v1590                      MRDC-Parameters-v1590
+}
+
+BandCombination-v15g0::=            SEQUENCE {
+    ca-ParametersNR-v15g0               CA-ParametersNR-v15g0                      OPTIONAL,
+    ca-ParametersNRDC-v15g0             CA-ParametersNRDC-v15g0                    OPTIONAL,
+    mrdc-Parameters-v15g0               MRDC-Parameters-v15g0                      OPTIONAL
+}
+
+BandCombination-v1610 ::=          SEQUENCE {
+    bandList-v1610                      SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParameters-v1610  OPTIONAL,
+    ca-ParametersNR-v1610               CA-ParametersNR-v1610                  OPTIONAL,
+    ca-ParametersNRDC-v1610             CA-ParametersNRDC-v1610                OPTIONAL,
+    powerClass-v1610                    ENUMERATED {pc1dot5}                   OPTIONAL,
+    powerClassNRPart-r16                ENUMERATED {pc1, pc2, pc3, pc5}        OPTIONAL,
+    featureSetCombinationDAPS-r16       FeatureSetCombinationId                OPTIONAL,
+    mrdc-Parameters-v1620               MRDC-Parameters-v1620                  OPTIONAL
+}
+
+BandCombination-v1630 ::=                   SEQUENCE {
+    ca-ParametersNR-v1630                       CA-ParametersNR-v1630                                             OPTIONAL,
+    ca-ParametersNRDC-v1630                     CA-ParametersNRDC-v1630                                           OPTIONAL,
+    mrdc-Parameters-v1630                       MRDC-Parameters-v1630                                             OPTIONAL,
+    supportedTxBandCombListPerBC-Sidelink-r16   BIT STRING (SIZE (1..maxBandComb))                                OPTIONAL,
+    supportedRxBandCombListPerBC-Sidelink-r16   BIT STRING (SIZE (1..maxBandComb))                                OPTIONAL,
+    scalingFactorTxSidelink-r16                 SEQUENCE (SIZE (1..maxBandComb)) OF ScalingFactorSidelink-r16     OPTIONAL,
+    scalingFactorRxSidelink-r16                 SEQUENCE (SIZE (1..maxBandComb)) OF ScalingFactorSidelink-r16     OPTIONAL
+}
+
+BandCombination-v1640 ::=                   SEQUENCE {
+    ca-ParametersNR-v1640                       CA-ParametersNR-v1640                                             OPTIONAL,
+    ca-ParametersNRDC-v1640                     CA-ParametersNRDC-v1640                                           OPTIONAL
+}
+
+BandCombination-v1650 ::=          SEQUENCE {
+    ca-ParametersNRDC-v1650             CA-ParametersNRDC-v1650                 OPTIONAL
+}
+
+BandCombination-v1680 ::=          SEQUENCE {
+    intrabandConcurrentOperationPowerClass-r16 SEQUENCE (SIZE (1..maxBandComb)) OF IntraBandPowerClass-r16     OPTIONAL
+}
+
+BandCombination-v1690 ::=          SEQUENCE {
+    ca-ParametersNR-v1690              CA-ParametersNR-v1690                 OPTIONAL
+}
+
+BandCombination-v16a0 ::=          SEQUENCE {
+    ca-ParametersNR-v16a0              CA-ParametersNR-v16a0                    OPTIONAL,
+    ca-ParametersNRDC-v16a0            CA-ParametersNRDC-v16a0                  OPTIONAL
+}
+BandCombination-v1700 ::=          SEQUENCE {
+    ca-ParametersNR-v1700              CA-ParametersNR-v1700                    OPTIONAL,
+    ca-ParametersNRDC-v1700            CA-ParametersNRDC-v1700                  OPTIONAL,
+    mrdc-Parameters-v1700              MRDC-Parameters-v1700                    OPTIONAL,
+    bandList-v1710                      SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParameters-v1710  OPTIONAL,
+    supportedBandCombListPerBC-SL-RelayDiscovery-r17      BIT STRING (SIZE (1..maxBandComb))               OPTIONAL,
+    supportedBandCombListPerBC-SL-NonRelayDiscovery-r17   BIT STRING (SIZE (1..maxBandComb))               OPTIONAL
+}
+
+BandCombination-v1720 ::=          SEQUENCE {
+    ca-ParametersNR-v1720              CA-ParametersNR-v1720                    OPTIONAL,
+    ca-ParametersNRDC-v1720            CA-ParametersNRDC-v1720                  OPTIONAL
+}
+
+BandCombination-v1730 ::=          SEQUENCE {
+    ca-ParametersNR-v1730              CA-ParametersNR-v1730                    OPTIONAL,
+    ca-ParametersNRDC-v1730            CA-ParametersNRDC-v1730                  OPTIONAL,
+    bandList-v1730                     SEQUENCE (SIZE (1..maxSimultaneousBands)) OF BandParameters-v1730  OPTIONAL
+}
+
+BandCombination-v1740 ::=          SEQUENCE {
+    ca-ParametersNR-v1740              CA-ParametersNR-v1740                    OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-r16 ::= SEQUENCE {
+    bandCombination-r16                 BandCombination,
+    bandCombination-v1540               BandCombination-v1540                      OPTIONAL,
+    bandCombination-v1560               BandCombination-v1560                      OPTIONAL,
+    bandCombination-v1570               BandCombination-v1570                      OPTIONAL,
+    bandCombination-v1580               BandCombination-v1580                      OPTIONAL,
+    bandCombination-v1590               BandCombination-v1590                      OPTIONAL,
+    bandCombination-v1610               BandCombination-v1610                      OPTIONAL,
+    supportedBandPairListNR-r16         SEQUENCE (SIZE (1..maxULTxSwitchingBandPairs)) OF ULTxSwitchingBandPair-r16,
+    uplinkTxSwitching-OptionSupport-r16 ENUMERATED {switchedUL, dualUL, both}      OPTIONAL,
+    uplinkTxSwitching-PowerBoosting-r16 ENUMERATED {supported}                     OPTIONAL,
+    ...,
+    [[
+    -- R4 16-5 UL-MIMO coherence capability for dynamic Tx switching between 3CC 1Tx-2Tx switching
+    uplinkTxSwitching-PUSCH-TransCoherence-r16     ENUMERATED {nonCoherent, fullCoherent}   OPTIONAL
+    ]]
+}
+
+BandCombination-UplinkTxSwitch-v1630 ::=    SEQUENCE {
+    bandCombination-v1630                       BandCombination-v1630              OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1640 ::=    SEQUENCE {
+    bandCombination-v1640                       BandCombination-v1640              OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1650 ::= SEQUENCE {
+    bandCombination-v1650               BandCombination-v1650                      OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1670 ::= SEQUENCE {
+    bandCombination-v15g0                    BandCombination-v15g0                 OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1690 ::=  SEQUENCE {
+    bandCombination-v1690                     BandCombination-v1690                OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v16a0 ::= SEQUENCE {
+    bandCombination-v16a0                    BandCombination-v16a0                 OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1700 ::= SEQUENCE {
+    bandCombination-v1700                    BandCombination-v1700                      OPTIONAL,
+    -- R4 16-1/16-2/16-3 Dynamic Tx switching between 2CC/3CC 2Tx-2Tx/1Tx-2Tx switching
+    supportedBandPairListNR-v1700            SEQUENCE (SIZE (1..maxULTxSwitchingBandPairs)) OF ULTxSwitchingBandPair-v1700  OPTIONAL,
+    -- R4 16-6: UL-MIMO coherence capability for dynamic Tx switching between 2Tx-2Tx switching
+    uplinkTxSwitchingBandParametersList-v1700 SEQUENCE (SIZE (1.. maxSimultaneousBands)) OF UplinkTxSwitchingBandParameters-v1700  OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1720 ::= SEQUENCE {
+    bandCombination-v1720                    BandCombination-v1720                 OPTIONAL,
+    uplinkTxSwitching-OptionSupport2T2T-r17  ENUMERATED {switchedUL, dualUL, both} OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1730 ::= SEQUENCE {
+    bandCombination-v1730                    BandCombination-v1730                 OPTIONAL
+}
+
+BandCombination-UplinkTxSwitch-v1740 ::= SEQUENCE {
+    bandCombination-v1740                    BandCombination-v1740                 OPTIONAL
+}
+
+ULTxSwitchingBandPair-r16 ::=       SEQUENCE {
+    bandIndexUL1-r16                    INTEGER(1..maxSimultaneousBands),
+    bandIndexUL2-r16                    INTEGER(1..maxSimultaneousBands),
+    uplinkTxSwitchingPeriod-r16         ENUMERATED {n35us, n140us, n210us},
+    uplinkTxSwitching-DL-Interruption-r16 BIT STRING (SIZE(1..maxSimultaneousBands)) OPTIONAL
+}
+
+ULTxSwitchingBandPair-v1700 ::=     SEQUENCE {
+    uplinkTxSwitchingPeriod2T2T-r17     ENUMERATED {n35us, n140us, n210us}     OPTIONAL
+}
+
+UplinkTxSwitchingBandParameters-v1700 ::=       SEQUENCE {
+    bandIndex-r17                                   INTEGER(1..maxSimultaneousBands),
+    uplinkTxSwitching2T2T-PUSCH-TransCoherence-r17  ENUMERATED {nonCoherent, fullCoherent}            OPTIONAL
+}
+
+BandParameters ::=                      CHOICE {
+    eutra                               SEQUENCE {
+        bandEUTRA                           FreqBandIndicatorEUTRA,
+        ca-BandwidthClassDL-EUTRA           CA-BandwidthClassEUTRA                 OPTIONAL,
+        ca-BandwidthClassUL-EUTRA           CA-BandwidthClassEUTRA                 OPTIONAL
+    },
+    nr                                  SEQUENCE {
+        bandNR                              FreqBandIndicatorNR,
+        ca-BandwidthClassDL-NR              CA-BandwidthClassNR                    OPTIONAL,
+        ca-BandwidthClassUL-NR              CA-BandwidthClassNR                    OPTIONAL
+    }
+}
+
+BandParameters-v1540 ::=            SEQUENCE {
+    srs-CarrierSwitch                   CHOICE {
+        nr                                  SEQUENCE {
+            srs-SwitchingTimesListNR            SEQUENCE (SIZE (1..maxSimultaneousBands)) OF SRS-SwitchingTimeNR
+        },
+        eutra                               SEQUENCE {
+            srs-SwitchingTimesListEUTRA         SEQUENCE (SIZE (1..maxSimultaneousBands)) OF SRS-SwitchingTimeEUTRA
+        }
+    }                                                                              OPTIONAL,
+    srs-TxSwitch                    SEQUENCE {
+        supportedSRS-TxPortSwitch       ENUMERATED {t1r2, t1r4, t2r4, t1r4-t2r4, t1r1, t2r2, t4r4, notSupported},
+        txSwitchImpactToRx              INTEGER (1..32)                            OPTIONAL,
+        txSwitchWithAnotherBand         INTEGER (1..32)                            OPTIONAL
+    }                                                                              OPTIONAL
+}
+
+BandParameters-v1610 ::=         SEQUENCE {
+    srs-TxSwitch-v1610               SEQUENCE {
+        supportedSRS-TxPortSwitch-v1610  ENUMERATED {t1r1-t1r2, t1r1-t1r2-t1r4, t1r1-t1r2-t2r2-t2r4, t1r1-t1r2-t2r2-t1r4-t2r4,
+                                                         t1r1-t2r2, t1r1-t2r2-t4r4}
+    }                                                                              OPTIONAL
+}
+
+BandParameters-v1710 ::=         SEQUENCE {
+    -- R1 23-8-3	SRS Antenna switching for >4Rx
+    srs-AntennaSwitchingBeyond4RX-r17                     SEQUENCE {
+        -- 1. Support of SRS antenna switching xTyR with y>4
+        supportedSRS-TxPortSwitchBeyond4Rx-r17                BIT STRING (SIZE (11)),
+        -- 2. Report the entry number of the first-listed band with UL in the band combination that affects this DL
+        entryNumberAffectBeyond4Rx-r17                        INTEGER (1..32)      OPTIONAL,
+        -- 3. Report the entry number of the first-listed band with UL in the band combination that switches together with this UL
+        entryNumberSwitchBeyond4Rx-r17                        INTEGER (1..32)      OPTIONAL
+    }                                                                              OPTIONAL
+}
+
+BandParameters-v1730 ::= SEQUENCE {
+    -- R1 39-3-2	Affected bands for inter-band CA during SRS carrier switching
+    srs-SwitchingAffectedBandsListNR-r17    SEQUENCE (SIZE (1..maxSimultaneousBands)) OF SRS-SwitchingAffectedBandsNR-r17
+}
+
+ScalingFactorSidelink-r16 ::=       ENUMERATED {f0p4, f0p75, f0p8, f1}
+
+IntraBandPowerClass-r16 ::=         ENUMERATED {pc2, pc3, spare6, spare5, spare4, spare3, spare2, spare1}
+
+SRS-SwitchingAffectedBandsNR-r17 ::= BIT STRING (SIZE (1..maxSimultaneousBands))

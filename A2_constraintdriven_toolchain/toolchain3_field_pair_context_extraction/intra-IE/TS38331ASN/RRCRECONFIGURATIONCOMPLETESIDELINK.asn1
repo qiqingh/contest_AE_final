@@ -1,0 +1,23 @@
+RRCReconfigurationCompleteSidelink ::=         SEQUENCE {
+    rrc-TransactionIdentifier-r16                  RRC-TransactionIdentifier,
+    criticalExtensions                             CHOICE {
+        rrcReconfigurationCompleteSidelink-r16         RRCReconfigurationCompleteSidelink-r16-IEs,
+        criticalExtensionsFuture                       SEQUENCE {}
+    }
+}
+
+RRCReconfigurationCompleteSidelink-r16-IEs ::= SEQUENCE {
+    lateNonCriticalExtension                       OCTET STRING                                                       OPTIONAL,
+    nonCriticalExtension                           RRCReconfigurationCompleteSidelink-v1710-IEs                       OPTIONAL
+}
+
+RRCReconfigurationCompleteSidelink-v1710-IEs ::=   SEQUENCE {
+    dummy                                              ENUMERATED {true},
+    nonCriticalExtension                               RRCReconfigurationCompleteSidelink-v1720-IEs                   OPTIONAL
+}
+
+
+RRCReconfigurationCompleteSidelink-v1720-IEs ::=   SEQUENCE {
+    sl-DRX-ConfigReject-v1720                          ENUMERATED {true}                                              OPTIONAL,
+    nonCriticalExtension                               SEQUENCE {}                                                    OPTIONAL
+}

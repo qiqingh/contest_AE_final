@@ -1,0 +1,149 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      822,
+      828,
+      847,
+      852,
+      861,
+      867,
+      886,
+      891,
+      900,
+      906,
+      930
+    ],
+    "field2_all": [
+      828,
+      847,
+      852,
+      861,
+      867,
+      886,
+      891,
+      900,
+      906,
+      925,
+      930
+    ],
+    "actual_pairs": [
+      [
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ],
+        [
+          847,
+          861,
+          886,
+          900,
+          925
+        ]
+      ],
+      [
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ],
+        [
+          847,
+          861,
+          886,
+          900,
+          925
+        ]
+      ],
+      [
+        [
+          822,
+          847,
+          861,
+          886,
+          900
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906
+        ]
+      ],
+      [
+        [
+          822,
+          847,
+          861,
+          886,
+          900
+        ],
+        [
+          828,
+          852,
+          867,
+          891,
+          906,
+          930
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'reportconfigid' and 'uplinkbandwidthpartid'. The evidence primarily describes behavior within single IEs or lacks explicit normative wording to define a cross-IE relationship.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-reportconfigtoaddmodlist_reportconfigid",
+    "field1": "reportconfigid",
+    "ie2_name": "csi-reportconfigtoaddmodlist_reportconfigtype",
+    "field2": "uplinkbandwidthpartid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.3.80",
+      "6.1.3.16"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- \\( \\mathrm{S}_{1} \\) : This field indicates the activation/deactivation status of the Semi-Persistent CSI report configuration within Itm-CSI-ReportConfigToAddModList if L field is set to 1 , or csi-ReportConfigToAddModList if L field is set to 0 , as specified in TS 38.331 [5]. \\( \\mathrm{S}_{0} \\) refers to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the lowest CSI-ReportConfigId or LTM-CSI-ReportConfigId within the list with type set to semiPersistentOnPUCCH, \\( \\mathrm{S}_{1} \\) to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the second lowest CSI-ReportConfigId or LTM-CSIReportConfigId and so on. If the number of report configurations within the list with type set to semiPersistentOnPUCCH in the indicated BWP is less than \\( \\mathrm{i}+1 \\), MAC entity shall ignore the \\( \\mathrm{S}_{1} \\) field. The \\( \\mathrm{S}_{1} \\) field is set to 1 to indicate that the corresponding Semi-Persistent CSI report configuration shall be activated. The S , field is set to 0 to indicate that the corresponding Semi-Persistent CSI report configuration i shall be deactivated. If the Semi-Persistent CSI report configuration \\( i \\) is configured with csiReportSubConfigToAddModList, the \\( \\mathrm{S}_{1} \\) field is set to 0 to additionally indicate that all sub-configurations within csi-ReportSubConfigToAddModList shall be deactivated;\n---\n- BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - \\( \\mathrm{S}_{1} \\) : This field indicates the activation/deactivation status of the Semi-Persistent CSI report configuration within csi-ReportConfigToAddModList, as specified in TS 38.331 [5]. So refers to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the lowest CSI-ReportConfigId within the list with type set to semiPersistentOnPUCCH, \\( \\mathrm{S}_{1} \\) to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the second lowest CSI-ReportConfigId and so on. If the number of report configurations within the list with type set to semiPersistentOnPUCCH in the indicated BWP is less than \\( i+1 \\), MAC entity shall ignore the \\( S_{1} \\) field. The \\( S_{1} \\) field is set to 1 to indicate that the corresponding Semi-Persistent CSI report configuration shall be activated. The \\( \\mathrm{S}_{1} \\) field is set to 0 to indicate that the corresponding Semi-Persistent CSI report configuration i shall be deactivated;\n---\n- \\( \\mathrm{S}_{1} \\) : This field indicates the activation/deactivation status of the Semi-Persistent CSI report configuration within csi-ReportConfigToAddModList, as specified in TS 38.331 [5]. So refers to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the lowest CSI-ReportConfigId within the list with type set to semiPersistentOnPUCCH, \\( \\mathrm{S}_{1} \\) to the report configuration which includes PUCCH resources for SP CSI reporting in the indicated BWP and has the second lowest CSI-ReportConfigId and so on. If the number of report configurations within the list with type set to semiPersistentOnPUCCH in the indicated BWP is less than \\( i+1 \\), MAC entity shall ignore the \\( S_{1} \\) field. The \\( S_{1} \\) field is set to 1 to indicate that the corresponding Semi-Persistent CSI report configuration shall be activated. The \\( \\mathrm{S}_{1} \\) field is set to 0 to indicate that the corresponding Semi-Persistent CSI report configuration i shall be deactivated;",
+    "generated_at": "2026-01-10T14:17:51.494272",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'reportconfigid' and 'uplinkbandwidthpartid'. The evidence primarily describes behavior within single IEs or lacks explicit normative wording to define a cross-IE relationship.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

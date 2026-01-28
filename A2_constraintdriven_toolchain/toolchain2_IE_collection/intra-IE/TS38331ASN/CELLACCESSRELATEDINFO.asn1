@@ -1,0 +1,19 @@
+CellAccessRelatedInfo   ::=         SEQUENCE {
+    plmn-IdentityInfoList               PLMN-IdentityInfoList,
+    cellReservedForOtherUse             ENUMERATED {true}             OPTIONAL,   -- Need R
+    ...,
+    [[
+    cellReservedForFutureUse-r16        ENUMERATED {true}             OPTIONAL,   -- Need R
+    npn-IdentityInfoList-r16            NPN-IdentityInfoList-r16      OPTIONAL    -- Need R
+    ]],
+    [[
+    snpn-AccessInfoList-r17             SEQUENCE (SIZE (1..maxNPN-r16)) OF SNPN-AccessInfo-r17    OPTIONAL    -- Need R
+    ]]
+}
+
+SNPN-AccessInfo-r17 ::=         SEQUENCE {
+    extCH-Supported-r17                 ENUMERATED {true}             OPTIONAL,   -- Need R
+    extCH-WithoutConfigAllowed-r17      ENUMERATED {true}             OPTIONAL,   -- Need R
+    onboardingEnabled-r17               ENUMERATED {true}             OPTIONAL,   -- Need R
+    imsEmergencySupportForSNPN-r17      ENUMERATED {true}             OPTIONAL    -- Need R
+}

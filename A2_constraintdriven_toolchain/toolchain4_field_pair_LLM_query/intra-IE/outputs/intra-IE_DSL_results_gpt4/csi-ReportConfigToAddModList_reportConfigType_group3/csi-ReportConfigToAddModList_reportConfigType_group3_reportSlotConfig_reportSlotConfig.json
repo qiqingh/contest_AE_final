@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      889,
+      890
+    ],
+    "field2_all": [
+      889,
+      890
+    ],
+    "actual_pairs": [
+      [
+        [
+          889,
+          890
+        ],
+        [
+          889,
+          890
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the two fields within the same IE. The evidence only mentions the field 'reportSlotConfig' and its behavior when 'reportSlotConfig-v1530' is present, but it does not provide any information about a relationship or dependency between two instances of 'reportSlotConfig'.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_reportConfigType_group3",
+    "field1": "reportSlotConfig",
+    "field2": "reportSlotConfig",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} reportSlotConfig Periodicity and slot offset (see TS 38.214 [19], clause 5.2.1.4). If the field reportSlotConfig-v1530 is present, the UE shall ignore the value provided in reportSlotConfig (without suffix). \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2025-12-11T14:15:35.676510",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a clear semantic constraint or relationship between the two fields within the same IE. The evidence only mentions the field 'reportSlotConfig' and its behavior when 'reportSlotConfig-v1530' is present, but it does not provide any information about a relationship or dependency between two instances of 'reportSlotConfig'.",
+      "version_tags": []
+    }
+  }
+}

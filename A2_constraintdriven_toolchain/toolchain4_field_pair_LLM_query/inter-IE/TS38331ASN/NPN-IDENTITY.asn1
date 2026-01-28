@@ -1,0 +1,17 @@
+NPN-Identity-r16 ::=             CHOICE {
+    pni-npn-r16                      SEQUENCE {
+        plmn-Identity-r16                PLMN-Identity,
+        cag-IdentityList-r16             SEQUENCE (SIZE (1..maxNPN-r16)) OF CAG-IdentityInfo-r16
+    },
+    snpn-r16                         SEQUENCE {
+        plmn-Identity-r16                PLMN-Identity,
+        nid-List-r16                     SEQUENCE (SIZE (1..maxNPN-r16)) OF NID-r16
+    }
+}
+
+CAG-IdentityInfo-r16 ::=         SEQUENCE {
+    cag-Identity-r16                 BIT STRING (SIZE (32)),
+    manualCAGselectionAllowed-r16    ENUMERATED {true}                         OPTIONAL   -- Need R
+}
+
+NID-r16 ::=                      BIT STRING (SIZE (44))

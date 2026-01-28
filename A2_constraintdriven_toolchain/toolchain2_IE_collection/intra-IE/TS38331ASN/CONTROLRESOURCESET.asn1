@@ -1,0 +1,28 @@
+ControlResourceSet ::=              SEQUENCE {
+    controlResourceSetId                ControlResourceSetId,
+    frequencyDomainResources            BIT STRING (SIZE (45)),
+    duration                            INTEGER (1..maxCoReSetDuration),
+    cce-REG-MappingType                 CHOICE {
+        interleaved                         SEQUENCE {
+            reg-BundleSize                      ENUMERATED {n2, n3, n6},
+            interleaverSize                     ENUMERATED {n2, n3, n6},
+            shiftIndex                          INTEGER(0..maxNrofPhysicalResourceBlocks-1)       OPTIONAL -- Need S
+        },
+        nonInterleaved                      NULL
+    },
+    precoderGranularity                 ENUMERATED {sameAsREG-bundle, allContiguousRBs},
+    tci-StatesPDCCH-ToAddList           SEQUENCE(SIZE (1..maxNrofTCI-StatesPDCCH)) OF TCI-StateId OPTIONAL, -- Cond NotSIB-initialBWP
+    tci-StatesPDCCH-ToReleaseList       SEQUENCE(SIZE (1..maxNrofTCI-StatesPDCCH)) OF TCI-StateId OPTIONAL, -- Cond NotSIB-initialBWP
+    tci-PresentInDCI                        ENUMERATED {enabled}                                  OPTIONAL, -- Need S
+    pdcch-DMRS-ScramblingID                 INTEGER (0..65535)                                    OPTIONAL, -- Need S
+    ...,
+    [[
+    rb-Offset-r16                       INTEGER (0..5)                                            OPTIONAL, -- Need S
+    tci-PresentDCI-1-2-r16              INTEGER (1..3)                                            OPTIONAL, -- Need S
+    coresetPoolIndex-r16                INTEGER (0..1)                                            OPTIONAL, -- Need S
+    controlResourceSetId-v1610          ControlResourceSetId-v1610                                OPTIONAL  -- Need S
+    ]],
+    [[
+    followUnifiedTCI-State-r17           ENUMERATED {enabled}                                      OPTIONAL  -- Need R
+    ]]
+}

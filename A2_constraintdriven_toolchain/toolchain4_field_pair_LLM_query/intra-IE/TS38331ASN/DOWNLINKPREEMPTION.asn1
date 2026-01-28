@@ -1,0 +1,12 @@
+DownlinkPreemption ::=              SEQUENCE {
+    int-RNTI                            RNTI-Value,
+    timeFrequencySet                    ENUMERATED {set0, set1},
+    dci-PayloadSize                     INTEGER (0..maxINT-DCI-PayloadSize),
+    int-ConfigurationPerServingCell     SEQUENCE (SIZE (1..maxNrofServingCells)) OF INT-ConfigurationPerServingCell,
+    ...
+}
+
+INT-ConfigurationPerServingCell ::= SEQUENCE {
+    servingCellId                       ServCellIndex,
+    positionInDCI                       INTEGER (0..maxINT-DCI-PayloadSize-1)
+}

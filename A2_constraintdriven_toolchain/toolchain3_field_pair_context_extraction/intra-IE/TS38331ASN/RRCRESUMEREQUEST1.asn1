@@ -1,0 +1,10 @@
+RRCResumeRequest1 ::=         SEQUENCE {
+       rrcResumeRequest1          RRCResumeRequest1-IEs
+}
+
+RRCResumeRequest1-IEs ::=    SEQUENCE {
+    resumeIdentity               I-RNTI-Value,
+    resumeMAC-I                  BIT STRING (SIZE (16)),
+    resumeCause                  ResumeCause,
+    spare                        BIT STRING (SIZE (1))
+}

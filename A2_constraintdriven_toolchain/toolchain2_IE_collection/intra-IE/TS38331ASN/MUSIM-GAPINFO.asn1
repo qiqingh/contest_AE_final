@@ -1,0 +1,21 @@
+MUSIM-GapInfo-r17 ::=               SEQUENCE {
+    musim-Starting-SFN-AndSubframe-r17  MUSIM-Starting-SFN-AndSubframe-r17             OPTIONAL, -- Cond aperiodic
+    musim-GapLength-r17                 ENUMERATED {ms3, ms4, ms6, ms10, ms20}         OPTIONAL, -- Cond gapSetup
+    musim-GapRepetitionAndOffset-r17    CHOICE {
+        ms20-r17                            INTEGER (0..19),
+        ms40-r17                            INTEGER (0..39),
+        ms80-r17                            INTEGER (0..79),
+        ms160-r17                           INTEGER (0..159),
+        ms320-r17                           INTEGER (0..319),
+        ms640-r17                           INTEGER (0..639),
+        ms1280-r17                          INTEGER (0..1279),
+        ms2560-r17                          INTEGER (0..2559),
+        ms5120-r17                          INTEGER (0..5119),
+        ...
+    }                                                                                  OPTIONAL -- Cond periodic
+}
+
+MUSIM-Starting-SFN-AndSubframe-r17 ::= SEQUENCE {
+    starting-SFN-r17                       INTEGER (0..1023),
+    startingSubframe-r17                   INTEGER (0..9)
+}

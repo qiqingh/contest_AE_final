@@ -1,0 +1,65 @@
+Attaching to process 3057762
+[New LWP 3057795]
+[New LWP 3057796]
+[New LWP 3057797]
+[New LWP 3057798]
+[New LWP 3057799]
+[New LWP 3057800]
+[New LWP 3057801]
+[New LWP 3057802]
+351	../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__memset_avx2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:351
+(gdb) (gdb) Continuing.
+[New Thread 0x7b3e6aa95640 (LWP 3057865)]
+[New Thread 0x7b3e6a294640 (LWP 3057866)]
+[New Thread 0x7b3e69a93640 (LWP 3057867)]
+[New Thread 0x7b3e69292640 (LWP 3057868)]
+[New Thread 0x7b3e63fff640 (LWP 3057869)]
+[New Thread 0x7b3e637fe640 (LWP 3057870)]
+[New Thread 0x7b3e62ffd640 (LWP 3057871)]
+[New Thread 0x7b3e627fc640 (LWP 3057872)]
+[New Thread 0x7b3e61ffb640 (LWP 3057873)]
+[New Thread 0x7b3e617fa640 (LWP 3057874)]
+[New Thread 0x7b3e5ca65640 (LWP 3057875)]
+[New Thread 0x7b3e5c264640 (LWP 3057876)]
+[New Thread 0x7b3e5ba63640 (LWP 3057877)]
+[New Thread 0x7b3e5b262640 (LWP 3057878)]
+[Thread 0x7b3e5ca65640 (LWP 3057875) exited]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+
+Thread 1 "nr-uesoftmodem" received signal SIGQUIT, Quit.
+0x00007b3e8bfaa7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fffe1e1e4d0, rem=rem@entry=0x7fffe1e1e4d0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) #0  0x00007b3e8bfaa7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fffe1e1e4d0, rem=rem@entry=0x7fffe1e1e4d0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        r = <optimized out>
+#1  0x00007b3e8bfaf677 in __GI___nanosleep (req=req@entry=0x7fffe1e1e4d0, rem=rem@entry=0x7fffe1e1e4d0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+        ret = <optimized out>
+#2  0x00007b3e8bfaf5ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+        save_errno = 2
+        max = 4294967295
+        ts = {tv_sec = 0, tv_nsec = 489806501}
+#3  0x00005bce17abb645 in exit_function (file=file@entry=0x5bce17d7fcf0 "/home/openairinterface5g/common/config/config_cmdline.c", function=function@entry=0x5bce17d80180 <__FUNCTION__.3> "config_check_unknown_cmdlineopt", line=line@entry=209, s=s@entry=0x5bce17d18029 "exit_fun", assert=assert@entry=0) at /home/openairinterface5g/executables/nr-uesoftmodem.c:203
+        CC_id = <optimized out>
+#4  0x00005bce17c350cc in config_check_unknown_cmdlineopt (cfg=<optimized out>, prefix=prefix@entry=0x5bce17d1974d "ALLSECTIONS") at /home/openairinterface5g/common/config/config_cmdline.c:209
+        unknowndetected = <optimized out>
+        testprefix = '\000' <repeats 511 times>
+        finalcheck = <optimized out>
+        __FUNCTION__ = "config_check_unknown_cmdlineopt"
+#5  0x00005bce17aaea72 in main (argc=<optimized out>, argv=<optimized out>) at /home/openairinterface5g/executables/nr-uesoftmodem.c:821
+        __FUNCTION__ = "main"
+        ret_loader = <optimized out>
+        pckg = 0x5bce4e21c210 "Branch:  Abrev. Hash:  Date: "
+        mode_offset = <optimized out>
+        node_number = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 3057762] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 3057762
+[Inferior 1 (process 3057762) detached]

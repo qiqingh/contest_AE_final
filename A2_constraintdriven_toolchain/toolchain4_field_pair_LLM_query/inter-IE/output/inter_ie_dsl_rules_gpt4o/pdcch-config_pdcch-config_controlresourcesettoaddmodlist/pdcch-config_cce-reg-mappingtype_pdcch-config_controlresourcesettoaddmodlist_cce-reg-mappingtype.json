@@ -1,0 +1,140 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      112,
+      113,
+      177,
+      178,
+      242,
+      243
+    ],
+    "field2_all": [
+      47,
+      48,
+      112,
+      113,
+      177,
+      178,
+      242,
+      243
+    ],
+    "actual_pairs": [
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          47,
+          48
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178
+        ],
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          177,
+          178,
+          242,
+          243
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          47,
+          48,
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence does not relate the fields across different IEs; it only describes behavior within a single IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config",
+    "field1": "cce-reg-mappingtype",
+    "ie2_name": "pdcch-config_controlresourcesettoaddmodlist",
+    "field2": "cce-reg-mappingtype",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1",
+      "10.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol,",
+    "generated_at": "2026-01-10T14:27:31.089676",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between cce-reg-mappingtype in pdcch-config and pdcch-config_controlresourcesettoaddmodlist.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence does not relate the fields across different IEs; it only describes behavior within a single IE.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

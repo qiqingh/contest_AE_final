@@ -1,0 +1,10 @@
+NZP-CSI-RS-Resource ::=             SEQUENCE {
+    nzp-CSI-RS-ResourceId               NZP-CSI-RS-ResourceId,
+    resourceMapping                     CSI-RS-ResourceMapping,
+    powerControlOffset                  INTEGER (-8..15),
+    powerControlOffsetSS                ENUMERATED{db-3, db0, db3, db6}                 OPTIONAL,   -- Need R
+    scramblingID                        ScramblingId,
+    periodicityAndOffset                CSI-ResourcePeriodicityAndOffset                OPTIONAL,   -- Cond PeriodicOrSemiPersistent
+    qcl-InfoPeriodicCSI-RS              TCI-StateId                                     OPTIONAL,   -- Cond Periodic
+    ...
+}

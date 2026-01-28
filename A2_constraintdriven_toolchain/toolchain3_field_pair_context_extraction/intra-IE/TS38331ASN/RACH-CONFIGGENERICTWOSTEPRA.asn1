@@ -1,0 +1,15 @@
+RACH-ConfigGenericTwoStepRA-r16 ::=     SEQUENCE {
+    msgA-PRACH-ConfigurationIndex-r16       INTEGER (0..262)                                                OPTIONAL, -- Cond 2StepOnly
+    msgA-RO-FDM-r16                         ENUMERATED {one, two, four, eight}                              OPTIONAL, -- Cond 2StepOnly
+    msgA-RO-FrequencyStart-r16              INTEGER (0..maxNrofPhysicalResourceBlocks-1)                    OPTIONAL, -- Cond 2StepOnly
+    msgA-ZeroCorrelationZoneConfig-r16      INTEGER (0..15)                                                 OPTIONAL, -- Cond 2StepOnly
+    msgA-PreamblePowerRampingStep-r16       ENUMERATED {dB0, dB2, dB4, dB6}                                 OPTIONAL, -- Cond 2StepOnlyNoCFRA
+    msgA-PreambleReceivedTargetPower-r16    INTEGER (-202..-60)                                             OPTIONAL, -- Cond 2StepOnlyNoCFRA
+    msgB-ResponseWindow-r16                 ENUMERATED {sl1, sl2, sl4, sl8, sl10, sl20, sl40, sl80, sl160, sl320}
+                                                                                                            OPTIONAL, -- Cond NoCFRA
+    preambleTransMax-r16                    ENUMERATED {n3, n4, n5, n6, n7, n8, n10, n20, n50, n100, n200}  OPTIONAL, -- Cond 2StepOnlyNoCFRA
+    ...,
+    [[
+    msgB-ResponseWindow-v1700               ENUMERATED {sl240, sl640, sl960, sl1280, sl1920, sl2560}        OPTIONAL  -- Cond NoCFRA2
+    ]]
+}

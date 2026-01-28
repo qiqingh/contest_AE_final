@@ -1,0 +1,146 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      68,
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      701,
+      718,
+      735
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198
+        ],
+        [
+          718,
+          735
+        ]
+      ],
+      [
+        [
+          68
+        ],
+        [
+          718,
+          735
+        ]
+      ],
+      [
+        [
+          68
+        ],
+        [
+          701,
+          718
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          718,
+          735
+        ]
+      ],
+      [
+        [
+          198,
+          263
+        ],
+        [
+          701,
+          718
+        ]
+      ],
+      [
+        [
+          68,
+          133,
+          198,
+          263
+        ],
+        [
+          701,
+          718
+        ]
+      ],
+      [
+        [
+          68,
+          133,
+          198,
+          263
+        ],
+        [
+          718,
+          735
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          701,
+          718
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear semantic constraint between the two fields from different IEs. It only describes the individual behavior of each field without relating them.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "nzp-csi-rs-resourcetoaddmodlist_scramblingid",
+    "field1": "scramblingid",
+    "ie2_name": "pdsch-config_tci-statestoaddmodlist",
+    "field2": "bwp-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "generated_at": "2025-12-11T09:46:06.078111",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear semantic constraint between the two fields from different IEs. It only describes the individual behavior of each field without relating them.",
+      "version_tags": []
+    }
+  }
+}

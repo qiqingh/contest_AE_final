@@ -1,0 +1,32 @@
+MeasObjectEUTRA::=                          SEQUENCE {
+    carrierFreq                                 ARFCN-ValueEUTRA,
+    allowedMeasBandwidth                        EUTRA-AllowedMeasBandwidth,
+    cellsToRemoveListEUTRAN                     EUTRA-CellIndexList                                         OPTIONAL,    -- Need N
+    cellsToAddModListEUTRAN                     SEQUENCE (SIZE (1..maxCellMeasEUTRA)) OF EUTRA-Cell         OPTIONAL,    -- Need N
+    excludedCellsToRemoveListEUTRAN             EUTRA-CellIndexList                                         OPTIONAL,    -- Need N
+    excludedCellsToAddModListEUTRAN             SEQUENCE (SIZE (1..maxCellMeasEUTRA)) OF EUTRA-ExcludedCell    OPTIONAL,    -- Need N
+    eutra-PresenceAntennaPort1                  EUTRA-PresenceAntennaPort1,
+    eutra-Q-OffsetRange                         EUTRA-Q-OffsetRange                                         OPTIONAL,    -- Need R
+    widebandRSRQ-Meas                           BOOLEAN,
+    ...,
+    [[
+    associatedMeasGap-r17                       MeasGapId-r17                                               OPTIONAL     -- Need R
+    ]]
+}
+
+EUTRA-CellIndexList ::=                     SEQUENCE (SIZE (1..maxCellMeasEUTRA)) OF EUTRA-CellIndex
+
+EUTRA-CellIndex ::=                         INTEGER (1..maxCellMeasEUTRA)
+
+
+EUTRA-Cell ::=                              SEQUENCE {
+    cellIndexEUTRA                              EUTRA-CellIndex,
+    physCellId                                  EUTRA-PhysCellId,
+    cellIndividualOffset                        EUTRA-Q-OffsetRange
+}
+
+
+EUTRA-ExcludedCell ::=                      SEQUENCE {
+    cellIndexEUTRA                              EUTRA-CellIndex,
+    physCellIdRange                             EUTRA-PhysCellIdRange
+}

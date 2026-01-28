@@ -1,0 +1,22 @@
+CounterCheckResponse ::=        SEQUENCE {
+    rrc-TransactionIdentifier       RRC-TransactionIdentifier,
+    criticalExtensions              CHOICE {
+        counterCheckResponse            CounterCheckResponse-IEs,
+        criticalExtensionsFuture        SEQUENCE {}
+    }
+}
+
+CounterCheckResponse-IEs ::=    SEQUENCE {
+    drb-CountInfoList               DRB-CountInfoList,
+    lateNonCriticalExtension        OCTET STRING                        OPTIONAL,
+    nonCriticalExtension            SEQUENCE {}                         OPTIONAL
+
+}
+
+DRB-CountInfoList ::=           SEQUENCE (SIZE (0..maxDRB)) OF DRB-CountInfo
+
+DRB-CountInfo ::=               SEQUENCE {
+    drb-Identity                    DRB-Identity,
+    count-Uplink                    INTEGER(0..4294967295),
+    count-Downlink                  INTEGER(0..4294967295)
+}

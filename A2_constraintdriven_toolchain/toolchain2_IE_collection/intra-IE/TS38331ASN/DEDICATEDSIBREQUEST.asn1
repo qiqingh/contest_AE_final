@@ -1,0 +1,32 @@
+DedicatedSIBRequest-r16 ::=      SEQUENCE {
+    criticalExtensions               CHOICE {
+        dedicatedSIBRequest-r16          DedicatedSIBRequest-r16-IEs,
+        criticalExtensionsFuture         SEQUENCE {}
+    }
+}
+
+DedicatedSIBRequest-r16-IEs ::=  SEQUENCE {
+    onDemandSIB-RequestList-r16       SEQUENCE {
+
+        requestedSIB-List-r16            SEQUENCE (SIZE (1..maxOnDemandSIB-r16)) OF SIB-ReqInfo-r16                OPTIONAL,
+        requestedPosSIB-List-r16         SEQUENCE (SIZE (1..maxOnDemandPosSIB-r16)) OF PosSIB-ReqInfo-r16          OPTIONAL
+    } OPTIONAL,
+    lateNonCriticalExtension         OCTET STRING             OPTIONAL,
+    nonCriticalExtension             SEQUENCE {}              OPTIONAL
+}
+
+SIB-ReqInfo-r16 ::=                   ENUMERATED { sib12, sib13, sib14, sib20-v1700, sib21-v1700, spare3, spare2, spare1 }
+
+PosSIB-ReqInfo-r16 ::=       SEQUENCE {
+    gnss-id-r16                  GNSS-ID-r16                  OPTIONAL,
+    sbas-id-r16                  SBAS-ID-r16                  OPTIONAL,
+    posSibType-r16               ENUMERATED { posSibType1-1, posSibType1-2, posSibType1-3, posSibType1-4, posSibType1-5, posSibType1-6,
+                                              posSibType1-7, posSibType1-8, posSibType2-1, posSibType2-2, posSibType2-3, posSibType2-4,
+                                              posSibType2-5, posSibType2-6, posSibType2-7, posSibType2-8, posSibType2-9, posSibType2-10,
+                                              posSibType2-11, posSibType2-12, posSibType2-13, posSibType2-14, posSibType2-15,
+                                              posSibType2-16, posSibType2-17, posSibType2-18, posSibType2-19, posSibType2-20,
+                                              posSibType2-21, posSibType2-22, posSibType2-23, posSibType3-1, posSibType4-1,
+                                              posSibType5-1, posSibType6-1, posSibType6-2, posSibType6-3,..., posSibType1-9-v1710,
+                                              posSibType1-10-v1710, posSibType2-24-v1710, posSibType2-25-v1710,
+                                              posSibType6-4-v1710, posSibType6-5-v1710, posSibType6-6-v1710 }
+}

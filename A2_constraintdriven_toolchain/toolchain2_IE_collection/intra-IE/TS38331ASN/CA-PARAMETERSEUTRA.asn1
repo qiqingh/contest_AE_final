@@ -1,0 +1,17 @@
+CA-ParametersEUTRA ::=                          SEQUENCE {
+    multipleTimingAdvance                           ENUMERATED {supported}                          OPTIONAL,
+    simultaneousRx-Tx                               ENUMERATED {supported}                          OPTIONAL,
+    supportedNAICS-2CRS-AP                          BIT STRING (SIZE (1..8))                        OPTIONAL,
+    additionalRx-Tx-PerformanceReq                  ENUMERATED {supported}                          OPTIONAL,
+    ue-CA-PowerClass-N                              ENUMERATED {class2}                             OPTIONAL,
+    supportedBandwidthCombinationSetEUTRA-v1530     BIT STRING (SIZE (1..32))                       OPTIONAL,
+    ...
+}
+
+CA-ParametersEUTRA-v1560 ::=                    SEQUENCE {
+    fd-MIMO-TotalWeightedLayers                     INTEGER (2..128)                                OPTIONAL
+}
+
+CA-ParametersEUTRA-v1570 ::=                    SEQUENCE {
+    dl-1024QAM-TotalWeightedLayers                  INTEGER (0..10)                                 OPTIONAL
+}

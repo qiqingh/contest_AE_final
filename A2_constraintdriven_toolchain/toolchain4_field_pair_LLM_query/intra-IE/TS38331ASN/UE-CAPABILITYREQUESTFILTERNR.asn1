@@ -1,0 +1,14 @@
+UE-CapabilityRequestFilterNR ::=            SEQUENCE {
+    frequencyBandListFilter                     FreqBandList                          OPTIONAL,   -- Need N
+    nonCriticalExtension                        UE-CapabilityRequestFilterNR-v1540    OPTIONAL
+}
+
+UE-CapabilityRequestFilterNR-v1540 ::=      SEQUENCE {
+    srs-SwitchingTimeRequest                    ENUMERATED {true}                     OPTIONAL,  -- Need N
+    nonCriticalExtension                        UE-CapabilityRequestFilterNR-v1710    OPTIONAL
+}
+
+UE-CapabilityRequestFilterNR-v1710 ::=      SEQUENCE {
+    sidelinkRequest-r17                         ENUMERATED {true}                     OPTIONAL,  -- Need N
+    nonCriticalExtension                        SEQUENCE {}                           OPTIONAL
+}

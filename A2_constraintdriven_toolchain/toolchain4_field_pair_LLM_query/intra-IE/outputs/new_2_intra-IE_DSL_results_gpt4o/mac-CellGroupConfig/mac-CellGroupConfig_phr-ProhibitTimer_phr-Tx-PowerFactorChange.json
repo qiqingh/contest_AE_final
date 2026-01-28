@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'expired'), GT(field2, 0)) using field1/field2",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      34
+    ],
+    "field2_all": [
+      35
+    ],
+    "actual_pairs": [
+      [
+        [
+          34
+        ],
+        [
+          35
+        ]
+      ]
+    ]
+  },
+  "predicate": "A PHR is triggered if phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB",
+  "preconditions": [
+    "phr-ProhibitTimer expires or has expired",
+    "MAC entity has UL resources for new transmission"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1='expired', field2=1"
+    ],
+    "invalid": [
+      "field1='expired', field2=0"
+    ]
+  },
+  "notes": "The evidence establishes a normative condition where phr-ProhibitTimer expiration and a change in path loss greater than phr-Tx-PowerFactorChange dB triggers a PHR.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "phr-ProhibitTimer",
+    "field2": "phr-Tx-PowerFactorChange",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 3,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.4.6"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "A Power Headroom Report (PHR) shall be triggered if any of the following events occur: - phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB for at least one RS used as pathloss reference for one activated Serving Cell of any MAC entity of which the active DL BWP is not dormant BWP since the last transmission of a PHR in this MAC entity when the MAC entity has UL resources for new transmission; ETSI\n---\n- activation of an SCG; - addition of the PSCell except if the SCG is deactivated (i.e. PSCell is newly added or changed); - phr-ProhibitTimer expires or has expired, when the MAC entity has UL resources for new transmission, and the following is true for any of the activated Serving Cells of any MAC entity with configured uplink: - there are UL resources allocated for transmission or there is a PUCCH transmission on this cell, and the required power backoff due to power management (as allowed by \\mathrm{P}-\\mathrm{MPR}_{\\mathrm{c}} as specified in TS 38.101-1 [14], TS 38.101-2 [15], and TS 38.101-3 [16]) for this cell has changed more than phr-Tx-PowerFactorChange dB since the last transmission of a PHR when the MAC entity had UL resources allocated for transmission or PUCCH transmission on this cell. - Upon switching of activated BWP from dormant BWP to non-dormant DL BWP of an SCell of any MAC entity with configured uplink; - if dpc-Reporting-FRI is configured, \\Delta \\mathrm{P}_{\\text {PowerClass }} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{CA} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{EN}-\\mathrm{DC} / \\Delta \\mathrm{P}_{\\text {PowerClass, }} \\mathrm{NR}-\\mathrm{DC} reporting is triggered upon uplink duty cycle exceedance or upon return to the power class after the duty cycle exceedance, as specified in TS 38.101-1 [14] and TS 38.101-3 [16]).",
+    "generated_at": "2026-01-07T19:40:16.814060",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'expired'), GT(field2, 0)) using field1/field2",
+      "preconditions": [
+        "phr-ProhibitTimer expires or has expired",
+        "MAC entity has UL resources for new transmission"
+      ],
+      "predicate": "A PHR is triggered if phr-ProhibitTimer expires or has expired and the path loss has changed more than phr-Tx-PowerFactorChange dB",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1='expired', field2=1"
+        ],
+        "invalid": [
+          "field1='expired', field2=0"
+        ]
+      },
+      "notes": "The evidence establishes a normative condition where phr-ProhibitTimer expiration and a change in path loss greater than phr-Tx-PowerFactorChange dB triggers a PHR.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

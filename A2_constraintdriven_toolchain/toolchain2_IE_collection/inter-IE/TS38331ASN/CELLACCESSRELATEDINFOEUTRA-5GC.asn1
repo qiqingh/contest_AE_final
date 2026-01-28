@@ -1,0 +1,18 @@
+CellAccessRelatedInfo-EUTRA-5GC  ::=    SEQUENCE {
+    plmn-IdentityList-eutra-5gc             PLMN-IdentityList-EUTRA-5GC,
+    trackingAreaCode-eutra-5gc              TrackingAreaCode,
+    ranac-5gc                               RAN-AreaCode                                OPTIONAL,
+    cellIdentity-eutra-5gc                  CellIdentity-EUTRA-5GC
+}
+
+PLMN-IdentityList-EUTRA-5GC::=          SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-Identity-EUTRA-5GC
+
+PLMN-Identity-EUTRA-5GC ::=             CHOICE {
+    plmn-Identity-EUTRA-5GC                 PLMN-Identity,
+    plmn-index                              INTEGER (1..maxPLMN)
+}
+
+CellIdentity-EUTRA-5GC ::=              CHOICE {
+    cellIdentity-EUTRA                      BIT STRING (SIZE (28)),
+    cellId-index                            INTEGER (1..maxPLMN)
+}

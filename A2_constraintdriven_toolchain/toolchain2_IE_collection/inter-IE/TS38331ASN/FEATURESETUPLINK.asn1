@@ -1,0 +1,259 @@
+FeatureSetUplink ::=                SEQUENCE {
+    featureSetListPerUplinkCC           SEQUENCE (SIZE (1.. maxNrofServingCells)) OF FeatureSetUplinkPerCC-Id,
+    scalingFactor                       ENUMERATED {f0p4, f0p75, f0p8}                                          OPTIONAL,
+    dummy3                              ENUMERATED {supported}                                                  OPTIONAL,
+    intraBandFreqSeparationUL           FreqSeparationClass                                                     OPTIONAL,
+    searchSpaceSharingCA-UL             ENUMERATED {supported}                                                  OPTIONAL,
+    dummy1                              DummyI                                                                  OPTIONAL,
+    supportedSRS-Resources              SRS-Resources                                                           OPTIONAL,
+    twoPUCCH-Group                      ENUMERATED {supported}                                                  OPTIONAL,
+    dynamicSwitchSUL                    ENUMERATED {supported}                                                  OPTIONAL,
+    simultaneousTxSUL-NonSUL            ENUMERATED {supported}                                                  OPTIONAL,
+    pusch-ProcessingType1-DifferentTB-PerSlot SEQUENCE {
+        scs-15kHz                                 ENUMERATED {upto2, upto4, upto7}                                  OPTIONAL,
+        scs-30kHz                                 ENUMERATED {upto2, upto4, upto7}                                  OPTIONAL,
+        scs-60kHz                                 ENUMERATED {upto2, upto4, upto7}                                  OPTIONAL,
+        scs-120kHz                                ENUMERATED {upto2, upto4, upto7}                                  OPTIONAL
+    }                                                                                                           OPTIONAL,
+    dummy2                               DummyF                                                                 OPTIONAL
+}
+
+FeatureSetUplink-v1540 ::=           SEQUENCE {
+    zeroSlotOffsetAperiodicSRS           ENUMERATED {supported}                     OPTIONAL,
+    pa-PhaseDiscontinuityImpacts         ENUMERATED {supported}                     OPTIONAL,
+    pusch-SeparationWithGap              ENUMERATED {supported}                     OPTIONAL,
+    pusch-ProcessingType2                SEQUENCE {
+        scs-15kHz                            ProcessingParameters                       OPTIONAL,
+        scs-30kHz                            ProcessingParameters                       OPTIONAL,
+        scs-60kHz                            ProcessingParameters                       OPTIONAL
+    }                                                                               OPTIONAL,
+    ul-MCS-TableAlt-DynamicIndication    ENUMERATED {supported}                     OPTIONAL
+}
+
+FeatureSetUplink-v1610 ::=       SEQUENCE {
+    -- R1 11-5: PUsCH repetition Type B
+    pusch-RepetitionTypeB-r16        SEQUENCE {
+        maxNumberPUSCH-Tx-r16            ENUMERATED {n2, n3, n4, n7, n8, n12},
+        hoppingScheme-r16                ENUMERATED {interSlotHopping, interRepetitionHopping, both}
+    }                                                                              OPTIONAL,
+    -- R1 11-7: UL cancelation scheme for self-carrier
+    ul-CancellationSelfCarrier-r16       ENUMERATED {supported}                    OPTIONAL,
+    -- R1 11-7a: UL cancelation scheme for cross-carrier
+    ul-CancellationCrossCarrier-r16      ENUMERATED {supported}                    OPTIONAL,
+    -- R1 16-5c: The maximum number of SRS resources in one SRS resource set with usage set to 'codebook' for Mode 2
+    ul-FullPwrMode2-MaxSRS-ResInSet-r16  ENUMERATED {n1, n2, n4}                   OPTIONAL,
+
+    -- R1 22-4a/4b/4c/4d: CBG based transmission for UL with unicast PUSCH(s) per slot per CC with UE processing time Capability 1
+    cbgPUSCH-ProcessingType1-DifferentTB-PerSlot-r16    SEQUENCE {
+        scs-15kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-30kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-60kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-120kHz-r16       ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL
+     } OPTIONAL,
+
+    -- R1 22-3a/3b/3c/3d: CBG based transmission for UL with unicast PUSCH(s) per slot per CC with UE processing time Capability 2
+    cbgPUSCH-ProcessingType2-DifferentTB-PerSlot-r16    SEQUENCE {
+        scs-15kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-30kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-60kHz-r16        ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL,
+        scs-120kHz-r16       ENUMERATED {one-pusch, upto2, upto4, upto7}               OPTIONAL
+     } OPTIONAL,
+    supportedSRS-PosResources-r16              SRS-AllPosResources-r16             OPTIONAL,
+    intraFreqDAPS-UL-r16                             SEQUENCE {
+        dummy                                            ENUMERATED {supported}    OPTIONAL,
+        intraFreqTwoTAGs-DAPS-r16                        ENUMERATED {supported}    OPTIONAL,
+        dummy1                                           ENUMERATED {supported}    OPTIONAL,
+        dummy2                                           ENUMERATED {supported}    OPTIONAL,
+        dummy3                                           ENUMERATED {short, long}  OPTIONAL
+    }                                                                              OPTIONAL,
+    intraBandFreqSeparationUL-v1620                  FreqSeparationClassUL-v1620   OPTIONAL,
+
+    -- R1 11-3: More than one PUCCH for HARQ-ACK transmission within a slot
+    multiPUCCH-r16                        SEQUENCE {
+        sub-SlotConfig-NCP-r16                ENUMERATED {set1, set2}              OPTIONAL,
+        sub-SlotConfig-ECP-r16                ENUMERATED {set1, set2}              OPTIONAL
+    }                                                                              OPTIONAL,
+    -- R1 11-3c: 2 PUCCH of format 0 or 2 for a single 7*2-symbol subslot based HARQ-ACK codebook
+    twoPUCCH-Type1-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-3d: 2 PUCCH of format 0 or 2 for a single 2*7-symbol subslot based HARQ-ACK codebook
+    twoPUCCH-Type2-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-3e: 1 PUCCH format 0 or 2 and 1 PUCCH format 1, 3 or 4 in the same subslot for a single 2*7-symbol HARQ-ACK codebooks
+    twoPUCCH-Type3-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-3f: 2 PUCCH transmissions in the same subslot for a single 2*7-symbol HARQ-ACK codebooks which are not covered by 11-3d and
+    -- 11-3e
+    twoPUCCH-Type4-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-3g: SR/HARQ-ACK multiplexing once per subslot using a PUCCH (or HARQ-ACK piggybacked on a PUSCH) when SR/HARQ-ACK
+    -- are supposed to be sent with different starting symbols in a subslot
+    mux-SR-HARQ-ACK-r16                   ENUMERATED {supported}                   OPTIONAL,
+    dummy1                                ENUMERATED {supported}                   OPTIONAL,
+    dummy2                                ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4c: 2 PUCCH of format 0 or 2 for two HARQ-ACK codebooks with one 7*2-symbol sub-slot based HARQ-ACK codebook
+    twoPUCCH-Type5-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4d: 2 PUCCH of format 0 or 2 in consecutive symbols for two HARQ-ACK codebooks with one 2*7-symbol sub-slot based HARQ-ACK
+    -- codebook
+    twoPUCCH-Type6-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4e: 2 PUCCH of format 0 or 2 for two subslot based HARQ-ACK codebooks
+    twoPUCCH-Type7-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4f: 1 PUCCH format 0 or 2 and 1 PUCCH format 1, 3 or 4 in the same subslot for HARQ-ACK codebooks with one 2*7-symbol
+    -- subslot based HARQ-ACK codebook
+    twoPUCCH-Type8-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4g: 1 PUCCH format 0 or 2 and 1 PUCCH format 1, 3 or 4 in the same subslot for two subslot based HARQ-ACK codebooks
+    twoPUCCH-Type9-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4h: 2 PUCCH transmissions in the same subslot for two HARQ-ACK codebooks with one 2*7-symbol subslot which are not covered
+    -- by 11-4c and 11-4e
+    twoPUCCH-Type10-r16                   ENUMERATED {supported}                   OPTIONAL,
+    -- R1 11-4i: 2 PUCCH transmissions in the same subslot for two subslot based HARQ-ACK codebooks which are not covered by 11-4d and
+    -- 11-4f
+    twoPUCCH-Type11-r16                   ENUMERATED {supported}                   OPTIONAL,
+    -- R1 12-1: UL intra-UE multiplexing/prioritization of overlapping channel/signals with two priority levels in physical layer
+    ul-IntraUE-Mux-r16                    SEQUENCE {
+        pusch-PreparationLowPriority-r16      ENUMERATED {sym0, sym1, sym2},
+        pusch-PreparationHighPriority-r16     ENUMERATED {sym0, sym1, sym2}
+    }                                                                              OPTIONAL,
+    -- R1 16-5a: Supported UL full power transmission mode of fullpower
+    ul-FullPwrMode-r16                    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 18-5d: Processing up to X unicast DCI scheduling for UL per scheduled CC
+    crossCarrierSchedulingProcessing-DiffSCS-r16    SEQUENCE {
+        scs-15kHz-120kHz-r16                  ENUMERATED {n1,n2,n4}                OPTIONAL,
+        scs-15kHz-60kHz-r16                   ENUMERATED {n1,n2,n4}                OPTIONAL,
+        scs-30kHz-120kHz-r16                  ENUMERATED {n1,n2,n4}                OPTIONAL,
+        scs-15kHz-30kHz-r16                   ENUMERATED {n2}                      OPTIONAL,
+        scs-30kHz-60kHz-r16                   ENUMERATED {n2}                      OPTIONAL,
+        scs-60kHz-120kHz-r16                  ENUMERATED {n2}                      OPTIONAL
+    }                                                                              OPTIONAL,
+    -- R1 16-5b: Supported UL full power transmission mode of fullpowerMode1
+    ul-FullPwrMode1-r16                   ENUMERATED {supported}                   OPTIONAL,
+    -- R1 16-5c-2: Ports configuration for Mode 2
+    ul-FullPwrMode2-SRSConfig-diffNumSRSPorts-r16  ENUMERATED {p1-2, p1-4, p1-2-4} OPTIONAL,
+    -- R1 16-5c-3: TPMI group for Mode 2
+    ul-FullPwrMode2-TPMIGroup-r16         SEQUENCE {
+        twoPorts-r16                          BIT STRING(SIZE(2))                      OPTIONAL,
+        fourPortsNonCoherent-r16              ENUMERATED{g0, g1, g2, g3}               OPTIONAL,
+        fourPortsPartialCoherent-r16          ENUMERATED{g0, g1, g2, g3, g4, g5, g6}   OPTIONAL
+    }                                                                                  OPTIONAL
+}
+
+FeatureSetUplink-v1630 ::=       SEQUENCE {
+    -- R1 22-8: For SRS for CB PUSCH and antenna switching on FR1 with symbol level offset for aperiodic SRS transmission
+    offsetSRS-CB-PUSCH-Ant-Switch-fr1-r16                       ENUMERATED {supported}                   OPTIONAL,
+    -- R1 22-8a: PDCCH monitoring on any span of up to 3 consecutive OFDM symbols of a slot and constrained timeline for SRS for CB
+    -- PUSCH and antenna switching on FR1
+    offsetSRS-CB-PUSCH-PDCCH-MonitorSingleOcc-fr1-r16           ENUMERATED {supported}                   OPTIONAL,
+    -- R1 22-8b: For type 1 CSS with dedicated RRC configuration, type 3 CSS, and UE-SS, monitoring occasion can be any OFDM symbol(s)
+    -- of a slot for Case 2 and constrained timeline for SRS for CB PUSCH and antenna switching on FR1
+    offsetSRS-CB-PUSCH-PDCCH-MonitorAnyOccWithoutGap-fr1-r16    ENUMERATED {supported}                   OPTIONAL,
+    -- R1 22-8c: For type 1 CSS with dedicated RRC configuration, type 3 CSS, and UE-SS, monitoring occasion can be any OFDM symbol(s)
+    -- of a slot for Case 2 with a DCI gap and constrained timeline for SRS for CB PUSCH and antenna switching on FR1
+    offsetSRS-CB-PUSCH-PDCCH-MonitorAnyOccWithGap-fr1-r16       ENUMERATED {supported}                   OPTIONAL,
+    dummy                                                       ENUMERATED {supported}                   OPTIONAL,
+    -- R1 22-9: Cancellation of PUCCH, PUSCH or PRACH with a DCI scheduling a PDSCH or CSI-RS or a DCI format 2_0 for SFI
+    partialCancellationPUCCH-PUSCH-PRACH-TX-r16                 ENUMERATED {supported}                   OPTIONAL
+}
+
+FeatureSetUplink-v1640 ::=              SEQUENCE {
+   -- R1 11-4: Two HARQ-ACK codebooks with up to one sub-slot based HARQ-ACK codebook (i.e. slot-based + slot-based, or slot-based +
+    -- sub-slot based) simultaneously constructed for supporting HARQ-ACK codebooks with different priorities at a UE
+    twoHARQ-ACK-Codebook-type1-r16          SubSlot-Config-r16      OPTIONAL,
+    -- R1 11-4a: Two sub-slot based HARQ-ACK codebooks simultaneously constructed for supporting HARQ-ACK codebooks with different
+    -- priorities at a UE
+    twoHARQ-ACK-Codebook-type2-r16          SubSlot-Config-r16      OPTIONAL,
+    -- R1 22-8d: All PDCCH monitoring occasion can be any OFDM symbol(s) of a slot for Case 2 with a span gap and constrained timeline
+    -- for SRS for CB PUSCH and antenna switching on FR1
+    offsetSRS-CB-PUSCH-PDCCH-MonitorAnyOccWithSpanGap-fr1-r16 SEQUENCE {
+        scs-15kHz-r16                                 ENUMERATED {set1, set2, set3}                             OPTIONAL,
+        scs-30kHz-r16                                 ENUMERATED {set1, set2, set3}                             OPTIONAL,
+        scs-60kHz-r16                                 ENUMERATED {set1, set2, set3}                             OPTIONAL
+    }                                                                                                           OPTIONAL
+}
+
+FeatureSetUplink-v1710 ::= SEQUENCE {
+    -- R1 23-3-1	Multi-TRP PUSCH repetition (type A) -codebook based
+    mTRP-PUSCH-TypeA-CB-r17                ENUMERATED {n1,n2,n4}                              OPTIONAL,
+    -- R1 23-3-1-2	Multi-TRP PUSCH repetition (type A) - non-codebook based
+    mTRP-PUSCH-RepetitionTypeA-r17         ENUMERATED {n1,n2,n3,n4}                           OPTIONAL,
+    -- R1 23-3-3	Multi-TRP PUCCH repetition-intra-slot
+    mTRP-PUCCH-IntraSlot-r17               ENUMERATED {pf0-2, pf1-3-4, pf0-4}                 OPTIONAL,
+    -- R1 23-8-4	Maximum 2 SP and 1 periodic SRS sets for antenna switching
+    srs-AntennaSwitching2SP-1Periodic-r17  ENUMERATED {supported}                             OPTIONAL,
+    -- R1 23-8-9	Extension of aperiodic SRS configuration for 1T4R, 1T2R and 2T4R
+    srs-ExtensionAperiodicSRS-r17          ENUMERATED {supported}                             OPTIONAL,
+    -- R1 23-8-10	1 aperiodic SRS resource set for 1T4R
+    srs-OneAP-SRS-r17                      ENUMERATED {supported}                             OPTIONAL,
+    -- R4 16-8 UE power class per band per band combination
+    ue-PowerClassPerBandPerBC-r17          ENUMERATED {pc1dot5, pc2, pc3}                     OPTIONAL,
+    -- R4 17-8 UL transmission in FR2 bands within an UL gap when the UL gap is activated
+    tx-Support-UL-GapFR2-r17               ENUMERATED {supported}                             OPTIONAL
+}
+
+FeatureSetUplink-v1720 ::= SEQUENCE {
+    -- R1 25-3: Repetitions for PUCCH format 0, 1, 2, 3 and 4 over multiple PUCCH subslots with configured K = 2, 4, 8
+    pucch-Repetition-F0-1-2-3-4-RRC-Config-r17         ENUMERATED {supported}                 OPTIONAL,
+    -- R1 25-3a: Repetitions for PUCCH format 0, 1, 2, 3 and 4 over multiple PUCCH subslots using dynamic repetition indication
+    pucch-Repetition-F0-1-2-3-4-DynamicIndication-r17  ENUMERATED {supported}                 OPTIONAL,
+    -- R1 25-3b: Inter-subslot frequency hopping for PUCCH repetitions
+    interSubslotFreqHopping-PUCCH-r17                  ENUMERATED {supported}                 OPTIONAL,
+    -- R1 25-8: Semi-static HARQ-ACK codebook for sub-slot PUCCH
+    semiStaticHARQ-ACK-CodebookSub-SlotPUCCH-r17       ENUMERATED {supported}                 OPTIONAL,
+    -- R1 25-14: PHY prioritization of overlapping low-priority DG-PUSCH and high-priority CG-PUSCH
+    phy-PrioritizationLowPriorityDG-HighPriorityCG-r17 INTEGER(1..16)                         OPTIONAL,
+    -- R1 25-15: PHY prioritization of overlapping high-priority DG-PUSCH and low-priority CG-PUSCH
+    phy-PrioritizationHighPriorityDG-LowPriorityCG-r17 SEQUENCE {
+        pusch-PreparationLowPriority-r17                   ENUMERATED{sym0, sym1, sym2},
+        additionalCancellationTime-r17                     SEQUENCE {
+            scs-15kHz-r17                                      ENUMERATED{sym0, sym1, sym2}   OPTIONAL,
+            scs-30kHz-r17                                      ENUMERATED{sym0, sym1, sym2, sym3, sym4}    OPTIONAL,
+            scs-60kHz-r17                                      ENUMERATED{sym0, sym1, sym2, sym3, sym4, sym5, sym6, sym7, sym8} OPTIONAL,
+            scs-120kHz-r17                                     ENUMERATED{sym0, sym1, sym2, sym3, sym4, sym5, sym6, sym7, sym8, sym9,
+                                                                          sym10, sym11, sym12, sym13, sym14, sym15, sym16}    OPTIONAL
+        },
+        maxNumberCarriers-r17                              INTEGER(1..16)
+    }                                                                                         OPTIONAL,
+    -- R4 17-5 Support of UL DC location(s) report
+    extendedDC-LocationReport-r17                      ENUMERATED {supported}                 OPTIONAL
+}
+
+SubSlot-Config-r16 ::=                  SEQUENCE {
+    sub-SlotConfig-NCP-r16                  ENUMERATED {n4,n5,n6,n7}              OPTIONAL,
+    sub-SlotConfig-ECP-r16                  ENUMERATED {n4,n5,n6}                 OPTIONAL
+}
+
+SRS-AllPosResources-r16 ::=               SEQUENCE {
+    srs-PosResources-r16                      SRS-PosResources-r16,
+    srs-PosResourceAP-r16                     SRS-PosResourceAP-r16                OPTIONAL,
+    srs-PosResourceSP-r16                     SRS-PosResourceSP-r16                OPTIONAL
+}
+
+SRS-PosResources-r16 ::=                       SEQUENCE {
+    maxNumberSRS-PosResourceSetPerBWP-r16                ENUMERATED {n1, n2, n4, n8, n12, n16},
+    maxNumberSRS-PosResourcesPerBWP-r16                  ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+    maxNumberSRS-ResourcesPerBWP-PerSlot-r16             ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14},
+    maxNumberPeriodicSRS-PosResourcesPerBWP-r16          ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+    maxNumberPeriodicSRS-PosResourcesPerBWP-PerSlot-r16  ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}
+}
+
+SRS-PosResourceAP-r16 ::=                SEQUENCE {
+    maxNumberAP-SRS-PosResourcesPerBWP-r16         ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+    maxNumberAP-SRS-PosResourcesPerBWP-PerSlot-r16 ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}
+}
+
+SRS-PosResourceSP-r16 ::=                       SEQUENCE {
+    maxNumberSP-SRS-PosResourcesPerBWP-r16               ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+    maxNumberSP-SRS-PosResourcesPerBWP-PerSlot-r16       ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}
+}
+
+SRS-Resources ::=                           SEQUENCE {
+    maxNumberAperiodicSRS-PerBWP                ENUMERATED {n1, n2, n4, n8, n16},
+    maxNumberAperiodicSRS-PerBWP-PerSlot        INTEGER (1..6),
+    maxNumberPeriodicSRS-PerBWP                 ENUMERATED {n1, n2, n4, n8, n16},
+    maxNumberPeriodicSRS-PerBWP-PerSlot         INTEGER (1..6),
+    maxNumberSemiPersistentSRS-PerBWP           ENUMERATED {n1, n2, n4, n8, n16},
+    maxNumberSemiPersistentSRS-PerBWP-PerSlot   INTEGER (1..6),
+    maxNumberSRS-Ports-PerResource              ENUMERATED {n1, n2, n4}
+}
+
+DummyF ::=                                  SEQUENCE {
+    maxNumberPeriodicCSI-ReportPerBWP           INTEGER (1..4),
+    maxNumberAperiodicCSI-ReportPerBWP          INTEGER (1..4),
+    maxNumberSemiPersistentCSI-ReportPerBWP     INTEGER (0..4),
+    simultaneousCSI-ReportsAllCC                INTEGER (5..32)
+}

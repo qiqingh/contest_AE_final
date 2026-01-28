@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(IN(reportQuantity, {'cri-RI-i1', 'cri-RI-i1-CQI'}), EQ(pmi-FormatIndicator, 'widebandPMI'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": [
+    [
+      833
+    ],
+    [
+      830,
+      831
+    ]
+  ],
+  "predicate": "EQ(pmi-FormatIndicator, 'widebandPMI')",
+  "preconditions": [
+    "reportQuantity IN {'cri-RI-i1', 'cri-RI-i1-CQI'}"
+  ],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "reportQuantity='cri-RI-i1', pmi-FormatIndicator='widebandPMI'",
+      "reportQuantity='cri-RI-i1-CQI', pmi-FormatIndicator='widebandPMI'"
+    ],
+    "invalid": [
+      "reportQuantity='cri-RI-i1', pmi-FormatIndicator='subbandPMI'",
+      "reportQuantity='cri-RI-i1-CQI', pmi-FormatIndicator='subbandPMI'"
+    ]
+  },
+  "notes": "The evidence explicitly states a dependency between reportQuantity and pmi-FormatIndicator when reportQuantity is 'cri-RI-i1' or 'cri-RI-i1-CQI'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-ReportConfigToAddModList_group0",
+    "field1": "pmi-FormatIndicator",
+    "field2": "reportQuantity",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.1.4.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RI-i1', - the UE expects, for that CSI-ReportConfig, to be configured with higher layer parameter codebookType set to 'typel-SinglePanel' and pmi-FormatIndicator set to 'widebandPMI' and,\n---\nIf the UE is configured with a CSI-ReportConfig with the higher layer parameter reportQuantity set to 'cri-RI-i1-CQI', - the UE expects, for that CSI-ReportConfig, to be configured with higher layer parameter codebookType set to 'typel-SinglePanel' and pmi-FormatIndicator set to 'widebandPMI' and,",
+    "generated_at": "2025-12-09T09:45:45.196349",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(IN(reportQuantity, {'cri-RI-i1', 'cri-RI-i1-CQI'}), EQ(pmi-FormatIndicator, 'widebandPMI'))",
+      "preconditions": [
+        "reportQuantity IN {'cri-RI-i1', 'cri-RI-i1-CQI'}"
+      ],
+      "predicate": "EQ(pmi-FormatIndicator, 'widebandPMI')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "reportQuantity='cri-RI-i1', pmi-FormatIndicator='widebandPMI'",
+          "reportQuantity='cri-RI-i1-CQI', pmi-FormatIndicator='widebandPMI'"
+        ],
+        "invalid": [
+          "reportQuantity='cri-RI-i1', pmi-FormatIndicator='subbandPMI'",
+          "reportQuantity='cri-RI-i1-CQI', pmi-FormatIndicator='subbandPMI'"
+        ]
+      },
+      "notes": "The evidence explicitly states a dependency between reportQuantity and pmi-FormatIndicator when reportQuantity is 'cri-RI-i1' or 'cri-RI-i1-CQI'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+PLMN-Identity ::=                   SEQUENCE {
+    mcc                                 MCC                 OPTIONAL,                   -- Cond MCC
+    mnc                                 MNC
+}
+
+MCC ::=                             SEQUENCE (SIZE (3)) OF MCC-MNC-Digit
+
+MNC ::=                             SEQUENCE (SIZE (2..3)) OF MCC-MNC-Digit
+
+MCC-MNC-Digit ::=                   INTEGER (0..9)

@@ -1,0 +1,24 @@
+NTN-Config-r17 ::=             SEQUENCE {
+    epochTime-r17                  EpochTime-r17                                                            OPTIONAL,  -- Need R
+    ntn-UlSyncValidityDuration-r17 ENUMERATED{ s5, s10, s15, s20, s25, s30, s35,
+                                              s40, s45, s50, s55, s60, s120, s180, s240, s900}              OPTIONAL,  -- Cond SIB19
+    cellSpecificKoffset-r17        INTEGER(1..1023)                                                         OPTIONAL,  -- Need R
+    kmac-r17                       INTEGER(1..512)                                                          OPTIONAL,  -- Need R
+    ta-Info-r17                    TA-Info-r17                                                              OPTIONAL,  -- Need R
+    ntn-PolarizationDL-r17         ENUMERATED {rhcp,lhcp,linear}                                            OPTIONAL,  -- Need R
+    ntn-PolarizationUL-r17         ENUMERATED {rhcp,lhcp,linear}                                            OPTIONAL,  -- Need R
+    ephemerisInfo-r17              EphemerisInfo-r17                                                        OPTIONAL,  -- Need R
+    ta-Report-r17                  ENUMERATED {enabled}                                                     OPTIONAL,  -- Need R
+    ...
+}
+
+EpochTime-r17 ::=              SEQUENCE {
+    sfn-r17                        INTEGER(0..1023),
+    subFrameNR-r17                 INTEGER(0..9)
+}
+
+TA-Info-r17 ::=                 SEQUENCE  {
+    ta-Common-r17                  INTEGER(0..66485757),
+    ta-CommonDrift-r17             INTEGER(-257303..257303)                                                 OPTIONAL,  -- Need R
+    ta-CommonDriftVariant-r17      INTEGER(0..28949)                                                        OPTIONAL   -- Need R
+}

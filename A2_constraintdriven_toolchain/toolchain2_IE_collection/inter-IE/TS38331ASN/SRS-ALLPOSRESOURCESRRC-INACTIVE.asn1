@@ -1,0 +1,12 @@
+SRS-AllPosResourcesRRC-Inactive-r17 ::=             SEQUENCE {
+    srs-PosResourcesRRC-Inactive-r17                    SEQUENCE {
+    -- R1 27-15: Positioning SRS transmission in RRC_INACTIVE state for initial UL BWP
+        maxNumberSRS-PosResourceSetPerBWP-r17               ENUMERATED {n1, n2, n4, n8, n12, n16},
+        maxNumberSRS-PosResourcesPerBWP-r17                 ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+        maxNumberSRS-ResourcesPerBWP-PerSlot-r17            ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14},
+        maxNumberPeriodicSRS-PosResourcesPerBWP-r17         ENUMERATED {n1, n2, n4, n8, n16, n32, n64},
+        maxNumberPeriodicSRS-PosResourcesPerBWP-PerSlot-r17 ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14},
+        dummy1                                              ENUMERATED {n1, n2, n4, n8, n16, n32, n64 },
+        dummy2                                              ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10, n12, n14}
+    }
+}

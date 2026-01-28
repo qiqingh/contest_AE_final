@@ -1,0 +1,5 @@
+ConnEstFailureControl ::=   SEQUENCE {
+    connEstFailCount                    ENUMERATED {n1, n2, n3, n4},
+    connEstFailOffsetValidity           ENUMERATED {s30, s60, s120, s240, s300, s420, s600, s900},
+    connEstFailOffset                   INTEGER (0..15)                                                         OPTIONAL    -- Need S
+}

@@ -1,0 +1,82 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field2, 'disable'), EQ(field1, N_{1D}^{cell}))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      379
+    ],
+    "field2_all": [
+      378
+    ],
+    "actual_pairs": [
+      [
+        [
+          379
+        ],
+        [
+          378
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field2, 'disable')",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "If pucch-GroupHopping is 'disable', hoppingId is N_{1D}^{cell}"
+    ],
+    "invalid": [
+      "If pucch-GroupHopping is not 'disable', hoppingId is not necessarily N_{1D}^{cell}"
+    ]
+  },
+  "notes": "The rule is derived from the evidence stating that if pucch-GroupHopping equals 'disable', n_{1D} is given by N_{1D}^{cell}, which is the higher-layer parameter hopping Id.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Common_pucch-ConfigCommon_group0",
+    "field1": "hoppingId",
+    "field2": "pucch-GroupHopping",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "where the pseudo-random sequence c(i) is defined by clause 5.2 .1 and shall be initialized at the beginning of each radio frame with c_{\\text {init }}=\\left\\lfloor n_{1 \\mathrm{D}} / 30\\right\\rfloor where n_{1 \\mathrm{D}} is given by the higher-layer parameter hopping Id if configured, otherwise n_{1 \\mathrm{D}}=N_{1 \\mathrm{D}}^{\\text {cell }} . - if pucch-GroupHopping equals 'disable'",
+    "generated_at": "2025-12-11T14:20:58.015393",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field2, 'disable'), EQ(field1, N_{1D}^{cell}))",
+      "preconditions": [],
+      "predicate": "EQ(field2, 'disable')",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "If pucch-GroupHopping is 'disable', hoppingId is N_{1D}^{cell}"
+        ],
+        "invalid": [
+          "If pucch-GroupHopping is not 'disable', hoppingId is not necessarily N_{1D}^{cell}"
+        ]
+      },
+      "notes": "The rule is derived from the evidence stating that if pucch-GroupHopping equals 'disable', n_{1D} is given by N_{1D}^{cell}, which is the higher-layer parameter hopping Id.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

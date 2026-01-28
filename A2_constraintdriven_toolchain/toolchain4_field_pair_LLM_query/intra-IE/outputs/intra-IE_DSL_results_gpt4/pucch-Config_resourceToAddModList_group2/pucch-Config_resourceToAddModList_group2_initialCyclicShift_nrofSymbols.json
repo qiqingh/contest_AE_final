@@ -1,0 +1,88 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'PUCCH-format0'), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      605
+    ],
+    "field2_all": [
+      606,
+      612
+    ],
+    "actual_pairs": [
+      [
+        [
+          605
+        ],
+        [
+          606,
+          612
+        ]
+      ]
+    ]
+  },
+  "predicate": "field2 is 1",
+  "preconditions": [
+    "field1 is 'PUCCH-format0'"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1 = 'PUCCH-format0', field2 = 1"
+    ],
+    "invalid": [
+      "field1 = 'PUCCH-format0', field2 = 2"
+    ]
+  },
+  "notes": "The rule is derived from the evidence that when the format indicates PUCCH-format0, the number of symbols for a PUCCH transmission provided by nrofSymbols is 1.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group2",
+    "field1": "initialCyclicShift",
+    "field2": "nrofSymbols",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the format indicates PUCCH-format0, the PUCCH format configured for a PUCCH resource is PUCCH format 0 , where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 0}=1 .\n---\nIf the format indicates PUCCH-formatl, the PUCCH format configured for a PUCCH resource is PUCCH format 1, where the PUCCH resource also includes an index for an initial cyclic shift provided by initialCyclicShift, a number of symbols for a PUCCH transmission provided by nrofSymbols, a first symbol for the PUCCH transmission provided by startingSymbollndex, and an index for an orthogonal cover code by timeDomainOCC. For PUCCH transmission in FR2-2, the PUCCH resource can also include a number of PRBs M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1} provided by nrofPRBs; otherwise, M_{\\mathrm{RB}}^{\\mathrm{PUCCH}, 1}=1 .",
+    "generated_at": "2025-12-11T14:17:47.264210",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'PUCCH-format0'), EQ(field2, 1))",
+      "preconditions": [
+        "field1 is 'PUCCH-format0'"
+      ],
+      "predicate": "field2 is 1",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1 = 'PUCCH-format0', field2 = 1"
+        ],
+        "invalid": [
+          "field1 = 'PUCCH-format0', field2 = 2"
+        ]
+      },
+      "notes": "The rule is derived from the evidence that when the format indicates PUCCH-format0, the number of symbols for a PUCCH transmission provided by nrofSymbols is 1.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

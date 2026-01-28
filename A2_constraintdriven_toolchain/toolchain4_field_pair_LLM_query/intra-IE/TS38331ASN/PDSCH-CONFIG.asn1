@@ -1,0 +1,132 @@
+PDSCH-Config ::=                        SEQUENCE {
+    dataScramblingIdentityPDSCH             INTEGER (0..1023)                                                   OPTIONAL,   -- Need S
+    dmrs-DownlinkForPDSCH-MappingTypeA      SetupRelease { DMRS-DownlinkConfig }                                OPTIONAL,   -- Need M
+    dmrs-DownlinkForPDSCH-MappingTypeB      SetupRelease { DMRS-DownlinkConfig }                                OPTIONAL,   -- Need M
+
+    tci-StatesToAddModList                  SEQUENCE (SIZE(1..maxNrofTCI-States)) OF TCI-State                  OPTIONAL,   -- Need N
+    tci-StatesToReleaseList                 SEQUENCE (SIZE(1..maxNrofTCI-States)) OF TCI-StateId                OPTIONAL,   -- Need N
+    vrb-ToPRB-Interleaver                   ENUMERATED {n2, n4}                                                 OPTIONAL,   -- Need S
+    resourceAllocation                      ENUMERATED { resourceAllocationType0, resourceAllocationType1, dynamicSwitch},
+    pdsch-TimeDomainAllocationList          SetupRelease { PDSCH-TimeDomainResourceAllocationList }             OPTIONAL,   -- Need M
+    pdsch-AggregationFactor                 ENUMERATED { n2, n4, n8 }                                           OPTIONAL,   -- Need S
+    rateMatchPatternToAddModList            SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPattern   OPTIONAL,   -- Need N
+    rateMatchPatternToReleaseList           SEQUENCE (SIZE (1..maxNrofRateMatchPatterns)) OF RateMatchPatternId OPTIONAL,   -- Need N
+    rateMatchPatternGroup1                  RateMatchPatternGroup                                               OPTIONAL,   -- Need R
+    rateMatchPatternGroup2                  RateMatchPatternGroup                                               OPTIONAL,   -- Need R
+
+    rbg-Size                                ENUMERATED {config1, config2},
+    mcs-Table                               ENUMERATED {qam256, qam64LowSE}                                     OPTIONAL,   -- Need S
+    maxNrofCodeWordsScheduledByDCI          ENUMERATED {n1, n2}                                                 OPTIONAL,   -- Need R
+
+    prb-BundlingType                        CHOICE {
+        staticBundling                          SEQUENCE {
+            bundleSize                              ENUMERATED { n4, wideband }                                 OPTIONAL    -- Need S
+        },
+        dynamicBundling                     SEQUENCE {
+            bundleSizeSet1                      ENUMERATED { n4, wideband, n2-wideband, n4-wideband }           OPTIONAL,   -- Need S
+            bundleSizeSet2                      ENUMERATED { n4, wideband }                                     OPTIONAL    -- Need S
+        }
+    },
+    zp-CSI-RS-ResourceToAddModList                  SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-Resources)) OF ZP-CSI-RS-Resource
+                                                                                                                OPTIONAL,   -- Need N
+    zp-CSI-RS-ResourceToReleaseList                 SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-Resources)) OF ZP-CSI-RS-ResourceId
+                                                                                                                OPTIONAL,   -- Need N
+    aperiodic-ZP-CSI-RS-ResourceSetsToAddModList    SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSet
+                                                                                                                OPTIONAL,   -- Need N
+    aperiodic-ZP-CSI-RS-ResourceSetsToReleaseList SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSetId
+                                                                                                                OPTIONAL,   -- Need N
+    sp-ZP-CSI-RS-ResourceSetsToAddModList   SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSet
+                                                                                                                OPTIONAL,   -- Need N
+    sp-ZP-CSI-RS-ResourceSetsToReleaseList  SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSetId
+                                                                                                                OPTIONAL,   -- Need N
+    p-ZP-CSI-RS-ResourceSet                 SetupRelease { ZP-CSI-RS-ResourceSet }
+                                                                                                                OPTIONAL,   -- Need M
+    ...,
+    [[
+    maxMIMO-Layers-r16                      SetupRelease { MaxMIMO-LayersDL-r16 }                               OPTIONAL,   -- Need M
+    minimumSchedulingOffsetK0-r16           SetupRelease { MinSchedulingOffsetK0-Values-r16 }                   OPTIONAL,   -- Need M
+
+    -- Start of the parameters for DCI format 1_2 introduced in V16.1.0
+    antennaPortsFieldPresenceDCI-1-2-r16            ENUMERATED {enabled}                                        OPTIONAL,   -- Need S
+    aperiodicZP-CSI-RS-ResourceSetsToAddModListDCI-1-2-r16  SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSet
+                                                                                                                OPTIONAL,   -- Need N
+    aperiodicZP-CSI-RS-ResourceSetsToReleaseListDCI-1-2-r16 SEQUENCE (SIZE (1..maxNrofZP-CSI-RS-ResourceSets)) OF ZP-CSI-RS-ResourceSetId
+                                                                                                                OPTIONAL,   -- Need N
+    dmrs-DownlinkForPDSCH-MappingTypeA-DCI-1-2-r16  SetupRelease { DMRS-DownlinkConfig }                        OPTIONAL,   -- Need M
+    dmrs-DownlinkForPDSCH-MappingTypeB-DCI-1-2-r16  SetupRelease { DMRS-DownlinkConfig }                        OPTIONAL,   -- Need M
+    dmrs-SequenceInitializationDCI-1-2-r16          ENUMERATED {enabled}                                        OPTIONAL,   -- Need S
+    harq-ProcessNumberSizeDCI-1-2-r16               INTEGER (0..4)                                              OPTIONAL,   -- Need R
+    mcs-TableDCI-1-2-r16                            ENUMERATED {qam256, qam64LowSE}                             OPTIONAL,   -- Need S
+    numberOfBitsForRV-DCI-1-2-r16                   INTEGER (0..2)                                              OPTIONAL,   -- Need R
+    pdsch-TimeDomainAllocationListDCI-1-2-r16       SetupRelease { PDSCH-TimeDomainResourceAllocationList-r16 }
+                                                                                                                OPTIONAL,   -- Need M
+    prb-BundlingTypeDCI-1-2-r16             CHOICE {
+        staticBundling-r16                      SEQUENCE {
+            bundleSize-r16                          ENUMERATED { n4, wideband }                                 OPTIONAL    -- Need S
+        },
+        dynamicBundling-r16                     SEQUENCE {
+            bundleSizeSet1-r16                      ENUMERATED { n4, wideband, n2-wideband, n4-wideband }       OPTIONAL,   -- Need S
+            bundleSizeSet2-r16                      ENUMERATED { n4, wideband }                                 OPTIONAL    -- Need S
+        }
+    }                                                                                                           OPTIONAL,   -- Need R
+    priorityIndicatorDCI-1-2-r16                ENUMERATED {enabled}                                            OPTIONAL,   -- Need S
+    rateMatchPatternGroup1DCI-1-2-r16           RateMatchPatternGroup                                           OPTIONAL,   -- Need R
+    rateMatchPatternGroup2DCI-1-2-r16           RateMatchPatternGroup                                           OPTIONAL,   -- Need R
+    resourceAllocationType1GranularityDCI-1-2-r16  ENUMERATED {n2,n4,n8,n16}                                    OPTIONAL,   -- Need S
+    vrb-ToPRB-InterleaverDCI-1-2-r16            ENUMERATED {n2, n4}                                             OPTIONAL,   -- Need S
+    referenceOfSLIVDCI-1-2-r16                  ENUMERATED {enabled}                                            OPTIONAL,   -- Need S
+    resourceAllocationDCI-1-2-r16               ENUMERATED { resourceAllocationType0, resourceAllocationType1, dynamicSwitch}
+                                                                                                                OPTIONAL,   -- Need M
+    -- End of the parameters for DCI format 1_2 introduced in V16.1.0
+
+    priorityIndicatorDCI-1-1-r16             ENUMERATED {enabled}                                               OPTIONAL,   -- Need S
+    dataScramblingIdentityPDSCH2-r16         INTEGER (0..1023)                                                  OPTIONAL,   -- Need R
+    pdsch-TimeDomainAllocationList-r16       SetupRelease { PDSCH-TimeDomainResourceAllocationList-r16 }        OPTIONAL,   -- Need M
+    repetitionSchemeConfig-r16               SetupRelease { RepetitionSchemeConfig-r16}                         OPTIONAL    -- Need M
+    ]],
+    [[
+    repetitionSchemeConfig-v1630             SetupRelease { RepetitionSchemeConfig-v1630}                       OPTIONAL    -- Need M
+    ]],
+    [[
+    pdsch-HARQ-ACK-OneShotFeedbackDCI-1-2-r17    ENUMERATED {enabled}                                           OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-EnhType3DCI-1-2-r17           ENUMERATED {enabled}                                           OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-EnhType3DCI-Field-1-2-r17     ENUMERATED {enabled}                                           OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-RetxDCI-1-2-r17               ENUMERATED {enabled}                                           OPTIONAL,   -- Need R
+    pucch-sSCellDynDCI-1-2-r17                   ENUMERATED {enabled}                                           OPTIONAL,   -- Need R
+    dl-OrJointTCI-StateList-r17                  CHOICE {
+        explicitlist                                 SEQUENCE {
+            dl-OrJointTCI-StateToAddModList-r17        SEQUENCE (SIZE (1..maxNrofTCI-States)) OF TCI-State
+                                                                                                                OPTIONAL,   -- Need N
+            dl-OrJointTCI-StateToReleaseList-r17       SEQUENCE (SIZE (1..maxNrofTCI-States)) OF TCI-StateId
+                                                                                                                OPTIONAL    -- Need N
+        },
+        unifiedTCI-StateRef-r17                  ServingCellAndBWP-Id-r17
+    }                                                                                                           OPTIONAL,   -- Need R
+    beamAppTime-r17                              ENUMERATED {n1, n2, n4, n7, n14, n28, n42, n56, n70, n84, n98, n112, n224, n336, spare2,
+                                                            spare1}                                             OPTIONAL,   -- Need R
+    dummy                                        SetupRelease { Dummy-TDRA-List }                                    OPTIONAL,   -- Need M
+    dmrs-FD-OCC-DisabledForRank1-PDSCH-r17          ENUMERATED {true}                                           OPTIONAL,   -- Need R
+    minimumSchedulingOffsetK0-r17                   SetupRelease { MinSchedulingOffsetK0-Values-r17 }           OPTIONAL,   -- Need M
+    harq-ProcessNumberSizeDCI-1-2-v1700          INTEGER (0..5)                                                 OPTIONAL,   -- Need R
+    harq-ProcessNumberSizeDCI-1-1-r17            INTEGER (5)                                                    OPTIONAL,   -- Need R
+    mcs-Table-r17                                ENUMERATED {qam1024}                                           OPTIONAL,   -- Need R
+    mcs-TableDCI-1-2-r17                         ENUMERATED {qam1024}                                           OPTIONAL,   -- Need R
+    xOverheadMulticast-r17                       ENUMERATED {xOh6, xOh12, xOh18}                                OPTIONAL,   -- Need S
+    priorityIndicatorDCI-4-2-r17                 ENUMERATED {enabled}                                           OPTIONAL,   -- Need S
+    sizeDCI-4-2-r17                              INTEGER (20..maxDCI-4-2-Size-r17)                              OPTIONAL    -- Need R
+    ]],
+    [[
+    pdsch-TimeDomainAllocationListForMultiPDSCH-r17 SetupRelease { MultiPDSCH-TDRA-List-r17 }                   OPTIONAL    -- Need M
+    ]]
+}
+
+RateMatchPatternGroup ::=               SEQUENCE (SIZE (1..maxNrofRateMatchPatternsPerGroup)) OF CHOICE {
+    cellLevel                               RateMatchPatternId,
+    bwpLevel                                RateMatchPatternId
+}
+
+MinSchedulingOffsetK0-Values-r16 ::=    SEQUENCE (SIZE (1..maxNrOfMinSchedulingOffsetValues-r16)) OF INTEGER (0..maxK0-SchedulingOffset-r16)
+
+MinSchedulingOffsetK0-Values-r17 ::=    SEQUENCE (SIZE (1..maxNrOfMinSchedulingOffsetValues-r16)) OF INTEGER (0..maxK0-SchedulingOffset-r17)
+
+MaxMIMO-LayersDL-r16 ::=                INTEGER (1..8)

@@ -1,0 +1,27 @@
+RLC-BearerConfig ::=                        SEQUENCE {
+    logicalChannelIdentity                      LogicalChannelIdentity,
+    servedRadioBearer                           CHOICE {
+        srb-Identity                                SRB-Identity,
+        drb-Identity                                DRB-Identity
+    }                                                                                               OPTIONAL,   -- Cond LCH-SetupOnly
+    reestablishRLC                              ENUMERATED {true}                                   OPTIONAL,   -- Need N
+    rlc-Config                                  RLC-Config                                          OPTIONAL,   -- Cond LCH-Setup
+    mac-LogicalChannelConfig                    LogicalChannelConfig                                OPTIONAL,   -- Cond LCH-Setup
+    ...,
+    [[
+    rlc-Config-v1610                            RLC-Config-v1610                                    OPTIONAL    -- Need R
+    ]],
+    [[
+    rlc-Config-v1700                            RLC-Config-v1700                                    OPTIONAL,   -- Need R
+    logicalChannelIdentityExt-r17               LogicalChannelIdentityExt-r17                       OPTIONAL,   -- Cond LCH-SetupModMRB
+    multicastRLC-BearerConfig-r17               MulticastRLC-BearerConfig-r17                       OPTIONAL,   -- Cond LCH-SetupOnlyMRB
+    servedRadioBearerSRB4-r17                   SRB-Identity-v1700                                  OPTIONAL    -- Need N
+    ]]
+}
+
+MulticastRLC-BearerConfig-r17 ::=           SEQUENCE {
+    servedMBS-RadioBearer-r17                   MRB-Identity-r17,
+    isPTM-Entity-r17                            ENUMERATED {true}                                   OPTIONAL    -- Need S
+}
+
+LogicalChannelIdentityExt-r17 ::=           INTEGER (320..65855)

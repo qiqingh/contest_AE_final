@@ -1,0 +1,26 @@
+FeatureSetUplinkPerCC ::=               SEQUENCE {
+    supportedSubcarrierSpacingUL            SubcarrierSpacing,
+    supportedBandwidthUL                    SupportedBandwidth,
+    channelBW-90mhz                         ENUMERATED {supported}                      OPTIONAL,
+    mimo-CB-PUSCH                           SEQUENCE {
+        maxNumberMIMO-LayersCB-PUSCH            MIMO-LayersUL                               OPTIONAL,
+        maxNumberSRS-ResourcePerSet             INTEGER (1..2)
+    }                                                                                   OPTIONAL,
+    maxNumberMIMO-LayersNonCB-PUSCH         MIMO-LayersUL                               OPTIONAL,
+    supportedModulationOrderUL              ModulationOrder                             OPTIONAL
+}
+FeatureSetUplinkPerCC-v1540 ::=       SEQUENCE {
+    mimo-NonCB-PUSCH                      SEQUENCE {
+        maxNumberSRS-ResourcePerSet           INTEGER (1..4),
+        maxNumberSimultaneousSRS-ResourceTx   INTEGER (1..4)
+    } OPTIONAL
+}
+
+FeatureSetUplinkPerCC-v1700 ::=   SEQUENCE {
+    supportedMinBandwidthUL-r17       SupportedBandwidth-v1700                          OPTIONAL,
+    -- R1 23-3-1-3	FeMIMO: Multi-TRP PUSCH repetition (type B) - non-codebook based
+    mTRP-PUSCH-RepetitionTypeB-r17    ENUMERATED {n1,n2,n3,n4}                          OPTIONAL,
+    -- R1 23-3-1-1 -codebook based Multi-TRP PUSCH repetition (type B)
+    mTRP-PUSCH-TypeB-CB-r17           ENUMERATED {n1,n2,n4}                             OPTIONAL,
+    supportedBandwidthUL-v1710        SupportedBandwidth-v1700                          OPTIONAL
+}

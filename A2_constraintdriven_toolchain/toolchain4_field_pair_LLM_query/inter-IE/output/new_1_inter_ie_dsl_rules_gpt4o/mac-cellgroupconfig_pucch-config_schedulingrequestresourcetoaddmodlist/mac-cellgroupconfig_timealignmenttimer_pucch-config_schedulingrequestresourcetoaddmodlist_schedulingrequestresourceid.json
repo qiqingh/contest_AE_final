@@ -1,0 +1,111 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      31
+    ],
+    "field2_all": [
+      293,
+      401,
+      509,
+      617
+    ],
+    "actual_pairs": [
+      [
+        [
+          31
+        ],
+        [
+          293
+        ]
+      ],
+      [
+        [
+          31
+        ],
+        [
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          31
+        ],
+        [
+          401,
+          617
+        ]
+      ],
+      [
+        [
+          31
+        ],
+        [
+          293,
+          401,
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          31
+        ],
+        [
+          401,
+          509
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence only describes single-IE behavior.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-cellgroupconfig",
+    "field1": "timealignmenttimer",
+    "ie2_name": "pucch-config_schedulingrequestresourcetoaddmodlist",
+    "field2": "schedulingrequestresourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "This field is used to indicate the RA scenario for which the RA report entry is triggered. The RA accesses associated to Initial access from RRC_IDLE, RRC re-establishment procedure, transition from RRC-INACTIVE. The indicator beamFailureRecovery is used in case of successful beam failure recovery related RA procedure in the SpCell [3]. The indicator reconfigurationWithSync is used if the UE executes a reconfiguration with sync. The indicator ulUnSynchronized is used if the random access procedure is initiated in a SpCell by DL or UL data arrival during RRC_CONNECTED when the timeAlignmentTimer is not running in the PTAG or if the RA procedure is initiated in a serving cell by a PDCCH order [3]. The indicator schedulingRequestFailure is used in case of SR failures [3]. The indicator noPUCCHResourceAvailable is used when the UE has no valid SR PUCCH resources configured [3]. The indicator requestForOtherS/is used for MSG1 based on demand SI request. The indicator msg3RequestForOtherS/is used in case of MSG3 based SI request.",
+    "generated_at": "2026-01-09T12:42:06.156256",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence lacks both target fields or doesn't relate them across IEs. The provided evidence only describes single-IE behavior.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

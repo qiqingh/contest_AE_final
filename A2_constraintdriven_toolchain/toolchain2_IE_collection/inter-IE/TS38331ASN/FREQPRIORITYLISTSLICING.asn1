@@ -1,0 +1,20 @@
+FreqPriorityListSlicing-r17 ::= SEQUENCE (SIZE (1..maxFreqPlus1)) OF FreqPrioritySlicing-r17
+
+FreqPrioritySlicing-r17 ::=     SEQUENCE {
+     dl-ImplicitCarrierFreq-r17            INTEGER (0..maxFreq),
+    sliceInfoList-r17                     SliceInfoList-r17                                               OPTIONAL  -- Cond Mandatory
+}
+
+SliceInfoList-r17 ::=             SEQUENCE (SIZE (1..maxSliceInfo-r17)) OF SliceInfo-r17
+
+SliceInfo-r17 ::=                 SEQUENCE {
+    nsag-IdentityInfo-r17             NSAG-IdentityInfo-r17,
+    nsag-CellReselectionPriority-r17  CellReselectionPriority                                             OPTIONAL,  -- Need R
+    nsag-CellReselectionSubPriority-r17 CellReselectionSubPriority                                        OPTIONAL,  -- Need R
+    sliceCellListNR-r17               CHOICE {
+        sliceAllowedCellListNR-r17        SliceCellListNR-r17,
+        sliceExcludedCellListNR-r17       SliceCellListNR-r17
+    }                                                                                                     OPTIONAL  -- Need R
+}
+
+SliceCellListNR-r17 ::=           SEQUENCE (SIZE (1..maxCellSlice-r17)) OF PCI-Range

@@ -1,0 +1,14 @@
+PTRS-UplinkConfig ::=                   SEQUENCE {
+    transformPrecoderDisabled               SEQUENCE {
+        frequencyDensity                    SEQUENCE (SIZE (2)) OF INTEGER (1..276)                 OPTIONAL,   -- Need S
+        timeDensity                         SEQUENCE (SIZE (3)) OF INTEGER (0..29)                  OPTIONAL,   -- Need S
+        maxNrofPorts                        ENUMERATED {n1, n2},
+        resourceElementOffset               ENUMERATED {offset01, offset10, offset11 }              OPTIONAL,   -- Need S
+        ptrs-Power                          ENUMERATED {p00, p01, p10, p11}
+    }                                                                                               OPTIONAL,   -- Need R
+    transformPrecoderEnabled                SEQUENCE {
+        sampleDensity                           SEQUENCE (SIZE (5)) OF INTEGER (1..276),
+        timeDensityTransformPrecoding           ENUMERATED {d2}                                     OPTIONAL    -- Need S
+    }                                                                                               OPTIONAL,   -- Need R
+    ...
+}

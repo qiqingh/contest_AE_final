@@ -1,0 +1,18 @@
+NeedForGapsInfoNR-r16 ::=        SEQUENCE {
+    intraFreq-needForGap-r16      NeedForGapsIntraFreqList-r16,
+    interFreq-needForGap-r16      NeedForGapsBandListNR-r16
+}
+
+NeedForGapsIntraFreqList-r16 ::=          SEQUENCE (SIZE (1.. maxNrofServingCells)) OF NeedForGapsIntraFreq-r16
+
+NeedForGapsBandListNR-r16 ::=             SEQUENCE (SIZE (1..maxBands)) OF NeedForGapsNR-r16
+
+NeedForGapsIntraFreq-r16  ::=                 SEQUENCE {
+    servCellId-r16                               ServCellIndex,
+    gapIndicationIntra-r16                       ENUMERATED {gap, no-gap}
+}
+
+NeedForGapsNR-r16  ::=                        SEQUENCE {
+    bandNR-r16                                   FreqBandIndicatorNR,
+    gapIndication-r16                            ENUMERATED {gap, no-gap}
+}

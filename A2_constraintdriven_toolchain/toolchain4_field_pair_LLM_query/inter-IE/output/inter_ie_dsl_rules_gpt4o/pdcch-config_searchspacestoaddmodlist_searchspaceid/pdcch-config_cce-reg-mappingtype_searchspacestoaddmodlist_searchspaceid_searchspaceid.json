@@ -1,0 +1,129 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      112,
+      113,
+      177,
+      178,
+      242,
+      243
+    ],
+    "field2_all": [
+      51,
+      116,
+      181,
+      246
+    ],
+    "actual_pairs": [
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          181,
+          246
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          51,
+          116,
+          181,
+          246
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          116,
+          181
+        ]
+      ],
+      [
+        [
+          112,
+          113,
+          177,
+          178,
+          242,
+          243
+        ],
+        [
+          116,
+          246
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not explicitly relate the fields 'cce-reg-mappingtype' from 'pdcch-config' and 'searchspaceid' from 'searchspacestoaddmodlist_searchspaceid' across different IEs. The evidence describes behavior within single IEs or lacks normative cross-IE constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config",
+    "field1": "cce-reg-mappingtype",
+    "ie2_name": "searchspacestoaddmodlist_searchspaceid",
+    "field2": "searchspaceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.1",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- the first search space set has larger index than the second search space set and includes the first PDCCH candidate and a third PDCCH candidate that have same first CCE index and CCE aggregation levels 8 and 16, or 16 and 8, respectively, - the second search space set includes the second PDCCH candidate that has same index and same CCE aggregation level as the first PDCCH candidate, and a fourth PDCCH candidate that has same index and same CCE aggregation level as the third PDCCH candidate, - the CORESET associated with the first search space set has cce-REG-MappingType \\( = \\) 'nonInterleaved' and has duration of one symbol, and\n---\n- one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(8)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(8)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(16)} \\), or one of the PDCCH candidates \\( m_{s_{i}, n_{C I, 1}}^{(16)} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(16)} \\), and the PDCCH candidate \\( m_{s_{k}, n_{C I, 2}}^{(8)} \\), have a first CCE with same index and are simultaneously monitored in a CORESET \\( p \\) with cce-REG-MappingType \\( = \\) 'nonInterleaved' and duration of one symbol, the UE assumes that a detected DCI format is the first DCI format. For search space sets \\( s_{i}, s_{j}, s_{k} \\), and \\( s_{l} \\) that include searchSpaceLinking with values \\( s_{j}, s_{i}, s_{l} \\), and \\( s_{k} \\), respectively, and for detection of DCI formats with same size, a UE expects different CCEs or different scrambling in a CORESET \\( p \\) for any of first PDCCH candidates \\( m_{s_{i} n}^{(L)} n_{C I, 1} \\) and \\( m_{s_{j}, n_{C I, 1}}^{(L)} \\), with \\( m_{s_{i}, n_{C I, 1}}^{(L)}=m_{s_{j}, n}^{(L)} \\), and any of second PDCCH candidates \\( m_{s_{k} n_{C I, 2}}^{(L)} \\) and \\( m_{s_{l} n_{C I, 2}}^{(L)} \\), with \\( m_{s_{k} n_{C I, 2}}^{(L)}=m_{s_{l} n_{C I, 2}}^{(L)} \\) that the UE would simultaneously monitor.",
+    "generated_at": "2026-01-10T14:33:34.081991",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not explicitly relate the fields 'cce-reg-mappingtype' from 'pdcch-config' and 'searchspaceid' from 'searchspacestoaddmodlist_searchspaceid' across different IEs. The evidence describes behavior within single IEs or lacks normative cross-IE constraints.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

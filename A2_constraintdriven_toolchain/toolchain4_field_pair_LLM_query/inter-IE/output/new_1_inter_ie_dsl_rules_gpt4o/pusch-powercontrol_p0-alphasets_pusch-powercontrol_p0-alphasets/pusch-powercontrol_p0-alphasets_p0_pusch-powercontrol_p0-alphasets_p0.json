@@ -1,0 +1,150 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      324,
+      432,
+      540,
+      648
+    ],
+    "field2_all": [
+      324,
+      432,
+      540,
+      648
+    ],
+    "actual_pairs": [
+      [
+        [
+          324
+        ],
+        [
+          432,
+          540
+        ]
+      ],
+      [
+        [
+          324
+        ],
+        [
+          540,
+          648
+        ]
+      ],
+      [
+        [
+          324
+        ],
+        [
+          324,
+          432,
+          540,
+          648
+        ]
+      ],
+      [
+        [
+          324,
+          432,
+          540,
+          648
+        ],
+        [
+          432,
+          540
+        ]
+      ],
+      [
+        [
+          432,
+          540
+        ],
+        [
+          540,
+          648
+        ]
+      ],
+      [
+        [
+          324,
+          432,
+          540,
+          648
+        ],
+        [
+          540,
+          648
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish any inter-IE relationship between the fields from different IEs. All evidence pertains to single-IE behavior or lacks explicit normative constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pusch-powercontrol_p0-alphasets",
+    "field1": "p0",
+    "ie2_name": "pusch-powercontrol_p0-alphasets",
+    "field2": "p0",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 62,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "16.2.3",
+      "6.3.5",
+      "6.4",
+      "7.2.1",
+      "7.1.1",
+      "4.3",
+      "6.1",
+      "16.2.1",
+      "5.2.2.4",
+      "6.3.2",
+      "6.1.2.3",
+      "6.2.1.2"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- in clause 7.2.1, if \\( p 0 \\)-Alpha-CLID-PUCCHSet is provided, the values of \\( P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) \\) and the PUCCH power control adjustment state \\( l \\) are provided by p0-Alpha-CLID-PUCCH-Set associated with the indicated DLorJoint-TCIState or UL-TCIstate\n---\n- If a UE established dedicated RRC connection using a Type-1 random access procedure, as described in clause 8, and is not provided P0-PUSCH-AlphaSet or for a PUSCH (re)transmission corresponding to a RAR UL grant as described in clause 8.3,\n---\n- \\( P_{0 \\_ \\text {PUCCH }, b, f, c}\\left(q_{u}\\right) \\) is a parameter composed of the sum of a component \\( P_{0 \\_N O M I N A L, P U C C H} \\), provided by p 0 -nominal, or \\( P_{0 \\_N O M I N A L} \\) PUCCH \\( =0 \\mathrm{dBm} \\) if \\( p 0 \\)-nominal is not provided, for carrier \\( f \\) of primary cell \\( c \\) and, if provided, a component \\( P_{0 \\_ \\text {UE_PUCCH }}\\left(q_{u}\\right) \\) provided by p0-PUCCH-Value in P0-PUCCH for active UL BWP \\( b \\) of carrier \\( f \\) of primary cell \\( c \\), where \\( 0 \\leq q_{u}<Q_{u}-Q_{u} \\) is a size for a set of \\( P_{O_{-} U E \\_P U C C H} \\) values provided by maxNrofPUCCH\\( P 0 \\)-PerSet. The set of \\( P_{\\mathrm{O} \\_ \\text {UE_PUCCH }} \\) values is provided by p0-Set. If \\( p 0 \\)-Set is not provided to the UE, \\( P_{0 \\_ \\text {РШССН }, b_{1} f_{1} c}\\left(q_{u}\\right)=0,0 \\leq q_{u}<Q_{u} \\)\n---\n- if dl-P0-PSSCH-PSCCH is provided\n---\n- if dl-P0-PSFCH is provided,\n---\nP0 value for PUSCH with grant (except msg3) in steps of 1dB (see TS 38.213 [13], clause 7.1). When the field is absent the UE applies the value 0.\n---\n- subcarrierLocation-p0 or subcarrierLocation-pl defines subcarrier occupancy of the CSI-[M resource within a slot for csi-IM-ResourceElementPattern set to 'pattern0' or 'pattern1', respectively.\n---\nFor the PUSCH retransmission scheduled by a PDCCH with CRC scrambled by CS-RNTI with NDI \\( =1 \\), the parameters in pusch-Config are applied for the PUSCH transmission except for p0-NominalWithoutGrant, p0-PUSCH-Alpha, powerControlLoopToUse, pathlossReferenceIndex described in clause 7.1 of [6, TS 38.213], mcs-Table, mcsTableTransformPrecoder described in clause 6.1.4.1 and transformPrecoder described in clause 6.1.3.\n---\nFor PUSCH transmissions with a Type 1 configured grant, when two SRS resource sets are configured in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2, if configuredGrantConfig contains only one pathlossReferenceIndex, p0-PUSCH-Alpha, powerControlLoopToUse, srs-ResourceIndicator and precodingAndNumberOfLayers (applicable when higher layer parameter usage in SRS-ResourceSet set to 'codebook'), PUSCH repetitions are associated only with the first SRS resource set.\n---\n- zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or,\n---\nIndicates P0 value for DL pathloss based power control for PSBCH. If not configured, DL pathloss based power control is disabled for PSBCH.\n---\n-- Maximum number of PO -pucch present in a p0-pucch set",
+    "generated_at": "2026-01-09T12:25:27.939083",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between field1 and field2.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish any inter-IE relationship between the fields from different IEs. All evidence pertains to single-IE behavior or lacks explicit normative constraints.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      257
+    ],
+    [
+      245
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a normative constraint between searchSpaceType and tci-StatesPDCCH-ToAddList within the same IE. The evidence discusses PDCCH monitoring and TCI state activation but does not explicitly relate the two fields in question.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group2",
+    "field1": "searchSpaceType",
+    "field2": "tci-StatesPDCCH-ToAddList",
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "For the PCell or the PSCell, the UE can be provided, by PRACH-ResourceDedicatedBFR, a configuration for PRACH transmission as described in clause 8.1. For PRACH transmission in slot n and according to antenna port quasi colocation parameters associated with periodic CSI-RS resource configuration or with SS/PBCH block associated with index q_{\\text {new }} provided by higher layers [11, TS 38.321], the UE monitors PDCCH in a search space set provided by recoverySearchSpaceld for detection of a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI starting from slot n+4+2^{\\mu} \\cdot k_{\\text {mac }} , where \\mu is the SCS configuration for the PRACH transmission and k_{\\text {mac }} is a number of slots provided by K-M a c[12, T S 38.331] or k_{\\mathrm{mac}}=0 if K-M a c is not provided, within a window configured by BeamFailureRecoveryConfig. For PDCCH monitoring in a search space set provided by recoverySearchSpaceld and for corresponding PDSCH reception, the UE assumes the same antenna port quasi-collocation parameters as the ones associated with index q_{\\text {new }} until the UE receives by higher layers an activation for a TCI state or any of the parameters tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList. After the UE detects a DCI format with CRC scrambled by C-RNTI or MCS-C-RNTI in the search space set provided by recoverySearchSpaceld, the UE continues to monitor PDCCH candidates in the search space set provided by recoverySearchSpaceld until the UE receives a MAC CE activation command for a TCI state or tci-StatesPDCCH-ToAddList and/or tci-StatesPDCCH-ToReleaseList.",
+    "generated_at": "2025-12-09T09:48:59.833235",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a normative constraint between searchSpaceType and tci-StatesPDCCH-ToAddList within the same IE. The evidence discusses PDCCH monitoring and TCI state activation but does not explicitly relate the two fields in question.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      112,
+      113
+    ],
+    "field2_all": [
+      114
+    ],
+    "actual_pairs": [
+      [
+        [
+          112,
+          113
+        ],
+        [
+          114
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a normative relationship between the fields cce-REG-MappingType and precoderGranularity within the same IE. The snippets mention these fields but do not relate them directly or conditionally.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdcch-Config_group0",
+    "field1": "cce-REG-MappingType",
+    "field2": "precoderGranularity",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "10.1",
+      "7.3.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- \\quad N_{\\mathrm{RB}}^{\\text {CORESET }} is given by the higher-layer parameter frequencyDomainResources; - \\quad N_{\\text {symb }}^{\\text {CORESET }} is given by the higher-layer parameter duration, where N_{\\text {symb }}^{\\text {CORESET }}=3 is supported only if the higherlayer parameter dmrs-TypeA-Position equals 3; - interleaved or non-interleaved mapping is given by the higher-layer parameter cce-REG-MappingType; - L equals 6 for non-interleaved mapping and is given by the higher-layer parameter reg-BundleSize for interleaved mapping; - R is given by the higher-layer parameter interleaverSize; - \\quad n_{\\text {shift }} \\in\\{0,1, \\ldots, 274\\} is given by the higher-layer parameter shiftIndex if provided, otherwise n_{\\text {shift }}=N_{\\text {ID }} ; - for both interleaved and non-interleaved mapping: - if the higher-layer parameter precoderGranularity equals sameAsREG-bundle the UE may assume the same precoding being used within a REG bundle - if the higher-layer parameter precoderGranularity equals allContiguousRBs, - the UE may assume the same precoding being used across the all resource-element groups within the set of contiguous resource blocks in the CORESET;\n---\n- 0<p<16 if coresetPoollndex is not provided for a first CORESET, or is provided and has a value 0 for a first CORESET, and is provided and has a value 1 for a second CORESET; - a DM-RS scrambling sequence initialization value by pdcch-DMRS-ScramblingID; - a precoder granularity for a number of REGs in the frequency domain where the UE can assume use of a same DM-RS precoder by precoderGranularity; - a number of consecutive symbols provided by duration; - a set of resource blocks provided by frequencyDomainResources; - CCE-to-REG mapping parameters provided by cce-REG-MappingType; - an antenna port quasi co-location, from a set of antenna port quasi co-locations provided by TCI-State, indicating quasi co-location information of the DM-RS antenna port for PDCCH reception; - an indication for a presence or absence of a transmission configuration indication (TCI) field for a DCI format, other than DCI format 1 \\_0 , that schedules PDSCH receptions or has associated HARQ-ACK information without scheduling PDSCH and is provided by a PDCCH in CORESET p , by tci-PresentInDCI or tci-PresentDC1-1-2.",
+    "generated_at": "2026-01-07T19:45:16.843565",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a normative relationship between the fields cce-REG-MappingType and precoderGranularity within the same IE. The snippets mention these fields but do not relate them directly or conditionally.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

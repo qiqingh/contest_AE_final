@@ -1,0 +1,68 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      465,
+      466
+    ],
+    "field2_all": [
+      449
+    ],
+    "actual_pairs": [
+      [
+        [
+          465,
+          466
+        ],
+        [
+          449
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence does not establish a direct relationship between the target fields 'referenceSignal' and 'transmissionComb' within the same IE. The evidence provided is more about the configuration and mapping of SRS resources rather than a specific constraint between these two fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group0",
+    "field1": "referenceSignal",
+    "field2": "transmissionComb",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "If the SRS is configured by the [E SRS-PosResource, the quantity k_{\\text {offset }}^{l^{\\prime}} is given by Table 6.4.1.4.3-2, otherwise k_{\\text {offset }}^{l^{\\prime}}=0 . The frequency domain shift value n_{\\text {shift }} adjusts the SRS allocation with respect to the reference point grid and is contained in the higher-layer parameter freqDomainShift in the SRS-Resource [E or the SRS-PosResource [E. The transmission comb offset \\bar{k}_{\\mathrm{TC}} \\in\\left\\{0,1, \\ldots, K_{\\mathrm{TC}}-1\\right\\} is contained in the higher-layer parameter transmission C o m b in the SRS-Resource [E or the SRS-PosResource [E and n_{b} is a frequency position index. Frequency hopping of the sounding reference signal is configured by the parameter b_{\\text {hop }} \\in\\{0,1,2,3\\} , given by the field b -hop contained in the higher-layer parameter freqHopping if configured, otherwise b_{\\text {hop }}=0 . ETSI",
+    "generated_at": "2026-01-07T19:44:31.113168",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence does not establish a direct relationship between the target fields 'referenceSignal' and 'transmissionComb' within the same IE. The evidence provided is more about the configuration and mapping of SRS resources rather than a specific constraint between these two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

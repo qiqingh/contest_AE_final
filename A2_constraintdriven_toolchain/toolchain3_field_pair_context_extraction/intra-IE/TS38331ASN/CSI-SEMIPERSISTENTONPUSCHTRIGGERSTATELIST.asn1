@@ -1,0 +1,9 @@
+CSI-SemiPersistentOnPUSCH-TriggerStateList ::= SEQUENCE(SIZE (1..maxNrOfSemiPersistentPUSCH-Triggers)) OF CSI-SemiPersistentOnPUSCH-TriggerState
+
+CSI-SemiPersistentOnPUSCH-TriggerState ::=     SEQUENCE {
+    associatedReportConfigInfo                     CSI-ReportConfigId,
+    ...,
+    [[
+    sp-CSI-MultiplexingMode-r17                ENUMERATED {enabled}                                           OPTIONAL   -- Need R
+    ]]
+}

@@ -1,0 +1,46 @@
+PDCP-Parameters ::=         SEQUENCE {
+    supportedROHC-Profiles      SEQUENCE {
+        profile0x0000               BOOLEAN,
+        profile0x0001               BOOLEAN,
+        profile0x0002               BOOLEAN,
+        profile0x0003               BOOLEAN,
+        profile0x0004               BOOLEAN,
+        profile0x0006               BOOLEAN,
+        profile0x0101               BOOLEAN,
+        profile0x0102               BOOLEAN,
+        profile0x0103               BOOLEAN,
+        profile0x0104               BOOLEAN
+    },
+    maxNumberROHC-ContextSessions       ENUMERATED {cs2, cs4, cs8, cs12, cs16, cs24, cs32, cs48, cs64,
+                                                cs128, cs256, cs512, cs1024, cs16384, spare2, spare1},
+    uplinkOnlyROHC-Profiles             ENUMERATED {supported}      OPTIONAL,
+    continueROHC-Context                ENUMERATED {supported}      OPTIONAL,
+    outOfOrderDelivery                  ENUMERATED {supported}      OPTIONAL,
+    shortSN                             ENUMERATED {supported}      OPTIONAL,
+    pdcp-DuplicationSRB                 ENUMERATED {supported}      OPTIONAL,
+    pdcp-DuplicationMCG-OrSCG-DRB       ENUMERATED {supported}      OPTIONAL,
+    ...,
+    [[
+    drb-IAB-r16                         ENUMERATED {supported}      OPTIONAL,
+    non-DRB-IAB-r16                     ENUMERATED {supported}      OPTIONAL,
+    extendedDiscardTimer-r16            ENUMERATED {supported}      OPTIONAL,
+    continueEHC-Context-r16             ENUMERATED {supported}      OPTIONAL,
+    ehc-r16                             ENUMERATED {supported}      OPTIONAL,
+    maxNumberEHC-Contexts-r16           ENUMERATED {cs2, cs4, cs8, cs16, cs32, cs64, cs128, cs256, cs512,
+                                                    cs1024, cs2048, cs4096, cs8192, cs16384, cs32768, cs65536}    OPTIONAL,
+    jointEHC-ROHC-Config-r16            ENUMERATED {supported}      OPTIONAL,
+    pdcp-DuplicationMoreThanTwoRLC-r16  ENUMERATED {supported}      OPTIONAL
+    ]],
+    [[
+    longSN-RedCap-r17                   ENUMERATED {supported}      OPTIONAL,
+    udc-r17                             SEQUENCE {
+        standardDictionary-r17              ENUMERATED {supported}  OPTIONAL,
+        operatorDictionary-r17              SEQUENCE {
+            versionOfDictionary-r17             INTEGER (0..15),
+            associatedPLMN-ID-r17               PLMN-Identity
+        }                                                           OPTIONAL,
+        continueUDC-r17                     ENUMERATED {supported}  OPTIONAL,
+        supportOfBufferSize-r17             ENUMERATED {kbyte4, kbyte8}  OPTIONAL
+    }                                                               OPTIONAL
+    ]]
+}

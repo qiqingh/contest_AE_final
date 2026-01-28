@@ -1,0 +1,33 @@
+MCGFailureInformation-r16 ::=    SEQUENCE {
+    criticalExtensions               CHOICE {
+        mcgFailureInformation-r16        MCGFailureInformation-r16-IEs,
+        criticalExtensionsFuture         SEQUENCE {}
+    }
+}
+
+MCGFailureInformation-r16-IEs ::= SEQUENCE {
+    failureReportMCG-r16              FailureReportMCG-r16                             OPTIONAL,
+    lateNonCriticalExtension          OCTET STRING                                     OPTIONAL,
+    nonCriticalExtension              SEQUENCE {}                                      OPTIONAL
+}
+
+FailureReportMCG-r16 ::=          SEQUENCE {
+    failureType-r16                   ENUMERATED {t310-Expiry, randomAccessProblem, rlc-MaxNumRetx,
+                                                         t312-Expiry-r16, lbt-Failure-r16, beamFailureRecoveryFailure-r16,
+                                         bh-RLF-r16, spare1}                                                                            OPTIONAL,
+    measResultFreqList-r16            MeasResultList2NR                                                                     OPTIONAL,
+    measResultFreqListEUTRA-r16       MeasResultList2EUTRA                                                                  OPTIONAL,
+    measResultSCG-r16                 OCTET STRING (CONTAINING MeasResultSCG-Failure)                                       OPTIONAL,
+    measResultSCG-EUTRA-r16           OCTET STRING                                                                          OPTIONAL,
+    measResultFreqListUTRA-FDD-r16    MeasResultList2UTRA                                                                   OPTIONAL,
+    ...
+}
+
+MeasResultList2UTRA ::=    SEQUENCE (SIZE (1..maxFreq)) OF MeasResult2UTRA-FDD-r16
+
+MeasResult2UTRA-FDD-r16 ::=       SEQUENCE {
+    carrierFreq-r16                   ARFCN-ValueUTRA-FDD-r16,
+    measResultNeighCellList-r16       MeasResultListUTRA-FDD-r16
+}
+
+MeasResultList2EUTRA ::=          SEQUENCE (SIZE (1..maxFreq)) OF MeasResult2EUTRA-r16

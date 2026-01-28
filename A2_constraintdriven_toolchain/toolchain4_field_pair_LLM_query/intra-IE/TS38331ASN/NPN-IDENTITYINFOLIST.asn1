@@ -1,0 +1,15 @@
+NPN-IdentityInfoList-r16 ::=     SEQUENCE (SIZE (1..maxNPN-r16)) OF NPN-IdentityInfo-r16
+
+
+NPN-IdentityInfo-r16 ::=         SEQUENCE {
+    npn-IdentityList-r16             SEQUENCE (SIZE (1..maxNPN-r16)) OF NPN-Identity-r16,
+    trackingAreaCode-r16             TrackingAreaCode,
+    ranac-r16                        RAN-AreaCode                                                OPTIONAL,       -- Need R
+    cellIdentity-r16                 CellIdentity,
+    cellReservedForOperatorUse-r16   ENUMERATED {reserved, notReserved},
+    iab-Support-r16                  ENUMERATED {true}                                           OPTIONAL,       -- Need S
+    ...,
+    [[
+    gNB-ID-Length-r17                INTEGER (22..32)                                            OPTIONAL        -- Need R
+    ]]
+}

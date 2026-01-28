@@ -1,0 +1,84 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 2), EQ(field2, 1))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      882
+    ],
+    "field2_all": [
+      882
+    ],
+    "actual_pairs": [
+      [
+        [
+          882
+        ],
+        [
+          882
+        ]
+      ]
+    ]
+  },
+  "predicate": "EQ(field1, 1)",
+  "preconditions": [
+    "N_{g}=4"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=2, field2=1 when N_{g}=4"
+    ],
+    "invalid": [
+      "field1=2, field2=2 when N_{g}=4"
+    ]
+  },
+  "notes": "The rule is derived from the evidence stating that when N_{g}=4, codebookMode (field1) shall be set to '1'.",
+  "version_tags": [
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "codebookConfig_group1",
+    "field1": "codebookMode",
+    "field2": "codebookMode",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.2.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "ETSI TS 138214 V17.1.0 (2022-05) - The values of N_{g}, N_{1} and N_{2} are configured with the higher layer parameters n g-n 1-n 2 . The supported configurations of \\left(N_{g}, N_{1}, N_{2}\\right) for a given number of CSI-RS ports and the corresponding values of \\left(O_{1}, O_{2}\\right) are given in Table 5.2.2.2.2-1. The number of CSI-RS ports, P_{\\text {CSI-RS }} , is 2 N_{g} N_{1} N_{2} . - When N_{g}=2 , codebookMode shall be set to either ' 1 ' or ' 2 '. When N_{g}=4 , codebookMode shall be set to ' 1 '. The bitmap parameter n g-n 1-n 2 forms the bit sequence a_{A_{\\mathrm{c}}-1}, \\ldots, a_{1}, a_{0} where a_{0} is the LSB and a_{A_{\\mathrm{c}}-1} is the MSB and where a bit value of zero indicates that PMI reporting is not allowed to correspond to any precoder associated with the bit. The number of bits is given by A_{c}=N_{1} O_{1} N_{2} O_{2} . Bit a_{N_{2} O_{2} /+m} is associated with all precoders based on the quantity v_{r, m}, l=0, \\ldots, N_{1} O_{1}-1, m=0, \\ldots, N_{2} O_{2}-1 , as defined below. The bitmap parameter ri-Restriction forms the bit sequence r_{3}, \\ldots, r_{1}, r_{0} where r_{0} is the LSB and r_{3} is the MSB. When r_{i} is zero, i \\in\\{0,1, \\ldots, 3\\} , PMI and RI reporting are not allowed to correspond to any precoder associated with v=i+1 layers. \\begin{table}\n---\n\\end{array}\\right. \\] and v is the associated RI value. When codebookMode is set to ' 1 ', i_{1,4} is \\[ i_{1,4}=\\left\\{\\begin{array}{lll}\n---\n\\] When codebookMode is set to ' 2 ', i_{1,4} and i_{2} are \\[ \\begin{array}{c}",
+    "generated_at": "2025-12-11T14:26:42.608493",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 2), EQ(field2, 1))",
+      "preconditions": [
+        "N_{g}=4"
+      ],
+      "predicate": "EQ(field1, 1)",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=2, field2=1 when N_{g}=4"
+        ],
+        "invalid": [
+          "field1=2, field2=2 when N_{g}=4"
+        ]
+      },
+      "notes": "The rule is derived from the evidence stating that when N_{g}=4, codebookMode (field1) shall be set to '1'.",
+      "version_tags": [
+        "r17"
+      ]
+    }
+  }
+}

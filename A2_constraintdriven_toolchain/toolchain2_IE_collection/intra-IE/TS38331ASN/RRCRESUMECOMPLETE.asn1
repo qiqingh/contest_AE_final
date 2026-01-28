@@ -1,0 +1,46 @@
+RRCResumeComplete ::=                   SEQUENCE {
+    rrc-TransactionIdentifier               RRC-TransactionIdentifier,
+    criticalExtensions                      CHOICE {
+        rrcResumeComplete                       RRCResumeComplete-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+RRCResumeComplete-IEs ::=               SEQUENCE {
+    dedicatedNAS-Message                    DedicatedNAS-Message                                                    OPTIONAL,
+    selectedPLMN-Identity                   INTEGER (1..maxPLMN)                                                    OPTIONAL,
+    uplinkTxDirectCurrentList               UplinkTxDirectCurrentList                                               OPTIONAL,
+    lateNonCriticalExtension                OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                    RRCResumeComplete-v1610-IEs                                             OPTIONAL
+}
+
+RRCResumeComplete-v1610-IEs ::=         SEQUENCE {
+    idleMeasAvailable-r16                   ENUMERATED {true}                                                       OPTIONAL,
+    measResultIdleEUTRA-r16                 MeasResultIdleEUTRA-r16                                                 OPTIONAL,
+    measResultIdleNR-r16                    MeasResultIdleNR-r16                                                    OPTIONAL,
+    scg-Response-r16                        CHOICE {
+        nr-SCG-Response                         OCTET STRING (CONTAINING RRCReconfigurationComplete),
+        eutra-SCG-Response                      OCTET STRING
+    }                                                                                                               OPTIONAL,
+    ue-MeasurementsAvailable-r16            UE-MeasurementsAvailable-r16                                            OPTIONAL,
+    mobilityHistoryAvail-r16                ENUMERATED {true}                                                       OPTIONAL,
+    mobilityState-r16                       ENUMERATED {normal, medium, high, spare}                                OPTIONAL,
+    needForGapsInfoNR-r16                   NeedForGapsInfoNR-r16                                                   OPTIONAL,
+    nonCriticalExtension                    RRCResumeComplete-v1640-IEs                                             OPTIONAL
+}
+
+RRCResumeComplete-v1640-IEs ::=         SEQUENCE {
+    uplinkTxDirectCurrentTwoCarrierList-r16 UplinkTxDirectCurrentTwoCarrierList-r16                                 OPTIONAL,
+    nonCriticalExtension                    RRCResumeComplete-v1700-IEs                                             OPTIONAL
+}
+
+RRCResumeComplete-v1700-IEs ::=         SEQUENCE {
+    needForGapNCSG-InfoNR-r17               NeedForGapNCSG-InfoNR-r17                                               OPTIONAL,
+    needForGapNCSG-InfoEUTRA-r17            NeedForGapNCSG-InfoEUTRA-r17                                            OPTIONAL,
+    nonCriticalExtension                    RRCResumeComplete-v1720-IEs                                             OPTIONAL
+}
+
+RRCResumeComplete-v1720-IEs ::=         SEQUENCE {
+    uplinkTxDirectCurrentMoreCarrierList-r17 UplinkTxDirectCurrentMoreCarrierList-r17                               OPTIONAL,
+    nonCriticalExtension                     SEQUENCE {}                                                            OPTIONAL
+}

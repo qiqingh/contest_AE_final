@@ -1,0 +1,24 @@
+SL-PSSCH-TxConfigList-r16 ::=    SEQUENCE (SIZE (1..maxPSSCH-TxConfig-r16)) OF SL-PSSCH-TxConfig-r16
+
+SL-PSSCH-TxConfig-r16 ::=        SEQUENCE {
+    sl-TypeTxSync-r16                SL-TypeTxSync-r16                                   OPTIONAL,    -- Need R
+    sl-ThresUE-Speed-r16             ENUMERATED {kmph60, kmph80, kmph100, kmph120,
+                                                kmph140, kmph160, kmph180, kmph200},
+    sl-ParametersAboveThres-r16      SL-PSSCH-TxParameters-r16,
+    sl-ParametersBelowThres-r16      SL-PSSCH-TxParameters-r16,
+    ...,
+    [[
+    sl-ParametersAboveThres-v1650    SL-MinMaxMCS-List-r16                               OPTIONAL,    -- Need R
+    sl-ParametersBelowThres-v1650    SL-MinMaxMCS-List-r16                               OPTIONAL     -- Need R
+    ]]
+}
+
+
+SL-PSSCH-TxParameters-r16 ::=    SEQUENCE {
+    sl-MinMCS-PSSCH-r16              INTEGER (0..27),
+    sl-MaxMCS-PSSCH-r16              INTEGER (0..31),
+    sl-MinSubChannelNumPSSCH-r16     INTEGER (1..27),
+    sl-MaxSubchannelNumPSSCH-r16     INTEGER (1..27),
+    sl-MaxTxTransNumPSSCH-r16        INTEGER (1..32),
+    sl-MaxTxPower-r16                SL-TxPower-r16                                      OPTIONAL    -- Cond CBR
+}

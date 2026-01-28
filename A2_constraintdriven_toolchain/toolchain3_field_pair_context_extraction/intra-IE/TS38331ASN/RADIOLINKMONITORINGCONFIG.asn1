@@ -1,0 +1,49 @@
+RadioLinkMonitoringConfig ::=       SEQUENCE {
+    failureDetectionResourcesToAddModList   SEQUENCE (SIZE(1..maxNrofFailureDetectionResources)) OF RadioLinkMonitoringRS
+                                                                                                                  OPTIONAL, -- Need N
+    failureDetectionResourcesToReleaseList  SEQUENCE (SIZE(1..maxNrofFailureDetectionResources)) OF RadioLinkMonitoringRS-Id
+                                                                                                                  OPTIONAL, -- Need N
+    beamFailureInstanceMaxCount             ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10}                          OPTIONAL, -- Need R
+    beamFailureDetectionTimer               ENUMERATED {pbfd1, pbfd2, pbfd3, pbfd4, pbfd5, pbfd6, pbfd8, pbfd10}  OPTIONAL, -- Need R
+    ...,
+    [[
+    beamFailure-r17                         BeamFailureDetection-r17                                              OPTIONAL  -- Need R
+    ]]
+}
+
+BeamFailureDetection-r17 ::=        SEQUENCE {
+    failureDetectionSet1-r17            BeamFailureDetectionSet-r17                                               OPTIONAL, -- Need R
+    failureDetectionSet2-r17            BeamFailureDetectionSet-r17                                               OPTIONAL, -- Need R
+    additionalPCI-r17                   AdditionalPCIIndex-r17                                                    OPTIONAL  -- Need R
+}
+
+RadioLinkMonitoringRS ::=           SEQUENCE {
+    radioLinkMonitoringRS-Id            RadioLinkMonitoringRS-Id,
+    purpose                             ENUMERATED {beamFailure, rlf, both},
+    detectionResource                   CHOICE {
+        ssb-Index                           SSB-Index,
+        csi-RS-Index                        NZP-CSI-RS-ResourceId
+    },
+    ...
+}
+
+BeamFailureDetectionSet-r17  ::=    SEQUENCE {
+    bfdResourcesToAddModList-r17        SEQUENCE (SIZE(1..maxNrofBFDResourcePerSet-r17)) OF BeamLinkMonitoringRS-r17
+                                                                                                                  OPTIONAL, -- Need N
+    bfdResourcesToReleaseList-r17       SEQUENCE (SIZE(1..maxNrofBFDResourcePerSet-r17)) OF BeamLinkMonitoringRS-Id-r17
+                                                                                                                  OPTIONAL, -- Need N
+    beamFailureInstanceMaxCount-r17     ENUMERATED {n1, n2, n3, n4, n5, n6, n8, n10}                              OPTIONAL, -- Need R
+    beamFailureDetectionTimer-r17       ENUMERATED {pbfd1, pbfd2, pbfd3, pbfd4, pbfd5, pbfd6, pbfd8, pbfd10}      OPTIONAL, -- Need R
+    ...
+}
+
+BeamLinkMonitoringRS-r17 ::=        SEQUENCE {
+    beamLinkMonitoringRS-Id-r17         BeamLinkMonitoringRS-Id-r17,
+    detectionResource-r17               CHOICE {
+        ssb-Index                       SSB-Index,
+        csi-RS-Index                    NZP-CSI-RS-ResourceId
+    },
+    ...
+}
+
+BeamLinkMonitoringRS-Id-r17 ::=     INTEGER (0..maxNrofFailureDetectionResources-1-r17)

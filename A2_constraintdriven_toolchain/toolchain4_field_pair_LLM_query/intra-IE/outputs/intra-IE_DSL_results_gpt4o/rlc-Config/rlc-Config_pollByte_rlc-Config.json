@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      14
+    ],
+    "field2_all": [
+      10
+    ],
+    "actual_pairs": [
+      [
+        [
+          14
+        ],
+        [
+          10
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "No explicit normative constraint or logical relationship found between 'pollByte' and 'rlc-Config' within the provided evidence.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "rlc-Config",
+    "field1": "pollByte",
+    "field2": "rlc-Config",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.5"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{|l|} SL-RLC-Config field descriptions \\begin{tabular}{l} sl-MaxRetxThreshold Parameter value of maxRetxThreshold for RLC AM for NR sidelink communications, see TS 38.322 [4]. Value t 1 corresponds to 1 retransmission, value t 2 corresponds to 2 retransmissions and so on. \\end{tabular} \\begin{tabular}{l} si-PollByte Parameter value of pollByte for RLC AM for NR sidelink communications, see TS 38.322 [4]. Value k B 25 corresponds to 25 kBytes , value k B 50 corresponds to 50 kBytes and so on. infinity corresponds to an infinite amount of kBytes. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2026-01-10T21:43:11.550963",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "No explicit normative constraint or logical relationship found between 'pollByte' and 'rlc-Config' within the provided evidence.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

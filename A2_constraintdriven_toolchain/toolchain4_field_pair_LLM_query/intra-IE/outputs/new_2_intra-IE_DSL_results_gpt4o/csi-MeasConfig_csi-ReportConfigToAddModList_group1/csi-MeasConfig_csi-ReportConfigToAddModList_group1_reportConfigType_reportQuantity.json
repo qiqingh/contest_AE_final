@@ -1,0 +1,93 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'periodic'), IN(field2, {'cri-RSRP', 'ssb-Index-RSRP'}))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      927
+    ],
+    "field2_all": [
+      932,
+      933
+    ],
+    "actual_pairs": [
+      [
+        [
+          927
+        ],
+        [
+          932,
+          933
+        ]
+      ]
+    ]
+  },
+  "predicate": "If reportConfigType is 'periodic', then reportQuantity must be 'cri-RSRP' or 'ssb-Index-RSRP'",
+  "preconditions": [
+    "UE configured with DRX",
+    "drx-onDurationTimer not started"
+  ],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1='periodic', field2='cri-RSRP'",
+      "field1='periodic', field2='ssb-Index-RSRP'"
+    ],
+    "invalid": [
+      "field1='periodic', field2='otherQuantity'"
+    ]
+  },
+  "notes": "The evidence specifies a conditional relationship between reportConfigType and reportQuantity when DRX is configured and drx-onDurationTimer is not started.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "csi-MeasConfig_csi-ReportConfigToAddModList_group1",
+    "field1": "reportConfigType",
+    "field2": "reportQuantity",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 5,
+      "sampled": true,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.6.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "If the UE is configured with DRX, - if the UE is configured to monitor DCI format 2 _ 6 and configured by higher layer parameter p s TransmitOtherPeriodic CSI to report CSI with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to quantities other than 'cri-RSRP' and 'ssb-Index-RSRP' when drx-onDurationTimer in DRXConfig is not started, the most recent CSI measurement occasion occurs in DRX active time or during the time duration indicated by drx-onDurationTimer in DRX-Config also outside DRX active time for CSI to be reported; - if the UE is configured to monitor DCI format 26 and configured by higher layer parameter p s -TransmitPeriodicL1-RSRP to report L1-RSRP with the higher layer parameter reportConfigType set to 'periodic' and reportQuantity set to cri-RSRP when drx-onDurationTimer in DRX-Config is not started, the most recent CSI measurement occasion occurs in DRX active time or during the time duration indicated by d r x onDurationTimer in DRX-Config also outside DRX active time for CSI to be reported; - otherwise, the most recent CSI measurement occasion occurs in DRX active time for CSI to be reported.",
+    "generated_at": "2026-01-07T19:39:58.352377",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'periodic'), IN(field2, {'cri-RSRP', 'ssb-Index-RSRP'}))",
+      "preconditions": [
+        "UE configured with DRX",
+        "drx-onDurationTimer not started"
+      ],
+      "predicate": "If reportConfigType is 'periodic', then reportQuantity must be 'cri-RSRP' or 'ssb-Index-RSRP'",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1='periodic', field2='cri-RSRP'",
+          "field1='periodic', field2='ssb-Index-RSRP'"
+        ],
+        "invalid": [
+          "field1='periodic', field2='otherQuantity'"
+        ]
+      },
+      "notes": "The evidence specifies a conditional relationship between reportConfigType and reportQuantity when DRX is configured and drx-onDurationTimer is not started.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

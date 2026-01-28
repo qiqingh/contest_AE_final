@@ -1,0 +1,30 @@
+PUSCH-TimeDomainResourceAllocationList ::=  SEQUENCE (SIZE(1..maxNrofUL-Allocations)) OF PUSCH-TimeDomainResourceAllocation
+
+PUSCH-TimeDomainResourceAllocation ::=  SEQUENCE {
+    k2                                      INTEGER(0..32)                                  OPTIONAL,   -- Need S
+    mappingType                             ENUMERATED {typeA, typeB},
+    startSymbolAndLength                    INTEGER (0..127)
+}
+
+PUSCH-TimeDomainResourceAllocationList-r16 ::=  SEQUENCE (SIZE(1..maxNrofUL-Allocations-r16)) OF PUSCH-TimeDomainResourceAllocation-r16
+
+PUSCH-TimeDomainResourceAllocation-r16 ::=  SEQUENCE {
+    k2-r16                                     INTEGER(0..32)          OPTIONAL,   -- Need S
+    puschAllocationList-r16                    SEQUENCE (SIZE(1..maxNrofMultiplePUSCHs-r16)) OF PUSCH-Allocation-r16,
+...
+}
+
+PUSCH-Allocation-r16 ::=  SEQUENCE {
+    mappingType-r16                           ENUMERATED {typeA, typeB}                     OPTIONAL,   -- Cond NotFormat01-02-Or-TypeA
+    startSymbolAndLength-r16                  INTEGER (0..127)                              OPTIONAL,   -- Cond NotFormat01-02-Or-TypeA
+    startSymbol-r16                           INTEGER (0..13)                               OPTIONAL,   -- Cond RepTypeB
+    length-r16                                INTEGER (1..14)                               OPTIONAL,   -- Cond RepTypeB
+    numberOfRepetitions-r16                   ENUMERATED {n1, n2, n3, n4, n7, n8, n12, n16} OPTIONAL,   -- Cond Format01-02
+    ...,
+    [[
+    numberOfRepetitionsExt-r17                ENUMERATED {n1, n2, n3, n4, n7, n8, n12, n16, n20, n24, n28, n32, spare4, spare3, spare2,
+                                                          spare1}                           OPTIONAL,   -- Cond Format01-02-For-TypeA
+    numberOfSlotsTBoMS-r17                   ENUMERATED {n1, n2, n4, n8, spare4, spare3, spare2, spare1}   OPTIONAL,   -- Need R
+    extendedK2-r17                            INTEGER (0..128)                              OPTIONAL    -- Cond MultiPUSCH
+    ]]
+}

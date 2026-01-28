@@ -1,0 +1,10 @@
+MeasGapSharingConfig ::=        SEQUENCE {
+    gapSharingFR2                   SetupRelease { MeasGapSharingScheme }       OPTIONAL,   -- Need M
+    ...,
+    [[
+    gapSharingFR1                   SetupRelease { MeasGapSharingScheme }       OPTIONAL,   --Need M
+    gapSharingUE                    SetupRelease { MeasGapSharingScheme }       OPTIONAL    --Need M
+    ]]
+}
+
+MeasGapSharingScheme::=         ENUMERATED {scheme00, scheme01, scheme10, scheme11}

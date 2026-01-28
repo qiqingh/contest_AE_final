@@ -1,0 +1,112 @@
+Attaching to process 2596248
+[New LWP 2596281]
+[New LWP 2596282]
+[New LWP 2596283]
+[New LWP 2596284]
+[New LWP 2596285]
+[New LWP 2596286]
+[New LWP 2596287]
+[New LWP 2596288]
+[New LWP 2596312]
+[New LWP 2596313]
+[New LWP 2596314]
+[New LWP 2596315]
+[New LWP 2596316]
+[New LWP 2596317]
+[New LWP 2596318]
+[New LWP 2596319]
+[New LWP 2596320]
+[New LWP 2596321]
+[New LWP 2596322]
+[New LWP 2596323]
+[New LWP 2596324]
+[New LWP 2596325]
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000079618f54c7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffda9e1fb50, rem=rem@entry=0x7ffda9e1fb50) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+(gdb) (gdb) Continuing.
+
+Thread 19 "UL__actor" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7961757fa640 (LWP 2596321)]
+0x00005aeb5ce7cac4 in release_PUCCH_SRS (mac=mac@entry=0x79617c473010) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/config_ue.c:2486
+2486	      for (int j = srs_Config->srs_ResourceToAddModList->list.count; j > 0 ; j--)
+(gdb) #0  0x00005aeb5ce7cac4 in release_PUCCH_SRS (mac=mac@entry=0x79617c473010) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/config_ue.c:2486
+        j = <optimized out>
+        pucch_Config = <optimized out>
+        srs_Config = 0x79615801eac0
+        bwp = 0
+        sc_info = 0x79617c7962d0
+        meas_config = <optimized out>
+        __FUNCTION__ = "release_PUCCH_SRS"
+#1  0x00005aeb5cebe848 in schedule_RA_after_SR_failure (mac=0x79617c473010) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:1414
+        scs = <optimized out>
+        scs = <optimized out>
+#2  schedule_RA_after_SR_failure (mac=mac@entry=0x79617c473010) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:1407
+        scs = <optimized out>
+#3  0x00005aeb5cea429c in nr_ue_get_SR (mac=0x79617c473010, frame=<optimized out>, slot=<optimized out>, sr_id=<optimized out>) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_procedures.c:2580
+        si = <optimized out>
+        sr_info = <optimized out>
+        __FUNCTION__ = "nr_ue_get_SR"
+#4  0x00005aeb5cea4a45 in trigger_periodic_scheduling_request (mac=0x79617c473010, pucch=pucch@entry=0x79617558ac00, frame=frame@entry=314, slot=slot@entry=7) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_procedures.c:2521
+        sr_pucch = <optimized out>
+        ret = <optimized out>
+        SR_period = 10
+        SR_offset = 7
+        sr_Config = 0x79615801e730
+        n_slots_frame = <optimized out>
+        sfn_sf = <optimized out>
+        id = 0
+        current_UL_BWP = 0x79615801e460
+        pucch_Config = 0x796158034ad0
+        sr_count = 0
+        __FUNCTION__ = "trigger_periodic_scheduling_request"
+#5  0x00005aeb5cec03ac in nr_ue_pucch_scheduler (mac=0x79617c473010, frameP=314, slotP=7) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:2496
+        pucch = {{pucch_resource = 0x796148008a30, ack_payload = 0, sr_payload = 0 '\000', csi_part1_payload = 0, csi_part2_payload = 0, n_sr = 1, n_csi = 0, n_harq = 0, n_CCE = 0, N_CCE = 0, initial_pucch_id = 0}, {pucch_resource = 0x0, ack_payload = 0, sr_payload = 0 '\000', csi_part1_payload = 0, csi_part2_payload = 0, n_sr = 0, n_csi = 0, n_harq = 0, n_CCE = 0, N_CCE = 0, initial_pucch_id = 0}, {pucch_resource = 0x0, ack_payload = 0, sr_payload = 0 '\000', csi_part1_payload = 0, csi_part2_payload = 0, n_sr = 0, n_csi = 0, n_harq = 0, n_CCE = 0, N_CCE = 0, initial_pucch_id = 0}}
+        num_res = 0
+        csi_res = <optimized out>
+        any_harq = <optimized out>
+        __FUNCTION__ = "nr_ue_pucch_scheduler"
+#6  0x00005aeb5cec4e11 in nr_ue_ul_scheduler (mac=mac@entry=0x79617c473010, ul_info=ul_info@entry=0x7961757f9180) at /home/openairinterface5g/openair2/LAYER2/NR_MAC_UE/nr_ue_scheduler.c:1685
+        cc_id = <optimized out>
+        frame_tx = <optimized out>
+        slot_tx = <optimized out>
+        gNB_index = <optimized out>
+        ra = 0x79617c796580
+        BSRsent = false
+        ulsch_input_buffer_array = <error reading variable ulsch_input_buffer_array (value requires 2545920 bytes, which is more than max-value-size)>
+        number_of_pdus = <optimized out>
+        ulcfg_pdu = 0x5aeb8c59f918
+        __FUNCTION__ = "nr_ue_ul_scheduler"
+#7  0x00005aeb5ce5ddd3 in nr_ue_ul_indication (ul_info=0x7961757f9180) at /home/openairinterface5g/openair2/NR_UE_PHY_INTERFACE/NR_IF_Module.c:1207
+        module_id = <optimized out>
+        mac = 0x79617c473010
+        ret = <optimized out>
+        __FUNCTION__ = "nr_ue_ul_indication"
+#8  0x00005aeb5cd85e2d in processSlotTX (arg=0x79615802df00) at /home/openairinterface5g/executables/nr-ue.c:564
+        ul_indication = {module_id = 0, gNB_index = 0, cc_id = 0, frame = 314, slot = 7, dci_ind = 0x0, phy_data = 0x7961757f91e0}
+        rxtxD = <optimized out>
+        proc = <optimized out>
+        UE = 0x79618c102010
+        phy_data = {ulsch = {pusch_pdu = {pdu_bit_map = 0, rnti = 0, handle = 0, bwp_size = 0, bwp_start = 0, subcarrier_spacing = 0 '\000', cyclic_prefix = 0 '\000', target_code_rate = 0, qam_mod_order = 0 '\000', mcs_index = 0 '\000', mcs_table = 0 '\000', transform_precoding = 0 '\000', data_scrambling_id = 0, nrOfLayers = 0 '\000', Tpmi = 0 '\000', ul_dmrs_symb_pos = 0, dmrs_config_type = 0 '\000', ul_dmrs_scrambling_id = 0, scid = 0 '\000', num_dmrs_cdm_grps_no_data = 0 '\000', dmrs_ports = 0, resource_alloc = 0 '\000', rb_bitmap = '\000' <repeats 35 times>, rb_start = 0, rb_size = 0, vrb_to_prb_mapping = 0 '\000', frequency_hopping = 0 '\000', tx_direct_current_location = 0, uplink_frequency_shift_7p5khz = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', tbslbrm = 0, ldpcBaseGraph = 0 '\000', ulsch_indicator = 0 '\000', pusch_data = {rv_index = 0 '\000', harq_process_id = 0 '\000', new_data_indicator = false, tb_size = 0, num_cb = 0, cb_present_and_position = ""}, pusch_uci = {harq_ack_bit_length = 0, harq_payload = 0, csi_part1_bit_length = 0, csi_part1_payload = 0, csi_part2_bit_length = 0, csi_part2_payload = 0, alpha_scaling = 0 '\000', beta_offset_harq_ack = 0 '\000', beta_offset_csi1 = 0 '\000', beta_offset_csi2 = 0 '\000'}, pusch_ptrs = {num_ptrs_ports = 0 '\000', ptrs_ports_list = 0x0, ptrs_time_density = 0 '\000', ptrs_freq_density = 0 '\000', ul_ptrs_power = 0 '\000'}, dfts_ofdm = {low_papr_group_number = 0 '\000', low_papr_sequence_number = 0, ul_ptrs_sample_density = 0 '\000', ul_ptrs_time_density_transform_precoding = 0 '\000'}, beamforming = {num_prgs = 0, prg_size = 0, dig_bf_interface = 0 '\000', prgs_list = 0x0}, tx_power = 0, tx_request_body = {pdu_length = 0, fapiTxPdu = 0x0}}, number_harq_processes_for_pusch = 0 '\000', rnti_type = TYPE_C_RNTI_, Nid_cell = 0, ptrs_symbols = 0}, pucch_vars = {active = {false, false}, pucch_pdu = {{rnti = 0, bwp_size = 0, bwp_start = 0, format_type = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', prb_start = 0, prb_size = 0, hopping_id = 0, freq_hop_flag = 0 '\000', group_hop_flag = 0 '\000', sequence_hop_flag = 0 '\000', second_hop_prb = 0, initial_cyclic_shift = 0, time_domain_occ_idx = 0 '\000', add_dmrs_flag = 0 '\000', dmrs_scrambling_id = 0, data_scrambling_id = 0, dmrs_cyclic_shift = 0 '\000', pi_2bpsk = 0 '\000', mcs = 0 '\000', pre_dft_occ_idx = 0 '\000', pre_dft_occ_len = 0 '\000', pucch_tx_power = 0, n_bit = 0, payload = 0}, {rnti = 0, bwp_size = 0, bwp_start = 0, format_type = 0 '\000', start_symbol_index = 0 '\000', nr_of_symbols = 0 '\000', prb_start = 0, prb_size = 0, hopping_id = 0, freq_hop_flag = 0 '\000', group_hop_flag = 0 '\000', sequence_hop_flag = 0 '\000', second_hop_prb = 0, initial_cyclic_shift = 0, time_domain_occ_idx = 0 '\000', add_dmrs_flag = 0 '\000', dmrs_scrambling_id = 0, data_scrambling_id = 0, dmrs_cyclic_shift = 0 '\000', pi_2bpsk = 0 '\000', mcs = 0 '\000', pre_dft_occ_idx = 0 '\000', pre_dft_occ_len = 0 '\000', pucch_tx_power = 0, n_bit = 0, payload = 0}}}, sl_tx_action = 0, psbch_vars = {psbch_payload = "\000\000\000", tx_slss_id = 0, psbch_tx_power = 0}}
+        sl_tx_action = false
+        __FUNCTION__ = "processSlotTX"
+#9  0x00005aeb5cfde3d5 in actor_thread (arg=0x79618c669820) at /home/openairinterface5g/common/utils/threadPool/./notified_fifo.h:92
+        elt = 0x79615802de80
+        actor = 0x79618c669820
+        __FUNCTION__ = "actor_thread"
+#10 0x000079618f4fbac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {4294967295, -37505317206865611, 133459490088512, 2, 133459923154896, 140727453611280, -37505317834962635, -37377361125029579}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#11 0x000079618f58d850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 2596248] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 2596248
+[Inferior 1 (process 2596248) detached]

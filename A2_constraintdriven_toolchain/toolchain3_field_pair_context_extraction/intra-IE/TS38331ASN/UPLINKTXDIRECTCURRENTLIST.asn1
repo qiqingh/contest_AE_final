@@ -1,0 +1,16 @@
+UplinkTxDirectCurrentList ::=           SEQUENCE (SIZE (1..maxNrofServingCells)) OF UplinkTxDirectCurrentCell
+
+UplinkTxDirectCurrentCell ::=           SEQUENCE {
+    servCellIndex                           ServCellIndex,
+    uplinkDirectCurrentBWP                  SEQUENCE (SIZE (1..maxNrofBWPs)) OF UplinkTxDirectCurrentBWP,
+    ...,
+    [[
+    uplinkDirectCurrentBWP-SUL              SEQUENCE (SIZE (1..maxNrofBWPs)) OF UplinkTxDirectCurrentBWP               OPTIONAL
+    ]]
+}
+
+UplinkTxDirectCurrentBWP ::=            SEQUENCE {
+    bwp-Id                                  BWP-Id,
+    shift7dot5kHz                           BOOLEAN,
+    txDirectCurrentLocation                 INTEGER (0..3301)
+}

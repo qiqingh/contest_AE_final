@@ -1,0 +1,92 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      43
+    ],
+    "field2_all": [
+      79,
+      144,
+      209
+    ],
+    "actual_pairs": [
+      [
+        [
+          43
+        ],
+        [
+          79,
+          144,
+          209
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields controlresourcesetid and pdcch-configcommon. The evidence primarily describes behaviors and configurations within individual IEs or general procedures without explicitly linking these two fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "43_controlresourcesettoaddmodlist_controlresourcesetid",
+    "field1": "controlresourcesetid",
+    "ie2_name": "79_209_bwp-common_pdcch-configcommon",
+    "field2": "pdcch-configcommon",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 10,
+      "original_count": 10,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.3.44",
+      "6.3.2",
+      "7.4.1.3.2",
+      "17.2",
+      "10.1",
+      "11.4",
+      "4.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- subcarrier 0 of the lowest-numbered resource block in the CORESET if the CORESET is configured by the PBCH or by the controlResourceSetZero field in the PDCCH-ConfigCommon IE,\n---\nNOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon.\n---\nUpon detection of a SS/PBCH block, the UE determines from MIB that a CORESET for Type0-PDCCH CSS set, as described in clause 13, is present if \\( k_{S S B}<24 \\) [4, TS 38.211] for FR1 or if \\( k_{S S B}<12 \\) for FR2. The UE determines from MIB that a CORESET for Type0-PDCCH CSS set is not present if \\( k_{S S B}>23 \\) for FR1 or if \\( k_{S S B}>11 \\) for FR2; the CORESET for Type0-PDCCH CSS set may be provided by PDCCH-ConfigCommon.\n---\nFor a DL BWP, if a UE is not provided searchSpaceSIB1 for Type0-PDCCH CSS set by PDCCH-ConfigCommon, the UE does not monitor PDCCH candidates for a Type0-PDCCH CSS set on the DL BWP. The Type0-PDCCH CSS set is defined by the CCE aggregation levels and the number of PDCCH candidates per CCE aggregation level given in Table 10.1-1.  If the active DL BWP and the initial DL BWP for a UE have same SCS and same CP length and the active DL BWP includes all RBs of the CORESET with index 0 , or the active DL BWP is the initial DL BWP, or the active DL BWP includes all RBs of an MBS frequency resource provided by cfr-Config-MCCH-MTCH as described in clause 18, the CORESET configured for Type0-PDCCH CSS set has CORESET index 0 and the Type0-PDCCH CSS set has search space set index 0 .\n---\nIf a UE is not provided peiSearchSpace for Type2A-PDCCH CSS set, the UE does not monitor PDCCH for Type2APDCCH CSS set on the DL BWP. The CCE aggregation levels and the maximum number of PDCCH candidates per CCE aggregation level for Type2A-PDCCH CSS set are given in Table 10.1-1. If the UE is provided peiSearchSpace with zero value for the Type2A-PDCCH CSS set index, and for the SS/PBCH block and CORESET multiplexing patterns 2 and 3, the UE determines PDCCH monitoring occasions as described in clause 13.  If a UE is provided a zero value for searchSpaceID in PDCCH-ConfigCommon for a Type0/0A/2-PDCCH CSS set, or is not provided searchSpaceBroadcast, the UE determines monitoring occasions for PDCCH candidates of the Type0/0A/2-PDCCH CSS set as described in clause 13, and the UE is provided a C-RNTI, the UE monitors PDCCH\n---\nIf a UE monitors PDCCH candidates for DCI formats with CRC scrambled by a C-RNTI and the UE is provided a nonzero value for searchSpacelD in PDCCH-ConfigCommon for a Type0/0A/2-PDCCH CSS set, or monitors PDCCH candidates for DCI formats with CRC scrambled by a MCCH-RNTI or a G-RNTI and the UE is provided a non-zero value for searchSpaceBroadcast in pdcch-Config-MCCH and pdcch-Config-MTCH for a Type0/0B-PDCCH CSS set, the UE determines monitoring occasions for PDCCH candidates of the Type0/0A/2-PDCCH CSS set, or of the Type0/0B-PDCCH set, respectively, based on the search space set associated with the value of searchSpaceID.  The UE may assume that the DM-RS antenna port associated with PDCCH receptions in the CORESET configured by pdcch-ConfigSIBI in MIB, the DM-RS antenna port associated with corresponding PDSCH receptions, and the corresponding SS/PBCH block are quasi co-located with respect to average gain, quasi co-location 'type A' and 'typeD' properties, when applicable [6, TS 38.214], if the UE is not provided a TCI state indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in the CORESET. The value for the DM-RS scrambling sequence initialization is the cell ID. For operation without shared spectrum channel access in FR1 and FR2-1, a SCS is provided by subCarrierSpacingCommon in MIB. For operation with shared spectrum channel access in FR1 and for operation in FR2-2, a SCS is same as the SCS of a corresponding SS/PBCH block.\n---\nIf a UE is provided controlResourceSetZero and searchSpaceZero in PDCCH-ConfigSIBl or PDCCH-ConfigCommon, the UE determines a CORESET for a search space set from controlResourcesetZero as described in clause 13 and for Tables 13-1 through 13-10, and determines corresponding PDCCH monitoring occasions as described in clause 13 and for Tables 13-11 through 13-15. If the active DL BWP is not the initial DL BWP, the UE determines PDCCH monitoring occasions for the search space set only if the CORESET bandwidth is within the active DL BWP and the active DL BWP has same SCS configuration and same cyclic prefix as the initial DL BWP.\n---\nIf during cell search a UE determines from MIB that a CORESET for Type0-PDCCH CSS set is present, as described in clause 4.1, the UE determines a number of consecutive resource blocks and a number of consecutive symbols for the CORESET of the Type0-PDCCH CSS set from controlResourceSetZero in pdcch-ConfigSIB1, as described in Tables 13-1 through 13-10, for operation without shared spectrum channel access in FR1 and FR2-1, or as described in Tables 13-1A and 13-4A for operation with shared spectrum channel access in FR1, or as described in Table 13-10A for FR22, and determines PDCCH monitoring occasions from searchSpaceZero in pdcch-ConfigSIBI, included in MIB, as described in Tables 13-11 through 13-15. SFN \\( { }_{\\mathrm{c}} \\) and \\( n_{\\mathrm{c}} \\) are the SFN and slot index within a frame of the CORESET based on SCS of the CORESET and SFN \\( \\mathrm{SSB}_{i} \\) and \\( n_{\\mathrm{SSB}, i} \\) are the SFN and slot index based on SCS of the CORESET, respectively, where the \\( \\mathrm{SS} / \\mathrm{PBCH} \\) block with index \\( i \\) overlaps in time with system frame \\( \\mathrm{SFN}_{\\mathrm{SSB}, i} \\) and slot \\( n_{\\mathrm{SSB}, i} \\). The symbols of the CORESET associated with pdcch-ConfigSIB1 in MIB or with searchSpaceSIB1 in PDCCHConfigCommon have normal cyclic prefix.\n---\nA UE can be configured by cfr-Config-MCCH-MTCH an MBS frequency resource for PDCCH and PDSCH receptions providing MCCH and MTCH [12, TS 38.331]; otherwise, the MBS frequency resource is same as for the CORESET with index 0 that is associated with the Type0-PDCCH CSS set for PDCCH and PDSCH receptions providing MCCH and MTCH. A UE monitors PDCCH for scheduling PDSCH receptions for MCCH or MTCH as described in clause 10.1.  In clauses referring to a higher layer parameter value provided by PDCCH-ConfigCommon or PDSCH-ConfigCommon, when applicable a corresponding higher layer parameter value for MCCH/MTCH PDCCH receptions or PDSCH receptions, respectively, is provided as described in [12, TS 38.331].\n---\ncontrolResourceSetToAddModListSizeExt (or deleted using controlResourceSetToReleaseListSizeExt) and vice-versa. In case network reconfigures control resource set with the same ControlResourceSet/d as used for commonControlResourceSet configured via PDCCH-ConfigCommon, the configuration from PDCCH-Config always takes precedence and should not be updated by the UE based on servingCellConfigCommon. The network shall not use same ControlResourceSet/d as used for commonControlResourceSetExt configured via SIB20 in this field.",
+    "generated_at": "2026-01-10T14:46:30.696746",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No valid inter-IE constraint found between controlresourcesetid and pdcch-configcommon.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between the fields controlresourcesetid and pdcch-configcommon. The evidence primarily describes behaviors and configurations within individual IEs or general procedures without explicitly linking these two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

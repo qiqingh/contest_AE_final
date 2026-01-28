@@ -1,0 +1,66 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      26
+    ],
+    "field2_all": [
+      40
+    ],
+    "actual_pairs": [
+      [
+        [
+          26
+        ],
+        [
+          40
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct or conditional relationship between 'schedulingRequestId' and 'skipUplinkTxDynamic' within the same IE. The evidence lacks normative constraints or logical relations involving both fields.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "mac-CellGroupConfig",
+    "field1": "schedulingRequestId",
+    "field2": "skipUplinkTxDynamic",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{tabular} \\begin{tabular}{l} schedulingRequestID-BFR2-r17 Indicates the scheduling request configuration (SchedulingRequestConfig) that the UE shall use upon detecting a beam failure on the detection resources configured in BFDset2 of a serving cell but not on resources configured in BFDset of the same serving cell. Editor's note: BFDset and BFDset2 configuration is pending on LS response from RAN1. \\end{tabular} \\begin{tabular}{l} scheduling RequestiD-LBT-SCell Indicates the scheduling request configuration applicable for consistent uplink LBT recovery on SCell, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} skipUplinkTxDynamic, enhancedSkipUplinkTxDynamic, enhancedSkipUplinkTxConfigured If set to true, the UE skips UL transmissions as described in TS 38.321 [3]. If the UE is configured with enhancedSkipUplinkTxDynamic or enhancedSkipUplinkTxConfigured with value true, REPETITION_NUMBER (as specified in TS 38.321 [3], clause 5.4.2.1) of the corresponding PUSCH transmission of the uplink grant shall be equal to 1. \\end{tabular}\n---\n\\end{tabular} \\begin{tabular}{l} scheduling RequestiD-LBT-SCell Indicates the scheduling request configuration applicable for consistent uplink LBT recovery on SCell, as specified in TS 38.321 [3]. \\end{tabular} \\begin{tabular}{l} skipUplinkTxDynamic, enhancedSkipUplinkTxDynamic, enhancedSkipUplinkTxConfigured If set to true, the UE skips UL transmissions as described in TS 38.321 [3]. If the UE is configured with enhancedSkipUplinkTxDynamic or enhancedSkipUplinkTxConfigured with value true, REPETITION_NUMBER (as specified in TS 38.321 [3], clause 5.4.2.1) of the corresponding PUSCH transmission of the uplink grant shall be equal to 1. \\end{tabular}",
+    "generated_at": "2026-01-07T21:49:49.708491",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct or conditional relationship between 'schedulingRequestId' and 'skipUplinkTxDynamic' within the same IE. The evidence lacks normative constraints or logical relations involving both fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

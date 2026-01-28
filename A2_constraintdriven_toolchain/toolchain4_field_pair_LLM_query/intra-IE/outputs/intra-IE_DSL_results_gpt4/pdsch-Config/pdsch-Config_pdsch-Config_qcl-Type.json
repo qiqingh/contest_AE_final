@@ -1,0 +1,54 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      64
+    ],
+    "field2_all": [
+      71
+    ],
+    "actual_pairs": [
+      [
+        [
+          64
+        ],
+        [
+          71
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear, normative relationship between the fields 'pdsch-Config' and 'qcl-Type'. The snippets discuss these fields separately and do not provide a rule that directly relates one to the other within the same IE instance.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pdsch-Config",
+    "field1": "pdsch-Config",
+    "field2": "qcl-Type",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.5",
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "The UE can be configured with a list of up to M TCI-State configurations within the higher layer parameter PDSCHConfig to decode PDSCH according to a detected PDCCH with DCI intended for the UE and the given serving cell, where M depends on the UE capability maxNumberConfiguredTCIstatesPerCC. Each TCI-State contains parameters for configuring a quasi co-location relationship between one or two downlink reference signals and the DM-RS ports of the PDSCH, the DM-RS port of PDCCH or the CSI-RS port(s) of a CSI-RS resource. The quasi co-location relationship is configured by the higher layer parameter qcl-Typel for the first DL RS, and qcl-Type 2 for the second DL RS (if configured). For the case of two DL RSs, the QCL types shall not be the same, regardless of whether the references are to the same DL RS or different DL RSs. The quasi co-location types corresponding to each DL RS are given by the higher layer parameter qcl-Type in QCL-Info and may take one of the following values:\n---\nList of references to TCI-States for providing the QCL source and QCL type for each NZP-CSI-RS-Resource listed in nzp-CSI-RS-Resources of the NZP-CSI-RS-ResourceSet indicated by resourceSet within nzp-CSI-RS. Each TCI-Stateld refers to the TCI-State which has this value for tci-Stateld and is defined in tci-StatesToAddModList in the PDSCH-Config included in the BWP-Downlink corresponding to the serving cell and to the DL BWP to which the resourcesForChannelMeasurement (in the CSI-ReportConfig indicated by reportConfig/d above) belong to. First entry in qc/-info corresponds to first entry in nzp-CSI-RS-Resources of that NZP-CSI-RS-ResourceSet, second entry in qclinfo corresponds to second entry in nzp-CSI-RS-Resources, and so on (see TS 38.214 [19], clause 5.2.1.5.1). When this field is absent for aperiodic CSIRS, the UE shall use QCL information included in the \"indicated\" DL only/Joint TCI state as specified in TS 38.214",
+    "generated_at": "2025-12-11T14:25:15.221658",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "notes": "The provided evidence snippets do not establish a clear, normative relationship between the fields 'pdsch-Config' and 'qcl-Type'. The snippets discuss these fields separately and do not provide a rule that directly relates one to the other within the same IE instance."
+    }
+  }
+}

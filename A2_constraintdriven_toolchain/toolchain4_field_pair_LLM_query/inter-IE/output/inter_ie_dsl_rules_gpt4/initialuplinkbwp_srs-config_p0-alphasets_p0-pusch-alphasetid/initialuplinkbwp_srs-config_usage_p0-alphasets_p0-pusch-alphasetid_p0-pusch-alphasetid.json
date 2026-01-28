@@ -1,0 +1,115 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'codebook'), EQ(field2, 'P0-PUSCH-AlphaSetID'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      323,
+      338,
+      431,
+      539,
+      647
+    ],
+    "field2_all": [
+      338,
+      431,
+      539,
+      647
+    ],
+    "actual_pairs": [
+      [
+        [
+          338
+        ],
+        [
+          539,
+          647
+        ]
+      ],
+      [
+        [
+          323,
+          431,
+          539,
+          647
+        ],
+        [
+          338
+        ]
+      ],
+      [
+        [
+          338
+        ],
+        [
+          431,
+          539
+        ]
+      ]
+    ]
+  },
+  "predicate": "If the usage field in initialuplinkbwp_srs-config is set to 'codebook', then the p0-pusch-alphasetid field in p0-alphasets_p0-pusch-alphasetid must be set to 'P0-PUSCH-AlphaSetID'.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "{field1: 'codebook', field2: 'P0-PUSCH-AlphaSetID'}"
+    ],
+    "invalid": [
+      "{field1: 'codebook', field2: 'otherValue'}"
+    ]
+  },
+  "notes": "The rule is derived from the provided evidence snippets, which indicate a dependency between the 'usage' field in initialuplinkbwp_srs-config and the 'p0-pusch-alphasetid' field in p0-alphasets_p0-pusch-alphasetid.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_srs-config",
+    "field1": "usage",
+    "ie2_name": "p0-alphasets_p0-pusch-alphasetid",
+    "field2": "p0-pusch-alphasetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively. - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for",
+    "generated_at": "2025-12-11T09:23:45.141902",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'codebook'), EQ(field2, 'P0-PUSCH-AlphaSetID'))",
+      "preconditions": [],
+      "predicate": "If the usage field in initialuplinkbwp_srs-config is set to 'codebook', then the p0-pusch-alphasetid field in p0-alphasets_p0-pusch-alphasetid must be set to 'P0-PUSCH-AlphaSetID'.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "{field1: 'codebook', field2: 'P0-PUSCH-AlphaSetID'}"
+        ],
+        "invalid": [
+          "{field1: 'codebook', field2: 'otherValue'}"
+        ]
+      },
+      "notes": "The rule is derived from the provided evidence snippets, which indicate a dependency between the 'usage' field in initialuplinkbwp_srs-config and the 'p0-pusch-alphasetid' field in p0-alphasets_p0-pusch-alphasetid.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

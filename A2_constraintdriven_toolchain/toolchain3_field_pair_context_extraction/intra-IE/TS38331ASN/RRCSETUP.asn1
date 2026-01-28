@@ -1,0 +1,20 @@
+RRCSetup ::=                        SEQUENCE {
+    rrc-TransactionIdentifier           RRC-TransactionIdentifier,
+    criticalExtensions                  CHOICE {
+        rrcSetup                            RRCSetup-IEs,
+        criticalExtensionsFuture            SEQUENCE {}
+    }
+}
+
+RRCSetup-IEs ::=                    SEQUENCE {
+    radioBearerConfig                   RadioBearerConfig,
+    masterCellGroup                     OCTET STRING (CONTAINING CellGroupConfig),
+    lateNonCriticalExtension            OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                RRCSetup-v1700-IEs                                                      OPTIONAL
+}
+
+RRCSetup-v1700-IEs ::=              SEQUENCE {
+    sl-ConfigDedicatedNR-r17            SL-ConfigDedicatedNR-r16                           OPTIONAL, -- Cond L2RemoteUE
+    sl-L2RemoteUE-Config-r17            SL-L2RemoteUE-Config-r17                           OPTIONAL, -- Cond L2RemoteUE
+    nonCriticalExtension                SEQUENCE {}                                        OPTIONAL
+}

@@ -1,0 +1,10 @@
+CGI-InfoEUTRA ::=                        SEQUENCE {
+    cgi-info-EPC                            SEQUENCE {
+            cgi-info-EPC-legacy                 CellAccessRelatedInfo-EUTRA-EPC,
+            cgi-info-EPC-list                   SEQUENCE (SIZE (1..maxPLMN)) OF CellAccessRelatedInfo-EUTRA-EPC             OPTIONAL
+    }                                                                                                                       OPTIONAL,
+    cgi-info-5GC                            SEQUENCE (SIZE (1..maxPLMN)) OF CellAccessRelatedInfo-EUTRA-5GC             OPTIONAL,
+    freqBandIndicator                       FreqBandIndicatorEUTRA,
+    multiBandInfoList                       MultiBandInfoListEUTRA                                                      OPTIONAL,
+    freqBandIndicatorPriority               ENUMERATED {true}                                                           OPTIONAL
+}

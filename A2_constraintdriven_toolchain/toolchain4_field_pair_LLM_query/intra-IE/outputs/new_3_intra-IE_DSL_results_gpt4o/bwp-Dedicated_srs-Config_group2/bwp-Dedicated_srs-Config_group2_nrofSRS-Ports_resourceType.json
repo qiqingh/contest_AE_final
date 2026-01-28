@@ -1,0 +1,85 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field2, 'aperiodic'), EQ(field1, 'ports8tdm'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      664
+    ],
+    "field2_all": [
+      659,
+      677
+    ],
+    "actual_pairs": [
+      [
+        [
+          664
+        ],
+        [
+          659,
+          677
+        ]
+      ]
+    ]
+  },
+  "predicate": "If resourceType is 'aperiodic', then nrofSRS-Ports must be 'ports8tdm'.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "resourceType='aperiodic', nrofSRS-Ports='ports8tdm'"
+    ],
+    "invalid": [
+      "resourceType='aperiodic', nrofSRS-Ports='ports4tdm'"
+    ]
+  },
+  "notes": "The evidence suggests a dependency between the configuration of resourceType as 'aperiodic' and nrofSRS-Ports being 'ports8tdm'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_srs-Config_group2",
+    "field1": "nrofSRS-Ports",
+    "field2": "resourceType",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.3"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\end{array}\\right. \\] and where N_{b_{\\text {hop }}}=1 regardless of the value of N_{\\mathrm{b}} . The quantity n_{\\text {SRS }} counts the number of SRS transmissions. For the case of an SRS resource configured as aperiodic by the higher-layer parameter resourceType, it is given by n_{\\text {SRS }}= \\left[l^{\\prime} /(s R)\\right] within the slot in which the N_{\\text {symb }}^{\\text {SRS }} symbol SRS resource is transmitted. The quantity s is given by s=2 if the higher-layer parameter nrofSRS-Ports-n8 equals 'ports8tdm', otherwise s=1 . The quantity R <= N_{\\text {symb }}^{\\mathrm{SRS}} / s is the repetition factor given by the field repetition Factor if configured, otherwise R=N_{\\text {symb }}^{\\text {SRS }} - For the case of an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, the SRS counter is given by \\[",
+    "generated_at": "2026-01-07T21:54:22.818380",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field2, 'aperiodic'), EQ(field1, 'ports8tdm'))",
+      "preconditions": [],
+      "predicate": "If resourceType is 'aperiodic', then nrofSRS-Ports must be 'ports8tdm'.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "resourceType='aperiodic', nrofSRS-Ports='ports8tdm'"
+        ],
+        "invalid": [
+          "resourceType='aperiodic', nrofSRS-Ports='ports4tdm'"
+        ]
+      },
+      "notes": "The evidence suggests a dependency between the configuration of resourceType as 'aperiodic' and nrofSRS-Ports being 'ports8tdm'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

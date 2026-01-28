@@ -1,0 +1,11 @@
+LTE-NeighCellsCRS-AssistInfoList-r17 ::= SEQUENCE (SIZE (1..maxNrofCRS-IM-InterfCell-r17)) OF LTE-NeighCellsCRS-AssistInfo-r17
+
+LTE-NeighCellsCRS-AssistInfo-r17 ::=     SEQUENCE {
+    neighCarrierBandwidthDL-r17              ENUMERATED {n6, n15, n25, n50, n75, n100, spare2, spare1}   OPTIONAL,   -- Cond CRS-IM
+    neighCarrierFreqDL-r17                   INTEGER (0..16383)                                          OPTIONAL,   -- Need S
+    neighCellId-r17                          EUTRA-PhysCellId                                            OPTIONAL,   -- Need S
+    neighCRS-muting-r17                      ENUMERATED {enabled}                                        OPTIONAL,   -- Need R
+    neighMBSFN-SubframeConfigList-r17        EUTRA-MBSFN-SubframeConfigList                              OPTIONAL,   -- Need S
+    neighNrofCRS-Ports-r17                   ENUMERATED {n1, n2, n4}                                     OPTIONAL,   -- Need S
+    neighV-Shift-r17                         ENUMERATED {n0, n1, n2, n3, n4, n5}                         OPTIONAL    -- Cond NotCellID
+}

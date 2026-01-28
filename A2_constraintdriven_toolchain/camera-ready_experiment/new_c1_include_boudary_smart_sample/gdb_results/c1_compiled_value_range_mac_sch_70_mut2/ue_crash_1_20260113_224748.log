@@ -1,0 +1,101 @@
+Attaching to process 853003
+[New LWP 853007]
+[New LWP 853008]
+[New LWP 853009]
+[New LWP 853010]
+[New LWP 853011]
+[New LWP 853012]
+[New LWP 853013]
+[New LWP 853014]
+[New LWP 853015]
+[New LWP 853016]
+[New LWP 853017]
+[New LWP 853018]
+[New LWP 853019]
+[New LWP 853020]
+[New LWP 853021]
+[New LWP 853022]
+[New LWP 853023]
+[New LWP 853024]
+[New LWP 853025]
+[New LWP 853026]
+[New LWP 853027]
+[New LWP 853028]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007ef8482ba7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffde7721040, rem=rem@entry=0x7ffde7721040) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+78	../sysdeps/unix/sysv/linux/clock_nanosleep.c: No such file or directory.
+(gdb) (gdb) Continuing.
+[Thread 0x7ef81cd54640 (LWP 853025) exited]
+[Thread 0x7ef813fff640 (LWP 853026) exited]
+
+Thread 1 "nr-uesoftmodem" received signal SIGSEGV, Segmentation fault.
+unlink_chunk (p=p@entry=0x7ef814001730, av=0x7ef814000030) at ./malloc/malloc.c:1641
+(gdb) 1641	./malloc/malloc.c: No such file or directory.
+#0  unlink_chunk (p=p@entry=0x7ef814001730, av=0x7ef814000030) at ./malloc/malloc.c:1641
+        fd = 0x7ef814000090
+        bk = 0x7ef814003fb0
+#1  0x00007ef84827691b in malloc_consolidate (av=av@entry=0x7ef814000030) at ./malloc/malloc.c:4772
+        fb = 0x7ef814000048
+        maxfb = 0x7ef814000088
+        p = 0x7ef814001730
+        nextp = 0x0
+        unsorted_bin = 0x7ef814000090
+        first_unsorted = <optimized out>
+        nextchunk = 0x7ef814003fb0
+        size = 10368
+        nextsize = 11808
+        prevsize = <optimized out>
+        nextinuse = <optimized out>
+#2  0x00007ef848277ea0 in _int_free (av=0x7ef814000030, p=0x7ef81408ee70, have_lock=<optimized out>) at ./malloc/malloc.c:4674
+        size = 108144
+        fb = <optimized out>
+        nextchunk = 0x7ef8140a94e0
+        nextsize = 108144
+        nextinuse = <optimized out>
+        prevsize = <optimized out>
+        bck = <optimized out>
+        fwd = <optimized out>
+        __PRETTY_FUNCTION__ = "_int_free"
+#3  0x00007ef84827a453 in __GI___libc_free (mem=<optimized out>) at ./malloc/malloc.c:3391
+        ar_ptr = <optimized out>
+        p = <optimized out>
+        err = 2
+#4  0x00005dded4131dd5 in nr_polar_delete_list (polarParams=<optimized out>) at /home/openairinterface5g/openair1/PHY/CODING/nrPolar_tools/nr_polar_init.c:66
+No locals.
+#5  0x00005dded4131d6a in nr_polar_delete_list (polarParams=0x7ef8140a94f0) at /home/openairinterface5g/openair1/PHY/CODING/nrPolar_tools/nr_polar_init.c:51
+No locals.
+#6  0x00005dded4131e00 in nr_polar_delete () at /home/openairinterface5g/openair1/PHY/CODING/nrPolar_tools/nr_polar_init.c:72
+No locals.
+#7  0x00007ef84821a495 in __run_exit_handlers (status=status@entry=0, listp=0x7ef8483ef838 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at ./stdlib/exit.c:113
+        atfct = <optimized out>
+        onfct = <optimized out>
+        cxafct = <optimized out>
+        arg = 0x0
+        f = <optimized out>
+        new_exitfn_called = <optimized out>
+        cur = 0x7ef8483f0f00 <initial>
+#8  0x00007ef84821a610 in __GI_exit (status=status@entry=0) at ./stdlib/exit.c:143
+No locals.
+#9  0x00005dded408c64c in exit_function (file=file@entry=0x5dded4350cf0 "/home/openairinterface5g/common/config/config_cmdline.c", function=function@entry=0x5dded4351180 <__FUNCTION__.3> "config_check_unknown_cmdlineopt", line=line@entry=209, s=s@entry=0x5dded42e9029 "exit_fun", assert=assert@entry=0) at /home/openairinterface5g/executables/nr-uesoftmodem.c:204
+        CC_id = <optimized out>
+#10 0x00005dded42060cc in config_check_unknown_cmdlineopt (cfg=<optimized out>, prefix=prefix@entry=0x5dded42ea74d "ALLSECTIONS") at /home/openairinterface5g/common/config/config_cmdline.c:209
+        unknowndetected = <optimized out>
+        testprefix = '\000' <repeats 511 times>
+        finalcheck = <optimized out>
+        __FUNCTION__ = "config_check_unknown_cmdlineopt"
+#11 0x00005dded407fa72 in main (argc=<optimized out>, argv=<optimized out>) at /home/openairinterface5g/executables/nr-uesoftmodem.c:821
+        __FUNCTION__ = "main"
+        ret_loader = <optimized out>
+        pckg = 0x5ddee9494210 "Branch:  Abrev. Hash:  Date: "
+        mode_offset = <optimized out>
+        node_number = <optimized out>
+        tmp = <optimized out>
+        dummy = <optimized out>
+(gdb) A debugging session is active.
+
+	Inferior 1 [process 853003] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Detaching from program: /home/openairinterface5g/cmake_targets/ran_build/build/nr-uesoftmodem, process 853003
+[Inferior 1 (process 853003) detached]

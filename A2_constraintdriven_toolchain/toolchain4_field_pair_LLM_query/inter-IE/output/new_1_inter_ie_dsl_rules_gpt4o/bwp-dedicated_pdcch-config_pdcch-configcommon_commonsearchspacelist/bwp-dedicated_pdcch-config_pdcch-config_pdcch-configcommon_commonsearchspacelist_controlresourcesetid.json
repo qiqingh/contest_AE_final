@@ -1,0 +1,120 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      107,
+      172,
+      237
+    ],
+    "field2_all": [
+      89,
+      154,
+      219
+    ],
+    "actual_pairs": [
+      [
+        [
+          107,
+          172
+        ],
+        [
+          89,
+          154
+        ]
+      ],
+      [
+        [
+          107,
+          172
+        ],
+        [
+          154,
+          219
+        ]
+      ],
+      [
+        [
+          107,
+          172,
+          237
+        ],
+        [
+          154,
+          219
+        ]
+      ],
+      [
+        [
+          107,
+          172,
+          237
+        ],
+        [
+          89,
+          154
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a direct inter-IE constraint between 'pdcch-config' from 'bwp-dedicated_pdcch-config' and 'controlresourcesetid' from 'pdcch-configcommon_commonsearchspacelist'. The evidence primarily describes single-IE behavior or lacks explicit normative wording linking the two fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdcch-config",
+    "field1": "pdcch-config",
+    "ie2_name": "pdcch-configcommon_commonsearchspacelist",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 7,
+      "original_count": 7,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md",
+      "ts_138214v170100p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.5",
+      "5.2.1.5.1",
+      "6.3.2",
+      "5.1.4.2",
+      "10.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- For the UE in RRC_IDLE and RRC_INACTIVE modes for broadcast reception, REs indicated by 'RateMatchPatternLTE-CRS' in PDSCH-Config-MCCH or PDSCH-Config-MCCH configuring cell-specific RS, in 15 kHz subcarrier spacing applicable only to 15 kHz subcarrier spacing PDSCH, of one LTE carrier in a serving cell are declared as not available for PDSCH. - Each RateMatchPatternLTE-CRS configuration contains v-Shift consisting of LTE-CRS-vshift(s), nrofCRS-Ports consisting of LTE-CRS antenna ports 1, 2 or 4 ports, carrierFreqDL representing the offset in units of 15 kHz subcarriers from (reference) point A to the LTE carrier centre subcarrier location, carrierBandwidthDL representing the LTE carrier bandwidth, and may also configure mbsfn-SubframeConfigList representing MBSFN subframe configuration. A UE determines the CRS position within the slot according to Clause 6.10.1.2 in [15, TS 36.211], where slot corresponds to LTE subframe. - If the UE is configured by higher layer parameter PDCCH-Config with two different values of coresetPoollndex in ControlResourceSet and is also configured by the higher layer parameter Ite-CRS-PatternListl-r 16 and Ite-CRS-PatternList2-r16 in ServingCellConfig, the following REs are declared as not available for PDSCH:\n---\nIf the UE is configured with [NumberOfAdditionalPCI] and with PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet, the UE receives an activation command for CORESET associated with each coresetPoollndex, as described in clause 6.1.3.14 of [10, TS 38.321], used to map up to 8 TCI states to the codepoints of the DCI field 'Transmission Configuration Indication' in one CC/DL BWP. When a set of TCI state IDs are activated for a coresetPoollndex, the activated TCI states corresponding to one coresetPoollndex can be associated with one physical cell ID and activated TCI states corresponding to another coresetPoollndex can be associated with another physical cell ID.\n---\n- the UE may assume that the DM-RS ports of \\( \\operatorname{PDSCH}(s) \\) of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) used for PDCCH quasi co-location indication of the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored by the UE. In this case, if the qcl-Type is set to 'typeD' of the PDSCH DM-RS is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers). - If a UE is configured with enableDefaultTCI-StatePerCoresetPoollndex and the UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in different ControlResourceSets,\n---\n- If a UE is configured with enableDefaultTCI-StatePerCoresetPoollndex and the UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet - if there is any other DL signal with an indicated TCI state in the same symbols as the CSI-RS, the UE applies the QCL assumption of the other DL signal also when receiving the aperiodic CSI-RS. The other DL signal refers to PDSCH scheduled by a PDCCH associated with the same coresetPoolIndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to the threshold timeDurationForQCL, as defined in [13, TS 38.306], aperiodic CSI-RS triggered by a PDCCH associated with the same coresetPoollndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to the UE reported threshold beamSwitchTiming when the reported value is one of the values \\( \\{14,28,48\\} \\cdot 2^{\\max \\left(0, \\mu \\text { CSIRS }^{-3}\\right)} \\) and enableBeamSwitchTiming is not provided, aperiodic CSI-RS triggered by a PDCCH associated with the same coresetPoollndex as the PDCCH triggering the aperiodic CSI-RS and scheduled with offset larger than or equal to 48. \\( 2^{\\max \\left(0, \\mu_{\\text {CSIRS }}-3\\right)} \\) when the reported value of beamSwitchTiming-r 16 is one of the values \\( \\{224,336\\} \\). \\( 2^{\\max \\left(0, \\mu_{\\text {CSIRS }}{ }^{-3}\\right)} \\) and enableBeamSwitchTiming is provided, periodic CSI-RS, semi-persistent CSI-RS; - else, the UE applies the QCL parameter(s) of the CORESET associated with a monitored search space with the lowest controlResourceSetld among CORESETs, which are configured with the same value of coresetPoollndex as the PDCCH triggering that aperiodic CSI-RS, in the latest slot in which one or more CORESETs are associated with the same value of coresetPoollndex as the PDCCH triggering that aperiodic CSI-RS\n---\nIf a UE monitors PDCCH candidates for DCI formats with CRC scrambled by a C-RNTI and the UE is provided a nonzero value for searchSpacelD in PDCCH-ConfigCommon for a Type0/0A/2-PDCCH CSS set, or monitors PDCCH candidates for DCI formats with CRC scrambled by a MCCH-RNTI or a G-RNTI and the UE is provided a non-zero value for searchSpaceBroadcast in pdcch-Config-MCCH and pdcch-Config-MTCH for a Type0/0B-PDCCH CSS set, the UE determines monitoring occasions for PDCCH candidates of the Type0/0A/2-PDCCH CSS set, or of the Type0/0B-PDCCH set, respectively, based on the search space set associated with the value of searchSpaceID.  The UE may assume that the DM-RS antenna port associated with PDCCH receptions in the CORESET configured by pdcch-ConfigSIBI in MIB, the DM-RS antenna port associated with corresponding PDSCH receptions, and the corresponding SS/PBCH block are quasi co-located with respect to average gain, quasi co-location 'type A' and 'typeD' properties, when applicable [6, TS 38.214], if the UE is not provided a TCI state indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in the CORESET. The value for the DM-RS scrambling sequence initialization is the cell ID. For operation without shared spectrum channel access in FR1 and FR2-1, a SCS is provided by subCarrierSpacingCommon in MIB. For operation with shared spectrum channel access in FR1 and for operation in FR2-2, a SCS is same as the SCS of a corresponding SS/PBCH block.\n---\nThe IE PDCCH-Config is used to configure UE specific or MBS multicast PDCCH parameters such as control resource sets (CORESET), search spaces and additional parameters for acquiring the PDCCH. If this IE is used for the scheduled SCell in case of cross carrier scheduling, the fields other than searchSpacesToAddModList and searchSpacesToReleaseList are absent. If the IE is used for a dormant BWP, the fields other than controlResourceSetToAddModList and controlResourceSetToReleaseList are absent. If this IE is used for MBS CFR, the field downlinkPreemptiom,tpc-PUSCH, tpc-SRS, uplinkCancellation, monitoringCapabilityConfig, and searchSpaceSwitchConfig are absent.\n---\ncontrolResourceSetToAddModListSizeExt (or deleted using controlResourceSetToReleaseListSizeExt) and vice-versa. In case network reconfigures control resource set with the same ControlResourceSet/d as used for commonControlResourceSet configured via PDCCH-ConfigCommon, the configuration from PDCCH-Config always takes precedence and should not be updated by the UE based on servingCellConfigCommon. The network shall not use same ControlResourceSet/d as used for commonControlResourceSetExt configured via SIB20 in this field.",
+    "generated_at": "2026-01-09T12:17:15.723114",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a direct inter-IE constraint between 'pdcch-config' from 'bwp-dedicated_pdcch-config' and 'controlresourcesetid' from 'pdcch-configcommon_commonsearchspacelist'. The evidence primarily describes single-IE behavior or lacks explicit normative wording linking the two fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

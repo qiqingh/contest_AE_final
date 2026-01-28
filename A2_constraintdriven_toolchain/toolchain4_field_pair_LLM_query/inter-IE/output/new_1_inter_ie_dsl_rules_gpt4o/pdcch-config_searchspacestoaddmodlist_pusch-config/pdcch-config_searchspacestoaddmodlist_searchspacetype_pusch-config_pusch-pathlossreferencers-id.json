@@ -1,0 +1,118 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      127,
+      192,
+      257,
+      434,
+      542,
+      650
+    ],
+    "field2_all": [
+      62,
+      127,
+      192,
+      257,
+      434,
+      542,
+      650
+    ],
+    "actual_pairs": [
+      [
+        [
+          434,
+          542,
+          650
+        ],
+        [
+          62,
+          127,
+          192,
+          257
+        ]
+      ],
+      [
+        [
+          192,
+          257
+        ],
+        [
+          434,
+          542,
+          650
+        ]
+      ],
+      [
+        [
+          434,
+          542,
+          650
+        ],
+        [
+          62
+        ]
+      ],
+      [
+        [
+          127,
+          192
+        ],
+        [
+          434,
+          542,
+          650
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a relationship between 'searchspacetype' from 'pdcch-config_searchspacestoaddmodlist' and 'pusch-pathlossreferencers-id' from 'pusch-config'. The evidence only describes behavior related to 'pusch-pathlossreferencers-id' within its own IE.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "pdcch-config_searchspacestoaddmodlist",
+    "field1": "searchspacetype",
+    "ie2_name": "pusch-config",
+    "field2": "pusch-pathlossreferencers-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 3,
+      "original_count": 3,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS\n---\n- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index \\( q_{d} \\) as for a corresponding PRACH transmission - If the UE is provided SRI-PUSCH-PowerControl and more than one values of PUSCH-PathlossReferenceRS-Id, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCHPowerControl between a set of values for the SRI field, or for first and second SRI fields if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or values for a first SRI field and values associated with a second SRI field value corresponding to Tables 7.3.1.1.2-28/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value if the UE is provided two SRS resource sets in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', in a DCI format scheduling the PUSCH transmission and a set of PUSCH-PathlossReferenceRS-Id values and determines the RS resource index \\( q_{d} \\), or respective first and second RS resource indexes \\( q_{d} \\), from the value of PUSCH-PathlossReferenceRS-Id that is mapped to the SRI field value, or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective first and second SRI field values if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective\n---\n- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "generated_at": "2026-01-09T12:26:49.416906",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a relationship between 'searchspacetype' from 'pdcch-config_searchspacestoaddmodlist' and 'pusch-pathlossreferencers-id' from 'pusch-config'. The evidence only describes behavior related to 'pusch-pathlossreferencers-id' within its own IE.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

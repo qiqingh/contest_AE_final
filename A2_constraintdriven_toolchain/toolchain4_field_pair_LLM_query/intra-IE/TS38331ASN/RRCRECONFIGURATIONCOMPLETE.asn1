@@ -1,0 +1,48 @@
+RRCReconfigurationComplete ::=              SEQUENCE {
+    rrc-TransactionIdentifier                   RRC-TransactionIdentifier,
+    criticalExtensions                          CHOICE {
+        rrcReconfigurationComplete                  RRCReconfigurationComplete-IEs,
+        criticalExtensionsFuture                    SEQUENCE {}
+    }
+}
+
+RRCReconfigurationComplete-IEs ::=          SEQUENCE {
+    lateNonCriticalExtension                    OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1530-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1530-IEs ::=    SEQUENCE {
+    uplinkTxDirectCurrentList                   UplinkTxDirectCurrentList                                               OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1560-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1560-IEs ::=    SEQUENCE {
+    scg-Response                                CHOICE {
+        nr-SCG-Response                             OCTET STRING (CONTAINING RRCReconfigurationComplete),
+        eutra-SCG-Response                          OCTET STRING
+    }                                                                                                                       OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1610-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1610-IEs ::=    SEQUENCE {
+    ue-MeasurementsAvailable-r16                UE-MeasurementsAvailable-r16                                            OPTIONAL,
+    needForGapsInfoNR-r16                       NeedForGapsInfoNR-r16                                                   OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1640-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1640-IEs ::=    SEQUENCE {
+    uplinkTxDirectCurrentTwoCarrierList-r16     UplinkTxDirectCurrentTwoCarrierList-r16                                 OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1700-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1700-IEs ::=    SEQUENCE {
+    needForGapNCSG-InfoNR-r17                   NeedForGapNCSG-InfoNR-r17                                               OPTIONAL,
+    needForGapNCSG-InfoEUTRA-r17                NeedForGapNCSG-InfoEUTRA-r17                                            OPTIONAL,
+    selectedCondRRCReconfig-r17                 CondReconfigId-r16                                                      OPTIONAL,
+    nonCriticalExtension                        RRCReconfigurationComplete-v1720-IEs                                    OPTIONAL
+}
+
+RRCReconfigurationComplete-v1720-IEs ::=    SEQUENCE {
+    uplinkTxDirectCurrentMoreCarrierList-r17    UplinkTxDirectCurrentMoreCarrierList-r17                                OPTIONAL,
+    nonCriticalExtension                        SEQUENCE {}                                                             OPTIONAL
+}

@@ -1,0 +1,38 @@
+ReportConfigNR-SL-r16 ::=            SEQUENCE {
+    reportType-r16                       CHOICE {
+        periodical-r16                       PeriodicalReportConfigNR-SL-r16,
+        eventTriggered-r16                   EventTriggerConfigNR-SL-r16
+    }
+}
+
+EventTriggerConfigNR-SL-r16::=       SEQUENCE {
+    eventId-r16                          CHOICE {
+        eventC1                              SEQUENCE {
+            c1-Threshold-r16                     SL-CBR-r16,
+            hysteresis-r16                       Hysteresis,
+            timeToTrigger-r16                    TimeToTrigger
+        },
+        eventC2-r16                  SEQUENCE {
+            c2-Threshold-r16             SL-CBR-r16,
+            hysteresis-r16               Hysteresis,
+            timeToTrigger-r16            TimeToTrigger
+        },
+        ...
+    },
+    reportInterval-r16               ReportInterval,
+    reportAmount-r16                 ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantity-r16               MeasReportQuantity-r16,
+    ...
+}
+
+PeriodicalReportConfigNR-SL-r16 ::=  SEQUENCE {
+    reportInterval-r16                   ReportInterval,
+    reportAmount-r16                     ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantity-r16                   MeasReportQuantity-r16,
+    ...
+}
+
+MeasReportQuantity-r16 ::=           SEQUENCE {
+    cbr-r16                              BOOLEAN,
+    ...
+}

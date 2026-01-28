@@ -1,0 +1,139 @@
+PhysicalCellGroupConfig ::=         SEQUENCE {
+    harq-ACK-SpatialBundlingPUCCH       ENUMERATED {true}                                               OPTIONAL,   -- Need S
+    harq-ACK-SpatialBundlingPUSCH       ENUMERATED {true}                                               OPTIONAL,   -- Need S
+    p-NR-FR1                            P-Max                                                           OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-Codebook             ENUMERATED {semiStatic, dynamic},
+    tpc-SRS-RNTI                        RNTI-Value                                                      OPTIONAL,   -- Need R
+    tpc-PUCCH-RNTI                      RNTI-Value                                                      OPTIONAL,   -- Need R
+    tpc-PUSCH-RNTI                      RNTI-Value                                                      OPTIONAL,   -- Need R
+    sp-CSI-RNTI                         RNTI-Value                                                      OPTIONAL,   -- Need R
+    cs-RNTI                             SetupRelease { RNTI-Value }                                     OPTIONAL,   -- Need M
+    ...,
+    [[
+    mcs-C-RNTI                          RNTI-Value                                                      OPTIONAL,   -- Need R
+    p-UE-FR1                            P-Max                                                           OPTIONAL    -- Cond MCG-Only
+    ]],
+    [[
+    xScale                              ENUMERATED {dB0, dB6, spare2, spare1}                           OPTIONAL    -- Cond SCG-Only
+    ]],
+    [[
+    pdcch-BlindDetection                SetupRelease { PDCCH-BlindDetection }                           OPTIONAL    -- Need M
+    ]],
+    [[
+    dcp-Config-r16                      SetupRelease { DCP-Config-r16 }                                 OPTIONAL,   -- Need M
+    harq-ACK-SpatialBundlingPUCCH-secondaryPUCCHgroup-r16    ENUMERATED {enabled, disabled}             OPTIONAL,   -- Cond twoPUCCHgroup
+    harq-ACK-SpatialBundlingPUSCH-secondaryPUCCHgroup-r16    ENUMERATED {enabled, disabled}             OPTIONAL,   -- Cond twoPUCCHgroup
+    pdsch-HARQ-ACK-Codebook-secondaryPUCCHgroup-r16          ENUMERATED {semiStatic, dynamic}           OPTIONAL,   -- Cond twoPUCCHgroup
+    p-NR-FR2-r16                                              P-Max                                     OPTIONAL,   -- Need R
+    p-UE-FR2-r16                                              P-Max                                     OPTIONAL,   -- Cond MCG-Only
+    nrdc-PCmode-FR1-r16                ENUMERATED {semi-static-mode1, semi-static-mode2, dynamic}       OPTIONAL,   -- Cond MCG-Only
+    nrdc-PCmode-FR2-r16                ENUMERATED {semi-static-mode1, semi-static-mode2, dynamic}       OPTIONAL,   -- Cond MCG-Only
+    pdsch-HARQ-ACK-Codebook-r16            ENUMERATED {enhancedDynamic}                                 OPTIONAL,   -- Need R
+    nfi-TotalDAI-Included-r16              ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    ul-TotalDAI-Included-r16               ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-OneShotFeedback-r16     ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-OneShotFeedbackNDI-r16  ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-OneShotFeedbackCBG-r16  ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    downlinkAssignmentIndexDCI-0-2-r16     ENUMERATED { enabled }                                       OPTIONAL,   -- Need S
+    downlinkAssignmentIndexDCI-1-2-r16     ENUMERATED {n1, n2, n4}                                      OPTIONAL,   -- Need S
+    pdsch-HARQ-ACK-CodebookList-r16        SetupRelease {PDSCH-HARQ-ACK-CodebookList-r16}               OPTIONAL,   -- Need M
+    ackNackFeedbackMode-r16                ENUMERATED {joint, separate}                                 OPTIONAL,   -- Need R
+    pdcch-BlindDetectionCA-CombIndicator-r16 SetupRelease { PDCCH-BlindDetectionCA-CombIndicator-r16 }  OPTIONAL,   -- Need M
+    pdcch-BlindDetection2-r16                SetupRelease { PDCCH-BlindDetection2-r16 }                 OPTIONAL,   -- Need M
+    pdcch-BlindDetection3-r16                SetupRelease { PDCCH-BlindDetection3-r16 }                 OPTIONAL,   -- Need M
+    bdFactorR-r16                          ENUMERATED {n1}                                              OPTIONAL    -- Need R
+    ]],
+    [[
+    -- start of enhanced Type3 feedback
+    pdsch-HARQ-ACK-EnhType3ToAddModList-r17   SEQUENCE (SIZE(1..maxNrofEnhType3HARQ-ACK-r17)) OF PDSCH-HARQ-ACK-EnhType3-r17
+                                                                                                        OPTIONAL,   -- Need N
+    pdsch-HARQ-ACK-EnhType3ToReleaseList-r17  SEQUENCE (SIZE(1..maxNrofEnhType3HARQ-ACK-r17)) OF PDSCH-HARQ-ACK-EnhType3Index-r17
+                                                                                                        OPTIONAL,    -- Need N
+    pdsch-HARQ-ACK-EnhType3SecondaryToAddModList-r17   SEQUENCE (SIZE(1..maxNrofEnhType3HARQ-ACK-r17)) OF PDSCH-HARQ-ACK-EnhType3-r17
+                                                                                                        OPTIONAL,    -- Need N
+    pdsch-HARQ-ACK-EnhType3SecondaryToReleaseList-r17  SEQUENCE (SIZE(1..maxNrofEnhType3HARQ-ACK-r17)) OF PDSCH-HARQ-ACK-EnhType3Index-r17
+                                                                                                        OPTIONAL,    -- Need N
+    pdsch-HARQ-ACK-EnhType3DCI-FieldSecondaryPUCCHgroup-r17 ENUMERATED {enabled}                        OPTIONAL,   -- Cond twoPUCCHgroup
+    pdsch-HARQ-ACK-EnhType3DCI-Field-r17                ENUMERATED {enabled}                            OPTIONAL,   -- Need R
+    -- end of enhanced Type3 feedback
+
+    -- start of triggering of HARQ-ACK re-transmission on a PUCCH resource
+    pdsch-HARQ-ACK-Retx-r17                   ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-RetxSecondaryPUCCHgroup-r17  ENUMERATED {enabled}                                    OPTIONAL,   -- Cond twoPUCCHgroup
+    -- end of triggering of HARQ-ACK re-transmission on a PUCCH resource
+
+    -- start of PUCCH Cell switching
+    pucch-sSCell-r17                         SCellIndex                                                    OPTIONAL,   -- Need R
+    pucch-sSCellSecondaryPUCCHgroup-r17      SCellIndex                                                    OPTIONAL,   -- Cond twoPUCCHgroup
+    pucch-sSCellDyn-r17                      ENUMERATED {enabled}                                       OPTIONAL,   -- Need R
+    pucch-sSCellDynSecondaryPUCCHgroup-r17   ENUMERATED {enabled}                                       OPTIONAL,   -- Cond twoPUCCHgroup
+    pucch-sSCellPattern-r17                      SEQUENCE (SIZE(1..maxNrofSlots)) OF INTEGER (0..1)        OPTIONAL,   -- Need R
+    pucch-sSCellPatternSecondaryPUCCHgroup-r17   SEQUENCE (SIZE(1..maxNrofSlots)) OF INTEGER (0..1)        OPTIONAL,   -- Cond twoPUCCHgroup
+    -- end of PUCCH Cell switching
+
+    uci-MuxWithDiffPrio-r17           ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    uci-MuxWithDiffPrioSecondaryPUCCHgroup-r17     ENUMERATED {enabled}                         OPTIONAL,   -- Cond twoPUCCHgroup
+    simultaneousPUCCH-PUSCH-r17       ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    simultaneousPUCCH-PUSCH-SecondaryPUCCHgroup-r17       ENUMERATED {enabled}                  OPTIONAL,   -- Cond twoPUCCHgroup
+
+    prioLowDG-HighCG-r17              ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    prioHighDG-LowCG-r17              ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    twoQCLTypeDforPDCCHRepetition-r17 ENUMERATED {enabled}                                      OPTIONAL,   -- Need R
+    multicastConfig-r17               SetupRelease { MulticastConfig-r17 }                      OPTIONAL,   -- Need M
+    pdcch-BlindDetectionCA-CombIndicator-r17 SetupRelease { PDCCH-BlindDetectionCA-CombIndicator-r17 }  OPTIONAL   -- Need M
+    ]],
+    [[
+    simultaneousSR-PUSCH-diffPUCCH-Groups-r17      ENUMERATED {enabled}                         OPTIONAL    -- Cond twoPUCCHgroup
+    ]],
+    [[
+    intraBandNC-PRACH-simulTx-r17     ENUMERATED {enabled}                                      OPTIONAL    -- Need R
+    ]]
+}
+
+
+PDSCH-HARQ-ACK-EnhType3-r17 ::=         SEQUENCE {
+    pdsch-HARQ-ACK-EnhType3Index-r17    PDSCH-HARQ-ACK-EnhType3Index-r17,
+    applicable-r17   CHOICE {
+        perCC                            SEQUENCE (SIZE (1..maxNrofServingCells)) OF INTEGER (0..1),
+        perHARQ                          SEQUENCE (SIZE (1..maxNrofServingCells)) OF BIT STRING (SIZE (16))
+    },
+    pdsch-HARQ-ACK-EnhType3NDI-r17         ENUMERATED {true}                                            OPTIONAL,   -- Need R
+    pdsch-HARQ-ACK-EnhType3CBG-r17         ENUMERATED {true}                                            OPTIONAL,   -- Need S
+    ...
+}
+
+PDSCH-HARQ-ACK-EnhType3Index-r17 ::=    INTEGER (0..maxNrofEnhType3HARQ-ACK-1-r17)
+
+PDCCH-BlindDetection ::=                INTEGER (1..15)
+
+DCP-Config-r16 ::=                  SEQUENCE {
+    ps-RNTI-r16                         RNTI-Value,
+    ps-Offset-r16                       INTEGER (1..120),
+    sizeDCI-2-6-r16                     INTEGER (1..maxDCI-2-6-Size-r16),
+    ps-PositionDCI-2-6-r16              INTEGER (0..maxDCI-2-6-Size-1-r16),
+    ps-WakeUp-r16                       ENUMERATED {true}                                               OPTIONAL,   -- Need S
+    ps-TransmitPeriodicL1-RSRP-r16      ENUMERATED {true}                                               OPTIONAL,   -- Need S
+    ps-TransmitOtherPeriodicCSI-r16     ENUMERATED {true}                                               OPTIONAL    -- Need S
+}
+
+PDSCH-HARQ-ACK-CodebookList-r16 ::=     SEQUENCE (SIZE (1..2)) OF ENUMERATED {semiStatic, dynamic}
+
+PDCCH-BlindDetectionCA-CombIndicator-r16 ::= SEQUENCE {
+    pdcch-BlindDetectionCA1-r16                  INTEGER (1..15),
+    pdcch-BlindDetectionCA2-r16                  INTEGER (1..15)
+}
+
+PDCCH-BlindDetection2-r16 ::=                INTEGER (1..15)
+
+PDCCH-BlindDetection3-r16 ::=                INTEGER (1..15)
+
+MulticastConfig-r17 ::=                 SEQUENCE {
+    pdsch-HARQ-ACK-CodebookListMulticast-r17    SetupRelease { PDSCH-HARQ-ACK-CodebookList-r16}         OPTIONAL,   -- Need M
+    type1CodebookGenerationMode-r17             ENUMERATED { mode1, mode2}                              OPTIONAL    -- Need M
+}
+
+PDCCH-BlindDetectionCA-CombIndicator-r17 ::= SEQUENCE {
+    pdcch-BlindDetectionCA1-r17                  INTEGER (1..15)                                        OPTIONAL,   -- Need R
+    pdcch-BlindDetectionCA2-r17                  INTEGER (1..15)                                        OPTIONAL,   -- Need R
+    pdcch-BlindDetectionCA3-r17                  INTEGER (1..15)
+}

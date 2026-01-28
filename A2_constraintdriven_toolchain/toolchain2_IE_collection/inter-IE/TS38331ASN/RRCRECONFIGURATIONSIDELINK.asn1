@@ -1,0 +1,90 @@
+RRCReconfigurationSidelink ::=          SEQUENCE {
+    rrc-TransactionIdentifier-r16           RRC-TransactionIdentifier,
+    criticalExtensions                      CHOICE {
+        rrcReconfigurationSidelink-r16          RRCReconfigurationSidelink-r16-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+RRCReconfigurationSidelink-r16-IEs ::=  SEQUENCE {
+    slrb-ConfigToAddModList-r16             SEQUENCE (SIZE (1..maxNrofSLRB-r16)) OF SLRB-Config-r16             OPTIONAL, -- Need N
+    slrb-ConfigToReleaseList-r16            SEQUENCE (SIZE (1..maxNrofSLRB-r16)) OF SLRB-PC5-ConfigIndex-r16    OPTIONAL, -- Need N
+    sl-MeasConfig-r16                       SetupRelease {SL-MeasConfig-r16}                                    OPTIONAL, -- Need M
+    sl-CSI-RS-Config-r16                    SetupRelease {SL-CSI-RS-Config-r16}                                 OPTIONAL, -- Need M
+    sl-ResetConfig-r16                      ENUMERATED {true}                                                   OPTIONAL, -- Need N
+    sl-LatencyBoundCSI-Report-r16           INTEGER (3..160)                                                    OPTIONAL, -- Need M
+    lateNonCriticalExtension                OCTET STRING                                                        OPTIONAL,
+    nonCriticalExtension                    RRCReconfigurationSidelink-v1700-IEs                                OPTIONAL
+}
+
+RRCReconfigurationSidelink-v1700-IEs ::= SEQUENCE {
+    sl-DRX-ConfigUC-PC5-r17                 SetupRelease { SL-DRX-ConfigUC-r17 }                                OPTIONAL, -- Need M
+    sl-LatencyBoundIUC-Report-r17           SetupRelease { SL-LatencyBoundIUC-Report-r17 }                      OPTIONAL, -- Need M
+    sl-RLC-ChannelToReleaseListPC5-r17      SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-ChannelID-r17         OPTIONAL, -- Need N
+    sl-RLC-ChannelToAddModListPC5-r17       SEQUENCE (SIZE (1..maxSL-LCID-r16)) OF SL-RLC-ChannelConfigPC5-r17  OPTIONAL, -- Need N
+    nonCriticalExtension                    SEQUENCE {}                                                         OPTIONAL
+}
+
+SL-LatencyBoundIUC-Report-r17::=            INTEGER (3..160)
+
+SLRB-Config-r16::=                      SEQUENCE {
+    slrb-PC5-ConfigIndex-r16                SLRB-PC5-ConfigIndex-r16,
+    sl-SDAP-ConfigPC5-r16                   SL-SDAP-ConfigPC5-r16                                               OPTIONAL, -- Need M
+    sl-PDCP-ConfigPC5-r16                   SL-PDCP-ConfigPC5-r16                                               OPTIONAL, -- Need M
+    sl-RLC-ConfigPC5-r16                    SL-RLC-ConfigPC5-r16                                                OPTIONAL, -- Need M
+    sl-MAC-LogicalChannelConfigPC5-r16      SL-LogicalChannelConfigPC5-r16                                      OPTIONAL, -- Need M
+    ...
+}
+
+SLRB-PC5-ConfigIndex-r16 ::=            INTEGER (1..maxNrofSLRB-r16)
+
+SL-SDAP-ConfigPC5-r16 ::=               SEQUENCE {
+    sl-MappedQoS-FlowsToAddList-r16         SEQUENCE (SIZE (1.. maxNrofSL-QFIsPerDest-r16)) OF SL-PQFI-r16      OPTIONAL, -- Need N
+    sl-MappedQoS-FlowsToReleaseList-r16     SEQUENCE (SIZE (1.. maxNrofSL-QFIsPerDest-r16)) OF SL-PQFI-r16      OPTIONAL, -- Need N
+    sl-SDAP-Header-r16                      ENUMERATED {present, absent},
+    ...
+}
+
+SL-PDCP-ConfigPC5-r16 ::=               SEQUENCE {
+    sl-PDCP-SN-Size-r16                     ENUMERATED {len12bits, len18bits}                                   OPTIONAL, -- Need M
+    sl-OutOfOrderDelivery-r16               ENUMERATED { true }                                                 OPTIONAL,  -- Need R
+    ...
+}
+
+SL-RLC-ConfigPC5-r16 ::=                CHOICE {
+    sl-AM-RLC-r16                           SEQUENCE {
+        sl-SN-FieldLengthAM-r16                 SN-FieldLengthAM                                                OPTIONAL, -- Need M
+        ...
+    },
+    sl-UM-Bi-Directional-RLC-r16            SEQUENCE {
+        sl-SN-FieldLengthUM-r16                 SN-FieldLengthUM                                                OPTIONAL, -- Need M
+        ...
+    },
+    sl-UM-Uni-Directional-RLC-r16           SEQUENCE {
+        sl-SN-FieldLengthUM-r16                 SN-FieldLengthUM                                                OPTIONAL, -- Need M
+        ...
+    }
+}
+
+SL-LogicalChannelConfigPC5-r16 ::=      SEQUENCE {
+    sl-LogicalChannelIdentity-r16           LogicalChannelIdentity,
+    ...
+}
+
+SL-PQFI-r16 ::=                         INTEGER (1..64)
+
+SL-CSI-RS-Config-r16 ::=                SEQUENCE {
+    sl-CSI-RS-FreqAllocation-r16            CHOICE {
+        sl-OneAntennaPort-r16                   BIT STRING (SIZE (12)),
+        sl-TwoAntennaPort-r16                   BIT STRING (SIZE (6))
+    }                                                                                                           OPTIONAL, -- Need M
+    sl-CSI-RS-FirstSymbol-r16               INTEGER (3..12)                                                     OPTIONAL, -- Need M
+    ...
+}
+
+SL-RLC-ChannelConfigPC5-r17::=          SEQUENCE {
+    sl-RLC-ChannelID-PC5-r17                SL-RLC-ChannelID-r17,
+    sl-RLC-ConfigPC5-r17                    SL-RLC-ConfigPC5-r16                                                OPTIONAL, -- Need M
+    sl-MAC-LogicalChannelConfigPC5-r17      SL-LogicalChannelConfigPC5-r16                                      OPTIONAL, -- Need M
+    ...
+}

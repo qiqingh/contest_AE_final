@@ -1,0 +1,76 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      326
+    ],
+    "field2_all": [
+      326
+    ],
+    "actual_pairs": [
+      [
+        [
+          326
+        ],
+        [
+          326
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between the specified fields. All references to pusch-PathlossReferenceRS-Id are within single IE contexts or lack explicit cross-IE constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    },
+    {
+      "doc": "3GPP TS 38.321"
+    }
+  ],
+  "meta": {
+    "ie1_name": "322_328_pusch-config_pusch-powercontrol",
+    "field1": "pusch-pathlossreferencers-id",
+    "ie2_name": "326_pathlossreferencerstoaddmodlist_pusch-pathlossreferencers-id",
+    "field2": "pusch-pathlossreferencers-id",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 9,
+      "original_count": 9,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1",
+      "6.1.3.28",
+      "7.7.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS\n---\nthe UE determines a RS resource index \\( q_{d} \\) with a respective PUSCH-PathlossReferenceRS-Id value being equal to zero where the RS resource is either on serving cell \\( c \\) or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking\n---\n- For a PUSCH transmission configured by ConfiguredGrantConfig that does not include rrcConfiguredUplinkGrant, the UE determines a RS resource index \\( q_{d} \\) from a value of PUSCH-PathlossReferenceRS-Id that is mapped to a SRI field value in a DCI format activating the PUSCH transmission.\n---\n- If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and the DCI format activating the PUSCH transmission includes two SRI fields, the UE determines first and second RS resource indexes \\( q_{d} \\) from respective first and second values of PUSCH-PathlossReferenceRS-Id that are mapped to the first and second SRI values corresponding to each SRS resource set with usage set to 'codebook', respectively. - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook' and the DCI format activating the PUSCH transmission includes two SRI fields, the UE determines first and second RS resource indexes \\( q_{d} \\) from respective first and second values of PUSCH-PathlossReferenceRS-Id that are mapped to the first SRI value corresponding to the first SRS resource set with usage set to 'nonCodebook', and the value, associated with the second SRI field value corresponding to Tables 7.3.1.1.2-28/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, corresponding to the second SRS resource set with usage set to 'nonCodebook'. - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the DCI format activating the PUSCH transmission does not include an SRI field, the UE determines first and second RS resource indexes \\( q_{d} \\) with respective first and second PUSCH-PathlossReferenceRS-Id value being equal to zero and one.\n---\n- If the UE is provided enablePL-RS-UpdateForPUSCH-SRS, a mapping between sri-PUSCH-PowerControlld and PUSCH-PathlossReferenceRS-Id values can be updated by a MAC CE as described in [11, TS 38.321]\n---\n- If the UE is provided enablePL-RS-UpdateForPUSCH-SRS, a mapping between sri-PUSCH-PowerControlld and PUSCH-PathlossReferenceRS-Id values can be updated by a MAC CE as described in [11, TS 38.321] - For a PUSCH transmission scheduled by a DCI format that does not include an SRI field, or for a PUSCH transmission configured by ConfiguredGrantConfig and activated, as described in clause 10.2, by a DCI format that does not include an SRI field, the UE determines a RS resource index \\( q_{d} \\) from the PUSCH-PathlossReferenceRS-Id mapped to sri-PUSCH-PowerControlld \\( =0 \\). If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', the UE determines first and second RS resource indexes \\( q_{d} \\) from respective PUSCH-PathlossReferenceRS-Id mapped to sri-PUSCH-PowerControlld \\( =0 \\) of sri-PUSCHMappingToAddModList and sri-PUSCH-PowerControlld \\( =0 \\) of sri-PUSCH-MappingToAddModList2, respectively.\n---\n- For a PUSCH transmission scheduled by a DCI format that does not include an SRI field, or for a PUSCH transmission configured by ConfiguredGrantConfig and activated, as described in clause 10.2, by a DCI format that does not include an SRI field, the UE determines a RS resource index \\( q_{d} \\) from the PUSCH-PathlossReferenceRS-Id mapped to sri-PUSCH-PowerControlld \\( =0 \\). If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', the UE determines first and second RS resource indexes \\( q_{d} \\) from respective PUSCH-PathlossReferenceRS-Id mapped to sri-PUSCH-PowerControlld \\( =0 \\) of sri-PUSCHMappingToAddModList and sri-PUSCH-PowerControlld \\( =0 \\) of sri-PUSCH-MappingToAddModList2, respectively. - If the UE is not provided enablePL-RS-UpdateForPUSCH-SRS - For a PUSCH transmission scheduled by a DCI format that does not include an SRI field, if the UE is provided two SRS resources in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', the UE determines first and second RS resource indexes \\( q_{d} \\) with respective first and second PUSCH-PathlossReferenceRS-Id values being equal to 0 and 1 .\n---\nwhere \\( \\tilde{P}_{\\mathrm{CMAX}, f_{,} c}(i) \\) is computed assuming \\( \\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{~A}-\\mathrm{MPR}=0 \\mathrm{~dB}, \\mathrm{P}-\\mathrm{MPR}=0 \\mathrm{~dB} . \\triangle \\mathrm{T}_{\\mathrm{C}}=0 \\mathrm{~dB} \\). MPR, A-MPR, PMPR and \\( \\Delta \\mathrm{T}_{\\mathrm{C}} \\) are defined in [8-1, TS 38.101-1], [8-2, TS38.101-2] and [8-3, TS 38.101-3]. The remaining parameters are defined in clause 7.1.1 where \\( P_{0 \\_ \\text {PUSCH }, b, f, c}(j) \\) and \\( \\alpha_{b_{1}, c, c}(j) \\) are obtained using \\( P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f, c}(0) \\) and \\( p 0 \\) -PUSCH-AlphaSetld \\( =0, P L_{b_{1} f_{1} c}\\left(q_{d}\\right) \\) is obtained using pusch-PathlossReferenceRS-Id \\( =0 \\), and \\( l=0 \\).\n---\n- PUSCH Pathloss Reference RS ID: This field indicates the PUSCH Pathloss Reference RS ID identified by PUSCH-PathlossReferenceRS-Id as specified in TS 38.331 [5], which is to be updated in the SRI PUSCH power control mappings indicated by SRI ID fields indicated in the same MAC CE. The length of the field is 6 bits;",
+    "generated_at": "2026-01-10T14:35:14.851370",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No explicit inter-IE constraint found between pusch-pathlossreferencers-id fields from different IEs.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between the specified fields. All references to pusch-PathlossReferenceRS-Id are within single IE contexts or lack explicit cross-IE constraints.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

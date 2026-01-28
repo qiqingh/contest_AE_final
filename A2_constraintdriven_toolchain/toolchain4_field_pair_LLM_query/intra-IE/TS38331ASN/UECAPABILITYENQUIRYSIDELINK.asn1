@@ -1,0 +1,14 @@
+UECapabilityEnquirySidelink ::=         SEQUENCE {
+    rrc-TransactionIdentifier-r16           RRC-TransactionIdentifier,
+    criticalExtensions                      CHOICE {
+        ueCapabilityEnquirySidelink-r16         UECapabilityEnquirySidelink-r16-IEs,
+        criticalExtensionsFuture                SEQUENCE {}
+    }
+}
+
+UECapabilityEnquirySidelink-r16-IEs ::= SEQUENCE {
+    frequencyBandListFilterSidelink-r16     FreqBandList                                                            OPTIONAL, -- Need N
+    ue-CapabilityInformationSidelink-r16    OCTET STRING                                                            OPTIONAL, -- Need N
+    lateNonCriticalExtension                OCTET STRING                                                            OPTIONAL,
+    nonCriticalExtension                    SEQUENCE{}                                                              OPTIONAL
+}

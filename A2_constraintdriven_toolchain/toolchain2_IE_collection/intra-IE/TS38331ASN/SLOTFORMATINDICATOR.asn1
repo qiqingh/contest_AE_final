@@ -1,0 +1,52 @@
+SlotFormatIndicator ::=     SEQUENCE {
+    sfi-RNTI                    RNTI-Value,
+    dci-PayloadSize             INTEGER (1..maxSFI-DCI-PayloadSize),
+    slotFormatCombToAddModList  SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF SlotFormatCombinationsPerCell
+                                                                                                                              OPTIONAL, -- Need N
+    slotFormatCombToReleaseList SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF ServCellIndex                       OPTIONAL, -- Need N
+    ...,
+    [[
+    availableRB-SetsToAddModList-r16  SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF AvailableRB-SetsPerCell-r16   OPTIONAL, -- Need N
+    availableRB-SetsToReleaseList-r16 SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF ServCellIndex                 OPTIONAL, -- Need N
+    switchTriggerToAddModList-r16     SEQUENCE (SIZE(1..4)) OF SearchSpaceSwitchTrigger-r16                                   OPTIONAL, -- Need N
+    switchTriggerToReleaseList-r16    SEQUENCE (SIZE(1..4)) OF ServCellIndex                                                  OPTIONAL, -- Need N
+    co-DurationsPerCellToAddModList-r16 SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF CO-DurationsPerCell-r16     OPTIONAL, -- Need N
+    co-DurationsPerCellToReleaseList-r16 SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF ServCellIndex              OPTIONAL  -- Need N
+    ]],
+    [[
+    switchTriggerToAddModListSizeExt-r16   SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroupMinus4-r16)) OF
+        SearchSpaceSwitchTrigger-r16  OPTIONAL, -- Need N
+    switchTriggerToReleaseListSizeExt-r16  SEQUENCE (SIZE(1.. maxNrofAggregatedCellsPerCellGroupMinus4-r16)) OF
+        ServCellIndex                 OPTIONAL  -- Need N
+    ]],
+    [[
+    co-DurationsPerCellToAddModList-r17 SEQUENCE (SIZE(1..maxNrofAggregatedCellsPerCellGroup)) OF CO-DurationsPerCell-r17 OPTIONAL  -- Need N
+    ]]
+}
+
+CO-DurationsPerCell-r16 ::=   SEQUENCE {
+    servingCellId-r16             ServCellIndex,
+    positionInDCI-r16             INTEGER(0..maxSFI-DCI-PayloadSize-1),
+    subcarrierSpacing-r16         SubcarrierSpacing,
+    co-DurationList-r16           SEQUENCE (SIZE(1..64)) OF CO-Duration-r16
+}
+
+CO-DurationsPerCell-r17 ::=   SEQUENCE {
+    servingCellId-r17             ServCellIndex,
+    positionInDCI-r17             INTEGER(0..maxSFI-DCI-PayloadSize-1),
+    subcarrierSpacing-r17         SubcarrierSpacing,
+    co-DurationList-r17           SEQUENCE (SIZE(1..64)) OF CO-Duration-r17
+}
+
+CO-Duration-r16 ::=    INTEGER (0..1120)
+CO-Duration-r17 ::=    INTEGER (0..4480)
+
+AvailableRB-SetsPerCell-r16 ::=   SEQUENCE {
+    servingCellId-r16                 ServCellIndex,
+    positionInDCI-r16                 INTEGER(0..maxSFI-DCI-PayloadSize-1)
+}
+
+SearchSpaceSwitchTrigger-r16 ::=   SEQUENCE {
+    servingCellId-r16                  ServCellIndex,
+    positionInDCI-r16                  INTEGER(0..maxSFI-DCI-PayloadSize-1)
+}

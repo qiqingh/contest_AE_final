@@ -1,0 +1,8 @@
+BeamFailureRecoveryRSConfig-r16 ::= SEQUENCE {
+    rsrp-ThresholdBFR-r16               RSRP-Range                                                               OPTIONAL, -- Need M
+    candidateBeamRS-List-r16            SEQUENCE (SIZE(1..maxNrofCandidateBeams-r16)) OF CandidateBeamRS-r16     OPTIONAL, -- Need M
+    ...,
+    [[
+    candidateBeamRS-List2-r17            SEQUENCE (SIZE(1..maxNrofCandidateBeams-r16)) OF CandidateBeamRS-r16     OPTIONAL  -- Need R
+    ]]
+}

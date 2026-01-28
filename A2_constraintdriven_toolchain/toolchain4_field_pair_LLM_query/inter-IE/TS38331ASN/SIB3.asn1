@@ -1,0 +1,52 @@
+SIB3 ::=                            SEQUENCE {
+    intraFreqNeighCellList              IntraFreqNeighCellList                                          OPTIONAL,   -- Need R
+    intraFreqExcludedCellList           IntraFreqExcludedCellList                                       OPTIONAL,   -- Need R
+    lateNonCriticalExtension            OCTET STRING                                                    OPTIONAL,
+    ...,
+    [[
+    intraFreqNeighCellList-v1610        IntraFreqNeighCellList-v1610                                    OPTIONAL,   -- Need R
+    intraFreqAllowedCellList-r16        IntraFreqAllowedCellList-r16                                    OPTIONAL,   -- Cond SharedSpectrum2
+    intraFreqCAG-CellList-r16           SEQUENCE (SIZE (1..maxPLMN)) OF IntraFreqCAG-CellListPerPLMN-r16    OPTIONAL    -- Need R
+    ]],
+    [[
+    intraFreqNeighHSDN-CellList-r17     IntraFreqNeighHSDN-CellList-r17                                 OPTIONAL,    -- Need R
+    intraFreqNeighCellList-v1710        IntraFreqNeighCellList-v1710                                    OPTIONAL     -- Need R
+    ]],
+    [[
+    channelAccessMode2-r17              ENUMERATED {enabled}                                            OPTIONAL     -- Need R
+    ]]
+}
+
+IntraFreqNeighCellList ::=          SEQUENCE (SIZE (1..maxCellIntra)) OF IntraFreqNeighCellInfo
+
+IntraFreqNeighCellList-v1610::=     SEQUENCE (SIZE (1..maxCellIntra)) OF IntraFreqNeighCellInfo-v1610
+
+IntraFreqNeighCellList-v1710 ::=     SEQUENCE (SIZE (1..maxCellIntra)) OF IntraFreqNeighCellInfo-v1710
+
+IntraFreqNeighCellInfo ::=          SEQUENCE {
+    physCellId                          PhysCellId,
+    q-OffsetCell                        Q-OffsetRange,
+    q-RxLevMinOffsetCell                INTEGER (1..8)                                  OPTIONAL,   -- Need R
+    q-RxLevMinOffsetCellSUL             INTEGER (1..8)                                  OPTIONAL,   -- Need R
+    q-QualMinOffsetCell                 INTEGER (1..8)                                  OPTIONAL,   -- Need R
+    ...
+}
+
+IntraFreqNeighCellInfo-v1610 ::=     SEQUENCE {
+    ssb-PositionQCL-r16                 SSB-PositionQCL-Relation-r16                    OPTIONAL   -- Cond SharedSpectrum2
+}
+
+IntraFreqNeighCellInfo-v1710 ::=     SEQUENCE {
+    ssb-PositionQCL-r17                 SSB-PositionQCL-Relation-r17                    OPTIONAL   -- Cond SharedSpectrum2
+}
+
+IntraFreqExcludedCellList ::=       SEQUENCE (SIZE (1..maxCellExcluded)) OF PCI-Range
+
+IntraFreqAllowedCellList-r16 ::=    SEQUENCE (SIZE (1..maxCellAllowed)) OF PCI-Range
+
+IntraFreqCAG-CellListPerPLMN-r16 ::= SEQUENCE {
+    plmn-IdentityIndex-r16               INTEGER (1..maxPLMN),
+    cag-CellList-r16                     SEQUENCE (SIZE (1..maxCAG-Cell-r16)) OF PCI-Range
+}
+
+IntraFreqNeighHSDN-CellList-r17 ::= SEQUENCE (SIZE (1..maxCellIntra)) OF PCI-Range

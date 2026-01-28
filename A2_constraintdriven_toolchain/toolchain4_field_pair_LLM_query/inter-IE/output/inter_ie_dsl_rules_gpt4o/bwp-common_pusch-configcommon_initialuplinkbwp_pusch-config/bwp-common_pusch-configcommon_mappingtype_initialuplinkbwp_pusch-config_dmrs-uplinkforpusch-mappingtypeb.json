@@ -1,0 +1,107 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      321
+    ],
+    "field2_all": [
+      364,
+      367,
+      370,
+      373,
+      472,
+      475,
+      478,
+      481,
+      580,
+      583,
+      586,
+      589
+    ],
+    "actual_pairs": [
+      [
+        [
+          321
+        ],
+        [
+          364,
+          367,
+          370,
+          373,
+          472,
+          475,
+          478,
+          481,
+          580,
+          583,
+          586,
+          589
+        ]
+      ],
+      [
+        [
+          321
+        ],
+        [
+          364,
+          367,
+          370,
+          373,
+          472,
+          475,
+          478,
+          481
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation between the specified fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-common_pusch-configcommon",
+    "field1": "mappingtype",
+    "ie2_name": "initialuplinkbwp_pusch-config",
+    "field2": "dmrs-uplinkforpusch-mappingtypeb",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "dmrs-UplinkForPUSCH-MappingTypeB, dmrs-UplinkForPUSCH-MappingTypeB-DCI-0-2 \\\\ DMRS configuration for PUSCH transmissions using PUSCH mapping type B (chosen dynamically via PUSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-UplinkForPUSCH-MappingTypeB applies to DCI format 0_1 and the field dmrs-UplinkForPUSCH-MappingTypeB-DCI-0-2 applies to DCI format \\( 0 \\_2 \\) (see TS 38.212 [17], clause 7.3.1).\n---\nDMRS configuration for PUSCH transmissions using PUSCH mapping type B (chosen dynamically via PUSCH-TimeDomainResourceAllocation). Only the fields dmrs-Type, dmrs-AdditionalPosition and maxLength may be set differently for mapping type A and B. The field dmrs-UplinkForPUSCH-MappingTypeB applies to DCI format 0_1 and the field dmrs-UplinkForPUSCH-MappingTypeB-DCI-0-2 applies to DCI format \\( 0 \\_2 \\) (see TS 38.212 [17], clause 7.3.1).",
+    "generated_at": "2026-01-10T14:05:13.622335",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint between mappingtype and dmrs-uplinkforpusch-mappingtypeb",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "Evidence only describes single-IE behavior and lacks inter-IE relation between the specified fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

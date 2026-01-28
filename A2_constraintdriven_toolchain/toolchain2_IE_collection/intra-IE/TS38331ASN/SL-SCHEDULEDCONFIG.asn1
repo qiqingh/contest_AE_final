@@ -1,0 +1,23 @@
+SL-ScheduledConfig-r16 ::=                   SEQUENCE {
+    sl-RNTI-r16                                  RNTI-Value,
+    mac-MainConfigSL-r16                         MAC-MainConfigSL-r16                                     OPTIONAL,    -- Need M
+    sl-CS-RNTI-r16                               RNTI-Value                                               OPTIONAL,    -- Need M
+    sl-PSFCH-ToPUCCH-r16                         SEQUENCE (SIZE (1..8)) OF INTEGER (0..15)                OPTIONAL,    -- Need M
+    sl-ConfiguredGrantConfigList-r16             SL-ConfiguredGrantConfigList-r16                         OPTIONAL,    -- Need M
+    ...,
+    [[
+    sl-DCI-ToSL-Trans-r16                        SEQUENCE (SIZE (1..8)) OF INTEGER (1..32)                OPTIONAL     -- Need M
+    ]]
+}
+
+MAC-MainConfigSL-r16 ::=                     SEQUENCE {
+    sl-BSR-Config-r16                            BSR-Config                                           OPTIONAL,    -- Need M
+    ul-PrioritizationThres-r16                   INTEGER (1..16)                                      OPTIONAL,    -- Need M
+    sl-PrioritizationThres-r16                   INTEGER (1..8)                                       OPTIONAL,    -- Need M
+    ...
+}
+
+SL-ConfiguredGrantConfigList-r16 ::=       SEQUENCE {
+    sl-ConfiguredGrantConfigToReleaseList-r16  SEQUENCE (SIZE (1..maxNrofCG-SL-r16)) OF SL-ConfigIndexCG-r16         OPTIONAL, -- Need N
+    sl-ConfiguredGrantConfigToAddModList-r16   SEQUENCE (SIZE (1..maxNrofCG-SL-r16)) OF SL-ConfiguredGrantConfig-r16 OPTIONAL  -- Need N
+}

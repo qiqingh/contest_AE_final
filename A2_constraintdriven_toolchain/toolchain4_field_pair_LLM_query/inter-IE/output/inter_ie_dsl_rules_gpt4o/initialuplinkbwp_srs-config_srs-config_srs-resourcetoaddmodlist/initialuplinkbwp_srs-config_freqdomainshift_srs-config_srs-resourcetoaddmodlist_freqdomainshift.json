@@ -1,0 +1,100 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      350
+    ],
+    "field2_all": [
+      350,
+      456,
+      564,
+      672
+    ],
+    "actual_pairs": [
+      [
+        [
+          350
+        ],
+        [
+          564,
+          672
+        ]
+      ],
+      [
+        [
+          350
+        ],
+        [
+          456,
+          672
+        ]
+      ],
+      [
+        [
+          350
+        ],
+        [
+          456,
+          564
+        ]
+      ],
+      [
+        [
+          350
+        ],
+        [
+          350
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a relationship between the freqdomainshift fields across the two different IEs. The evidence is purely definitional and does not describe an inter-IE constraint.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie1_name": "initialuplinkbwp_srs-config",
+    "field1": "freqdomainshift",
+    "ie2_name": "srs-config_srs-resourcetoaddmodlist",
+    "field2": "freqdomainshift",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.2.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- Defining frequency domain position and configurable shift, as defined by the higher layer parameters freqDomainPosition and freqDomainShift, respectively, and described in clause 6.4.1.4 of [4, TS 38.211]. If freqDomainPosition is not configured, freqDomainPosition is zero.",
+    "generated_at": "2026-01-10T14:11:40.769606",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a relationship between the freqdomainshift fields across the two different IEs. The evidence is purely definitional and does not describe an inter-IE constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

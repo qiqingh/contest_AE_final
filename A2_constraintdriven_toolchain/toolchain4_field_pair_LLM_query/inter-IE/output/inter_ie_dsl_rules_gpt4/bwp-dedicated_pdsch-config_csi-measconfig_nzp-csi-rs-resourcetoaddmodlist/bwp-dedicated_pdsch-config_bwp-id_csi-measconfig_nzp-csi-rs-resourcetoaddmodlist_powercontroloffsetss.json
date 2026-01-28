@@ -1,0 +1,125 @@
+{
+  "dsl_rule": "MATCH(field1, field2)",
+  "constraint_type": "CrossReference",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      133,
+      198,
+      263
+    ],
+    "field2_all": [
+      700,
+      717,
+      734
+    ],
+    "actual_pairs": [
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          717,
+          734
+        ]
+      ],
+      [
+        [
+          133,
+          198,
+          263
+        ],
+        [
+          700,
+          717
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          700,
+          717
+        ]
+      ],
+      [
+        [
+          133,
+          198
+        ],
+        [
+          717,
+          734
+        ]
+      ]
+    ]
+  },
+  "predicate": "The bwp-id from bwp-dedicated_pdsch-config must match with the BWP-Id in CSI-ResourceConfig from csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "bwp-id: 1 in bwp-dedicated_pdsch-config and BWP-Id: 1 in CSI-ResourceConfig"
+    ],
+    "invalid": [
+      "bwp-id: 1 in bwp-dedicated_pdsch-config and BWP-Id: 2 in CSI-ResourceConfig"
+    ]
+  },
+  "notes": "The evidence explicitly states that the BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in, which implies a match with the bwp-id from bwp-dedicated_pdsch-config.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdsch-config",
+    "field1": "bwp-id",
+    "ie2_name": "csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+    "field2": "powercontroloffsetss",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.2.2.3.1"
+    ],
+    "best_confidence": "MEDIUM",
+    "evidence": "- powerControlOffsetSS: which is the assumed ratio of NZP CSI-RS EPRE to SS/PBCH block EPRE. - scramblingID defines scrambling ID of CSI-RS with length of 10 bits. - BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "generated_at": "2025-12-11T09:58:28.694349",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "CrossReference",
+      "dsl": "MATCH(field1, field2)",
+      "preconditions": [],
+      "predicate": "The bwp-id from bwp-dedicated_pdsch-config must match with the BWP-Id in CSI-ResourceConfig from csi-measconfig_nzp-csi-rs-resourcetoaddmodlist",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "bwp-id: 1 in bwp-dedicated_pdsch-config and BWP-Id: 1 in CSI-ResourceConfig"
+        ],
+        "invalid": [
+          "bwp-id: 1 in bwp-dedicated_pdsch-config and BWP-Id: 2 in CSI-ResourceConfig"
+        ]
+      },
+      "notes": "The evidence explicitly states that the BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in, which implies a match with the bwp-id from bwp-dedicated_pdsch-config.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

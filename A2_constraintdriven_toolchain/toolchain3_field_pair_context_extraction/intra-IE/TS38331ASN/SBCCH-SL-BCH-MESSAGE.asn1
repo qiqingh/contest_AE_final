@@ -1,0 +1,11 @@
+SBCCH-SL-BCH-Message ::= SEQUENCE {
+    message                  SBCCH-SL-BCH-MessageType
+}
+
+SBCCH-SL-BCH-MessageType::=     CHOICE {
+    c1                              CHOICE {
+        masterInformationBlockSidelink              MasterInformationBlockSidelink,
+        spare1 NULL
+    },
+    messageClassExtension   SEQUENCE {}
+}

@@ -1,0 +1,89 @@
+{
+  "dsl_rule": "MOD(field1, field2) == 0",
+  "constraint_type": "RangeAlignment",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      503
+    ],
+    "field2_all": [
+      495,
+      501
+    ],
+    "actual_pairs": [
+      [
+        [
+          503
+        ],
+        [
+          495,
+          501
+        ]
+      ]
+    ]
+  },
+  "predicate": "field1 and field2 are configured as a multiple of active BW SCS divided by reference SCS",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [],
+  "examples": {
+    "valid": [
+      "field1=8, field2=4",
+      "field1=12, field2=6"
+    ],
+    "invalid": [
+      "field1=7, field2=3",
+      "field1=10, field2=5"
+    ]
+  },
+  "notes": "The evidence suggests a mathematical relationship where field1 and field2 must be multiples of a certain value, implying a modulo constraint.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group1",
+    "field1": "nrofPRBs",
+    "field2": "startingPRB",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 1,
+      "original_count": 1,
+      "sampled": false,
+      "filter_mode": "aggressive"
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} startPRB Starting PRB index of the measurement bandwidth. For the case where the reference subcarrier spacing is smaller than subcarrier spacing of active DL BWP(s), network configures startPRB and nrofPRBs are as a multiple of active BW SCS divided by reference SCS. \\end{tabular}",
+    "generated_at": "2026-01-07T21:56:41.859943",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "RangeAlignment",
+      "dsl": "MOD(field1, field2) == 0",
+      "preconditions": [],
+      "predicate": "field1 and field2 are configured as a multiple of active BW SCS divided by reference SCS",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1=8, field2=4",
+          "field1=12, field2=6"
+        ],
+        "invalid": [
+          "field1=7, field2=3",
+          "field1=10, field2=5"
+        ]
+      },
+      "notes": "The evidence suggests a mathematical relationship where field1 and field2 must be multiples of a certain value, implying a modulo constraint.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

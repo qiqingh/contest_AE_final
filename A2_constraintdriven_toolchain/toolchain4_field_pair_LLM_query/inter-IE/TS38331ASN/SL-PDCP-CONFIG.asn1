@@ -1,0 +1,7 @@
+SL-PDCP-Config-r16 ::=       SEQUENCE {
+    sl-DiscardTimer-r16          ENUMERATED {ms3, ms10, ms20, ms25, ms30, ms40, ms50, ms60, ms75, ms100, ms150, ms200,
+                                 ms250, ms300, ms500, ms750, ms1500, infinity}                                   OPTIONAL, -- Cond Setup
+    sl-PDCP-SN-Size-r16          ENUMERATED {len12bits, len18bits}                                               OPTIONAL, -- Cond Setup2
+    sl-OutOfOrderDelivery        ENUMERATED { true }                                                             OPTIONAL,    -- Need R
+    ...
+}

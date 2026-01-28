@@ -1,0 +1,146 @@
+{
+  "dsl_rule": "IMPLIES(EQ(field1, 'codebook'), EQ(field2, 'nonCodebook'))",
+  "constraint_type": "ValueDependency",
+  "has_valid_rule": true,
+  "field_ids": {
+    "field1_all": [
+      338,
+      431,
+      444,
+      539,
+      552,
+      647,
+      660
+    ],
+    "field2_all": [
+      431,
+      444,
+      539,
+      552,
+      647,
+      660
+    ],
+    "actual_pairs": [
+      [
+        [
+          338,
+          444,
+          552,
+          660
+        ],
+        [
+          431,
+          539,
+          647
+        ]
+      ],
+      [
+        [
+          431,
+          539,
+          647
+        ],
+        [
+          444,
+          660
+        ]
+      ],
+      [
+        [
+          431,
+          539,
+          647
+        ],
+        [
+          444,
+          552
+        ]
+      ],
+      [
+        [
+          431,
+          539,
+          647
+        ],
+        [
+          552,
+          660
+        ]
+      ],
+      [
+        [
+          338
+        ],
+        [
+          431,
+          539,
+          647
+        ]
+      ]
+    ]
+  },
+  "predicate": "If p0-pusch-alphasetid (from pusch-powercontrol) is set to 'codebook', then usage (from srs-config_srs-resourcesettoaddmodlist) must be set to 'nonCodebook'.",
+  "preconditions": [],
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "examples": {
+    "valid": [
+      "field1: 'codebook', field2: 'nonCodebook'"
+    ],
+    "invalid": [
+      "field1: 'codebook', field2: 'codebook'"
+    ]
+  },
+  "notes": "The evidence provided explicitly states that if the usage is set to 'codebook', the P0-PUSCH-AlphaSetld must be set to 'nonCodebook'.",
+  "version_tags": [
+    "r16",
+    "r17"
+  ],
+  "meta": {
+    "ie1_name": "pusch-powercontrol",
+    "field1": "p0-pusch-alphasetid",
+    "ie2_name": "srs-config_srs-resourcesettoaddmodlist",
+    "field2": "usage",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.1.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for - the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively.\n---\n- the two SRI fields and a set of indexes provided by P0-PUSCH-AlphaSetld that map to P0-PUSCH-AlphaSet values, and determines first and second values of \\( \\alpha_{b, f, c}(j) \\) from the P0-PUSCHAlphaSetID values that are mapped to the values of the first and second SRI field values, respectively. - if a DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for",
+    "generated_at": "2025-12-11T09:21:37.355735",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "DSL",
+      "type": "ValueDependency",
+      "dsl": "IMPLIES(EQ(field1, 'codebook'), EQ(field2, 'nonCodebook'))",
+      "preconditions": [],
+      "predicate": "If p0-pusch-alphasetid (from pusch-powercontrol) is set to 'codebook', then usage (from srs-config_srs-resourcesettoaddmodlist) must be set to 'nonCodebook'.",
+      "advisory": false,
+      "examples": {
+        "valid": [
+          "field1: 'codebook', field2: 'nonCodebook'"
+        ],
+        "invalid": [
+          "field1: 'codebook', field2: 'codebook'"
+        ]
+      },
+      "notes": "The evidence provided explicitly states that if the usage is set to 'codebook', the P0-PUSCH-AlphaSetld must be set to 'nonCodebook'.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

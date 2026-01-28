@@ -1,0 +1,20 @@
+SL-QoS-Profile-r16 ::=        SEQUENCE {
+    sl-PQI-r16                    SL-PQI-r16                                                  OPTIONAL,   -- Need R
+    sl-GFBR-r16                   INTEGER (0..4000000000)                                     OPTIONAL,   -- Need R
+    sl-MFBR-r16                   INTEGER (0..4000000000)                                     OPTIONAL,   -- Need R
+    sl-Range-r16                  INTEGER (1..1000)                                           OPTIONAL,   -- Need R
+    ...
+}
+
+SL-PQI-r16 ::=                CHOICE {
+    sl-StandardizedPQI-r16        INTEGER (0..255),
+    sl-Non-StandardizedPQI-r16    SEQUENCE {
+        sl-ResourceType-r16           ENUMERATED {gbr, non-GBR, delayCriticalGBR, spare1}     OPTIONAL,   -- Need R
+        sl-PriorityLevel-r16          INTEGER (1..8)                                          OPTIONAL,   -- Need R
+        sl-PacketDelayBudget-r16      INTEGER (0..1023)                                       OPTIONAL,   -- Need R
+        sl-PacketErrorRate-r16        INTEGER (0..9)                                          OPTIONAL,   -- Need R
+        sl-AveragingWindow-r16        INTEGER (0..4095)                                       OPTIONAL,   -- Need R
+        sl-MaxDataBurstVolume-r16     INTEGER (0..4095)                                       OPTIONAL,   -- Need R
+    ...
+   }
+}

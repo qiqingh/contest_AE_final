@@ -1,0 +1,20 @@
+Phy-ParametersMRDC ::=              SEQUENCE {
+    naics-Capability-List               SEQUENCE (SIZE (1..maxNrofNAICS-Entries)) OF NAICS-Capability-Entry         OPTIONAL,
+    ...,
+    [[
+    spCellPlacement                     CarrierAggregationVariant                                                   OPTIONAL
+    ]],
+    [[
+    -- R1 18-3b: Semi-statically configured LTE UL transmissions in all UL subframes not limited to tdm-pattern in case of TDD PCell
+    tdd-PCellUL-TX-AllUL-Subframe-r16   ENUMERATED {supported}                                                      OPTIONAL,
+    -- R1 18-3a: Semi-statically configured LTE UL transmissions in all UL subframes not limited to tdm-pattern in case of FDD PCell
+    fdd-PCellUL-TX-AllUL-Subframe-r16   ENUMERATED {supported}                                                      OPTIONAL
+    ]]
+}
+
+NAICS-Capability-Entry ::=          SEQUENCE {
+    numberOfNAICS-CapableCC             INTEGER(1..5),
+    numberOfAggregatedPRB               ENUMERATED {n50, n75, n100, n125, n150, n175, n200, n225,
+                                                    n250, n275, n300, n350, n400, n450, n500, spare},
+    ...
+}

@@ -1,0 +1,60 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      390,
+      396
+    ],
+    [
+      390,
+      396
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not explicitly relate the two 'nrofSymbols' fields within the same IE. The evidence snippets discuss 'nrofSymbols' in different contexts without establishing a normative constraint between them.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList_group0",
+    "field1": "nrofSymbols",
+    "field2": "nrofSymbols",
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.3.2"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "\\begin{tabular}{l} nrofSymbols Within a slot that is configured for CLI-RSSI measurement (see slotConfiguration), the UE measures the RSSI from startPosition to startPosition + nrofSymbols -1 . The configured CLI-RSSI resource does not exceed the slot boundary of the reference SCS. If the SCS of configured DL BWP(s) is larger than the reference SCS, network configures startPosition and nrofSymbols such that the configured CLI-RSSI resource not to exceed the slot boundary corresponding to the configured BWP SCS. If the reference SCS is larger than SCS of configured DL BWP(s), network ensures startPosition and nrofSymbols are integer multiple of reference SCS divided by configured BWP SCS. \\end{tabular} \\begin{tabular}{l}\n---\n\\begin{tabular}{l} resourceMapping OFDM symbol location of the SRS resource within a slot including nrofSymbols (number of OFDM symbols), startPosition (value 0 refers to the last symbol, value 1 refers to the second last symbol, and so on) and repetitionFactor (see TS 38.214 [19], clause 6.2.1 and TS 38.211 [16], clause 6.4.1.4). The configured SRS resource does not exceed the slot boundary. If resourceMapping-r16 is signalled, UE shall ignore the resourceMapping (without suffix). If resourceMapping-r17 is signalled, UE shall ignore the resourceMapping (without suffix) and only the values of nrofSymbols which are integer multiples of the configured repetitionFactor can be configured. For CLI SRS-RSRP measurement, the network always configures nrofSymbois and repetitionFactor to ' n 1 '. \\end{tabular} \\begin{tabular}{l}",
+    "generated_at": "2025-12-09T09:44:13.067702",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not explicitly relate the two 'nrofSymbols' fields within the same IE. The evidence snippets discuss 'nrofSymbols' in different contexts without establishing a normative constraint between them.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

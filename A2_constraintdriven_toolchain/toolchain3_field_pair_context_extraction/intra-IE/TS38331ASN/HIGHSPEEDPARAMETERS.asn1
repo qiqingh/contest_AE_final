@@ -1,0 +1,16 @@
+HighSpeedParameters-r16 ::= SEQUENCE {
+    measurementEnhancement-r16       ENUMERATED {supported}   OPTIONAL,
+    demodulationEnhancement-r16      ENUMERATED {supported}   OPTIONAL
+}
+
+HighSpeedParameters-v1650 ::= CHOICE {
+    intraNR-MeasurementEnhancement-r16       ENUMERATED {supported},
+    interRAT-MeasurementEnhancement-r16      ENUMERATED {supported}
+}
+
+HighSpeedParameters-v1700 ::= SEQUENCE {
+    -- R4 18-1: Enhanced RRM requirements specified for CA for FR1 HST
+    measurementEnhancementCA-r17            ENUMERATED {supported}   OPTIONAL,
+    -- R4 18-2: Enhanced RRM requirements specified for inter-frequency measurement in connected mode for FR1 HST
+    measurementEnhancementInterFreq-r17     ENUMERATED {supported}   OPTIONAL
+}

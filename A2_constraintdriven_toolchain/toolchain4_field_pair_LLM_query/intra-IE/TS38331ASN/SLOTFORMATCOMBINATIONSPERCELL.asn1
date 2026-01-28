@@ -1,0 +1,20 @@
+SlotFormatCombinationsPerCell ::=   SEQUENCE {
+    servingCellId                       ServCellIndex,
+    subcarrierSpacing                   SubcarrierSpacing,
+    subcarrierSpacing2                  SubcarrierSpacing                                                         OPTIONAL, -- Need R
+    slotFormatCombinations              SEQUENCE (SIZE (1..maxNrofSlotFormatCombinationsPerSet)) OF SlotFormatCombination
+                                                                                                                  OPTIONAL, -- Need M
+    positionInDCI                       INTEGER(0..maxSFI-DCI-PayloadSize-1)                                      OPTIONAL, -- Need M
+    ...,
+    [[
+    enableConfiguredUL-r16              ENUMERATED {enabled}                                                      OPTIONAL  -- Need R
+    ]]
+
+}
+
+SlotFormatCombination ::=           SEQUENCE {
+    slotFormatCombinationId             SlotFormatCombinationId,
+    slotFormats                         SEQUENCE (SIZE (1..maxNrofSlotFormatsPerCombination)) OF INTEGER (0..255)
+}
+
+SlotFormatCombinationId ::=         INTEGER (0..maxNrofSlotFormatCombinationsPerSet-1)

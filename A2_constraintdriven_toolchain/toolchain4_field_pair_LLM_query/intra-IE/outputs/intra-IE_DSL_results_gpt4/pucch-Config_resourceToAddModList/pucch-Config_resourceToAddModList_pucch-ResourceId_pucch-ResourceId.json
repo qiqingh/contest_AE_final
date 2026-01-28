@@ -1,0 +1,67 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      278,
+      284
+    ],
+    "field2_all": [
+      278,
+      284
+    ],
+    "actual_pairs": [
+      [
+        [
+          278,
+          284
+        ],
+        [
+          278,
+          284
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish a clear, normative relationship between the two fields within the same IE instance. The evidence discusses the PUCCH Resource ID in the context of MAC CE and PUCCH Resource Group, but does not provide a rule that directly relates two instances of PUCCH Resource ID to each other.",
+  "advisory": false,
+  "citations": [],
+  "meta": {
+    "ie_name": "pucch-Config_resourceToAddModList",
+    "field1": "pucch-ResourceId",
+    "field2": "pucch-ResourceId",
+    "is_intra_ie": true,
+    "evidence_info": {
+      "used_count": 2,
+      "original_count": 2,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138321v180200p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.1.3.25",
+      "6.1.3.45"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - PUCCH Resource ID: This field contains an identifier of the PUCCH resource ID identified by PUCCHResourceld as specified in TS 38.331 [5], which is to be activated with a spatial relation indicated by Spatial Relation Info ID field in the subsequent octet. The length of the field is 7 bits. If the indicated PUCCH Resource ID is included in a PUCCH Resource Group (configured via resourceGroupToAddModList as specified in TS 38.331 [5]) of the indicated UL BWP, no other PUCCH Resources within the same PUCCH Resource group are indicated in the MAC CE, and this MAC CE applies to all the PUCCH Resources in the PUCCH Resource group; - Spatial Relation Info ID: This field contains PUCCH-SpatialRelationInfold -1 where PUCCHSpatialRelationInfold is the identifier of the PUCCH Spatial Relation [nfo in PUCCH-Config in which the PUCCH Resource ID is configured, as specified in TS 38.331 [5]. The length of the field is 6 bits; - R: Reserved bit, set to 0 .\n---\n- BWP ID: This field indicates a UL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - C: This field indicates whether single or two spatial relation info(s) is activated for the indicated PUCCH Resource ID. If this field is set to 1 , octet containing the second spatial relation info for the indicated PUCCH Resource is present. If this field is set to 0 , octet containing the second spatial relation info for the indicated PUCCH Resource is not present; - PUCCH Resource ID: This field contains an identifier of the PUCCH resource ID identified by PUCCHResourceld as specified in TS 38.331 [5], which is to be activated with a spatial relations indicated by Spatial Relation Info IDi fields in the subsequent octet(s). The length of the field is 7 bits. If the indicated PUCCH Resource ID is included in a PUCCH Resource Group (configured via resourceGroupToAddModList as specified in TS 38.331 [5]) of the indicated UL BWP, no other PUCCH Resources within the same PUCCH Resource group are indicated in the MAC CE, and this MAC CE applies to all the PUCCH Resources in the PUCCH Resource group; - Spatial Relation [nfo [Di: This field contains PUCCH-SpatialRelationInfold-r16 where PUCCHSpatialRelationInfold is the identifier of the PUCCH Spatial Relation [nfo in PUCCH-Config in which the PUCCH Resource ID is configured, as specified in TS 38.331 [5], where i is the index of the activated spatial relation info ID. The length of the field is 6 bits; - R: Reserved bit, set to 0 .",
+    "generated_at": "2025-12-11T14:27:45.958672",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish a clear, normative relationship between the two fields within the same IE instance. The evidence discusses the PUCCH Resource ID in the context of MAC CE and PUCCH Resource Group, but does not provide a rule that directly relates two instances of PUCCH Resource ID to each other.",
+      "version_tags": []
+    }
+  }
+}

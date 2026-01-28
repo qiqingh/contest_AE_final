@@ -1,0 +1,63 @@
+MeasGapConfig ::=                   SEQUENCE {
+    gapFR2                              SetupRelease { GapConfig }                                              OPTIONAL,   -- Need M
+    ...,
+    [[
+    gapFR1                              SetupRelease { GapConfig }                                              OPTIONAL,   -- Need M
+    gapUE                               SetupRelease { GapConfig }                                              OPTIONAL    -- Need M
+    ]],
+    [[
+    gapToAddModList-r17           SEQUENCE (SIZE (1..maxNrofGapId-r17)) OF GapConfig-r17                    OPTIONAL,   -- Need N
+    gapToReleaseList-r17          SEQUENCE (SIZE (1..maxNrofGapId-r17)) OF MeasGapId-r17                    OPTIONAL,   -- Need N
+    posMeasGapPreConfigToAddModList-r17      PosMeasGapPreConfigToAddModList-r17                                OPTIONAL,   -- Need N
+    posMeasGapPreConfigToReleaseList-r17     PosMeasGapPreConfigToReleaseList-r17                               OPTIONAL    -- Need N
+    ]]
+
+}
+
+GapConfig ::=                       SEQUENCE {
+    gapOffset                           INTEGER (0..159),
+    mgl                                 ENUMERATED {ms1dot5, ms3, ms3dot5, ms4, ms5dot5, ms6},
+    mgrp                                ENUMERATED {ms20, ms40, ms80, ms160},
+    mgta                                ENUMERATED {ms0, ms0dot25, ms0dot5},
+    ...,
+    [[
+    refServCellIndicator                ENUMERATED {pCell, pSCell, mcg-FR2}                                 OPTIONAL   -- Cond NEDCorNRDC
+    ]],
+    [[
+    refFR2ServCellAsyncCA-r16           ServCellIndex                                                       OPTIONAL,   -- Cond AsyncCA
+    mgl-r16                             ENUMERATED {ms10, ms20}                                             OPTIONAL    -- Cond PRS
+    ]]
+}
+
+GapConfig-r17 ::=                   SEQUENCE {
+    measGapId-r17                       MeasGapId-r17,
+    gapType-r17                         ENUMERATED {perUE, perFR1, perFR2},
+    gapOffset-r17                       INTEGER (0..159),
+    mgl-r17                             ENUMERATED {ms1, ms1dot5, ms2, ms3, ms3dot5, ms4, ms5, ms5dot5, ms6, ms10, ms20},
+    mgrp-r17                            ENUMERATED {ms20, ms40, ms80, ms160},
+    mgta-r17                            ENUMERATED {ms0, ms0dot25, ms0dot5, ms0dot75},
+    refServCellIndicator-r17            ENUMERATED {pCell, pSCell, mcg-FR2}                                 OPTIONAL,   -- Cond NEDCorNRDC
+    refFR2-ServCellAsyncCA-r17          ServCellIndex                                                       OPTIONAL,   -- Cond AsyncCA
+    preConfigInd-r17                    ENUMERATED {true}                                                   OPTIONAL,   -- Need R
+    ncsgInd-r17                         ENUMERATED {true}                                                   OPTIONAL,   -- Need R
+    gapAssociationPRS-r17               ENUMERATED {true}                                                   OPTIONAL,   -- Need R
+    gapSharing-r17                      MeasGapSharingScheme                                                OPTIONAL,   -- Need R
+    gapPriority-r17                     GapPriority-r17                                                     OPTIONAL,   -- Need R
+    ...
+}
+
+PosMeasGapPreConfigToAddModList-r17 ::= SEQUENCE (SIZE (1..maxNrofPreConfigPosGapId-r17)) OF PosGapConfig-r17
+
+PosMeasGapPreConfigToReleaseList-r17 ::= SEQUENCE (SIZE (1..maxNrofPreConfigPosGapId-r17)) OF MeasPosPreConfigGapId-r17
+
+PosGapConfig-r17 ::=                SEQUENCE {
+    measPosPreConfigGapId-r17           MeasPosPreConfigGapId-r17,
+    gapOffset-r17                       INTEGER (0..159),
+    mgl-r17                             ENUMERATED {ms1dot5, ms3, ms3dot5, ms4, ms5dot5, ms6, ms10, ms20},
+    mgrp-r17                            ENUMERATED {ms20, ms40, ms80, ms160},
+    mgta-r17                            ENUMERATED {ms0, ms0dot25, ms0dot5},
+    gapType-r17                         ENUMERATED {perUE, perFR1, perFR2},
+    ...
+}
+
+MeasPosPreConfigGapId-r17 ::= INTEGER (1..maxNrofPreConfigPosGapId-r17)

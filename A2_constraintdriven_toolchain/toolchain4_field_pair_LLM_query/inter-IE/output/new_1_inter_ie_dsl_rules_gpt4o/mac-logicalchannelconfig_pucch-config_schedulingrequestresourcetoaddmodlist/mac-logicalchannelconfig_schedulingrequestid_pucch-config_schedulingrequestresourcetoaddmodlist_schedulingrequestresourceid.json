@@ -1,0 +1,122 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      23
+    ],
+    "field2_all": [
+      293,
+      401,
+      509,
+      617
+    ],
+    "actual_pairs": [
+      [
+        [
+          23
+        ],
+        [
+          401,
+          509
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          293,
+          401,
+          509,
+          617
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          401,
+          617
+        ]
+      ],
+      [
+        [
+          23
+        ],
+        [
+          293
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE relationship between the fields from mac-logicalchannelconfig and pucch-config_schedulingrequestresourcetoaddmodlist.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "mac-logicalchannelconfig",
+    "field1": "schedulingrequestid",
+    "ie2_name": "pucch-config_schedulingrequestresourcetoaddmodlist",
+    "field2": "schedulingrequestresourceid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 159,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.2.1",
+      "9.2.5.1",
+      "9.1.3.1",
+      "9.2.4",
+      "9.1.2.1",
+      "9.2.5",
+      "9.2.5.2",
+      "9.2.5.3",
+      "8.4",
+      "9.1.3.3",
+      "9.2",
+      "9.2.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "- \\( \\operatorname{BPRE}(\\mathrm{i})=\\left(O_{\\mathrm{ACK}}(i)+O_{\\mathrm{SR}}(i)+O_{\\mathrm{CSI}}(i)+O_{\\mathrm{CRC}}(i)\\right) / N_{R E}(i) \\) - \\( O_{\\mathrm{ACK}}(i) \\) is a number of HARQ-ACK information bits that the UE determines as described in clause 9.1.2.1 or 16.5.1.1 for Type-1 HARQ-ACK codebook and as described in clause 9.1.3.1 or 9.1.3.3 or 16.5.2.1 for Type-2 HARQ-ACK codebook, or as described in clause 9.1.4 for Type-3 HARQ-ACK codebook. If the UE is not provided any of pdsch-HARQ-ACK-Codebook, pdsch-HARQ-ACK-Codebookr16, or pdsch-HARQ-ACK-OneShotFeedback, \\( O_{\\mathrm{ACK}}=1 \\) if the UE includes a HARQ-ACK information bit in the PUCCH transmission; otherwise, \\( O_{\\mathrm{ACK}}=0 \\) - \\( O_{\\mathrm{SR}}(i) \\) is a number of SR information bits that the UE determines as described in clause 9.2.5.1\n---\nA PUSCH or a PUCCH transmission other than PUCCH transmissions with SL HARQ-ACK reports, including repetitions if any, can be of priority index 0 or of priority index 1 . For a configured grant PUSCH transmission, a UE determines a priority index from phy-PriorityIndex, if provided. For a PUCCH transmission with HARQ-ACK information corresponding to a SPS PDSCH reception or a SPS PDSCH release, a UE determines a priority index from harq-CodebookID, if provided. For a PUCCH transmission with SR, a UE determines the corresponding priority as described in clause 9.2.4. For a PUSCH transmission with semi-persistent CSI report, a UE determines a priority index from a priority indicator field, if provided, in a DCI format that activates the semi-persistent CSI report. If a priority index is not provided to a UE for a PUSCH or a PUCCH transmission other than PUCCH transmissions with SL HARQ-ACK reports, the priority index is 0 .\n---\nIf \\( O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CSI}} \\leq 11 \\), the UE determines a number of HARQ-ACK information bits \\( n_{\\mathrm{HARQ}-\\mathrm{ACK}} \\) for obtaining a transmission power for a PUCCH, as described in clause 7.2.1, as \\( n_{\\text {HARQ-ACK }}=\\sum_{c=0}^{N_{\\text {cells }}^{\\text {DL }} \\sum_{m=0}^{M_{c}-1} N_{m, c}^{\\text {received }}}+ \\sum_{c=0}^{N_{\\text {cells }}^{\\mathrm{DL}}{ }^{-1}} \\sum_{m=0}^{M_{c}-1} N_{m, c}^{\\text {received, CBG }} \\) where\n---\nfor PDSCH receptions scheduled by a DCI format that does not support CBG-based PDSCH receptions, or for SPS PDSCH reception, or for a DCI format having associated HARQ-ACK information without scheduling PDSCH reception, and if \\( O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CSI}} \\leq 11 \\), the UE determines a number of HARQ-ACK information bits \\( n_{\\mathrm{HARQ} \\text {-ACK }} \\) for obtaining a transmission power for a PUCCH, as described in clause 7.2.1, as\n---\nIf \\( O_{\\mathrm{ACK}}+O_{\\mathrm{SR}}+O_{\\mathrm{CSI}} \\leq 11 \\), the UE determines a number of HARQ-ACK information bits \\( n_{\\mathrm{HARQ}-\\mathrm{ACK}, g} \\) for group \\( g \\) and a number of HARQ-ACK information bits \\( n_{\\text {HARQ-ACK }(g+1) \\bmod 2} \\) for group \\( (g+1) \\bmod 2 \\) as described in clause 9.1.3.1 where \\( N_{\\mathrm{SPS}, c} \\) is included in \\( n_{\\mathrm{HARQ}-\\mathrm{ACK}, g} \\) and, if \\( q=1 \\) and \\( V_{\\mathrm{DAI}}^{(g+1) \\bmod 2} \\neq \\emptyset \\), the UE determines \\( n_{\\text {HARQ-ACK }(g+1) \\bmod 2} \\) by setting \\( V_{\\text {DAI } \\mathrm{m}_{\\text {last }}}^{\\mathrm{DL}}=V_{D A I}^{(g+1) \\bmod 2} \\). For obtaining a PUCCH transmission power, if \\( q=0 \\), \\( n_{\\text {HARQ-ACK }}=n_{\\text {HARQ-ACK }, g} \\); else, \\( n_{\\text {HARQ-ACK }}=n_{\\text {HARQ-ACK }, g}+n_{\\left.\\text {HARQ-ACK }_{( } g+1\\right) \\bmod 2} \\) -\n---\nUCI types reported in a PUCCH include HARQ-ACK information, SR, LRR, and CSI. UCI bits include HARQ-ACK information bits, if any, SR information bits, if any, LRR information bit, if any, and CSI bits, if any. The HARQ-ACK information bits correspond to a HARQ-ACK codebook as described in clause 9.1. For the remaining of this clause, any reference to \\( S R \\) is applicable for \\( S R \\) and/or for \\( L R R \\).\n---\n- a first set of PUCCH resources with pucch-ResourceSetld \\( =0 \\) if \\( O_{\\mathrm{UCl}} \\leq 2 \\) including 1 or 2 HARQ-ACK information bits and a positive or negative SR on one SR transmission occasion if transmission of HARQ-ACK information and SR occurs simultaneously, or\n---\n9.2.4 UE procedure for reporting SR  A UE can be configured by SchedulingRequestResourceConfig a set of configurations for SR in a PUCCH transmission using either PUCCH format 0 or PUCCH format 1 .\n---\nIf a UE would transmit multiple PUCCHs in a slot that include HARQ-ACK information, and/or SR, and/or CSI reports and any PUCCH with HARQ-ACK information in the slot satisfies the above timing conditions and does not overlap with any other PUCCH or PUSCH in the slot that does not satisfy the above timing conditions, the UE multiplexes the\n---\nIf the UE would transmit negative SR and a PUCCH with at most two HARQ-ACK information bits in a resource using PUCCH format 0 , the UE transmits the PUCCH in the resource using PUCCH format 0 for HARQ-ACK information as described in clause 9.2.3.\n---\n- \\( O_{\\mathrm{SR}} \\) a total number of SR bits. \\( O_{\\mathrm{SR}}=0 \\) if there is no scheduling request bit; otherwise, \\( O_{\\mathrm{SR}}=\\left\\lceil\\log _{2}(K+1)\\right\\rceil \\) as described in clause 9.2.5.1\n---\n- if the PUCCH resource for the second PUCCH includes PUCCH format 2, 3, or 4 and additionally includes \\( O_{\\mathrm{SR}_{1} 1} \\mathrm{SR} \\) bits of priority \\( 1, O_{\\mathrm{ACK}_{1} 1} \\) is replaced by \\( O_{\\mathrm{ACK}_{1} 1}+O_{\\mathrm{SR}_{1} 1} \\) where \\( O_{\\mathrm{SR}_{1} 1} \\) is determined according to clause 9.2.5.1",
+    "generated_at": "2026-01-09T12:30:01.760073",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between schedulingrequestid and schedulingrequestresourceid.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE relationship between the fields from mac-logicalchannelconfig and pucch-config_schedulingrequestresourcetoaddmodlist.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

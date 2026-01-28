@@ -1,0 +1,60 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": [
+    [
+      259
+    ],
+    [
+      267
+    ]
+  ],
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct normative constraint between the fields 'pdsch-Config' and 'resourceAllocation' within the same IE 'bwp-Dedicated_pdsch-Config_group2'. The evidence discusses resource allocation in general terms without linking these specific fields.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.214"
+    }
+  ],
+  "meta": {
+    "ie_name": "bwp-Dedicated_pdsch-Config_group2",
+    "field1": "pdsch-Config",
+    "field2": "resourceAllocation",
+    "evidence_info": {
+      "used_count": 4,
+      "original_count": 4,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "5.1.2.1",
+      "5.1.2.2",
+      "5.1.2.2.1"
+    ],
+    "best_confidence": "VERY_LOW",
+    "evidence": "When a UE configured by the higher layer parameter PDSCH-config that indicates at least one entry contains repetitionNumber in PDSCH-TimeDomainResourceAllocation, - If two TCI states are indicated by the DCI field 'Transmission Configuration Indication' together with the DCI field 'Time domain resource assignment' indicating an entry which contains repetitionNumber in PDSCHTimeDomainResourceAllocation and DM-RS port(s) within one CDM group in the DCI field 'Antenna Port(s)', the same SLIV is applied for all PDSCH transmission occasions across the repetitionNumber consecutive slots, the first TCI state is applied to the first PDSCH transmission occasion and resource allocation in time domain for the first PDSCH transmission occasion follows Clause 5.1.2.1.\n---\nIf the scheduling DCI is configured to indicate the downlink resource allocation type as part of the 'Frequency domain resource assignment' field by setting a higher layer parameter resourceAllocation in PDSCH-Config to 'dynamicSwitch', for DCI format 1 \\_1 or setting a higher layer parameter resourceAllocationDCI-1-2 in PDSCH-Config to 'dynamicSwitch' for DCI format 1 _2 or setting a higher layer parameter resourceAllocation in PDSCH-ConfigMulticast to 'dynamicSwitch' for DCI format 4_2, the UE shall use downlink resource allocation type 0 or type 1 as defined by this DCI field. Otherwise the UE shall use the downlink frequency resource allocation type as defined by the higher layer parameter resourceAllocation in PDSCH-Config for DCI format 1 \\_1 or by the higher layer parameter\n---\nIn downlink resource allocation of type 0 , the resource block assignment information includes a bitmap indicating the Resource Block Groups (RBGs) that are allocated to the scheduled UE where a RBG is a set of consecutive virtual resource blocks defined by higher layer parameter rbg-Size configured by PDSCH-Config and the size of the bandwidth part as defined in Table 5.1.2.2.1-1.\n---\nIn downlink resource allocation of type 0 scheduled using a DCI with CRC scrambled by G-RNTI or G-CS-RNTI, the resource block assignment information bitmap is calculated based on the description above with the following changes: the parameter N_{B W P, i}^{\\text {start }} is the starting PRB of the CFR, N_{B W P, i}^{\\text {size }} is the size of the common frequency resource (CFR) and the value of the higher layer parameter rbg-Size is configured by PDSCH-Config-Multicast.",
+    "generated_at": "2025-12-09T09:46:10.761421",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "ValueDependency",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct normative constraint between the fields 'pdsch-Config' and 'resourceAllocation' within the same IE 'bwp-Dedicated_pdsch-Config_group2'. The evidence discusses resource allocation in general terms without linking these specific fields.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

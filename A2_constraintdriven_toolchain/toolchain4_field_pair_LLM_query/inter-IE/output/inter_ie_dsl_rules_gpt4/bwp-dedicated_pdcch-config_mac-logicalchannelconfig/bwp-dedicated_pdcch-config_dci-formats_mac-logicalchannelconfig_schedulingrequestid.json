@@ -1,0 +1,81 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      128,
+      193,
+      258
+    ],
+    "field2_all": [
+      23
+    ],
+    "actual_pairs": [
+      [
+        [
+          128,
+          193,
+          258
+        ],
+        [
+          23
+        ]
+      ],
+      [
+        [
+          128,
+          193
+        ],
+        [
+          23
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'dci-formats' field from 'bwp-dedicated_pdcch-config' and the 'schedulingrequestid' field from 'mac-logicalchannelconfig'. The snippets discuss various UE procedures and conditions, but do not explicitly relate these two fields or their values.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "bwp-dedicated_pdcch-config",
+    "field1": "dci-formats",
+    "ie2_name": "mac-logicalchannelconfig",
+    "field2": "schedulingrequestid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 5,
+      "original_count": 5,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "9.2.5.2",
+      "9.2.5"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "the UE is not required to update the CSI report for the triggered CSI report \\( n . Z^{\\prime} \\) is defined in \\( [6, \\operatorname{TS} 38.214] \\) and \\( \\mu \\) corresponds to the smallest SCS configuration among the SCS configurations of the PDCCHs scheduling the PUSCHs, the smallest SCS configuration of aperiodic CSI-RSs associated with DCI formats provided by the PDCCHs triggering the aperiodic CSI reports, and the smallest SCS configuration of the overlapping PUCCHs and PUSCHs and \\( d=2 \\) for \\( \\mu=0,1, d=3 \\) for \\( \\mu=2 \\), and \\( d=4 \\) for \\( \\mu=3 \\).  If a UE would transmit multiple PUCCHs in a slot that include HARQ-ACK information, and/or SR, and/or CSI reports and any PUCCH with HARQ-ACK information in the slot satisfies the above timing conditions and does not overlap with any other PUCCH or PUSCH in the slot that does not satisfy the above timing conditions, the UE multiplexes the\n---\nIf a UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports [6, TS 38.214] to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, if present, or a value of dl-DataToUL-ACK, or dl-DataToUL-ACK-r16, or dl-DataToUL-ACK-DCI-1-2, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace }, 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and wideband or sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 2, or the UE has HARQ-ACK, SR and wideband CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field, or a value provided by \\( d l \\) -DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-toHARQ_feedback timing indicator field is not present in a DCI format, indicating a same slot for the PUCCH transmission, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE has HARQ-ACK, SR and sub-band CSI reports to transmit and the UE determines a PUCCH resource with PUCCH format 3 or PUCCH format 4, where - the UE determines the PUCCH resource using the PUCCH resource indicator field [5, TS 38.212] in a last of a number of DCI formats with a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or by a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and\n---\nIf a UE is provided a first interlace of \\( M_{\\text {Interlace, } 0}^{\\text {PUCCH }} \\) PRBs by interlace0 in InterlaceAllocation, the UE has HARQ-ACK, SR and sub-band CSI reports to transmit, and the UE determines a PUCCH resource with PUCCH format 3, where - the UE determines the PUCCH resource using the PUCCH resource indicator field in a last of a number of DCI formats that have a value of a PDSCH-to-HARQ_feedback timing indicator field indicating a same slot for the PUCCH transmission, or a value provided by dl-DataToUL-ACK or dl-DataToUL-ACK-r16 or dl-DataToUL-ACK-ForDCI-Formatl-2 if the PDSCH-to-HARQ_feedback timing indicator field is not present in the last DCI format, from a PUCCH resource set provided to the UE for HARQ-ACK transmission, and",
+    "generated_at": "2025-12-11T09:48:40.089475",
+    "model": "gpt-4",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence snippets do not establish a clear semantic constraint between the 'dci-formats' field from 'bwp-dedicated_pdcch-config' and the 'schedulingrequestid' field from 'mac-logicalchannelconfig'. The snippets discuss various UE procedures and conditions, but do not explicitly relate these two fields or their values.",
+      "version_tags": []
+    }
+  }
+}

@@ -1,0 +1,22 @@
+UplinkTxDirectCurrentTwoCarrierList-r16 ::=   SEQUENCE (SIZE (1..maxNrofTxDC-TwoCarrier-r16)) OF UplinkTxDirectCurrentTwoCarrier-r16
+
+UplinkTxDirectCurrentTwoCarrier-r16 ::=       SEQUENCE {
+    carrierOneInfo-r16                            UplinkTxDirectCurrentCarrierInfo-r16,
+    carrierTwoInfo-r16                            UplinkTxDirectCurrentCarrierInfo-r16,
+    singlePA-TxDirectCurrent-r16                  UplinkTxDirectCurrentTwoCarrierInfo-r16,
+    secondPA-TxDirectCurrent-r16                  UplinkTxDirectCurrentTwoCarrierInfo-r16            OPTIONAL
+}
+
+UplinkTxDirectCurrentCarrierInfo-r16 ::=      SEQUENCE {
+    servCellIndex-r16                             ServCellIndex,
+    servCellInfo-r16                              CHOICE {
+        bwp-Id-r16                                    BWP-Id,
+        deactivatedCarrier-r16                        ENUMERATED {deactivated}
+    }
+}
+
+UplinkTxDirectCurrentTwoCarrierInfo-r16 ::=   SEQUENCE {
+    referenceCarrierIndex-r16                     ServCellIndex,
+    shift7dot5kHz-r16                             BOOLEAN,
+    txDirectCurrentLocation-r16                   INTEGER (0..3301)
+}

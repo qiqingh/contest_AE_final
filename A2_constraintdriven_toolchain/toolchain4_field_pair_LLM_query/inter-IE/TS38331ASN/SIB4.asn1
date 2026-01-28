@@ -1,0 +1,116 @@
+SIB4 ::=                            SEQUENCE {
+    interFreqCarrierFreqList            InterFreqCarrierFreqList,
+    lateNonCriticalExtension            OCTET STRING                                OPTIONAL,
+    ...,
+    [[
+    interFreqCarrierFreqList-v1610      InterFreqCarrierFreqList-v1610              OPTIONAL   -- Need R
+    ]],
+    [[
+    interFreqCarrierFreqList-v1700      InterFreqCarrierFreqList-v1700              OPTIONAL   -- Need R
+    ]],
+    [[
+    interFreqCarrierFreqList-v1720      InterFreqCarrierFreqList-v1720              OPTIONAL   -- Need R
+    ]],
+    [[
+    interFreqCarrierFreqList-v1730      InterFreqCarrierFreqList-v1730              OPTIONAL   -- Need R
+    ]]
+}
+
+InterFreqCarrierFreqList ::=        SEQUENCE (SIZE (1..maxFreq)) OF InterFreqCarrierFreqInfo
+
+InterFreqCarrierFreqList-v1610 ::=  SEQUENCE (SIZE (1..maxFreq)) OF InterFreqCarrierFreqInfo-v1610
+
+InterFreqCarrierFreqList-v1700 ::=  SEQUENCE (SIZE (1..maxFreq)) OF InterFreqCarrierFreqInfo-v1700
+
+InterFreqCarrierFreqList-v1720 ::=  SEQUENCE (SIZE (1..maxFreq)) OF InterFreqCarrierFreqInfo-v1720
+
+InterFreqCarrierFreqList-v1730 ::=  SEQUENCE (SIZE (1..maxFreq)) OF InterFreqCarrierFreqInfo-v1730
+
+InterFreqCarrierFreqInfo ::=        SEQUENCE {
+    dl-CarrierFreq                      ARFCN-ValueNR,
+    frequencyBandList                   MultiFrequencyBandListNR-SIB                                OPTIONAL,   -- Cond Mandatory
+    frequencyBandListSUL                MultiFrequencyBandListNR-SIB                                OPTIONAL,   -- Need R
+    nrofSS-BlocksToAverage              INTEGER (2..maxNrofSS-BlocksToAverage)                      OPTIONAL,   -- Need S
+    absThreshSS-BlocksConsolidation     ThresholdNR                                                 OPTIONAL,   -- Need S
+    smtc                                SSB-MTC                                                     OPTIONAL,   -- Need S
+    ssbSubcarrierSpacing                SubcarrierSpacing,
+    ssb-ToMeasure                       SSB-ToMeasure                                               OPTIONAL,   -- Need S
+    deriveSSB-IndexFromCell             BOOLEAN,
+    ss-RSSI-Measurement                 SS-RSSI-Measurement                                         OPTIONAL,   -- Need R
+    q-RxLevMin                          Q-RxLevMin,
+    q-RxLevMinSUL                       Q-RxLevMin                                                  OPTIONAL,   -- Need R
+    q-QualMin                           Q-QualMin                                                   OPTIONAL,   -- Need S
+    p-Max                               P-Max                                                       OPTIONAL,   -- Need S
+    t-ReselectionNR                     T-Reselection,
+    t-ReselectionNR-SF                  SpeedStateScaleFactors                                      OPTIONAL,   -- Need S
+    threshX-HighP                       ReselectionThreshold,
+    threshX-LowP                        ReselectionThreshold,
+    threshX-Q                           SEQUENCE {
+        threshX-HighQ                       ReselectionThresholdQ,
+        threshX-LowQ                        ReselectionThresholdQ
+    }                                                                                               OPTIONAL,   -- Cond RSRQ
+    cellReselectionPriority             CellReselectionPriority                                     OPTIONAL,   -- Need R
+    cellReselectionSubPriority          CellReselectionSubPriority                                  OPTIONAL,   -- Need R
+    q-OffsetFreq                        Q-OffsetRange                                               DEFAULT dB0,
+    interFreqNeighCellList              InterFreqNeighCellList                                      OPTIONAL,   -- Need R
+    interFreqExcludedCellList           InterFreqExcludedCellList                                   OPTIONAL,   -- Need R
+    ...
+}
+
+InterFreqCarrierFreqInfo-v1610 ::=  SEQUENCE {
+    interFreqNeighCellList-v1610        InterFreqNeighCellList-v1610                                OPTIONAL,    -- Need R
+    smtc2-LP-r16                        SSB-MTC2-LP-r16                                             OPTIONAL,    -- Need R
+    interFreqAllowedCellList-r16        InterFreqAllowedCellList-r16                                OPTIONAL,    -- Cond SharedSpectrum2
+    ssb-PositionQCL-Common-r16          SSB-PositionQCL-Relation-r16                                OPTIONAL,    -- Cond SharedSpectrum
+    interFreqCAG-CellList-r16           SEQUENCE (SIZE (1..maxPLMN)) OF InterFreqCAG-CellListPerPLMN-r16   OPTIONAL     -- Need R
+}
+
+InterFreqCarrierFreqInfo-v1700 ::=  SEQUENCE {
+    interFreqNeighHSDN-CellList-r17     InterFreqNeighHSDN-CellList-r17                             OPTIONAL,    -- Need R
+    highSpeedMeasInterFreq-r17          ENUMERATED {true}                                           OPTIONAL,    -- Need R
+    redCapAccessAllowed-r17             ENUMERATED {true}                                           OPTIONAL,    -- Need R
+    ssb-PositionQCL-Common-r17          SSB-PositionQCL-Relation-r17                                OPTIONAL,    -- Cond SharedSpectrum
+    interFreqNeighCellList-v1710        InterFreqNeighCellList-v1710                                OPTIONAL     -- Cond SharedSpectrum2
+}
+
+InterFreqCarrierFreqInfo-v1720 ::=  SEQUENCE {
+    smtc4list-r17                       SSB-MTC4List-r17                                            OPTIONAL     -- Need R
+}
+
+InterFreqCarrierFreqInfo-v1730 ::=  SEQUENCE {
+    channelAccessMode2-r17              ENUMERATED {enabled}                                        OPTIONAL     -- Need R
+}
+
+InterFreqNeighHSDN-CellList-r17 ::= SEQUENCE (SIZE (1..maxCellInter)) OF PCI-Range
+
+InterFreqNeighCellList ::=          SEQUENCE (SIZE (1..maxCellInter)) OF InterFreqNeighCellInfo
+
+InterFreqNeighCellList-v1610 ::=    SEQUENCE (SIZE (1..maxCellInter)) OF InterFreqNeighCellInfo-v1610
+
+InterFreqNeighCellList-v1710 ::=    SEQUENCE (SIZE (1..maxCellInter)) OF InterFreqNeighCellInfo-v1710
+
+InterFreqNeighCellInfo ::=          SEQUENCE {
+    physCellId                          PhysCellId,
+    q-OffsetCell                        Q-OffsetRange,
+    q-RxLevMinOffsetCell                INTEGER (1..8)                                              OPTIONAL,   -- Need R
+    q-RxLevMinOffsetCellSUL             INTEGER (1..8)                                              OPTIONAL,   -- Need R
+    q-QualMinOffsetCell                 INTEGER (1..8)                                              OPTIONAL,   -- Need R
+    ...
+}
+
+InterFreqNeighCellInfo-v1610 ::=    SEQUENCE {
+    ssb-PositionQCL-r16                 SSB-PositionQCL-Relation-r16                                OPTIONAL    -- Cond SharedSpectrum2
+}
+
+InterFreqNeighCellInfo-v1710 ::=    SEQUENCE {
+    ssb-PositionQCL-r17                 SSB-PositionQCL-Relation-r17                                OPTIONAL    -- Cond SharedSpectrum2
+}
+
+InterFreqExcludedCellList ::=       SEQUENCE (SIZE (1..maxCellExcluded)) OF PCI-Range
+
+InterFreqAllowedCellList-r16 ::=    SEQUENCE (SIZE (1..maxCellAllowed)) OF PCI-Range
+
+InterFreqCAG-CellListPerPLMN-r16 ::= SEQUENCE {
+    plmn-IdentityIndex-r16              INTEGER (1..maxPLMN),
+    cag-CellList-r16                    SEQUENCE (SIZE (1..maxCAG-Cell-r16)) OF PCI-Range
+}

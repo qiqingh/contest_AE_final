@@ -1,0 +1,46 @@
+MeasObjectCLI-r16 ::=                  SEQUENCE {
+     cli-ResourceConfig-r16               CLI-ResourceConfig-r16,
+    ...
+}
+
+CLI-ResourceConfig-r16 ::=          SEQUENCE {
+    srs-ResourceConfig-r16              SetupRelease { SRS-ResourceListConfigCLI-r16 }                 OPTIONAL,   -- Need M
+    rssi-ResourceConfig-r16             SetupRelease { RSSI-ResourceListConfigCLI-r16 }                OPTIONAL    -- Need M
+}
+
+SRS-ResourceListConfigCLI-r16 ::=   SEQUENCE (SIZE (1.. maxNrofCLI-SRS-Resources-r16)) OF SRS-ResourceConfigCLI-r16
+
+RSSI-ResourceListConfigCLI-r16 ::=  SEQUENCE (SIZE (1.. maxNrofCLI-RSSI-Resources-r16)) OF RSSI-ResourceConfigCLI-r16
+
+SRS-ResourceConfigCLI-r16 ::=       SEQUENCE {
+    srs-Resource-r16                    SRS-Resource,
+    srs-SCS-r16                         SubcarrierSpacing,
+    refServCellIndex-r16                ServCellIndex                                                  OPTIONAL,   -- Need S
+    refBWP-r16                          BWP-Id,
+    ...
+}
+
+RSSI-ResourceConfigCLI-r16 ::=      SEQUENCE {
+    rssi-ResourceId-r16                 RSSI-ResourceId-r16,
+    rssi-SCS-r16                        SubcarrierSpacing,
+    startPRB-r16                        INTEGER (0..2169),
+    nrofPRBs-r16                        INTEGER (4..maxNrofPhysicalResourceBlocksPlus1),
+    startPosition-r16                   INTEGER (0..13),
+    nrofSymbols-r16                     INTEGER (1..14),
+    rssi-PeriodicityAndOffset-r16       RSSI-PeriodicityAndOffset-r16,
+    refServCellIndex-r16                ServCellIndex                                                  OPTIONAL,   -- Need S
+    ...
+}
+
+RSSI-ResourceId-r16 ::=             INTEGER (0.. maxNrofCLI-RSSI-Resources-1-r16)
+
+RSSI-PeriodicityAndOffset-r16 ::=   CHOICE {
+    sl10                                INTEGER(0..9),
+    sl20                                INTEGER(0..19),
+    sl40                                INTEGER(0..39),
+    sl80                                INTEGER(0..79),
+    sl160                               INTEGER(0..159),
+    sl320                               INTEGER(0..319),
+    s1640                               INTEGER(0..639),
+    ...
+}

@@ -1,0 +1,218 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      355,
+      461,
+      569,
+      677
+    ],
+    "field2_all": [
+      781,
+      786,
+      791,
+      796,
+      801,
+      806,
+      811,
+      816,
+      821
+    ],
+    "actual_pairs": [
+      [
+        [
+          569,
+          677
+        ],
+        [
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816,
+          821
+        ]
+      ],
+      [
+        [
+          461,
+          677
+        ],
+        [
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816,
+          821
+        ]
+      ],
+      [
+        [
+          355
+        ],
+        [
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816,
+          821
+        ]
+      ],
+      [
+        [
+          569,
+          677
+        ],
+        [
+          781,
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816
+        ]
+      ],
+      [
+        [
+          461,
+          569
+        ],
+        [
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816,
+          821
+        ]
+      ],
+      [
+        [
+          461,
+          677
+        ],
+        [
+          781,
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816
+        ]
+      ],
+      [
+        [
+          355
+        ],
+        [
+          781,
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816
+        ]
+      ],
+      [
+        [
+          461,
+          569
+        ],
+        [
+          781,
+          786,
+          791,
+          796,
+          801,
+          806,
+          811,
+          816
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The evidence provided does not establish a direct inter-IE relationship between the specified fields. All evidence pertains to single-IE behavior or lacks explicit normative inter-IE constraints.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.214"
+    },
+    {
+      "doc": "3GPP TS 38.331"
+    }
+  ],
+  "meta": {
+    "ie1_name": "csi-measconfig_csi-resourceconfigtoaddmodlist",
+    "field1": "resourcetype",
+    "ie2_name": "srs-config_srs-resourcetoaddmodlist",
+    "field2": "resourcetype",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 39,
+      "original_count": 39,
+      "sampled": false
+    },
+    "all_sources": [
+      "ts_138214v170100p_mathpix.md",
+      "ts_138211v180200p_mathpix.md",
+      "ts_138331v170000p_mathpix.md"
+    ],
+    "all_sections": [
+      "6.4.1.4.4",
+      "6.3.2",
+      "7.4.1.5.3",
+      "6.4.1.4.3",
+      "6.2.1.2",
+      "5.2.1.2",
+      "7.4.1.2.2",
+      "5.2.1.5.2",
+      "6.2.1.3",
+      "6.2.1",
+      "5.2.1.4.2",
+      "5.2.1.5.1"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "and where \\( N_{b_{\\text {hop }}}=1 \\) regardless of the value of \\( N_{\\mathrm{b}} \\). The quantity \\( n_{\\text {SRS }} \\) counts the number of SRS transmissions. For the case of an SRS resource configured as aperiodic by the higher-layer parameter resourceType, it is given by \\( n_{\\text {SRS }}= \\left[l^{\\prime} /(s R)\\right] \\) within the slot in which the \\( N_{\\text {symb }}^{\\text {SRS }} \\) symbol SRS resource is transmitted. The quantity \\( s \\) is given by \\( s=2 \\) if the higher-layer parameter nrofSRS-Ports-n8 equals 'ports8tdm', otherwise \\( s=1 \\). The quantity \\( R \\leq N_{\\text {symb }}^{\\mathrm{SRS}} / s \\) is the repetition factor given by the field repetition Factor if configured, otherwise \\( R=N_{\\text {symb }}^{\\text {SRS }} \\) -\n---\nFor an SRS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, a periodicity \\( T_{\\text {SRS }} \\) (in slots) and slot offset \\( T_{\\text {offset }} \\) are configured according to the higher-layer parameter periodicityAndOffset- \\( p \\) or periodicityAndOffset-sp in the SRS-Resource [E, or periodicityAndOffset-p or periodicityAndOffset-sp in the SRSPosResource IE. Candidate slots in which the configured SRS resource may be used for SRS transmission are the slots satisfying\n---\n- resource element \\( (k, l)_{p, \\mu} \\) is not used for DM-RS, non-zero-power CSI-RS (except for those configured for mobility measurements or with resourceType in corresponding CSI-ResourceConfig configured as 'aperiodic'), zero-power CSI-RS, SS/PBCH block, a detected PDCCH according to clause 5.1.4.1 of [6, TS38.214], or is declared as 'not available' by clause 5.1 . 4 of [6, TS 38.214]\n---\nFor a CSI-RS resource configured as periodic or semi-persistent by the higher-layer parameter resourceType, configured by the higher-layer parameter CSI-RS-CellMobility or configured by the higher-layer parameter TRS-ResourceSet-r17, the UE shall assume that the CSI-RS is transmitted in slots satisfying\n---\nThe time domain behavior of the CSI-RS resources within a CSI Resource Setting are indicated by the higher layer parameter resourceType and can be set to aperiodic, periodic, or semi-persistent. For periodic and semi-persistent CSI Resource Settings, when the UE is configured with groupBasedBeamReporting-r17, the number of CS[ Resource Sets configured is \\( S=2 \\), otherwise the number of CSI-RS Resource Sets configured is limited to \\( S=1 \\). For periodic and semipersistent CSI Resource Settings, the configured periodicity and slot offset is given in the numerology of its associated DL BWP, as given by BWP-id. When a UE is configured with multiple CS/-ResourceConfigs consisting the same NZP CSI-RS resource ID, the same time domain behavior shall be configured for the CSI-ResourceConfigs. When a UE is configured with multiple CSI-ResourceConfigs consisting the same CSI-IM resource ID, the same time-domain behavior shall be configured for the CSI-ResourceConfigs. All CSI Resource Settings linked to a CSI Report Setting shall have the same time domain behavior.\n---\nIf the UE is configured with a CSI-ReportConfig with higher layer parameter reportQuantity set to 'cri-RSRP', 'criSINR', 'none', 'cri-RSRP-Capability[Set]Index' or 'cri-SINR-Capability[Set]Index and the CSI-ReportConfig is linked to a resource setting configured with the higher layer parameter resourceType set to 'aperiodic', then the UE is not expected to be configured with more than 16 CSI-RS resources in a CSI-RS resource set contained within the resource setting.\n---\nFor CSI-RS resource sets associated with Resource Settings configured with the higher layer parameter resourceType set to 'aperiodic', 'periodic', or 'semi-persistent', trigger states for Reporting Setting(s) (configured with the higher layer parameter reportConfigType set to 'aperiodic') and/or Resource Setting for channel and/or interference measurement on one or more component carriers are configured using the higher layer parameter CSI-AperiodicTriggerStateList. For aperiodic CSI report triggering, a single set of CSI triggering states are higher layer configured, wherein the CSI triggering states can be associated with any candidate DL BWP. A UE is not expected to receive more than one DCI with non-zero CSI request field per slot per cell. A UE is not expected to receive DCI with non-zero CSI request field within a cell group in a slot overlapping with any slot receiving DCI with non-zero CSI request field in the same cell group. A UE is not expected to be configured with different TCI-Stateld's for the same aperiodic CSI-RS resource ID configured in multiple aperiodic CSI-RS resource sets with the same triggering offset in the same aperiodic trigger state. A UE is not expected to receive more than one aperiodic CSI report request for transmission in a given slot per cell. A UE is not expected to receive an aperiodic CSI report request for transmission in a slot overlapping with any slot having an aperiodic CSI report transmission in the same cell group. If a UE does not indicate its capability of CSItriggerStateContainingNonactiveB WP the UE is not expected to be triggered with a CSI report for a non-active DL BWP. Otherwise, when a UE is triggered with a CSI report for a DL BWP that is non-active when expecting to receive the most recent occasion, no later than the CSI reference resource, of the associated NZP CSI-RS, the UE is not expected to report the CSI for the non-active DL BWP and the CSI report associated with that BWP is omitted. When a UE is triggered with aperiodic NZP CSI-RS in a DL BWP that is non-active when expecting to receive the NZP CSIRS, the UE is not expected to measure the aperiodic CSI-RS. In the carrier of the serving cell expecting to receive that associated NZP CSI-RS, if the active DL BWP when receiving the NZP CSI-RS is different from the active DL BWP when receiving the triggering DCI ,\n---\nFor a UE configured with CSI resource setting(s) where the higher layer parameter resourceType set to 'semiPersistent'.\n---\n- Time domain behaviour of SRS resource configuration as indicated by the higher layer parameter resourceType, which may be periodic, semi-persistent, aperiodic SRS transmission as defined in clause 6.4.1.4 of [4, TS 38.211]. - Slot level periodicity and slot level offset as defined by the higher layer parameters periodicityAndOffset- \\( p \\) or periodicityAndOffset-sp for an SRS resource of type periodic or semi-persistent. The UE is not expected to be configured with SRS resources in the same SRS resource set SRS-ResourceSet or SRS-PosResourceSet with different slot level periodicities. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a slot level offset is defined by the higher layer parameter slotOffset. For an SRS-ResourceSet configured with higher layer parameter resourceType set to 'aperiodic', a list of zero up to four different available slot offset values from the reference slot \\( n+k \\) to the slot where the aperiodic SRS resource set is transmitted where \\( n \\) is the slot with triggering DCI and \\( k \\) is SlotOffset is defined by the higher layer parameter AvailableSlotOffset. The parameter AvailableSlotOffset can be configured up to 4 different values. For an SRSPosResourceSet configured with higher layer parameter resourceType set to 'aperiodic', the slot level offset is defined by the higher layer parameter slotOffset for each SRS resource.\n---\nFor a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'periodic':\n---\nFor a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'semi-persistent':\n---\nFor a UE configured with one or more SRS resource configuration(s), and when the higher layer parameter resourceType in SRS-Resource or SRS-PosResource is set to 'aperiodic':\n---\nFor operation in the same carrier, the UE is not expected to be configured on overlapping symbols with a SRS resource configured by the higher layer parameter SRS-PosResource and a SRS resource configured by the higher layer parameter SRS-Resource with resourceType of both SRS resources as 'periodic'.\n---\nFor operation in the same carrier, the UE is not expected to be activated or triggered to transmit SRS on overlapping symbols with a SRS resource configured by the higher layer parameter SRS-PosResource and a SRS resource configured by the higher layer parameter SRS-Resource with resourceType of both SRS resources as 'semi-persistent' or 'aperiodic'.  For operations in the same carrier, the UE is not expected to be configured on overlapping symbols with more than one SRS resources configured by the higher layer parameter SRS-PosResource with resourceType of the SRS resources as 'periodic'.\n---\nFor operations in the same carrier, the UE is not expected to be activated or triggered to transmit SRS on overlapping symbols with more than one SRS resources configured by the higher layer parameter SRS-PosResource with resourceType of the SRS resources as 'semi-persistent' or 'aperiodic'.\n---\nIn case a SRS resource with resourceType set as 'aperiodic' is triggered on the OFDM symbol(s) configured with periodic/semi-persistent SRS transmission, the UE shall transmit the aperiodic SRS resource and only the periodic/semi-persistent SRS symbol(s) overlapping within the symbol(s) are dropped, while the periodic/semipersistent SRS symbol(s) that are not overlapped with the aperiodic SRS resource are transmitted. In case a SRS resource with resourceType set as 'semi-persistent' is triggered on the OFDM symbol(s) configured with periodic SRS transmission, the UE shall transmit the semi-persistent SRS resource and only the periodic SRS symbol(s) overlapping within the symbol(s) are dropped, while the periodic SRS symbol(s) that are not overlapped with the semi-persistent SRS resource are transmitted.\n---\n- zero or one or two SRS resource sets configured with different value of resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in\n---\nSRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. An SRS resource set has two SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the second resource in the set is associated with a different UE antenna port than the SRS port of the first resource in the same set, and\n---\n- otherwise, for 1T2R, up to two SRS resource sets configured with a different value for the higher layer parameter resourceType in SRS-ResourceSet set, where each set has two SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the second resource in the set is associated with a different UE antenna port than the SRS port of the first resource in the same set, or - For 2T4R, if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets] and/or a capability for [extension of aperiodic antenna switching SRS configuration]: - zero or one or two SRS resource sets configured with a different value for the higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has two SRS resources transmitted in different symbols, each SRS resource in a given set consisting of two SRS ports, and the SRS port pair of the second resource is associated with a different UE antenna port pair than the SRS port pair of the first resource, and,\n---\n- zero or one or two SRS resource sets configured with a different value for the higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has two SRS resources transmitted in different symbols, each SRS resource in a given set consisting of two SRS ports, and the SRS port pair of the second resource is associated with a different UE antenna port pair than the SRS port pair of the first resource, and, - zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is not indicating a capability for [extension of aperiodic antenna switching SRS configuration], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration], where in the case of one resource set, a total of two SRS resources transmitted in different symbols in the same slot, each SRS resource in a given set consisting of two SRS ports, and the SRS port pair of the second resource is associated with a different UE antenna port pair than the SRS port pair of the first resource. In the case of two resource sets, a total of two SRS resources transmitted in different symbols of two different slots, and where the SRS port pair of each SRS resource in the given two sets is associated with a different UE antenna port pair. The two sets are each configured with one SRS resource, or\n---\n- otherwise, up to two SRS resource sets configured with a different value for the higher layer parameter resourceType in SRS-ResourceSet, where each SRS resource set has two SRS resources transmitted in different symbols, each SRS resource in a given set consisting of two SRS ports, and the SRS port pair of the second resource is associated with a different UE antenna port pair than the SRS port pair of the first resource, or - For 1T4R, if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets] and/or a capability for [extension of aperiodic antenna switching SRS configuration], - zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' or 'semipersistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same\n---\n- zero or two SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic', if the UE is not indicating a capability for extension of aperiodic antenna switching SRS configuration, or zero or one or two SRS resource or four SRS resource sets each configured with resourceType in SRS-ResourceSet set to 'aperiodic' if the UE is indicating a capability for [extension of aperiodic antenna switching SRS configuration]. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. In the case of four resource sets, if UE is capable if supporting four sets, a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port. The four sets are each configured with one SRS resource. The UE shall expect that the two or four sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srs-PowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRS-ResourceSet is different. Or,\n---\n- zero or one SRS resource set configured with higher layer parameter resourceType in SRS-ResourceSet set to 'periodic' or 'semi-persistent' with four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of each resource is associated with a different UE antenna port, and - zero or two SRS resource sets each configured with higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic' and with a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. The UE shall expect that the two sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srsPowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRSResourceSet is different. Or,\n---\n- zero or two SRS resource sets each configured with higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic' and with a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. The two sets are each configured with two SRS resources, or one set is configured with one SRS resource and the other set is configured with three SRS resources. The UE shall expect that the two sets are both configured with the same values of the higher layer parameters alpha, p0, pathlossReferenceRS, and srsPowerControlAdjustmentStates in SRS-ResourceSet. The UE shall expect that the value of the higher layer parameter aperiodicSRS-ResourceTrigger or the value of an entry in AperiodicSRS-ResourceTriggerList in each SRS-ResourceSet is the same, and the value of the higher layer parameter slotOffset in each SRSResourceSet is different. Or, - For \\( 1 \\mathrm{~T}=1 \\mathrm{R} \\), or \\( 2 \\mathrm{~T}=2 \\mathrm{R} \\), or \\( 4 \\mathrm{~T}=4 \\mathrm{R} \\), up to two SRS resource sets each with one SRS resource, where the number of SRS ports for each resource is equal to 1,2 , or 4 if the UE is not indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semipersistent' are not activated at the same time,, or - For 1T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and\n---\n- For \\( 1 \\mathrm{~T}=1 \\mathrm{R} \\), or \\( 2 \\mathrm{~T}=2 \\mathrm{R} \\), or \\( 4 \\mathrm{~T}=4 \\mathrm{R} \\), up to two SRS resource sets each with one SRS resource, where the number of SRS ports for each resource is equal to 1,2 , or 4 if the UE is not indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semi-persistent' and up to one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic' if the UE is indicating a capability for [maximum 2 semipersistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semipersistent' are not activated at the same time,, or - For 1T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and - For 1T6R, zero or one SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and\n---\n- For 1T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and - For 1T6R, zero or one SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has six SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and - For 1T6R, zero or one or two or three SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic', where in the case of one resource set a total of six SRS resources transmitted in different symbols,\n---\n- For 1T8R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has eight SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and\n---\n- For 1T8R, zero or one SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has eight SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a single SRS port, and the SRS port of the resource in the set is associated with a different UE antenna port, and - For 1T8R, zero or two or three or four SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic', where in the case of two resource sets a total of eight SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. In the case of three resource sets a total of eight SRS resources transmitted in different symbols of three different slots, and where the SRS port of each SRS resource in the given three sets is associated with a different UE antenna port. In the case of four resource sets a total of eight SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port, or - For 2T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and\n---\n- For 1T8R, zero or two or three or four SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic', where in the case of two resource sets a total of eight SRS resources transmitted in different symbols of two different slots, and where the SRS port of each SRS resource in the given two sets is associated with a different UE antenna port. In the case of three resource sets a total of eight SRS resources transmitted in different symbols of three different slots, and where the SRS port of each SRS resource in the given three sets is associated with a different UE antenna port. In the case of four resource sets a total of eight SRS resources transmitted in different symbols of four different slots, and where the SRS port of each SRS resource in the given four sets is associated with a different UE antenna port, or - For 2T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and - For 2T6R, zero or one SRS resource sets configured resourceType in SRS-ResourceSet set to 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with 'semi-persistent' and up to one SRS resource set configured with 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and\n---\n- For 2T6R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and - For 2T6R, zero or one SRS resource sets configured resourceType in SRS-ResourceSet set to 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with 'semi-persistent' and up to one SRS resource set configured with 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and - For 2T6R, zero or one or two or three SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic, where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair. In the case of two resource sets a total of three SRS resources transmitted in different symbols of two different slots, and where the SRS port pair of each SRS resource in the given two sets is associated with a different UE antenna port pair. One set is configured with two SRS resources and another set with one resource. In the case of three resource sets a total of three SRS resources transmitted in different symbols of three different slots, and where the SRS port pair of each SRS resource in the given three sets is associated with a different UE antenna port pair, or\n---\n- For 2T6R, zero or one SRS resource sets configured resourceType in SRS-ResourceSet set to 'semi-persistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with 'semi-persistent' and up to one SRS resource set configured with 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], where the two SRS resource sets configured with 'semi-persistent' are not activated at the same time. Each SRS resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and - For 2T6R, zero or one or two or three SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic, where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair. In the case of two resource sets a total of three SRS resources transmitted in different symbols of two different slots, and where the SRS port pair of each SRS resource in the given two sets is associated with a different UE antenna port pair. One set is configured with two SRS resources and another set with one resource. In the case of three resource sets a total of three SRS resources transmitted in different symbols of three different slots, and where the SRS port pair of each SRS resource in the given three sets is associated with a different UE antenna port pair, or - For 2T8R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and\n---\n- For 2T6R, zero or one or two or three SRS resource sets configured with resourceType in SRS-ResourceSet set to 'aperiodic, where in the case of one resource set has three SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair. In the case of two resource sets a total of three SRS resources transmitted in different symbols of two different slots, and where the SRS port pair of each SRS resource in the given two sets is associated with a different UE antenna port pair. One set is configured with two SRS resources and another set with one resource. In the case of three resource sets a total of three SRS resources transmitted in different symbols of three different slots, and where the SRS port pair of each SRS resource in the given three sets is associated with a different UE antenna port pair, or - For 2T8R, zero or one SRS resource set configured with resourceType in SRS-ResourceSet set to 'periodic', where in the case of one resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair, and - For 2T8R, zero or one SRS resource sets configured with resourceType in SRS-ResourceSet set to 'semipersistent' if the UE is not indicating a capability for [maximum 2 semi-persistent and maximum 1 periodic SRS resource sets], or up to two SRS resource sets configured with 'semi-persistent' and up to one SRS resource set configured with 'periodic' if the UE is indicating a capability for [maximum 2 semi-persistent and maximum 1\n---\n- For 2T8R, zero or one or two or three or four SRS resource sets configured with resourceType in SRSResourceSet set to 'aperiodic', where in the case of one resource set has four SRS resources transmitted in different symbols, each SRS resource in a given set consisting of a two SRS ports, and the SRS port pair of the resource in the set is associated with a different UE antenna port pair. In the case of two resource sets a total of four SRS resources transmitted in different symbols of two different slots, and where the SRS port pair of each SRS resource in the given two sets is associated with a different UE antenna port pair. In the case of three resource sets a total of four SRS resources transmitted in different symbols of three different slots, and where the SRS port pair of each SRS resource in the given three sets is associated with a different UE antenna port pair. Two sets are configured with one SRS resource in each set and one resource set is configured with two resources. In the case of four resource sets a total of four SRS resources transmitted in different symbols of four different slots, and where the SRS port pair of each SRS resource in the given four sets is associated with a different UE antenna port pair. Four sets are configured with one SRS resource in each set, or\n---\nFor an aperiodic SRS triggered in DCI format 2_3 and if the UE is configured with higher layer parameter srs-TPC-PDCCH-Group set to 'typeA', and given by SRS-CarrierSwitching, without PUSCH/PUCCH transmission, the order of the triggered SRS transmission on the serving cells follow the order of the serving cells in the indicated set of serving cells configured by higher layers, where the UE in each serving cell transmits the configured one or two SRS resource set(s) from srs-ResourceSetToAddModList with higher layer parameter usage set to 'antennaSwitching' and higher layer parameter resourceType in SRS-ResourceSet set to 'aperiodic'.\n---\n\\hline Aperiodic & The field is mandatory present if the NZP-CSI-RS-Resources in the associated resourceSet have the resourceType aperiodic and unifiedtci-StateType is not configured. The field is optional Need R if the NZP-CSI-RS-Resources in the associated resourceSethave the resourceType aperiodic and unifiedtci-StateType is configured. The field is absent otherwise. \\\\\n---\nList of references to CSI-IM resources used for CSI measurement and reporting in a CSI-RS resource set. Contains up to maxNrofCSI-M-ResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise (see TS 38.214 [19], clause 5.2.1.2).\n---\nResourceSetsPerConfig resource sets if resourceType is 'aperiodic' and 1 otherwise when nrofReportedGroups-r17 is not configured in IE CS/-ReportConfig. If nrofReportedGroups-r17 is configured and resourceType is set to 'periodic' or 'semipersistent', then the network configures 2 resource sets (see TS 38.214 [19], clause 5.2.1.2 and 5.2.1.4.2).\n---\nConfiguration of the spatial relation between a reference RS and the target SRS. Reference RS can be SSB/CSI-RS/SRS/DL-PRS-PDC (see TS 38.214 [19], clause 6.2.1). The field is present in case of resource Type=periodic and usagePDC-r17=true in the SRS-ResourceSet, otherwise the field is absent.\n---\nAn additional list of DCI \"code points\" upon which the UE shall transmit SRS according to this SRS resource set configuration (see TS 38.214 [19], clause 6). When the field is not included during a reconfiguration of SRS-ResourceSet of resourceType set to aperiodic, UE maintains this value based on the Need M; that is, this list is not considered as an extension of aperiodicSRS-Resource Trigger for purpose of applying the general rule for extended list in clause 6.1.3.",
+    "generated_at": "2026-01-10T14:12:49.400650",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference | ValueDependency | RangeAlignment | Association | Conditional",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "No inter-IE constraint found between resourcetype fields in csi-measconfig_csi-resourceconfigtoaddmodlist and srs-config_srs-resourcetoaddmodlist.",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The evidence provided does not establish a direct inter-IE relationship between the specified fields. All evidence pertains to single-IE behavior or lacks explicit normative inter-IE constraints.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

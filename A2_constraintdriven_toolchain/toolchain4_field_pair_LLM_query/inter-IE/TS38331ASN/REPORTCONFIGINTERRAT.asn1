@@ -1,0 +1,127 @@
+ReportConfigInterRAT ::=                    SEQUENCE {
+    reportType                                  CHOICE {
+        periodical                                  PeriodicalReportConfigInterRAT,
+        eventTriggered                              EventTriggerConfigInterRAT,
+        reportCGI                                   ReportCGI-EUTRA,
+        ...,
+        reportSFTD                                  ReportSFTD-EUTRA
+    }
+}
+
+ReportCGI-EUTRA ::=                         SEQUENCE {
+    cellForWhichToReportCGI         EUTRA-PhysCellId,
+    ...,
+    [[
+    useAutonomousGaps-r16           ENUMERATED {setup}                OPTIONAL     -- Need R
+    ]]
+}
+
+ReportSFTD-EUTRA ::=                     SEQUENCE {
+    reportSFTD-Meas                            BOOLEAN,
+    reportRSRP                                 BOOLEAN,
+    ...
+}
+
+EventTriggerConfigInterRAT ::=              SEQUENCE {
+    eventId                                     CHOICE {
+        eventB1                                     SEQUENCE {
+            b1-ThresholdEUTRA                           MeasTriggerQuantityEUTRA,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            ...
+        },
+        eventB2                                     SEQUENCE {
+            b2-Threshold1                               MeasTriggerQuantity,
+            b2-Threshold2EUTRA                          MeasTriggerQuantityEUTRA,
+            reportOnLeave                               BOOLEAN,
+            hysteresis                                  Hysteresis,
+            timeToTrigger                               TimeToTrigger,
+            ...
+        },
+        ...,
+        [[
+        eventB1-UTRA-FDD-r16                         SEQUENCE {
+            b1-ThresholdUTRA-FDD-r16                    MeasTriggerQuantityUTRA-FDD-r16,
+            reportOnLeave-r16                           BOOLEAN,
+            hysteresis-r16                              Hysteresis,
+            timeToTrigger-r16                           TimeToTrigger,
+            ...
+        },
+        eventB2-UTRA-FDD-r16                         SEQUENCE {
+            b2-Threshold1-r16                           MeasTriggerQuantity,
+            b2-Threshold2UTRA-FDD-r16                   MeasTriggerQuantityUTRA-FDD-r16,
+            reportOnLeave-r16                           BOOLEAN,
+            hysteresis-r16                              Hysteresis,
+            timeToTrigger-r16                           TimeToTrigger,
+            ...
+        }
+        ]],
+        [[
+        eventY1-Relay-r17                            SEQUENCE {
+            y1-Threshold1-r17                            MeasTriggerQuantity,
+            y1-Threshold2-Relay-r17                      SL-MeasTriggerQuantity-r16,
+            reportOnLeave-r17                            BOOLEAN,
+            hysteresis-r17                               Hysteresis,
+            timeToTrigger-r17                            TimeToTrigger,
+            ...
+        },
+        eventY2-Relay-r17                            SEQUENCE {
+            y2-Threshold-Relay-r17                       SL-MeasTriggerQuantity-r16,
+            reportOnLeave-r17                            BOOLEAN,
+            hysteresis-r17                               Hysteresis,
+            timeToTrigger-r17                            TimeToTrigger,
+            ...
+        }
+       ]]
+    },
+    rsType                              NR-RS-Type,
+
+    reportInterval                      ReportInterval,
+    reportAmount                        ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantity                      MeasReportQuantity,
+    maxReportCells                      INTEGER (1..maxCellReport),
+    ...,
+    [[
+    reportQuantityUTRA-FDD-r16          MeasReportQuantityUTRA-FDD-r16         OPTIONAL   -- Need R
+    ]],
+    [[
+    includeCommonLocationInfo-r16       ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    includeBT-Meas-r16                  SetupRelease {BT-NameList-r16}                                 OPTIONAL,   -- Need M
+    includeWLAN-Meas-r16                SetupRelease {WLAN-NameList-r16}                               OPTIONAL,   -- Need M
+    includeSensor-Meas-r16              SetupRelease {Sensor-NameList-r16}                             OPTIONAL    -- Need M
+    ]],
+    [[
+    reportQuantityRelay-r17             SL-MeasReportQuantity-r16                                      OPTIONAL    -- Need R
+    ]]}
+
+PeriodicalReportConfigInterRAT ::=              SEQUENCE {
+    reportInterval                                  ReportInterval,
+    reportAmount                                    ENUMERATED {r1, r2, r4, r8, r16, r32, r64, infinity},
+    reportQuantity                                  MeasReportQuantity,
+    maxReportCells                                  INTEGER (1..maxCellReport),
+    ...,
+    [[
+    reportQuantityUTRA-FDD-r16                      MeasReportQuantityUTRA-FDD-r16         OPTIONAL   -- Need R
+    ]],
+    [[
+    includeCommonLocationInfo-r16       ENUMERATED {true}                                              OPTIONAL,   -- Need R
+    includeBT-Meas-r16                  SetupRelease {BT-NameList-r16}                                 OPTIONAL,   -- Need M
+    includeWLAN-Meas-r16                SetupRelease {WLAN-NameList-r16}                               OPTIONAL,   -- Need M
+    includeSensor-Meas-r16              SetupRelease {Sensor-NameList-r16}                             OPTIONAL    -- Need M
+    ]],
+    [[
+    reportQuantityRelay-r17             SL-MeasReportQuantity-r16                                      OPTIONAL    -- Need R
+    ]]
+
+}
+
+MeasTriggerQuantityUTRA-FDD-r16 ::=          CHOICE{
+    utra-FDD-RSCP-r16                            INTEGER (-5..91),
+    utra-FDD-EcN0-r16                            INTEGER (0..49)
+}
+
+MeasReportQuantityUTRA-FDD-r16 ::=        SEQUENCE {
+    cpich-RSCP                                BOOLEAN,
+    cpich-EcN0                                BOOLEAN
+}

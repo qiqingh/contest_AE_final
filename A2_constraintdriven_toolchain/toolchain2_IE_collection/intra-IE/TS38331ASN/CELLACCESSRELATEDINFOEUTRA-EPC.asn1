@@ -1,0 +1,7 @@
+CellAccessRelatedInfo-EUTRA-EPC  ::=    SEQUENCE {
+    plmn-IdentityList-eutra-epc             PLMN-IdentityList-EUTRA-EPC,
+    trackingAreaCode-eutra-epc              BIT STRING (SIZE (16)),
+    cellIdentity-eutra-epc                  BIT STRING (SIZE (28))
+}
+
+PLMN-IdentityList-EUTRA-EPC::=          SEQUENCE (SIZE (1..maxPLMN)) OF PLMN-Identity

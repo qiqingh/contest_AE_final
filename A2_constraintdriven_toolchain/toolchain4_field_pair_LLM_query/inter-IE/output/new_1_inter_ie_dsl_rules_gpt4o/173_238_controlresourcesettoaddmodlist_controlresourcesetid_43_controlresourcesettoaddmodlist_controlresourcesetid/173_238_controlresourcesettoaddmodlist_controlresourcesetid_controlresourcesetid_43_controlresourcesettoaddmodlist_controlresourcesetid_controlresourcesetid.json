@@ -1,0 +1,87 @@
+{
+  "dsl_rule": null,
+  "constraint_type": null,
+  "has_valid_rule": false,
+  "field_ids": {
+    "field1_all": [
+      173,
+      238
+    ],
+    "field2_all": [
+      43
+    ],
+    "actual_pairs": [
+      [
+        [
+          173,
+          238
+        ],
+        [
+          43
+        ]
+      ]
+    ]
+  },
+  "reason": "NO_RULE - insufficient evidence or no valid constraint found",
+  "notes": "The provided evidence does not establish any inter-IE constraint between the specified fields. The evidence snippets do not relate the two fields across different IEs.",
+  "advisory": false,
+  "citations": [
+    {
+      "doc": "3GPP TS 38.211"
+    },
+    {
+      "doc": "3GPP TS 38.213"
+    }
+  ],
+  "meta": {
+    "ie1_name": "173_238_controlresourcesettoaddmodlist_controlresourcesetid",
+    "field1": "controlresourcesetid",
+    "ie2_name": "43_controlresourcesettoaddmodlist_controlresourcesetid",
+    "field2": "controlresourcesetid",
+    "is_inter_ie": true,
+    "evidence_info": {
+      "used_count": 12,
+      "original_count": 268,
+      "sampled": true
+    },
+    "all_sources": [
+      "ts_138211v180200p_mathpix.md",
+      "ts_138213v170100p_mathpix.md"
+    ],
+    "all_sections": [
+      "7.4.1.3.2",
+      "7.2.1",
+      "7.3.2.2",
+      "4.3",
+      "8.2",
+      "7.3.1",
+      "9.2.5.4",
+      "8.4",
+      "7.3.1.1",
+      "7.4.1.1.2",
+      "9.2.1",
+      "9.3"
+    ],
+    "best_confidence": "HIGH",
+    "evidence": "7.3.2.2 Control-resource set (CORESET) ..... 124\n---\n- the higher-layer parameter dataScramblingldentityPDSCH if the codeword is scheduled using a CORESET with CORESETPoollndex equal to 0 ;\n---\n- subcarrier 0 of the lowest-numbered resource block in CORESET 0 if the corresponding PDCCH is associated with CORESET 0 and Type0-PDCCH common search space and is addressed to SI-RNTI;\n---\n- subcarrier 0 of the lowest-numbered resource block in the CORESET if the CORESET is configured by the PBCH or by the controlResourceSetZero field in the PDCCH-ConfigCommon IE,\n---\nThe downlink radio link quality of the primary cell is monitored by a UE for the purpose of indicating out-of-sync/insync status to higher layers. The UE is not required to monitor the downlink radio link quality in DL BWPs other than the active DL BWP, as described in clause 12, on the primary cell. If the active DL BWP is the initial DL BWP and for SS/PBCH block and CORESET multiplexing pattern 2 or 3, as described in clause 13, the UE is expected to perform RLM using the associated SS/PBCH block when the associated SS/PBCH block index is provided by RadioLinkMonitoringRS\n---\n- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212]\n---\n- the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP, if CORESETs are provided in the active DL BWP of serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1 , the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.\n---\nIn response to a transmission of a PRACH and a PUSCH , or to a transmission of only a PRACH if the PRACH preamble is mapped to a valid PUSCH occasion, a UE attempts to detect a DCI format 10 with CRC scrambled by a corresponding MsgB-RNTI during a window controlled by higher layers [11, TS 38.321]. The window starts at the first symbol of the earliest CORESET the UE is configured to receive PDCCH for Type1-PDCCH CSS set, as defined in clause 10.1, that is at least one symbol, after the last symbol of the PUSCH occasion corresponding to the PRACH transmission, where the symbol duration corresponds to the SCS for Typel-PDCCH CSS set. If \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\mathrm{UE}} \\) or \\( N_{\\mathrm{TA}, \\mathrm{adj}}^{\\text {commnon }} \\), as defined in [4, TS 38.211], is not zero, the window starts after an additional \\( T_{\\mathrm{TA}}+k_{\\mathrm{mac}} \\) msec where \\( T_{\\mathrm{TA}} \\) is defined in [4, TS 38.211] and \\( k_{\\mathrm{mac}} \\) is provided by \\( K \\)-Mac or \\( k_{\\mathrm{mac}}=0 \\) if \\( K \\)-Mac is not provided. The length of the window in number of slots, based on the SCS for Type1-PDCCH CSS set, is provided by msgB-ResponseWindow.\n---\nWhen detecting a DCI format in response to a PUSCH transmission scheduled by a RAR UL grant, as described in [11, TS 38.321], or corresponding PUSCH retransmission scheduled by a DCI format \\( 0 \\_0 \\) with CRC scrambled by a TCRNTI provided in the corresponding RAR message [11, TS 38.321], the UE may assume the PDCCH carrying the DCI format has the same DM-RS antenna port quasi co-location properties, as described in [6, TS 38.214], as for a SS/PBCH block the UE used for PRACH association, as described in clause 8.1, regardless of whether or not the UE is provided TCI-State for the CORESET where the UE receives the PDCCH with the DCI format.\n---\nIf the UE provides HARQ-ACK information in a PUCCH transmission in response to detecting a DCI format scheduling a PDSCH reception or having associated HARQ-ACK information without scheduling a PDSCH reception, the UE determines a PUCCH resource with index \\( r_{\\text {PUCCH }}, 0 \\leq r_{\\text {PUCCH }} \\leq 15 \\), as \\( r_{\\text {PUCCH }}=\\left\\lfloor\\frac{2 \\cdot n_{\\text {CCE }, 0}}{N_{\\text {CCE }}}\\right\\rfloor+2 \\cdot \\Delta_{\\text {PRI }} \\), where \\( N_{\\text {CCE }} \\) is a number of CCEs in a CORESET of a PDCCH reception with the DCI format, as described in clause 10.1, \\( n_{\\text {CCE }, 0} \\) is the index of a first CCE for the PDCCH reception, and \\( \\Delta_{\\text {PRI }} \\) is a value of the PUCCH resource indicator field in the DCI format.\n---\n- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot\n---\nIf at least one RE of a PDCCH candidate for a UE on the serving cell overlaps with at least one RE of lte-CRSToMatchAround, or of LTE-CRS-PatternList, the UE is not required to monitor the PDCCH candidate.",
+    "generated_at": "2026-01-09T12:45:20.487149",
+    "model": "gpt-4o",
+    "full_api_response": {
+      "result": "NO_RULE",
+      "type": "CrossReference",
+      "dsl": "",
+      "preconditions": [],
+      "predicate": "",
+      "advisory": false,
+      "examples": {
+        "valid": [],
+        "invalid": []
+      },
+      "notes": "The provided evidence does not establish any inter-IE constraint between the specified fields. The evidence snippets do not relate the two fields across different IEs.",
+      "version_tags": [
+        "r16",
+        "r17"
+      ]
+    }
+  }
+}

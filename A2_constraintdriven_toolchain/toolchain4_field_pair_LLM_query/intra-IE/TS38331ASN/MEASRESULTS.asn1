@@ -1,0 +1,165 @@
+MeasResults ::=                         SEQUENCE {
+    measId                                  MeasId,
+    measResultServingMOList                 MeasResultServMOList,
+    measResultNeighCells                    CHOICE {
+        measResultListNR                        MeasResultListNR,
+        ...,
+        measResultListEUTRA                     MeasResultListEUTRA,
+        measResultListUTRA-FDD-r16              MeasResultListUTRA-FDD-r16,
+        sl-MeasResultsCandRelay-r17             OCTET STRING        -- Contains PC5 SL-MeasResultListRelay-r17
+    }                                                                                                                   OPTIONAL,
+    ...,
+    [[
+    measResultServFreqListEUTRA-SCG         MeasResultServFreqListEUTRA-SCG                                             OPTIONAL,
+    measResultServFreqListNR-SCG            MeasResultServFreqListNR-SCG                                                OPTIONAL,
+    measResultSFTD-EUTRA                    MeasResultSFTD-EUTRA                                                        OPTIONAL,
+    measResultSFTD-NR                       MeasResultCellSFTD-NR                                                       OPTIONAL
+     ]],
+     [[
+    measResultCellListSFTD-NR               MeasResultCellListSFTD-NR                                                   OPTIONAL
+    ]],
+    [[
+    measResultForRSSI-r16                   MeasResultForRSSI-r16                                                       OPTIONAL,
+    locationInfo-r16                        LocationInfo-r16                                                            OPTIONAL,
+    ul-PDCP-DelayValueResultList-r16        UL-PDCP-DelayValueResultList-r16                                            OPTIONAL,
+    measResultsSL-r16                       MeasResultsSL-r16                                                           OPTIONAL,
+    measResultCLI-r16                       MeasResultCLI-r16                                                           OPTIONAL
+    ]],
+    [[
+    measResultRxTxTimeDiff-r17              MeasResultRxTxTimeDiff-r17                                                  OPTIONAL,
+    sl-MeasResultServingRelay-r17           OCTET STRING                                                                OPTIONAL,
+                                                                                          -- Contains PC5 SL-MeasResultRelay-r17
+    ul-PDCP-ExcessDelayResultList-r17       UL-PDCP-ExcessDelayResultList-r17                                           OPTIONAL,
+    coarseLocationInfo-r17                  OCTET STRING                                                                OPTIONAL
+    ]]
+}
+
+MeasResultServMOList ::=                SEQUENCE (SIZE (1..maxNrofServingCells)) OF MeasResultServMO
+
+MeasResultServMO ::=                    SEQUENCE {
+    servCellId                              ServCellIndex,
+    measResultServingCell                   MeasResultNR,
+    measResultBestNeighCell                 MeasResultNR                                                                OPTIONAL,
+    ...
+}
+
+MeasResultListNR ::=                    SEQUENCE (SIZE (1..maxCellReport)) OF MeasResultNR
+
+MeasResultNR ::=                        SEQUENCE {
+    physCellId                              PhysCellId                                                                  OPTIONAL,
+    measResult                              SEQUENCE {
+        cellResults                             SEQUENCE{
+            resultsSSB-Cell                         MeasQuantityResults                                                 OPTIONAL,
+            resultsCSI-RS-Cell                      MeasQuantityResults                                                 OPTIONAL
+        },
+        rsIndexResults                          SEQUENCE{
+            resultsSSB-Indexes                      ResultsPerSSB-IndexList                                             OPTIONAL,
+            resultsCSI-RS-Indexes                   ResultsPerCSI-RS-IndexList                                          OPTIONAL
+        }                                                                                                               OPTIONAL
+    },
+    ...,
+    [[
+    cgi-Info                                CGI-InfoNR                                                                  OPTIONAL
+    ]] ,
+    [[
+    choCandidate-r17                        ENUMERATED {true}                                                           OPTIONAL,
+    choConfig-r17                           SEQUENCE (SIZE (1..2)) OF CondTriggerConfig-r16                             OPTIONAL,
+    triggeredEvent-r17                      SEQUENCE {
+        timeBetweenEvents-r17                   TimeBetweenEvent-r17                                                    OPTIONAL,
+        firstTriggeredEvent                     ENUMERATED {condFirstEvent, condSecondEvent}                            OPTIONAL
+        }                                                                                                               OPTIONAL
+    ]]
+}
+
+MeasResultListEUTRA ::=                 SEQUENCE (SIZE (1..maxCellReport)) OF MeasResultEUTRA
+
+MeasResultEUTRA ::=                     SEQUENCE {
+    eutra-PhysCellId                        PhysCellId,
+    measResult                              MeasQuantityResultsEUTRA,
+
+    cgi-Info                                CGI-InfoEUTRA                                                               OPTIONAL,
+    ...
+}
+
+MultiBandInfoListEUTRA ::=              SEQUENCE (SIZE (1..maxMultiBands)) OF FreqBandIndicatorEUTRA
+
+MeasQuantityResults ::=                 SEQUENCE {
+    rsrp                                    RSRP-Range                                                                  OPTIONAL,
+    rsrq                                    RSRQ-Range                                                                  OPTIONAL,
+    sinr                                    SINR-Range                                                                  OPTIONAL
+}
+
+MeasQuantityResultsEUTRA ::=            SEQUENCE {
+    rsrp                                    RSRP-RangeEUTRA                                                             OPTIONAL,
+    rsrq                                    RSRQ-RangeEUTRA                                                             OPTIONAL,
+    sinr                                    SINR-RangeEUTRA                                                             OPTIONAL
+}
+
+ResultsPerSSB-IndexList::=              SEQUENCE (SIZE (1..maxNrofIndexesToReport2)) OF ResultsPerSSB-Index
+
+ResultsPerSSB-Index ::=                 SEQUENCE {
+    ssb-Index                               SSB-Index,
+    ssb-Results                             MeasQuantityResults                                                         OPTIONAL
+}
+
+ResultsPerCSI-RS-IndexList::=           SEQUENCE (SIZE (1..maxNrofIndexesToReport2)) OF ResultsPerCSI-RS-Index
+
+ResultsPerCSI-RS-Index ::=              SEQUENCE {
+    csi-RS-Index                            CSI-RS-Index,
+    csi-RS-Results                          MeasQuantityResults                                                         OPTIONAL
+}
+MeasResultServFreqListEUTRA-SCG ::= SEQUENCE (SIZE (1..maxNrofServingCellsEUTRA)) OF MeasResult2EUTRA
+
+MeasResultServFreqListNR-SCG ::= SEQUENCE (SIZE (1..maxNrofServingCells)) OF MeasResult2NR
+
+MeasResultListUTRA-FDD-r16 ::=          SEQUENCE (SIZE (1..maxCellReport)) OF MeasResultUTRA-FDD-r16
+
+MeasResultUTRA-FDD-r16 ::=              SEQUENCE {
+    physCellId-r16                          PhysCellIdUTRA-FDD-r16,
+    measResult-r16                          SEQUENCE {
+        utra-FDD-RSCP-r16                       INTEGER (-5..91)          OPTIONAL,
+        utra-FDD-EcN0-r16                       INTEGER (0..49)           OPTIONAL
+    }
+}
+
+MeasResultForRSSI-r16 ::=        SEQUENCE {
+    rssi-Result-r16                  RSSI-Range-r16,
+    channelOccupancy-r16             INTEGER (0..100)
+}
+
+MeasResultCLI-r16 ::=            SEQUENCE {
+    measResultListSRS-RSRP-r16       MeasResultListSRS-RSRP-r16                                                         OPTIONAL,
+    measResultListCLI-RSSI-r16       MeasResultListCLI-RSSI-r16                                                         OPTIONAL
+}
+
+MeasResultListSRS-RSRP-r16 ::=   SEQUENCE (SIZE (1.. maxCLI-Report-r16)) OF MeasResultSRS-RSRP-r16
+
+MeasResultSRS-RSRP-r16 ::=       SEQUENCE {
+    srs-ResourceId-r16               SRS-ResourceId,
+    srs-RSRP-Result-r16              SRS-RSRP-Range-r16
+}
+
+MeasResultListCLI-RSSI-r16 ::=   SEQUENCE (SIZE (1.. maxCLI-Report-r16)) OF MeasResultCLI-RSSI-r16
+
+MeasResultCLI-RSSI-r16 ::=       SEQUENCE {
+    rssi-ResourceId-r16              RSSI-ResourceId-r16,
+    cli-RSSI-Result-r16              CLI-RSSI-Range-r16
+}
+
+UL-PDCP-DelayValueResultList-r16 ::= SEQUENCE (SIZE (1..maxDRB)) OF UL-PDCP-DelayValueResult-r16
+
+UL-PDCP-DelayValueResult-r16 ::= SEQUENCE {
+    drb-Id-r16                       DRB-Identity,
+    averageDelay-r16                 INTEGER (0..10000),
+    ...
+}
+
+UL-PDCP-ExcessDelayResultList-r17 ::= SEQUENCE (SIZE (1..maxDRB)) OF UL-PDCP-ExcessDelayResult-r17
+
+UL-PDCP-ExcessDelayResult-r17 ::= SEQUENCE {
+    drb-Id-r17                        DRB-Identity,
+    excessDelay-r17                   INTEGER (0..31),
+    ...
+}
+
+TimeBetweenEvent-r17 ::= INTEGER (0..1023)
