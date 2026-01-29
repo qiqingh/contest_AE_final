@@ -9,7 +9,6 @@ Design Principles:
 3. Modular design with clear responsibilities
 4. Easy to extend with new constraint types
 
-New Features in Extended Version:
 - Support for GE, GT, LT operators in both IMPLIES and atomic form
 - Support for IN (set membership) operator
 - Support for WITHIN (interval) operator
