@@ -34,12 +34,12 @@ required dependencies for A1/A3 are available inside the container.
 This setup runs entirely in a local simulation environment and does
 not require any real 5G radio hardware.
 
-Option 2: Optional remote desktop access
+### Option 2: Optional remote desktop access
 
 For reviewer convenience, we also provide access to a pre-configured
 remote desktop environment where the Docker-based A1/A3 setup is already
 installed and ready to run.
 - This option avoids any local installation.
-- Remote access details (including the access link) are provided
-privately via the HotCRP Artifact Evaluation interface.
+- **Remote access details (including the access link) are provided
+privately via the HotCRP Artifact Evaluation interface.**
 - The remote environment is intended only for artifact evaluation.
