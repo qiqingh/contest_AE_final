@@ -34,7 +34,7 @@ import argparse
 # Configuration
 # ============================================================================
 
-API_KEY = "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"   # 👈 Enter your API Key
+API_KEY = "XXXXXXXXXXXXXXXX"   # 👈 Enter your API Key
 
 if API_KEY == "YOUR_API_KEY_HERE" or not API_KEY:
     API_KEY = os.getenv("OPENAI_API_KEY")
