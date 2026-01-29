@@ -9,7 +9,7 @@ This directory contains the complete **A2 constraint-driven toolchain** used in 
 
 > **Important note (Phase-2 AE):**
 > - The **LLM-dependent steps are OPTIONAL** and **not required** for functional/reproducible assessment.
-> - For Phase-2, reviewers can run the required steps using the **pre-generated intermediate artifacts** provided in this repository (e.g., extracted contexts, field pairs, DSL rules, and/or generated testcases).
+> - Reviewers can run the required steps using the **pre-generated intermediate artifacts** provided in this repository (e.g., extracted contexts, field pairs, DSL rules, and/or generated testcases).
 
 ---
 
@@ -46,8 +46,10 @@ cd contest_AE_final/A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/
 python3 mathpix_processor.py
 ```
 
-Inputs: 3GPP spec PDFs (see contest_AE_final/A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/pdf_specifications if included)
-Outputs: extracted / normalized text artifacts used by later stages
+### Inputs: 
+3GPP spec PDFs (see contest_AE_final/A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/pdf_specifications if included)
+### Outputs: 
+extracted / normalized text artifacts used by later stages
 
 ## T2 – IE Collection (REQUIRED for full regeneration)
 
@@ -139,8 +141,10 @@ cd contest_AE_final/A2_constraintdriven_toolchain/toolchain5_dsl_to_testcase/cod
 python3 unified_test_generator.py
 ```
 
-Inputs: DSL rules (either from T4 or pre-generated)
-Outputs: generated testcases (structured descriptions)
+### Inputs: 
+DSL rules (either from T4 or pre-generated)
+### Outputs: 
+generated testcases (structured descriptions)
 
 
 ## T6 – OTA-Style Testcase Payload Generation (REQUIRED for A3 replay inputs)
@@ -187,15 +191,17 @@ This validates that the toolchain executes end-to-end and produces payloads.
 
 ## Troubleshooting Notes
 
-	•	If pycrate_asn1dir import fails:
-	•	Ensure pip3 install -r installed_packages.txt was executed in the correct Python environment.
-	•	Confirm you are using Python 3.10.x.
-	•	If some scripts expect large input files (spec excerpts, caches):
-	•	Use the pre-generated intermediate artifacts committed in the repo (recommended for Phase-2).
-	•	If you run T1/T4:
-	•	T1 requires Mathpix API key.
-	•	T4 requires OpenAI API key.
-	•	These are optional and not needed to validate functionality.
+- **If `pycrate_asn1dir` import fails:**
+  - Ensure that `pip3 install -r installed_packages.txt` was executed in the correct Python environment (e.g., the activated virtual environment).
+  - Confirm that you are using **Python 3.10.x**.
+
+- **If some scripts expect large input files** (e.g., specification excerpts or cached intermediate data):
+  - Use the **pre-generated intermediate artifacts** committed in this repository (recommended for Phase-2 evaluation).
+
+- **If you choose to run optional toolchains (T1 / T4):**
+  - **T1** requires a valid **Mathpix API key**.
+  - **T4** requires a valid **OpenAI API key**.
+  - These steps are **optional** and **not required** to validate the functionality or reproducibility of the artifact.
 
 ## Security / Safety
 
