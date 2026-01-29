@@ -13,8 +13,7 @@ This is the easiest and recommended way to run A1 and A3.
 ```
 sudo docker pull kqing0515/oai_testing:v3
 ```
-
-Step 2: Launch the container
+#### Step 2: Launch the container
 
 ```
 sudo docker run -it \
