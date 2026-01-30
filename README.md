@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 This repository provides the complete artifact for evaluating **CONSET**, the
 constraint-guided semantic testing framework presented in the paper
@@ -31,7 +31,7 @@ environment provided via the HotCRP Artifact Evaluation interface.
 The sections below describe how to set up, execute, and validate each component
 (A1–A3).
 
-## A1: Simulation Testbed
+# A1: Simulation Testbed
 
 The A1 component provides a simulation-based 5G SA testbed built on an
 instrumented OAI gNB. To simplify evaluation, we provide a pre-built
