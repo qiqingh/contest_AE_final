@@ -100,6 +100,7 @@ This directory contains the complete **A2 constraint-driven toolchain** used in 
 ```
 python3 -m venv .venv
 source .venv/bin/activate
+cd contest_AE_final/A2_constraintdriven_toolchain
 pip3 install -r installed_packages.txt
 ```
 
