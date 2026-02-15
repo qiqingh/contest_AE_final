@@ -84,13 +84,63 @@ All step-by-step instructions can be found at:
 - A1 — Simulation Testbed: https://github.com/qiqingh/contest_AE_final/tree/main?tab=readme-ov-file#a1-simulation-testbed
 - A3 — Test Cases & Proof-of-Concept Exploits: https://github.com/qiqingh/contest_AE_final/tree/main?tab=readme-ov-file#a3-test-cases-and-proof-of-concept-exploits
 
-Alternatively, detailed instructions can also be found in the corresponding **A1** and **A3** folders within the repository.
+---
+# E1 / E2 — Expected Results and What to Check
 
+## E1: What to Observe
+
+**Step 1: Valid Semantic Rules Were Extracted**
+
+Reviewers can search for the keyword `"has_valid_rule": true` in the following directories:
+
+- **Intra-IE DSL results:**
+  ```
+  contest_AE_final/A2_constraintdriven_toolchain/toolchain4_field_pair_LLM_query/intra-IE/outputs/intra-IE_DSL_results_gpt4o
+  ```
+- **Inter-IE DSL results:**
+  ```
+  contest_AE_final/A2_constraintdriven_toolchain/toolchain4_field_pair_LLM_query/inter-IE/output/inter_ie_dsl_rules_gpt4o
+  ```
+
+This should yield dozens of valid DSL rules (e.g., **66** intra-IE and **151** inter-IE in the provided artifact).
+
+**Step 2: Each Valid DSL Rule Encodes a Semantic Constraint**
+
+Reviewers may inspect a few DSL files and verify that:
+
+- Rules explicitly reference **field-level dependencies**
+- Rules express **constraint relations** (e.g., value dependency, cross-field consistency)
+
+**Step 3: DSL Rules Are Translated into Structured OTA-Style Payloads**
+
+The generated payloads can be found at:
+
+- **Intra-IE payloads:**
+  ```
+  contest_AE_final/A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/intra-IE/output/06_payloads
+  ```
+- **Inter-IE payloads:**
+  ```
+  contest_AE_final/A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/inter-IE/output/06_payloads
+  ```
+
+Reviewers should verify that:
+
+- The payload contains **deterministic offset-based modifications**
 
 ---
 
+## E2: What to Observe
+
+*(To be added)*
+
+---
+
+
 The sections below describe how to set up, execute, and validate each component
 (A1–A3).
+
+Alternatively, detailed instructions can also be found in the corresponding **A1** and **A3** folders within the repository.
 
 # A1: Simulation Testbed
 
