@@ -20,6 +20,23 @@ end-to-end validation of the paper’s methodology and key claims:
   Generated test cases and proof-of-concept exploit payloads that trigger
   reproducible UE crashes in the simulation environment.
 
+# Execution Model (IMPORTANT)
+
+CONSET’s artifact follows a two-stage workflow:
+
+- **Stage 1 — A2 (Constraint / Payload Generation)**  
+  Runs on the **host OS environment** (Ubuntu 22.04 + Python 3.10).  
+  This stage generates DSL rules, testcases, and replayable payloads.  
+  **Do NOT run A2 inside the Docker container.**
+
+- **Stage 2 — A1/A3 (Exploit Replay / Crash Reproduction)**  
+  Runs in the **simulation execution environment**, which can be accessed in either of the following ways:
+  1) **Local Docker** (recommended for local evaluation): run the provided Docker image on your own machine.  
+  2) **Optional remote desktop** (recommended for convenience): use our pre-configured remote desktop where the same Docker-based simulation environment is already set up and ready to run.  
+     **Remote access details are provided privately via the HotCRP Artifact Evaluation interface.**
+
+In short: **A2 runs on the host**, while **A1/A3 run inside the Docker-based simulation environment** (either locally via Docker, or via the remote desktop that already has Docker running).
+
 All experiments are conducted **exclusively in an isolated simulation
 environment**. The artifact does **not** include over-the-air (OTA) exploits for
 commercial networks or devices.
