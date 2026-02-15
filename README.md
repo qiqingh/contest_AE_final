@@ -39,7 +39,7 @@ In short: **A2 runs on the host**, while **A1/A3 run inside the Docker-based sim
 
 ---
 
-## Mapping Between Paper Experiments and Artifact Components
+# Mapping Between Paper Experiments and Artifact Components
 
 | Paper Experiment | Artifact Component | Execution Environment |
 |:---|:---|:---|
