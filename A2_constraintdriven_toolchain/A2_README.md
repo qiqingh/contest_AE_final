@@ -181,11 +181,12 @@ python3 08_rename.py
 ## Suggested Minimal Path for Phase-2 AE
 
 If you want a straightforward Phase-2 run without any external API keys:
-	1.	Install deps
-	2.	Use provided pre-generated outputs for T2/T3/T4 
-	3.	Run:
-	•	T5: unified_test_generator.py
-	•	T6: the intra-IE or inter-IE payload pipeline above
+
+1. **Install deps**
+2. **Use provided pre-generated outputs** for T2/T3/T4
+3. **Run:**
+   - **T5**: `unified_test_generator.py`
+   - **T6**: the intra-IE or inter-IE payload pipeline above
 
 This validates that the toolchain executes end-to-end and produces payloads.
 
