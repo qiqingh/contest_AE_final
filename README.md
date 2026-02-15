@@ -37,6 +37,21 @@ CONSET’s artifact follows a two-stage workflow:
 
 In short: **A2 runs on the host**, while **A1/A3 run inside the Docker-based simulation environment** (either locally via Docker, or via the remote desktop that already has Docker running).
 
+---
+
+## Mapping Between Paper Experiments and Artifact Components
+
+| Paper Experiment | Artifact Component | Execution Environment |
+|:---|:---|:---|
+| **E1** — Constraint extraction & semantic test generation | **A2** (Constraint-Driven Toolchain) | **Host** (Ubuntu 22.04 + Python 3.10) |
+| **E2** — Crash reproduction in OAI UE | **A1** (Simulation Testbed) + **A3** (Exploit Replay) | **Docker container** (or remote desktop) |
+
+> **Key points:**
+> - **E1 → A2**: Runs on the **host environment only**. Does **NOT** require Docker.
+> - **E2 → A1 + A3**: Runs inside the **Docker container only**. Does **NOT** require running A2.
+
+---
+
 All experiments are conducted **exclusively in an isolated simulation
 environment**. The artifact does **not** include over-the-air (OTA) exploits for
 commercial networks or devices.
