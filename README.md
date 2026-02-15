@@ -106,10 +106,10 @@ This should yield dozens of valid DSL rules (e.g., **66** intra-IE and **151** i
 
 **Step 2: Each Valid DSL Rule Encodes a Semantic Constraint**
 
-Reviewers may inspect a few DSL files and verify that:
+Reviewers may inspect a few DSL rule files and confirm they contain:
 
 - Rules explicitly reference **field-level dependencies**
-- Rules express **constraint relations** (e.g., value dependency, cross-field consistency)
+- Rules express **constraint relations** 
 
 **Step 3: DSL Rules Are Translated into Structured OTA-Style Payloads**
 
