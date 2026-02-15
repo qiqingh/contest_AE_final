@@ -60,6 +60,35 @@ For evaluator convenience, the artifact supports two execution modes:
 local execution using Docker, and an optional pre-configured remote desktop
 environment provided via the HotCRP Artifact Evaluation interface.
 
+---
+
+# E1 / E2 — Execution Commands and Steps
+
+## E1: Constraint Extraction & Semantic Test Generation
+
+**E1 corresponds to A2 (Constraint-Driven Toolchain).** All commands run on the **host environment** (not Docker).
+
+All step-by-step instructions can be found at **either** of the following locations (both contain the **same content**):
+
+- Main README: https://github.com/qiqingh/contest_AE_final/tree/main?tab=readme-ov-file#a2--constraint-driven-toolchain-conset
+- A2 detailed README: https://github.com/qiqingh/contest_AE_final/blob/main/A2_constraintdriven_toolchain/A2_README.md#a2--constraint-driven-toolchain-conset
+
+---
+
+## E2: Crash Reproduction in OAI UE
+
+**E2 corresponds to A1 (Simulation Testbed) + A3 (Exploit Replay).** All commands run inside the **Docker container** (or remote desktop).
+
+All step-by-step instructions can be found at:
+
+- A1 — Simulation Testbed: https://github.com/qiqingh/contest_AE_final/tree/main?tab=readme-ov-file#a1-simulation-testbed
+- A3 — Test Cases & Proof-of-Concept Exploits: https://github.com/qiqingh/contest_AE_final/tree/main?tab=readme-ov-file#a3-test-cases-and-proof-of-concept-exploits
+
+Alternatively, detailed instructions can also be found in the corresponding **A1** and **A3** folders within the repository.
+
+
+---
+
 The sections below describe how to set up, execute, and validate each component
 (A1–A3).
 
