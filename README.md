@@ -280,6 +280,8 @@ python3 -c "from pycrate_asn1rt.utils import bitstr_to_bytes; print('pycrate_asn
 
 ## Toolchain Overview (T1–T6)
 
+![CONSET Toolchain Overview](./A2_constraintdriven_toolchain/toolchain_overview.png)
+
 The A2 pipeline is organized into six toolchains.
 Recommended Phase-2 path: run T2 → T3 → T5 → T6 (no external keys required).
 
