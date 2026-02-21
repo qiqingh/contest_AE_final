@@ -73,7 +73,7 @@ def reencode_from_json(json_file, field_name="DL_CCCH_Message", log_file=None):
     file_name = os.path.basename(json_file)
     
     # Record processing status
-    log_message = f"\n[{datetime.now()}] 处理文件: {file_name}\n{'='*50}\n"
+    log_message = f"\n[{datetime.now()}] process file: {file_name}\n{'='*50}\n"
     if log_file:
         log_file.write(log_message)
     print(log_message, flush=True)
