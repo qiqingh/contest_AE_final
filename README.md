@@ -545,7 +545,7 @@ exploit payloads used to validate the vulnerability-triggering behavior
 described in the paper. All A3 experiments are conducted **only in a
 simulation environment** based on OAI and 5Ghoul.
 
-⚠️ **Important:**  
+**Important:**  
 All provided exploits are **simulation-only** and are **not usable
 over-the-air (OTA)**.
 
@@ -579,7 +579,7 @@ sudo docker cp contest_AE_final/A3_test_case_exploits/payloads \
 CONTAINER_ID:/home/5ghoul-5g-nr-attacks/modules/exploits/5gnr_gnb
 ```
 
-## 📌 Note:
+## Note:
 If you are using the provided remote desktop environment, this step can
 be skipped—the payloads have already been placed in the correct location.
 
@@ -605,7 +605,7 @@ Recompile all exploit payloads using:
 sudo bin/5g_fuzzer --list-exploits
 ```
 
-## ⚠️ Note:
+## Note:
 
 Some compilation warnings or errors may appear during this step.
 These can be safely ignored as long as the target exploit is successfully
