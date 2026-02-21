@@ -203,10 +203,11 @@ Alternatively, detailed instructions can also be found in the corresponding **A1
 
 This directory contains the complete **A2 constraint-driven toolchain** used in the paper to:
 1) preprocess 3GPP specifications (optional),
-2) extract IEs and field pairs,
-3) (optionally) query an LLM to synthesize DSL rules,
-4) generate DSL-guided semantic test cases,
-5) produce replayable (OTA-style) payloads (for simulation usage).
+2) extract IEs set to cover the 5G messgae,
+3) extract field pairs related context from 3GPP specifications
+4) query an LLM to synthesize DSL rules (optionally) ,
+5) generate DSL-guided semantic test cases,
+6) produce replayable (OTA-style) payloads (for simulation usage).
 
 > **Important note (Phase-2 AE):**
 > - The **LLM-dependent steps are OPTIONAL** and **not required** for functional/reproducible assessment.
