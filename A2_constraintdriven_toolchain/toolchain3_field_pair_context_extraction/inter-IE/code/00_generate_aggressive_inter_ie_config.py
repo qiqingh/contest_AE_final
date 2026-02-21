@@ -395,17 +395,17 @@ def main():
     
     print(f"\nConfiguration saved: {OUTPUT_CONFIG}")
     
-    if skipped_pairs:
-        print(f"\n Warning: {len(skipped_pairs)} cluster pairs were skipped due to exceeding limits")
-        print(f"   If you need to include these pairs, please:")
-        print(f"   1. Increase MAX_PAIR_SIZE")
-        print(f"   2. Or set ENABLE_LARGE_CLUSTER_LIMIT = False")
+    # if skipped_pairs:
+    #     print(f"\n Warning: {len(skipped_pairs)} cluster pairs were skipped due to exceeding limits")
+    #     print(f"   If you need to include these pairs, please:")
+    #     print(f"   1. Increase MAX_PAIR_SIZE")
+    #     print(f"   2. Or set ENABLE_LARGE_CLUSTER_LIMIT = False")
     
-    print(f"\nNext steps:")
-    print(f"  1. Review the statistics above")
-    print(f"  2. If satisfied: mv {OUTPUT_CONFIG} cluster_config.json")
-    print(f"  3. Run: python3 inter_ie_enhanced_extractor_fixed.py")
-    print(f"  4. Expected processing time: {hours:.1f} hours")
+    # print(f"\nNext steps:")
+    # print(f"  1. Review the statistics above")
+    # print(f"  2. If satisfied: mv {OUTPUT_CONFIG} cluster_config.json")
+    # print(f"  3. Run: python3 inter_ie_enhanced_extractor_fixed.py")
+    # print(f"  4. Expected processing time: {hours:.1f} hours")
 
 if __name__ == "__main__":
     main()
