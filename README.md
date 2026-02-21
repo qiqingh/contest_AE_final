@@ -286,9 +286,14 @@ python3 mathpix_processor.py
 ```
 
 ### Inputs: 
-3GPP spec PDFs (see contest_AE_final/A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/pdf_specifications if included)
-### Outputs: 
-extracted / normalized text artifacts used by later stages
+3GPP spec PDFs (see contest_AE_final/A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/pdf_specifications)
+
+### Expected outputs:
+
+- Parsed 3GPP specification text files saved to:
+```
+  toolchain1_3GPP_preprocessing/outputs/txt_specifications_mathpix
+```
 
 ## T2 – IE Collection (REQUIRED for full regeneration)
 
@@ -300,8 +305,9 @@ This step identifies candidate IEs and selects representative sets.
 cd toolchain2_IE_collection/intra-IE/code
 python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
-python3 02_greedy_set_cover_intra.py
+python3 02_greedy_set_cover_intra.py 
 ```
+> **Note:** When prompted, you may select option `1 - 1st Place (Recommended)`.
 
 ### T2 (inter-IE)
 
@@ -311,13 +317,22 @@ python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
 python3 02_greedy_set_cover_inter.py
 ```
+> **Note:** When prompted, you may select option `1 - 1st Place (Recommended)`.
+
 
 ### Expected outputs:
 
-- IE lists / filtered IE sets
-- selected IE coverage sets (greedy set cover)
+- **Intra-IE:** final selected IE set saved to:
+```
+  toolchain2_IE_collection/intra-IE/outputs/intra-IE_strategy/selected_ies
+```
+- **Inter-IE:** final selected IE set saved to:
+```
+  toolchain2_IE_collection/inter-IE/outputs/inter-IE_strategy/selected_ies
+```
 
-If you only want to validate later stages, you may use the repository’s pre-generated IE lists (if provided).
+> If you only want to validate later stages, you may use the repository's pre-generated IE lists in the above directories.
+
 
 ## T3 – Field-Pair Context Extraction (REQUIRED for full regeneration)
 
@@ -338,9 +353,18 @@ python3 00_generate_aggressive_inter_ie_config.py
 python3 01_inter_ie_enhanced_extractor.py
 ```
 
+
 ### Expected outputs:
 
-- extracted field-pair evidence/context snippets (used by T4 or for offline inspection)
+- **Intra-IE:** extracted field-pair context snippets saved to:
+```
+  toolchain3_field_pair_context_extraction/intra-IE/outputs/context_with_sections_all_pairs
+```
+- **Inter-IE:** extracted field-pair context snippets saved to:
+```
+  toolchain3_field_pair_context_extraction/inter-IE/output/context_enhanced
+```
+  
 
 ## T4 – LLM-Based DSL Synthesis (OPTIONAL)
 
@@ -369,7 +393,14 @@ python3 01_generate_inter_ie_dsl_concurrent.py
 
 ### Expected outputs:
 
-- DSL rule files for intra-IE and inter-IE constraints
+- **Intra-IE:** DSL constraint rule files saved to:
+```
+  toolchain4_field_pair_LLM_query/intra-IE/outputs/intra-IE_DSL_results_gpt4o
+```
+- **Inter-IE:** DSL constraint rule files saved to:
+```
+  toolchain4_field_pair_LLM_query/inter-IE/output/inter_ie_dsl_rules_gpt4o
+```
 
 ## T5 – DSL → Testcase Generation (REQUIRED)
 
@@ -382,8 +413,17 @@ python3 unified_test_generator.py
 
 ### Inputs: 
 DSL rules (either from T4 or pre-generated)
-### Outputs: 
-generated testcases (structured descriptions)
+
+### Expected outputs:
+
+- **Intra-IE:** generated constraint-violating field modifications saved to:
+```
+  toolchain5_dsl_to_testcase/output/test_cases_intra_ie
+```
+- **Inter-IE:** generated constraint-violating field modifications saved to:
+```
+  toolchain5_dsl_to_testcase/output/test_cases_inter_ie
+```
 
 
 ## T6 – OTA-Style Testcase Payload Generation (REQUIRED for A3 replay inputs)
@@ -404,14 +444,24 @@ cd toolchain6_generate_OTA_testcase/inter-IE/code
 python3 ./run_T6.py
 ```
 
-### Outputs:
-- replayable payloads / testcase files consumed by the A1/A3 simulation environment
+### Expected outputs:
+
+- **Intra-IE:** replayable payload files saved to:
+```
+  toolchain6_generate_OTA_testcase/intra-IE/output/06_payloads
+```
+- **Inter-IE:** replayable payload files saved to:
+```
+  toolchain6_generate_OTA_testcase/inter-IE/output/06_payloads
+```
+
+> **Note:** T6 decodes the original message, applies constraint-violating modifications, and re-encodes it. Intermediate outputs from each step are retained in the output directory to facilitate diagnosis after the message decode and then modify and later re-encode pipeline. Each stage's output can also be used independently for other purposes, such as custom payload construction or integration with other testing frameworks.
 
 ## Suggested Minimal Path for Phase-2 AE
 
 If you want a straightforward Phase-2 run without any external API keys:
 
-1. **Install deps**
+1. **Environment Setup**
 2. **Use provided pre-generated outputs** for T2/T3/T4
 3. **Run:**
    - **T5**: `unified_test_generator.py`
@@ -437,7 +487,6 @@ This validates that the toolchain executes end-to-end and produces payloads.
 
 This A2 toolchain **only generates testcases and payloads intended for use in the provided simulation environment**.
 OTA exploits targeting commercial devices are not included.
-
 
 
 # For E2 Experiment (A1 & A3)
