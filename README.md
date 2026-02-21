@@ -298,7 +298,9 @@ The A2 toolchain is split into six independent stages, each with a distinct purp
 
 ![5G Message Structure](./A2_constraintdriven_toolchain/message_structure.png)
 
-**Note:** A 5G RRC message is composed of multiple **Information Elements (IEs)**, and each IE contains multiple **fields**. Since 5G RRC messages contain deeply nested IEs, our goal is to extract semantic constraints between fields. T2 identifies a minimum-cost set of IEs that covers the full message structure. To capture both types of field relationships, we split the analysis into two tracks: **intra-IE** (constraints between fields within the same IE) and **inter-IE** (constraints between fields across different IEs).
+**Note:** A 5G RRC message is composed of multiple **Information Elements (IEs)**, and each IE contains multiple **fields**. Since 5G RRC messages contain deeply nested IEs, our goal is to extract semantic constraints between fields. T2 identifies a minimum-cost set of IEs that covers the full message structure. 
+
+To capture both types of field relationships, we split the analysis into two tracks: **intra-IE** (constraints between fields within the same IE) and **inter-IE** (constraints between fields across different IEs).
 
 
 ## T1 – 3GPP Preprocessing (OPTIONAL)
