@@ -494,7 +494,7 @@ def validate_input():
     
     ie_files = [f for f in os.listdir(INPUT_IE_DIR) if f.endswith('.json')]
     if len(ie_files) == 0:
-        print(f"❌ Error: Input directory is empty")
+        print(f" Error: Input directory is empty")
         print(f"   {INPUT_IE_DIR}")
         return False
     
@@ -570,11 +570,11 @@ def main():
             if 0 <= selected_rank <= 3:
                 break
             else:
-                print("❌ Please enter a number between 0-3")
+                print(" Please enter a number between 0-3")
         except ValueError:
-            print("❌ Please enter a valid number")
+            print(" Please enter a valid number")
         except KeyboardInterrupt:
-            print("❌ User canceled, exit")
+            print(" User canceled, exit")
             return
     
     # Save selected plan
@@ -606,12 +606,12 @@ def main():
     print("="*80)
     
     if selected_rank == 0:
-        print(f"✅ Saved all 3 solutions to different directories:")
+        print(f" Saved all 3 solutions to different directories:")
         for rank in range(1, 4):
-            print(f"   第{rank}名: {OUTPUT_SELECTED_DIR.replace('selected_ies', f'selected_ies_rank{rank}')}")
+            print(f"   {rank}: {OUTPUT_SELECTED_DIR.replace('selected_ies', f'selected_ies_rank{rank}')}")
     else:
         selected = top_3[selected_rank - 1]
-        print(f"\n✅ Saved solution ranked #{selected_rank}:")
+        print(f"\n Saved solution ranked #{selected_rank}:")
         print(f"   Parameters: min={selected['min_fields']}, max={selected['max_fields']}")
         print(f"   Reference Relationship Coverage: {selected['ref_pair_coverage']:.1f}%")
         print(f"   Referenced Field Coverage: {selected['ref_field_coverage']:.1f}%")
