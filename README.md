@@ -291,8 +291,8 @@ The A2 toolchain is split into six independent stages, each with a distinct purp
 |:---|:---|:---|:---|
 | T1 – 3GPP Preprocessing | 3GPP spec PDFs | LaTeX-structured 3GPP text (.txt) | Optional (Mathpix key) |
 | T2 – IE Collection | Flattened 5G message | Representative IE sets (intra-IE and inter-IE) | Required |
-| T3 – Field-Pair Context Extraction | IE sets (from T2) | Per-field-pair relevant 3GPP text snippets | Required |
-| T4 – LLM-Based DSL Synthesis | Field-pair context snippets (from T3) | DSL constraint rules with supporting evidence | Optional (OpenAI key) |
+| T3 – Field-Pair Context Extraction | IE sets (from T2) & 3GPP text (from T1) | Per-field-pair relevant 3GPP text snippets | Required |
+| T4 – LLM-Based DSL Constraint Synthesis | Field-pair context snippets (from T3) | DSL constraint rules with supporting evidence | Optional (OpenAI key) |
 | T5 – Test Case Generation | DSL constraint rules (from T4 or pre-generated) | Constraint-violating field modifications | Required |
 | T6 – OTA Payload Generation | Test cases (from T5) | Byte-level exploit payloads (offset + value) | Required |
 
