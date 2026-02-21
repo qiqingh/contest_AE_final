@@ -285,6 +285,22 @@ python3 -c "from pycrate_asn1rt.utils import bitstr_to_bytes; print('pycrate_asn
 The A2 pipeline is organized into six toolchains.
 Recommended Phase-2 path: run T2 → T3 → T5 → T6 (no external keys required).
 
+The A2 toolchain is split into six independent stages, each with a distinct purpose. This separation allows individual stages to be run, replaced, or reused independently — for example, skipping T1/T4 using pre-generated intermediates, or reusing T3 outputs for different LLM backends in T4.
+
+| Toolchain | Input | Output | Required |
+|:---|:---|:---|:---|
+| T1 – 3GPP Preprocessing | 3GPP spec PDFs | LaTeX-structured 3GPP text (.txt) | Optional (Mathpix key) |
+| T2 – IE Collection | Flattened 5G message | Representative IE sets (intra-IE and inter-IE) | Required |
+| T3 – Field-Pair Context Extraction | IE sets (from T2) | Per-field-pair relevant 3GPP text snippets | Required |
+| T4 – LLM-Based DSL Synthesis | Field-pair context snippets (from T3) | DSL constraint rules with supporting evidence | Optional (OpenAI key) |
+| T5 – Test Case Generation | DSL constraint rules (from T4 or pre-generated) | Constraint-violating field modifications | Required |
+| T6 – OTA Payload Generation | Test cases (from T5) | Byte-level exploit payloads (offset + value) | Required |
+
+![5G Message Structure](./A2_constraintdriven_toolchain/message_structure.png)
+
+**Note:** A 5G RRC message is composed of multiple **Information Elements (IEs)**, and each IE contains multiple **fields**. Since 5G RRC messages contain deeply nested IEs, our goal is to extract semantic constraints between fields. T2 identifies a minimum-cost set of IEs that covers the full message structure. To capture both types of field relationships, we split the analysis into two tracks: **intra-IE** (constraints between fields within the same IE) and **inter-IE** (constraints between fields across different IEs).
+
+
 ## T1 – 3GPP Preprocessing (OPTIONAL)
 
 This step converts specification PDFs into parseable text/snippets.
