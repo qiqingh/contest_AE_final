@@ -273,15 +273,15 @@ The A2 toolchain is split into six independent stages, each with a distinct purp
 
 To capture both types of field relationships, we split the analysis into two tracks: **intra-IE** (constraints between fields within the same IE) and **inter-IE** (constraints between fields across different IEs).
 
-> **Note:** All subsequent toolchain commands assume you are starting from the repository root (`contest_AE_final/`). Each toolchain section below provides the full path from the repository root.
->
+> **Note:** All subsequent toolchain commands assume you are already inside `contest_AE_final/A2_constraintdriven_toolchain/`. Use relative paths from there, e.g. `cd toolchain1_3GPP_preprocessing/code`.
+> 
 ## T1 – 3GPP Preprocessing (OPTIONAL)
 
 This step converts specification PDFs into parseable text/snippets.
 **Requires a Mathpix API key**. If you do not have a key, you may skip T1 and use the preprocessed outputs provided in this repo.
 
 ```
-cd A2_constraintdriven_toolchain/toolchain1_3GPP_preprocessing/code
+cd toolchain1_3GPP_preprocessing/code
 python3 mathpix_processor.py
 ```
 
@@ -297,7 +297,7 @@ This step identifies candidate IEs and selects representative sets.
 ###  T2 (intra-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain2_IE_collection/intra-IE/code
+cd toolchain2_IE_collection/intra-IE/code
 python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
 python3 02_greedy_set_cover_intra.py
@@ -306,7 +306,7 @@ python3 02_greedy_set_cover_intra.py
 ### T2 (inter-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain2_IE_collection/inter-IE/code
+cd toolchain2_IE_collection/inter-IE/code
 python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
 python3 02_greedy_set_cover_inter.py
@@ -326,14 +326,14 @@ This step extracts **evidence contexts** for candidate field pairs.
 ### T3 (intra-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain3_field_pair_context_extraction/intra-IE/code
+cd toolchain3_field_pair_context_extraction/intra-IE/code
 python3 00_intra-IE_context_extract.py --all-pairs --no-self
 ```
 
 ### T3 (inter-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain3_field_pair_context_extraction/inter-IE/code
+cd toolchain3_field_pair_context_extraction/inter-IE/code
 python3 00_generate_aggressive_inter_ie_config.py
 python3 01_inter_ie_enhanced_extractor.py
 ```
@@ -354,7 +354,7 @@ export OPENAI_API_KEY="YOUR_KEY"
 ### T4 (intra-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain4_field_pair_LLM_query/intra-IE/code
+cd toolchain4_field_pair_LLM_query/intra-IE/code
 python3 00_aggregate_intra_ie_constraints.py
 python3 01_generate_intra_ie_dsl.py
 ```
@@ -362,7 +362,7 @@ python3 01_generate_intra_ie_dsl.py
 ### T4 (inter-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain4_field_pair_LLM_query/inter-IE/code
+cd toolchain4_field_pair_LLM_query/inter-IE/code
 python3 00_aggregate_inter_ie_field_pairs.py
 python3 01_generate_inter_ie_dsl_concurrent.py
 ```
@@ -376,7 +376,7 @@ python3 01_generate_inter_ie_dsl_concurrent.py
 This step converts DSL rules into structured test case specifications.
 
 ```
-cd A2_constraintdriven_toolchain/toolchain5_dsl_to_testcase/code
+cd toolchain5_dsl_to_testcase/code
 python3 unified_test_generator.py
 ```
 
@@ -393,14 +393,14 @@ This step reconstructs messages, re-encodes them, computes offsets, and emits pa
 ### T6 (intra-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/intra-IE/code
+cd toolchain6_generate_OTA_testcase/intra-IE/code
 python3 ./run_T6.py
 ```
 
 ### T6 (inter-IE)
 
 ```
-cd A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/inter-IE/code
+cd toolchain6_generate_OTA_testcase/inter-IE/code
 python3 ./run_T6.py
 ```
 
