@@ -24,18 +24,16 @@ end-to-end validation of the paper’s methodology and key claims:
 
 CONSET’s artifact follows a two-stage workflow:
 
-- **Stage 1 — A2 (Constraint / Payload Generation)**  
+- **E1 — A2 (Constraint / Payload Generation)**  
   Runs on the **host OS environment** (Ubuntu 22.04 + Python 3.10).  
-  This stage generates DSL rules, testcases, and replayable payloads.  
-  **Do NOT run A2 inside the Docker container.**
 
-- **Stage 2 — A1/A3 (Exploit Replay / Crash Reproduction)**  
+- **E2 — A1/A3 (Exploit Replay / Crash Reproduction)**  
   Runs in the **simulation execution environment**, which can be accessed in either of the following ways:
   1) **Local Docker** (recommended for local evaluation): run the provided Docker image on your own machine.  
   2) **Optional remote desktop** (recommended for convenience): use our pre-configured remote desktop where the same Docker-based simulation environment is already set up and ready to run.  
      **Remote access details are provided privately via the HotCRP Artifact Evaluation interface.**
 
-In short: **A2 runs on the host**, while **A1/A3 run inside the Docker-based simulation environment** (either locally via Docker, or via the remote desktop that already has Docker running).
+In short: **E1 (A2) runs on the host**, while **E2 (A1/A3) run inside the Docker-based simulation environment** (either locally via Docker, or via the remote desktop that already has Docker running).
 
 ---
 
@@ -199,50 +197,7 @@ The sections below describe how to set up, execute, and validate each component
 
 Alternatively, detailed instructions can also be found in the corresponding **A1** and **A3** folders within the repository.
 
-# A1: Simulation Testbed
-
-The A1 component provides a simulation-based 5G SA testbed built on an
-instrumented OAI gNB. To simplify evaluation, we provide a pre-built
-Docker image as well as optional remote desktop access.
-
-### Option 1: Docker-based setup (recommended)
-
-This is the easiest and recommended way to run A1 and A3.
-
-#### Step 1: Pull the pre-built Docker image
-
-```
-sudo docker pull kqing0515/oai_testing:v3
-```
-#### Step 2: Launch the container
-
-```
-sudo docker run -it \
-  --name oai25_testing \
-  --cpus="8" \
-  --privileged \
-  --ipc=host \
-  --network=host \
-  --mount type=tmpfs,destination=/dev/shm \
-  --mount type=tmpfs,destination=/dev/mqueue \
-  kqing0515/oai_testing:v3
-```
-
-After the container starts, the OAI-based simulation environment and all
-required dependencies for A1/A3 are available inside the container.
-
-This setup runs entirely in a local simulation environment and does
-not require any real 5G radio hardware.
-
-### Option 2: Optional remote desktop access
-
-For reviewer convenience, we also provide access to a pre-configured
-remote desktop environment where the Docker-based A1/A3 setup is already
-installed and ready to run.
-- This option avoids any local installation.
-- **Remote access details (including the access link) are provided
-privately via the HotCRP Artifact Evaluation interface.**
-- The remote environment is intended only for artifact evaluation.
+# For E1 Experiment (A2)
 
 # A2 – Constraint-Driven Toolchain (CONSET)
 
@@ -259,23 +214,39 @@ This directory contains the complete **A2 constraint-driven toolchain** used in 
 
 ---
 
-## Environment Requirements
+## Environment Setup
 
-- OS: Ubuntu 22.04 LTS
-- Python: 3.10.x (tested with Python 3.10.12)
-- Install Python dependencies (recommended in a venv):
+The following steps have been verified on a clean Ubuntu 22.04 environment.
 
+### Step 1: Start a clean Ubuntu 22.04 environment
+```bash
+docker run -it --name ae_e1_test ubuntu:22.04 bash
 ```
+
+### Step 2: Install system dependencies
+```bash
+apt update && apt install -y git python3 python3-venv python3-pip python3-dev \
+  gcc g++ build-essential make cmake pkg-config \
+  libcairo2-dev libsystemd-dev gettext libdbus-glib-1-dev \
+  libgirepository1.0-dev libdbus-1-dev libcups2-dev
+```
+
+### Step 3: Clone the repository
+```bash
+git clone https://github.com/qiqingh/contest_AE_final
+cd contest_AE_final/A2_constraintdriven_toolchain
+```
+
+### Step 4: Set up Python virtual environment and install dependencies
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-cd contest_AE_final/A2_constraintdriven_toolchain
 pip3 install -r installed_packages.txt
 ```
 
-## Quick sanity imports (manual)
-```
-python3 -c "from pycrate_asn1dir import RRCNR; print('pycrate_asn1dir.RRCNR: OK')"
-python3 -c "from pycrate_asn1rt.utils import bitstr_to_bytes; print('pycrate_asn1rt.utils.bitstr_to_bytes: OK')"
+### Step 5: Verify installation
+```bash
+python3 -c "from pycrate_asn1dir import RRCNR; print('pycrate OK')"
 ```
 
 ## Toolchain Overview (T1–T6)
@@ -465,6 +436,56 @@ This validates that the toolchain executes end-to-end and produces payloads.
 
 This A2 toolchain **only generates testcases and payloads intended for use in the provided simulation environment**.
 OTA exploits targeting commercial devices are not included.
+
+
+
+# For E2 Experiment (A1 & A3)
+
+# A1: Simulation Testbed
+
+The A1 component provides a simulation-based 5G SA testbed built on an
+instrumented OAI gNB. To simplify evaluation, we provide a pre-built
+Docker image as well as optional remote desktop access.
+
+### Option 1: Docker-based setup (recommended)
+
+This is the easiest and recommended way to run A1 and A3.
+
+#### Step 1: Pull the pre-built Docker image
+
+```
+sudo docker pull kqing0515/oai_testing:v3
+```
+#### Step 2: Launch the container
+
+```
+sudo docker run -it \
+  --name oai25_testing \
+  --cpus="8" \
+  --privileged \
+  --ipc=host \
+  --network=host \
+  --mount type=tmpfs,destination=/dev/shm \
+  --mount type=tmpfs,destination=/dev/mqueue \
+  kqing0515/oai_testing:v3
+```
+
+After the container starts, the OAI-based simulation environment and all
+required dependencies for A1/A3 are available inside the container.
+
+This setup runs entirely in a local simulation environment and does
+not require any real 5G radio hardware.
+
+### Option 2: Optional remote desktop access
+
+For reviewer convenience, we also provide access to a pre-configured
+remote desktop environment where the Docker-based A1/A3 setup is already
+installed and ready to run.
+- This option avoids any local installation.
+- **Remote access details (including the access link) are provided
+privately via the HotCRP Artifact Evaluation interface.**
+- The remote environment is intended only for artifact evaluation.
+
 
 # A3: Test Cases and Proof-of-Concept Exploits
 
