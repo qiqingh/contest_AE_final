@@ -404,24 +404,14 @@ This step reconstructs messages, re-encodes them, computes offsets, and emits pa
 
 ```
 cd contest_AE_final/A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/intra-IE/code
-python3 03_re-construct.py
-python3 04_re-encode.py
-python3 05_cal_offset.py
-python3 06_payload.py
-python3 07_rename.py
-python3 08_rename.py
+python3 ./run_T6.py
 ```
 
 ### T6 (inter-IE)
 
 ```
 cd contest_AE_final/A2_constraintdriven_toolchain/toolchain6_generate_OTA_testcase/inter-IE/code
-python3 03_re-construct.py
-python3 04_re-encode.py
-python3 05_cal_offset.py
-python3 06_payload.py
-python3 07_rename.py
-python3 08_rename.py
+python3 ./run_T6.py
 ```
 
 ### Outputs:
