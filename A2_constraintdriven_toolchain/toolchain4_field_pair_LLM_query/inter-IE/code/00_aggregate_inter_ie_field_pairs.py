@@ -73,7 +73,7 @@ def log_diagnosis(message: str):
         with open(os.path.join(OUTPUT_DIR, DIAGNOSIS_FILE), 'a', encoding='utf-8') as f:
             f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {message}\n")
     except Exception as e:
-        print(f"⚠️  Failed to write diagnosis: {e}")
+        print(f"  Failed to write diagnosis: {e}")
 
 
 def normalize_ie_name(ie_name: str) -> str:
@@ -250,7 +250,7 @@ def aggregate_inter_ie_field_pairs(constraint_files: List[str]) -> Tuple[Dict, i
     skipped_files = 0
     empty_files = 0
     
-    print(f"\n🔄 Processing {total_files} constraint files...")
+    print(f"\n  Processing {total_files} constraint files...")
     
     for file_idx, file_path in enumerate(constraint_files, 1):
         if VERBOSE and file_idx % 100 == 0:
@@ -338,7 +338,7 @@ def aggregate_inter_ie_field_pairs(constraint_files: List[str]) -> Tuple[Dict, i
                     if ie2_field_ids not in entry["field_ids"]["ie2_field2"]:
                         entry["field_ids"]["ie2_field2"].append(ie2_field_ids)
                     
-                    # 🔥 Record real existing field_id pairings
+                    #  Record real existing field_id pairings
                     actual_pair = [ie1_field_ids, ie2_field_ids]
                     if actual_pair not in entry["field_ids"]["actual_pairs"]:
                         entry["field_ids"]["actual_pairs"].append(actual_pair)
@@ -380,12 +380,12 @@ def aggregate_inter_ie_field_pairs(constraint_files: List[str]) -> Tuple[Dict, i
             log_diagnosis(f"Error processing {file_path}: {e}")
             skipped_files += 1
     
-    print(f"  ✅ Processed {total_files - skipped_files - empty_files}/{total_files} files")
-    print(f"  📊 Total constraint entries: {total_constraints}")
+    print(f"  Processed {total_files - skipped_files - empty_files}/{total_files} files")
+    print(f"  Total constraint entries: {total_constraints}")
     if empty_files > 0:
-        print(f"  📝 Empty files skipped: {empty_files}")
+        print(f"  Empty files skipped: {empty_files}")
     if skipped_files > 0:
-        print(f"  ⚠️  Error files skipped: {skipped_files} (see diagnosis log)")
+        print(f"  Error files skipped: {skipped_files} (see diagnosis log)")
     
     # Convert sets to lists (for JSON serialization)
     for key, entry in global_map.items():
@@ -542,27 +542,27 @@ def analyze_aggregation(global_map: Dict) -> Dict:
 def print_summary(summary: Dict):
     """Print Summary Statistics"""
     print("\n" + "="*80)
-    print("📊 INTER-IE AGGREGATION SUMMARY")
+    print(" INTER-IE AGGREGATION SUMMARY")
     print("="*80)
     
-    print(f"\n🎯 Key Metrics:")
+    print(f"\n Key Metrics:")
     print(f"   Total Inter-IE field pairs: {summary['total_inter_ie_field_pairs']}")
     print(f"   Unique IE pair combinations: {summary['unique_ie_pair_combinations']}")
     print(f"   Total evidences: {summary['total_evidences']}")
     print(f"   Avg evidences per pair: {summary['avg_evidences_per_pair']:.1f}")
     
-    print(f"\n📈 Evidence Distribution:")
+    print(f"\n Evidence Distribution:")
     print(f"   Min: {summary['evidence_distribution']['min']}")
     print(f"   Median: {summary['evidence_distribution']['median']}")
     print(f"   Max: {summary['evidence_distribution']['max']}")
     
-    print(f"\n🏷️  Confidence Distribution:")
+    print(f"\n  Confidence Distribution:")
     for conf, count in sorted(summary['confidence_distribution'].items(), 
                              key=lambda x: x[1], reverse=True):
         print(f"   {conf}: {count}")
     
     # Added: field_ids statistics
-    print(f"\n🔢 Field ID Stats:")
+    print(f"\n Field ID Stats:")
     field_id_stats = summary.get('field_id_stats', {})
     print(f"   Total with field_ids: {field_id_stats.get('total_with_field_ids', 0)}")
     print(f"   Total actual pairs: {field_id_stats.get('total_actual_pairs', 0)}")
@@ -572,7 +572,7 @@ def print_summary(summary: Dict):
             print(f"      {count} pairs: {freq} field pairs")
     
     # Added: Combo explosion statistics
-    print(f"\n💥 Combination Explosion Avoidance:")
+    print(f"\n Combination Explosion Avoidance:")
     comb_exp = summary.get('combination_explosion', {})
     theoretical = comb_exp.get('theoretical_combinations', 0)
     actual = comb_exp.get('actual_pairs', 0)
@@ -583,14 +583,14 @@ def print_summary(summary: Dict):
     if theoretical > 0:
         print(f"   Saved: {theoretical - actual:,} unnecessary test cases!")
     
-    print(f"\n⭐ Top 10 Field Pairs (by evidence count):")
+    print(f"\n Top 10 Field Pairs (by evidence count):")
     for i, item in enumerate(summary['top_field_pairs_by_evidence'][:10], 1):
         ie_pair = item['ie_pair']
         field_pair = item['field_pair']
         actual_pairs_count = item.get('actual_pairs_count', 0)
         print(f"   {i:2d}. {ie_pair[0]}.{field_pair[0]} ↔ {ie_pair[1]}.{field_pair[1]}")
         print(f"       Evidences: {item['evidence_count']}, "
-              f"Has field_ids: {'✅' if item['has_field_ids'] else '❌'}, "
+              f"Has field_ids: {'Yes' if item['has_field_ids'] else 'No'}, "
               f"Actual pairs: {actual_pairs_count}")
     
     print("\n" + "="*80)
@@ -615,7 +615,7 @@ def save_aggregated_data(global_map: Dict, output_dir: str):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(serializable_map, f, indent=2, ensure_ascii=False)
     
-    print(f"\n💾 Saved aggregated data to: {output_path}")
+    print(f"\n  Saved aggregated data to: {output_path}")
     
     # Calculate file size
     file_size_mb = os.path.getsize(output_path) / (1024 * 1024)
@@ -629,7 +629,7 @@ def save_summary(summary: Dict, output_dir: str):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
     
-    print(f"💾 Saved summary to: {output_path}")
+    print(f"  Saved summary to: {output_path}")
 
 
 # ============================================================================
@@ -638,21 +638,21 @@ def save_summary(summary: Dict, output_dir: str):
 
 def main():
     print("="*80)
-    print("🎯 INTER-IE FIELD PAIR AGGREGATOR (FIXED VERSION)")
+    print(" INTER-IE FIELD PAIR AGGREGATOR (FIXED VERSION)")
     print("="*80)
-    print(f"📂 Input directory: {CONSTRAINTS_DIR}")
-    print(f"📂 Output directory: {OUTPUT_DIR}")
-    print(f"⚙️  Configuration:")
+    print(f"Input directory: {CONSTRAINTS_DIR}")
+    print(f"Output directory: {OUTPUT_DIR}")
+    print(f" Configuration:")
     print(f"   - Normalize IE names: {NORMALIZE_IE_NAMES}")
     print(f"   - Normalize field names: {NORMALIZE_FIELD_NAMES}")
     print(f"   - Deduplicate evidences: {DEDUPLICATE_EVIDENCES}")
-    print(f"- Key format: (IE1, field1, IE2, field2) four-tuple ✅")
-    print(f"   - Preserve field_ids: YES ✅")
+    print(f"- Key format: (IE1, field1, IE2, field2) four-tuple")
+    print(f"   - Preserve field_ids: YES")
     print("="*80)
     
     # Check input directory
     if not os.path.exists(CONSTRAINTS_DIR):
-        print(f"\n❌ Input directory not found: {CONSTRAINTS_DIR}")
+        print(f"\n Input directory not found: {CONSTRAINTS_DIR}")
         return
     
     # Create output directory
@@ -667,26 +667,26 @@ def main():
         f.write(f"{'='*60}\n\n")
     
     # Find all constraint files
-    print(f"\n🔍 Searching for constraint files...")
+    print(f"\n Searching for constraint files...")
     constraint_files = glob.glob(os.path.join(CONSTRAINTS_DIR, "*_constraints*.json"))
     
     if not constraint_files:
-        print(f"❌ No constraint files found in {CONSTRAINTS_DIR}")
+        print(f" No constraint files found in {CONSTRAINTS_DIR}")
         return
     
-    print(f"✅ Found {len(constraint_files)} constraint files")
+    print(f" Found {len(constraint_files)} constraint files")
     
     # Global Aggregation
     start_time = datetime.now()
     global_map, total_constraints, skipped_files = aggregate_inter_ie_field_pairs(constraint_files)
     elapsed = (datetime.now() - start_time).total_seconds()
     
-    print(f"\n✅ Aggregation completed in {elapsed:.2f} seconds")
+    print(f"\n Aggregation completed in {elapsed:.2f} seconds")
     print(f"   Aggregated {total_constraints} constraints into {len(global_map)} Inter-IE field pairs")
     print(f"   Compression ratio: {total_constraints/len(global_map):.1f}x")
     
     # Statistical Analysis
-    print(f"\n📊 Analyzing aggregation results...")
+    print(f"\n  Analyzing aggregation results...")
     summary = analyze_aggregation(global_map)
     
     # Add metadata
@@ -712,21 +712,21 @@ def main():
     print_summary(summary)
     
     # Save results
-    print(f"\n💾 Saving results...")
+    print(f"\n Saving results...")
     save_aggregated_data(global_map, OUTPUT_DIR)
     save_summary(summary, OUTPUT_DIR)
     
-    print(f"\n📋 Diagnosis log: {diagnosis_path}")
+    print(f"\n Diagnosis log: {diagnosis_path}")
     print("\n" + "="*80)
-    print("🎉 AGGREGATION COMPLETED!")
+    print(" AGGREGATION COMPLETED!")
     print("="*80)
-    print(f"\n📊 Quick Stats:")
+    print(f"\n Quick Stats:")
     print(f"   Input: {total_constraints} constraint entries from {len(constraint_files)} files")
     print(f"Output: {len(global_map)} Inter-IE field pairs (quadruples)")
     print(f"   Reduction: {(1 - len(global_map)/total_constraints)*100:.1f}% fewer entries")
     print(f"   Estimated API cost: ${len(global_map) * 0.03:.2f}")
     print(f"   Time savings potential: ~{total_constraints/len(global_map):.0f}x faster with aggregation")
-    print("\n🚀 Next step: Run generate_inter_ie_dsl_concurrent.py with aggregated data")
+    print("\n Next step: Run generate_inter_ie_dsl_concurrent.py with aggregated data")
     print("="*80)
 
 

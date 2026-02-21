@@ -403,23 +403,23 @@ def display_recommendations(top_3, all_field_ids, all_ref_field_names, total_ref
         # Evaluation
         evaluation = []
         if result['ref_pair_coverage'] >= 90:
-            evaluation.append("✅ Excellent citation relationship coverage")
+            evaluation.append("Excellent citation relationship coverage")
         elif result['ref_pair_coverage'] >= 85:
-            evaluation.append("✅ Good citation relationship coverage")
+            evaluation.append("Good citation relationship coverage")
         else:
-            evaluation.append("⚠️Low citation relationship coverage")
+            evaluation.append("Low citation relationship coverage")
         
         if result['ref_field_coverage'] >= 95:
-            evaluation.append("✅ Excellent reference field coverage")
+            evaluation.append("Excellent reference field coverage")
         elif result['ref_field_coverage'] >= 90:
-            evaluation.append("✅ Good field reference coverage")
+            evaluation.append("Good field reference coverage")
         
         if 100 <= result['total_ies'] <= 200:
-            evaluation.append("✅Moderate number of IEs")
+            evaluation.append("Moderate number of IEs")
         elif result['total_ies'] < 100:
-            evaluation.append("⚠️ Insufficient number of IEs")
+            evaluation.append("Insufficient number of IEs")
         else:
-            evaluation.append("⚠️Excessive number of IEs")
+            evaluation.append("Excessive number of IEs")
         
         print(f"  Evaluation: {' '.join(evaluation)}")
 

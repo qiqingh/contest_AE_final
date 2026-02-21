@@ -19,11 +19,11 @@ def batch_rename(directory_path):
     
     # Check if directory exists
     if not dir_path.exists():
-        print(f"错误：目录 '{directory_path}' 不存在！")
+        print(f"error：path '{directory_path}' not exists!")
         return
     
     if not dir_path.is_dir():
-        print(f"错误：'{directory_path}' 不是一个目录！")
+        print(f"error：'{directory_path}' is not a directory!")
         return
     
     # Statistical Information
@@ -51,15 +51,15 @@ def batch_rename(directory_path):
                 try:
                     # Check if the new filename already exists
                     if new_path.exists():
-                        print(f"⚠️  skip: '{old_name}' -> '{new_name}' (target file already exists)")
+                        print(f" skip: '{old_name}' -> '{new_name}' (target file already exists)")
                         skipped_files += 1
                     else:
                         # Execute rename
                         file_path.rename(new_path)
-                        print(f"✅ success: '{old_name}' -> '{new_name}'")
+                        print(f" success: '{old_name}' -> '{new_name}'")
                         renamed_files += 1
                 except Exception as e:
-                    print(f"❌ error: Unable to rename '{old_name}': {str(e)}")
+                    print(f" error: Unable to rename '{old_name}': {str(e)}")
                     errors += 1
             else:
                 # Filename does not contain target string, skipping

@@ -618,13 +618,13 @@ def process_field_pair(field_pair_key, field_pair_data, asn_content_cache):
         
         if api_response.get("result") == "DSL":
             constraint_type = api_response.get("type", "Unknown")
-            print(f" → ✅ {constraint_type}")
+            print(f" →  {constraint_type}")
         else:
-            print(f" → ⭕ NO_RULE")
+            print(f" → NO_RULE")
         
         return filepath, api_response.get("result") == "DSL"
     else:
-        print(f" → ❌ FAILED")
+        print(f" → FAILED")
         log_diagnosis(f"Failed to get response for {ie_name}: {field1} ↔ {field2}")
         return None, False
 
@@ -636,7 +636,7 @@ def process_aggregated_file(aggregated_path):
         with open(aggregated_path, 'r', encoding='utf-8') as f:
             aggregated_data = json.load(f)
     except Exception as e:
-        print(f"❌ Error loading aggregated file: {e}")
+        print(f" Error loading aggregated file: {e}")
         return
     
     summary = aggregated_data.get('summary', {})
@@ -710,7 +710,7 @@ def process_aggregated_file(aggregated_path):
             except Exception as e:
                 failed_count += 1
                 fields = field_pair_data.get('fields', ['unknown', 'unknown'])
-                print(f"      ❌ Task failed: {fields[0]} ↔ {fields[1]}")
+                print(f"     Task failed: {fields[0]} ↔ {fields[1]}")
                 log_diagnosis(f"Task execution error: {e}")
     
     total_time = time.time() - start_time
@@ -718,14 +718,14 @@ def process_aggregated_file(aggregated_path):
     print(f"\n{'='*60}")
     print("Processing Results")
     print(f"{'='*60}")
-    print(f"⏱️  Total time: {total_time/60:.1f} minutes")
+    print(f" Total time: {total_time/60:.1f} minutes")
     print(f"⚡ Average: {total_time/len(tasks):.1f}s per field pair")
-    print(f"📈 Total processed: {success_count}/{len(field_pairs)}")
-    print(f"   ✅ Valid DSL rules: {dsl_count}")
-    print(f"   ⭕ No rules found: {no_rule_count}")
-    print(f"   ❌ Failed: {failed_count}")
+    print(f" Total processed: {success_count}/{len(field_pairs)}")
+    print(f"   Valid DSL rules: {dsl_count}")
+    print(f"   No rules found: {no_rule_count}")
+    print(f"   Failed: {failed_count}")
     if success_count > 0:
-        print(f"   🎯 DSL Success rate: {dsl_count/success_count*100:.1f}%")
+        print(f"   DSL Success rate: {dsl_count/success_count*100:.1f}%")
 
 def generate_summary_report():
     """Generate summary report"""
@@ -819,7 +819,7 @@ def generate_summary_report():
 def main():
     """main function"""
     print("="*60)
-    print("🎯 INTRA-IE DSL GENERATION v4")
+    print(" INTRA-IE DSL GENERATION v4")
     print(f"Model: {MODEL} | Format: field1/field2")
     print(f"API Config: temperature={API_TEMPERATURE}, seed={API_SEED}")
     print(f"Evidence Filter: {EVIDENCE_FILTER_MODE} (min H/M: {MIN_HIGH_MEDIUM_COUNT})")
@@ -829,7 +829,7 @@ def main():
     open(DIAGNOSIS_FILE, 'w').close()
     
     if not os.path.exists(AGGREGATED_FILE):
-        print(f"\n❌ Aggregated file not found: {AGGREGATED_FILE}")
+        print(f"\n Aggregated file not found: {AGGREGATED_FILE}")
         print(f"Please run aggregate_intra_ie_constraints.py first!")
         return
     
@@ -843,13 +843,13 @@ def main():
     duration = end_time - start_time
     
     print("\n" + "="*60)
-    print("🎉 PROCESSING COMPLETED!")
-    print(f"⏱️  Total time: {duration}")
-    print(f"🎯 DSL Rules generated: {summary.get('valid_dsl_rules', 0)}")
+    print(" PROCESSING COMPLETED!")
+    print(f" Total time: {duration}")
+    print(f" DSL Rules generated: {summary.get('valid_dsl_rules', 0)}")
     if summary.get('advisory_rules', 0) > 0:
-        print(f"⚠️  Advisory rules: {summary.get('advisory_rules', 0)}")
-    print(f"📂 Results saved in: {OUTPUT_DIR}")
-    print(f"📋 Diagnosis log: {DIAGNOSIS_FILE}")
+        print(f" Advisory rules: {summary.get('advisory_rules', 0)}")
+    print(f" Results saved in: {OUTPUT_DIR}")
+    print(f" Diagnosis log: {DIAGNOSIS_FILE}")
     print("="*60)
 
 if __name__ == "__main__":

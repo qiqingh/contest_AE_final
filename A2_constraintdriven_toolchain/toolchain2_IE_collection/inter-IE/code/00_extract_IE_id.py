@@ -149,7 +149,7 @@ def get_matching_records(flattened_records, ie_path):
 def split_into_continuous_groups(records):
     """
     Group records by field_id continuity
-    ⭐ Core improvement: Ensure that field_id within each IE is consecutive
+    Core improvement: Ensure that field_id within each IE is consecutive
     """
     if not records:
         return []
@@ -228,7 +228,7 @@ def extract_ies(input_file, output_dir, min_fields=1, max_fields=100, ensure_con
     
     print(f"After initial screening, {len(ie_map)} IEs remain")
     
-    # ⭐ New: Group by continuity
+    # New: Group by continuity
     if ensure_continuous:
         print("Grouping by field_id continuity...")
         continuous_ie_map = {}
@@ -329,7 +329,7 @@ def main():
         print(f"Error: Input file {input_file} not found")
         return
     
-    # ⭐ Ensure continuity by default
+    # Ensure continuity by default
     min_fields = 1       # ← Contains single-field IE
     max_fields = 100     # ← More relaxed
     ensure_continuous = False  # ← No continuity required

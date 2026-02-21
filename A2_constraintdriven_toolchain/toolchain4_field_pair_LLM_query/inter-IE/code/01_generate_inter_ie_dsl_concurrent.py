@@ -34,7 +34,7 @@ import argparse
 # Configuration
 # ============================================================================
 
-API_KEY = "XXXXXXXXXXXXXXXX"   # 👈 Enter your API Key
+API_KEY = "XXXXXXXXXXXXXXXX"   #  Enter your API Key
 
 if API_KEY == "YOUR_API_KEY_HERE" or not API_KEY:
     API_KEY = os.getenv("OPENAI_API_KEY")
@@ -544,7 +544,7 @@ def process_field_pair(field_pair_key, field_pair_data):
         field_ids = field_pair_data['field_ids']
         evidences = field_pair_data['evidences']
         
-        print(f"    🔄 {ie1}.{field1} ↔ {ie2}.{field2}", end="")
+        print(f"    {ie1}.{field1} ↔ {ie2}.{field2}", end="")
         
         # Smart Sampling (IMPROVED)
         original_count = len(evidences)
@@ -578,7 +578,7 @@ def process_field_pair(field_pair_key, field_pair_data):
         # Estimate tokens
         estimated_tokens = estimate_prompt_tokens(prompt)
         if estimated_tokens > 7000:
-            print(f" ⚠️{estimated_tokens}tok", end="")
+            print(f" {estimated_tokens}tok", end="")
             log_diagnosis(f"Large prompt for {ie1}.{field1} ↔ {ie2}.{field2} - estimated {estimated_tokens} tokens")
         
         # Call API
@@ -595,14 +595,12 @@ def process_field_pair(field_pair_key, field_pair_data):
             api_response = call_chatgpt_api(prompt)
         
         if api_response:
-            # 改进的判断逻辑：容错处理LLM格式变化
             result_field = api_response.get("result", "").upper()
             has_dsl_content = (
                 api_response.get("dsl") and 
                 api_response.get("dsl").strip() != ""
             )
             
-            # 判断：result包含DSL 且 dsl字段有内容
             is_valid_dsl = "DSL" in result_field and has_dsl_content
             
             filepath = save_dsl_file(ie1, field1, ie2, field2, field_ids, 
@@ -611,20 +609,20 @@ def process_field_pair(field_pair_key, field_pair_data):
             
             if is_valid_dsl:
                 constraint_type = api_response.get("type", "Unknown")
-                print(f" → ✅ {constraint_type}")
+                print(f" →  {constraint_type}")
                 if result_field != "DSL":
                     log_diagnosis(f"Non-standard result format: '{api_response.get('result')}' for {ie1}.{field1} ↔ {ie2}.{field2}")
             else:
-                print(f" → ⭕ NO_RULE")
+                print(f" →  NO_RULE")
             
             return filepath, is_valid_dsl
         else:
-            print(f" → ❌ FAILED")
+            print(f" →  FAILED")
             log_diagnosis(f"Failed to get response for {ie1}.{field1} ↔ {ie2}.{field2}")
             return None, False
             
     except Exception as e:
-        print(f" → ❌ ERROR: {e}")
+        print(f" → ERROR: {e}")
         log_diagnosis(f"Error processing {field_pair_key}: {e}")
         return None, False
 
@@ -636,7 +634,7 @@ def process_aggregated_file(aggregated_path, limit=None):
         with open(aggregated_path, 'r', encoding='utf-8') as f:
             aggregated_data = json.load(f)
     except Exception as e:
-        print(f"❌ Error loading aggregated file: {e}")
+        print(f" Error loading aggregated file: {e}")
         return
     
     print(f"\n{'='*60}")
@@ -653,7 +651,7 @@ def process_aggregated_file(aggregated_path, limit=None):
                                           strategy=FILTER_STRATEGY,
                                           min_evidence=MIN_EVIDENCE_COUNT)
         
-        print(f"✅ After filtering: {len(filtered_data)} field pairs")
+        print(f" After filtering: {len(filtered_data)} field pairs")
         print(f"   Filter rate: {(1 - len(filtered_data)/len(aggregated_data))*100:.1f}%")
         
         aggregated_data = filtered_data
@@ -662,7 +660,7 @@ def process_aggregated_file(aggregated_path, limit=None):
     if limit:
         keys = list(aggregated_data.keys())[:limit]
         aggregated_data = {k: aggregated_data[k] for k in keys}
-        print(f"⚠️  Limited to {limit} pairs for testing")
+        print(f"  Limited to {limit} pairs for testing")
     
     print(f"\n{'='*60}")
     print(f"Processing {len(aggregated_data)} field pairs...")
@@ -719,12 +717,12 @@ def process_aggregated_file(aggregated_path, limit=None):
     print(f"\n{'='*60}")
     print("Processing Results")
     print(f"{'='*60}")
-    print(f"⏱️  Total time: {total_time/60:.1f} minutes")
-    print(f"⚡ Average: {total_time/len(tasks):.1f}s per field pair")
-    print(f"📈 Total processed: {success_count}/{len(tasks)}")
-    print(f"   ✅ Valid DSL rules: {dsl_count}")
-    print(f"   ⭕ No rules found: {no_rule_count}")
-    print(f"   ❌ Failed: {failed_count}")
+    print(f" Total time: {total_time/60:.1f} minutes")
+    print(f" Average: {total_time/len(tasks):.1f}s per field pair")
+    print(f" Total processed: {success_count}/{len(tasks)}")
+    print(f"   Valid DSL rules: {dsl_count}")
+    print(f"   No rules found: {no_rule_count}")
+    print(f"   Failed: {failed_count}")
     if success_count > 0:
         print(f"   🎯 DSL Success rate: {dsl_count/success_count*100:.1f}%")
 
@@ -750,7 +748,7 @@ def main():
     DEBUG_MODE = args.debug
     
     print("="*60)
-    print("🎯 INTER-IE DSL GENERATION (IMPROVED SAMPLING)")
+    print(" INTER-IE DSL GENERATION (IMPROVED SAMPLING)")
     print(f"Model: {MODEL}")
     print("Improvement: Relevance-based evidence scoring")
     print("="*60)
@@ -759,11 +757,11 @@ def main():
     open(DIAGNOSIS_FILE, 'w').close()
     
     if not API_KEY and not DRY_RUN:
-        print("❌ Error: OPENAI_API_KEY not set")
+        print(" Error: OPENAI_API_KEY not set")
         return
     
     if not os.path.exists(AGGREGATED_FILE):
-        print(f"\n❌ Aggregated file not found: {AGGREGATED_FILE}")
+        print(f"\n Aggregated file not found: {AGGREGATED_FILE}")
         return
     
     start_time = datetime.now()
@@ -774,10 +772,10 @@ def main():
     duration = end_time - start_time
     
     print("\n" + "="*60)
-    print("🎉 PROCESSING COMPLETED!")
-    print(f"⏱️  Total time: {duration}")
-    print(f"📂 Results saved in: {OUTPUT_DIR}")
-    print(f"📋 Diagnosis log: {DIAGNOSIS_FILE}")
+    print(" PROCESSING COMPLETED!")
+    print(f" Total time: {duration}")
+    print(f" Results saved in: {OUTPUT_DIR}")
+    print(f" Diagnosis log: {DIAGNOSIS_FILE}")
     print("="*60)
 
 if __name__ == "__main__":

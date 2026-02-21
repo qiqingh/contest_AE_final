@@ -113,7 +113,7 @@ def overlay_flattened(skeleton, flattened_records, log_file):
     
     # Check the type of flattened_records
     if not isinstance(flattened_records, list):
-        error_msg = f"❌ Error: flattened_records should be a list, but is actually {type(flattened_records).__name__}"
+        error_msg = f" Error: flattened_records should be a list, but is actually {type(flattened_records).__name__}"
         log_both(log_file, error_msg)
         errors.append(error_msg)
         return skeleton, errors
@@ -123,14 +123,14 @@ def overlay_flattened(skeleton, flattened_records, log_file):
     for idx, record in enumerate(flattened_records):
         # Check the type of each record
         if not isinstance(record, dict):
-            error_msg = f"❌ Record # {idx} Error: Should be a dictionary, but actually is {type(record).__name__}"
+            error_msg = f"  Record # {idx} Error: Should be a dictionary, but actually is {type(record).__name__}"
             log_both(log_file, error_msg)
             errors.append(error_msg)
             continue
         
         # Check if required fields are present
         if "field_path" not in record:
-            error_msg = f"⚠️  Record # {idx} Warning: Missing field_path field"
+            error_msg = f"  Record # {idx} Warning: Missing field_path field"
             log_both(log_file, error_msg)
             log_both(log_file, f"Record content: {record}")
             errors.append(error_msg)
@@ -141,7 +141,7 @@ def overlay_flattened(skeleton, flattened_records, log_file):
         field_path = record.get("field_path")
         
         if val is None:
-            log_both(log_file, f"  ⚠️  Record # {idx}: The value of {field_path} is None (may be normal)")
+            log_both(log_file, f"    Record # {idx}: The value of {field_path} is None (may be normal)")
         
         if field_path:
             try:
@@ -149,7 +149,7 @@ def overlay_flattened(skeleton, flattened_records, log_file):
                 if idx < 5:  # Only print the first 5 entries to avoid too much output
                     log_both(log_file, f"✓ Record #{idx}: {field_path} = {val}")
             except Exception as e:
-                error_msg = f"❌ Error setting path {field_path}: {e}"
+                error_msg = f" Error setting path {field_path}: {e}"
                 log_both(log_file, error_msg)
                 errors.append(error_msg)
     
@@ -160,7 +160,7 @@ def process_file(flattened_file, metadata, log_file):
     file_name = os.path.basename(flattened_file)
     
     log_both(log_file, "\n" + "="*80)
-    log_both(log_file, f"📄 Processing file: {file_name}")
+    log_both(log_file, f" Processing file: {file_name}")
     log_both(log_file, f"Complete path: {flattened_file}")
     log_both(log_file, "="*80)
     
@@ -200,19 +200,19 @@ def process_file(flattened_file, metadata, log_file):
                     log_both(log_file, f"    - suggested_value: {'✓' if has_suggested_value else '✗'}")
                     
         elif isinstance(flattened_records, dict):
-            log_both(log_file, f"⚠️ Data is a dictionary, not a list!")
+            log_both(log_file, f"  Data is a dictionary, not a list!")
             log_both(log_file, f"Number of dictionary keys: {len(flattened_records)}")
             log_both(log_file, f"First 10 keys: {list(flattened_records.keys())[:10]}")
         else:
-            log_both(log_file, f"⚠️ Data is neither a list nor a dictionary!")
+            log_both(log_file, f" Data is neither a list nor a dictionary!")
             log_both(log_file, f"Data content: {str(flattened_records)[:500]}")
             
     except json.JSONDecodeError as e:
-        log_both(log_file, f"❌ JSON parsing error: {e}")
+        log_both(log_file, f" JSON parsing error: {e}")
         log_both(log_file, f"File content first 500 characters: {content[:500]}")
         return False
     except Exception as e:
-        log_both(log_file, f"❌ File read error: {e}")
+        log_both(log_file, f" File read error: {e}")
         return False
     
     # ========== Step 2: Refactor Framework ==========
@@ -221,11 +221,11 @@ def process_file(flattened_file, metadata, log_file):
         skeleton = reconstruct_from_metadata(metadata, "")
         if skeleton is None:
             skeleton = {}
-            log_both(log_file, "⚠️ Root metadata is empty, using empty dictionary as skeleton")
+            log_both(log_file, " Root metadata is empty, using empty dictionary as skeleton")
         else:
             log_both(log_file, f"✓ Skeleton reconstruction successful, type: {type(skeleton).__name__}")
     except Exception as e:
-        log_both(log_file, f"❌ Refactoring skeleton error: {e}")
+        log_both(log_file, f" Refactoring skeleton error: {e}")
         return False
     
     # ========== Step 3: Overwrite Data ==========
@@ -234,7 +234,7 @@ def process_file(flattened_file, metadata, log_file):
         reconstructed_obj, errors = overlay_flattened(skeleton, flattened_records, log_file)
         
         if errors:
-            log_both(log_file, f"\n  ⚠️  {len(errors)} errors occurred during the overwrite process:")
+            log_both(log_file, f"\n   {len(errors)} errors occurred during the overwrite process:")
             for i, error in enumerate(errors[:10], 1):  # Only show the first 10 errors
                 log_both(log_file, f"    {i}. {error}")
             if len(errors) > 10:
@@ -243,7 +243,7 @@ def process_file(flattened_file, metadata, log_file):
             log_both(log_file, "✓ Coverage complete, no errors")
             
     except Exception as e:
-        log_both(log_file, f"❌ Coverage process error: {e}")
+        log_both(log_file, f" Coverage process error: {e}")
         import traceback
         log_both(log_file, f"Stack trace:\n{traceback.format_exc()}")
         return False
@@ -264,7 +264,7 @@ def process_file(flattened_file, metadata, log_file):
         
         return True
     except Exception as e:
-        log_both(log_file, f"❌ File save error: {e}")
+        log_both(log_file, f" File save error: {e}")
         return False
 
 def main():
@@ -295,10 +295,10 @@ def main():
             log_both(log_file, f"Node record count: {len(metadata)}")
             log_both(log_file, f"First 5 keys: {list(metadata.keys())[:5]}")
         except FileNotFoundError:
-            log_both(log_file, f"❌ Metadata file does not exist: {METADATA_FILE}")
+            log_both(log_file, f" Metadata file does not exist: {METADATA_FILE}")
             return
         except Exception as e:
-            log_both(log_file, f"❌ Error reading metadata file: {e}")
+            log_both(log_file, f" Error reading metadata file: {e}")
             return
         
         # ========== Scanning Files ==========
@@ -307,7 +307,7 @@ def main():
         log_both(log_file, "="*80)
         
         if not os.path.exists(FLATTENED_DIR):
-            log_both(log_file, f"❌ Flattened file directory does not exist: {FLATTENED_DIR}")
+            log_both(log_file, f" Flattened file directory does not exist: {FLATTENED_DIR}")
             return
         
         try:
@@ -322,7 +322,7 @@ def main():
             log_both(log_file, f"Number of JSON files: {len(json_files)}")
             
             if len(json_files) == 0:
-                log_both(log_file, f"⚠️ No JSON files found!")
+                log_both(log_file, f" No JSON files found!")
                 log_both(log_file, f"Directory contents: {all_files[:20]}")
                 return
             
@@ -332,7 +332,7 @@ def main():
                 log_both(log_file, f"    {i}. {os.path.basename(f)}")
                 
         except Exception as e:
-            log_both(log_file, f"❌ Directory scan error: {e}")
+            log_both(log_file, f" Directory scan error: {e}")
             return
         
         # ========== Processing Files ==========

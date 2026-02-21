@@ -1,22 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Inter-IE Enhanced Constraint Extractor (OPTIMIZED)
-Cross-IE Enhanced Constraint Extractor - Performance Optimized
-
-Optimization Strategy (Plan C - Balanced):
-1. Spec file pre-loading (shared cache) - 5-8x speedup
-2. Increased parallelism (15 workers) - 2-3x speedup  
-3. Simplified section indexing - 1.2x speedup
-Overall: 5-8x faster than original
-
-Main improvements:
-1. Chapter Relevance Scoring System (Dual IE) - as a bonus feature
-2. Multi-signal confidence rating (HIGH/MEDIUM/LOW/VERY_LOW)
-3. Smart field pair filtering
-4. Class Encapsulation Design
-5. Performance Optimization (Caching + Precomputation + Batching + Multiprocessing)
-"""
 
 import json
 import os
@@ -95,7 +78,7 @@ class SpecFileCache:
         total_lines = sum(len(lines) for lines in self.cache.values())
         total_size_mb = sum(os.path.getsize(f) for f in self.cache.keys()) / (1024 * 1024)
         
-        print(f"\n✅ Cache loaded: {len(self.cache)} files, {total_lines:,} lines, {total_size_mb:.2f} MB")
+        print(f"\n Cache loaded: {len(self.cache)} files, {total_lines:,} lines, {total_size_mb:.2f} MB")
         print(f"   Load time: {self.load_time:.2f} seconds")
         print(f"   Estimated I/O savings: ~{60000 * self.load_time:.0f} seconds")
         print("="*80 + "\n")
@@ -1015,15 +998,15 @@ def main():
     print("=" * 80)
     
     if not os.path.exists(IE_DIR):
-        print(f"\n❌ IE directory does not exist: {IE_DIR}")
+        print(f"\n IE directory does not exist: {IE_DIR}")
         return
     
     if not os.path.exists(SPEC_DIR):
-        print(f"\n❌ Specification directory does not exist: {SPEC_DIR}")
+        print(f"\n Specification directory does not exist: {SPEC_DIR}")
         return
     
     if not os.path.exists(CLUSTER_CONFIG_PATH):
-        print(f"❌ Cluster configuration does not exist: {CLUSTER_CONFIG_PATH}")
+        print(f" Cluster configuration does not exist: {CLUSTER_CONFIG_PATH}")
         return
     
     if not os.path.exists(OUTPUT_DIR):
@@ -1164,7 +1147,7 @@ def main():
     print(f"Average time per IE pair: {elapsed_time/len(ie_pairs):.2f} seconds")
     print(f"Summary file: {summary_path}")
     
-    print(f"\n💡 Optimization impact:")
+    print(f"\n Optimization impact:")
     print(f"   Spec file pre-loading saved ~{spec_cache.load_time * len(ie_pairs) / 60:.0f} minutes")
     print(f"   Estimated original time: ~{elapsed_time * 5 / 60:.0f} minutes (5x slower)")
 

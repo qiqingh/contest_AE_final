@@ -51,19 +51,19 @@ def batch_rename(directory_path):
                 try:
                     # Check if new file name already exists
                     if new_path.exists():
-                        print(f"⚠️  skip: '{old_name}' -> '{new_name}' (target file already exists)")
+                        print(f"  skip: '{old_name}' -> '{new_name}' (target file already exists)")
                         skipped_files += 1
                     else:
                         # Execute rename
                         file_path.rename(new_path)
-                        print(f"✅ success: '{old_name}' -> '{new_name}'")
+                        print(f" success: '{old_name}' -> '{new_name}'")
                         renamed_files += 1
                 except Exception as e:
-                    print(f"❌ error: Unable to rename '{old_name}': {str(e)}")
+                    print(f" error: Unable to rename '{old_name}': {str(e)}")
                     errors += 1
             else:
                 # Filename does not contain target string, skipping
-                print(f"⏭️  skip: '{old_name}' (does not contain '_reconstructed_offset')")
+                print(f" skip: '{old_name}' (does not contain '_reconstructed_offset')")
                 skipped_files += 1
     
     # Print statistics

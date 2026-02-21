@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Intra-IE Context Extraction Tool - FIXED VERSION
-Key Fix: Always search ALL specification files instead of selecting only one
-
-MODIFICATIONS:
-- Extended line distance threshold from <=1 to <=10
-- Extended context window from 2 to 5 lines
-- Improved LaTeX cleaning to preserve mathematical relations (>=, <=, !=, etc.)
-- Added constraint keywords: 'given by', 'indicated by', 'contained in', etc.
-- FIXED: Now searches ALL spec files instead of just one primary file
-"""
 
 import json
 import os

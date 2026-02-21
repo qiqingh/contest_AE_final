@@ -11,7 +11,7 @@ import shutil
 from collections import defaultdict
 
 # ===============================
-# 📁 PATH CONFIGURATION - MODIFY HERE
+# PATH CONFIGURATION - MODIFY HERE
 # ===============================
 
 # Method 1: Use relative paths (recommended)
@@ -31,12 +31,12 @@ if not os.path.isabs(OUTPUT_SELECTED_DIR):
 
 def validate_input():
     """Validate input directory exists and contains files"""
-    print(f"\n📁 Checking input directory:")
+    print(f"\n Checking input directory:")
     print(f"   {INPUT_IE_DIR}")
     
     if not os.path.exists(INPUT_IE_DIR):
-        print(f"\n❌ Error: Input directory not found")
-        print(f"\n💡 To fix this:")
+        print(f"\n Error: Input directory not found")
+        print(f"\n To fix this:")
         print(f"   1. Check the path in the script (lines 15-16)")
         print(f"   2. Or use absolute path (lines 19-20)")
         print(f"   3. Make sure you're in the correct directory")
@@ -44,10 +44,10 @@ def validate_input():
     
     ie_files = [f for f in os.listdir(INPUT_IE_DIR) if f.endswith('.json')]
     if len(ie_files) == 0:
-        print(f"\n❌ Error: No JSON files found in input directory")
+        print(f"\n Error: No JSON files found in input directory")
         return False
     
-    print(f"   ✅ Found {len(ie_files)} IE files")
+    print(f"   Found {len(ie_files)} IE files")
     return True
 
 # ===============================
@@ -269,7 +269,7 @@ def search_best_parameters(ies, all_field_ids,
         top_3: Top 3 recommended solutions
     """
     print("\n" + "="*80)
-    print("🔍 Searching for optimal parameter combination")
+    print("  Searching for optimal parameter combination")
     print("="*80)
     
     print(f"Search scope:")
@@ -332,7 +332,7 @@ def search_best_parameters(ies, all_field_ids,
 def display_recommendations(top_3, all_field_ids):
     """Show recommended plans"""
     print("\n" + "="*80)
-    print("🏆 Top-3 Recommended Solutions")
+    print(" Top-3 Recommended Solutions")
     print("="*80)
     
     for rank, result in enumerate(top_3, 1):
@@ -345,38 +345,38 @@ def display_recommendations(top_3, all_field_ids):
         print(f"  max_fields = {result['max_fields']}")
         
         print(f"\nResults:")
-        print(f"  ✅ Coverage: {result['coverage']:.2f}%")
-        print(f"  📊 Number of IEs: {result['total_ies']}")
-        print(f"  🔢 Number of field pairs: {result['total_pairs']:,}")
-        print(f"  ⭐ Overall score: {result['score']:.0f}")
+        print(f"  Coverage: {result['coverage']:.2f}%")
+        print(f"  Number of IEs: {result['total_ies']}")
+        print(f"  Number of field pairs: {result['total_pairs']:,}")
+        print(f"  Overall score: {result['score']:.0f}")
         
         # Analyze the advantages and disadvantages
         print(f"\nEvaluation:")
         if result['coverage'] >= 95:
-            print(f"  ✅ Excellent coverage")
+            print(f"  Excellent coverage")
         elif result['coverage'] >= 85:
-            print(f"  ✅ Good coverage")
+            print(f"  Good coverage")
         else:
-            print(f"  ⚠️ Coverage is average")
+            print(f"  Coverage is average")
         
         if 50 <= result['total_ies'] <= 150:
-            print(f"  ✅ Moderate number of IEs")
+            print(f"  Moderate number of IEs")
         elif result['total_ies'] < 50:
-            print(f"  ⚠️ IE quantity is insufficient")
+            print(f"  IE quantity is insufficient")
         else:
-            print(f"  ⚠️ Too many IEs")
+            print(f"  Too many IEs")
         
         if result['total_pairs'] < 5000:
-            print(f"  ✅ Controllable LLM query costs")
+            print(f"  Controllable LLM query costs")
         else:
-            print(f"  ⚠️ LLM query costs are high")
+            print(f"  LLM query costs are high")
 
 def save_selected_ies(selected_ies, output_dir, label, stats):
     """Save selected IE to directory"""
     os.makedirs(output_dir, exist_ok=True)
     
     # Copy files
-    print(f"\n📋 Copying {len(selected_ies)} IE files...")
+    print(f"\n  Copying {len(selected_ies)} IE files...")
     for ie in selected_ies:
         src_path = os.path.join(INPUT_IE_DIR, ie['filename'])
         dst_path = os.path.join(output_dir, ie['filename'])
@@ -411,7 +411,7 @@ def save_selected_ies(selected_ies, output_dir, label, stats):
     with open(summary_file, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
     
-    print(f"\n✅ Saved to: {output_dir}")
+    print(f"\n Saved to: {output_dir}")
     print(f"   Summary: {summary_file}")
 
 def main():
@@ -428,15 +428,15 @@ def main():
         return
     
     # Load data
-    print(f"\n📂 Loading IE data...")
+    print(f"\n  Loading IE data...")
     ies = load_ies_with_fields(INPUT_IE_DIR, require_continuous=require_continuous)
-    print(f"   ✅ Loaded {len(ies)} IEs")
+    print(f"   Loaded {len(ies)} IEs")
     
     # Get all field IDs
     all_field_ids = set()
     for ie in ies:
         all_field_ids.update(ie['field_ids'])
-    print(f"   ✅ Total message fields: {len(all_field_ids)}")
+    print(f"   Total message fields: {len(all_field_ids)}")
     
     # Automatically search for optimal parameters
     results, top_3 = search_best_parameters(
@@ -451,7 +451,7 @@ def main():
     
     # Select the scheme to save
     print("\n" + "="*80)
-    print("💾 Select the plan to save")
+    print(" Select the plan to save")
     print("="*80)
     
     if auto_mode:
@@ -476,17 +476,17 @@ def main():
                 if 0 <= selected_rank <= 3:
                     break
                 else:
-                    print("❌ Please enter 0-3")
+                    print(" Please enter 0-3")
             except ValueError:
-                print("❌ Please enter a valid number")
+                print(" Please enter a valid number")
             except KeyboardInterrupt:
-                print("\n\n❌ Cancelled")
+                print("\n\n Cancelled")
                 return
     
     # Save selected plan
     if selected_rank == 0:
         # Save all 3 options
-        print("\n💾 Saving all 3 plans...")
+        print("\n Saving all 3 plans...")
         for rank, result in enumerate(top_3, 1):
             output_dir = OUTPUT_SELECTED_DIR.replace('selected_ies', f'selected_ies_rank{rank}')
             save_selected_ies(
@@ -498,7 +498,7 @@ def main():
     else:
         # Save single plan
         selected = top_3[selected_rank - 1]
-        print(f"\n💾 Saving solution #{selected_rank}...")
+        print(f"\n Saving solution #{selected_rank}...")
         save_selected_ies(
             selected['selected_ies'],
             OUTPUT_SELECTED_DIR,
@@ -508,7 +508,7 @@ def main():
     
     # Show final results
     print("\n" + "="*80)
-    print("✅ Done!")
+    print(" Done!")
     print("="*80)
     
     if selected_rank == 0:
@@ -523,9 +523,9 @@ def main():
         print(f"  Coverage: {selected['coverage']:.2f}%")
         print(f"  IEs: {selected['total_ies']}")
         print(f"  Pairs: {selected['total_pairs']:,}")
-        print(f"\n  📁 Location: {OUTPUT_SELECTED_DIR}")
+        print(f"\n  Location: {OUTPUT_SELECTED_DIR}")
     
-    print(f"\n🔜 Next steps:")
+    print(f"\n  Next steps:")
     print(f"   - Verify with validation scripts")
     print(f"   - Proceed to Toolchain 3")
 

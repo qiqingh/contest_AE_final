@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""
-Unified Test Case Generator V2.1 - Enhanced Inter-IE Support
-With intelligent DSL transformation for Inter-IE operators
 
-Key improvements:
-1. Smart DSL transformation: MATCH → EQ, ASSOCIATED → EQ
-2. Enhanced operator detection for Inter-IE specific syntax
-3. Detailed diagnostics for troubleshooting
-4. Field pair deduplication (existing feature)
-"""
 
 import os
 import json
@@ -64,7 +55,7 @@ class UnifiedTestCaseGeneratorV2:
         print(f"Loading flatten.json from: {config['flatten_json']}")
         with open(config['flatten_json'], 'r') as f:
             self.all_fields = json.load(f)
-        print(f"✅ Loaded {len(self.all_fields)} fields from flatten.json")
+        print(f"Loaded {len(self.all_fields)} fields from flatten.json")
         
         # Create output directory
         Path(config['output_dir']).mkdir(parents=True, exist_ok=True)
@@ -500,10 +491,10 @@ class UnifiedTestCaseGeneratorV2:
             'MAP'          # Value mapping
             
             # Transformation coverage:
-            # ✅ MATCH → EQ (supported)
-            # ✅ ASSOCIATED → EQ (supported as of this version)
-            # ❌ CONDITIONAL (still unsupported - complex logic)
-            # ❌ MAP (still unsupported - requires multiple IMPLIES)
+            # MATCH → EQ (supported)
+            # ASSOCIATED → EQ (supported as of this version)
+            # CONDITIONAL (still unsupported - complex logic)
+            # MAP (still unsupported - requires multiple IMPLIES)
         ]
         
         for op in unsupported_ops:
@@ -535,7 +526,7 @@ class UnifiedTestCaseGeneratorV2:
         
         # NEW: Show transformation statistics
         if ENABLE_DSL_TRANSFORMATION and self.stats['transformed_dsls'] > 0:
-            print(f"\n🔄 DSL Transformations:")
+            print(f"\n DSL Transformations:")
             print(f"  Total transformed: {self.stats['transformed_dsls']}")
             if self.stats['transformation_details']:
                 print(f"  By type:")
@@ -543,7 +534,7 @@ class UnifiedTestCaseGeneratorV2:
                     print(f"    {trans_type}: {count}")
         
         if self.testcase_to_dsl:
-            print(f"\n💾 Test Case Mapping:")
+            print(f"\n Test Case Mapping:")
             print(f"  Mapping file: testcase_to_dsl_mapping.json")
             print(f"  Readable file: testcase_to_dsl_mapping.txt")
             print(f"  Total mappings: {len(self.testcase_to_dsl)}")
@@ -725,7 +716,7 @@ def main():
     print("OVERALL SUMMARY")
     print("="*80)
     
-    print("\n📊 Intra-IE:")
+    print("\n Intra-IE:")
     if os.path.exists(intra_ie_dsl_dir):
         print(f"  Test cases generated: {intra_generator.stats['test_cases_generated']}")
         if ENABLE_FIELD_PAIR_DEDUP:
@@ -736,7 +727,7 @@ def main():
     else:
         print(f"  Skipped (directory not found)")
     
-    print("\n📊 Inter-IE:")
+    print("\n Inter-IE:")
     if os.path.exists(inter_ie_dsl_dir):
         print(f"  Test cases generated: {inter_generator.stats['test_cases_generated']}")
         if ENABLE_FIELD_PAIR_DEDUP:
@@ -747,7 +738,7 @@ def main():
     else:
         print(f"  Skipped (directory not found)")
     
-    print("\n✅ All generation complete!")
+    print("\n All generation complete!")
 
 
 if __name__ == "__main__":

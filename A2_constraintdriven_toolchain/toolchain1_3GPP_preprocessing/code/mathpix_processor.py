@@ -856,7 +856,7 @@ Examples:
     logger.info("="*80)
     
     if total_stats['failed'] > 0:
-        logger.warning(f"\n⚠️  {total_stats['failed']} pages failed. Check log file for details.")
+        logger.warning(f"\n  {total_stats['failed']} pages failed. Check log file for details.")
     else:
         logger.info("\n✓ All pages processed successfully!")
 
@@ -864,9 +864,9 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        logging.info("\n\n⚠️  Interrupted by user. Progress has been saved.")
+        logging.info("\n\n  Interrupted by user. Progress has been saved.")
         logging.info("Run with --resume to continue from where you left off.")
         sys.exit(1)
     except Exception as e:
-        logging.error(f"\n❌ Fatal error: {e}", exc_info=True)
+        logging.error(f"\n Fatal error: {e}", exc_info=True)
         sys.exit(1)

@@ -33,7 +33,7 @@ def extract_ie_name_variations(filename):
         clean_name = re.sub(r'_\d+$', '', ie_name)
         if clean_name != ie_name:
             variations.append(clean_name)
-        # ⭐ Remove the _group suffix
+        #  Remove the _group suffix
         clean_name = re.sub(r'_group\d+$', '', ie_name)
         if clean_name != ie_name:
             variations.append(clean_name)
@@ -145,7 +145,7 @@ def filter_ies_with_asn1_rules(verbose=True):
     matched_count = 0
     unmatched_ies = []
     
-    # ⭐ Dictionary for deduplication (field_range -> best IE file information)
+    # Dictionary for deduplication (field_range -> best IE file information)
     field_range_map = {}
     duplicate_count = 0
     
@@ -156,7 +156,7 @@ def filter_ies_with_asn1_rules(verbose=True):
         if matching_asn1:
             src_path = os.path.join(ie_dir, ie_file)
             
-            # ⭐ Get field_id range for deduplication
+            # Get field_id range for deduplication
             field_range = get_field_id_range(src_path)
             
             if field_range:
@@ -212,7 +212,7 @@ def filter_ies_with_asn1_rules(verbose=True):
         else:
             unmatched_ies.append((ie_file, ie_name_variations))
     
-    # ⭐ Only copy deduplicated files
+    # Only copy deduplicated files
     print(f"Copying deduplicated IE files...")
     final_count = 0
     for field_range, info in field_range_map.items():

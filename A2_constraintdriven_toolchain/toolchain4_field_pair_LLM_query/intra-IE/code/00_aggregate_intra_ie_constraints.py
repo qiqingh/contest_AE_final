@@ -89,7 +89,7 @@ def aggregate_constraints(constraint_files):
             print(f"  Error processing {constraint_file}: {e}")
             continue
     
-    print(f"\n✅ Aggregation complete!")
+    print(f"\n Aggregation complete!")
     print(f"  - Files processed: {file_count}")
     print(f"  - Total constraint entries: {total_entries}")
     print(f"  - Unique field pairs: {len(field_pair_map)}")
@@ -224,7 +224,7 @@ def main():
     args = parser.parse_args()
     
     print("="*60)
-    print("🔄 INTRA-IE CONSTRAINT AGGREGATION TOOL")
+    print(" INTRA-IE CONSTRAINT AGGREGATION TOOL")
     print("="*60)
     print(f"Input directory: {args.input_dir}")
     print(f"Output directory: {args.output_dir}")
@@ -236,16 +236,16 @@ def main():
     constraint_files = glob.glob(os.path.join(args.input_dir, "*_constraints.json"))
     
     if not constraint_files:
-        print(f"\n❌ No constraint files found in {args.input_dir}")
+        print(f"\n  No constraint files found in {args.input_dir}")
         return
     
-    print(f"\n📁 Found {len(constraint_files)} constraint files")
+    print(f"\n  Found {len(constraint_files)} constraint files")
     
     # Aggregation constraints
     field_pair_map, total_entries = aggregate_constraints(constraint_files)
     
     if not field_pair_map:
-        print("\n❌ No constraints to aggregate")
+        print("\n  No constraints to aggregate")
         return
     
     # Formatted output
@@ -256,19 +256,19 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    print(f"\n💾 Aggregated results saved to: {output_path}")
+    print(f"\n Aggregated results saved to: {output_path}")
     
     # Print statistics
     print_statistics(output)
     
     print("\n" + "="*60)
-    print("✅ AGGREGATION COMPLETE!")
+    print(" AGGREGATION COMPLETE!")
     print("="*60)
-    print(f"\n📊 Summary:")
+    print(f"\n Summary:")
     print(f"  Original entries: {total_entries}")
     print(f"  Unique field pairs: {len(field_pair_map)}")
     print(f"  API calls saved: {total_entries - len(field_pair_map)} ({(1 - len(field_pair_map)/total_entries)*100:.1f}%)")
-    print(f"\n💰 Estimated cost reduction:")
+    print(f"\n Estimated cost reduction:")
     print(f"  Before: ${total_entries * 0.03:.2f} (assuming $0.03/call)")
     print(f"  After: ${len(field_pair_map) * 0.03:.2f}")
     print(f"  Savings: ${(total_entries - len(field_pair_map)) * 0.03:.2f}")

@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""
-Unified DSL Test Case Generation Engine - Extended Version
-Support for additional operators: GE, GT, LT, IN, WITHIN, MOD
-
-Design Principles:
-1. No distinction between intra-IE / inter-IE, unified processing
-2. Modify fields based on field_id
-3. Modular design with clear responsibilities
-4. Easy to extend with new constraint types
-
-- Support for GE, GT, LT operators in both IMPLIES and atomic form
-- Support for IN (set membership) operator
-- Support for WITHIN (interval) operator
-- Support for MOD (modular) operator
-- Enhanced handling of simple atomic constraints
-"""
 
 import json
 import re
@@ -22,11 +6,6 @@ from typing import Dict, List, Any, Optional, Set, Tuple
 from dataclasses import dataclass
 from enum import Enum
 import copy
-
-
-# ============================================================================
-# Data Structure Definition
-# ============================================================================
 
 class ConstraintType(Enum):
     """Constraint type enumeration"""

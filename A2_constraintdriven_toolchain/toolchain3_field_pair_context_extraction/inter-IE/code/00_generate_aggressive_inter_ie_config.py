@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Inter-IE Radical Optimization Cluster Configuration Generator
-Goal: Reduce from 23,987 IE pairs to 5,000-8,000 pairs, processing time 6-10 hours
-
-Strategy:
-1. Prohibit all intra-cluster pairs (same configuration families should be handled at Intra-IE)
-   EXCEPT: C2_PDCCH cluster (contains critical SearchSpace-ControlResourceSet constraints)
-2. Only retain the most core cross-cluster pairs
-3. Apply sampling or restriction strategies to large clusters
-"""
 
 import json
 import os
@@ -172,7 +162,7 @@ def main():
     
     # Verification Directory
     if not os.path.exists(INTER_IE_DIR):
-        print(f"\n❌ Error: Inter-IE directory does not exist")
+        print(f"\n Error: Inter-IE directory does not exist")
         print(f"   {INTER_IE_DIR}")
         return
     
@@ -291,7 +281,7 @@ def main():
         # Even when disabling intra-cluster pairs, preserve critical ones
         allowed_intra = [c for c in PRESERVE_CRITICAL_INTRA_CLUSTERS if c in clusters]
         if allowed_intra:
-            print(f"\n⚠️  Note: Preserving critical intra-cluster pairs:")
+            print(f"\n   Note: Preserving critical intra-cluster pairs:")
             for cluster in allowed_intra:
                 n = len(clusters[cluster])
                 intra_pairs = n * (n - 1) // 2
@@ -340,7 +330,7 @@ def main():
     
     # Display skipped pairs
     if skipped_pairs:
-        print(f"\n⚠️  Skipped oversized cluster pairs:")
+        print(f"\n   Skipped oversized cluster pairs:")
         skipped_total = 0
         for c1, c2, count, reason in skipped_pairs:
             skipped_total += count
@@ -366,11 +356,11 @@ def main():
     
     # Check if within target range
     if 5000 <= total_pairs <= 8000:
-        print(f"  ✅ Within target range (5,000-8,000)")
+        print(f"  Within target range (5,000-8,000)")
     elif total_pairs < 5000:
-        print(f"  ⚠️  Below target minimum (you can add some extension pairs or increase the limit)")
+        print(f"  Below target minimum (you can add some extension pairs or increase the limit)")
     else:
-        print(f"  ⚠️  Exceeds target limit (requires more aggressive restrictions)")
+        print(f"  Exceeds target limit (requires more aggressive restrictions)")
         print(f"  Recommendation: Reduce MAX_PAIR_SIZE to {int(MAX_PAIR_SIZE * 5000 / total_pairs)}")
     
     # Save Configuration
@@ -391,22 +381,22 @@ def main():
     print(f"  Estimated total time: {hours:.1f} hours")
     
     if 6 <= hours <= 10:
-        print(f"  ✅ Within target range (6-10 hours)")
+        print(f"  Within target range (6-10 hours)")
     elif hours < 6:
-        print(f"  💡 Below expectations (consider adding more valuable pairs)")
+        print(f"  Below expectations (consider adding more valuable pairs)")
     else:
-        print(f"  ⚠️  Exceeds expectations (requires further optimization)")
+        print(f"  Exceeds expectations (requires further optimization)")
     
     print(f"\nEstimated constraints: ~{total_pairs * 50:,}")
     
     print(f"\n{'='*70}")
-    print(f"✅ Generation complete")
+    print(f" Generation complete")
     print(f"{'='*70}")
     
     print(f"\nConfiguration saved: {OUTPUT_CONFIG}")
     
     if skipped_pairs:
-        print(f"\n⚠️  Warning: {len(skipped_pairs)} cluster pairs were skipped due to exceeding limits")
+        print(f"\n Warning: {len(skipped_pairs)} cluster pairs were skipped due to exceeding limits")
         print(f"   If you need to include these pairs, please:")
         print(f"   1. Increase MAX_PAIR_SIZE")
         print(f"   2. Or set ENABLE_LARGE_CLUSTER_LIMIT = False")
