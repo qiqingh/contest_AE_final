@@ -284,6 +284,7 @@ This step converts specification PDFs into parseable text/snippets.
 ```
 cd toolchain1_3GPP_preprocessing/code
 python3 mathpix_processor.py
+cd -
 ```
 
 ### Inputs: 
@@ -306,7 +307,8 @@ This step identifies candidate IEs and selects representative sets.
 cd toolchain2_IE_collection/intra-IE/code
 python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
-python3 02_greedy_set_cover_intra.py 
+python3 02_greedy_set_cover_intra.py
+cd -
 ```
 > **Note:** When prompted, you may select option `1 - 1st Place (Recommended)`.
 
@@ -317,6 +319,7 @@ cd toolchain2_IE_collection/inter-IE/code
 python3 00_extract_IE_id.py
 python3 01_filter_IE_with_ASN.py
 python3 02_greedy_set_cover_inter.py
+cd -
 ```
 > **Note:** When prompted, you may select option `1 - 1st Place (Recommended)`.
 
@@ -344,6 +347,7 @@ This step extracts **evidence contexts** for candidate field pairs.
 ```
 cd toolchain3_field_pair_context_extraction/intra-IE/code
 python3 00_intra-IE_context_extract.py --all-pairs --no-self
+cd -
 ```
 
 ### T3 (inter-IE)
@@ -352,6 +356,7 @@ python3 00_intra-IE_context_extract.py --all-pairs --no-self
 cd toolchain3_field_pair_context_extraction/inter-IE/code
 python3 00_generate_aggressive_inter_ie_config.py
 python3 01_inter_ie_enhanced_extractor.py
+cd -
 ```
 
 
@@ -382,6 +387,7 @@ export OPENAI_API_KEY="YOUR_KEY"
 cd toolchain4_field_pair_LLM_query/intra-IE/code
 python3 00_aggregate_intra_ie_constraints.py
 python3 01_generate_intra_ie_dsl.py
+cd -
 ```
 
 ### T4 (inter-IE)
@@ -390,6 +396,7 @@ python3 01_generate_intra_ie_dsl.py
 cd toolchain4_field_pair_LLM_query/inter-IE/code
 python3 00_aggregate_inter_ie_field_pairs.py
 python3 01_generate_inter_ie_dsl_concurrent.py
+cd -
 ```
 
 ### Expected outputs:
@@ -410,6 +417,7 @@ This step converts DSL rules into structured test case specifications.
 ```
 cd toolchain5_dsl_to_testcase/code
 python3 unified_test_generator.py
+cd -
 ```
 
 ### Inputs: 
@@ -436,6 +444,7 @@ This step reconstructs messages, re-encodes them, computes offsets, and emits pa
 ```
 cd toolchain6_generate_OTA_testcase/intra-IE/code
 python3 ./run_T6.py
+cd -
 ```
 
 ### T6 (inter-IE)
@@ -443,6 +452,7 @@ python3 ./run_T6.py
 ```
 cd toolchain6_generate_OTA_testcase/inter-IE/code
 python3 ./run_T6.py
+cd -
 ```
 
 ### Expected outputs:
