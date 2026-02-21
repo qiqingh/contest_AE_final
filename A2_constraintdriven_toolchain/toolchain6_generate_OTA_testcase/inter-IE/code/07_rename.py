@@ -82,18 +82,18 @@ def main():
     # Execute batch rename
     batch_rename(target_dir)
     
-    # Ask if you need to view the final results
-    print("Do you want to view the final file list in the directory? (y/n):", end='')
-    response = input().strip().lower()
+    # # Ask if you need to view the final results
+    # print("Do you want to view the final file list in the directory? (y/n):", end='')
+    # response = input().strip().lower()
     
-    if response == 'y':
-        print("Current directory file list:")
-        print("-" * 50)
-        dir_path = Path(target_dir)
-        if dir_path.exists():
-            for file_path in sorted(dir_path.iterdir()):
-                if file_path.is_file():
-                    print(f"  {file_path.name}")
+    # if response == 'y':
+    #     print("Current directory file list:")
+    #     print("-" * 50)
+    #     dir_path = Path(target_dir)
+    #     if dir_path.exists():
+    #         for file_path in sorted(dir_path.iterdir()):
+    #             if file_path.is_file():
+    #                 print(f"  {file_path.name}")
 
 if __name__ == "__main__":
     main()
