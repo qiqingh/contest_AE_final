@@ -310,6 +310,995 @@
   {
     "fields": [
       "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        133,
+        198
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "BWP"
+    ],
+    "original_sentence": "- a common RB \\( N_{\\mathrm{BWP}}^{\\text {start }}=O_{\\text {carrier }}+R B_{\\text {start }} \\) and a number of contiguous RBs \\( N_{\\mathrm{BWP}}^{\\text {size }}=L_{\\mathrm{RB}} \\) provided by locationAndBandwidth that indicates an offset \\( R B_{\\text {start }} \\) and a length \\( L_{\\mathrm{RB}} \\) as RIV according to [6, TS 38.214], setting \\( N_{\\text {BWP }}^{\\text {size }}=275 \\), and a value \\( O_{\\text {carrier }} \\) provided by offsetToCarrier for the subcarrierSpacing - an index in the set of DL BWPs or UL BWPs by respective BWP-Id",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "11.4",
+    "section_title": "SRS switching",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        133,
+        198
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "BWP"
+    ],
+    "original_sentence": "- a set of BWP-common and a set of BWP-dedicated parameters by BWP-DownlinkCommon and BWPDownlinkDedicated for the DL BWP, or BWP-UplinkCommon and BWP-UplinkDedicated for the UL BWP [12, TS 38.331]  For unpaired spectrum operation, a DL BWP from the set of configured DL BWPs with index provided by BWP-Id is linked with an UL BWP from the set of configured UL BWPs with index provided by BWP-Id when the DL BWP index and the UL BWP index are same. For unpaired spectrum operation, a UE does not expect to receive a configuration where the center frequency for a DL BWP is different than the center frequency for an UL BWP when the BWP-Id of the DL BWP is same as the BWP-Id of the UL BWP.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "11.4",
+    "section_title": "SRS switching",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "pdsch-Config",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        129,
+        194,
+        259
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "PDSCH-Config",
+      "BWP"
+    ],
+    "original_sentence": "A UE can be configured, per DL BWP by cfr-Config-Multicast, an MBS frequency resource within the DL BWP for PDCCH and PDSCH receptions [4, TS 38.211]. If cfr-Config-Multicast does not include locationAndBandwidthMulticast, the MBS frequency resource is the active DL BWP. The UE is not required to simultaneously receive PDSCHs on two serving cells. In clauses referring to a higher layer parameter value provided by PDCCH-Config or PDSCH-Config or SPS-Config for a DL BWP, when applicable a corresponding higher layer parameter value for multicast PDCCH, PDSCH, or SPS PDSCH receptions is provided as described in [12, TS 38.331].",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "17.2",
+    "section_title": "Half",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "A UE can be provided, for each BWP of a serving cell, a set \\( \\bar{q}_{0} \\) of periodic CSI-RS resource configuration indexes by failureDetectionResourcesToAddModList and a set \\( \\bar{q}_{1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList or candidateBeamRSListExt or candidateBeamRSSCellList for radio link quality measurements on the BWP of the serving cell. Instead of the sets \\( \\bar{q}_{0} \\) and \\( \\bar{q}_{1} \\), for each BWP of a serving cell, the UE can be provided respective two sets \\( \\bar{q}_{0,0} \\) and \\( \\bar{q}_{0,1} \\) of periodic CSI-RS resource configuration indexes that can be activated by a MAC CE [11 TS 38.321] and corresponding two sets \\( \\bar{q}_{1,0} \\) and \\( \\bar{q}_{1,1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList l and candidateBeamRSList2, respectively, for radio link quality measurements on the BWP of the serving cell. The set \\( \\bar{q}_{0,0} \\) is associated with the set \\( \\bar{q}_{1,0} \\) and the set \\( \\bar{q}_{0,1} \\) is associated with the set \\( \\bar{q}_{1,1} \\).  If the UE is not provided \\( \\bar{q}_{0} \\) by failureDetectionResourcesToAddModList for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for respective CORESETs that the UE uses for monitoring PDCCH. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for first and second CORESETs that the UE uses for monitoring PDCCH, where the UE is provided two coresetPoollndex values 0 and 1 for the first and second CORESETs, or is not provided coresetPoollndex value for the first CORESETs and is provided coresetPoollndex value of 1 for the second CORESETs, respectively. If there are two RS indexes in a TCI state, the set \\( \\bar{q}_{0} \\) or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\) includes RS indexes configured with qcl-Type set to 'typeD' for the corresponding TCI states. If a CORESET that the UE uses for monitoring PDCCH includes two TCI states and the UE is provided sfnSchemePdcch set to 'sfnSchemeA' or 'sfnSchemeB', the set \\( \\bar{q}_{0} \\) includes RS indexes in the RS sets associated with the two TCI states. The UE expects the set \\( \\bar{q}_{0} \\) to include up to two RS indexes. If the UE is provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), the UE expects the set \\( \\bar{q}_{0,0} \\) or the set \\( \\bar{q}_{0,1} \\) to include up to a number of \\( N_{\\mathrm{BFD}} \\) RS indexes indicated by capabilityparametername. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), and if a number of active TCI states for PDCCH receptions in the first or second CORESETs is larger than \\( N_{\\mathrm{BFD}} \\), the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets associated with the active TCI states for PDCCH receptions in the first or second CORESETs corresponding to search space sets according to an ascending order for monitoring periodicity. If more than one first or second CORESETs correspond to search space sets with same monitoring periodicity, the UE determines the order of the first or second CORESETs according to a descending order of a CORESET index.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- the UE is not provided PUCCH resources for the active UL BWP of serving cell \\( c \\), and - the UE is provided enableDefaultBeamPL-ForPUSCH0-0 the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- the UE is not provided a spatial setting for PUCCH resources on the active UL BWP of the primary cell [11, TS 38.321], and - the UE is provided enableDefaultBeamPL-ForPUSCH0-0 the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same \\( q_{d} \\) applies to the PUCCH transmission in each of the multiple slots.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in - the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP, if CORESETs are provided in the active DL BWP of serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1 , the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.3.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- else if PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides csi-RS-Index, or the indicated DLorJoint-TCIState provides csi-rs configured with qcl-Type set to 'typeD', the UE transmits the PUCCH using a same spatial domain filter as for a reception of a CSI-RS with resource index provided by csi-RSIndex or csi-rs for a same serving cell or, if servingCellld or cell is provided, for a serving cell indicated by servingCellld or cell - else PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides srs, the UE transmits the PUCCH using a same spatial domain filter as for a transmission of a SRS with resource index provided by resource for a same serving cell and/or active UL BWP or, if servingCellld and/or uplinkBWP are provided, for a serving cell indicated by servingCellld and/or for an UL BWP indicated by uplinkBWP",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.2",
+    "section_title": "PUCCH Formats for UCI transmission",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        136,
+        201
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- monitors PDCCH candidates in overlapping PDCCH monitoring occasions in multiple CORESETs that have been configured with same or different qcl-Type set to 'typeD' properties on active DL BWP(s) of one or more cells",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        134,
+        135,
+        199,
+        200
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "BWP"
+    ],
+    "original_sentence": "- \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211] - \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        134,
+        135,
+        199,
+        200
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "referenceSignal",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        134,
+        135,
+        199,
+        200
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "referenceSignal",
+      "BWP"
+    ],
+    "original_sentence": "- If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        134,
+        135,
+        199,
+        200
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "BWP"
+    ],
+    "original_sentence": "The types of UE power headroom reports are the following. A Type 1 UE power headroom \\( P H \\) that is valid for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\). A Type 3 UE power headroom PH that is valid for SRS transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\).  A UE determines whether a power headroom report for an activated serving cell [11, TS 38.321] is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until and including the PDCCH monitoring occasion where the UE detects the first DCI format scheduling an initial transmission of a transport block since a power headroom report was triggered if the power headroom report is reported on a PUSCH triggered by the first DCI format. Otherwise, a UE determines whether a power headroom report is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until the first uplink symbol of a configured PUSCH transmission minus \\( T_{\\text {proc. } 2}=T_{\\text {proc. } 2} \\) where \\( T_{\\text {proc. } 2} \\) is determined according to [6, TS 38.214] assuming \\( d_{2, l}=1, d_{2,2}=0 \\), and with \\( \\mu_{D L} \\) corresponding to the subcarrier spacing of the active downlink BWP of the scheduling cell for a configured grant if the power headroom report is reported on the PUSCH using the configured grant.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.7",
+    "section_title": "Power headroom report",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "An active UL BWP with SCS configuration \\( \\mu \\), as described in clause 12 and in [4, TS 38.211], for a PUSCH transmission scheduled by a RAR UL grant is indicated by higher layers.  If useInterlacePUCCH-PUSCH is not provided by BWP-UplinkCommon and BWP-UplinkDedicated, for determining the frequency domain resource allocation for the PUSCH transmission within the active UL BWP",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "8.3",
+    "section_title": "PUSCH scheduled by RAR UL grant",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "If useInterlacePUCCH-PUSCH is not provided by BWP-UplinkCommon and BWP-UplinkDedicated, for determining the frequency domain resource allocation for the PUSCH transmission within the active UL BWP - if the active UL BWP and the initial UL BWP have same SCS and same CP length and the active UL BWP includes all RBs of the initial UL BWP, or the active UL BWP is the initial UL BWP, the initial UL BWP is used - else, the RB numbering starts from the first RB of the active UL BWP and the maximum number of RBs for frequency domain resource allocation equals the number of RBs in the initial UL BWP",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "8.3",
+    "section_title": "PUSCH scheduled by RAR UL grant",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "- else, the RB numbering starts from the first RB of the active UL BWP and the maximum number of RBs for frequency domain resource allocation equals the number of RBs in the initial UL BWP  The frequency domain resource allocation is by uplink resource allocation type 1 [6, TS 38.214]. For an initial UL BWP size of \\( N_{\\text {BWP }}^{\\text {size }} \\) RBs, a UE processes the frequency domain resource assignment field as follows",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "8.3",
+    "section_title": "PUSCH scheduled by RAR UL grant",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "If uselnterlacePUCCH-PUSCH is provided by BWP-UplinkCommon or BWP-UplinkDedicated, the frequency domain resource allocation is by uplink resource allocation type 2 [6, TS 38.214]. A UE processes the frequency domain resource assignment field as follows",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "8.3",
+    "section_title": "PUSCH scheduled by RAR UL grant",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "- the union of row indexes of time domain resource allocation tables for multicast DCI formats the UE is configured to monitor PDCCH for serving cell \\( c \\) for the third \\( K_{1, \\mathrm{M} \\backslash \\mathrm{U}} \\) set, if any - if the UE is provided referenceOfSLIVDCI-1-2, for each row index with slot offset \\( K_{0}=0 \\) and PDSCH mapping Type B in a set of row indexes of a table for DCI format 1 _ 2 [6, TS 38.214], for any PDCCH monitoring occasion in any slot where the UE monitors PDCCH for DCI format \\( 1 \\_2 \\) and with starting symbol \\( S_{0}>0 \\), if \\( S+S_{0}+L \\leq 14 \\) for nomal cyclic prefix and \\( S+S_{0}+L \\leq 12 \\) for extended cyclic prefix, add a new row index in the set of row indexes of the table by replacing the starting symbol \\( S \\) of the row index by \\( S+S_{0} \\) c) on the ratio \\( 2^{\\mu_{\\mathrm{DL}}-\\mu_{\\mathrm{UL}}} \\) between the downlink SCS configuration \\( \\mu_{\\mathrm{DL}} \\) and the uplink SCS configuration \\( \\mu_{\\mathrm{UL}} \\) provided by subcarrierSpacing in BWP-Downlink and BWP-Uplink for the active DL BWP and the active UL BWP, respectively",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.1.2.1",
+    "section_title": "Type",
+    "section_relevance": {
+      "combined_score": 330.0,
+      "ie1_score": 0.0,
+      "ie2_score": 330.0,
+      "match_type": "SINGLE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": [
+          "CSI-ReportConfigToAddModList_reportConfigType",
+          "report configuration to add mod list_report configuration type",
+          "Report Configuration To Add Mod List_report Configuration Type",
+          "ReportConfigurationToAddModList_reportConfigurationType",
+          "CSI Report Config To Add Mod List_report Config Type",
+          "report config to add mod list_report config type",
+          "csi-ReportConfigToAddModList_reportConfigType",
+          "csi report config to add mod list_report config type",
+          "Report Config To Add Mod List_report Config Type",
+          "reportconfigtoaddmodlist_reportconfigtype",
+          "ReportConfigToAddModList_reportConfigType"
+        ]
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "resourceAllocation",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        137,
+        202
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "resource allocation",
+      "BWP"
+    ],
+    "original_sentence": "- set the active UL BWP or DL BWP to the UL BWP or DL BWP indicated by the bandwidth part indicator in the DCI format  If a bandwidth part indicator field is configured in a DCI format \\( 0 \\_1 \\) and indicates an active UL BWP with different SCS configuration \\( \\mu \\), or with different number \\( N_{\\text {RB-set, UL }}^{\\text {BWP }} \\) of RB sets, than a current active UL BWP, the UE determines an uplink frequency domain resource allocation Type 2 based on \\( X^{\\prime} \\) bits and \\( Y^{\\prime} \\) bits that are generated by independently truncating or padding the \\( X \\) MSBs and the \\( Y \\) LSBs [6, TS 38.214] of the frequency domain resource assignment field of DCI format \\( 0 \\_1 \\), where truncation starts from the MSBs of the X bits or the Y bits, zero-padding prepends zeros to the X bits or the Y bits, and",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "11.4",
+    "section_title": "SRS switching",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "tci-StateId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "129_259_bwp-Dedicated_pdsch-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        132,
+        197
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "tci-StateID",
+      "BWP"
+    ],
+    "original_sentence": "each with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.  For each DL BWP configured to a UE in a serving cell, the UE is provided by higher layers with \\( S \\leq 10 \\) search space sets where, for each search space set from the \\( S \\) search space sets, the UE is provided the following by SearchSpace:",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
       "reportConfigType"
     ],
     "source_IEs": [
@@ -4003,995 +4992,6 @@
     "source_file": "ts_138321v180200p_mathpix.md",
     "section_number": "6.1.3.67",
     "section_title": "NCR Uplink Backhaul Link Beam Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        133,
-        198
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP-Id",
-      "BWP"
-    ],
-    "original_sentence": "- a common RB \\( N_{\\mathrm{BWP}}^{\\text {start }}=O_{\\text {carrier }}+R B_{\\text {start }} \\) and a number of contiguous RBs \\( N_{\\mathrm{BWP}}^{\\text {size }}=L_{\\mathrm{RB}} \\) provided by locationAndBandwidth that indicates an offset \\( R B_{\\text {start }} \\) and a length \\( L_{\\mathrm{RB}} \\) as RIV according to [6, TS 38.214], setting \\( N_{\\text {BWP }}^{\\text {size }}=275 \\), and a value \\( O_{\\text {carrier }} \\) provided by offsetToCarrier for the subcarrierSpacing - an index in the set of DL BWPs or UL BWPs by respective BWP-Id",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "11.4",
-    "section_title": "SRS switching",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        133,
-        198
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP-Id",
-      "BWP"
-    ],
-    "original_sentence": "- a set of BWP-common and a set of BWP-dedicated parameters by BWP-DownlinkCommon and BWPDownlinkDedicated for the DL BWP, or BWP-UplinkCommon and BWP-UplinkDedicated for the UL BWP [12, TS 38.331]  For unpaired spectrum operation, a DL BWP from the set of configured DL BWPs with index provided by BWP-Id is linked with an UL BWP from the set of configured UL BWPs with index provided by BWP-Id when the DL BWP index and the UL BWP index are same. For unpaired spectrum operation, a UE does not expect to receive a configuration where the center frequency for a DL BWP is different than the center frequency for an UL BWP when the BWP-Id of the DL BWP is same as the BWP-Id of the UL BWP.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "11.4",
-    "section_title": "SRS switching",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "pdsch-Config",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        129,
-        194,
-        259
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "PDSCH-Config",
-      "BWP"
-    ],
-    "original_sentence": "A UE can be configured, per DL BWP by cfr-Config-Multicast, an MBS frequency resource within the DL BWP for PDCCH and PDSCH receptions [4, TS 38.211]. If cfr-Config-Multicast does not include locationAndBandwidthMulticast, the MBS frequency resource is the active DL BWP. The UE is not required to simultaneously receive PDSCHs on two serving cells. In clauses referring to a higher layer parameter value provided by PDCCH-Config or PDSCH-Config or SPS-Config for a DL BWP, when applicable a corresponding higher layer parameter value for multicast PDCCH, PDSCH, or SPS PDSCH receptions is provided as described in [12, TS 38.331].",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "17.2",
-    "section_title": "Half",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "A UE can be provided, for each BWP of a serving cell, a set \\( \\bar{q}_{0} \\) of periodic CSI-RS resource configuration indexes by failureDetectionResourcesToAddModList and a set \\( \\bar{q}_{1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList or candidateBeamRSListExt or candidateBeamRSSCellList for radio link quality measurements on the BWP of the serving cell. Instead of the sets \\( \\bar{q}_{0} \\) and \\( \\bar{q}_{1} \\), for each BWP of a serving cell, the UE can be provided respective two sets \\( \\bar{q}_{0,0} \\) and \\( \\bar{q}_{0,1} \\) of periodic CSI-RS resource configuration indexes that can be activated by a MAC CE [11 TS 38.321] and corresponding two sets \\( \\bar{q}_{1,0} \\) and \\( \\bar{q}_{1,1} \\) of periodic CSI-RS resource configuration indexes and/or SS/PBCH block indexes by candidateBeamRSList l and candidateBeamRSList2, respectively, for radio link quality measurements on the BWP of the serving cell. The set \\( \\bar{q}_{0,0} \\) is associated with the set \\( \\bar{q}_{1,0} \\) and the set \\( \\bar{q}_{0,1} \\) is associated with the set \\( \\bar{q}_{1,1} \\).  If the UE is not provided \\( \\bar{q}_{0} \\) by failureDetectionResourcesToAddModList for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for respective CORESETs that the UE uses for monitoring PDCCH. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for first and second CORESETs that the UE uses for monitoring PDCCH, where the UE is provided two coresetPoollndex values 0 and 1 for the first and second CORESETs, or is not provided coresetPoollndex value for the first CORESETs and is provided coresetPoollndex value of 1 for the second CORESETs, respectively. If there are two RS indexes in a TCI state, the set \\( \\bar{q}_{0} \\) or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\) includes RS indexes configured with qcl-Type set to 'typeD' for the corresponding TCI states. If a CORESET that the UE uses for monitoring PDCCH includes two TCI states and the UE is provided sfnSchemePdcch set to 'sfnSchemeA' or 'sfnSchemeB', the set \\( \\bar{q}_{0} \\) includes RS indexes in the RS sets associated with the two TCI states. The UE expects the set \\( \\bar{q}_{0} \\) to include up to two RS indexes. If the UE is provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), the UE expects the set \\( \\bar{q}_{0,0} \\) or the set \\( \\bar{q}_{0,1} \\) to include up to a number of \\( N_{\\mathrm{BFD}} \\) RS indexes indicated by capabilityparametername. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), and if a number of active TCI states for PDCCH receptions in the first or second CORESETs is larger than \\( N_{\\mathrm{BFD}} \\), the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets associated with the active TCI states for PDCCH receptions in the first or second CORESETs corresponding to search space sets according to an ascending order for monitoring periodicity. If more than one first or second CORESETs correspond to search space sets with same monitoring periodicity, the UE determines the order of the first or second CORESETs according to a descending order of a CORESET index.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "4.3",
-    "section_title": "Timing for secondary cell activation / deactivation",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- the UE is not provided PUCCH resources for the active UL BWP of serving cell \\( c \\), and - the UE is provided enableDefaultBeamPL-ForPUSCH0-0 the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- the UE is not provided a spatial setting for PUCCH resources on the active UL BWP of the primary cell [11, TS 38.321], and - the UE is provided enableDefaultBeamPL-ForPUSCH0-0 the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same \\( q_{d} \\) applies to the PUCCH transmission in each of the multiple slots.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in - the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP, if CORESETs are provided in the active DL BWP of serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1 , the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.3.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- else if PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides csi-RS-Index, or the indicated DLorJoint-TCIState provides csi-rs configured with qcl-Type set to 'typeD', the UE transmits the PUCCH using a same spatial domain filter as for a reception of a CSI-RS with resource index provided by csi-RSIndex or csi-rs for a same serving cell or, if servingCellld or cell is provided, for a serving cell indicated by servingCellld or cell - else PUCCH-SpatialRelationInfo or the indicated UL-TCIstate provides srs, the UE transmits the PUCCH using a same spatial domain filter as for a transmission of a SRS with resource index provided by resource for a same serving cell and/or active UL BWP or, if servingCellld and/or uplinkBWP are provided, for a serving cell indicated by servingCellld and/or for an UL BWP indicated by uplinkBWP",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.2.2",
-    "section_title": "PUCCH Formats for UCI transmission",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        136,
-        201
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- monitors PDCCH candidates in overlapping PDCCH monitoring occasions in multiple CORESETs that have been configured with same or different qcl-Type set to 'typeD' properties on active DL BWP(s) of one or more cells",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        134,
-        135,
-        199,
-        200
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "BWP"
-    ],
-    "original_sentence": "- \\( M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) \\) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\) and \\( \\mu \\) is a SCS configuration defined in [4, TS 38.211] - \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\)",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        134,
-        135,
-        199,
-        200
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "referenceSignal",
-      "BWP"
-    ],
-    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        134,
-        135,
-        199,
-        200
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "referenceSignal",
-      "BWP"
-    ],
-    "original_sentence": "- If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        134,
-        135,
-        199,
-        200
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "BWP"
-    ],
-    "original_sentence": "The types of UE power headroom reports are the following. A Type 1 UE power headroom \\( P H \\) that is valid for PUSCH transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\). A Type 3 UE power headroom PH that is valid for SRS transmission occasion \\( i \\) on active UL BWP \\( b \\) of carrier \\( f \\) of serving cell \\( c \\).  A UE determines whether a power headroom report for an activated serving cell [11, TS 38.321] is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until and including the PDCCH monitoring occasion where the UE detects the first DCI format scheduling an initial transmission of a transport block since a power headroom report was triggered if the power headroom report is reported on a PUSCH triggered by the first DCI format. Otherwise, a UE determines whether a power headroom report is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until the first uplink symbol of a configured PUSCH transmission minus \\( T_{\\text {proc. } 2}=T_{\\text {proc. } 2} \\) where \\( T_{\\text {proc. } 2} \\) is determined according to [6, TS 38.214] assuming \\( d_{2, l}=1, d_{2,2}=0 \\), and with \\( \\mu_{D L} \\) corresponding to the subcarrier spacing of the active downlink BWP of the scheduling cell for a configured grant if the power headroom report is reported on the PUSCH using the configured grant.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.7",
-    "section_title": "Power headroom report",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "An active UL BWP with SCS configuration \\( \\mu \\), as described in clause 12 and in [4, TS 38.211], for a PUSCH transmission scheduled by a RAR UL grant is indicated by higher layers.  If useInterlacePUCCH-PUSCH is not provided by BWP-UplinkCommon and BWP-UplinkDedicated, for determining the frequency domain resource allocation for the PUSCH transmission within the active UL BWP",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "8.3",
-    "section_title": "PUSCH scheduled by RAR UL grant",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "If useInterlacePUCCH-PUSCH is not provided by BWP-UplinkCommon and BWP-UplinkDedicated, for determining the frequency domain resource allocation for the PUSCH transmission within the active UL BWP - if the active UL BWP and the initial UL BWP have same SCS and same CP length and the active UL BWP includes all RBs of the initial UL BWP, or the active UL BWP is the initial UL BWP, the initial UL BWP is used - else, the RB numbering starts from the first RB of the active UL BWP and the maximum number of RBs for frequency domain resource allocation equals the number of RBs in the initial UL BWP",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "8.3",
-    "section_title": "PUSCH scheduled by RAR UL grant",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "- else, the RB numbering starts from the first RB of the active UL BWP and the maximum number of RBs for frequency domain resource allocation equals the number of RBs in the initial UL BWP  The frequency domain resource allocation is by uplink resource allocation type 1 [6, TS 38.214]. For an initial UL BWP size of \\( N_{\\text {BWP }}^{\\text {size }} \\) RBs, a UE processes the frequency domain resource assignment field as follows",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "8.3",
-    "section_title": "PUSCH scheduled by RAR UL grant",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "If uselnterlacePUCCH-PUSCH is provided by BWP-UplinkCommon or BWP-UplinkDedicated, the frequency domain resource allocation is by uplink resource allocation type 2 [6, TS 38.214]. A UE processes the frequency domain resource assignment field as follows",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "8.3",
-    "section_title": "PUSCH scheduled by RAR UL grant",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "- the union of row indexes of time domain resource allocation tables for multicast DCI formats the UE is configured to monitor PDCCH for serving cell \\( c \\) for the third \\( K_{1, \\mathrm{M} \\backslash \\mathrm{U}} \\) set, if any - if the UE is provided referenceOfSLIVDCI-1-2, for each row index with slot offset \\( K_{0}=0 \\) and PDSCH mapping Type B in a set of row indexes of a table for DCI format 1 _ 2 [6, TS 38.214], for any PDCCH monitoring occasion in any slot where the UE monitors PDCCH for DCI format \\( 1 \\_2 \\) and with starting symbol \\( S_{0}>0 \\), if \\( S+S_{0}+L \\leq 14 \\) for nomal cyclic prefix and \\( S+S_{0}+L \\leq 12 \\) for extended cyclic prefix, add a new row index in the set of row indexes of the table by replacing the starting symbol \\( S \\) of the row index by \\( S+S_{0} \\) c) on the ratio \\( 2^{\\mu_{\\mathrm{DL}}-\\mu_{\\mathrm{UL}}} \\) between the downlink SCS configuration \\( \\mu_{\\mathrm{DL}} \\) and the uplink SCS configuration \\( \\mu_{\\mathrm{UL}} \\) provided by subcarrierSpacing in BWP-Downlink and BWP-Uplink for the active DL BWP and the active UL BWP, respectively",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.1.2.1",
-    "section_title": "Type",
-    "section_relevance": {
-      "combined_score": 330.0,
-      "ie1_score": 0.0,
-      "ie2_score": 330.0,
-      "match_type": "SINGLE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": [
-          "Report Config To Add Mod List_report Config Type",
-          "CSI Report Config To Add Mod List_report Config Type",
-          "Report Configuration To Add Mod List_report Configuration Type",
-          "CSI-ReportConfigToAddModList_reportConfigType",
-          "ReportConfigurationToAddModList_reportConfigurationType",
-          "report config to add mod list_report config type",
-          "report configuration to add mod list_report configuration type",
-          "csi report config to add mod list_report config type",
-          "reportconfigtoaddmodlist_reportconfigtype",
-          "csi-ReportConfigToAddModList_reportConfigType",
-          "ReportConfigToAddModList_reportConfigType"
-        ]
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "resourceAllocation",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        137,
-        202
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "resource allocation",
-      "BWP"
-    ],
-    "original_sentence": "- set the active UL BWP or DL BWP to the UL BWP or DL BWP indicated by the bandwidth part indicator in the DCI format  If a bandwidth part indicator field is configured in a DCI format \\( 0 \\_1 \\) and indicates an active UL BWP with different SCS configuration \\( \\mu \\), or with different number \\( N_{\\text {RB-set, UL }}^{\\text {BWP }} \\) of RB sets, than a current active UL BWP, the UE determines an uplink frequency domain resource allocation Type 2 based on \\( X^{\\prime} \\) bits and \\( Y^{\\prime} \\) bits that are generated by independently truncating or padding the \\( X \\) MSBs and the \\( Y \\) LSBs [6, TS 38.214] of the frequency domain resource assignment field of DCI format \\( 0 \\_1 \\), where truncation starts from the MSBs of the X bits or the Y bits, zero-padding prepends zeros to the X bits or the Y bits, and",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "11.4",
-    "section_title": "SRS switching",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "tci-StateId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "129_259_bwp-Dedicated_pdsch-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        132,
-        197
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "tci-StateID",
-      "BWP"
-    ],
-    "original_sentence": "each with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.  For each DL BWP configured to a UE in a serving cell, the UE is provided by higher layers with \\( S \\leq 10 \\) search space sets where, for each search space set from the \\( S \\) search space sets, the UE is provided the following by SearchSpace:",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,

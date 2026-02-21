@@ -1,6 +1,46 @@
 [
   {
     "fields": [
+      "priority",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "80_229_pdcch-ConfigCommon"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        88,
+        153,
+        218
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "search space"
+    ],
+    "original_sentence": "HARQ-ACK for the two PDSCHs are associated with the HARQ-ACK codebook of the same priority. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH, and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH if the HARQ-ACK for the two PDSCHs are associated with HARQ-ACK codebooks of different priorities. For any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start receiving a first PDSCH starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell, the UE is not expected to be scheduled to receive a PDSCH starting earlier than the end of the first PDSCH with a PDCCH that ends later than symbol \\( i \\) of a scheduling cell,. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH ending in symbol \\( i \\) is determined based on the PDCCH candidate that ends later in time. In a given scheduled cell, for any PDSCH corresponding to SI-RNTI, the UE is not expected to decode a re-transmission of an earlier PDSCH with a starting symbol less than \\( N \\) symbols after the last symbol of that PDSCH, where the value of \\( N \\) depends on the PDSCH subcarrier spacing configuration \\( \\mu \\) with \\( N=13 \\) for \\( \\mu=0, N=13 \\) for \\( \\mu=1, N=20 \\) for \\( \\mu=2, N=24 \\) for \\( \\mu=3, N=96 \\) for \\( \\mu=5 \\), and \\( N=192 \\) for \\( \\mu=6 \\).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1",
+    "section_title": "UE procedure for receiving the physical downlink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
       "bucketSizeDuration",
       "duration"
     ],
@@ -357,46 +397,6 @@
       }
     },
     "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "priority",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "80_229_pdcch-ConfigCommon"
-    ],
-    "field_ids": [
-      [
-        19
-      ],
-      [
-        88,
-        153,
-        218
-      ]
-    ],
-    "matched_fields": [
-      "priority",
-      "search space"
-    ],
-    "original_sentence": "HARQ-ACK for the two PDSCHs are associated with the HARQ-ACK codebook of the same priority. Except for the case when a UE is configured by higher layer parameter PDCCH-Config that contains two different values of coresetPoollndex in ControlResourceSet and PDCCHs that schedule two PDSCHs are associated to different ControlResourceSets having different values of coresetPoollndex, in a given scheduled cell, the UE is not expected to receive a first PDSCH, and a second PDSCH, starting later than the first PDSCH, with its corresponding HARQ-ACK assigned to be transmitted on a resource ending before the start of a different resource for the HARQ-ACK assigned to be transmitted for the first PDSCH if the HARQ-ACK for the two PDSCHs are associated with HARQ-ACK codebooks of different priorities. For any two HARQ process IDs in a given scheduled cell, if the UE is scheduled to start receiving a first PDSCH starting in symbol \\( j \\) by a PDCCH ending in symbol \\( i \\) on a scheduling cell, the UE is not expected to be scheduled to receive a PDSCH starting earlier than the end of the first PDSCH with a PDCCH that ends later than symbol \\( i \\) of a scheduling cell,. When the PDCCH reception includes two PDCCH candidates from two respective search space sets, as described in clause 10.1 of [6, TS 38.213], the PDCCH ending in symbol \\( i \\) is determined based on the PDCCH candidate that ends later in time. In a given scheduled cell, for any PDSCH corresponding to SI-RNTI, the UE is not expected to decode a re-transmission of an earlier PDSCH with a starting symbol less than \\( N \\) symbols after the last symbol of that PDSCH, where the value of \\( N \\) depends on the PDSCH subcarrier spacing configuration \\( \\mu \\) with \\( N=13 \\) for \\( \\mu=0, N=13 \\) for \\( \\mu=1, N=20 \\) for \\( \\mu=2, N=24 \\) for \\( \\mu=3, N=96 \\) for \\( \\mu=5 \\), and \\( N=192 \\) for \\( \\mu=6 \\).",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1",
-    "section_title": "UE procedure for receiving the physical downlink shared channel",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
     "is_cross_ie": true
   },
   {

@@ -1532,6 +1532,526 @@
   {
     "fields": [
       "controlResourceSetId",
+      "pdcch-ConfigCommon"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        209
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "PDCCH-ConfigCommon"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        218
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        217
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "tci-StatesPDCCHToAddList"
+    ],
+    "original_sentence": "The TCI State Indication for UE-specific PDCCH MAC CE is identified by a MAC subheader with LCID as specified in Table 6.2.1-1. It has a fixed size of 16 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.15",
+    "section_title": "TCI State Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        217
+      ]
+    ],
+    "matched_fields": [
+      "Control Resource Set",
+      "tci-StatesPDCCHToAddList"
+    ],
+    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.15",
+    "section_title": "TCI State Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        217
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "original_sentence": "The Enhanced TCI States Indication for UE-specific PDCCH MAC CE is identified by a MAC PDU subheader with eLCID as specified in Table 6.2.1-1b. It has a fixed size of 24 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneous TCI-UpdateListl or simultaneous TCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateList1 or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI state IDi: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCH-ToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. NOTE 1: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to any of the configured CORESETs in a BWP if the CORESETs are configured with different CORESETPoolindex values in the BWP.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "field_ids": [
+      [
+        210,
+        219
+      ],
+      [
+        217
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "tci-StatesPDCCH-ToAddList"
+    ],
+    "original_sentence": "The Cross-RRH TCI State Indication for UE-specific PDCCH MAC CE is identified by a MAC subheader with eLCID as specified in Table 6.2-1-1b. It has a fixed size of 24 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all the Serving Cells in the set simultaneous TCI-UpdateList I or simultaneous TCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCH-ToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits; - Cross RRH Indicator: This field indicates whether the lower layers follow TCI state switching delay requirements in high speed train FR2 scenarios and apply the one shot large UL timing adjustment after switching to a TCI state identified by TCI-Stateld as specified in TS 38.331 [5]. The field is set to 1 to indicate that the lower layers apply the TCI state switching delay requirements specified in Clause 8.10.3A of TS 38.133 [11] and apply the one shot large timing adjustment requirements specified in Clause 7.1.2.3 of TS 38.133 [11] immediately to the first UL transmission after TCI state switch without checking the DL timing difference threshold. The field is set to 0 to indicate that the lower layers apply the TCI state switching delay requirements specified in clause 8.10.3 of TS 38.133 [11] and apply the gradual timing adjustment requirements specified in Clause 7.1.2.1 of TS 38.133 [11] to the first UL transmission after TCI state switch without checking the DL timing difference threshold. The length of the field is 1 bit; - R: Reserved bit, set to 0 .",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.77",
+    "section_title": "Cross",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "duration",
+      "searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        213
+      ],
+      [
+        218
+      ]
+    ],
+    "matched_fields": [
+      "duration",
+      "search space"
+    ],
+    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe. 2> else: 3> start drx-onDurationTimer for this DRX group after drx-SlotOffset from the beginning of the subframe. NOTE 2: In case of unaligned SFN across carriers in a cell group, the SFN of the SpCell is used to calculate the DRX duration. 1> if a DRX group is in Active Time: 2> monitor the PDCCH on the Serving Cells in this DRX group as specified in TS 38.213 [6];",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.7",
+    "section_title": "Discontinuous Reception (DRX)",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "duration",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        213
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "duration",
+      "search space"
+    ],
+    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe. 2> else: 3> start drx-onDurationTimer for this DRX group after drx-SlotOffset from the beginning of the subframe. NOTE 2: In case of unaligned SFN across carriers in a cell group, the SFN of the SpCell is used to calculate the DRX duration. 1> if a DRX group is in Active Time: 2> monitor the PDCCH on the Serving Cells in this DRX group as specified in TS 38.213 [6];",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.7",
+    "section_title": "Discontinuous Reception (DRX)",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdcch-ConfigCommon",
+      "searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        209
+      ],
+      [
+        218
+      ]
+    ],
+    "matched_fields": [
+      "PDCCH-ConfigCommon",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "pdcch-ConfigCommon",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        209
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "PDCCH-ConfigCommon",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "- msgA-TransMax: The maximum number of MSGA transmissions when both 4 -step and 2 -step RA type Random Access Resources are configured; - candidateBeamRSList: a list of reference signals (CSI-RS and/or SSB) identifying the candidate beams for recovery and the associated Random Access parameters; - recoverySearchSpaceld: the search space identity for monitoring the response of the beam failure recovery request; - powerRampingStep: the power-ramping factor; - msgA-PreamblePowerRampingStep: the power ramping factor for MSGA preamble;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "when",
+    "is_self_reference": false,
+    "section_number": "5.1.1",
+    "section_title": "Random Access procedure initialization",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "2> else: 3> start the ra-ResponseWindow configured in BeamFailureRecoveryConfig at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while ra-ResponseWindow is running. 1> else:",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "5.1.4",
+    "section_title": "Random Access Response reception",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "3> start the ra-ResponseWindow configured in RACH-ConfigCommon at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor the PDCCH of the SpCell for Random Access Response(s) identified by the RA-RNTI while the raResponseWindow is running. 1> if notification of a reception of a PDCCH transmission on the search space indicated by recoverySearchSpaceld is received from lower layers on the Serving Cell where the preamble was transmitted; and 1> if PDCCH transmission is addressed to the C-RNTI; and 1> if the contention-free Random Access Preamble for beam failure recovery request was transmitted by the MAC entity:",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.1.4",
+    "section_title": "Random Access Response reception",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "NOTE 1: If within a Random Access procedure, an uplink grant provided in the Random Access Response for the same group of contention-based Random Access Preambles has a different size than the first uplink grant allocated during that Random Access procedure, the UE behavior is not defined. 1> if ra-ResponseWindow configured in BeamFailureRecoveryConfig expires and if a PDCCH transmission on the search space indicated by recoverySearchSpaceld addressed to the C-RNTI has not been received on the Serving Cell where the preamble was transmitted; or 1> if ra-ResponseWindow configured in RACH-ConfigCommon expires, and if the Random Access Response containing Random Access Preamble identifiers that matches the transmitted PREAMBLE_INDEX has not been received:",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "5.1.4",
+    "section_title": "Random Access Response reception",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.7",
+    "section_title": "Discontinuous Reception (DRX)",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "2> not monitor the PDCCH for the SCell; 2> not transmit PUCCH on the SCell; 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.9",
+    "section_title": "Activation/Deactivation of SCells",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "5.15.1",
+    "section_title": "Downlink and Uplink",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "searchSpaceId",
+      "searchSpaceType"
+    ],
+    "field_ids": [
+      [
+        218
+      ],
+      [
+        229
+      ]
+    ],
+    "matched_fields": [
+      "search space",
+      "search space"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "6.1.3.44",
+    "section_title": "Enhanced TCI States Indication for UE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
       "duration"
     ],
     "field_ids": [
@@ -4620,8 +5140,8 @@
     "section_title": "UE PDSCH reception preparation time with cross carrier scheduling with different subcarrier spacings for PDCCH and PDSCH",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -4945,526 +5465,6 @@
     "is_self_reference": false,
     "section_number": "6.4",
     "section_title": "UE PUSCH preparation procedure time",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "pdcch-ConfigCommon"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        209
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "PDCCH-ConfigCommon"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        218
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        217
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "tci-StatesPDCCHToAddList"
-    ],
-    "original_sentence": "The TCI State Indication for UE-specific PDCCH MAC CE is identified by a MAC subheader with LCID as specified in Table 6.2.1-1. It has a fixed size of 16 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "6.1.3.15",
-    "section_title": "TCI State Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        217
-      ]
-    ],
-    "matched_fields": [
-      "Control Resource Set",
-      "tci-StatesPDCCHToAddList"
-    ],
-    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP or by dl-OrJoint-TCI-State-ToAddModList and dl-OrJoint-TCI-State-ToReleaseList in the PDSCH-Config in the active BWP or the reference BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCHToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. Figure 6.1.3.15-1: TCI State Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "6.1.3.15",
-    "section_title": "TCI State Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        217
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "original_sentence": "The Enhanced TCI States Indication for UE-specific PDCCH MAC CE is identified by a MAC PDU subheader with eLCID as specified in Table 6.2.1-1b. It has a fixed size of 24 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneous TCI-UpdateListl or simultaneous TCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all theServing Cells in the set simultaneousTCI-UpdateList1 or simultaneousTCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI state IDi: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCH-ToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits. NOTE 1: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to any of the configured CORESETs in a BWP if the CORESETs are configured with different CORESETPoolindex values in the BWP.",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "field_ids": [
-      [
-        210,
-        219
-      ],
-      [
-        217
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "tci-StatesPDCCH-ToAddList"
-    ],
-    "original_sentence": "The Cross-RRH TCI State Indication for UE-specific PDCCH MAC CE is identified by a MAC subheader with eLCID as specified in Table 6.2-1-1b. It has a fixed size of 24 bits with following fields: - Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits. If the indicated Serving Cell is configured as part of a simultaneousTCI-UpdateListl or simultaneousTCI-UpdateList2 as specified in TS 38.331 [5], this MAC CE applies to all the Serving Cells in the set simultaneous TCI-UpdateList I or simultaneous TCI-UpdateList2, respectively; - CORESET ID: This field indicates a Control Resource Set identified with ControlResourceSetld as specified in TS 38.331 [5], for which the TCI State is being indicated. In case the value of the field is 0 , the field refers to the Control Resource Set configured by controlResourceSetZero as specified in TS 38.331 [5]. The length of the field is 4 bits; - TCI State ID: This field indicates the TCI state identified by TCI-Stateld as specified in TS 38.331 [5] applicable to the Control Resource Set identified by CORESET ID field. If the field of CORESET ID is set to 0 , this field indicates a TCI-Stateld for a TCI state of the first 64 TCI-states configured by tci-StatesToAddModList and tciStatesToReleaseList in the PDSCH-Config in the active BWP. If the field of CORESET ID is set to the other value than 0 , this field indicates a TCI-Stateld configured by tci-StatesPDCCH-ToAddList and tci-StatesPDCCH-ToReleaseList in the controlResourceSet identified by the indicated CORESET ID. The length of the field is 7 bits; - Cross RRH Indicator: This field indicates whether the lower layers follow TCI state switching delay requirements in high speed train FR2 scenarios and apply the one shot large UL timing adjustment after switching to a TCI state identified by TCI-Stateld as specified in TS 38.331 [5]. The field is set to 1 to indicate that the lower layers apply the TCI state switching delay requirements specified in Clause 8.10.3A of TS 38.133 [11] and apply the one shot large timing adjustment requirements specified in Clause 7.1.2.3 of TS 38.133 [11] immediately to the first UL transmission after TCI state switch without checking the DL timing difference threshold. The field is set to 0 to indicate that the lower layers apply the TCI state switching delay requirements specified in clause 8.10.3 of TS 38.133 [11] and apply the gradual timing adjustment requirements specified in Clause 7.1.2.1 of TS 38.133 [11] to the first UL transmission after TCI state switch without checking the DL timing difference threshold. The length of the field is 1 bit; - R: Reserved bit, set to 0 .",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "6.1.3.77",
-    "section_title": "Cross",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "duration",
-      "searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        213
-      ],
-      [
-        218
-      ]
-    ],
-    "matched_fields": [
-      "duration",
-      "search space"
-    ],
-    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe. 2> else: 3> start drx-onDurationTimer for this DRX group after drx-SlotOffset from the beginning of the subframe. NOTE 2: In case of unaligned SFN across carriers in a cell group, the SFN of the SpCell is used to calculate the DRX duration. 1> if a DRX group is in Active Time: 2> monitor the PDCCH on the Serving Cells in this DRX group as specified in TS 38.213 [6];",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.7",
-    "section_title": "Discontinuous Reception (DRX)",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "duration",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        213
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "duration",
-      "search space"
-    ],
-    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe. 2> else: 3> start drx-onDurationTimer for this DRX group after drx-SlotOffset from the beginning of the subframe. NOTE 2: In case of unaligned SFN across carriers in a cell group, the SFN of the SpCell is used to calculate the DRX duration. 1> if a DRX group is in Active Time: 2> monitor the PDCCH on the Serving Cells in this DRX group as specified in TS 38.213 [6];",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.7",
-    "section_title": "Discontinuous Reception (DRX)",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "pdcch-ConfigCommon",
-      "searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        209
-      ],
-      [
-        218
-      ]
-    ],
-    "matched_fields": [
-      "PDCCH-ConfigCommon",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "pdcch-ConfigCommon",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        209
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "PDCCH-ConfigCommon",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "- msgA-TransMax: The maximum number of MSGA transmissions when both 4 -step and 2 -step RA type Random Access Resources are configured; - candidateBeamRSList: a list of reference signals (CSI-RS and/or SSB) identifying the candidate beams for recovery and the associated Random Access parameters; - recoverySearchSpaceld: the search space identity for monitoring the response of the beam failure recovery request; - powerRampingStep: the power-ramping factor; - msgA-PreamblePowerRampingStep: the power ramping factor for MSGA preamble;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "when",
-    "is_self_reference": false,
-    "section_number": "5.1.1",
-    "section_title": "Random Access procedure initialization",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "2> else: 3> start the ra-ResponseWindow configured in BeamFailureRecoveryConfig at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while ra-ResponseWindow is running. 1> else:",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "indicated by",
-    "is_self_reference": false,
-    "section_number": "5.1.4",
-    "section_title": "Random Access Response reception",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "3> start the ra-ResponseWindow configured in RACH-ConfigCommon at the first PDCCH occasion as specified in TS 38.213 [6] from the end of the Random Access Preamble transmission. 2> monitor the PDCCH of the SpCell for Random Access Response(s) identified by the RA-RNTI while the raResponseWindow is running. 1> if notification of a reception of a PDCCH transmission on the search space indicated by recoverySearchSpaceld is received from lower layers on the Serving Cell where the preamble was transmitted; and 1> if PDCCH transmission is addressed to the C-RNTI; and 1> if the contention-free Random Access Preamble for beam failure recovery request was transmitted by the MAC entity:",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.1.4",
-    "section_title": "Random Access Response reception",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "NOTE 1: If within a Random Access procedure, an uplink grant provided in the Random Access Response for the same group of contention-based Random Access Preambles has a different size than the first uplink grant allocated during that Random Access procedure, the UE behavior is not defined. 1> if ra-ResponseWindow configured in BeamFailureRecoveryConfig expires and if a PDCCH transmission on the search space indicated by recoverySearchSpaceld addressed to the C-RNTI has not been received on the Serving Cell where the preamble was transmitted; or 1> if ra-ResponseWindow configured in RACH-ConfigCommon expires, and if the Random Access Response containing Random Access Preamble identifiers that matches the transmitted PREAMBLE_INDEX has not been received:",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "5.1.4",
-    "section_title": "Random Access Response reception",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "2> if DCP monitoring is configured for the active DL BWP as specified in TS 38.213 [6], clause 10.3: 3> if DCP indication associated with the current DRX cycle received from lower layer indicated to start d r x onDurationTimer, as specified in TS 38.213 [6]; or 3> if all DCP occasion(s) in time domain, as specified in TS 38.213 [6], associated with the current DRX cycle occurred in Active Time considering grants/assignments/DRX Command MAC CE/Long DRX Command MAC CE received and Scheduling Request sent until 4 ms prior to start of the last DCP occasion, or during a measurement gap, or when the MAC entity monitors for a PDCCH transmission on the search space indicated by recoverySearchSpaceld of the SpCell identified by the C-RNTI while the ra-ResponseWindow is running (as specified in clause 5.1.4); or 3> if p s -Wakeup is configured with value true and DCP indication associated with the current DRX cycle has not been received from lower layers: 4> start drx-onDurationTimer after drx-SlotOffset from the beginning of the subframe.",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.7",
-    "section_title": "Discontinuous Reception (DRX)",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "2> not monitor the PDCCH for the SCell; 2> not transmit PUCCH on the SCell; 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.9",
-    "section_title": "Activation/Deactivation of SCells",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) 2> if the SCell is configured as a scheduled cell in MC-DCI-SetOfCells and with the search space for DCI to schedule multiple cells (as specified in TS 38.213 [6]) of the same searchSpaceld as the serving cell in which MC-DCI-SetOfCells containing the SCell is configured: 3> not monitor the PDCCH for scheduling multiple cells (as specified in TS 38.213 [6]) for the set of cells in MC-DCI-SetOfCells including the SCell.",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "5.15.1",
-    "section_title": "Downlink and Uplink",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "searchSpaceId",
-      "searchSpaceType"
-    ],
-    "field_ids": [
-      [
-        218
-      ],
-      [
-        229
-      ]
-    ],
-    "matched_fields": [
-      "search space",
-      "search space"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) NOTE 3: The Enhanced TCI State Indication for UE specific PDCCH MAC CE is not applicable to the CORESET configured by controlResourceSetZero if the CORESET is associated with the search space configured by pdcch-ConfigSIB1 in MIB, or searchSpaceSIB1, searchSpaceZero, searchSpaceOtherSystemInformation, or pagingSearchSpace in PDCCH-ConfigCommon. Figure 6.1.3.44-1: Enhanced TCI States Indication for UE-specific PDCCH MAC CE",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "6.1.3.44",
-    "section_title": "Enhanced TCI States Indication for UE",
     "ie_relevance_score": 0.0,
     "matched_ie_variants": [],
     "confidence": "VERY_LOW"
@@ -11962,8 +11962,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -11992,8 +11992,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12022,8 +12022,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12052,8 +12052,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12082,8 +12082,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12112,8 +12112,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12142,8 +12142,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12172,8 +12172,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12202,8 +12202,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12232,8 +12232,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12262,8 +12262,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12778,8 +12778,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12808,8 +12808,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12838,8 +12838,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12868,8 +12868,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12898,8 +12898,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12928,8 +12928,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12958,8 +12958,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -12988,8 +12988,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -13018,8 +13018,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -13048,8 +13048,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -13078,8 +13078,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15205,8 +15205,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15235,8 +15235,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15265,8 +15265,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15295,8 +15295,8 @@
     "section_title": "PDCCH monitoring indication and dormancy/non",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15325,8 +15325,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15355,8 +15355,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15385,8 +15385,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15415,8 +15415,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15445,8 +15445,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15475,8 +15475,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15505,8 +15505,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15535,8 +15535,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15565,8 +15565,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15595,8 +15595,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },
@@ -15625,8 +15625,8 @@
     "section_title": "Search space set group switching and skipping of PDCCH monitoring",
     "ie_relevance_score": 20.0,
     "matched_ie_variants": [
-      "pdcch",
-      "PDCCH"
+      "PDCCH",
+      "pdcch"
     ],
     "confidence": "MEDIUM"
   },

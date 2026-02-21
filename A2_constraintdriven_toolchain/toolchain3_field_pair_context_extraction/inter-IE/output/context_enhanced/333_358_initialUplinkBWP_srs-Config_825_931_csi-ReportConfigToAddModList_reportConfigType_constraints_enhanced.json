@@ -1,6 +1,479 @@
 [
   {
     "fields": [
+      "srs-ResourceId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        341
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource ID",
+      "BWP"
+    ],
+    "original_sentence": "- SRS Resource's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated AP/SP SRS Resource. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource \\( \\mathrm{ID}_{1} \\) fields. The length of the field is 2 bits; - C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.29",
+    "section_title": "Serving Cell Set based SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        341
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1 , the TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits; - TCI State Serving Cell ID: This field indicates the identity of the Serving Cell on which the TCI State used for SRS Resource ID \\( { }_{1} \\) is located. The length of the field is 5 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.60",
+    "section_title": "Serving Cell Set based SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        341
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource ID",
+      "BWP"
+    ],
+    "original_sentence": "- TCI State BWP ID: This field indicates a BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the TCI State used for SRS Resource ID, is located. If value of unifiedTCIStateType in the Serving Cell indicated by TCI State Serving Cell ID1 is joint, this field indicates a DL BWP. If",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.60",
+    "section_title": "Serving Cell Set based SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        341
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource ID",
+      "BWP"
+    ],
+    "original_sentence": "- Uplink TCI state ID or SRS Resource ID: This field is used to indicate the uplink beam to be used for backhaul link transmission. If the dl-OrJointTCI-StateList is configured as specified in TS 38.331 [5] and unifiedTCIStateType is configured with a value joint, this field contains TCI-Stateld (comprising all 7 bits) of a Joint TCI State configured in the active DL BWP, which is used as the uplink beam indication for backhaul link transmission. If the ul-TCI-StateList is configured as specified in TS 38.331 [5], this field contains TCI-UL-State-Id (contained in the 6 rightmost bits) of an UL TCI State configured in the active UL BWP, which is used as the uplink beam indication for backhaul link transmission, with the 1 remaining bit set to zero. Otherwise, 6 rightmost bits of this field contain SRS-ResourceID configured in the active UL BWP which is used as the uplink beam indication for backhaul link transmission, with the 1 remaining bit set to zero;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.67",
+    "section_title": "NCR Uplink Backhaul Link Beam Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.17",
+    "section_title": "SP SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS resource set ID",
+      "BWP"
+    ],
+    "original_sentence": "- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell which contains all resources indicated by the Resource ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource ID, fields. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1, Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- \\( F_{1} \\) : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP/AP SRS Resource Set indicated with SP/AP SRS Resource Set ID field. Fo refers to the first SRS resource within the resource set, \\( F_{1} \\) to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - Resource Serving Cell ID: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.26",
+    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains activated SRS Resource Set. The length of the field is 2 bits; - SRS Resource Set ID: This field indicates the SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.27",
+    "section_title": "SRS Pathloss Reference RS Update MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) within the field Spatial Relation for Resource ID, are present, except for Spatial Relation Resource ID, with DL-PRS or SSB. When A/D is set to 1 , if this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) in the field Spatial Relation for Resource ID, are present, otherwise if this field is set to 0 , they are not present. When \\( A / D \\) is set to 0 , this field is always set to 0 that they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - Positoining SRS Resource Set ID: This field indicates the SP Positioning SRS Resource Set identified by SRSPosResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.36",
+    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "srs-ResourceSetId",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "333_358_initialUplinkBWP_srs-Config",
+      "825_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        333
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "SRS Resource Set ID",
+      "BWP"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "section_number": "6.1.3.59",
+    "section_title": "SP/AP SRS TCI State Indication MAC CE",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
       "aperiodicSRS-ResourceTrigger",
       "uplinkBandwidthPartId"
     ],
@@ -1130,8 +1603,8 @@
       "match_type": "SINGLE",
       "matched_variants": {
         "ie1": [
-          "config",
-          "Config"
+          "Config",
+          "config"
         ],
         "ie2": []
       }
@@ -2858,16 +3331,16 @@
       "matched_variants": {
         "ie1": [],
         "ie2": [
-          "Report Config To Add Mod List_report Config Type",
-          "CSI Report Config To Add Mod List_report Config Type",
-          "Report Configuration To Add Mod List_report Configuration Type",
           "CSI-ReportConfigToAddModList_reportConfigType",
-          "ReportConfigurationToAddModList_reportConfigurationType",
-          "report config to add mod list_report config type",
           "report configuration to add mod list_report configuration type",
-          "csi report config to add mod list_report config type",
-          "reportconfigtoaddmodlist_reportconfigtype",
+          "Report Configuration To Add Mod List_report Configuration Type",
+          "ReportConfigurationToAddModList_reportConfigurationType",
+          "CSI Report Config To Add Mod List_report Config Type",
+          "report config to add mod list_report config type",
           "csi-ReportConfigToAddModList_reportConfigType",
+          "csi report config to add mod list_report config type",
+          "Report Config To Add Mod List_report Config Type",
+          "reportconfigtoaddmodlist_reportconfigtype",
           "ReportConfigToAddModList_reportConfigType"
         ]
       }
@@ -2913,16 +3386,16 @@
       "matched_variants": {
         "ie1": [],
         "ie2": [
-          "Report Config To Add Mod List_report Config Type",
-          "CSI Report Config To Add Mod List_report Config Type",
-          "Report Configuration To Add Mod List_report Configuration Type",
           "CSI-ReportConfigToAddModList_reportConfigType",
-          "ReportConfigurationToAddModList_reportConfigurationType",
-          "report config to add mod list_report config type",
           "report configuration to add mod list_report configuration type",
-          "csi report config to add mod list_report config type",
-          "reportconfigtoaddmodlist_reportconfigtype",
+          "Report Configuration To Add Mod List_report Configuration Type",
+          "ReportConfigurationToAddModList_reportConfigurationType",
+          "CSI Report Config To Add Mod List_report Config Type",
+          "report config to add mod list_report config type",
           "csi-ReportConfigToAddModList_reportConfigType",
+          "csi report config to add mod list_report config type",
+          "Report Config To Add Mod List_report Config Type",
+          "reportconfigtoaddmodlist_reportconfigtype",
           "ReportConfigToAddModList_reportConfigType"
         ]
       }
@@ -3358,479 +3831,6 @@
       }
     },
     "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        341
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource ID",
-      "BWP"
-    ],
-    "original_sentence": "- SRS Resource's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated AP/SP SRS Resource. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource \\( \\mathrm{ID}_{1} \\) fields. The length of the field is 2 bits; - C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.29",
-    "section_title": "Serving Cell Set based SRS Spatial Relation Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        341
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource ID",
-      "BWP"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1 , the TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits; - TCI State Serving Cell ID: This field indicates the identity of the Serving Cell on which the TCI State used for SRS Resource ID \\( { }_{1} \\) is located. The length of the field is 5 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.60",
-    "section_title": "Serving Cell Set based SRS TCI State Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        341
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource ID",
-      "BWP"
-    ],
-    "original_sentence": "- TCI State BWP ID: This field indicates a BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the TCI State used for SRS Resource ID, is located. If value of unifiedTCIStateType in the Serving Cell indicated by TCI State Serving Cell ID1 is joint, this field indicates a DL BWP. If",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.60",
-    "section_title": "Serving Cell Set based SRS TCI State Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        341
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource ID",
-      "BWP"
-    ],
-    "original_sentence": "- Uplink TCI state ID or SRS Resource ID: This field is used to indicate the uplink beam to be used for backhaul link transmission. If the dl-OrJointTCI-StateList is configured as specified in TS 38.331 [5] and unifiedTCIStateType is configured with a value joint, this field contains TCI-Stateld (comprising all 7 bits) of a Joint TCI State configured in the active DL BWP, which is used as the uplink beam indication for backhaul link transmission. If the ul-TCI-StateList is configured as specified in TS 38.331 [5], this field contains TCI-UL-State-Id (contained in the 6 rightmost bits) of an UL TCI State configured in the active UL BWP, which is used as the uplink beam indication for backhaul link transmission, with the 1 remaining bit set to zero. Otherwise, 6 rightmost bits of this field contain SRS-ResourceID configured in the active UL BWP which is used as the uplink beam indication for backhaul link transmission, with the 1 remaining bit set to zero;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.67",
-    "section_title": "NCR Uplink Backhaul Link Beam Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.17",
-    "section_title": "SP SRS Activation/Deactivation MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS resource set ID",
-      "BWP"
-    ],
-    "original_sentence": "- A/D: This field indicates whether to activate or deactivate indicated SP SRS resource set. The field is set to 1 to indicate activation, otherwise it indicates deactivation. If the indicated SRS resource set ID is for the AP SRS resource set, MAC entity shall ignore this field; - SRS Resource Set's Cell ID: This field indicates the identity of the Serving Cell, which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the Serving Cell which contains all resources indicated by the Resource ID, fields. The length of the field is 5 bits; - SRS Resource Set's BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains the indicated SP/AP SRS Resource Set. If the C field is set to 0 , this field also indicates the identity of the BWP which contains all resources indicated by the Resource ID, fields. The length of the field is 2 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.26",
-    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1, Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.26",
-    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- \\( F_{1} \\) : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP/AP SRS Resource Set indicated with SP/AP SRS Resource Set ID field. Fo refers to the first SRS resource within the resource set, \\( F_{1} \\) to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit. This field is only present if MAC CE is used for activation of SP SRS resource set, i.e. the A/D field is set to 1 , or for AP SRS resource set; - Resource Serving Cell ID: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS resource \\( i \\) is located. The length of the field is 2 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.26",
-    "section_title": "Enhanced SP/AP SRS Spatial Relation Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], which contains activated SRS Resource Set. The length of the field is 2 bits; - SRS Resource Set ID: This field indicates the SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.27",
-    "section_title": "SRS Pathloss Reference RS Update MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) within the field Spatial Relation for Resource ID, are present, except for Spatial Relation Resource ID, with DL-PRS or SSB. When A/D is set to 1 , if this field is set to 1 , the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) in the field Spatial Relation for Resource ID, are present, otherwise if this field is set to 0 , they are not present. When \\( A / D \\) is set to 0 , this field is always set to 0 that they are not present; - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - Positoining SRS Resource Set ID: This field indicates the SP Positioning SRS Resource Set identified by SRSPosResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.36",
-    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "srs-ResourceSetId",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "333_358_initialUplinkBWP_srs-Config",
-      "825_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        333
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "SRS Resource Set ID",
-      "BWP"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present. If this field is set to 1, TCI State Serving Cell ID field(s) and TCI State BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore TCI State Serving Cell ID field(s) and TCI State BWP ID field(s); - SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SRS Resource Set ID: This field indicates the SP/AP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5]. The length of the field is 4 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "section_number": "6.1.3.59",
-    "section_title": "SP/AP SRS TCI State Indication MAC CE",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
     "is_cross_ie": true
   },
   {

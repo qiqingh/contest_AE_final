@@ -110,12 +110,12 @@
       "match_type": "SINGLE",
       "matched_variants": {
         "ie1": [
-          "common control resource set_control resource set id",
-          "CONTROL RESOURCE SET",
           "control resource set",
+          "common control resource set_control resource set id",
           "common Control Resource Set_control Resource Set Id",
-          "commoncontrolresourceset_controlresourcesetid",
-          "commonControlResourceSet_controlResourceSetId"
+          "commonControlResourceSet_controlResourceSetId",
+          "CONTROL RESOURCE SET",
+          "commoncontrolresourceset_controlresourcesetid"
         ],
         "ie2": []
       }
@@ -156,12 +156,12 @@
       "match_type": "SINGLE",
       "matched_variants": {
         "ie1": [
-          "common control resource set_control resource set id",
-          "CONTROL RESOURCE SET",
           "control resource set",
+          "common control resource set_control resource set id",
           "common Control Resource Set_control Resource Set Id",
-          "commoncontrolresourceset_controlresourcesetid",
-          "commonControlResourceSet_controlResourceSetId"
+          "commonControlResourceSet_controlResourceSetId",
+          "CONTROL RESOURCE SET",
+          "commoncontrolresourceset_controlresourcesetid"
         ],
         "ie2": []
       }
@@ -195,6 +195,513 @@
     "source_file": "ts_138211v180200p_mathpix.md",
     "section_number": "7.4.1.1.2",
     "section_title": "Mapping to physical resources",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qclType"
+    ],
+    "original_sentence": "- if the active TCI state for PDCCH reception includes two RS, the UE expects that one RS is configured with qclType set to 'typeD' [6, TS 38.214] and the UE uses the RS configured with qcl-Type set to 'typeD' for radio link monitoring; the UE does not expect both RS to be configured with qcl-Type set to 'typeD' - the UE is not required to use for radio link monitoring an aperiodic or semi-persistent RS - For \\( L_{\\text {max }}=4 \\), the UE selects the \\( N_{\\text {RLM }} \\) RS provided for active TCI states for PDCCH receptions in CORESETs associated with the search space sets in an order from the shortest monitoring periodicity. If more than one CORESETs are associated with search space sets having same monitoring periodicity, the UE determines the order of the CORESET from the highest CORESET index as described in clause 10.1.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "If the UE is not provided \\( \\bar{q}_{0} \\) by failureDetectionResourcesToAddModList for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for respective CORESETs that the UE uses for monitoring PDCCH. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for first and second CORESETs that the UE uses for monitoring PDCCH, where the UE is provided two coresetPoollndex values 0 and 1 for the first and second CORESETs, or is not provided coresetPoollndex value for the first CORESETs and is provided coresetPoollndex value of 1 for the second CORESETs, respectively. If there are two RS indexes in a TCI state, the set \\( \\bar{q}_{0} \\) or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\) includes RS indexes configured with qcl-Type set to 'typeD' for the corresponding TCI states. If a CORESET that the UE uses for monitoring PDCCH includes two TCI states and the UE is provided sfnSchemePdcch set to 'sfnSchemeA' or 'sfnSchemeB', the set \\( \\bar{q}_{0} \\) includes RS indexes in the RS sets associated with the two TCI states. The UE expects the set \\( \\bar{q}_{0} \\) to include up to two RS indexes. If the UE is provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), the UE expects the set \\( \\bar{q}_{0,0} \\) or the set \\( \\bar{q}_{0,1} \\) to include up to a number of \\( N_{\\mathrm{BFD}} \\) RS indexes indicated by capabilityparametername. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), and if a number of active TCI states for PDCCH receptions in the first or second CORESETs is larger than \\( N_{\\mathrm{BFD}} \\), the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets associated with the active TCI states for PDCCH receptions in the first or second CORESETs corresponding to search space sets according to an ascending order for monitoring periodicity. If more than one first or second CORESETs correspond to search space sets with same monitoring periodicity, the UE determines the order of the first or second CORESETs according to a descending order of a CORESET index.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "4.3",
+    "section_title": "Timing for secondary cell activation / deactivation",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212] the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same \\( q_{d} \\) applies to the PUCCH transmission in each of the multiple slots.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in - the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP, if CORESETs are provided in the active DL BWP of serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1 , the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.3.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "The UE may assume that the DM-RS antenna port associated with PDCCH receptions in the CORESET configured by pdcch-ConfigSIBI in MIB, the DM-RS antenna port associated with corresponding PDSCH receptions, and the corresponding SS/PBCH block are quasi co-located with respect to average gain, quasi co-location 'type A' and 'typeD' properties, when applicable [6, TS 38.214], if the UE is not provided a TCI state indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in the CORESET. The value for the DM-RS scrambling sequence initialization is the cell ID. For operation without shared spectrum channel access in FR1 and FR2-1, a SCS is provided by subCarrierSpacingCommon in MIB. For operation with shared spectrum channel access in FR1 and for operation in FR2-2, a SCS is same as the SCS of a corresponding SS/PBCH block.  For single cell operation or for operation with carrier aggregation in a same frequency band, a UE does not expect to monitor a PDCCH in a Type0/0A/0B/2/3-PDCCH CSS set or in a USS set if a DM-RS for monitoring a PDCCH in a Typel-PDCCH CSS set is not configured with same qcl-Type set to 'typeD' properties [6, TS 38.214] with a DM-RS for monitoring the PDCCH in the Type0/0A/0B/2/3-PDCCH CSS set or in the USS set, and if the PDCCH or an associated PDSCH overlaps in at least one symbol with a PDCCH the UE monitors in a Type1-PDCCH CSS set or with an associated PDSCH.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "- a SS/PBCH block the UE identified during a most recent random access procedure not initiated by a PDCCH order that triggers a contention-free random access procedure, if no MAC CE activation command indicating a TCI state for the CORESET is received after the most recent random access procedure, or a SS/PBCH block the UE identified during a most recent configured grant PUSCH transmission as described in clause 19.  For a CORESET other than a CORESET with index 0 , if a UE is provided a single TCI state for a CORESET, or if the UE receives a MAC CE activation command for one or two of the provided TCI states for a CORESET, the UE assumes that the DM-RS antenna port associated with PDCCH receptions in the CORESET is quasi co-located with the one or more DL RS configured by the TCI states. For a CORESET with index 0 , the UE expects that a CSI-RS configured with qcl-Type set to 'typeD' in a TCI state indicated by a MAC CE activation command for the CORESET is provided by a SS/PBCH block",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "For a CORESET other than a CORESET with index 0 , if a UE is provided a single TCI state for a CORESET, or if the UE receives a MAC CE activation command for one or two of the provided TCI states for a CORESET, the UE assumes that the DM-RS antenna port associated with PDCCH receptions in the CORESET is quasi co-located with the one or more DL RS configured by the TCI states. For a CORESET with index 0 , the UE expects that a CSI-RS configured with qcl-Type set to 'typeD' in a TCI state indicated by a MAC CE activation command for the CORESET is provided by a SS/PBCH block",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "- monitors PDCCH candidates in overlapping PDCCH monitoring occasions in multiple CORESETs that have been configured with same or different qcl-Type set to 'typeD' properties on active DL BWP(s) of one or more cells the UE monitors PDCCHs only in a CORESET, and in any other CORESET from the multiple CORESETs that have been configured with qci-Type set to same 'typeD' properties as the CORESET, on the active DL BWP of a cell from the one or more cells",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "the UE monitors PDCCHs only in a first CORESET with qcl-Type set to first 'typeD' properties and, if any, in a second CORESET with qcl-Type set to second 'typeD' properties that are different than the first 'typeD' properties, and in any other CORESET from the multiple CORESETs with corresponding qcl-Type set to the first 'typeD' properties and/or to the second 'typeD' properties - the first CORESET corresponds to the CSS set with the lowest index in the cell with the lowest index containing CSS sets, if any; otherwise, to the USS set with the lowest index in the cell with lowest index",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "qcl-Type"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        71
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "qcl-Type"
+    ],
+    "original_sentence": "the UE monitors PDCCHs only in a CORESET with a first qcl-Type set to first 'typeD' properties and, if any, a second qcl-Type set to second 'typeD' properties that are different than the first 'typeD' properties, and in any other CORESET from the multiple CORESETs with corresponding qcl-Type set to the first 'typeD' properties or to the second 'typeD' properties",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "resourceAllocation"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        72
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "resource allocation"
+    ],
+    "original_sentence": "- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "controlResourceSetId",
+      "tci-StateId"
+    ],
+    "source_IEs": [
+      "145_210_commonControlResourceSet_controlResourceSetId",
+      "65_75_initialDownlinkBWP_pdsch-Config"
+    ],
+    "field_ids": [
+      [
+        145,
+        210
+      ],
+      [
+        67
+      ]
+    ],
+    "matched_fields": [
+      "CORESET",
+      "tci-StateID"
+    ],
+    "original_sentence": "each with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "10.1",
+    "section_title": "UE procedure for determining physical downlink control channel assignment",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -796,513 +1303,6 @@
   {
     "fields": [
       "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qclType"
-    ],
-    "original_sentence": "- if the active TCI state for PDCCH reception includes two RS, the UE expects that one RS is configured with qclType set to 'typeD' [6, TS 38.214] and the UE uses the RS configured with qcl-Type set to 'typeD' for radio link monitoring; the UE does not expect both RS to be configured with qcl-Type set to 'typeD' - the UE is not required to use for radio link monitoring an aperiodic or semi-persistent RS - For \\( L_{\\text {max }}=4 \\), the UE selects the \\( N_{\\text {RLM }} \\) RS provided for active TCI states for PDCCH receptions in CORESETs associated with the search space sets in an order from the shortest monitoring periodicity. If more than one CORESETs are associated with search space sets having same monitoring periodicity, the UE determines the order of the CORESET from the highest CORESET index as described in clause 10.1.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "4.3",
-    "section_title": "Timing for secondary cell activation / deactivation",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "If the UE is not provided \\( \\bar{q}_{0} \\) by failureDetectionResourcesToAddModList for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for respective CORESETs that the UE uses for monitoring PDCCH. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) for a BWP of the serving cell, the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets indicated by TCI-State for first and second CORESETs that the UE uses for monitoring PDCCH, where the UE is provided two coresetPoollndex values 0 and 1 for the first and second CORESETs, or is not provided coresetPoollndex value for the first CORESETs and is provided coresetPoollndex value of 1 for the second CORESETs, respectively. If there are two RS indexes in a TCI state, the set \\( \\bar{q}_{0} \\) or \\( \\bar{q}_{0,0} \\), or \\( \\bar{q}_{0,1} \\) includes RS indexes configured with qcl-Type set to 'typeD' for the corresponding TCI states. If a CORESET that the UE uses for monitoring PDCCH includes two TCI states and the UE is provided sfnSchemePdcch set to 'sfnSchemeA' or 'sfnSchemeB', the set \\( \\bar{q}_{0} \\) includes RS indexes in the RS sets associated with the two TCI states. The UE expects the set \\( \\bar{q}_{0} \\) to include up to two RS indexes. If the UE is provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), the UE expects the set \\( \\bar{q}_{0,0} \\) or the set \\( \\bar{q}_{0,1} \\) to include up to a number of \\( N_{\\mathrm{BFD}} \\) RS indexes indicated by capabilityparametername. If the UE is not provided \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\), and if a number of active TCI states for PDCCH receptions in the first or second CORESETs is larger than \\( N_{\\mathrm{BFD}} \\), the UE determines the set \\( \\bar{q}_{0,0} \\) or \\( \\bar{q}_{0,1} \\) to include periodic CSI-RS resource configuration indexes with same values as the RS indexes in the RS sets associated with the active TCI states for PDCCH receptions in the first or second CORESETs corresponding to search space sets according to an ascending order for monitoring periodicity. If more than one first or second CORESETs correspond to search space sets with same monitoring periodicity, the UE determines the order of the first or second CORESETs according to a descending order of a CORESET index.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "4.3",
-    "section_title": "Timing for secondary cell activation / deactivation",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "- is not provided coresetPoollndex value of 1 for any CORESET, or is provided coresetPoollndex value of 1 for all CORESETs, in ControlResourceSet and no codepoint of a TCI field, if any, in a DCI format of any search space set maps to two TCI states [5, TS 38.212] the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP of the primary cell. If the CORESET has two activated TCI states, as described in clause 10.1, the UE determines the RS resource index \\( q_{d} \\) based on the first activated TCI state. For a PUCCH transmission over multiple slots, a same \\( q_{d} \\) applies to the PUCCH transmission in each of the multiple slots.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "the UE determines a RS resource index \\( q_{d} \\) providing a periodic RS resource configured with qcl-Type set to 'typeD' in - the TCI state or the QCL assumption of a CORESET with the lowest index in the active DL BWP, if CORESETs are provided in the active DL BWP of serving cell \\( c \\). If the CORESET has two activated TCI states, as described in clause 10.1 , the UE determines the RS resource index \\( q_{d} \\) based on the first TCI state.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.3.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "The UE may assume that the DM-RS antenna port associated with PDCCH receptions in the CORESET configured by pdcch-ConfigSIBI in MIB, the DM-RS antenna port associated with corresponding PDSCH receptions, and the corresponding SS/PBCH block are quasi co-located with respect to average gain, quasi co-location 'type A' and 'typeD' properties, when applicable [6, TS 38.214], if the UE is not provided a TCI state indicating quasi co-location information of the DM-RS antenna port for PDCCH reception in the CORESET. The value for the DM-RS scrambling sequence initialization is the cell ID. For operation without shared spectrum channel access in FR1 and FR2-1, a SCS is provided by subCarrierSpacingCommon in MIB. For operation with shared spectrum channel access in FR1 and for operation in FR2-2, a SCS is same as the SCS of a corresponding SS/PBCH block.  For single cell operation or for operation with carrier aggregation in a same frequency band, a UE does not expect to monitor a PDCCH in a Type0/0A/0B/2/3-PDCCH CSS set or in a USS set if a DM-RS for monitoring a PDCCH in a Typel-PDCCH CSS set is not configured with same qcl-Type set to 'typeD' properties [6, TS 38.214] with a DM-RS for monitoring the PDCCH in the Type0/0A/0B/2/3-PDCCH CSS set or in the USS set, and if the PDCCH or an associated PDSCH overlaps in at least one symbol with a PDCCH the UE monitors in a Type1-PDCCH CSS set or with an associated PDSCH.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "- a SS/PBCH block the UE identified during a most recent random access procedure not initiated by a PDCCH order that triggers a contention-free random access procedure, if no MAC CE activation command indicating a TCI state for the CORESET is received after the most recent random access procedure, or a SS/PBCH block the UE identified during a most recent configured grant PUSCH transmission as described in clause 19.  For a CORESET other than a CORESET with index 0 , if a UE is provided a single TCI state for a CORESET, or if the UE receives a MAC CE activation command for one or two of the provided TCI states for a CORESET, the UE assumes that the DM-RS antenna port associated with PDCCH receptions in the CORESET is quasi co-located with the one or more DL RS configured by the TCI states. For a CORESET with index 0 , the UE expects that a CSI-RS configured with qcl-Type set to 'typeD' in a TCI state indicated by a MAC CE activation command for the CORESET is provided by a SS/PBCH block",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "For a CORESET other than a CORESET with index 0 , if a UE is provided a single TCI state for a CORESET, or if the UE receives a MAC CE activation command for one or two of the provided TCI states for a CORESET, the UE assumes that the DM-RS antenna port associated with PDCCH receptions in the CORESET is quasi co-located with the one or more DL RS configured by the TCI states. For a CORESET with index 0 , the UE expects that a CSI-RS configured with qcl-Type set to 'typeD' in a TCI state indicated by a MAC CE activation command for the CORESET is provided by a SS/PBCH block",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "- monitors PDCCH candidates in overlapping PDCCH monitoring occasions in multiple CORESETs that have been configured with same or different qcl-Type set to 'typeD' properties on active DL BWP(s) of one or more cells the UE monitors PDCCHs only in a CORESET, and in any other CORESET from the multiple CORESETs that have been configured with qci-Type set to same 'typeD' properties as the CORESET, on the active DL BWP of a cell from the one or more cells",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "the UE monitors PDCCHs only in a first CORESET with qcl-Type set to first 'typeD' properties and, if any, in a second CORESET with qcl-Type set to second 'typeD' properties that are different than the first 'typeD' properties, and in any other CORESET from the multiple CORESETs with corresponding qcl-Type set to the first 'typeD' properties and/or to the second 'typeD' properties - the first CORESET corresponds to the CSS set with the lowest index in the cell with the lowest index containing CSS sets, if any; otherwise, to the USS set with the lowest index in the cell with lowest index",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "qcl-Type"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        71
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "qcl-Type"
-    ],
-    "original_sentence": "the UE monitors PDCCHs only in a CORESET with a first qcl-Type set to first 'typeD' properties and, if any, a second qcl-Type set to second 'typeD' properties that are different than the first 'typeD' properties, and in any other CORESET from the multiple CORESETs with corresponding qcl-Type set to the first 'typeD' properties or to the second 'typeD' properties",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "resourceAllocation"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        72
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "resource allocation"
-    ],
-    "original_sentence": "- a bitmap by freqMonitorLocations, if provided, to indicate an index of one or more RB sets for the search space set \\( s \\), where the MSB \\( k \\) in the bitmap corresponds to RB set \\( k-1 \\) in the DL BWP. For RB set \\( k \\) indicated in the bitmap, the first \\( \\operatorname{PRB} \\) of the frequency domain monitoring location confined within the RB set is given by \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu}+N_{\\mathrm{RB}}^{\\text {offset }} \\), where \\( R B_{s 0+k, \\mathrm{DL}}^{\\text {start }, \\mu} \\) is the index of first common RB of the RB set \\( k \\) [6, TS 38.214], and \\( N_{\\mathrm{RB}}^{\\text {offset }} \\) is provided by \\( r b \\)-Offset or \\( N_{\\mathrm{RB}}^{\\text {offset }}=0 \\) if \\( r b \\)-Offset is not provided. For each RB set with a corresponding value of 1 in the bitmap, the frequency domain resource allocation pattern for the monitoring location is determined based on the first \\( N_{\\text {RBG }}^{\\text {size }} 0 \\) bits infrequencyDomainResources provided by the associated CORESET configuration.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
-      "tci-StateId"
-    ],
-    "source_IEs": [
-      "145_210_commonControlResourceSet_controlResourceSetId",
-      "65_75_initialDownlinkBWP_pdsch-Config"
-    ],
-    "field_ids": [
-      [
-        145,
-        210
-      ],
-      [
-        67
-      ]
-    ],
-    "matched_fields": [
-      "CORESET",
-      "tci-StateID"
-    ],
-    "original_sentence": "each with same activated tci-StatelD value, to CORESETs with a same index in all configured DL BWPs of all configured cells in a list determined from a serving cell index, where one or two tci-StateID, the CORESET index, and the serving cell index are provided by a MAC CE command.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "10.1",
-    "section_title": "UE procedure for determining physical downlink control channel assignment",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "controlResourceSetId",
       "bwp-Id"
     ],
     "source_IEs": [
@@ -1528,10 +1528,10 @@
       "match_type": "SINGLE",
       "matched_variants": {
         "ie1": [
+          "control resource set",
           "CONTROL RESOURCE SET",
           "common control resource set_control resource set id",
-          "common Control Resource Set_control Resource Set Id",
-          "control resource set"
+          "common Control Resource Set_control Resource Set Id"
         ],
         "ie2": []
       }

@@ -1,6 +1,170 @@
 [
   {
     "fields": [
+      "priority",
+      "controlResourceSetId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "43_245_pdcch-Config_controlResourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        43,
+        108,
+        173,
+        238
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "CORESET"
+    ],
+    "original_sentence": "- is not cancelled by an overlapping PUCCH or PUSCH transmission of larger priority index - overlaps with a symbol indicated as downlink by tdd-UL-DL-ConfigurationCommon or tdd-UL-DLConfigDedicated, or indicated for a SS/PBCH block by ssb-PositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "controlResourceSetId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "43_245_pdcch-Config_controlResourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        43,
+        108,
+        173,
+        238
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "CORESET"
+    ],
+    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, of smaller priority index and the UE drops the first PUCCH transmission due to an overlapping with a second PUSCH or PUCCH transmission of larger priority index, the UE stops the procedure to determine the earliest second slot in the slot - the second HARQ-ACK information bits correspond to SPS PDSCH configurations with spsHARQdeferral values that are larger than or equal to a time difference, with reference to slots for PUCCH transmissions on the primary cell, between the second slot and the slot of the SPS PDSCH reception, if any - if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "priority",
+      "controlResourceSetId"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "43_245_pdcch-Config_controlResourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        19
+      ],
+      [
+        43,
+        108,
+        173,
+        238
+      ]
+    ],
+    "matched_fields": [
+      "priority",
+      "CORESET"
+    ],
+    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5.4",
+    "section_title": "UE procedure for deferring HARQ",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "duration"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "43_245_pdcch-Config_controlResourceSetToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        46,
+        111,
+        176,
+        241
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "duration"
+    ],
+    "original_sentence": "- for two resources with same first symbol and same duration, the placement is arbitrary - the above three steps for the set \\( Q \\) are according to a subsequent pseudo-code for a function order \\( (Q) \\) - a resource for negative SR transmission that does not overlap with a resource for HARQ-ACK or CSI transmission is excluded from set \\( Q \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "9.2.5",
+    "section_title": "UE procedure for reporting multiple UCI types",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
       "bucketSizeDuration",
       "duration"
     ],
@@ -366,170 +530,6 @@
       }
     },
     "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "priority",
-      "controlResourceSetId"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "43_245_pdcch-Config_controlResourceSetToAddModList"
-    ],
-    "field_ids": [
-      [
-        19
-      ],
-      [
-        43,
-        108,
-        173,
-        238
-      ]
-    ],
-    "matched_fields": [
-      "priority",
-      "CORESET"
-    ],
-    "original_sentence": "- is not cancelled by an overlapping PUCCH or PUSCH transmission of larger priority index - overlaps with a symbol indicated as downlink by tdd-UL-DL-ConfigurationCommon or tdd-UL-DLConfigDedicated, or indicated for a SS/PBCH block by ssb-PositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.2.5.4",
-    "section_title": "UE procedure for deferring HARQ",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "priority",
-      "controlResourceSetId"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "43_245_pdcch-Config_controlResourceSetToAddModList"
-    ],
-    "field_ids": [
-      [
-        19
-      ],
-      [
-        43,
-        108,
-        173,
-        238
-      ]
-    ],
-    "matched_fields": [
-      "priority",
-      "CORESET"
-    ],
-    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, of smaller priority index and the UE drops the first PUCCH transmission due to an overlapping with a second PUSCH or PUCCH transmission of larger priority index, the UE stops the procedure to determine the earliest second slot in the slot - the second HARQ-ACK information bits correspond to SPS PDSCH configurations with spsHARQdeferral values that are larger than or equal to a time difference, with reference to slots for PUCCH transmissions on the primary cell, between the second slot and the slot of the SPS PDSCH reception, if any - if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.2.5.4",
-    "section_title": "UE procedure for deferring HARQ",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "priority",
-      "controlResourceSetId"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "43_245_pdcch-Config_controlResourceSetToAddModList"
-    ],
-    "field_ids": [
-      [
-        19
-      ],
-      [
-        43,
-        108,
-        173,
-        238
-      ]
-    ],
-    "matched_fields": [
-      "priority",
-      "CORESET"
-    ],
-    "original_sentence": "- if the UE multiplexes the second HARQ-ACK information in a first PUCCH using a resource provided by SPS-PUCCH-AN-List, or by nIPUCCH-AN if SPS-PUCCH-AN-List is not provided, and the PUCCH transmission is not dropped due to an overlapping with a PUSCH or PUCCH transmission of larger priority and does not have any symbol that overlaps with a symbol indicated as downlink by tdd-UL-DLConfigurationCommon or tdd-UL-DL-ConfigDedicated, or indicated for a SS/PBCH block by ssbPositionsInBurst, or belonging to a CORESET associated with a Type0-PDCCH CSS set, the UE stops the procedure to determine the earliest second slot in the slot",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.2.5.4",
-    "section_title": "UE procedure for deferring HARQ",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "schedulingRequestID",
-      "duration"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "43_245_pdcch-Config_controlResourceSetToAddModList"
-    ],
-    "field_ids": [
-      [
-        23
-      ],
-      [
-        46,
-        111,
-        176,
-        241
-      ]
-    ],
-    "matched_fields": [
-      "SR",
-      "duration"
-    ],
-    "original_sentence": "- for two resources with same first symbol and same duration, the placement is arbitrary - the above three steps for the set \\( Q \\) are according to a subsequent pseudo-code for a function order \\( (Q) \\) - a resource for negative SR transmission that does not overlap with a resource for HARQ-ACK or CSI transmission is excluded from set \\( Q \\)",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "9.2.5",
-    "section_title": "UE procedure for reporting multiple UCI types",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
     "is_cross_ie": true
   },
   {

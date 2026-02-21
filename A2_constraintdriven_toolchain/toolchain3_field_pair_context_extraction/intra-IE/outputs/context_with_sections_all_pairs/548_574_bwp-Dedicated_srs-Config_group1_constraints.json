@@ -1056,6 +1056,226 @@
   },
   {
     "fields": [
+      "srs-ResourceId",
+      "srs-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        555
+      ],
+      [
+        549
+      ]
+    ],
+    "matched_fields": [
+      "SRS resource ID",
+      "SRS Resource Set ID"
+    ],
+    "original_sentence": "The field Spatial Relation for Resource [D, consists of the following fields: - F_{0} : This field indicates the type of a resource used as a spatial relation for the i^{\\text {th }} Positioning SRS resource within the Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID. The field is set to 00 to indicate NZP CSI-RS resource index is used; it is set to 01 to indicate SSB index is used; it is set to 10 to indicate SRS resource index is used; it is set to 11 to indicate DL-PRS index is used. The length of the field is 2 bits; - F_{1} : This field indicates the type of SRS resource used as spatial relation for the i^{\\text {th }} Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\mathrm{F}_{0} is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits; - SSB index: This field contains an index of SSB SSB-Index as specified in TS 38.331 [5] and/or TS 37.355 [23]. The length of the field is 6 bits; - PCI: This field contains physical cell identity PhysCellld as specified in TS 38.331 [5] and/or TS 37.355 [23]. The length of the field is 10 bits; - SRS resource ID: When F_{1} is set to 0 , the field indicates an index for SRS resource SRS-Resourceld as defined in TS 38.331 [5]; When F_{1} is set to 1 , the field indicates an index for Positioning SRS resource SRS-PosResourceld as defined in TS 38.331 [5]. The length of the field is 5 bits representing the index from 0 to 31; ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.36",
+    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
+    "ie_relevance_score": 20.0,
+    "matched_ie_variants": [
+      "sr",
+      "SR"
+    ],
+    "confidence": "MEDIUM"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "where P_{0 \\_ \\text {PRE }} is provided by msgA-preambleReceivedTargetPower, or by preambleReceivedTargetPower if msgA-preambleReceivedTargetPower is not provided and \\Delta_{\\text {Msga_PUSCH }} is provided by msgA-DeltaPreamble, or \\Delta_{\\text {Msga_PUSCH }}=\\Delta_{\\text {PREAMBLE_Msg3 }} \\mathrm{dB} if msgA-DeltaPreamble is not provided, for carrier f of serving cell c - For a PUSCH (re)transmission configured by ConfiguredGrantConfig, j=1, P_{0 \\_ \\text {NOMINAL,PUSCH, } f, c}(1) is provided by p 0 -NominalWithoutGrant, or P_{0 \\_ \\text {NOMINAL }} PUSCH _{1} f_{1} c ~(1)=P_{0 \\_ \\text {NOMINAL PUSCH } f_{1} c}(0) if p 0 NominalWithoutGrant is not provided. - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) value is provided by the value of p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "where",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "22 ETSI TS 138213 V17.1.0 (2022-05) - If the SRS resource set indicator value is 10 or 11 , first and second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) is provided by p 0 obtained from p 0 -PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by p 0- PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in\\{2, \\ldots, J-1\\}=S_{J} , a P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) value, applicable for all j \\in S_{J} , is provided by p 0 provided, for each carrier f of serving cell c and a set of P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) values are provided by a set of p 0 in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p 0 -PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of P_{0} ue_pusch, b, f, c ( j ) from the p 0-P U S C H AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by p 0 -PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) from the p 0 -PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively. - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between - a set of values for the first SRI field value and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values, and determines the first value of P_{0 \\_ \\text {UE_PUSCH }, b, f, c}(j) from the p0-PUSCH-AlphaSetld value that is mapped to the first SRI field value, and",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - If the SRS resource set indicator value is 10 or 11 , first and second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) is provided by p 0 obtained from p 0 -PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by p 0- PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in\\{2, \\ldots, J-1\\}=S_{J} , a P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) value, applicable for all j \\in S_{J} , is provided by p 0 provided, for each carrier f of serving cell c and a set of P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) values are provided by a set of p 0 in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p 0 -PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of P_{0} ue_pusch, b, f, c ( j ) from the p 0-P U S C H AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by p 0 -PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) from the p 0 -PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively. - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between - a set of values for the first SRI field value and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values, and determines the first value of P_{0 \\_ \\text {UE_PUSCH }, b, f, c}(j) from the p0-PUSCH-AlphaSetld value that is mapped to the first SRI field value, and",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "- For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "- For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "if",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "alpha",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        553
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "Alpha",
+      "usage"
+    ],
+    "original_sentence": "- else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - If the SRS resource set indicator value is 10 or 11 , first and second \\alpha_{b, f, c}(1) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig-",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "usage"
+    ],
+    "field_ids": [
+      [
+        573,
+        574
+      ],
+      [
+        552
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "usage"
+    ],
+    "original_sentence": "- the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "constraint_keyword": "indicated by",
+    "is_self_reference": false,
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
       "alpha",
       "resourceType"
     ],
@@ -3014,226 +3234,6 @@
       "SR"
     ],
     "confidence": "MEDIUM"
-  },
-  {
-    "fields": [
-      "srs-ResourceId",
-      "srs-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        555
-      ],
-      [
-        549
-      ]
-    ],
-    "matched_fields": [
-      "SRS resource ID",
-      "SRS Resource Set ID"
-    ],
-    "original_sentence": "The field Spatial Relation for Resource [D, consists of the following fields: - F_{0} : This field indicates the type of a resource used as a spatial relation for the i^{\\text {th }} Positioning SRS resource within the Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID. The field is set to 00 to indicate NZP CSI-RS resource index is used; it is set to 01 to indicate SSB index is used; it is set to 10 to indicate SRS resource index is used; it is set to 11 to indicate DL-PRS index is used. The length of the field is 2 bits; - F_{1} : This field indicates the type of SRS resource used as spatial relation for the i^{\\text {th }} Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\mathrm{F}_{0} is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits; - SSB index: This field contains an index of SSB SSB-Index as specified in TS 38.331 [5] and/or TS 37.355 [23]. The length of the field is 6 bits; - PCI: This field contains physical cell identity PhysCellld as specified in TS 38.331 [5] and/or TS 37.355 [23]. The length of the field is 10 bits; - SRS resource ID: When F_{1} is set to 0 , the field indicates an index for SRS resource SRS-Resourceld as defined in TS 38.331 [5]; When F_{1} is set to 1 , the field indicates an index for Positioning SRS resource SRS-PosResourceld as defined in TS 38.331 [5]. The length of the field is 5 bits representing the index from 0 to 31; ETSI",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "set to",
-    "is_self_reference": false,
-    "section_number": "6.1.3.36",
-    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
-    "ie_relevance_score": 20.0,
-    "matched_ie_variants": [
-      "sr",
-      "SR"
-    ],
-    "confidence": "MEDIUM"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "where P_{0 \\_ \\text {PRE }} is provided by msgA-preambleReceivedTargetPower, or by preambleReceivedTargetPower if msgA-preambleReceivedTargetPower is not provided and \\Delta_{\\text {Msga_PUSCH }} is provided by msgA-DeltaPreamble, or \\Delta_{\\text {Msga_PUSCH }}=\\Delta_{\\text {PREAMBLE_Msg3 }} \\mathrm{dB} if msgA-DeltaPreamble is not provided, for carrier f of serving cell c - For a PUSCH (re)transmission configured by ConfiguredGrantConfig, j=1, P_{0 \\_ \\text {NOMINAL,PUSCH, } f, c}(1) is provided by p 0 -NominalWithoutGrant, or P_{0 \\_ \\text {NOMINAL }} PUSCH _{1} f_{1} c ~(1)=P_{0 \\_ \\text {NOMINAL PUSCH } f_{1} c}(0) if p 0 NominalWithoutGrant is not provided. - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes a SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b_{1}, c, c}(1) value is provided by the value of p0-PUSCH-Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) value is provided by the value of p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "where",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "22 ETSI TS 138213 V17.1.0 (2022-05) - If the SRS resource set indicator value is 10 or 11 , first and second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) is provided by p 0 obtained from p 0 -PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by p 0- PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in\\{2, \\ldots, J-1\\}=S_{J} , a P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) value, applicable for all j \\in S_{J} , is provided by p 0 provided, for each carrier f of serving cell c and a set of P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) values are provided by a set of p 0 in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p 0 -PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of P_{0} ue_pusch, b, f, c ( j ) from the p 0-P U S C H AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by p 0 -PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) from the p 0 -PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively. - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between - a set of values for the first SRI field value and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values, and determines the first value of P_{0 \\_ \\text {UE_PUSCH }, b, f, c}(j) from the p0-PUSCH-AlphaSetld value that is mapped to the first SRI field value, and",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "ETSI TS 138213 V17.1.0 (2022-05) - If the SRS resource set indicator value is 10 or 11 , first and second P_{0 \\_ \\text {UE PUSCH }, b, f, c}(1) values are respectively provided by the values of p0-PUSCH-Alpha and by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - else, P_{\\text {O_NOMINAL,PUSCH }} f_{, c}(1) is provided by p 0 obtained from p 0 -PUSCH-Alpha in ConfiguredGrantConfig that provides an index P0-PUSCH-AlphaSetld to a set of P0-PUSCH-AlphaSet, or by p 0- PUSCH for a PUSCH (re)transmission as described in clause 19.1, for active UL BWP b of carrier f of serving cell c - For j \\in\\{2, \\ldots, J-1\\}=S_{J} , a P_{0 \\_ \\text {NOMINAL }, \\text { PUSCH }, f_{, c}}(j) value, applicable for all j \\in S_{J} , is provided by p 0 provided, for each carrier f of serving cell c and a set of P_{0 \\_ \\text {UE } \\_ \\text {PUSCH }, b, f, c}(j) values are provided by a set of p 0 in P0-PUSCH-AlphaSet indicated by a respective set of p0-PUSCH-AlphaSetld for active UL BWP b of carrier f of serving cell c - If the UE is provided by SRI-PUSCH-PowerControl more than one values of p0-PUSCH-AlphaSetld and if a DCI format scheduling the PUSCH transmission includes an SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p 0 -PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the value of P_{0} ue_pusch, b, f, c ( j ) from the p 0-P U S C H AlphaSetld value that is mapped to the SRI field value. If the UE is provided by SRI-PUSCHPowerControl more than one values of p0-PUSCH-AlphaSetld - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' and if, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the two SRI fields and a set of indexes provided by p 0 -PUSCH-AlphaSetId that map to a set of P0-PUSCH-AlphaSet values, and determines first and second values of P_{0 \\_ \\text {ue_pusch }, b, f, c}(j) from the p 0 -PUSCH-AlphaSetld values that are mapped to the values of the first and second SRI fields, respectively. - if the DCI format scheduling the PUSCH transmission includes two SRI fields and the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between - a set of values for the first SRI field value and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values, and determines the first value of P_{0 \\_ \\text {UE_PUSCH }, b, f, c}(j) from the p0-PUSCH-AlphaSetld value that is mapped to the first SRI field value, and",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "- For \\alpha_{b, f, c}(j) - For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "- For j=0 , - if P_{O_{-} N O M N A L \\text { PUSCH, } f_{, c}}(0)=P_{O_{-} \\text {PRE }}+\\Delta_{\\text {MsgA_PUSCH }} and msgA-Alpha is provided, \\alpha_{b_{,} f_{, c}}(0) is the value of msgA-Alpha - elseif P_{\\text {O_NOMINAL_PUSCH, } f, c}(0)=P_{\\text {O_PRE }}+\\Delta_{\\text {PREAMBLE_Msg } 3} or msgA-Alpha is not provided, and msg3Alpha is provided, \\alpha_{b, f, c}(0) is the value of msg3-Alpha - else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "if",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "alpha",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        553
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "Alpha",
-      "usage"
-    ],
-    "original_sentence": "- else, \\alpha_{b, f, c}(0)=1 - For j=1 , - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook', and is provided p0-PUSCH-Alpha2, for a retransmission of a configured grant Type 1 PUSCH, or for activation or retransmission of a configured grant Type 2 PUSCH, scheduled by a DCI format that includes an SRS resource set indicator field, and for active UL BWP b of carrier f of serving cell - If the SRS resource set indicator value is 00 , first \\alpha_{b, f, c}(1) value is provided by p 0-P U S C H- Alpha in ConfiguredGrantConfig. - If the SRS resource set indicator value is 01 , first \\alpha_{b, f, c}(1) value is provided by p0-PUSCH-Alpha 2 in ConfiguredGrantConfig. - If the SRS resource set indicator value is 10 or 11 , first and second \\alpha_{b, f, c}(1) values are respectively provided by p0-PUSCH-Alpha and p0-PUSCH-Alpha 2 in ConfiguredGrantConfig-",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "usage"
-    ],
-    "field_ids": [
-      [
-        573,
-        574
-      ],
-      [
-        552
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "usage"
-    ],
-    "original_sentence": "- the second value, associated with the second SRI field value corresponding to Tables 7.3.1.1.228/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value, and a set of indexes provided by p0-PUSCH-AlphaSetld that map to set of P0-PUSCH-AlphaSet values, and determines the second value of \\alpha_{b_{1}, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the second SRI field value - if a DCI format scheduling the PUSCH transmission includes one SRI field, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCH-PowerControl between a set of values for the SRI field in the DCI format [5, TS 38.212] and a set of indexes provided by p0-PUSCH-AlphaSetld that map to a set of P0-PUSCH-AlphaSet values and determines the values of \\alpha_{b, f, c}(j) from the p 0 -PUSCH-AlphaSetld value that is mapped to the SRI field value - If the UE is not provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and if the PUSCH transmission except for the PUSCH retransmission corresponding to a RAR UL grant is scheduled by a DCI format that does not include an SRI field, or if SRI-PUSCH-PowerControl is not provided to the UE, j=2 , and the UE determines \\alpha_{b_{1}, c}(j) from the value of the first P0-PUSCH-AlphaSet in p0-AlphaSets - If the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook' or 'nonCodebook' and the PUSCH transmission is scheduled by a DCI format that does not include an SRI field and includes an SRS resource set indicator field with value 10 or 11 , the UE determines \\alpha_{b, f, c}(j) from first and second P 0 -PUSCH-AlphaSet in p0-AlphaSets - M_{\\mathrm{RB}, b_{1}, c_{c}}^{\\mathrm{PUSC}}(i) is the bandwidth of the PUSCH resource assignment expressed in number of resource blocks for PUSCH transmission occasion i on active UL BWP b of carrier f of serving cell c and \\mu is a SCS configuration defined in [4, TS 38.211] - P L_{b, f, c}\\left(q_{d}\\right) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index q_{d} for the active DL BWP, as described in clause 12 , of carrier f of serving cell c - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates P L_{b, f, c}\\left(q_{d}\\right) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index q_{d} in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "constraint_keyword": "indicated by",
-    "is_self_reference": false,
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
   },
   {
     "fields": [

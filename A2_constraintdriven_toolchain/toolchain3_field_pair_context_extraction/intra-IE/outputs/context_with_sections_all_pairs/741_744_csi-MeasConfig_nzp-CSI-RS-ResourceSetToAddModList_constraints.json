@@ -47,93 +47,6 @@
       "NZP-CSI",
       "NZP-CSI"
     ],
-    "original_sentence": "Zero-power (ZP) and non-zero-power (NZP) CSI-RS are defined - for a non-zero-power CSI-RS configured by the NZP-CSI-RS-Resource [E or by the CSI-RS-Resource-Mobility field in the CSI-RS-ResourceConfigMobility [E or by the TRS-ResourceSet [E, the sequence shall be generated according to clause 7.4.1.5.2 and mapped to resource elements according to clause 7.4.1.5.3 - for a zero-power CSI-RS configured by the ZP-CSI-RS-Resource IE, the UE shall assume that the resource elements defined in clause 7.4.1.5.3 are not used for PDSCH transmission subject to clause 5.1.4.2 of [6, TS 38.214]. The UE performs the same measurement/reception on channels/signals except PDSCH regardless of whether they collide with ZP CSI-RS or not. 7.4.1.5.2 Sequence generation",
-    "source_file": "ts_138211v180200p_mathpix.md",
-    "constraint_keyword": "shall",
-    "is_self_reference": false,
-    "section_number": "7.4.1.5.1",
-    "section_title": "General",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        742,
-        744
-      ],
-      [
-        741,
-        743
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "The reference point for k=0 is subcarrier 0 in common resource block 0 . The value of \\rho is given by the higher-layer parameter density in the CSI-RS-ResourceMapping [E or the CSI-RSCellMobility I E and the number of ports X is given by the higher-layer parameter nrofPorts. For NZP CSI-RS configured by the TRS-ResourceSet [E, the density \\rho=3 and number of ports X=1 . The UE is not expected to receive CSI-RS and DM-RS on the same resource elements.",
-    "source_file": "ts_138211v180200p_mathpix.md",
-    "constraint_keyword": "given by",
-    "is_self_reference": false,
-    "section_number": "7.4.1.5.3",
-    "section_title": "Mapping to physical resources",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        742,
-        744
-      ],
-      [
-        741,
-        743
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "The UE shall assume \\beta_{\\text {CSIRS }}>0 for a non-zero-power CSI-RS where \\beta_{\\text {CSIRS }} is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled. The quantities k^{\\prime}, l^{\\prime}, w_{\\mathrm{f}}\\left(k^{\\prime}\\right) , and w_{\\mathrm{t}}\\left(l^{\\prime}\\right) are given by Tables 7.4.1.5.3-1 to 7.4.1.5.3-5 where each (\\bar{k}, \\bar{l}) in a given row of Table 7.4.1.5.3-1 corresponds to a CDM group of size 1 (no CDM) or size 2,4 , or 8. The CDM type is provided by the higher layer parameter cdm-Type in the CSI-RS-ResourceMapping IE. For NZP CSI-RS configured by the TRSResourceSet [E, the CDM type is 'noCDM'. The indices k^{\\prime} and l^{\\prime} index resource elements within a CDM group. The time-domain locations l_{0} \\in\\{0,1, \\ldots, 13\\} and l_{1} \\in\\{2,3, \\ldots, 12\\} are provided by the higher-layer parameters firstOFDMSymbollnTimeDomain and firstOFDMSymbollnTimeDomain2, respectively, in the CSI-RSResourceMapping IE or the CSI-RS-ResourceConfigMobility IE and defined relative to the start of a slot. For NZP CSIRS configured by TRS-ResourceSet [E, the time-domain location l_{0} \\in\\{0,1, \\ldots, 13\\} is provided by the higher-layer parameter firstOFDMSymbollnTimeDomain or firstOFDMSymbollnTimeDomain+4. The frequency-domain location is given by a bitmap provided by the higher-layer parameter frequencyDomainAllocation in the CSI-RS-ResourceMapping [E, the CSI-RS-ResourceConfigMobility [E, or the TRSResourceSet [E, with the bitmap and value of k_{i} in Table 7.4.1.5.3-1 given by - \\left[b_{3} \\cdots b_{0}\\right], k_{i-1}=f(i) for row 1 of Table 7.4.1.5.3-1 - \\left[b_{1}, \\cdots b_{0}\\right], k_{i-1}=f(i) for row 2 of Table 7.4.1.5.3-1 - \\left[b_{2} \\cdots b_{0}\\right], k_{i-1}=4 f(i) for row 4 of Table 7.4.1.5.3-1 - \\left[b_{5} \\cdots b_{0}\\right], k_{i-1}=2 f(i) for all other cases where f(i) is the bit number of the i^{\\text {th }} bit in the bitmap set to one, repeated across every [1 / \\rho] of the resource blocks configured for CSI-RS reception by the UE. The starting position and number of the resource blocks in which the UE shall assume that CSI-RS is transmitted are given by the higher-layer parameters freqBand and density in the CSI-RSResourceMapping [E for the bandwidth part given by the higher-layer parameter BWP-Id in the CSI-ResourceConfig IE or given by the higher-layer parameters nrofPRBs in the CSI-RS-CellMobility [E where the the startPRB given by csi r s -Measurement B W is relative to common resource block 0 . For NZP CSI-RS configured by TRS-ResourceSet [E, the starting position and number of the resource blocks in which the CSI-RS can be transmitted are given by the higherlayer parameters nrofRBs, and startingRB in the TRS-ResourceSet [E, where startingRB is relative to common resource block 0 and the density \\rho=3 . The UE shall assume that a CSI-RS is transmitted using antenna ports p numbered according to",
-    "source_file": "ts_138211v180200p_mathpix.md",
-    "constraint_keyword": "shall",
-    "is_self_reference": false,
-    "section_number": "7.4.1.5.3",
-    "section_title": "Mapping to physical resources",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        742,
-        744
-      ],
-      [
-        741,
-        743
-      ]
-    ],
-    "matched_fields": [
-      "NZP-CSI",
-      "NZP-CSI"
-    ],
     "original_sentence": "configuration of tci-PresentInDCI or tci-PresentDCI-1-2, the UE expects the same configuration in the first and second CORESETs associated with the two PDCCH candidates; and if the PDSCH is scheduled by a DCI format not having the TCI field present and if the scheduling offset is equal to or larger than timeDurationForQCL, if applicable, PDSCH QCL assumption is based on the CORESET with lower ID among the first and second CORESETs associated with the two PDCCH candidates. For a periodic CSI-RS resource in an NZP-CSI-RS-ResourceSet configured with higher layer parameter trs-Info, the UE shall expect that a TCI-State indicates one of the following quasi co-location type(s): - 'typeC' with an SS/PBCH block and, when applicable, 'typeD' with the same SS/PBCH block, or - 'typeC' with an SS/PBCH block and, when applicable,'typeD' with a CSI-RS resource in an NZP-CSI-RSResourceSet configured with higher layer parameter repetition.",
     "source_file": "ts_138214v170100p_mathpix.md",
     "constraint_keyword": "if",
@@ -345,17 +258,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -386,17 +299,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -427,17 +340,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -468,17 +381,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -509,17 +422,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -550,17 +463,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -591,17 +504,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -632,17 +545,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -702,17 +615,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -743,17 +656,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -1652,6 +1565,93 @@
     "is_self_reference": false,
     "section_number": "6.2.1",
     "section_title": "UE sounding procedure",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        742,
+        744
+      ],
+      [
+        741,
+        743
+      ]
+    ],
+    "matched_fields": [
+      "NZP-CSI",
+      "NZP-CSI"
+    ],
+    "original_sentence": "Zero-power (ZP) and non-zero-power (NZP) CSI-RS are defined - for a non-zero-power CSI-RS configured by the NZP-CSI-RS-Resource [E or by the CSI-RS-Resource-Mobility field in the CSI-RS-ResourceConfigMobility [E or by the TRS-ResourceSet [E, the sequence shall be generated according to clause 7.4.1.5.2 and mapped to resource elements according to clause 7.4.1.5.3 - for a zero-power CSI-RS configured by the ZP-CSI-RS-Resource IE, the UE shall assume that the resource elements defined in clause 7.4.1.5.3 are not used for PDSCH transmission subject to clause 5.1.4.2 of [6, TS 38.214]. The UE performs the same measurement/reception on channels/signals except PDSCH regardless of whether they collide with ZP CSI-RS or not. 7.4.1.5.2 Sequence generation",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "7.4.1.5.1",
+    "section_title": "General",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        742,
+        744
+      ],
+      [
+        741,
+        743
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "The reference point for k=0 is subcarrier 0 in common resource block 0 . The value of \\rho is given by the higher-layer parameter density in the CSI-RS-ResourceMapping [E or the CSI-RSCellMobility I E and the number of ports X is given by the higher-layer parameter nrofPorts. For NZP CSI-RS configured by the TRS-ResourceSet [E, the density \\rho=3 and number of ports X=1 . The UE is not expected to receive CSI-RS and DM-RS on the same resource elements.",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "given by",
+    "is_self_reference": false,
+    "section_number": "7.4.1.5.3",
+    "section_title": "Mapping to physical resources",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        742,
+        744
+      ],
+      [
+        741,
+        743
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "The UE shall assume \\beta_{\\text {CSIRS }}>0 for a non-zero-power CSI-RS where \\beta_{\\text {CSIRS }} is selected such that the power offset specified by the higher-layer parameter powerControlOffsetSS in the NZP-CSI-RS-Resource [E or in the TRSResourceSet [E, if provided, is fulfilled. The quantities k^{\\prime}, l^{\\prime}, w_{\\mathrm{f}}\\left(k^{\\prime}\\right) , and w_{\\mathrm{t}}\\left(l^{\\prime}\\right) are given by Tables 7.4.1.5.3-1 to 7.4.1.5.3-5 where each (\\bar{k}, \\bar{l}) in a given row of Table 7.4.1.5.3-1 corresponds to a CDM group of size 1 (no CDM) or size 2,4 , or 8. The CDM type is provided by the higher layer parameter cdm-Type in the CSI-RS-ResourceMapping IE. For NZP CSI-RS configured by the TRSResourceSet [E, the CDM type is 'noCDM'. The indices k^{\\prime} and l^{\\prime} index resource elements within a CDM group. The time-domain locations l_{0} \\in\\{0,1, \\ldots, 13\\} and l_{1} \\in\\{2,3, \\ldots, 12\\} are provided by the higher-layer parameters firstOFDMSymbollnTimeDomain and firstOFDMSymbollnTimeDomain2, respectively, in the CSI-RSResourceMapping IE or the CSI-RS-ResourceConfigMobility IE and defined relative to the start of a slot. For NZP CSIRS configured by TRS-ResourceSet [E, the time-domain location l_{0} \\in\\{0,1, \\ldots, 13\\} is provided by the higher-layer parameter firstOFDMSymbollnTimeDomain or firstOFDMSymbollnTimeDomain+4. The frequency-domain location is given by a bitmap provided by the higher-layer parameter frequencyDomainAllocation in the CSI-RS-ResourceMapping [E, the CSI-RS-ResourceConfigMobility [E, or the TRSResourceSet [E, with the bitmap and value of k_{i} in Table 7.4.1.5.3-1 given by - \\left[b_{3} \\cdots b_{0}\\right], k_{i-1}=f(i) for row 1 of Table 7.4.1.5.3-1 - \\left[b_{1}, \\cdots b_{0}\\right], k_{i-1}=f(i) for row 2 of Table 7.4.1.5.3-1 - \\left[b_{2} \\cdots b_{0}\\right], k_{i-1}=4 f(i) for row 4 of Table 7.4.1.5.3-1 - \\left[b_{5} \\cdots b_{0}\\right], k_{i-1}=2 f(i) for all other cases where f(i) is the bit number of the i^{\\text {th }} bit in the bitmap set to one, repeated across every [1 / \\rho] of the resource blocks configured for CSI-RS reception by the UE. The starting position and number of the resource blocks in which the UE shall assume that CSI-RS is transmitted are given by the higher-layer parameters freqBand and density in the CSI-RSResourceMapping [E for the bandwidth part given by the higher-layer parameter BWP-Id in the CSI-ResourceConfig IE or given by the higher-layer parameters nrofPRBs in the CSI-RS-CellMobility [E where the the startPRB given by csi r s -Measurement B W is relative to common resource block 0 . For NZP CSI-RS configured by TRS-ResourceSet [E, the starting position and number of the resource blocks in which the CSI-RS can be transmitted are given by the higherlayer parameters nrofRBs, and startingRB in the TRS-ResourceSet [E, where startingRB is relative to common resource block 0 and the density \\rho=3 . The UE shall assume that a CSI-RS is transmitted using antenna ports p numbered according to",
+    "source_file": "ts_138211v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "7.4.1.5.3",
+    "section_title": "Mapping to physical resources",
     "ie_relevance_score": 0.0,
     "matched_ie_variants": [],
     "confidence": "VERY_LOW"

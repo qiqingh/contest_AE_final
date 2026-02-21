@@ -79,6 +79,199 @@
   },
   {
     "fields": [
+      "pusch-PathlossReferenceRS-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "51_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        326
+      ],
+      [
+        51
+      ]
+    ],
+    "matched_fields": [
+      "pusch-PathlossReferenceRS-Id",
+      "SS"
+    ],
+    "original_sentence": "- If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "pusch-PathlossReferenceRS-Id",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "51_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        326
+      ],
+      [
+        51
+      ]
+    ],
+    "matched_fields": [
+      "PUSCH-PathlossReferenceRS-Id",
+      "SS"
+    ],
+    "original_sentence": "- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index \\( q_{d} \\) as for a corresponding PRACH transmission - If the UE is provided SRI-PUSCH-PowerControl and more than one values of PUSCH-PathlossReferenceRS-Id, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCHPowerControl between a set of values for the SRI field, or for first and second SRI fields if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or values for a first SRI field and values associated with a second SRI field value corresponding to Tables 7.3.1.1.2-28/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value if the UE is provided two SRS resource sets in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', in a DCI format scheduling the PUSCH transmission and a set of PUSCH-PathlossReferenceRS-Id values and determines the RS resource index \\( q_{d} \\), or respective first and second RS resource indexes \\( q_{d} \\), from the value of PUSCH-PathlossReferenceRS-Id that is mapped to the SRI field value, or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective first and second SRI field values if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "51_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        327,
+        328
+      ],
+      [
+        51
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "Search space"
+    ],
+    "original_sentence": "\\hline SRS & Sounding reference signal \\\\ \\hline SSS & Secondary synchronization signal \\\\ \\hline SSSG & Search space set group \\\\",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "3.3",
+    "section_title": "Abbreviations",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "51_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        327,
+        328
+      ],
+      [
+        51
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "SS"
+    ],
+    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "searchSpaceId"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "51_searchSpacesToAddModList_searchSpaceId"
+    ],
+    "field_ids": [
+      [
+        327,
+        328
+      ],
+      [
+        51
+      ]
+    ],
+    "matched_fields": [
+      "referenceSignal",
+      "SS"
+    ],
+    "original_sentence": "- If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using RS resource with index \\( q_{d} \\), where \\( 0 \\leq q_{d}<Q_{d}-Q_{d} \\) is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
       "referenceSignal",
       "searchSpaceId"
     ],
@@ -298,199 +491,6 @@
     "source_file": "ts_138214v170100p_mathpix.md",
     "section_number": "6.2.1",
     "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "pusch-PathlossReferenceRS-Id",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "51_searchSpacesToAddModList_searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        326
-      ],
-      [
-        51
-      ]
-    ],
-    "matched_fields": [
-      "pusch-PathlossReferenceRS-Id",
-      "SS"
-    ],
-    "original_sentence": "- If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "pusch-PathlossReferenceRS-Id",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "51_searchSpacesToAddModList_searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        326
-      ],
-      [
-        51
-      ]
-    ],
-    "matched_fields": [
-      "PUSCH-PathlossReferenceRS-Id",
-      "SS"
-    ],
-    "original_sentence": "- If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS - If the PUSCH transmission is scheduled by a RAR UL grant as described in clause 8.3, or for a PUSCH transmission for Type-2 random access procedure as described in clause 8.1A, the UE uses the same RS resource index \\( q_{d} \\) as for a corresponding PRACH transmission - If the UE is provided SRI-PUSCH-PowerControl and more than one values of PUSCH-PathlossReferenceRS-Id, the UE obtains a mapping from sri-PUSCH-PowerControlld in SRI-PUSCHPowerControl between a set of values for the SRI field, or for first and second SRI fields if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or values for a first SRI field and values associated with a second SRI field value corresponding to Tables 7.3.1.1.2-28/29/30/31 of [5, TS 38.212] for a same number of layers as indicated by the first SRI field value if the UE is provided two SRS resource sets in srsResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'nonCodebook', in a DCI format scheduling the PUSCH transmission and a set of PUSCH-PathlossReferenceRS-Id values and determines the RS resource index \\( q_{d} \\), or respective first and second RS resource indexes \\( q_{d} \\), from the value of PUSCH-PathlossReferenceRS-Id that is mapped to the SRI field value, or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective first and second SRI field values if the UE is provided two SRS resource sets in srs-ResourceSetToAddModList or srs-ResourceSetToAddModListDCI-0-2 with usage set to 'codebook', or from the values of PUSCH-PathlossReferenceRS-Id that are mapped to respective",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "51_searchSpacesToAddModList_searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        327,
-        328
-      ],
-      [
-        51
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "Search space"
-    ],
-    "original_sentence": "\\hline SRS & Sounding reference signal \\\\ \\hline SSS & Secondary synchronization signal \\\\ \\hline SSSG & Search space set group \\\\",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "3.3",
-    "section_title": "Abbreviations",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "51_searchSpacesToAddModList_searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        327,
-        328
-      ],
-      [
-        51
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "SS"
-    ],
-    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "searchSpaceId"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "51_searchSpacesToAddModList_searchSpaceId"
-    ],
-    "field_ids": [
-      [
-        327,
-        328
-      ],
-      [
-        51
-      ]
-    ],
-    "matched_fields": [
-      "referenceSignal",
-      "SS"
-    ],
-    "original_sentence": "- If the UE is not provided pathlossReferenceRSs or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource obtained from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is provided a number of RS resource indexes, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using RS resource with index \\( q_{d} \\), where \\( 0 \\leq q_{d}<Q_{d}-Q_{d} \\) is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,

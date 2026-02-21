@@ -1,7 +1,7 @@
 [
   {
     "fields": [
-      "pusch-PathlossReferenceRS-Id",
+      "referenceSignal",
       "referenceSignal"
     ],
     "source_IEs": [
@@ -10,7 +10,8 @@
     ],
     "field_ids": [
       [
-        326
+        327,
+        328
       ],
       [
         533,
@@ -20,13 +21,13 @@
       ]
     ],
     "matched_fields": [
-      "pusch-PathlossReferenceRS-Id",
-      "reference signal"
+      "reference-signal",
+      "reference-signal"
     ],
-    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "The downlink CSI-RS EPRE can be derived from the SS/PBCH block downlink transmit power given by the parameter ss-PBCH-BlockPower and CSI-RS power offset given by the parameter powerControlOffsetSS provided by higher layers, where the CSI-RS is QCLed with the SS/PBCH block, and the SS/PBCH block can be associated with serving cell PCI or additional PCI different from serving cell PCI. The downlink reference-signal transmit power is defined as the linear average over the power contributions (in \\( [\\mathrm{W}] \\) ) of the resource elements that carry the configured CSI-RS within the operating system bandwidth.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "4.1",
+    "section_title": "Power allocation for downlink",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -43,7 +44,7 @@
   {
     "fields": [
       "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
+      "referenceSignal"
     ],
     "source_IEs": [
       "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
@@ -55,18 +56,20 @@
         328
       ],
       [
-        532,
-        640
+        533,
+        534,
+        641,
+        642
       ]
     ],
     "matched_fields": [
-      "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
+      "reference signal",
+      "reference signal"
     ],
-    "original_sentence": "- If the UE is provided a number of RS resource indexes, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using RS resource with index \\( q_{d} \\), where \\( 0 \\leq q_{d}<Q_{d}-Q_{d} \\) is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "The UE can be configured with a list of up to 128 DLorJointTCIState configurations, within the higher layer parameter PDSCH-Config for providing a reference signal for the quasi co-location for DM-RS of PDSCH and DM-RS of PDCCH in a CC, for CSI-RS, and to provide a reference, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -77,13 +80,13 @@
         "ie2": []
       }
     },
-    "confidence": "HIGH",
+    "confidence": "MEDIUM",
     "is_cross_ie": true
   },
   {
     "fields": [
       "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
+      "referenceSignal"
     ],
     "source_IEs": [
       "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
@@ -95,58 +98,20 @@
         328
       ],
       [
-        532,
-        640
+        533,
+        534,
+        641,
+        642
       ]
     ],
     "matched_fields": [
-      "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
+      "reference signal",
+      "reference signal"
     ],
-    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
-    ],
-    "source_IEs": [
-      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
-      "532_642_pucch-PowerControl_pathlossReferenceRSs"
-    ],
-    "field_ids": [
-      [
-        327,
-        328
-      ],
-      [
-        532,
-        640
-      ]
-    ],
-    "matched_fields": [
-      "referenceSignal",
-      "pucch-PathlossReferenceRS-Id"
-    ],
-    "original_sentence": "- If the UE is provided pathlossReferenceRSs and is not provided PUCCH-SpatialRelationInfo and is not provided more than one sets of power control parameters for operation in FR1, the UE obtains the referenceSignal value in PUCCH-PathlossReferenceRS from the pucch-PathlossReferenceRS-Id with index 0 in PUCCH-PathlossReferenceRS where the RS resource is either on the primary cell or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "- if UE is configured with TCI-State configurations with DLorJointTCIState or UL-TCIState, the UE may use a spatial domain transmit filter that is same as the spatial domain receive filter the UE may use to receive the DL reference signal associated with the indicated TCI state.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -185,10 +150,10 @@
       "reference signal",
       "reference signal"
     ],
-    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\)",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.1.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -224,13 +189,13 @@
       ]
     ],
     "matched_fields": [
-      "referenceSignal",
-      "referenceSignal"
+      "Reference Signal",
+      "Reference Signal"
     ],
-    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -241,7 +206,7 @@
         "ie2": []
       }
     },
-    "confidence": "HIGH",
+    "confidence": "MEDIUM",
     "is_cross_ie": true
   },
   {
@@ -266,13 +231,13 @@
       ]
     ],
     "matched_fields": [
-      "referenceSignal",
-      "referenceSignal"
+      "reference signal",
+      "reference signal"
     ],
-    "original_sentence": "- If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter - If the UE is provided pathlossReferenceRSs and is not provided PUCCH-SpatialRelationInfo and is not provided more than one sets of power control parameters for operation in FR1, the UE obtains the referenceSignal value in PUCCH-PathlossReferenceRS from the pucch-PathlossReferenceRS-Id with index 0 in PUCCH-PathlossReferenceRS where the RS resource is either on the primary cell or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.2.1",
-    "section_title": "UE behaviour",
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -311,10 +276,10 @@
       "reference signal",
       "reference signal"
     ],
-    "original_sentence": "A UE determines whether a power headroom report for an activated serving cell [11, TS 38.321] is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until and including the PDCCH monitoring occasion where the UE detects the first DCI format scheduling an initial transmission of a transport block since a power headroom report was triggered if the power headroom report is reported on a PUSCH triggered by the first DCI format. Otherwise, a UE determines whether a power headroom report is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until the first uplink symbol of a configured PUSCH transmission minus \\( T_{\\text {proc. } 2}=T_{\\text {proc. } 2} \\) where \\( T_{\\text {proc. } 2} \\) is determined according to [6, TS 38.214] assuming \\( d_{2, l}=1, d_{2,2}=0 \\), and with \\( \\mu_{D L} \\) corresponding to the subcarrier spacing of the active downlink BWP of the scheduling cell for a configured grant if the power headroom report is reported on the PUSCH using the configured grant.",
-    "source_file": "ts_138213v170100p_mathpix.md",
-    "section_number": "7.7",
-    "section_title": "Power headroom report",
+    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1044,7 +1009,7 @@
   },
   {
     "fields": [
-      "referenceSignal",
+      "pusch-PathlossReferenceRS-Id",
       "referenceSignal"
     ],
     "source_IEs": [
@@ -1053,8 +1018,7 @@
     ],
     "field_ids": [
       [
-        327,
-        328
+        326
       ],
       [
         533,
@@ -1064,13 +1028,13 @@
       ]
     ],
     "matched_fields": [
-      "reference-signal",
-      "reference-signal"
+      "pusch-PathlossReferenceRS-Id",
+      "reference signal"
     ],
-    "original_sentence": "The downlink CSI-RS EPRE can be derived from the SS/PBCH block downlink transmit power given by the parameter ss-PBCH-BlockPower and CSI-RS power offset given by the parameter powerControlOffsetSS provided by higher layers, where the CSI-RS is QCLed with the SS/PBCH block, and the SS/PBCH block can be associated with serving cell PCI or additional PCI different from serving cell PCI. The downlink reference-signal transmit power is defined as the linear average over the power contributions (in \\( [\\mathrm{W}] \\) ) of the resource elements that carry the configured CSI-RS within the operating system bandwidth.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "4.1",
-    "section_title": "Power allocation for downlink",
+    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\) - If the UE is not provided PUSCH-PathlossReferenceRS and enableDefaultBeamPL-ForSRS, or before the UE is provided dedicated higher layer parameters, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using a RS resource from an SS/PBCH block with same SS/PBCH block index as the one the UE uses to obtain MIB - If the UE is configured with a number of RS resource indexes, up to the value of maxNrofPUSCHPathlossReferenceRSs, and a respective set of RS configurations for the number of RS resource indexes by PUSCH-PathlossReferenceRS, the set of RS resource indexes can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pusch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource index \\( q_{d} \\) in the set of RS resource indexes to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pusch-PathlossReferenceRS-Id in PUSCHPathlossReferenceRS",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1087,7 +1051,7 @@
   {
     "fields": [
       "referenceSignal",
-      "referenceSignal"
+      "pucch-PathlossReferenceRS-Id"
     ],
     "source_IEs": [
       "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
@@ -1099,20 +1063,18 @@
         328
       ],
       [
-        533,
-        534,
-        641,
-        642
+        532,
+        640
       ]
     ],
     "matched_fields": [
-      "reference signal",
-      "reference signal"
+      "referenceSignal",
+      "pucch-PathlossReferenceRS-Id"
     ],
-    "original_sentence": "The UE can be configured with a list of up to 128 DLorJointTCIState configurations, within the higher layer parameter PDSCH-Config for providing a reference signal for the quasi co-location for DM-RS of PDSCH and DM-RS of PDCCH in a CC, for CSI-RS, and to provide a reference, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1.5",
-    "section_title": "Antenna ports quasi co",
+    "original_sentence": "- If the UE is provided a number of RS resource indexes, the UE calculates \\( P L_{b, f, c}\\left(q_{d}\\right) \\) using RS resource with index \\( q_{d} \\), where \\( 0 \\leq q_{d}<Q_{d}-Q_{d} \\) is a size for a set of RS resources provided by maxNrofPUCCHPathlossReferenceRSs. The set of RS resources is provided by pathlossReferenceRSs. The set of RS resources can include one or both of a set of SS/PBCH block indexes, each provided by ssb-Index in PUCCH-PathlossReferenceRS when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a SS/PBCH block index, and a set of CSI-RS resource indexes, each provided by csi-RS-Index when a value of a corresponding pucch-PathlossReferenceRS-Id maps to a CSI-RS resource index. The UE identifies a RS resource in the set of RS resources to correspond either to a SS/PBCH block index or to a CSI-RS resource index as provided by pucch-PathlossReferenceRS-Id in PUCCH-PathlossReferenceRS - If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1123,13 +1085,13 @@
         "ie2": []
       }
     },
-    "confidence": "MEDIUM",
+    "confidence": "HIGH",
     "is_cross_ie": true
   },
   {
     "fields": [
       "referenceSignal",
-      "referenceSignal"
+      "pucch-PathlossReferenceRS-Id"
     ],
     "source_IEs": [
       "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
@@ -1141,20 +1103,58 @@
         328
       ],
       [
-        533,
-        534,
-        641,
-        642
+        532,
+        640
       ]
     ],
     "matched_fields": [
-      "reference signal",
-      "reference signal"
+      "referenceSignal",
+      "pucch-PathlossReferenceRS-Id"
     ],
-    "original_sentence": "- if UE is configured with TCI-State configurations with DLorJointTCIState or UL-TCIState, the UE may use a spatial domain transmit filter that is same as the spatial domain receive filter the UE may use to receive the DL reference signal associated with the indicated TCI state.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1.5",
-    "section_title": "Antenna ports quasi co",
+    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH - If PUCCH-SpatialRelationInfo includes servingCellld indicating a serving cell, the UE receives the RS for resource index \\( q_{d} \\) on the active DL BWP of the serving cell - If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "source_IEs": [
+      "326_328_pusch-PowerControl_pathlossReferenceRSToAddModList",
+      "532_642_pucch-PowerControl_pathlossReferenceRSs"
+    ],
+    "field_ids": [
+      [
+        327,
+        328
+      ],
+      [
+        532,
+        640
+      ]
+    ],
+    "matched_fields": [
+      "referenceSignal",
+      "pucch-PathlossReferenceRS-Id"
+    ],
+    "original_sentence": "- If the UE is provided pathlossReferenceRSs and is not provided PUCCH-SpatialRelationInfo and is not provided more than one sets of power control parameters for operation in FR1, the UE obtains the referenceSignal value in PUCCH-PathlossReferenceRS from the pucch-PathlossReferenceRS-Id with index 0 in PUCCH-PathlossReferenceRS where the RS resource is either on the primary cell or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1193,10 +1193,10 @@
       "reference signal",
       "reference signal"
     ],
-    "original_sentence": "The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.1",
-    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "original_sentence": "- \\( P L_{b, f, c}\\left(q_{d}\\right) \\) is a downlink pathloss estimate in dB calculated by the UE using reference signal (RS) index \\( q_{d} \\) for the active DL BWP, as described in clause 12 , of carrier \\( f \\) of serving cell \\( c \\)",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.1.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1232,13 +1232,13 @@
       ]
     ],
     "matched_fields": [
-      "Reference Signal",
-      "Reference Signal"
+      "referenceSignal",
+      "referenceSignal"
     ],
-    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
+    "original_sentence": "- If the UE is provided pathlossReferenceRSs and PUCCH-SpatialRelationInfo, the UE obtains a mapping, by indexes provided by corresponding values of pucch-PathlossReferenceRS-Id, between a set of pucchSpatialRelationInfold values and a set of referenceSignal values provided by PUCCH-PathlossReferenceRS. If the UE is provided more than one values for pucch-SpatialRelationInfold and the UE receives an activation command [11, TS 38.321] indicating a value of pucch-SpatialRelationInfold, the UE determines the referenceSignal value in PUCCH-PathlossReferenceRS through the link to a corresponding pucch-PathlossReferenceRS-Id index. The UE applies the activation command in the first slot that is after slot \\( k+ 3 \\cdot N_{\\text {slot }}^{\\text {sub frame, } \\mu} \\) where \\( k \\) is the slot where the UE would transmit a PUCCH with HARQ-ACK information for the PDSCH providing the activation command and \\( \\mu \\) is the SCS configuration for the PUCCH",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1249,7 +1249,7 @@
         "ie2": []
       }
     },
-    "confidence": "MEDIUM",
+    "confidence": "HIGH",
     "is_cross_ie": true
   },
   {
@@ -1274,13 +1274,13 @@
       ]
     ],
     "matched_fields": [
-      "reference signal",
-      "reference signal"
+      "referenceSignal",
+      "referenceSignal"
     ],
-    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
+    "original_sentence": "- If the UE is provided pathlossReferenceRSs and more than one sets of power control parameters for operation in FR1, and the UE receives an activation command [11, TS 38.321] indicating one or two of the more than one sets of power control parameters, the UE determines the referenceSignal values in PUCCHPathlossReferenceRS that are indicated in the one or two sets of power control parameter - If the UE is provided pathlossReferenceRSs and is not provided PUCCH-SpatialRelationInfo and is not provided more than one sets of power control parameters for operation in FR1, the UE obtains the referenceSignal value in PUCCH-PathlossReferenceRS from the pucch-PathlossReferenceRS-Id with index 0 in PUCCH-PathlossReferenceRS where the RS resource is either on the primary cell or, if provided, on a serving cell indicated by a value of pathlossReferenceLinking",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.2.1",
+    "section_title": "UE behaviour",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,
@@ -1319,10 +1319,10 @@
       "reference signal",
       "reference signal"
     ],
-    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
+    "original_sentence": "A UE determines whether a power headroom report for an activated serving cell [11, TS 38.321] is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until and including the PDCCH monitoring occasion where the UE detects the first DCI format scheduling an initial transmission of a transport block since a power headroom report was triggered if the power headroom report is reported on a PUSCH triggered by the first DCI format. Otherwise, a UE determines whether a power headroom report is based on an actual transmission or a reference format based on the higher layer signalling of configured grant and periodic/semi-persistent sounding reference signal transmissions and downlink control information the UE received until the first uplink symbol of a configured PUSCH transmission minus \\( T_{\\text {proc. } 2}=T_{\\text {proc. } 2} \\) where \\( T_{\\text {proc. } 2} \\) is determined according to [6, TS 38.214] assuming \\( d_{2, l}=1, d_{2,2}=0 \\), and with \\( \\mu_{D L} \\) corresponding to the subcarrier spacing of the active downlink BWP of the scheduling cell for a configured grant if the power headroom report is reported on the PUSCH using the configured grant.",
+    "source_file": "ts_138213v170100p_mathpix.md",
+    "section_number": "7.7",
+    "section_title": "Power headroom report",
     "section_relevance": {
       "combined_score": 0.0,
       "ie1_score": 0.0,

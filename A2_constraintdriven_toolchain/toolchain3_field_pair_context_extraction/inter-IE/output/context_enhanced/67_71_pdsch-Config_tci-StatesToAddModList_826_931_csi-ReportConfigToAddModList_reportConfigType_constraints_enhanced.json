@@ -651,998 +651,6 @@
   {
     "fields": [
       "bwp-Id",
-      "reportConfigType"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        849,
-        864,
-        888,
-        903,
-        927
-      ]
-    ],
-    "matched_fields": [
-      "BWP-Id",
-      "reportConfigType"
-    ],
-    "original_sentence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.  The time domain behavior of the CSI-ReportConfig is indicated by the higher layer parameter reportConfigType and can be set to 'aperiodic', 'semiPersistentOnPUCCH', 'semiPersistentOnPUSCH', or 'periodic'. For 'periodic' and 'semiPersistentOnPUCCH/'semiPersistentOnPUSCH' CSI reporting, the configured periodicity and slot offset applies in the numerology of the UL BWP in which the CSI report is configured to be transmitted on. The higher layer parameter reportQuantity indicates the CSI-related, L1-RSRP-related, L1-SINR-related or Capability[Set][ndex-related quantities to report. The reportFreqConfiguration indicates the reporting granularity in the frequency domain, including the CSI reporting band and if PMI/CQI reporting is wideband or sub-band. The timeRestrictionForChannelMeasurements parameter in CSI-ReportConfig can be configured to enable time domain restriction for channel measurements and timeRestrictionForInterferenceMeasurements can be configured to enable time domain restriction for interference measurements. The CSI-ReportConfig can also contain CodebookConfig, which contains configuration parameters for Type-I, Type II, Enhanced Type II CSI, or Further Enhanced Type II Port Selection including codebook subset restriction when applicable, and configurations of group-based reporting.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.1",
-    "section_title": "Reporting settings",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "bwp-id",
-      "bwp"
-    ],
-    "original_sentence": "When the bwp-id or cell for QCL-TypeA/D source RS in a QCL-Info of the TCI state configured with DLorJointTCIState is not configured, the UE assumes that QCL-TypeA/D source RS is configured in the CC/DL BWP where TCI state applies.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1.5",
-    "section_title": "Antenna ports quasi co",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP-Id",
-      "BWP"
-    ],
-    "original_sentence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.1",
-    "section_title": "Reporting settings",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP-id",
-      "BWP"
-    ],
-    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.2",
-    "section_title": "Resource settings",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP-Id",
-      "BWP"
-    ],
-    "original_sentence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.2.3.1",
-    "section_title": "NZP CSI",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP ID",
-      "BWP"
-    ],
-    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        68
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "BWP ID",
-      "BWP"
-    ],
-    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "QCL type",
-      "BWP"
-    ],
-    "original_sentence": "For PDSCH scheduled by DCI format \\( 1 \\_0,1 \\_1,1 \\_2 \\), when a UE is configured with sfnSchemePdcch set to 'sfnScheme A' and sfnSchemePdsch is not configured, and there is no TCI codepoint with two TCI states in the activation command, and if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal or larger than the threshold timeDurationForQCL if applicable and the CORESET which schedules the PDSCH is indicated with two TCI states, the UE assumes that the TCI state or the QCL assumption for the PDSCH is identical to the first TCI state or QCL assumption which is applied for the CORESET used for the PDCCH transmission within the active BWP of the serving cell.  If a PDSCH is scheduled by a DCI format having the TCI field present, the TCI field in DCI in the scheduling component carrier points to the activated TCI states in the scheduled component carrier or DL BWP, the UE shall use the TCI-State according to the value of the 'Transmission Configuration Indication' field in the detected PDCCH with DCI for determining PDSCH antenna port quasi co-location. The UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the RS(s) in the TCI state with respect to the QCL type parameter(s) given by the indicated TCI state if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal to or greater than a threshold timeDurationForQCL, where the threshold is based on reported UE capability [13, TS 38.306]. For a single slot PDSCH, the indicated TCI state(s) should be based on the activated TCI states in the slot with the scheduled PDSCH. For a multi-slot PDSCH or the UE is configured with higher layer parameter [pdsch-TimeDomainAllocationListForMultiPDSCH-r177, the indicated TCI state(s) should be based on the activated TCI states in the first slot with the scheduled \\( \\operatorname{PDSCH}(s) \\), and UE shall expect the activated TCI states are the same across the slots with the scheduled \\( \\operatorname{PDSCH}(s) \\). When the UE is configured with CORESET associated with a search space set for crosscarrier scheduling and the UE is not configured with enableDefaultBeamForCCS, the UE expects tci-PresentInDCI is set as 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET, and if one or more of the TCI states configured for the serving cell scheduled by the search space set contains qcl-Type set to 'typeD', the UE expects the time offset between the reception of the detected PDCCH in the search space set and a corresponding PDSCH is larger than or equal to the threshold timeDurationForQCL.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1.5",
-    "section_title": "Antenna ports quasi co",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- the UE may assume that the DM-RS ports of \\( \\operatorname{PDSCH}(s) \\) of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) used for PDCCH quasi co-location indication of the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored by the UE. In this case, if the qcl-Type is set to 'typeD' of the PDSCH DM-RS is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers).",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.1.5",
-    "section_title": "Antenna ports quasi co",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- For each aperiodic CSI-RS resource in a CSI-RS resource set associated with each CSI triggering state, the UE is indicated the quasi co-location configuration of quasi co-location RS source(s) and quasi co-location type(s), as described in clause 5.1.5, through higher layer signaling of qcl-info which contains a list of references to TCIState's for the aperiodic CSI-RS resources associated with the CSI triggering state. If a State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic or semipersistent located in the same or different CC/DL BWP.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.5.1",
-    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "When aperiodic CSI-RS is used with aperiodic reporting, the CSI-RS offset is configured per resource set by the higher layer parameter aperiodicTriggeringOffset or aperiodicTriggeringOffset-r16. The CSI-RS triggering offset has the values of \\( \\{0,1,2,3,4,5,6, \\ldots, 15,16,24\\} \\) slots. If the UE is not configured with minimumScheduling OffsetKO for any DL BWP and minimumSchedulingOffsetK2 for any UL BWP and if all the associated trigger states do not have the higher layer parameter qcl-Type set to 'typeD' in the corresponding TCI states, the CSI-RS triggering offset is fixed to zero. The aperiodic triggering offset of the CSI-[M follows offset of the associated NZP CSI-RS for channel measurement. The aperiodic CSI-RS is transmitted in a slot \\( K_{s}, K_{s}=n+X+\\left(\\frac{N_{\\text {slot, offset, } \\text { PDCCH }}^{\\text {CA }}}{2^{\\mu_{\\text {Offset, } \\text { PDCCH }}}}-\\frac{N_{\\text {slot, } \\text { offset, } \\text { CSIRS }}^{\\text {CA }}}{2^{\\mu_{\\text {Offset, } \\text { CSIRS }}}}\\right) \\). \\( 2^{\\mu \\operatorname{CSIRS}} \\), if UE is configured with ca-SlotOffset for at least one of the triggered and triggering cell, and in slot \\( K_{s}=n+X \\), otherwise, and where",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.5.1",
-    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- When the aperiodic CSI-RS is used with aperiodic CSI reporting, the CSI-RS triggering offset \\( X \\) is configured per resource set by the higher layer parameter aperiodicTriggeringOffset or aperiodicTriggeringOffset-r 16, including the case that the UE is not configured with minimumSchedulingOffsetK0 for any DL BWP or minimumSchedulingOffsetK2 for any UL BWP and all the associated trigger states do not have the higher layer parameter qcl-Type set to 'typeD' in the corresponding TCI states. The CSI-RS triggering offset has the values of \\( \\{0,1, \\ldots, 31\\} \\) slots when the \\( \\mu_{\\mathrm{PDCCH}}<\\mu_{\\mathrm{CSIRS}} \\) and \\( \\{0,1,2,3,4,5,6, \\ldots, 15,16,24\\} \\) when the \\( \\mu_{\\mathrm{PDCCH}}> \\mu_{\\text {CSIRS }} \\) - The aperiodic CSI-RS is transmitted in a slot \\( \\left\\lfloor n \\cdot \\frac{2^{\\mu_{\\text {CSIRS }}}}{2^{\\mu_{\\text {POCCH }}}}\\right\\rfloor+X+\\left\\lfloor\\left(\\frac{N_{\\text {Slot,offsel,PDCCH }}^{C A}}{2^{\\mu_{\\text {offer,POCCH }}}}-\\frac{N_{\\text {slot,offset,CSIRS }}^{C A}}{2^{\\mu_{\\text {offse, CSIRS }}}}\\right) \\cdot 2^{\\mu C S R S}\\right\\rfloor \\), if UE is configured with ca-SlotOffset for at least one of the triggered and triggering cell, and \\( K_{s}=\\left\\lfloor n \\cdot \\frac{2^{\\mu_{C T R S}}}{2^{\\mu O C C H}}\\right\\rfloor+X \\), otherwise, and where",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.5.1",
-    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot \\( n \\) corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot \\( n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH and \\( \\mu_{K_{\\text {mac }}} \\) is the subcarrier spacing configuration for \\( k_{\\text {mac }} \\) with a value of 0 for frequency range 1 , and \\( k_{\\text {mac }} \\) is provided by \\( K-M a c \\) or \\( k_{\\mathrm{mac}}=0 \\) if \\( K-M a c \\) is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.1.5.2",
-    "section_title": "Semi",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "QCL type",
-      "BWP"
-    ],
-    "original_sentence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "5.2.2.3.1",
-    "section_title": "NZP CSI",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell, the UE shall transmit PUSCH according to the spatial relation, if applicable, corresponding to the dedicated PUCCH resource with the lowest ID within the active UL BWP of the cell, as described in Clause 9.2.1 of [6, TS 38.213]. If the dedicated PUCCH resource with the lowest ID within the active UL BWP of the cell corresponds to two spatial relations, the UE shall transmit the PUSCH according to the spatial relation with the lower ID.  For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE is not configured with PUCCH resources on the active UL BWP and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell. If the CORESET is indicated with two TCI states, snischemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.1",
-    "section_title": "UE procedure for transmitting the physical uplink shared channel",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE is not configured with PUCCH resources on the active UL BWP and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell. If the CORESET is indicated with two TCI states, snischemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.  For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPLFor PUSCH0-0 is set 'enabled', the UE is configured with PUCCH resources on the active UL BWP where all the PUCCH resource(s) are not configured with any spatial relation and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell in case CORESET(s) are configured on the cell. If the CORESET is indicated with two TCI states, sfnSchemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.1",
-    "section_title": "UE procedure for transmitting the physical uplink shared channel",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "- If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.1.1.2",
-    "section_title": "Non",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "When the higher layer parameter enableDefaultBeamPL-ForSRS is set 'enabled', and if the higher layer parameter spatialRelationInfo for the SRS resource, except for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'beamManagement' or for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'nonCodebook' with configuration of associatedCSI-RS or for the SRS resource configured by the higher layer parameter SRS-PosResourceSet, is not configured in FR2 and if the UE is not configured with higher layer parameter(s) pathlossReferenceRS, and if the UE is not configured with different values of coresetPoollndex in ControlResourceSets, and is not provided at least one TCI codepoint mapped with two TCI states, the UE shall transmit the target SRS resource in an active UL BWP of a CC, - according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest controlResourceSetld in the active DL",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "qcl-Type",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        71
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "qcl-Type",
-      "BWP"
-    ],
-    "original_sentence": "BWP in the CC. If the CORESET is activated with two TCI states, sfnSchemePdcch is configured and the UE supports [DefaultBeamPL-ForSRS-SfnPdcch], UE shall use the first TCI state as the QCL assumption. - according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' in the activated TCI state with the lowest ID applicable to PDSCH in the active DL BWP of the CC if the UE is not configured with any CORESET in the active DL BWP of the CC",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        69,
-        70
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "BWP"
-    ],
-    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell.  The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.1",
-    "section_title": "UE procedure for transmitting the physical uplink shared channel",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        69,
-        70
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "Reference Signal",
-      "BWP"
-    ],
-    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "MEDIUM",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        69,
-        70
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "BWP"
-    ],
-    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "referenceSignal",
-      "uplinkBandwidthPartId"
-    ],
-    "source_IEs": [
-      "67_71_pdsch-Config_tci-StatesToAddModList",
-      "826_931_csi-ReportConfigToAddModList_reportConfigType"
-    ],
-    "field_ids": [
-      [
-        69,
-        70
-      ],
-      [
-        828,
-        852,
-        867,
-        891,
-        906,
-        930
-      ]
-    ],
-    "matched_fields": [
-      "reference signal",
-      "BWP"
-    ],
-    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "bwp-Id",
       "pucch-Resource"
     ],
     "source_IEs": [
@@ -2928,6 +1936,998 @@
       }
     },
     "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "reportConfigType"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        849,
+        864,
+        888,
+        903,
+        927
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "reportConfigType"
+    ],
+    "original_sentence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.  The time domain behavior of the CSI-ReportConfig is indicated by the higher layer parameter reportConfigType and can be set to 'aperiodic', 'semiPersistentOnPUCCH', 'semiPersistentOnPUSCH', or 'periodic'. For 'periodic' and 'semiPersistentOnPUCCH/'semiPersistentOnPUSCH' CSI reporting, the configured periodicity and slot offset applies in the numerology of the UL BWP in which the CSI report is configured to be transmitted on. The higher layer parameter reportQuantity indicates the CSI-related, L1-RSRP-related, L1-SINR-related or Capability[Set][ndex-related quantities to report. The reportFreqConfiguration indicates the reporting granularity in the frequency domain, including the CSI reporting band and if PMI/CQI reporting is wideband or sub-band. The timeRestrictionForChannelMeasurements parameter in CSI-ReportConfig can be configured to enable time domain restriction for channel measurements and timeRestrictionForInterferenceMeasurements can be configured to enable time domain restriction for interference measurements. The CSI-ReportConfig can also contain CodebookConfig, which contains configuration parameters for Type-I, Type II, Enhanced Type II CSI, or Further Enhanced Type II Port Selection including codebook subset restriction when applicable, and configurations of group-based reporting.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.1",
+    "section_title": "Reporting settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "bwp-id",
+      "bwp"
+    ],
+    "original_sentence": "When the bwp-id or cell for QCL-TypeA/D source RS in a QCL-Info of the TCI state configured with DLorJointTCIState is not configured, the UE assumes that QCL-TypeA/D source RS is configured in the CC/DL BWP where TCI state applies.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "BWP"
+    ],
+    "original_sentence": "Each Reporting Setting CSI-ReportConfig is associated with a single downlink BWP (indicated by higher layer parameter BWP-Id) given in the associated CSI-ResourceConfig for channel measurement and contains the parameter(s) for one CSI reporting band: codebook configuration including codebook subset restriction, time-domain behavior, frequency granularity for CQI and PMI, measurement restriction configurations, and the CSI-related quantities to be reported by the UE such as the layer indicator (LI), L1-RSRP, L1-SINR, CRI, and SSBRI (SSB Resource Indicator) and Capability[Set]Index.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.1",
+    "section_title": "Reporting settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP-id",
+      "BWP"
+    ],
+    "original_sentence": "Each CSI Resource Setting CSI-ResourceConfig contains a configuration of a list of S \\( \\geq 1 \\) CSI Resource Sets (given by higher layer parameter csi-RS-ResourceSetList), where the list is comprised of references to either or both of NZP CSIRS resource set(s) and SS/PBCH block set(s) or the list is comprised of references to CSI-[M resource set(s). Each CSI Resource Setting is located in the DL BWP identified by the higher layer parameter BWP-id, and all CSI Resource Settings linked to a CSI Report Setting have the same DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.2",
+    "section_title": "Resource settings",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP-Id",
+      "BWP"
+    ],
+    "original_sentence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.2.3.1",
+    "section_title": "NZP CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "bwp-Id",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        68
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "BWP ID",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "QCL type",
+      "BWP"
+    ],
+    "original_sentence": "For PDSCH scheduled by DCI format \\( 1 \\_0,1 \\_1,1 \\_2 \\), when a UE is configured with sfnSchemePdcch set to 'sfnScheme A' and sfnSchemePdsch is not configured, and there is no TCI codepoint with two TCI states in the activation command, and if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal or larger than the threshold timeDurationForQCL if applicable and the CORESET which schedules the PDSCH is indicated with two TCI states, the UE assumes that the TCI state or the QCL assumption for the PDSCH is identical to the first TCI state or QCL assumption which is applied for the CORESET used for the PDCCH transmission within the active BWP of the serving cell.  If a PDSCH is scheduled by a DCI format having the TCI field present, the TCI field in DCI in the scheduling component carrier points to the activated TCI states in the scheduled component carrier or DL BWP, the UE shall use the TCI-State according to the value of the 'Transmission Configuration Indication' field in the detected PDCCH with DCI for determining PDSCH antenna port quasi co-location. The UE may assume that the DM-RS ports of PDSCH of a serving cell are quasi co-located with the RS(s) in the TCI state with respect to the QCL type parameter(s) given by the indicated TCI state if the time offset between the reception of the DL DCI and the corresponding PDSCH is equal to or greater than a threshold timeDurationForQCL, where the threshold is based on reported UE capability [13, TS 38.306]. For a single slot PDSCH, the indicated TCI state(s) should be based on the activated TCI states in the slot with the scheduled PDSCH. For a multi-slot PDSCH or the UE is configured with higher layer parameter [pdsch-TimeDomainAllocationListForMultiPDSCH-r177, the indicated TCI state(s) should be based on the activated TCI states in the first slot with the scheduled \\( \\operatorname{PDSCH}(s) \\), and UE shall expect the activated TCI states are the same across the slots with the scheduled \\( \\operatorname{PDSCH}(s) \\). When the UE is configured with CORESET associated with a search space set for crosscarrier scheduling and the UE is not configured with enableDefaultBeamForCCS, the UE expects tci-PresentInDCI is set as 'enabled' or tci-PresentDCI-1-2 is configured for the CORESET, and if one or more of the TCI states configured for the serving cell scheduled by the search space set contains qcl-Type set to 'typeD', the UE expects the time offset between the reception of the detected PDCCH in the search space set and a corresponding PDSCH is larger than or equal to the threshold timeDurationForQCL.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- the UE may assume that the DM-RS ports of \\( \\operatorname{PDSCH}(s) \\) of a serving cell are quasi co-located with the RS(s) with respect to the QCL parameter(s) used for PDCCH quasi co-location indication of the CORESET associated with a monitored search space with the lowest controlResourceSetld in the latest slot in which one or more CORESETs within the active BWP of the serving cell are monitored by the UE. In this case, if the qcl-Type is set to 'typeD' of the PDSCH DM-RS is different from that of the PDCCH DM-RS with which they overlap in at least one symbol, the UE is expected to prioritize the reception of PDCCH associated with that CORESET. This also applies to the intra-band CA case (when PDSCH and the CORESET are in different component carriers).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.1.5",
+    "section_title": "Antenna ports quasi co",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- For each aperiodic CSI-RS resource in a CSI-RS resource set associated with each CSI triggering state, the UE is indicated the quasi co-location configuration of quasi co-location RS source(s) and quasi co-location type(s), as described in clause 5.1.5, through higher layer signaling of qcl-info which contains a list of references to TCIState's for the aperiodic CSI-RS resources associated with the CSI triggering state. If a State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic or semipersistent located in the same or different CC/DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.1",
+    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "When aperiodic CSI-RS is used with aperiodic reporting, the CSI-RS offset is configured per resource set by the higher layer parameter aperiodicTriggeringOffset or aperiodicTriggeringOffset-r16. The CSI-RS triggering offset has the values of \\( \\{0,1,2,3,4,5,6, \\ldots, 15,16,24\\} \\) slots. If the UE is not configured with minimumScheduling OffsetKO for any DL BWP and minimumSchedulingOffsetK2 for any UL BWP and if all the associated trigger states do not have the higher layer parameter qcl-Type set to 'typeD' in the corresponding TCI states, the CSI-RS triggering offset is fixed to zero. The aperiodic triggering offset of the CSI-[M follows offset of the associated NZP CSI-RS for channel measurement. The aperiodic CSI-RS is transmitted in a slot \\( K_{s}, K_{s}=n+X+\\left(\\frac{N_{\\text {slot, offset, } \\text { PDCCH }}^{\\text {CA }}}{2^{\\mu_{\\text {Offset, } \\text { PDCCH }}}}-\\frac{N_{\\text {slot, } \\text { offset, } \\text { CSIRS }}^{\\text {CA }}}{2^{\\mu_{\\text {Offset, } \\text { CSIRS }}}}\\right) \\). \\( 2^{\\mu \\operatorname{CSIRS}} \\), if UE is configured with ca-SlotOffset for at least one of the triggered and triggering cell, and in slot \\( K_{s}=n+X \\), otherwise, and where",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.1",
+    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- When the aperiodic CSI-RS is used with aperiodic CSI reporting, the CSI-RS triggering offset \\( X \\) is configured per resource set by the higher layer parameter aperiodicTriggeringOffset or aperiodicTriggeringOffset-r 16, including the case that the UE is not configured with minimumSchedulingOffsetK0 for any DL BWP or minimumSchedulingOffsetK2 for any UL BWP and all the associated trigger states do not have the higher layer parameter qcl-Type set to 'typeD' in the corresponding TCI states. The CSI-RS triggering offset has the values of \\( \\{0,1, \\ldots, 31\\} \\) slots when the \\( \\mu_{\\mathrm{PDCCH}}<\\mu_{\\mathrm{CSIRS}} \\) and \\( \\{0,1,2,3,4,5,6, \\ldots, 15,16,24\\} \\) when the \\( \\mu_{\\mathrm{PDCCH}}> \\mu_{\\text {CSIRS }} \\) - The aperiodic CSI-RS is transmitted in a slot \\( \\left\\lfloor n \\cdot \\frac{2^{\\mu_{\\text {CSIRS }}}}{2^{\\mu_{\\text {POCCH }}}}\\right\\rfloor+X+\\left\\lfloor\\left(\\frac{N_{\\text {Slot,offsel,PDCCH }}^{C A}}{2^{\\mu_{\\text {offer,POCCH }}}}-\\frac{N_{\\text {slot,offset,CSIRS }}^{C A}}{2^{\\mu_{\\text {offse, CSIRS }}}}\\right) \\cdot 2^{\\mu C S R S}\\right\\rfloor \\), if UE is configured with ca-SlotOffset for at least one of the triggered and triggering cell, and \\( K_{s}=\\left\\lfloor n \\cdot \\frac{2^{\\mu_{C T R S}}}{2^{\\mu O C C H}}\\right\\rfloor+X \\), otherwise, and where",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.1",
+    "section_title": "Aperiodic CSI Reporting/Aperiodic CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.12 of [10, TS 38.321], for CSI-RS resource set(s) for channel measurement and CSI-[M/NZP CSI-RS resource set(s) for interference measurement associated with configured CSI resource setting(s), and when the UE would transmit a PUCCH with HARQACK information in slot \\( n \\) corresponding to the PDSCH carrying the selection command, the corresponding actions in [10, TS 38.321] and the UE assumptions (including QCL assumptions provided by a list of reference to TCI-State's, one per activated resource) on CSI-RS/CSI-[M transmission corresponding to the configured CSI-RS/CSI-[Mresource configuration(s) shall be applied starting from the first slot that is after slot \\( n+ 3 N_{\\text {slot }}^{\\text {subframe }, \\mu}+\\frac{2^{\\mu}}{2^{\\mu_{K}}{ }^{\\text {rac }}} \\cdot k_{\\text {mac }} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH and \\( \\mu_{K_{\\text {mac }}} \\) is the subcarrier spacing configuration for \\( k_{\\text {mac }} \\) with a value of 0 for frequency range 1 , and \\( k_{\\text {mac }} \\) is provided by \\( K-M a c \\) or \\( k_{\\mathrm{mac}}=0 \\) if \\( K-M a c \\) is not provided. If a TCI-State referred to in the list is configured with a reference to an RS configured with qcl-Type set to 'typeD', that RS can be an SS/PBCH block, periodic or semi-persistent CSI-RS located in same or different CC/DL BWP.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.1.5.2",
+    "section_title": "Semi",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "QCL type",
+      "BWP"
+    ],
+    "original_sentence": "- BWP-Id in CSI-ResourceConfig defines which bandwidth part the configured CSI-RS is located in. - repetition in NZP-CSI-RS-ResourceSet is associated with a CSI-RS resource set and defines whether UE can assume the CSI-RS resources within the NZP CSI-RS Resource Set are transmitted with the same downlink spatial domain transmission filter or not as described in Clause 5.1.6.1.2. and can be configured only when the higher layer parameter reportQuantity associated with all the reporting settings linked with the CSI-RS resource set is set to 'cri-RSRP', 'cri-SINR', 'cri-RSRP-Capability[Set]Index', 'cri-S[NR-Capability[Set][ndex' or 'none'. - qcl-InfoPeriodicCSI-RS contains a reference to a TCI-State indicating QCL source RS(s) and QCL type(s). If the TCI-State is configured with a reference to an RS configured with qcl-Type set to 'typeD' association, that RS may be an SS/PBCH block located in the same or different CC/DL BWP or a CSI-RS resource configured as periodic located in the same or different CC/DL BWP. The reference RS may additionally be an SS/PBCH block associated with a PCI different from the PCI of the serving cell.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "5.2.2.3.1",
+    "section_title": "NZP CSI",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell, the UE shall transmit PUSCH according to the spatial relation, if applicable, corresponding to the dedicated PUCCH resource with the lowest ID within the active UL BWP of the cell, as described in Clause 9.2.1 of [6, TS 38.213]. If the dedicated PUCCH resource with the lowest ID within the active UL BWP of the cell corresponds to two spatial relations, the UE shall transmit the PUSCH according to the spatial relation with the lower ID.  For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE is not configured with PUCCH resources on the active UL BWP and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell. If the CORESET is indicated with two TCI states, snischemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPL-ForPUSCH0-0 is set 'enabled', the UE is not configured with PUCCH resources on the active UL BWP and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell. If the CORESET is indicated with two TCI states, snischemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.  For PUSCH scheduled by DCI format \\( 0 \\_0 \\) on a cell and if the higher layer parameter enableDefaultBeamPLFor PUSCH0-0 is set 'enabled', the UE is configured with PUCCH resources on the active UL BWP where all the PUCCH resource(s) are not configured with any spatial relation and the UE is in RRC connected mode, the UE shall transmit PUSCH according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest ID on the active DL BWP of the cell in case CORESET(s) are configured on the cell. If the CORESET is indicated with two TCI states, sfnSchemePdcch is configured and the UE supports [DefaultBeamPL-ForPUSCH-SfnPdcch], the UE shall use the first TCI state as the QCL assumption.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "- If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, the presence of the associated CSI-RS is indicated by the SRS request field if the value of the SRS request field is not ' 00 ' as in Table 7.3.1.1.2-24 of [5, TS 38.212] and if the scheduling DCI is not used for cross carrier or cross bandwidth part scheduling. If UE is configured with minimumSchedulingOffsetKO in the active DL BWP and the currently applicable minimum scheduling offset restriction \\( K_{0, m i n} \\) is larger than 0 , the UE does not expected to receive the scheduling DCI with the SRS request field value other than ' 00 '. The CSI-RS is located in the same slot as the SRS request field. If the UE configured with aperiodic SRS associated with aperiodic NZP CSI-RS resource, any of the TCI states configured in the scheduled CC shall not be configured with qcl-Type set to 'typeD'.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1.1.2",
+    "section_title": "Non",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "When the higher layer parameter enableDefaultBeamPL-ForSRS is set 'enabled', and if the higher layer parameter spatialRelationInfo for the SRS resource, except for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'beamManagement' or for the SRS resource with the higher layer parameter usage in SRSResourceSet set to 'nonCodebook' with configuration of associatedCSI-RS or for the SRS resource configured by the higher layer parameter SRS-PosResourceSet, is not configured in FR2 and if the UE is not configured with higher layer parameter(s) pathlossReferenceRS, and if the UE is not configured with different values of coresetPoollndex in ControlResourceSets, and is not provided at least one TCI codepoint mapped with two TCI states, the UE shall transmit the target SRS resource in an active UL BWP of a CC, - according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' corresponding to the QCL assumption of the CORESET with the lowest controlResourceSetld in the active DL",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "qcl-Type",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        71
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "qcl-Type",
+      "BWP"
+    ],
+    "original_sentence": "BWP in the CC. If the CORESET is activated with two TCI states, sfnSchemePdcch is configured and the UE supports [DefaultBeamPL-ForSRS-SfnPdcch], UE shall use the first TCI state as the QCL assumption. - according to the spatial relation, if applicable, with a reference to the RS configured with qcl-Type set to 'typeD' in the activated TCI state with the lowest ID applicable to PDSCH in the active DL BWP of the CC if the UE is not configured with any CORESET in the active DL BWP of the CC",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "BWP"
+    ],
+    "original_sentence": "PUSCH transmission(s) can be dynamically scheduled by an UL grant in a DCI, or the transmission can correspond to a configured grant Type 1 or Type 2. The configured grant Type 1 PUSCH transmission is semi-statically configured to operate upon the reception of higher layer parameter of configuredGrantConfig including rrc-ConfiguredUplinkGrant without the detection of an UL grant in a DCL. The configured grant Type 2 PUSCH transmission is semi-persistently scheduled by an UL grant in a valid activation DCI according to clause 10.2 of [6, TS 38.213] after the reception of higher layer parameter configuredGrantConfig not including rrc-ConfiguredUplinkGrant. If configured GrantConfigToAddModList is configured, more than one configured grant configuration of configured grant Type 1 and/or configured grant Type 2 may be active at the same time on an active BWP of a serving cell.  The UE can be configured with a list of up to 64 UL-TCIState configurations within the higher layer parameter BWPUplinkDedicated. Each UL-TCIState configuration contains a parameter for configuring one reference signal, if applicable, for determining UL TX spatial filter for dynamic-grant and configured-grant based PUSCH and PUCCH resource in a CC, and SRS.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.1",
+    "section_title": "UE procedure for transmitting the physical uplink shared channel",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "Reference Signal",
+      "BWP"
+    ],
+    "original_sentence": "The UE may be configured with one or more Sounding Reference Signal (SRS) resource sets as configured by the higher layer parameter SRS-ResourceSet or SRS-PosResourceSet. For each SRS resource set configured by SRSResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRS-Resource), where the maximum value of K is indicated by UE capability [13,38.306]. When SRS resource set is configured with the higher layer parameter SRS-PosResourceSet, a UE may be configured with \\( K \\geq 1 \\) SRS resources (higher layer parameter SRSPosResource), where the maximum value of K is 16 . The SRS resource set applicability is configured by the higher layer parameter usage in SRS-ResourceSet. When the higher layer parameter usage is set to 'beamManagement', only one SRS resource in each of multiple SRS resource sets may be transmitted at a given time instant, but the SRS resources in different SRS resource sets with the same time domain behaviour in the same BWP may be transmitted simultaneously.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an activation command, as described in clause 6.1.3.17 or 6.1.3.36 of [10, TS 38.321], for an SRS resource, and when the UE would transmit a PUCCH with HARQ-ACK information in slot \\( n \\) corresponding to the PDSCH carrying the activation command, the corresponding actions in [10, TS 38.321] and the UE assumptions on SRS transmission corresponding to the configured SRS resource set shall be applied starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame }}{ }^{\\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The activation command also contains spatial relation assumptions provided by a list of references to reference signal [Ds, one per element of the activated SRS resource set. When the SRS is configured with the higher layer parameter SRS-ResourceSet, each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the SRS is configured with the higher layer parameter SRS-PosResourceSet, each [D in the list of reference signal [Ds may refer to a reference SS/PBCH block on a serving or non-serving cell indicated by PCI field in the activation command, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the activation command if present, same serving cell as the SRS resource set otherwise, SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the activation command if present, same serving cell and bandwidth part as the SRS resource set otherwise, or DL PRS resource of a serving or non-serving cell associated with a \\( d l- \\) PRS-ID indicated by DL-PRS ID field in the activation command.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "referenceSignal",
+      "uplinkBandwidthPartId"
+    ],
+    "source_IEs": [
+      "67_71_pdsch-Config_tci-StatesToAddModList",
+      "826_931_csi-ReportConfigToAddModList_reportConfigType"
+    ],
+    "field_ids": [
+      [
+        69,
+        70
+      ],
+      [
+        828,
+        852,
+        867,
+        891,
+        906,
+        930
+      ]
+    ],
+    "matched_fields": [
+      "reference signal",
+      "BWP"
+    ],
+    "original_sentence": "- when a UE receives an spatial relation update command, as described in clause 6.1.3.26 of [10, TS 38.321], for an SRS resource configured with the higher layer parameter SRS-Resource, and when the HARQ-ACK corresponding to the PDSCH carrying the update command is transmitted in slot \\( n \\), the corresponding actions in [10, TS 38.321] and the UE assumptions on updating spatial relation for the SRS resource shall be applied for SRS transmission starting from the first slot that is after slot \\( n+3 N_{\\text {slot }}^{\\text {sub frame } \\mu} \\) where \\( \\mu \\) is the SCS configuration for the PUCCH. The update command contains spatial relation assumptions provided by a list of references to reference signal IDs, one per element of the updated SRS resource set. Each ID in the list refers to a reference SS/PBCH block, NZP CSI-RS resource configured on serving cell indicated by Resource Serving Cell ID field in the update command if present, same serving cell as the SRS resource set otherwise, or SRS resource configured on serving cell and uplink bandwidth part indicated by Resource Serving Cell ID field and Resource BWP ID field in the update command if present, same serving cell and bandwidth part as the SRS resource set otherwise. When the UE is configured with the higher layer parameter usage in SRS-ResourceSet set to 'antennaSwitching', the UE shall not expect to be configured with different spatial relations for SRS resources in the same SRS resource set.",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
     "is_cross_ie": true
   },
   {

@@ -17,44 +17,6 @@
       ]
     ],
     "matched_fields": [
-      "SR",
-      "format"
-    ],
-    "original_sentence": "The SRS request field [5, TS38.212] in DCI format \\( 0 \\_1,1 \\_1,0 \\_2 \\) (if SRS request field is present), \\( 1 \\_2 \\) (if SRS request field is present) indicates the triggered SRS resource set given in Table 7.3.1.1.2-24 of [5, TS 38.212]. The 2-bit SRS request field in DCI format 2_3 indicates the triggered SRS resource set given in clause 7.3 of [5, TS 38.212] and defined by the entries of the higher layer parameter srs-ResourceSetToAddModList if the UE is configured with higher layer parameter srs-TPC-PDCCH-Group set to 'typeB', or indicates the SRS transmission on a set of serving cells configured by higher layers if the UE is configured with higher layer parameter srs-TPC-PDCCH-Group set to 'typeA'.  For PUCCH and SRS on the same carrier, a UE shall not transmit SRS when semi-persistent or periodic SRS is configured in the same symbol(s) with PUCCH carrying only CSI report(s), or only L1-RSRP report(s), or only L1SINR report(s). A UE shall not transmit SRS when semi-persistent or periodic SRS is configured or aperiodic SRS is triggered to be transmitted in the same symbol(s) with PUCCH carrying HARQ-ACK, link recovery request (as defined in clause 9.24 of [6,38.213]) and/or SR. In the case that SRS is not transmitted due to overlap with PUCCH, only the SRS symbol(s) that overlap with PUCCH symbol(s) are dropped. PUCCH shall not be transmitted when aperiodic SRS is triggered to be transmitted to overlap in the same symbol with PUCCH carrying semi-persistent/periodic CSI report(s) or semi-persistent/periodic L1-RSRP report(s) only, or only L1-SINR report(s).",
-    "source_file": "ts_138214v170100p_mathpix.md",
-    "section_number": "6.2.1",
-    "section_title": "UE sounding procedure",
-    "section_relevance": {
-      "combined_score": 0.0,
-      "ie1_score": 0.0,
-      "ie2_score": 0.0,
-      "match_type": "NONE",
-      "matched_variants": {
-        "ie1": [],
-        "ie2": []
-      }
-    },
-    "confidence": "HIGH",
-    "is_cross_ie": true
-  },
-  {
-    "fields": [
-      "schedulingRequestID",
-      "format"
-    ],
-    "source_IEs": [
-      "19_25_mac-LogicalChannelConfig",
-      "278_283_pucch-Config_resourceToAddModList"
-    ],
-    "field_ids": [
-      [
-        23
-      ],
-      [
-        280
-      ]
-    ],
-    "matched_fields": [
       "schedulingRequestID",
       "format"
     ],
@@ -1821,6 +1783,44 @@
       }
     },
     "confidence": "MEDIUM",
+    "is_cross_ie": true
+  },
+  {
+    "fields": [
+      "schedulingRequestID",
+      "format"
+    ],
+    "source_IEs": [
+      "19_25_mac-LogicalChannelConfig",
+      "278_283_pucch-Config_resourceToAddModList"
+    ],
+    "field_ids": [
+      [
+        23
+      ],
+      [
+        280
+      ]
+    ],
+    "matched_fields": [
+      "SR",
+      "format"
+    ],
+    "original_sentence": "The SRS request field [5, TS38.212] in DCI format \\( 0 \\_1,1 \\_1,0 \\_2 \\) (if SRS request field is present), \\( 1 \\_2 \\) (if SRS request field is present) indicates the triggered SRS resource set given in Table 7.3.1.1.2-24 of [5, TS 38.212]. The 2-bit SRS request field in DCI format 2_3 indicates the triggered SRS resource set given in clause 7.3 of [5, TS 38.212] and defined by the entries of the higher layer parameter srs-ResourceSetToAddModList if the UE is configured with higher layer parameter srs-TPC-PDCCH-Group set to 'typeB', or indicates the SRS transmission on a set of serving cells configured by higher layers if the UE is configured with higher layer parameter srs-TPC-PDCCH-Group set to 'typeA'.  For PUCCH and SRS on the same carrier, a UE shall not transmit SRS when semi-persistent or periodic SRS is configured in the same symbol(s) with PUCCH carrying only CSI report(s), or only L1-RSRP report(s), or only L1SINR report(s). A UE shall not transmit SRS when semi-persistent or periodic SRS is configured or aperiodic SRS is triggered to be transmitted in the same symbol(s) with PUCCH carrying HARQ-ACK, link recovery request (as defined in clause 9.24 of [6,38.213]) and/or SR. In the case that SRS is not transmitted due to overlap with PUCCH, only the SRS symbol(s) that overlap with PUCCH symbol(s) are dropped. PUCCH shall not be transmitted when aperiodic SRS is triggered to be transmitted to overlap in the same symbol with PUCCH carrying semi-persistent/periodic CSI report(s) or semi-persistent/periodic L1-RSRP report(s) only, or only L1-SINR report(s).",
+    "source_file": "ts_138214v170100p_mathpix.md",
+    "section_number": "6.2.1",
+    "section_title": "UE sounding procedure",
+    "section_relevance": {
+      "combined_score": 0.0,
+      "ie1_score": 0.0,
+      "ie2_score": 0.0,
+      "match_type": "NONE",
+      "matched_variants": {
+        "ie1": [],
+        "ie2": []
+      }
+    },
+    "confidence": "HIGH",
     "is_cross_ie": true
   },
   {

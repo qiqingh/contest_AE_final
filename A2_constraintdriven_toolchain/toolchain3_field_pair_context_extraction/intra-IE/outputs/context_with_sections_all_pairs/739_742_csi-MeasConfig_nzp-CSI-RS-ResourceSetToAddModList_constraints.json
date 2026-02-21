@@ -131,238 +131,6 @@
       ]
     ],
     "matched_fields": [
-      "NZP CSI-RS resources",
-      "NZP-CSI"
-    ],
-    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - SP CSI-RS resource set ID: This field contains an index of NZP-CSI-RS-ResourceSet containing Semi Persistent NZP CSI-RS resources, as specified in TS 38.331 [5], indicating the Semi Persistent NZP CSI-RS resource set, which shall be activated or deactivated. The length of the field is 6 bits; - IM: This field indicates the presence of the octet containing SP CSI-IM resource set ID field. If the IM field is set to 1 , the octet containing SP CSI-IM resource set ID field is present. If IM field is set to 0 , the octet containing SP CSI-IM resource set ID field is not present;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "shall",
-    "is_self_reference": false,
-    "section_number": "6.1.3.12",
-    "section_title": "SP CSI",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) - SP CSI-IM resource set ID: This field contains an index of CSI-IM-ResourceSet containing Semi Persistent CSIIM resources, as specified in TS 38.331 [5], indicating the Semi Persistent CSI-[M resource set, which shall be activated or deactivated. The length of the field is 6 bits; - TCI State [D1: This field contains TCI-Stateld, as specified in TS 38.331 [5], of a TCI State, which is used as QCL source for the resource within the Semi Persistent NZP CSI-RS resource set indicated by SP CSI-RS resource set ID field. TCI State [D0 indicates TCI State for the first resource within the set, TCI State [D1 for the second one and so on. The length of the field is 7 bits. If the A / D field is set to 0 , the octets containing TCI State ID field(s) are not present; - R: Reserved bit, set to 0 .",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "shall",
-    "is_self_reference": false,
-    "section_number": "6.1.3.12",
-    "section_title": "SP CSI",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "- SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits; - F_{1} : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP SRS Resource Set indicated with SP SRS Resource Set ID field. F_{0} refers to the first SRS resource within the resource set, F_{1} to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is ETSI",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "set to",
-    "is_self_reference": false,
-    "section_number": "6.1.3.17",
-    "section_title": "SP SRS Activation/Deactivation MAC CE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits; - F_{1} : This field indicates the type of a resource used as a spatial relationship for SRS resource indicated with SRS Resource \\mathrm{ID}_{1} field. \\mathrm{F}_{0} refers to the first SRS resource which is indicated SRS Resource \\mathrm{ID}_{1}, \\mathrm{~F}_{1} to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit; - Resource Serving Cell ID1: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS Resource [ \\mathrm{D}_{1} is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS Resource [D, is located. The length of the field is 2 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "If",
-    "is_self_reference": false,
-    "section_number": "6.1.3.29",
-    "section_title": "Serving Cell Set based SRS Spatial Relation Indication MAC CE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP CSI",
-      "NZP CSI"
-    ],
-    "original_sentence": "The field Spatial Relation for Resource [D, consists of the following fields: - F_{0} : This field indicates the type of a resource used as a spatial relation for the i^{\\text {th }} Positioning SRS resource within the Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID. The field is set to 00 to indicate NZP CSI-RS resource index is used; it is set to 01 to indicate SSB index is used; it is set to 10 to indicate SRS resource index is used; it is set to 11 to indicate DL-PRS index is used. The length of the field is 2 bits; - F_{1} : This field indicates the type of SRS resource used as spatial relation for the i^{\\text {th }} Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\mathrm{F}_{0} is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "set to",
-    "is_self_reference": false,
-    "section_number": "6.1.3.36",
-    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP-CSI",
-      "NZP-CSI"
-    ],
-    "original_sentence": "- Resource Configuration ID: This fields indicates the RRC configuration which applies to this MAC CE and corresponds to iab-ResourceConfigID parameter in IAB-ResourceConfig as specified in TS 38.331 [5]. The length of the field is 16 bits; - Number of child IAB-DU beams: This field indicates the number of restricted child IAB-DU beams included in the MAC CE. The length of the field is 8 bits. The number of restricted child IAB-DU beams is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - [AB-DU restricted beams type ID: This field determines the type of information used as an indication of a set of child IAB-DU's restricted beams, indicated with the Child IAB-DU Resource set [D, field. IAB-DU restricted beams type ID _{0} refers to the first restricted beam within the resource set, [AB-DU restricted beams type [ \\mathrm{D}_{1} to the second one and so on. If the value of the field is 00 , SSB index is used (contained in the 6 rightmost bits of the Child IAB-DU Resource set ID, field, with the two leftmost bits being set to zero). If the value of the field is 01, SSB index (contained in the 6 rightmost bits of the Child IAB-DU Resource set ID, field) and STC index (contained in the two leftmost bits of the Child IAB-DU Resource set ID, field) are both used. If the value of the field is set to 11, CSI-RS index, which is the NZP-CSI-RS-Resourceld as specified in TS 38.331 [5], is used (comprising all 8 bits of the Child IAB-DU Resource set ID, field). The length of the field is 2 bits; - \\mathrm{C}_{1} : This field indicates whether the octet containing the Number of cell configurations \\mathrm{ID}_{1} field is included or not. \\mathrm{C}_{01} refers to the first restricted beam within the resource set, \\mathrm{C}_{11} to the second one and so on. The field is set to 0 to indicate the octet is not included (and subsequently, that no cell information is included for the relevant",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "corresponds to",
-    "is_self_reference": false,
-    "section_number": "6.1.3.61",
-    "section_title": "Child IAB",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP-CSI",
-      "NZP-CSI"
-    ],
-    "original_sentence": "- Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} : The two rightmost bits indicate which of the four multiplexing modes defined in TS 38.473 [27] is applicable. The third rightmost bit of this field indicates whether multiplexing restrictions mode information contained in the two rightmost bits of the field are applicable to non-overlapping frequency resources. This bit is set to 1 when multiplexing mode information contained in the two rightmost bits of the Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} field is applicable to non-overlapping frequency resources. This field is set to 0 when multiplexing mode information contained in the two rightmost bits of the Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} field is not applicable to non-overlapping frequency resources. The remaining 5 bits of this field are set to zero. The length of the field is 8 bits; - Number of associated IAB-MT beams IDi: This field indicates the number of IAB-MT beams associated with the beam indicated in Child IAB-DU Resource set [D]. Number of associated IAB-MT beams [D0 refers to the first restricted beam within the resource set, Number of associated IAB-MT beams [D1 to the second one and so on. The length of the field is 8 bits. The number of IAB-MT beams associated with the beam indicated in Child IABDU Resource set \\mathrm{ID}_{1} is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - Associated IAB-MT's beams type ID _{\\text {1) }} : This field determines the type of information used as an indication of an uplink or downlink [AB-MT beam associated with the child [AB-DU's restricted beams, indicated with the [ABMT Resource set \\left[\\mathrm{D}_{1}\\right. - If the value of the field is 00 , the information included in the [AB-MT Resource set [D { }_{1} field is the TCI state ID (contained in the 7 rightmost bits of the field). If the value of the field is 01 , the information included in the IAB-MT Resource set ID, field is the SSB ID (contained in the 6 rightmost bits of the field). If the value of the field is 10 , the information included in the IAB-MT Resource set IDy field is the CSI-RS index (comprising all 8 bits), which is the NZP-CSI-RS-Resourceld as specified in TS 38.331 [5]. If the value of the field is 11 , the information included in the 6 rightmost bits in the [AB-MT Resource set [ D_{1} field is the SRS-ResourcelD. The length of the field is 2 bits; ETSI",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "contained in",
-    "is_self_reference": false,
-    "section_number": "6.1.3.61",
-    "section_title": "Child IAB",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
-      "NZP-CSI",
-      "NZP-CSI"
-    ],
-    "original_sentence": "- Resource Configuration ID: This field indicates the RRC configuration which applies to this MAC CE and corresponds to iab-ResourceConfigID parameter in IAB-ResourceConfig as specified in TS 38.331 [5]. The length of the field is 16 bits; - Number of [AB-MT beams: This field indicates the number of recommended [AB-MT beams included in the MAC CE. The length of the field is 8 bits. The number of recommended [AB-MT beams is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - [AB-MT beam type [D]: This field determines the type of information used as an indication of an uplink or downlink [AB-MT beam, indicated with the [AB-MT Resource set [Dr. If the value of the field is 00 , the information included in the [AB-MT Resource set [D, field is the TCI state ID (contained in the 7 rightmost bits of the field). If the value of the field is 01, the information included in the [AB-MT Resource set[D, field is the SSB ID (contained in the 6 rightmost bits of the field). If the value of the field is 10 , the information included in the [AB-MT Resource set [D, field is the CSI-RS index (comprising all 8 bits), which is the NZP-CSI-RSResourceld as specified in TS 38.331 [5]. If the value of the field is 11, the information included in the 6 rightmost bits in the [AB-MT Resource set [D, field is the SRS-ResourceID. The length of the field is 2 bits; - [AB-MT Resource set [D]: an indication of the [AB-MTs recommended downlink or uplink beams. [AB-MT Resource set [ D_{0} field refers to the first [AB-MT's beam, [AB-MT Resource set [D { }_{1} field refers to the second [AB-MT's beam, and so on. The length of the field is 8 bits; - C_{11} : This field indicates whether the octet containing the Number of cell configurations D_{1} field is included or not. C_{01} refers to the first recommended beam within the resource set, C_{11} to the second one and so on. The field is set to 0 to indicate the octet is not included (and subsequently, that no cell information is included for the relevant recommended beam). The field is set to 1 to indicate that Number of cell configurations \\left[D_{1}\\right. field is included. The length of the field is 1 bits;",
-    "source_file": "ts_138321v180200p_mathpix.md",
-    "constraint_keyword": "corresponds to",
-    "is_self_reference": false,
-    "section_number": "6.1.3.62",
-    "section_title": "IAB",
-    "ie_relevance_score": 0.0,
-    "matched_ie_variants": [],
-    "confidence": "VERY_LOW"
-  },
-  {
-    "fields": [
-      "nzp-CSI-RS-Resources",
-      "nzp-CSI-ResourceSetId"
-    ],
-    "field_ids": [
-      [
-        740,
-        742
-      ],
-      [
-        739,
-        741
-      ]
-    ],
-    "matched_fields": [
       "NZP-CSI",
       "NZP-CSI"
     ],
@@ -577,17 +345,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -618,17 +386,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -659,17 +427,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -700,17 +468,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -741,17 +509,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -782,17 +550,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -823,17 +591,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -864,17 +632,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -934,17 +702,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -975,17 +743,17 @@
     "section_title": "CSI",
     "ie_relevance_score": 330.0,
     "matched_ie_variants": [
-      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "CSI Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
-      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
-      "meas config_nzp-csi-rs-resource set to add mod list",
-      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
+      "MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "measconfig_nzp-csi-rs-resourcesettoaddmodlist",
-      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
-      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
       "Meas Config_nzp-CSI-RS-Resource Set To Add Mod List",
+      "Meas Configuration_nzp-CSI-RS-Resource Set To Add Mod List",
+      "MeasConfiguration_nzp-CSI-RS-ResourceSetToAddModList",
+      "csi-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList",
       "csi meas config_nzp-csi-rs-resource set to add mod list",
-      "meas configuration_nzp-csi-rs-resource set to add mod list"
+      "meas config_nzp-csi-rs-resource set to add mod list",
+      "meas configuration_nzp-csi-rs-resource set to add mod list",
+      "CSI-MeasConfig_nzp-CSI-RS-ResourceSetToAddModList"
     ],
     "confidence": "HIGH"
   },
@@ -1884,6 +1652,238 @@
     "is_self_reference": false,
     "section_number": "6.2.1",
     "section_title": "UE sounding procedure",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI-RS resources",
+      "NZP-CSI"
+    ],
+    "original_sentence": "- Serving Cell ID: This field indicates the identity of the Serving Cell for which the MAC CE applies. The length of the field is 5 bits; - BWP ID: This field indicates a DL BWP for which the MAC CE applies as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9]. The length of the BWP ID field is 2 bits; - SP CSI-RS resource set ID: This field contains an index of NZP-CSI-RS-ResourceSet containing Semi Persistent NZP CSI-RS resources, as specified in TS 38.331 [5], indicating the Semi Persistent NZP CSI-RS resource set, which shall be activated or deactivated. The length of the field is 6 bits; - IM: This field indicates the presence of the octet containing SP CSI-IM resource set ID field. If the IM field is set to 1 , the octet containing SP CSI-IM resource set ID field is present. If IM field is set to 0 , the octet containing SP CSI-IM resource set ID field is not present;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.3.12",
+    "section_title": "SP CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "ETSI TS 138321 V18.2.0 (2024-08) - SP CSI-IM resource set ID: This field contains an index of CSI-IM-ResourceSet containing Semi Persistent CSIIM resources, as specified in TS 38.331 [5], indicating the Semi Persistent CSI-[M resource set, which shall be activated or deactivated. The length of the field is 6 bits; - TCI State [D1: This field contains TCI-Stateld, as specified in TS 38.331 [5], of a TCI State, which is used as QCL source for the resource within the Semi Persistent NZP CSI-RS resource set indicated by SP CSI-RS resource set ID field. TCI State [D0 indicates TCI State for the first resource within the set, TCI State [D1 for the second one and so on. The length of the field is 7 bits. If the A / D field is set to 0 , the octets containing TCI State ID field(s) are not present; - R: Reserved bit, set to 0 .",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "shall",
+    "is_self_reference": false,
+    "section_number": "6.1.3.12",
+    "section_title": "SP CSI",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "- SUL: This field indicates whether the MAC CE applies to the NUL carrier or SUL carrier configuration. This field is set to 1 to indicate that it applies to the SUL carrier configuration, and it is set to 0 to indicate that it applies to the NUL carrier configuration; - SP SRS Resource Set ID: This field indicates the SP SRS Resource Set ID identified by SRS-ResourceSetld as specified in TS 38.331 [5], which is to be activated or deactivated. The length of the field is 4 bits; - F_{1} : This field indicates the type of a resource used as a spatial relationship for SRS resource within SP SRS Resource Set indicated with SP SRS Resource Set ID field. F_{0} refers to the first SRS resource within the resource set, F_{1} to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.17",
+    "section_title": "SP SRS Activation/Deactivation MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "- C: This field indicates whether the octets containing Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present. If this field is set to 1 , the Resource Serving Cell ID field(s) and Resource BWP ID field(s) are present, otherwise they are not present so MAC entity shall ignore Resource Serving Cell ID field(s) and Resource BWP ID field(s); - SRS Resource ID: This field indicates the SP/AP SRS Resource ID identified by SRS-Resourceld as specified in TS 38.331 [5]. The length of the field is 6 bits; - F_{1} : This field indicates the type of a resource used as a spatial relationship for SRS resource indicated with SRS Resource \\mathrm{ID}_{1} field. \\mathrm{F}_{0} refers to the first SRS resource which is indicated SRS Resource \\mathrm{ID}_{1}, \\mathrm{~F}_{1} to the second one and so on. The field is set to 1 to indicate NZP CSI-RS resource index is used, and it is set to 0 to indicate either SSB index or SRS resource index is used. The length of the field is 1 bit; - Resource Serving Cell ID1: This field indicates the identity of the Serving Cell on which the resource used for spatial relationship derivation for SRS Resource [ \\mathrm{D}_{1} is located. The length of the field is 5 bits; - Resource BWP ID: This field indicates a UL BWP as the codepoint of the DCI bandwidth part indicator field as specified in TS 38.212 [9], on which the resource used for spatial relationship derivation for SRS Resource [D, is located. The length of the field is 2 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "If",
+    "is_self_reference": false,
+    "section_number": "6.1.3.29",
+    "section_title": "Serving Cell Set based SRS Spatial Relation Indication MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP CSI",
+      "NZP CSI"
+    ],
+    "original_sentence": "The field Spatial Relation for Resource [D, consists of the following fields: - F_{0} : This field indicates the type of a resource used as a spatial relation for the i^{\\text {th }} Positioning SRS resource within the Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID. The field is set to 00 to indicate NZP CSI-RS resource index is used; it is set to 01 to indicate SSB index is used; it is set to 10 to indicate SRS resource index is used; it is set to 11 to indicate DL-PRS index is used. The length of the field is 2 bits; - F_{1} : This field indicates the type of SRS resource used as spatial relation for the i^{\\text {th }} Positioning SRS resource within the SP Positioning SRS Resource Set indicated with the field Positioning SRS Resource Set ID when \\mathrm{F}_{0} is set to 10 . The field is set to 0 to indicate SRS resource index SRS-Resourceld as defined in TS 38.331 [5] is used; the field is set to 1 to indicate Positioning SRS resource index SRS-PosResourceld as defined in TS 38.331 [5] is used; - NZP CSI-RS Resource ID: This field contains an index of NZP-CSI-RS-ResourceID, as specified in TS 38.331 [5], indicating the NZP CSI-RS resource, which is used to derive the spatial relation for the positioning SRS. The length of the field is 8 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "set to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.36",
+    "section_title": "SP Positioning SRS Activation/Deactivation MAC CE",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP-CSI",
+      "NZP-CSI"
+    ],
+    "original_sentence": "- Resource Configuration ID: This fields indicates the RRC configuration which applies to this MAC CE and corresponds to iab-ResourceConfigID parameter in IAB-ResourceConfig as specified in TS 38.331 [5]. The length of the field is 16 bits; - Number of child IAB-DU beams: This field indicates the number of restricted child IAB-DU beams included in the MAC CE. The length of the field is 8 bits. The number of restricted child IAB-DU beams is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - [AB-DU restricted beams type ID: This field determines the type of information used as an indication of a set of child IAB-DU's restricted beams, indicated with the Child IAB-DU Resource set [D, field. IAB-DU restricted beams type ID _{0} refers to the first restricted beam within the resource set, [AB-DU restricted beams type [ \\mathrm{D}_{1} to the second one and so on. If the value of the field is 00 , SSB index is used (contained in the 6 rightmost bits of the Child IAB-DU Resource set ID, field, with the two leftmost bits being set to zero). If the value of the field is 01, SSB index (contained in the 6 rightmost bits of the Child IAB-DU Resource set ID, field) and STC index (contained in the two leftmost bits of the Child IAB-DU Resource set ID, field) are both used. If the value of the field is set to 11, CSI-RS index, which is the NZP-CSI-RS-Resourceld as specified in TS 38.331 [5], is used (comprising all 8 bits of the Child IAB-DU Resource set ID, field). The length of the field is 2 bits; - \\mathrm{C}_{1} : This field indicates whether the octet containing the Number of cell configurations \\mathrm{ID}_{1} field is included or not. \\mathrm{C}_{01} refers to the first restricted beam within the resource set, \\mathrm{C}_{11} to the second one and so on. The field is set to 0 to indicate the octet is not included (and subsequently, that no cell information is included for the relevant",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.61",
+    "section_title": "Child IAB",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP-CSI",
+      "NZP-CSI"
+    ],
+    "original_sentence": "- Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} : The two rightmost bits indicate which of the four multiplexing modes defined in TS 38.473 [27] is applicable. The third rightmost bit of this field indicates whether multiplexing restrictions mode information contained in the two rightmost bits of the field are applicable to non-overlapping frequency resources. This bit is set to 1 when multiplexing mode information contained in the two rightmost bits of the Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} field is applicable to non-overlapping frequency resources. This field is set to 0 when multiplexing mode information contained in the two rightmost bits of the Multiplexing mode info \\mathrm{ID}_{\\mathrm{y}} field is not applicable to non-overlapping frequency resources. The remaining 5 bits of this field are set to zero. The length of the field is 8 bits; - Number of associated IAB-MT beams IDi: This field indicates the number of IAB-MT beams associated with the beam indicated in Child IAB-DU Resource set [D]. Number of associated IAB-MT beams [D0 refers to the first restricted beam within the resource set, Number of associated IAB-MT beams [D1 to the second one and so on. The length of the field is 8 bits. The number of IAB-MT beams associated with the beam indicated in Child IABDU Resource set \\mathrm{ID}_{1} is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - Associated IAB-MT's beams type ID _{\\text {1) }} : This field determines the type of information used as an indication of an uplink or downlink [AB-MT beam associated with the child [AB-DU's restricted beams, indicated with the [ABMT Resource set \\left[\\mathrm{D}_{1}\\right. - If the value of the field is 00 , the information included in the [AB-MT Resource set [D { }_{1} field is the TCI state ID (contained in the 7 rightmost bits of the field). If the value of the field is 01 , the information included in the IAB-MT Resource set ID, field is the SSB ID (contained in the 6 rightmost bits of the field). If the value of the field is 10 , the information included in the IAB-MT Resource set IDy field is the CSI-RS index (comprising all 8 bits), which is the NZP-CSI-RS-Resourceld as specified in TS 38.331 [5]. If the value of the field is 11 , the information included in the 6 rightmost bits in the [AB-MT Resource set [ D_{1} field is the SRS-ResourcelD. The length of the field is 2 bits; ETSI",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "contained in",
+    "is_self_reference": false,
+    "section_number": "6.1.3.61",
+    "section_title": "Child IAB",
+    "ie_relevance_score": 0.0,
+    "matched_ie_variants": [],
+    "confidence": "VERY_LOW"
+  },
+  {
+    "fields": [
+      "nzp-CSI-RS-Resources",
+      "nzp-CSI-ResourceSetId"
+    ],
+    "field_ids": [
+      [
+        740,
+        742
+      ],
+      [
+        739,
+        741
+      ]
+    ],
+    "matched_fields": [
+      "NZP-CSI",
+      "NZP-CSI"
+    ],
+    "original_sentence": "- Resource Configuration ID: This field indicates the RRC configuration which applies to this MAC CE and corresponds to iab-ResourceConfigID parameter in IAB-ResourceConfig as specified in TS 38.331 [5]. The length of the field is 16 bits; - Number of [AB-MT beams: This field indicates the number of recommended [AB-MT beams included in the MAC CE. The length of the field is 8 bits. The number of recommended [AB-MT beams is contained in the 3 rightmost bits of the field while the remaining 5 bits are considered as reserved bits; - [AB-MT beam type [D]: This field determines the type of information used as an indication of an uplink or downlink [AB-MT beam, indicated with the [AB-MT Resource set [Dr. If the value of the field is 00 , the information included in the [AB-MT Resource set [D, field is the TCI state ID (contained in the 7 rightmost bits of the field). If the value of the field is 01, the information included in the [AB-MT Resource set[D, field is the SSB ID (contained in the 6 rightmost bits of the field). If the value of the field is 10 , the information included in the [AB-MT Resource set [D, field is the CSI-RS index (comprising all 8 bits), which is the NZP-CSI-RSResourceld as specified in TS 38.331 [5]. If the value of the field is 11, the information included in the 6 rightmost bits in the [AB-MT Resource set [D, field is the SRS-ResourceID. The length of the field is 2 bits; - [AB-MT Resource set [D]: an indication of the [AB-MTs recommended downlink or uplink beams. [AB-MT Resource set [ D_{0} field refers to the first [AB-MT's beam, [AB-MT Resource set [D { }_{1} field refers to the second [AB-MT's beam, and so on. The length of the field is 8 bits; - C_{11} : This field indicates whether the octet containing the Number of cell configurations D_{1} field is included or not. C_{01} refers to the first recommended beam within the resource set, C_{11} to the second one and so on. The field is set to 0 to indicate the octet is not included (and subsequently, that no cell information is included for the relevant recommended beam). The field is set to 1 to indicate that Number of cell configurations \\left[D_{1}\\right. field is included. The length of the field is 1 bits;",
+    "source_file": "ts_138321v180200p_mathpix.md",
+    "constraint_keyword": "corresponds to",
+    "is_self_reference": false,
+    "section_number": "6.1.3.62",
+    "section_title": "IAB",
     "ie_relevance_score": 0.0,
     "matched_ie_variants": [],
     "confidence": "VERY_LOW"
