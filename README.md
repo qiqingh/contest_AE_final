@@ -352,6 +352,19 @@ cd -
 
 ### T3 (inter-IE)
 
+#### Note on Hardware Requirements (T3 inter-IE)
+
+This step is the most resource-intensive in the pipeline.
+
+**Verified on:**
+- CPU: 12th Gen Intel Core i7-1260P, 12 cores
+- RAM: 32GB
+- OS: Ubuntu 22.04 Docker container
+
+**Measured runtime:** ~2.5 hours (2h19m / 2h28m / 2h23m / 2h29m across four runs)
+
+Runtime varies by hardware and parallelism settings.
+
 ```
 cd toolchain3_field_pair_context_extraction/inter-IE/code
 python3 00_generate_aggressive_inter_ie_config.py
