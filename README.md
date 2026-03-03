@@ -685,6 +685,20 @@ sudo ./bin/5g_fuzzer \
   --EnableMutation=false
 ```
 
+> **Note on known benign errors during exploit execution:**
+>
+> You may encounter the following errors when running exploits. These are both inherited from the upstream 5Ghoul environment and can be safely ignored — they do not affect exploit execution or crash reproduction.
+>
+> **1. `idemptables` errors**
+> You may also see a series of errors related to `idemptables` (e.g., `timeout: failed to run command './3rd-party/hostapd/idemptables'`). These originate from legacy iptables setup scripts in history version of the 5Ghoul environment that are no longer needed. They do not affect the simulation or exploit behavior.
+>
+> **2. Gmail credentials error (`credentials.json` not found)**
+> The 5Ghoul framework includes an email alert feature that attempts to send a notification each time a UE crash is detected. Since no Gmail credentials are configured in this artifact, the alert fails with a `FileNotFoundError`. The program will continue running normally after this error. This is a known upstream issue: https://github.com/asset-group/5ghoul-5g-nr-attacks/issues/29
+>
+> In both cases, please focus on `[!] UE process crashed` in the output to confirm that the exploit is working as expected.
+
+
+
 ## Expected Behavior (With Exploit)
 
 When running a valid exploit payload, the simulator should frequently
