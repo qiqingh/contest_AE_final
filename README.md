@@ -384,7 +384,7 @@ cd -
   toolchain3_field_pair_context_extraction/inter-IE/output/context_enhanced
 ```
 
-###  Alternative: Lightweight verification for (T3 inter-IE)**
+###  Alternative: Lightweight verification for (T3 inter-IE)
 
 If the full T3 inter-IE run is not feasible, a lightweight alternative is provided that uses the same extractor script with a reduced cluster configuration (C7_MAC × C5_PUCCH only, ~252 IE pairs). This is intended for functional verification only; the full pre-generated results (13,350 pairs) remain available in the repository.
 
