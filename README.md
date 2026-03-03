@@ -350,7 +350,7 @@ python3 00_intra-IE_context_extract.py --all-pairs --no-self
 cd -
 ```
 
-### T3 (inter-IE)
+### T3 (inter-IE) Also has Alternative Lightweight verification
 
 #### Note on Hardware Requirements (T3 inter-IE)
 
@@ -383,7 +383,23 @@ cd -
 ```
   toolchain3_field_pair_context_extraction/inter-IE/output/context_enhanced
 ```
-  
+
+###  Alternative: Lightweight verification for (T3 inter-IE)**
+
+If the full T3 inter-IE run is not feasible, a lightweight alternative is provided that uses the same extractor script with a reduced cluster configuration (C7_MAC × C5_PUCCH only, ~252 IE pairs). This is intended for functional verification only; the full pre-generated results (13,350 pairs) remain available in the repository.
+
+Estimated runtime: few minutes on the same reference hardware.
+
+```
+cd toolchain3_field_pair_context_extraction/inter-IE/code
+python3 01_inter_ie_enhanced_extractor_lite_ae.py
+cd -
+```
+
+Output will be written to:
+```
+contest_AE_final/A2_constraintdriven_toolchain/toolchain3_field_pair_context_extraction/inter-IE/output/context_enhanced_lite_ae
+```
 
 ## T4 – LLM-Based DSL Synthesis (OPTIONAL)
 
