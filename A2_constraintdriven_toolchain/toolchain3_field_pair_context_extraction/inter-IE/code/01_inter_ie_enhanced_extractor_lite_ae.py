@@ -20,8 +20,8 @@ from pathlib import Path
 # Path Configuration
 IE_DIR = "../../../toolchain2_IE_collection/inter-IE/outputs/inter-IE_strategy/selected_ies"
 SPEC_DIR = "../../../toolchain1_3GPP_preprocessing/outputs/txt_specifications_mathpix/txt_specifications_mathpix_md"
-CLUSTER_CONFIG_PATH = "./cluster_config_aggressive_inter_ie.json"
-OUTPUT_DIR = "../output/context_enhanced"
+CLUSTER_CONFIG_PATH = "./cluster_config_lite_ae.json"
+OUTPUT_DIR = "../output/context_enhanced_lite_ae"
 
 # Field-to-generation strategy
 # Optional values: 'smart' | 'all' | 'reference-only'
