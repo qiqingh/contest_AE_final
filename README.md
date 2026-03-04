@@ -695,7 +695,10 @@ sudo ./bin/5g_fuzzer \
 > **2. Gmail credentials error (`credentials.json` not found)**
 > The 5Ghoul framework includes an email alert feature that attempts to send a notification each time a UE crash is detected. Since no Gmail credentials are configured in this artifact, the alert fails with a `FileNotFoundError`. The program will continue running normally after this error. This is a known upstream issue: https://github.com/asset-group/5ghoul-5g-nr-attacks/issues/29
 >
-> In both cases, please focus on `[!] UE process crashed` in the output to confirm that the exploit is working as expected.
+> **3. Compiler warnings and errors during exploit compilation**
+> When running `sudo bin/5g_fuzzer --list-exploits`, the build process may output compiler warnings or errors. These do not necessarily indicate a failed build. To verify whether an exploit was compiled successfully, check whether the corresponding `.so` and `.o` files were generated at `/home/5ghoul-5g-nr-attacks/modules/exploits/5gnr_gnb/`. If the files are present, the exploit has been compiled successfully and can be loaded for testing.
+>
+> In all cases, please focus on `[!] UE process crashed` in the output to confirm that the exploit is working as expected.
 
 
 
