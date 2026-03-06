@@ -51,7 +51,7 @@ python3 -c "from pycrate_asn1dir import RRCNR; print('pycrate OK')"
 
 ## Toolchain Overview (T1–T6)
 
-![CONSET Toolchain Overview](./A2_constraintdriven_toolchain/toolchain_overview.png)
+![CONSET Toolchain Overview](./toolchain_overview.png)
 
 The A2 pipeline is organized into six toolchains.
 Recommended Phase-2 path: run T2 → T3 → T5 → T6 (no external keys required).
@@ -67,7 +67,7 @@ The A2 toolchain is split into six independent stages, each with a distinct purp
 | **T5 – Test Case Generation** | DSL constraint rules (from T4 or pre-generated) | Constraint-violating field modifications | Required |
 | **T6 – OTA Payload Generation** | Test cases (from T5) | Byte-level exploit payloads (offset + value) | Required |
 
-![5G Message Structure](./A2_constraintdriven_toolchain/message_structure.png)
+![5G Message Structure](./message_structure.png)
 
 **Note:** A 5G RRC message is composed of multiple **Information Elements (IEs)**, and each IE contains multiple **fields**. Since 5G RRC messages contain deeply nested IEs, our goal is to extract semantic constraints between fields. T2 identifies a minimum-cost set of IEs that covers the full message structure. 
 
